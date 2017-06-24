@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .authenticated().and().csrf().disable().formLogin()
                 //.loginPage("/login").failureUrl("/login?error=true")
                 //.defaultSuccessUrl("/songs") // After login take the user to songs index page
-                .usernameParameter("name") // Authenticate user by email
+                .usernameParameter("username") // Authenticate user by email
                 .passwordParameter("password"); // password field
 //                .and().logout()
 //                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
@@ -53,8 +53,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 jdbcAuthentication()
                 .dataSource(dataSource) /*What database should spring refer, autowired to application.properties's data source*/
                 .passwordEncoder(new SIVPasswordEncoder()) /*ChoirBook custom password encoder, using sha 512 hashing*/
-                .usersByUsernameQuery("select name as name, password, 1 as enabled from Firsttable where name=?") /*Spring is expecting 3 fields, so using email, password, enabled*/
-                .authoritiesByUsernameQuery("select name, password from Firsttable where name=?");/*Again spring is expecting two fields, so using email and role*/
+                .usersByUsernameQuery("select username as username, password, 1 as enabled from users_student where username=?") /*Spring is expecting 3 fields, so using email, password, enabled*/
+                .authoritiesByUsernameQuery("select username, password from users_student where username=?");/*Again spring is expecting two fields, so using email and role*/
 
     }
 }

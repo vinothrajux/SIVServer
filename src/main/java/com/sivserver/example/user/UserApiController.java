@@ -13,32 +13,36 @@ import static sun.misc.Version.println;
 @RestController
 @RequestMapping("/api/v1/user")
 public class UserApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+   @Autowired
     private UserRepository userRepository;
-    /**
-     * give a event id, will return the event details
-     * @param name - primary key id
-     * @return name
-     */
-//    @RequestMapping(method = RequestMethod.GET)
-//    public @ResponseBody  User getUser(@RequestParam("name") String name) {
-//        User i = userRepository.findOne(name);
-//        String Username=i.getName();
-//        return i;
-//        //return this.userRepository.findOne(name);
-//    }
+//    /**
+//     * give a event id, will return the event details
+//     * @param name - primary key id
+//     * @return name
+//     */
+////    @RequestMapping(method = RequestMethod.GET)
+////    public @ResponseBody  User getUser(@RequestParam("name") String name) {
+////        User i = userRepository.findOne(name);
+////        String Username=i.getName();
+////        return i;
+////        //return this.userRepository.findOne(name);
+////    }
     @RequestMapping(method = RequestMethod.GET)
-    public User getUser(@RequestParam (value ="name") String username, @RequestParam (value="password") String password) {
-        User loginUser = userRepository.findByName(username);
-        if(null != loginUser && loginUser.getPassword().contentEquals(password)) {
-            return this.userRepository.findByName(username);
-        }else{
-          return  null;
-        }
+    public String getUser(@RequestParam (value ="username") String username, @RequestParam (value="password") String password) {
+       User loginUser = userRepository.findByUsername(username);
+      if(null != loginUser && loginUser.getPassword().contentEquals(password)) {
+          System.out.println("NAME:"+username+", PASSWORD:"+password);
+         //  return this.userRepository.findByUsername(username);
+          return null;
 
-    }
-//    @RequestMapping(method = RequestMethod.GET)
-//    public Iterable<User> getUsers(){
-//        return this.userRepository.findAll();
-//    }
+      }else{
+         System.out.println("WRONG PASSWORD");
+         return null;
+       }
+
+   }
+////    @RequestMapping(method = RequestMethod.GET)
+////    public Iterable<User> getUsers(){
+////        return this.userRepository.findAll();
+////    }
 }
