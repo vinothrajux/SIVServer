@@ -20,9 +20,21 @@ public class AdmissionCounsellingApiController extends WebMvcConfigurerAdapter {
     @Autowired
     private AdmissionCounsellingRepository admissioncounsellingRepository;
 
+//    @Autowired
+//    private ApplicationSaleRepository applicationSaleRepository;
+//
+//
+//    @RequestMapping(method = RequestMethod.GET, value="/getApplcationDetail")
+//    public ApplicationSaleDetailProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
+//        ApplicationSaleDetailProjection applicationDetail = applicationSaleRepository.findOneByApplno(applicationNumber);
+//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+//
+//        return applicationDetail;
+//
+//    }
+
 
     @RequestMapping(method = RequestMethod.POST)
-
     public void admissionCounselling(
             @RequestParam(value ="admissiontype", required=false) String admissiontype,
             @RequestParam (value="applno", required=false) String applno,

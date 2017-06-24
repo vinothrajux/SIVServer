@@ -8,4 +8,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface TransportFeesSettingRepository extends CrudRepository<TransportFeesSetting, String> {
     TransportFeesSetting findByacademicyear(String academicyear);
+    TestProjection findOneByacademicyear(String academicyear);
 }

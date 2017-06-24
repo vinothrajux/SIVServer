@@ -1,6 +1,8 @@
 package com.sivserver.example.user;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sivserver.example.utils.SivUtils;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -27,19 +29,34 @@ public class UserApiController extends WebMvcConfigurerAdapter {
 ////        return i;
 ////        //return this.userRepository.findOne(name);
 ////    }
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.POST)
     public String getUser(@RequestParam (value ="username") String username, @RequestParam (value="password") String password) {
        User loginUser = userRepository.findByUsername(username);
-      if(null != loginUser && loginUser.getPassword().contentEquals(password)) {
-          System.out.println("NAME:"+username+", PASSWORD:"+password);
-         //  return this.userRepository.findByUsername(username);
-          return null;
+        String result=null;
+        try {
+          if(null != loginUser && loginUser.getPassword().contentEquals(password)) {
 
-      }else{
-         System.out.println("WRONG PASSWORD");
-         return null;
-       }
+              LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
 
+              System.out.println("NAME:"+username+", PASSWORD:"+password);
+
+                  ObjectMapper mapper = new ObjectMapper();
+                  result = mapper.writeValueAsString(loginUserDetail);
+
+              //return result;
+             // return null;
+
+          }else{
+             // JSONOb
+              JSONObject errorMsgObj = new JSONObject();
+              errorMsgObj.put("errorMessage", "WRONG PASSWORD");
+               result = errorMsgObj.toString();
+              //return result;
+           }
+        }catch (Exception e){
+
+        }
+        return result;
    }
 ////    @RequestMapping(method = RequestMethod.GET)
 ////    public Iterable<User> getUsers(){

@@ -4,13 +4,11 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 /**
- * Created by Seetha on 09-Jun-17.
+ * Created by GBCorp on 24/06/2017.
  */
-
 @Entity
-@Table(name = "users")
-public class User {
-
+@Table(name = "users_student")
+public class UsersStudent {
     public String getUserName(){
         return username;
     }
@@ -74,19 +72,6 @@ public class User {
         this.academicYear = academicyear;
     }
 
-    public String getStaffId() {
-        return staffId;
-    }
-    public void setStaffId(String staffId) {
-        this.staffId = staffId;
-    }
-
-    public String getDesignation() {
-        return designation;
-    }
-    public void setDesignation(String designation) {
-        this.designation = designation;
-    }
 
     public long getId() {
         return id;
@@ -126,11 +111,4 @@ public class User {
 
     @NotNull
     private String academicYear;
-
-    @NotNull
-    private String designation;
-
-    @NotNull
-    private String staffId;
-
 }

@@ -6,5 +6,6 @@ package com.sivserver.example.admission;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ApplicationSaleRepository extends CrudRepository<ApplicationSale, String> {
-    ApplicationSale findByapplno(String applno);
+    ApplicationSale findByApplno(String applno);
+    ApplicationSaleDetailProjection findOneByApplno(String applno);
 }

@@ -40,4 +40,8 @@ public class SivUtils {
             return null;
         }
     }
+
+//    public static Integer checkUserRole(String userRole){
+//        if(userRole.equals(""))
+//    }
 }
