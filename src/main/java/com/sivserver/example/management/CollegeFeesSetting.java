@@ -18,7 +18,6 @@ public class CollegeFeesSetting {
     public void setFeesSettingDate(Date feessettingdate) {
         this.feessettingdate = feessettingdate;
     }
-
     public String getBranchName() {
         return branchname;
     }

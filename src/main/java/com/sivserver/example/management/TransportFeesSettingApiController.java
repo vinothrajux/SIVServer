@@ -52,7 +52,6 @@ public class TransportFeesSettingApiController extends WebMvcConfigurerAdapter {
         transportfeessett.setAmount(amount);
         transportfeessett.setLoginUser(loginuser);
 
-
         busDetail.setBusNo(busno);
         busDetail.setDriverName(drivername);
         busDetail.setSeatNo(seatno);
