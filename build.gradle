@@ -31,6 +31,7 @@ dependencies {
 	compile group: 'org.springframework.session', name: 'spring-session-jdbc', version: '1.2.0.RC1'
 	compile("com.h2database:h2")
 	testCompile("junit:junit")
+	compile 'org.json:json:20090211'
 
 
 }

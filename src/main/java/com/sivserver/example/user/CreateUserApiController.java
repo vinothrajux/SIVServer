@@ -35,6 +35,7 @@ public class CreateUserApiController extends WebMvcConfigurerAdapter {
             @RequestParam (value="academicYear", required=false) String academicYear
     ) {
         User user = new User();
+
         user.setUserName(username);
         user.setPassword(password);
         user.setUserRole(userRole);
@@ -44,10 +45,11 @@ public class CreateUserApiController extends WebMvcConfigurerAdapter {
         user.setBranchCode(branchCode);
         user.setSemester(semester);
         user.setAcadamicYear(academicYear);
+        user.setDesignation(designation);
+        user.setAcadamicYear(academicYear);
+        user.setStaffId(staffID);
 
         userRepository.save(user);
-
-
         System.out.println(
                         "username:"+username+
                         ", password:"+password+
