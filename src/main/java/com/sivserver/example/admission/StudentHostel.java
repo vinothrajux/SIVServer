@@ -116,5 +116,4 @@ public class StudentHostel {
 
     @NotNull
     private String loginuser;
-
 }
