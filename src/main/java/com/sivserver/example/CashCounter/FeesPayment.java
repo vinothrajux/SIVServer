@@ -16,9 +16,7 @@ public class FeesPayment {
     }
     public void setDate(Date date) {this.date = date;}
 
-    public String getBillNo() {
-        return billno;
-    }
+    public String getBillNo() {return billno;}
     public void setBillNo(String billno) {
         this.billno = billno;
     }
