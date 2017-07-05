@@ -14,9 +14,7 @@ import javax.validation.constraints.NotNull;
 
 public class QuestionEntry {
 
-    public Integer getSNO(){
-        return sno;
-    }
+    public Integer getSNO(){return sno;}
     public void setSNO(Integer sno) {
         this.sno = sno;
     }
