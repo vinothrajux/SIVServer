@@ -12,6 +12,7 @@ import java.util.Date;
 /**
  * Created by Seetha on 19-Jun-17.
  */
+
 @RestController
 @RequestMapping("/api/v1/applicationsale")
 
