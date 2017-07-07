@@ -8,4 +8,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface BusDetailRepository extends CrudRepository<BusDetail, String> {
     BusDetail findByBusno(String busno);
+    BusDetailProjection findOneByBusno(String busno);
 }
