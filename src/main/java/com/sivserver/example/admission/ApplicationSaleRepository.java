@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ApplicationSaleRepository extends CrudRepository<ApplicationSale, String> {
     ApplicationSale findByApplno(String applno);
-    ApplicationSaleDetailProjection findOneByApplno(String applno);
+    ApplicationSaleProjection findOneByApplno(String applno);
 }

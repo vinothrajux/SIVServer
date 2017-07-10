@@ -36,38 +36,38 @@ public class ApplicationSale {
         this.applno = applno;
     }
 
-    public Date getSaleDate() {
+    public Date getSaledate() {
         return saledate;
     }
-    public void setSaleDate(Date saledate) {
+    public void setSaledate(Date saledate) {
         this.saledate = saledate;
     }
 
-    public String getAppFor() {
+    public String getAppfor() {
         return appfor;
     }
-    public void setAppFor(String appfor) {
+    public void setAppfor(String appfor) {
         this.appfor = appfor;
     }
 
-    public String getCandFirstName() {
+    public String getCandfirstname() {
         return candfirstname;
     }
-    public void setCandFirstName(String candfirstname) {
+    public void setCandfirstname(String candfirstname) {
         this.candfirstname = candfirstname;
     }
 
-    public String getCandMidName() {
+    public String getCandmiddlename() {
         return candmiddlename;
     }
-    public void setCandMidName(String candmiddlename) {
+    public void setCandmidlename(String candmiddlename) {
         this.candmiddlename = candmiddlename;
     }
 
-    public String getCandLastName() {
+    public String getCandlastname() {
         return candlastname;
     }
-    public void setCandLastName(String candlastname) {
+    public void setCandlastname(String candlastname) {
         this.candlastname = candlastname;
     }
 
@@ -78,141 +78,141 @@ public class ApplicationSale {
         this.gender = gender;
     }
 
-    public String getFatherName() {
+    public String getCandfathername() {
         return candfathername;
     }
-    public void setFatherName(String candfathername) {
+    public void setCandfathername(String candfathername) {
         this.candfathername = candfathername;
     }
 
-    public String getMotherName() {
+    public String getCandmothername() {
         return candmothername;
     }
-    public void setMotherName(String candmothername) {
+    public void setCandmothername(String candmothername) {
         this.candmothername = candmothername;
     }
 
-    public String getPreAdd1() {
+    public String getPresentaddress1() {
         return presentaddress1;
     }
-    public void setPreAdd1(String presentaddress1) {
+    public void setPresentaddress1(String presentaddress1) {
         this.presentaddress1 = presentaddress1;
     }
 
-    public String getPreAdd2() {
+    public String getPresentaddress2() {
         return presentaddress2;
     }
-    public void setPreAdd2(String presentaddress2) {
+    public void setPresentaddress2(String presentaddress2) {
         this.presentaddress2 = presentaddress2;
     }
 
-    public String getPreArea() {
+    public String getPresentarea() {
         return presentarea;
     }
-    public void setPreArea(String presentarea) {
+    public void setPresentarea(String presentarea) {
         this.presentarea = presentarea;
     }
 
-    public String getPrePin() {
+    public String getPrepin() {
         return presentpincode;
     }
-    public void setPrePin(String presentpincode) {
+    public void setPrepin(String presentpincode) {
         this.presentpincode = presentpincode;
     }
 
-    public String getPreState() {
+    public String getPrestate() {
         return presentstate;
     }
-    public void setPreState(String presentstate) {
+    public void setPrestate(String presentstate) {
         this.presentstate = presentstate;
     }
 
-    public String getPreMobno() {
+    public String getPremobno() {
         return presentmobileno;
     }
-    public void setPreMobno(String presentmobileno) {
+    public void setPremobno(String presentmobileno) {
         this.presentmobileno = presentmobileno;
     }
 
-    public String getPreAltMobno() {
+    public String getPrealtmobno() {
         return presentaltmobno;
     }
-    public void setPreAltMobno(String presentaltmobno) {
+    public void setPrealtmobno(String presentaltmobno) {
         this.presentaltmobno = presentaltmobno;}
 
-    public String getPreEmail() {
+    public String getPreemail() {
         return presentemail;
     }
-    public void setPreEmail(String presentemail) {
+    public void setPreemail(String presentemail) {
         this.presentemail = presentemail;
     }
 
-    public String getPreAltEmail() {
+    public String getPrealtemail() {
         return presentaltemail;
     }
-    public void setPreAltEmail(String presentaltemail) {
+    public void setPrealtemail(String presentaltemail) {
         this.presentaltemail = presentaltemail;
     }
 
-    public String getPerAdd1() {
+    public String getPeradd1() {
         return permanentaddress1;
     }
-    public void setPerAdd1(String permanentaddress1) {
+    public void setPeradd1(String permanentaddress1) {
         this.permanentaddress1 = permanentaddress1;
     }
 
-    public String getPerAdd2() {
+    public String getPeradd2() {
         return permanentaddress2;
     }
-    public void setPerAdd2(String permanentaddress2) {
+    public void setPeradd2(String permanentaddress2) {
         this.permanentaddress2 = permanentaddress2;
     }
 
-    public String getPerArea() {
+    public String getPerarea() {
         return permanentarea;
     }
-    public void setPerArea(String permanentarea) {
+    public void setPerarea(String permanentarea) {
         this.permanentarea = permanentarea;
     }
 
-    public String getPerPin() {
+    public String getPerpin() {
         return peramanentpincode;
     }
-    public void setPerPin(String peramanentpincode) {
+    public void setPerpin(String peramanentpincode) {
         this.peramanentpincode = peramanentpincode;
     }
 
-    public String getPerState() {
+    public String getPerstate() {
         return permanentstate;
     }
-    public void setPerState(String permanentstate) {
+    public void setPerstate(String permanentstate) {
         this.permanentstate = permanentstate;
     }
 
-    public String getPerMobno() {
+    public String getPermobno() {
         return permanentmobileno;
     }
-    public void setPerMobno(String permanentmobileno) {
+    public void setPermobno(String permanentmobileno) {
         this.permanentmobileno = permanentmobileno;
     }
 
-    public String getPerAltMobno() {
+    public String getPeraltmobno() {
         return permanentaltmobno;
     }
-    public void setPerAltMobno(String permanentaltmobno) {
+    public void setPeraltmobno(String permanentaltmobno) {
         this.permanentaltmobno = permanentaltmobno;}
 
-    public String getPerEmail() {
+    public String getPeremail() {
         return permanentemail;
     }
-    public void setPerEmail(String permanentemail) {
+    public void setPeremail(String permanentemail) {
         this.permanentemail = permanentemail;
     }
 
-    public String getPerAltEmail() {
+    public String getPeraltemail() {
         return permanentaltemail;
     }
-    public void setPerAltEmail(String permanentaltemail) {
+    public void setPeraltemail(String permanentaltemail) {
         this.permanentaltemail = permanentaltemail;
     }
 
@@ -223,24 +223,24 @@ public class ApplicationSale {
         this.qualified = qualified;
     }
 
-    public String getPreCour1() {
+    public String getPrecour1() {
         return prefferedcour1;
     }
-    public void setPreCour1(String prefferedcour1) {
+    public void setPrecour1(String prefferedcour1) {
         this.prefferedcour1 = prefferedcour1;
     }
 
-    public String getPreCour2() {
+    public String getPrecour2() {
         return prefferedcour2;
     }
-    public void setPreCour2(String prefferedcour2) {
+    public void setPrecour2(String prefferedcour2) {
         this.prefferedcour2 = prefferedcour2;
     }
 
-    public String getPreCour3() {
+    public String getPrecour3() {
         return prefferedcour3;
     }
-    public void setPreCour3(String prefferedcour3) {
+    public void setPrecour3(String prefferedcour3) {
         this.prefferedcour3 = prefferedcour3;
     }
 
@@ -251,24 +251,24 @@ public class ApplicationSale {
         this.willingtojoin = willingtojoin;
     }
 
-    public Date getProbDate() {
+    public Date getProbdate() {
         return followupdate;
     }
-    public void setProbDate(Date followupdate) {
+    public void setProbdate(Date followupdate) {
         this.followupdate = followupdate;
     }
 
-    public Integer getAppFee() {
+    public Integer getAppfee() {
         return applicationprice;
     }
-    public void setAppFee(Integer applicationprice) {
+    public void setAppfee(Integer applicationprice) {
         this.applicationprice = applicationprice;
     }
 
-    public String getAppFeeMode() {
+    public String getAppfeemode() {
         return applicationpaidmode;
     }
-    public void setAppFeeMode(String applicationpaidmode) {
+    public void setAppfeemode(String applicationpaidmode) {
         this.applicationpaidmode = applicationpaidmode;
     }
 
@@ -279,10 +279,10 @@ public class ApplicationSale {
         this.remarks = remarks;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 
