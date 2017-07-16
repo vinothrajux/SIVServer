@@ -171,7 +171,7 @@ public class AdmissionCounselling {
     @NotNull
     private String loginuser;
 
-   @OneToMany(mappedBy="applicationno")
-   private Set<ApplicationSale> appsale;
+ //  @OneToMany(mappedBy="applicationno")
+ //  private Set<ApplicationSale> appsale;
 
 }

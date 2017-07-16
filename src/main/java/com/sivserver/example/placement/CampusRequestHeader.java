@@ -14,59 +14,59 @@ import java.util.Date;
 
 public class CampusRequestHeader {
 
-    public Date getEntryDate() {
+    public Date getEntrydate() {
         return entrydate;
     }
 
-    public void setEntryDate(Date entrydate) {
+    public void setEntrydate(Date entrydate) {
         this.entrydate = entrydate;
     }
 
-    public String getRequestId() {
-        return requestId;
+    public String getRequestid() {
+        return requestid;
     }
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
+    public void setRequestid(String requestid) {
+        this.requestid = requestid;
     }
 
-    public String getCorporateId() {
+    public String getCorporateid() {
         return corporateid;
     }
 
-    public void setCorporateId(String corporateid) {
+    public void setCorporateid(String corporateid) {
         this.corporateid = corporateid;
     }
 
-    public String getRequestType() {
-        return requestType;
+    public String getRequesttype() {
+        return requesttype;
     }
 
-    public void setRequestType(String requestType) {
-        this.requestType = requestType;
+    public void setRequesttype(String requesttype) {
+        this.requesttype = requesttype;
     }
 
-    public Date getCampusReqFromDate() {
-        return campusreqfromDate;
+    public Date getCampusreqfromdate() {
+        return campusreqfromdate;
     }
 
-    public void setCampusReqFromDate(Date campusreqfromDate) {
-        this.campusreqfromDate = campusreqfromDate;
+    public void setCampusreqfromdate(Date campusreqfromdate) {
+        this.campusreqfromdate = campusreqfromdate;
     }
 
-    public Date getCampusReqToDate() {
-        return campusreqtoDate;
+    public Date getCampusreqtodate() {
+        return campusreqtodate;
     }
 
-    public void setCampusReqToDate(Date campusreqtoDate) {
-        this.campusreqtoDate = campusreqtoDate;
+    public void setCampusreqtodate(Date campusreqtodate) {
+        this.campusreqtodate = campusreqtodate;
     }
 
-    public String getAcademicYear() {
+    public String getAcademicyear() {
         return academicyear;
     }
 
-    public void setAcademicYear(String academicyear) {
+    public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
     }
 
@@ -78,19 +78,19 @@ public class CampusRequestHeader {
         this.remarks = remarks;
     }
 
-    public Date getFollowUpDate() {
+    public Date getFollowupdate() {
         return followupdate;
     }
 
-    public void setFollowUpDate(Date followupdate) {
+    public void setFollowupdate(Date followupdate) {
         this.followupdate = followupdate;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
 
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 
@@ -98,19 +98,19 @@ public class CampusRequestHeader {
     private Date entrydate;
 
     @Id
-    private String requestId;
+    private String requestid;
 
     @NotNull
     private String corporateid;
 
     @NotNull
-    private String requestType;
+    private String requesttype;
 
     @NotNull
-    private Date campusreqfromDate;
+    private Date campusreqfromdate;
 
     @NotNull
-    private Date campusreqtoDate;
+    private Date campusreqtodate;
 
     @NotNull
     private String academicyear;

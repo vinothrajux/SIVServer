@@ -414,8 +414,8 @@ public class ApplicationSale {
     @NotNull
     private String loginuser;
 
-    @ManyToOne
-    @JoinColumn(name="application_no")
-    private AdmissionCounselling applicationno;
+//    @ManyToOne
+//    @JoinColumn(name="application_no")
+//    private AdmissionCounselling applicationno;
 
 }

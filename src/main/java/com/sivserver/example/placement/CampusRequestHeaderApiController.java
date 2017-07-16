@@ -49,16 +49,16 @@ public class CampusRequestHeaderApiController extends WebMvcConfigurerAdapter {
 
     ) {
         CampusRequestHeader campReqHeader = new CampusRequestHeader();
-        campReqHeader.setEntryDate(entrydate);
-        campReqHeader.setRequestId(requestId);
-        campReqHeader.setCorporateId(corporateid);
-        campReqHeader.setRequestType(requestType);
-        campReqHeader.setCampusReqFromDate(campusreqfromDate);
-        campReqHeader.setCampusReqToDate(campusreqtoDate);
-        campReqHeader.setAcademicYear(academicyear);
+        campReqHeader.setEntrydate(entrydate);
+        campReqHeader.setRequestid(requestId);
+        campReqHeader.setCorporateid(corporateid);
+        campReqHeader.setRequesttype(requestType);
+        campReqHeader.setCampusreqfromdate(campusreqfromDate);
+        campReqHeader.setCampusreqtodate(campusreqtoDate);
+        campReqHeader.setAcademicyear(academicyear);
         campReqHeader.setRemarks(remarks);
-        campReqHeader.setFollowUpDate(followupdate);
-        campReqHeader.setLoginUser(loginuser);
+        campReqHeader.setFollowupdate(followupdate);
+        campReqHeader.setLoginuser(loginuser);
 
 
         campusRequestHeaderRepository.save(campReqHeader);
