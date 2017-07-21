@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http.
                 authorizeRequests()
-                .antMatchers("/", "/login", "/api/v1/**", "/users/**").permitAll() // home or login is available for every one.
+                .antMatchers("/", "/login", "/api/v1/**", "/users/**", "/test").permitAll() // home or login is available for every one.
                 /*.antMatchers("/users*").hasAuthority(UserType.ADMIN.name())*/ // Only admin can manage user
                 //.antMatchers("/events*").hasAnyAuthority(UserType.ADMIN.name(), UserType.EVENT_MANAGER.name()) // Events can be managed by admin, event manager
                 //.antMatchers("/songs*").hasAnyAuthority(UserType.ADMIN.name(), UserType.EVENT_MANAGER.name(), UserType.SONG_MANAGER.name()) // Songs can be managed by admin, song_manager, event_manager
@@ -53,8 +53,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 jdbcAuthentication()
                 .dataSource(dataSource) /*What database should spring refer, autowired to application.properties's data source*/
                 .passwordEncoder(new SIVPasswordEncoder()) /*ChoirBook custom password encoder, using sha 512 hashing*/
-                .usersByUsernameQuery("select username as username, password, 1 as enabled from users_student where username=?") /*Spring is expecting 3 fields, so using email, password, enabled*/
-                .authoritiesByUsernameQuery("select username, password from users_student where username=?");/*Again spring is expecting two fields, so using email and role*/
+                .usersByUsernameQuery("select username as username, password, 1 as enabled from users where username=?") /*Spring is expecting 3 fields, so using email, password, enabled*/
+                .authoritiesByUsernameQuery("select username, password from users where username=?");/*Again spring is expecting two fields, so using email and role*/
 
     }
 }

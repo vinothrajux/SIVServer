@@ -20,18 +20,11 @@ public class AdmissionCounsellingApiController extends WebMvcConfigurerAdapter {
     @Autowired
     private AdmissionCounsellingRepository admissioncounsellingRepository;
 
-//    @Autowired
-//    private ApplicationSaleRepository applicationSaleRepository;
-//
-//
-//    @RequestMapping(method = RequestMethod.GET, value="/getApplcationDetail")
-//    public ApplicationSaleDetailProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
-//        ApplicationSaleDetailProjection applicationDetail = applicationSaleRepository.findOneByApplno(applicationNumber);
-//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-//
-//        return applicationDetail;
-//
-//    }
+    @Autowired
+    private ApplicationSaleRepository applicationSaleRepository;
+
+
+
 
 
     @RequestMapping(method = RequestMethod.POST)
@@ -76,5 +69,14 @@ public class AdmissionCounsellingApiController extends WebMvcConfigurerAdapter {
 
     }
 
+
+    @RequestMapping(method = RequestMethod.POST, value="/getApplcationDetail")
+    public ApplicationSaleProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
+        ApplicationSaleProjection applicationDetail = applicationSaleRepository.findOneByApplno(applicationNumber);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getApplicationDetail");
+        return applicationDetail;
+
+    }
 
 }
