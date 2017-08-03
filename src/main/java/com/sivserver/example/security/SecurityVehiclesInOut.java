@@ -13,6 +13,14 @@ import java.util.Date;
 @Table(name = "securityvehiclesinout")
 
 public class SecurityVehiclesInOut {
+
+    public String getVehiclesinoutid(){
+        return vehiclesinoutid;
+    }
+    public void setVehiclesinoutid(String vehiclesinoutid) {
+        this.vehiclesinoutid = vehiclesinoutid;
+    }
+
     public Date getCurrentdate(){
         return currentdate;
     }
@@ -83,6 +91,9 @@ public class SecurityVehiclesInOut {
         this.loginuser = loginuser;
     }
 
+    @Id
+    private String vehiclesinoutid;
+
     @NotNull
     private Date currentdate;
 
@@ -92,7 +103,7 @@ public class SecurityVehiclesInOut {
     @NotNull
     private String vehicletype;
 
-    @Id
+    @NotNull
     private String staffid;
 
     @NotNull

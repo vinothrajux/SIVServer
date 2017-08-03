@@ -113,106 +113,106 @@ public class ApplicationSale {
         this.presentarea = presentarea;
     }
 
-    public String getPrepin() {
+    public String getPresentpincode() {
         return presentpincode;
     }
-    public void setPrepin(String presentpincode) {
+    public void setPresentpincode(String presentpincode) {
         this.presentpincode = presentpincode;
     }
 
-    public String getPrestate() {
+    public String getPresentstate() {
         return presentstate;
     }
-    public void setPrestate(String presentstate) {
+    public void setPresentstate(String presentstate) {
         this.presentstate = presentstate;
     }
 
-    public String getPremobno() {
+    public String getPresentmobileno() {
         return presentmobileno;
     }
-    public void setPremobno(String presentmobileno) {
+    public void setPresentmobileno(String presentmobileno) {
         this.presentmobileno = presentmobileno;
     }
 
-    public String getPrealtmobno() {
+    public String getPresentaltmobno() {
         return presentaltmobno;
     }
-    public void setPrealtmobno(String presentaltmobno) {
+    public void setPresentaltmobno(String presentaltmobno) {
         this.presentaltmobno = presentaltmobno;}
 
-    public String getPreemail() {
+    public String getPresentemail() {
         return presentemail;
     }
-    public void setPreemail(String presentemail) {
+    public void setPresentemail(String presentemail) {
         this.presentemail = presentemail;
     }
 
-    public String getPrealtemail() {
+    public String getPresentaltemail() {
         return presentaltemail;
     }
-    public void setPrealtemail(String presentaltemail) {
+    public void setPresentaltemail(String presentaltemail) {
         this.presentaltemail = presentaltemail;
     }
 
-    public String getPeradd1() {
+    public String getPermanentaddress1() {
         return permanentaddress1;
     }
-    public void setPeradd1(String permanentaddress1) {
+    public void setPermanentaddress1(String permanentaddress1) {
         this.permanentaddress1 = permanentaddress1;
     }
 
-    public String getPeradd2() {
+    public String getPermanentaddress2() {
         return permanentaddress2;
     }
-    public void setPeradd2(String permanentaddress2) {
+    public void setPermanentaddress2(String permanentaddress2) {
         this.permanentaddress2 = permanentaddress2;
     }
 
-    public String getPerarea() {
+    public String getPermanentarea() {
         return permanentarea;
     }
-    public void setPerarea(String permanentarea) {
+    public void setPermanentarea(String permanentarea) {
         this.permanentarea = permanentarea;
     }
 
-    public String getPerpin() {
-        return peramanentpincode;
+    public String getPermanentpincode() {
+        return permanentpincode;
     }
-    public void setPerpin(String peramanentpincode) {
-        this.peramanentpincode = peramanentpincode;
+    public void setPermanentpincode(String permanentpincode) {
+        this.permanentpincode = permanentpincode;
     }
 
-    public String getPerstate() {
+    public String getPermanentstate() {
         return permanentstate;
     }
-    public void setPerstate(String permanentstate) {
+    public void setPermanentstate(String permanentstate) {
         this.permanentstate = permanentstate;
     }
 
-    public String getPermobno() {
+    public String getPermanentmobileno() {
         return permanentmobileno;
     }
-    public void setPermobno(String permanentmobileno) {
+    public void setPermanentmobileno(String permanentmobileno) {
         this.permanentmobileno = permanentmobileno;
     }
 
-    public String getPeraltmobno() {
+    public String getPermanentaltmobno() {
         return permanentaltmobno;
     }
-    public void setPeraltmobno(String permanentaltmobno) {
+    public void setPermanentaltmobno(String permanentaltmobno) {
         this.permanentaltmobno = permanentaltmobno;}
 
-    public String getPeremail() {
+    public String getPermanentemail() {
         return permanentemail;
     }
-    public void setPeremail(String permanentemail) {
+    public void setPermanentemail(String permanentemail) {
         this.permanentemail = permanentemail;
     }
 
-    public String getPeraltemail() {
+    public String getPermanentaltemail() {
         return permanentaltemail;
     }
-    public void setPeraltemail(String permanentaltemail) {
+    public void setPermanentaltemail(String permanentaltemail) {
         this.permanentaltemail = permanentaltemail;
     }
 
@@ -223,52 +223,52 @@ public class ApplicationSale {
         this.qualified = qualified;
     }
 
-    public String getPrecour1() {
+    public String getPrefferedcour1() {
         return prefferedcour1;
     }
-    public void setPrecour1(String prefferedcour1) {
+    public void setPrefferedcour1(String prefferedcour1) {
         this.prefferedcour1 = prefferedcour1;
     }
 
-    public String getPrecour2() {
+    public String getPrefferedcour2() {
         return prefferedcour2;
     }
-    public void setPrecour2(String prefferedcour2) {
+    public void setPrefferedcour2(String prefferedcour2) {
         this.prefferedcour2 = prefferedcour2;
     }
 
-    public String getPrecour3() {
+    public String getPrefferedcour3() {
         return prefferedcour3;
     }
-    public void setPrecour3(String prefferedcour3) {
+    public void setPrefferedcour3(String prefferedcour3) {
         this.prefferedcour3 = prefferedcour3;
     }
 
-    public String getWillingness() {
+    public String getWillingtojoin() {
         return willingtojoin;
     }
-    public void setWillingness(String willingtojoin) {
+    public void setWillingtojoin(String willingtojoin) {
         this.willingtojoin = willingtojoin;
     }
 
-    public Date getProbdate() {
+    public Date getFollowupdate() {
         return followupdate;
     }
-    public void setProbdate(Date followupdate) {
+    public void setFollowupdate(Date followupdate) {
         this.followupdate = followupdate;
     }
 
-    public Integer getAppfee() {
+    public Integer getApplicationprice() {
         return applicationprice;
     }
-    public void setAppfee(Integer applicationprice) {
+    public void setApplicationprice(Integer applicationprice) {
         this.applicationprice = applicationprice;
     }
 
-    public String getAppfeemode() {
+    public String getApplicationpaidmode() {
         return applicationpaidmode;
     }
-    public void setAppfeemode(String applicationpaidmode) {
+    public void setApplicationpaidmode(String applicationpaidmode) {
         this.applicationpaidmode = applicationpaidmode;
     }
 
@@ -367,7 +367,7 @@ public class ApplicationSale {
     private String permanentarea;
 
     @NotNull
-    private String peramanentpincode;
+    private String permanentpincode;
 
     @NotNull
     private String permanentstate;
