@@ -39,4 +39,5 @@ public interface ApplicationSaleProjection {
     Integer getApplicationprice();
     String getApplicationpaidmode();
     String getRemarks();
+    String getGender();
 }
