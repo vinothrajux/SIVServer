@@ -7,18 +7,17 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
- * Created by Seetha on 02-Aug-17.
+ * Created by GBCorp on 03/08/2017.
  */
 @Entity
-@Table(name = "securityvisitorpass")
+@Table(name = "securitymaterialinoutheader")
 
-public class SecurityVisitorPass {
-
-    public String getvisitorid(){
-        return visitorid;
+public class SecurityMaterialInOutHeader {
+    public String getMatgatepassid(){
+        return matgatepassid;
     }
-    public void setvisitorid(String visitorid) {
-        this.visitorid = visitorid;
+    public void setMatgatepassid(String matgatepassid) {
+        this.matgatepassid = matgatepassid;
     }
 
     public Date getCurrentdate(){
@@ -28,32 +27,18 @@ public class SecurityVisitorPass {
         this.currentdate = currentdate;
     }
 
-    public String getVisitorname(){
-        return visitorname;
+    public String getVehicleno(){
+        return vehicleno;
     }
-    public void setVisitorname(String visitorname) {
-        this.visitorname = visitorname;
-    }
-
-    public Integer getNoofpersons(){
-        return noofpersons;
-    }
-    public void setNoofpersons(Integer noofpersons) {
-        this.noofpersons = noofpersons;
+    public void setVehicleno(String vehicleno) {
+        this.vehicleno = vehicleno;
     }
 
-    public String getVisitortransportmode(){
-        return visitortransportmode;
+    public String getVehicletype(){
+        return vehicletype;
     }
-    public void setVisitortransportmode(String visitortransportmode) {
-        this.visitortransportmode = visitortransportmode;
-    }
-
-    public String getPersontomeet(){
-        return persontomeet;
-    }
-    public void setPersontomeet(String persontomeet) {
-        this.persontomeet = persontomeet;
+    public void setVehicletype(String vehicletype) {
+        this.vehicletype = vehicletype;
     }
 
     public String getStaffid(){
@@ -69,28 +54,6 @@ public class SecurityVisitorPass {
     public void setName(String name) {
         this.name = name;
     }
-
-    public String getBranchCode() {
-        return branchcode;
-    }
-    public void setBranchCode(String branchcode) {
-        this.branchcode = branchcode;
-    }
-
-    public String getBatch() {
-        return batch;
-    }
-    public void setBatch(String batch) {
-        this.batch = batch;
-    }
-
-    public Integer getSemester() {
-        return semester;
-    }
-    public void setSemester(Integer semester) {
-        this.semester = semester;
-    }
-
 
     public String getAcadyear() {
         return academicyear;
@@ -128,37 +91,22 @@ public class SecurityVisitorPass {
     }
 
     @Id
-    private String visitorid;
+    private String matgatepassid;
 
     @NotNull
     private Date currentdate;
 
     @NotNull
-    private String visitorname;
+    private String vehicleno;
 
     @NotNull
-    private Integer noofpersons;
-
-    @NotNull
-    private String visitortransportmode;
-
-    @NotNull
-    private String persontomeet;
+    private String vehicletype;
 
     @NotNull
     private String staffid;
 
     @NotNull
     private String name;
-
-    @NotNull
-    private String branchcode;
-
-    @NotNull
-    private String batch;
-
-    @NotNull
-    private Integer semester;
 
     @NotNull
     private String academicyear;

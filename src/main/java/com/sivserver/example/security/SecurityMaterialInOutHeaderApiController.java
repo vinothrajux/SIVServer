@@ -10,14 +10,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import java.util.Date;
 
 /**
- * Created by Seetha on 02-Aug-17.
+ * Created by GBCorp on 03/08/2017.
  */
 @RestController
-@RequestMapping("/api/v1/securityvehiclesinout")
+@RequestMapping("/api/v1/securitymaterialinoutheader")
 
-public class SecurityVehilcesInOutApiController extends WebMvcConfigurerAdapter {
+public class SecurityMaterialInOutHeaderApiController extends WebMvcConfigurerAdapter {
     @Autowired
-    private SecurityVehiclesInOutRepository securityVehiclesInOutRepository;
+    private SecurityMaterialInOutHeaderRepository securityMaterialInOutHeaderRepository;
 
 //    @Autowired
 //    private ApplicationSaleRepository applicationSaleRepository;
@@ -34,8 +34,8 @@ public class SecurityVehilcesInOutApiController extends WebMvcConfigurerAdapter 
 
 
     @RequestMapping(method = RequestMethod.POST)
-    public void securityVehInOut(
-            @RequestParam(value ="vehiclesinoutid", required=false) String vehiclesinoutid,
+    public void securityMatInOutHead(
+            @RequestParam(value ="matgatepassid", required=false) String matgatepassid,
             @RequestParam(value ="currentdate", required=false) Date currentdate,
             @RequestParam(value ="vehicleno", required=false) String vehicleno,
             @RequestParam(value ="vehicletype", required=false) String vehicletype,
@@ -47,20 +47,20 @@ public class SecurityVehilcesInOutApiController extends WebMvcConfigurerAdapter 
             @RequestParam (value="timeout", required=false) String timeout,
             @RequestParam (value="loginuser", required=false) String loginuser
 
-                ) {
-        SecurityVehiclesInOut secVehPass = new SecurityVehiclesInOut();
-        secVehPass.setVehiclesinoutid(vehiclesinoutid);
-        secVehPass.setCurrentdate(currentdate);
-        secVehPass.setVehicleno(vehicleno);
-        secVehPass.setVehicletype(vehicletype);
-        secVehPass.setStaffid(staffid);
-        secVehPass.setName(name);
-        secVehPass.setAcadyear(academicyear);
-        secVehPass.setReason(reason);
-        secVehPass.setTimein(timein);
-        secVehPass.settimeout(timeout);
-        secVehPass.setLoginUser(loginuser);
-        securityVehiclesInOutRepository.save(secVehPass);
+    ) {
+        SecurityMaterialInOutHeader secMatPassHead = new SecurityMaterialInOutHeader();
+        secMatPassHead.setMatgatepassid(matgatepassid);
+        secMatPassHead.setCurrentdate(currentdate);
+        secMatPassHead.setVehicleno(vehicleno);
+        secMatPassHead.setVehicletype(vehicletype);
+        secMatPassHead.setStaffid(staffid);
+        secMatPassHead.setName(name);
+        secMatPassHead.setAcadyear(academicyear);
+        secMatPassHead.setReason(reason);
+        secMatPassHead.setTimein(timein);
+        secMatPassHead.settimeout(timeout);
+        secMatPassHead.setLoginUser(loginuser);
+        securityMaterialInOutHeaderRepository.save(secMatPassHead);
 
 
 

@@ -7,18 +7,17 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
- * Created by Seetha on 02-Aug-17.
+ * Created by GBCorp on 03/08/2017.
  */
 @Entity
-@Table(name = "securityvisitorpass")
+@Table(name = "securitylatecomers")
 
-public class SecurityVisitorPass {
-
-    public String getvisitorid(){
-        return visitorid;
+public class SecurityLateComers {
+    public String getLatecomeid(){
+        return latecomeid;
     }
-    public void setvisitorid(String visitorid) {
-        this.visitorid = visitorid;
+    public void setLatecomeid(String latecomeid) {
+        this.latecomeid = latecomeid;
     }
 
     public Date getCurrentdate(){
@@ -28,46 +27,18 @@ public class SecurityVisitorPass {
         this.currentdate = currentdate;
     }
 
-    public String getVisitorname(){
-        return visitorname;
+    public String getTypeofperson(){
+        return typeofperson;
     }
-    public void setVisitorname(String visitorname) {
-        this.visitorname = visitorname;
-    }
-
-    public Integer getNoofpersons(){
-        return noofpersons;
-    }
-    public void setNoofpersons(Integer noofpersons) {
-        this.noofpersons = noofpersons;
+    public void setTypeofperson(String typeofperson) {
+        this.typeofperson = typeofperson;
     }
 
-    public String getVisitortransportmode(){
-        return visitortransportmode;
+    public String getRegno(){
+        return registerno;
     }
-    public void setVisitortransportmode(String visitortransportmode) {
-        this.visitortransportmode = visitortransportmode;
-    }
-
-    public String getPersontomeet(){
-        return persontomeet;
-    }
-    public void setPersontomeet(String persontomeet) {
-        this.persontomeet = persontomeet;
-    }
-
-    public String getStaffid(){
-        return staffid;
-    }
-    public void setStaffid(String staffid) {
-        this.staffid = staffid;
-    }
-
-    public String getName(){
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
+    public void setRegno(String registerno) {
+        this.registerno = registerno;
     }
 
     public String getBranchCode() {
@@ -99,6 +70,20 @@ public class SecurityVisitorPass {
         this.academicyear = academicyear;
     }
 
+    public Integer getNooftimesmonth() {
+        return nooftimesmonth;
+    }
+    public void setNooftimesmonth(Integer nooftimesmonth) {
+        this.nooftimesmonth = nooftimesmonth;
+    }
+
+    public Integer getNooftimesoverall() {
+        return nooftimesoverall;
+    }
+    public void setNooftimesoverall(Integer nooftimesoverall) {
+        this.nooftimesoverall = nooftimesoverall;
+    }
+
     public String getReason() {
         return reason;
     }
@@ -113,13 +98,6 @@ public class SecurityVisitorPass {
         this.timein = timein;
     }
 
-    public String gettimeout() {
-        return timeout;
-    }
-    public void settimeout(String timeout) {
-        this.timeout = timeout;
-    }
-
     public String getLoginUser() {
         return loginuser;
     }
@@ -128,28 +106,16 @@ public class SecurityVisitorPass {
     }
 
     @Id
-    private String visitorid;
+    private String latecomeid;
 
     @NotNull
     private Date currentdate;
 
     @NotNull
-    private String visitorname;
+    private String typeofperson;
 
     @NotNull
-    private Integer noofpersons;
-
-    @NotNull
-    private String visitortransportmode;
-
-    @NotNull
-    private String persontomeet;
-
-    @NotNull
-    private String staffid;
-
-    @NotNull
-    private String name;
+    private String registerno;
 
     @NotNull
     private String branchcode;
@@ -164,14 +130,16 @@ public class SecurityVisitorPass {
     private String academicyear;
 
     @NotNull
+    private Integer nooftimesmonth;
+
+    @NotNull
+    private Integer nooftimesoverall;
+
+    @NotNull
     private String reason;
 
     @NotNull
     private String timein;
-
-    @NotNull
-    private String timeout;
-
 
     @NotNull
     private String loginuser;

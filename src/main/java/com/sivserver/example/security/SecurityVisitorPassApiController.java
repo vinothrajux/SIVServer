@@ -37,6 +37,7 @@ public class SecurityVisitorPassApiController extends WebMvcConfigurerAdapter {
 
     @RequestMapping(method = RequestMethod.POST)
     public void securityVisPass(
+            @RequestParam(value ="visitorid", required=false) String visitorid,
             @RequestParam(value ="currentdate", required=false) Date currentdate,
             @RequestParam(value ="visitorname", required=false) String visitorname,
             @RequestParam(value ="noofpersons", required=false) Integer noofpersons,
@@ -56,6 +57,7 @@ public class SecurityVisitorPassApiController extends WebMvcConfigurerAdapter {
 
     ) {
         SecurityVisitorPass secVisPass = new SecurityVisitorPass();
+        secVisPass.setvisitorid(visitorid);
         secVisPass.setCurrentdate(currentdate);
         secVisPass.setVisitorname(visitorname);
         secVisPass.setNoofpersons(noofpersons);
