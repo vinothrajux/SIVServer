@@ -45,12 +45,12 @@ public class StudentFoodApiController extends WebMvcConfigurerAdapter {
         StudentFood studfood = new StudentFood();
         studfood.setRegno(regno);
         studfood.setBranch(branch);
-        studfood.setBranchCode(branchcode);
+        studfood.setBranchcode(branchcode);
         studfood.setSemester(semester);
-        studfood.setAcadYear(academicYear);
-        studfood.setFoodType(foodtype);
-        studfood.setFoodFees(foodfees);
-        studfood.setLoginUser(loginuser);
+        studfood.setAcadyear(academicYear);
+        studfood.setFoodtype(foodtype);
+        studfood.setFoodfees(foodfees);
+        studfood.setLoginuser(loginuser);
 
         studentFoodRepository.save(studfood);
 

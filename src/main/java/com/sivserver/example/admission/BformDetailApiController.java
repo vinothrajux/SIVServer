@@ -32,8 +32,8 @@ public class BformDetailApiController extends WebMvcConfigurerAdapter {
             @RequestParam (value="percentage", required=false) Long percentage
     ) {
         BformDetail bfromdet = new BformDetail();
-        bfromdet.setApplicationNo(applicationno);
-        bfromdet.setPhotoId(photoid);
+        bfromdet.setApplicationno(applicationno);
+        bfromdet.setPhotoid(photoid);
         bfromdet.setSubject1(subject1);
         bfromdet.setSubject2(subject2);
         bfromdet.setSubect3(subject3);

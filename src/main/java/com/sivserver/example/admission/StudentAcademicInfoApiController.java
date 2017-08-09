@@ -42,12 +42,12 @@ public class StudentAcademicInfoApiController extends WebMvcConfigurerAdapter {
         studentacademicinfo.setReligion(religion);
         studentacademicinfo.setCaste(caste);
         studentacademicinfo.setNational(national);
-        studentacademicinfo.setBloodGroup(bloodgroup);
-        studentacademicinfo.setDurationFrom(durationfrom);
-        studentacademicinfo.setDurationTo(durationto);
-        studentacademicinfo.setAdmittedDate(admitteddate);
+        studentacademicinfo.setBloodgroup(bloodgroup);
+        studentacademicinfo.setDurationfrom(durationfrom);
+        studentacademicinfo.setDurationto(durationto);
+        studentacademicinfo.setAdmitteddate(admitteddate);
         studentacademicinfo.setAacademicyear(academicyear);
-        studentacademicinfo.setLoginUser(loginuser);
+        studentacademicinfo.setLoginuser(loginuser);
 
 
 

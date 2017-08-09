@@ -47,21 +47,21 @@ public class AdmissionCounsellingApiController extends WebMvcConfigurerAdapter {
 
     ) {
         AdmissionCounselling admcouns = new AdmissionCounselling();
-        admcouns.setAdmissionType(admissiontype);
+        admcouns.setAdmissiontype(admissiontype);
         admcouns.setApplno(applno);
-        admcouns.setCounsellingDate(counsellingdate);
-        admcouns.setAllotedCourse(allotedcourse);
-        admcouns.setBranchCode(branchcode);
+        admcouns.setCounsellingdate(counsellingdate);
+        admcouns.setAllotedcourse(allotedcourse);
+        admcouns.setBranchcode(branchcode);
         admcouns.setTransport(transport);
-        admcouns.setTransportStage(transportstage);
+        admcouns.setTransportstage(transportstage);
         admcouns.setHostel(hostel);
         admcouns.setFood(food);
-        admcouns.setCounsellingStatus(counsellingstatus);
-        admcouns.setAdmissionNo(admissionno);
-        admcouns.setTotalFees(totalfees);
-        admcouns.setFollowupDate(followupdate);
+        admcouns.setCounsellingstatus(counsellingstatus);
+        admcouns.setAdmissionno(admissionno);
+        admcouns.setTotalfees(totalfees);
+        admcouns.setFollowupdate(followupdate);
         admcouns.setRemarks(remarks);
-        admcouns.setLoginUser(loginuser);
+        admcouns.setLoginuser(loginuser);
 
         admissioncounsellingRepository.save(admcouns);
 

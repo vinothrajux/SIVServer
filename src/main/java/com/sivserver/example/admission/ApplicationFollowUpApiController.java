@@ -47,16 +47,16 @@ public class ApplicationFollowUpApiController extends WebMvcConfigurerAdapter {
             @RequestParam (value="loginuser", required=false) String loginuser
     ) {
         ApplicationFollowUp applfollowup = new ApplicationFollowUp();
-        applfollowup.setCurrentDate(currentdate);
-        applfollowup.setEnquiryNo(enquiryNo);
-        applfollowup.setApplicationNo(applicationno);
-        applfollowup.setCandidateName(candidatename);
-        applfollowup.setFatherName(fathername);
-        applfollowup.setMobileNo(mobileno);
-        applfollowup.setAlternativeMobileNo(alternativeMobileno);
-        applfollowup.setPreferredCourse(preferredCourse);
+        applfollowup.setCurrentdate(currentdate);
+        applfollowup.setEnquiryno(enquiryNo);
+        applfollowup.setApplicationno(applicationno);
+        applfollowup.setCandidatename(candidatename);
+        applfollowup.setFathername(fathername);
+        applfollowup.setMobileno(mobileno);
+        applfollowup.setAlternativemobileno(alternativeMobileno);
+        applfollowup.setPreferredcourse(preferredCourse);
         applfollowup.setWillingness(willingness);
-        applfollowup.setLoginUser(loginuser);
+        applfollowup.setLoginuser(loginuser);
 
         applicationFollowUpRepository.save(applfollowup);
 

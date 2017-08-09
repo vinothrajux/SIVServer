@@ -46,25 +46,25 @@ import javax.persistence.Table;
             this.national = national;
         }
 
-        public String getBloodGroup() {
+        public String getBloodgroup() {
             return bloodgroup;
         }
-        public void setBloodGroup(String bloodgroup) {
+        public void setBloodgroup(String bloodgroup) {
             this.bloodgroup = bloodgroup;
         }
 
-        public String getDurationFrom() {            return durationfrom;        }
-        public void setDurationFrom(String durationfrom) {            this.durationfrom = durationfrom;        }
+        public String getDurationfrom() {return durationfrom;}
+        public void setDurationfrom(String durationfrom) {this.durationfrom = durationfrom;}
 
-        public String getDurationTo() {
+        public String getDurationto() {
             return durationto;
         }
-        public void setDurationTo(String durationto) {      this.durationto = durationto;        }
+        public void setDurationto(String durationto) {this.durationto = durationto;}
 
-        public Date getAdmittedDate() {
+        public Date getAdmitteddate() {
             return admitteddate;
         }
-        public void setAdmittedDate(Date admitteddate) {         this.admitteddate = admitteddate;        }
+        public void setAdmitteddate(Date admitteddate) {         this.admitteddate = admitteddate;        }
 
         public String getAacademicyear() {
             return academicyear;
@@ -73,10 +73,10 @@ import javax.persistence.Table;
             this.academicyear = academicyear;
         }
 
-        public String getLoginUser() {
+        public String getLoginuser() {
             return loginuser;
         }
-        public void setLoginUser(String loginuser) {
+        public void setLoginuser(String loginuser) {
             this.loginuser = loginuser;
         }
 

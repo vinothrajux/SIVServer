@@ -12,10 +12,10 @@ import java.util.Date;
 @Entity
 @Table(name = "bformheader")
 public class BformHeader {
-    public Integer getSlNo(){
+    public Integer getSlno(){
         return slno;
     }
-    public void setSlNo(Integer slno) {
+    public void setSlno(Integer slno) {
         this.slno = slno;
     }
 
@@ -26,10 +26,10 @@ public class BformHeader {
         this.category = category;
     }
 
-    public String getAllotedQuota(){
+    public String getAllotedquota(){
         return allotedquota;
     }
-    public void setAllotedQuota (String allotedquota) {
+    public void setAllotedquota (String allotedquota) {
         this.allotedquota = allotedquota;
     }
 
@@ -48,10 +48,10 @@ public class BformHeader {
         this.gender = gender;
     }
 
-    public Date getDateofBirth() {
+    public Date getDateofbirth() {
         return dob;
     }
-    public void setDateofBirth(Date dob) {
+    public void setDateofbirth(Date dob) {
         this.dob = dob;
     }
 
@@ -71,24 +71,24 @@ public class BformHeader {
     }
 
 
-    public String getQualifiedExam() {
+    public String getQualifiedexam() {
         return qualifiedexam;
     }
-    public void setQualifiedExam(String qualifiedexam) {
+    public void setQualifiedexam(String qualifiedexam) {
         this.qualifiedexam = qualifiedexam;
     }
 
-    public String getYearofPass() {
+    public String getYearofpass() {
         return yearofpass;
     }
-    public void setYearofPass(String yearofpass) {
+    public void setYearofpass(String yearofpass) {
         this.yearofpass = yearofpass;
     }
 
-    public String getPhotoId() {
+    public String getPhotoid() {
         return photoid;
     }
-    public void setPhotoId(String photoid) {
+    public void setPhotoid(String photoid) {
         this.photoid = photoid;
     }
 
@@ -113,17 +113,17 @@ public class BformHeader {
         this.state = state;
     }
 
-    public String getAcadYear() {
+    public String getAcadyear() {
         return acadyear;
     }
-    public void setAcadYear(String acadyear) {
+    public void setAcadyear(String acadyear) {
         this.acadyear = acadyear;
     }
 
-    public String getApplicationNo() {
+    public String getApplicationno() {
         return applicationno;
     }
-    public void setApplicationNo(String applicationno) {
+    public void setApplicationno(String applicationno) {
         this.applicationno = applicationno;
     }
 

@@ -40,18 +40,18 @@ public class BonafideApiController extends WebMvcConfigurerAdapter {
 
     ) {
         Bonafide bonafid = new Bonafide();
-        bonafid.setRegNo(regno);
-        bonafid.setAdmissionNo(admissionno);
+        bonafid.setRegno(regno);
+        bonafid.setAdmissionno(admissionno);
         bonafid.setName(name);
         bonafid.setSemester(semester);
-        bonafid.setBranchName(branchname);
-        bonafid.setBranchCode(branchcode);
-        bonafid.setAcademicYear(academicyear);
-        bonafid.setFatherName(fathername);
-        bonafid.setIssuedDate(issueddate);
-        bonafid.setCertficateFor(certificatefor);
-        bonafid.setNoOfYears(noofyears);
-        bonafid.setLoginUser(loginuser);
+        bonafid.setBranchname(branchname);
+        bonafid.setBranchcode(branchcode);
+        bonafid.setAcademicyear(academicyear);
+        bonafid.setFathername(fathername);
+        bonafid.setIssueddate(issueddate);
+        bonafid.setCertficatefor(certificatefor);
+        bonafid.setNoOfyears(noofyears);
+        bonafid.setLoginuser(loginuser);
 
         bonafideRepository.save(bonafid);
 
