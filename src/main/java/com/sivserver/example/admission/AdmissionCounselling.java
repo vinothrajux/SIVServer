@@ -1,5 +1,7 @@
 package com.sivserver.example.admission;
 
+import org.hibernate.annotations.NaturalId;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -20,38 +22,51 @@ import javax.persistence.Table;
 @Table(name = "admissioncounselling")
 public class AdmissionCounselling {
 
-    public String getAdmissionType(){
+    public AdmissionCounselling()
+    {
+
+    }
+
+    public long getId() {
+
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+    public String getAdmissiontype(){
         return admissiontype;
     }
-    public void setAdmissionType(String admissiontype) {
+    public void setAdmissiontype(String admissiontype) {
         this.admissiontype = admissiontype;
     }
 
-    public String getApplno() {
+    public String getApplno(){
         return applno;
     }
     public void setApplno(String applno) {
         this.applno = applno;
     }
 
-    public Date getCounsellingDate() {
+    public Date getCounsellingdate() {
         return counsellingdate;
     }
-    public void setCounsellingDate(Date counsellingdate) {
+    public void setCounsellingdate(Date counsellingdate) {
         this.counsellingdate = counsellingdate;
     }
 
-    public String getAllotedCourse() {
+    public String getAllotedcourse() {
         return allotedcourse;
     }
-    public void setAllotedCourse(String allotedcourse) {
+    public void setAllotedcourse(String allotedcourse) {
         this.allotedcourse = allotedcourse;
     }
 
-    public String getBranchCode() {
+    public String getBranchcode() {
         return branchcode;
     }
-    public void setBranchCode(String branchcode) {
+    public void setBranchcode(String branchcode) {
         this.branchcode = branchcode;
     }
 
@@ -62,10 +77,10 @@ public class AdmissionCounselling {
         this.transport = transport;
     }
 
-    public String getTransportStage() {
+    public String getTransportstage() {
         return transportstage;
     }
-    public void setTransportStage(String transportstage) {
+    public void setTransportstage(String transportstage) {
         this.transportstage = transportstage;
     }
 
@@ -83,31 +98,31 @@ public class AdmissionCounselling {
         this.food = food;
     }
 
-    public String getCounsellingStatus() {
+    public String getCounsellingstatus() {
         return counsellingstatus;
     }
-    public void setCounsellingStatus(String counsellingstatus) {
+    public void setCounsellingstatus(String counsellingstatus) {
         this.counsellingstatus = counsellingstatus;
     }
 
-    public String getAdmissionNo() {
+    public String getAdmissionno() {
         return admissionno;
     }
-    public void setAdmissionNo(String admissionno) {
+    public void setAdmissionno(String admissionno) {
         this.admissionno = admissionno;
     }
 
-    public Long getTotalFees() {
+    public Long getTotalfees() {
         return totalfees;
     }
-    public void setTotalFees(Long totalfees) {
+    public void setTotalfees(Long totalfees) {
         this.totalfees = totalfees;
     }
 
-    public Date getFollowupDate() {
+    public Date getFollowupdate() {
         return followupdate;
     }
-    public void setFollowupDate(Date followupdate) {
+    public void setFollowupdate(Date followupdate) {
         this.followupdate = followupdate;
     }
 
@@ -118,19 +133,27 @@ public class AdmissionCounselling {
         this.remarks = remarks;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 
+    @Id
+    @Column(name="COUNSELLING_ID")
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private long id;
 
     @NotNull
     private String admissiontype;
 
-    @NotNull
-    private String applno;
+   // @OneToOne(cascade = CascadeType.ALL)
+    // @JoinColumn(name = "APPLICATION_ID")
+    // private ApplicationSale applicationid;
+
+   @NotNull
+   private String applno;
 
     @NotNull
     private Date counsellingdate;
@@ -156,7 +179,7 @@ public class AdmissionCounselling {
     @NotNull
     private String counsellingstatus;
 
-    @Id
+    @NaturalId
     private String admissionno;
 
     @NotNull
@@ -171,7 +194,9 @@ public class AdmissionCounselling {
     @NotNull
     private String loginuser;
 
- //  @OneToMany(mappedBy="applicationno")
- //  private Set<ApplicationSale> appsale;
+ //  @OneToMany(mappedBy="applicationno") This will insert more than one row with same value in child table
+ //   @OneToMany(mappedBy="applicationno")
+ //   private Set<ApplicationSale> appsale;
+
 
 }

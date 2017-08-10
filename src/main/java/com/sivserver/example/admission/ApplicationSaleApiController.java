@@ -21,11 +21,16 @@ public class ApplicationSaleApiController extends WebMvcConfigurerAdapter {
     @Autowired
     private ApplicationSaleRepository applicationsaleRepository;
 
+    @Autowired
+    private ApplicationSaleRepository applicationsaleRepository1;
+
+
 
     @RequestMapping(method = RequestMethod.POST)
 
     public void applicationSale(
             @RequestParam(value ="category", required=false) String category,
+            @RequestParam(value ="counsellingid", required=false) AdmissionCounselling counsellingid,
             @RequestParam (value="applno", required=false) String applno,
             @RequestParam (value="saledate", required=false) Date saledate,
             @RequestParam (value="appfor", required=false) String appfor,
@@ -57,6 +62,7 @@ public class ApplicationSaleApiController extends WebMvcConfigurerAdapter {
             @RequestParam (value="prefferedcour1", required=false) String prefferedcour1,
             @RequestParam (value="prefferedcour2", required=false) String prefferedcour2,
             @RequestParam (value="prefferedcour3", required=false) String prefferedcour3,
+            @RequestParam (value="reference", required=false) String reference,
             @RequestParam (value="willingtojoin", required=false) String willingtojoin,
             @RequestParam (value="followupdate", required=false) Date followupdate,
             @RequestParam (value="applicationprice", required=false) Integer applicationprice,
@@ -66,6 +72,7 @@ public class ApplicationSaleApiController extends WebMvcConfigurerAdapter {
     ) {
         ApplicationSale appsale = new ApplicationSale();
         appsale.setCategory(category);
+        appsale.setCounsellingid(counsellingid);
         appsale.setApplno(applno);
         appsale.setSaledate(saledate);
         appsale.setAppfor(appfor);
@@ -97,6 +104,7 @@ public class ApplicationSaleApiController extends WebMvcConfigurerAdapter {
         appsale.setPrefferedcour1(prefferedcour1);
         appsale.setPrefferedcour2(prefferedcour2);
         appsale.setPrefferedcour3(prefferedcour3);
+        appsale.setReference(reference);
         appsale.setWillingtojoin(willingtojoin);
         appsale.setFollowupdate(followupdate);
         appsale.setApplicationprice(applicationprice);
@@ -108,6 +116,14 @@ public class ApplicationSaleApiController extends WebMvcConfigurerAdapter {
 
 
 
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value="/getApplcationDetail")
+    public ApplicationSaleProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
+        ApplicationSaleProjection applicationDetail = applicationsaleRepository.findOneByApplno(applicationNumber);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getApplicationDetail");
+        return applicationDetail;
     }
 
 
