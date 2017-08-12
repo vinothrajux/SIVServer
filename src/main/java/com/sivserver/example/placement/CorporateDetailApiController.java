@@ -40,9 +40,9 @@ public class CorporateDetailApiController  extends WebMvcConfigurerAdapter {
 
     ) {
         CorporateDetail corpDet = new CorporateDetail();
-        corpDet.setCorporateId(corporateid);
-        corpDet.setRequiredBranchCode(requiredBranchCode);
-        corpDet.setRequiredStudentCategory(requiredStudentCategory);
+        corpDet.setCorporateid(corporateid);
+        corpDet.setRequiredbranchcode(requiredBranchCode);
+        corpDet.setRequiredstudentcategory(requiredStudentCategory);
 
 
         corporateDetailRepository.save(corpDet);

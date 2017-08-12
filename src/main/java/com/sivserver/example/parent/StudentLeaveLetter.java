@@ -12,10 +12,10 @@ import java.util.Date;
 @Entity
 @Table(name = "studentleaveletter")
 public class StudentLeaveLetter {
-    public Date getLeaveEntryDate(){
+    public Date getLeaveentrydate(){
         return entrydate;
     }
-    public void setLeaveEntryDate(Date entrydate) {
+    public void setLeaveentrydate(Date entrydate) {
         this.entrydate = entrydate;
     }
 
@@ -33,10 +33,10 @@ public class StudentLeaveLetter {
         this.branch = branch;
     }
 
-    public String getBranchCode() {
+    public String getBranchcode() {
         return branchcode;
     }
-    public void setBranchCode(String branchcode) {
+    public void setBranchcode(String branchcode) {
         this.branchcode = branchcode;
     }
 
@@ -48,45 +48,45 @@ public class StudentLeaveLetter {
     }
 
 
-    public String getAcadYear() {
+    public String getAcadyear() {
         return academicYear;
     }
-    public void setAcadYear(String academicYear) {
+    public void setAcadyear(String academicYear) {
         this.academicYear = academicYear;
     }
 
-    public Date getFromDate() {
+    public Date getFromdate() {
         return fromdate;
     }
-    public void setFromDate(Date fromdate) {
+    public void setFromdate(Date fromdate) {
         this.fromdate = fromdate;
     }
 
-    public Date getToDate() {
+    public Date getTodate() {
         return todate;
     }
-    public void setToDate(Date todate) {
+    public void setTodate(Date todate) {
         this.todate = todate;
     }
 
-    public Integer getNoofDays() {
+    public Integer getNoofdays() {
         return noofdays;
     }
-    public void setNoofDays(Integer noofdays) {
+    public void setNoofdays(Integer noofdays) {
         this.noofdays = noofdays;
     }
 
-    public String getLeavReason() {
+    public String getLeavereason() {
         return leavereason;
     }
-    public void setLeaveReason(String leavereason) {
+    public void setLeavereason(String leavereason) {
         this.leavereason = leavereason;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 

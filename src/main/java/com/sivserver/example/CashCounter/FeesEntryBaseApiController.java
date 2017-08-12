@@ -47,25 +47,25 @@ public class FeesEntryBaseApiController extends WebMvcConfigurerAdapter {
     {
         FeesEntryBase feesEntry = new FeesEntryBase();
         feesEntry.setRegno(regno);
-        feesEntry.setAdmissionNo(admissionno);
-        feesEntry.setAdmissionFees(admissionfees);
-        feesEntry.setTuitionFees(tuitionfees);
-        feesEntry.setTransportFees(transportFees);
-        feesEntry.setHostelFees(hostelfees);
-        feesEntry.setFoodFees(foodfees);
-        feesEntry.setTextBookStationaryFees(textbookstationaryfees);
-        feesEntry.setMiscellaneousFees(miscellaneousfees);
-        feesEntry.setSpecialFees(specialfees);
-        feesEntry.setPenaltyFees(penaltyfees);
-        feesEntry.setPreviousBalanceFees(previousbalancefees);
-        feesEntry.setGroupInsuranceFees(groupinsurancefees);
-        feesEntry.setOthersFees(othersfees);
-        feesEntry.setTotalFees(totalfees);
-        feesEntry.setAcademicYear(academicyear);
-        feesEntry.setLoginUser(loginuser);
+        feesEntry.setAdmissionno(admissionno);
+        feesEntry.setAdmissionfees(admissionfees);
+        feesEntry.setTuitionfees(tuitionfees);
+        feesEntry.setTransportfees(transportFees);
+        feesEntry.setHostelfees(hostelfees);
+        feesEntry.setFoodfees(foodfees);
+        feesEntry.setTextbookstationaryfees(textbookstationaryfees);
+        feesEntry.setMiscellaneousfees(miscellaneousfees);
+        feesEntry.setSpecialfees(specialfees);
+        feesEntry.setPenaltyfees(penaltyfees);
+        feesEntry.setPreviousbalancefees(previousbalancefees);
+        feesEntry.setGroupinsurancefees(groupinsurancefees);
+        feesEntry.setOthersfees(othersfees);
+        feesEntry.setTotalfees(totalfees);
+        feesEntry.setAcademicyear(academicyear);
+        feesEntry.setLoginuser(loginuser);
 
 
-       // feesEntryBaseRepository.save(feesEntry);
+        feesEntryBaseRepository.save(feesEntry);
 
 
 

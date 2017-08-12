@@ -14,23 +14,23 @@ import java.util.Date;
 @Table(name = "feesfollowup")
 public class FeesFollowup {
 
-    public Date getCurrentDate(){
+    public Date getCurrentdate(){
         return currentdate;
     }
-    public void setCurrentDate(Date currentdate) {this.currentdate = currentdate;}
+    public void setCurrentdate(Date currentdate) {this.currentdate = currentdate;}
 
 
-    public String getRegNo() {
+    public String getRegno() {
         return regno;
     }
-    public void setRegNo(String regno) {
+    public void setRegno(String regno) {
         this.regno = regno;
     }
 
-    public String getAdmissionNo() {
+    public String getAdmissionno() {
         return admissionno;
     }
-    public void setAdmissionNo(String admissionno) {
+    public void setAdmissionno(String admissionno) {
         this.admissionno = admissionno;
     }
 
@@ -48,47 +48,47 @@ public class FeesFollowup {
         this.semester = semester;
     }
 
-    public String getBranchName() {
+    public String getBranchname() {
         return branchname;
     }
-    public void setBranchName(String branchname) {
+    public void setBranchname(String branchname) {
         this.branchname = branchname;
     }
 
 
-    public String getBranchCode() {
+    public String getBranchcode() {
         return branchcode;
     }
-    public void setBranchCode(String branchcode) {
+    public void setBranchcode(String branchcode) {
         this.branchcode = branchcode;
     }
 
 
-    public String getAcademicYear() {
+    public String getAcademicyear() {
         return academicyear;
     }
-    public void setAcademicYear(String academicyear) {
+    public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
     }
 
-    public Date getLastPaymentDate() {
+    public Date getLastpaymentdate() {
         return lastpaymtdate;
     }
-    public void setLastPaymentDate(Date lastpaymtdate) {
+    public void setLastpaymentdate(Date lastpaymtdate) {
         this.lastpaymtdate = lastpaymtdate;
     }
 
-    public Long getLastPaymentAmount() {
+    public Long getLastpaymentamount() {
         return lastpaymtamount;
     }
-    public void setLastPaymentAmount(Long lastpaymtamount) {
+    public void setLastpaymentamount(Long lastpaymtamount) {
         this.lastpaymtamount = lastpaymtamount;
     }
 
-    public Date getDueDate() {
+    public Date getDuedate() {
         return duedate;
     }
-    public void setDueDate(Date duedate) {
+    public void setDuedate(Date duedate) {
         this.duedate = duedate;
     }
 
@@ -99,8 +99,8 @@ public class FeesFollowup {
         this.remarks = remarks;
     }
 
-    public String getLoginUser() {return loginuser; }
-    public void setLoginUser(String loginuser) {this.loginuser = loginuser; }
+    public String getLoginuser() {return loginuser; }
+    public void setLoginuser(String loginuser) {this.loginuser = loginuser; }
 
 
 

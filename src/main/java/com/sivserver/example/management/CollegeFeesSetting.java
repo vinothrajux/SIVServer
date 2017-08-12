@@ -12,66 +12,66 @@ import java.util.Date;
 @Table(name = "collegefeessetting")
 public class CollegeFeesSetting {
 
-    public Date getFeesSettingDate(){
+    public Date getFeesSettingdate(){
         return feessettingdate;
     }
-    public void setFeesSettingDate(Date feessettingdate) {
+    public void setFeesSettingdate(Date feessettingdate) {
         this.feessettingdate = feessettingdate;
     }
-    public String getBranchName() {
+    public String getBranchname() {
         return branchname;
     }
-    public void setBranchName(String branchname) {
+    public void setBranchname(String branchname) {
         this.branchname = branchname;
     }
-    public String getBranchCode() {
+    public String getBranchcode() {
         return branchcode;
     }
-    public void setBranchCode(String branchcode) {
+    public void setBranchcode(String branchcode) {
         this.branchcode = branchcode;
     }
 
-    public String getAcademicYear() {
+    public String getAcademicyear() {
         return academicyear;
     }
-    public void setAcademicYear(String academicyear) {
+    public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
     }
 
-    public Long getAdmissionFees() {
+    public Long getAdmissionfees() {
         return admissionfees;
     }
-    public void setAdmissionFees(Long admissionfees) {this.admissionfees = admissionfees;}
+    public void setAdmissionfees(Long admissionfees) {this.admissionfees = admissionfees;}
 
-    public Long getTutionFees() {
+    public Long getTutionfees() {
         return tutionfees;
     }
-    public void setTutionFees(Long tutionfees) {
+    public void setTutionfees(Long tutionfees) {
         this.tutionfees = tutionfees;
     }
 
-    public Long getTextBookFees() {return textbookfees; }
-    public void setTextBookFees(Long textbookfees) {this.textbookfees = textbookfees;}
+    public Long getTextBookfees() {return textbookfees; }
+    public void setTextBookfees(Long textbookfees) {this.textbookfees = textbookfees;}
 
-    public Long getMiscalleneousFees() {
+    public Long getMiscalleneousfees() {
         return miscalleneousfees;
     }
-    public void setMiscalleneousFees(Long miscalleneousfees) {
+    public void setMiscalleneousfees(Long miscalleneousfees) {
         this.miscalleneousfees = miscalleneousfees;
     }
 
-    public Long getSpecialFees() {
+    public Long getSpecialfees() {
         return specialfees;
     }
-    public void setSpecialFees(Long specialfees) {
+    public void setSpecialfees(Long specialfees) {
         this.specialfees = specialfees;
     }
 
 
-    public Long getGroupInsurance() {
+    public Long getGroupinsurance() {
         return groupinsurance;
     }
-    public void setGroupInsurance(Long groupinsurance) {
+    public void setGroupinsurance(Long groupinsurance) {
         this.groupinsurance = groupinsurance;
     }
 
@@ -82,17 +82,17 @@ public class CollegeFeesSetting {
         this.others = others;
     }
 
-    public Long getTotalFees() {
+    public Long getTotalfees() {
         return totalfees;
     }
-    public void setTotalFees(Long totalfees) {
+    public void setTotalfees(Long totalfees) {
         this.totalfees = totalfees;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 
