@@ -11,27 +11,27 @@ import java.util.Date;
 @Table(name = "feespayment")
 public class FeesPayment {
 
-    public Date getDate(){
+    public Date getdate(){
         return date;
     }
-    public void setDate(Date date) {this.date = date;}
+    public void setdate(Date date) {this.date = date;}
 
-    public String getBillNo() {return billno;}
-    public void setBillNo(String billno) {
+    public String getBillno() {return billno;}
+    public void setBillno(String billno) {
         this.billno = billno;
     }
 
-    public String getRegNo() {
+    public String getRegno() {
         return regno;
     }
-    public void setRegNo(String regno) {
+    public void setRegno(String regno) {
         this.regno = regno;
     }
 
-    public String getAdmissionNo() {
+    public String getAdmissionno() {
         return admissionno;
     }
-    public void setAdmissionNo(String admissionno) {
+    public void setAdmissionno(String admissionno) {
         this.admissionno = admissionno;
     }
 
@@ -42,17 +42,17 @@ public class FeesPayment {
         this.name = name;
     }
 
-    public String getBranchCode() {
+    public String getBranchcode() {
         return branchcode;
     }
-    public void setBranchCode(String branchcode) {
+    public void setBranchcode(String branchcode) {
         this.branchcode = branchcode;
     }
 
-    public String getBranchName() {
+    public String getBranchname() {
         return branchname;
     }
-    public void setBranchName(String branchname) {
+    public void setBranchname(String branchname) {
         this.branchname = branchname;
     }
 
@@ -63,308 +63,308 @@ public class FeesPayment {
         this.semester = semester;
     }
 
-    public String getAcademicYear() {
+    public String getAcademicyear() {
         return academicyear;
     }
-    public void setAcademicYear(String academicyear) {
+    public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
     }
 
-    public String getPaymentMethod() {
+    public String getPaymentmethod() {
         return paymentmethod;
     }
-    public void setPaymentMethod(String paymentmethod) {
+    public void setPaymentmethod(String paymentmethod) {
         this.paymentmethod = paymentmethod;
     }
 
-    public Long getAdmissionFeesTotal() {
+    public Long getAdmissionfeestotal() {
         return admnfeestot;
     }
-    public void setAdmissionFeesTotal(Long admnfeestot) {
+    public void setAdmissionfeestotal(Long admnfeestot) {
         this.admnfeestot = admnfeestot;
     }
 
-    public Long getAdmissionFeesPaid() {
+    public Long getAdmissionfeespaid() {
         return admnfeespaid;
     }
-    public void setAdmissionFeesPaid(Long admnfeespaid) {
+    public void setAdmissionfeespaid(Long admnfeespaid) {
         this.admnfeespaid = admnfeespaid;
     }
 
-    public Long getAdmissionFeesBalance() {
+    public Long getAdmissionfeesbalance() {
         return admnfeesbal;
     }
     public void setAdmissionFeesBalance(Long admnfeesbal) {
         this.admnfeesbal = admnfeesbal;
     }
 
-    public Long getTutionFeesTotal() {
+    public Long getTutionfeestotal() {
         return tutionfeestot;
     }
-    public void setTutionFeesTotal(Long tutionfeestot) {
+    public void setTutionfeestotal(Long tutionfeestot) {
         this.tutionfeestot = tutionfeestot;
     }
 
-    public Long getTutionFeesPaid() {
+    public Long getTutionfeespaid() {
         return tutionfeespaid;
     }
-    public void setTutionFeesPaid(Long tutionfeespaid) {
+    public void setTutionfeespaid(Long tutionfeespaid) {
         this.tutionfeespaid = tutionfeespaid;
     }
 
-    public Long getTutionFeesBalance() {
+    public Long getTutionfeesbalance() {
         return tutionfeesbal;
     }
-    public void setTutionFeesBalance(Long tutionfeesbal) {
+    public void setTutionfeesbalance(Long tutionfeesbal) {
         this.tutionfeesbal = tutionfeesbal;
     }
 
-    public Long getTransportFeesTotal() {
+    public Long getTransportfeestotal() {
         return transfeestot;
     }
-    public void setTransportFeesTotal(Long transfeestot) {
+    public void setTransportfeestotal(Long transfeestot) {
         this.transfeestot = transfeestot;
     }
 
-    public Long getTransportFeesPaid() {
+    public Long getTransportfeespaid() {
         return transfeespaid;
     }
-    public void setTransportFeesPaid(Long transfeespaid) {
+    public void setTransportfeespaid(Long transfeespaid) {
         this.transfeespaid = transfeespaid;
     }
 
-    public Long getTransportFeesBalance() {
+    public Long getTransportfeesbalance() {
         return transfeesbal;
     }
-    public void setTransportFeesBalance(Long transfeesbal) {
+    public void setTransportfeesbalance(Long transfeesbal) {
         this.transfeesbal = transfeesbal;
     }
 
-    public Long getHostelFeesTotal() {
+    public Long getHostelfeestotal() {
         return hostfeestot;
     }
-    public void setHostelFeesTotal(Long hostfeestot) {
+    public void setHostelfeestotal(Long hostfeestot) {
         this.hostfeestot = hostfeestot;
     }
 
-    public Long getHostelFeesPaid() {
+    public Long getHostelfeespaid() {
         return hostfeespaid;
     }
-    public void setHostelFeesPaid(Long hostfeespaid) {
+    public void setHostelfeespaid(Long hostfeespaid) {
         this.hostfeespaid = hostfeespaid;
     }
 
-    public Long getHostelFeesBalance() {
+    public Long getHostelfeesbalance() {
         return hostfeesbal;
     }
-    public void setHostelFeesBalance(Long hostfeesbal) {
+    public void setHostelfeesbalance(Long hostfeesbal) {
         this.hostfeesbal = hostfeesbal;
     }
 
-    public Long getFoodFeesTotal() {
+    public Long getFoodfeestotal() {
         return foodfeestot;
     }
-    public void setFoodFeesTotal(Long foodfeestot) {
+    public void setFoodfeestotal(Long foodfeestot) {
         this.foodfeestot = foodfeestot;
     }
 
-    public Long getFoodFeesPaid() {
+    public Long getFoodfeespaid() {
         return foodfeespaid;
     }
-    public void setFoodFeesPaid(Long foodfeespaid) {
+    public void setFoodfeespaid(Long foodfeespaid) {
         this.foodfeespaid = foodfeespaid;
     }
 
-    public Long getFoodFeesBalance() {
+    public Long getFoodfeesbalance() {
         return foodfeesbal;
     }
-    public void setFoodFeesBalance(Long foodfeesbal) {
+    public void setFoodfeesbalance(Long foodfeesbal) {
         this.foodfeesbal = foodfeesbal;
     }
 
 
-    public Long getTextBookFeesTotal() {
+    public Long getTextbookfeestotal() {
         return txtbookfeestot;
     }
-    public void setTextBookFeesTotal(Long txtbookfeestot) {
+    public void setTextbookfeestotal(Long txtbookfeestot) {
         this.txtbookfeestot = txtbookfeestot;
     }
 
-    public Long getTextBookFeesPaid() {
+    public Long getTextbookfeespaid() {
         return txtbookfeespaid;
     }
-    public void setTextBookFeesPaid(Long txtbookfeespaid) {
+    public void setTextbookfeespaid(Long txtbookfeespaid) {
         this.txtbookfeespaid = txtbookfeespaid;
     }
 
-    public Long getTextBookFeesBalance() {
+    public Long getTextbookfeesbalance() {
         return txtbookfeesbal;
     }
-    public void setTextBookFeesBalance(Long txtbookfeesbal) {
+    public void setTextbookfeesbalance(Long txtbookfeesbal) {
         this.txtbookfeesbal = txtbookfeesbal;
     }
 
-    public Long getMiscalleneousFeesTotal() {
+    public Long getMiscalleneousfeestotal() {
         return miscfeestot;
     }
-    public void setMiscalleneousFeesTotal(Long miscfeestot) {
+    public void setMiscalleneousfeestotal(Long miscfeestot) {
         this.miscfeestot = miscfeestot;
     }
 
-    public Long getMiscalleneousFeesPaid() {
+    public Long getMiscalleneousfeespaid() {
         return miscfeespaid;
     }
-    public void setMiscalleneousFeesPaid(Long miscfeespaid) {
+    public void setMiscalleneousfeespaid(Long miscfeespaid) {
         this.miscfeespaid = miscfeespaid;
     }
 
-    public Long getMiscalleneousFeesBalance() {
+    public Long getMiscalleneousfeesbalance() {
         return miscfeesbal;
     }
-    public void setMiscalleneousFeesBalance(Long miscfeesbal) {
+    public void setMiscalleneousfeesbalance(Long miscfeesbal) {
         this.miscfeesbal = miscfeesbal;
     }
 
-    public Long getSpecialFeesTotal() {
+    public Long getSpecialfeestotal() {
         return splfeestot;
     }
-    public void setSpecialFeesTotal(Long splfeestot) {
+    public void setSpecialfeestotal(Long splfeestot) {
         this.splfeestot = splfeestot;
     }
 
-    public Long getSpecialFeesPaid() {
+    public Long getSpecialfeespaid() {
         return splfeespaid;
     }
-    public void setSpecialFeesPaid(Long splfeespaid) {
+    public void setSpecialfeespaid(Long splfeespaid) {
         this.splfeespaid = splfeespaid;
     }
 
 
-    public Long getSpecialFeesBalance() {
+    public Long getSpecialfeesbalance() {
         return splfeesbal;
     }
-    public void setSpecialFeesBalance(Long splfeesbal) {
+    public void setSpecialfeesbalance(Long splfeesbal) {
         this.splfeesbal = splfeesbal;
     }
 
-    public Long getPenaltyFeesTotal() {
+    public Long getPenaltyfeestotal() {
         return penaltyfeestot;
     }
-    public void setPenaltyFeesTotal(Long penaltyfeestot) {
+    public void setPenaltyfeestotal(Long penaltyfeestot) {
         this.penaltyfeestot = penaltyfeestot;
     }
 
-    public Long getPenaltyFeesPaid() {
+    public Long getPenaltyfeespaid() {
         return penaltyfeespaid;
     }
-    public void setPenaltyFeesPaid(Long penaltyfeespaid) {
+    public void setPenaltyfeespaid(Long penaltyfeespaid) {
         this.penaltyfeespaid = penaltyfeespaid;
     }
 
-    public Long getPenaltyFeesBalance() {
+    public Long getPenaltyfeesbalance() {
         return penaltyfeesbal;
     }
-    public void setPenaltyFeesBalance(Long penaltyfeesbal) {
+    public void setPenaltyfeesbalance(Long penaltyfeesbal) {
         this.penaltyfeesbal = penaltyfeesbal;
     }
 
-    public Long getOldBalanceTotal() {
+    public Long getOldbalancetotal() {
         return oldbalancetot;
     }
-    public void setOldBalanceTotal(Long oldbalancetot) {
+    public void setOldbalancetotal(Long oldbalancetot) {
         this.oldbalancetot = oldbalancetot;
     }
 
-    public Long getOldBalancePaid() {
+    public Long getOldbalancepaid() {
         return oldbalancepaid;
     }
-    public void setOldBalancePaid(Long oldbalancepaid) {
+    public void setOldbalancepaid(Long oldbalancepaid) {
         this.oldbalancepaid = oldbalancepaid;
     }
 
-    public Long getOldBalanceBalance() {
+    public Long getOldbalancebalance() {
         return oldbalancebal;
     }
-    public void setOldBalanceBalance(Long oldbalancebal) {
+    public void setOldbalancebalance(Long oldbalancebal) {
         this.oldbalancebal = oldbalancebal;
     }
 
-    public Long getGroupInsuranceTotal() {
+    public Long getGroupinsurancetotal() {
         return groupinsurancetot;
     }
-    public void setGroupInsuranceTotal(Long groupinsurancetot) {
+    public void setGroupinsurancetotal(Long groupinsurancetot) {
         this.groupinsurancetot = groupinsurancetot;
     }
 
-    public Long getGroupInsurancePaid() {
+    public Long getGroupinsurancepaid() {
         return groupinsurancepaid;
     }
-    public void setGroupInsurancePaid(Long groupinsurancepaid) {
+    public void setGroupinsurancepaid(Long groupinsurancepaid) {
         this.groupinsurancepaid = groupinsurancepaid;
     }
 
-    public Long getGroupInsuranceBalance() {
+    public Long getGroupinsurancebalance() {
         return groupinsurancebal;
     }
-    public void setGroupInsuranceBalance(Long groupinsurancebal) {
+    public void setGroupinsurancebalance(Long groupinsurancebal) {
         this.groupinsurancebal = groupinsurancebal;
     }
 
-    public Long getOthersFeesTotal() {
+    public Long getOthersfeestotal() {
         return othersfeestot;
     }
-    public void setOthersFeesTotal(Long othersfeestot) {
+    public void setOthersfeestotal(Long othersfeestot) {
         this.othersfeestot = othersfeestot;
     }
 
-    public Long getOthersFeesPaid() {
+    public Long getOthersfeespaid() {
         return othersfeespaid;
     }
-    public void setOthersFeesPaid(Long othersfeespaid) {this.othersfeespaid = othersfeespaid; }
+    public void setOthersfeespaid(Long othersfeespaid) {this.othersfeespaid = othersfeespaid; }
 
-    public Long getOthersFeesBalance() {
+    public Long getOthersfeesbalance() {
         return othersfeesbal;
     }
-    public void setOthersFeesBalance(Long othersfeesbal) {this.othersfeesbal = othersfeesbal; }
+    public void setOthersfeesbalance(Long othersfeesbal) {this.othersfeesbal = othersfeesbal; }
 
-    public Long getTotalFeesTotal() {
+    public Long getTotalfeestotal() {
         return totfeestot;
     }
-    public void setTotalFeesTotal(Long totfeestot) {this.totfeestot = totfeestot; }
+    public void setTotalfeestotal(Long totfeestot) {this.totfeestot = totfeestot; }
 
-    public Long getTotalFeesPaid() {
+    public Long getTotalfeespaid() {
         return totfeespaid;
     }
-    public void setTotalFeesPaid(Long totfeespaid) {this.totfeespaid = totfeespaid; }
+    public void setTotalfeespaid(Long totfeespaid) {this.totfeespaid = totfeespaid; }
 
-    public Long getTotalFeesBalance() {
+    public Long getTotalfeesbalance() {
         return totfeesbal;
     }
-    public void setTotalFeesBalance(Long totfeesbal) {this.totfeesbal = totfeesbal; }
+    public void setTotalfeesbalance(Long totfeesbal) {this.totfeesbal = totfeesbal; }
 
-    public Date getDueDate() {
+    public Date getDuedate() {
         return duedate;
     }
-    public void setDueDate(Date duedate) {this.duedate = duedate; }
+    public void setDuedate(Date duedate) {this.duedate = duedate; }
 
-    public Long getChequeNo() {
+    public Long getChequeno() {
         return chequeno;
     }
-    public void setChequeNo(Long chequeno) {this.chequeno = chequeno; }
+    public void setChequeno(Long chequeno) {this.chequeno = chequeno; }
 
-    public Date getChecqueDate() {
+    public Date getChecquedate() {
         return chequedate;
     }
-    public void setChequeDate(Date chequedate) {this.chequedate = chequedate; }
+    public void setChequedate(Date chequedate) {this.chequedate = chequedate; }
 
-    public String getBankName() {return bankname; }
-    public void setBankName(String bankname) {this.bankname = bankname; }
+    public String getBankname() {return bankname; }
+    public void setBankname(String bankname) {this.bankname = bankname; }
 
     public Long getNoofprint() {return noofprint; }
     public void setNoofprint(Long noofprint) {this.noofprint = noofprint; }
 
-    public String getLoginUser() {return loginuser; }
-    public void setLoginUser(String loginuser) {this.loginuser = loginuser; }
+    public String getLoginuser() {return loginuser; }
+    public void setLoginuser(String loginuser) {this.loginuser = loginuser; }
     //   public long getId() {
 
 //    return id;

@@ -49,17 +49,17 @@ public class StudentLeaveLetterApiController extends WebMvcConfigurerAdapter {
 
     ) {
         StudentLeaveLetter studleave = new StudentLeaveLetter();
-        studleave.setLeaveEntryDate(entrydate);
+        studleave.setLeaveentrydate(entrydate);
         studleave.setRegno(regno);
         studleave.setBranch(branch);
-        studleave.setBranchCode(branchcode);
+        studleave.setBranchcode(branchcode);
         studleave.setSemester(semester);
-        studleave.setAcadYear(academicYear);
-        studleave.setFromDate(fromdate);
-        studleave.setToDate(todate);
-        studleave.setNoofDays(noofdays);
-        studleave.setLeaveReason(leavereason);
-        studleave.setLoginUser(loginuser);
+        studleave.setAcadyear(academicYear);
+        studleave.setFromdate(fromdate);
+        studleave.setTodate(todate);
+        studleave.setNoofdays(noofdays);
+        studleave.setLeavereason(leavereason);
+        studleave.setLoginuser(loginuser);
 
         studentLeaveLetterRepository.save(studleave);
 

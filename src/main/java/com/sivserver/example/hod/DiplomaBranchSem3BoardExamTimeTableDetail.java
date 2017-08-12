@@ -27,269 +27,267 @@ public class DiplomaBranchSem3BoardExamTimeTableDetail {
     }
 
 
-    public String getAdmissionNo() {
+    public String getAdmissionno() {
         return admissionno;
     }
-    public void setAdmissionNo(String admissionno) {
+    public void setAdmissionno(String admissionno) {
         this.admissionno = admissionno;
     }
 
-    public Integer getSubject1IntMark() {
+    public Integer getSubject1intmark() {
         return subject1IntMark;
     }
-    public void setSubject1IntMark(Integer subject1IntMark) {
+    public void setSubject1intmark(Integer subject1IntMark) {
         this.subject1IntMark = subject1IntMark;
     }
 
-    public Integer getSubject1ExtMark() {
+    public Integer getSubject1extmark() {
         return subject1ExtMark;
     }
-    public void setSubject1ExtMark(Integer subject1ExtMark) {
+    public void setSubject1extmark(Integer subject1ExtMark) {
         this.subject1ExtMark = subject1ExtMark;
     }
 
-    public Integer getSubject1TotMark() {
+    public Integer getSubject1totmark() {
         return subject1TotMark;
     }
-    public void setSubject1TotMark(Integer subject1TotMark) {
+    public void setSubject1totmark(Integer subject1TotMark) {
         this.subject1TotMark = subject1TotMark;
     }
 
-    public Character getSubject1Attendance() {
+    public Character getSubject1attendance() {
         return subject1Attendance;
     }
-    public void setSubject1Attendance(Character subject1Attendance) {
+    public void setSubject1attendance(Character subject1Attendance) {
         this.subject1Attendance = subject1Attendance;
     }
 
-    public String getSubject1Result() {
+    public String getSubject1result() {
         return subject1Result;
     }
-    public void setSubject1Result(String subject1Result) {
+    public void setSubject1result(String subject1Result) {
         this.subject1Result = subject1Result;
     }
 
-    public Integer getSubject2IntMark() {
+    public Integer getSubject2intmark() {
         return subject2IntMark;
     }
-    public void setSubject2IntMark(Integer subject2IntMark) {
+    public void setSubject2intmark(Integer subject2IntMark) {
         this.subject2IntMark = subject2IntMark;
     }
 
-    public Integer getSubject2ExtMark() {
+    public Integer getSubject2extmark() {
         return subject2ExtMark;
     }
-    public void setSubject2ExtMark(Integer subject2ExtMark) {
+    public void setSubject2extmark(Integer subject2ExtMark) {
         this.subject2ExtMark = subject2ExtMark;
     }
 
-    public Integer getSubject2TotMark() {
+    public Integer getSubject2totmark() {
         return subject2TotMark;
     }
-    public void setSubject2TotMark(Integer subject2TotMark) {
+    public void setSubject2totmark(Integer subject2TotMark) {
         this.subject2TotMark = subject2TotMark;
     }
 
-    public Character getSubject2Attendance() {
+    public Character getSubject2attendance() {
         return subject2Attendance;
     }
-    public void setSubject2Attendance(Character subject2Attendance) {
+    public void setSubject2attendance(Character subject2Attendance) {
         this.subject2Attendance = subject2Attendance;
     }
 
-    public String getSubject2Result() {
+    public String getSubject2result() {
         return subject2Result;
     }
-    public void setSubject2Result(String subject2Result) {
+    public void setSubject2result(String subject2Result) {
         this.subject2Result = subject2Result;
     }
 
-    public Integer getSubject3IntMark() {
+    public Integer getSubject3intmark() {
         return subject3IntMark;
     }
-    public void setSubject3IntMark(Integer subject3IntMark) {
+    public void setSubject3intmark(Integer subject3IntMark) {
         this.subject3IntMark = subject3IntMark;
     }
 
-    public Integer getSubject3ExtMark() {
+    public Integer getSubject3extmark() {
         return subject3ExtMark;
     }
-    public void setSubject3ExtMark(Integer subject3ExtMark) {
+    public void setSubject3extmark(Integer subject3ExtMark) {
         this.subject3ExtMark = subject3ExtMark;
     }
 
-    public Integer getSubject3TotMark() {
+    public Integer getSubject3totmark() {
         return subject3TotMark;
     }
-    public void setSubject3TotMark(Integer subject3TotMark) {
+    public void setSubject3totmark(Integer subject3TotMark) {
         this.subject3TotMark = subject3TotMark;
     }
 
-    public Character getSubject3Attendance() {
+    public Character getSubject3attendance() {
         return subject3Attendance;
     }
-    public void setSubject3Attendance(Character subject3Attendance) {
+    public void setSubject3attendance(Character subject3Attendance) {
         this.subject3Attendance = subject3Attendance;
     }
 
-    public String getSubject3Result() {
-        return subject3Result;
-    }
-    public void setSubject3Result(String subject3Result) {
+    public String getSubject3result() {return subject3Result; }
+    public void setSubject3result(String subject3Result) {
         this.subject3Result = subject3Result;
     }
 
-    public Integer getSubject4IntMark() {
+    public Integer getSubject4intmark() {
         return subject4IntMark;
     }
-    public void setSubject4IntMark(Integer subject4IntMark) {
+    public void setSubject4intmark(Integer subject4IntMark) {
         this.subject4IntMark = subject4IntMark;
     }
 
-    public Integer getSubject4ExtMark() {
+    public Integer getSubject4extmark() {
         return subject4ExtMark;
     }
-    public void setSubject4ExtMark(Integer subject4ExtMark) {
+    public void setSubject4extmark(Integer subject4ExtMark) {
         this.subject4ExtMark = subject4ExtMark;
     }
 
-    public Integer getSubject4TotMark() {
+    public Integer getSubject4totmark() {
         return subject4TotMark;
     }
-    public void setSubject4TotMark(Integer subject4TotMark) {
+    public void setSubject4totmark(Integer subject4TotMark) {
         this.subject4TotMark = subject4TotMark;
     }
 
-    public Character getSubject4Attendance() {
+    public Character getSubject4attendance() {
         return subject4Attendance;
     }
-    public void setSubject4Attendance(Character subject4Attendance) {
+    public void setSubject4attendance(Character subject4Attendance) {
         this.subject4Attendance = subject4Attendance;
     }
 
-    public String getSubject4Result() {
+    public String getSubject4result() {
         return subject4Result;
     }
-    public void setSubject4Result(String subject4Result) {
+    public void setSubject4result(String subject4Result) {
         this.subject4Result = subject4Result;
     }
 
-    public Integer getSubject5IntMark() {
+    public Integer getSubject5intmark() {
         return subject5IntMark;
     }
-    public void setSubject5IntMark(Integer subject5IntMark) {
+    public void setSubject5intmark(Integer subject5IntMark) {
         this.subject5IntMark = subject5IntMark;
     }
 
-    public Integer getSubject5ExtMark() {
+    public Integer getSubject5extmark() {
         return subject5ExtMark;
     }
-    public void setSubject5ExtMark(Integer subject5ExtMark) {
+    public void setSubject5extmark(Integer subject5ExtMark) {
         this.subject5ExtMark = subject5ExtMark;
     }
 
-    public Integer getSubject5TotMark() {
+    public Integer getSubject5totmark() {
         return subject5TotMark;
     }
-    public void setSubject5TotMark(Integer subject5TotMark) {
+    public void setSubject5totmark(Integer subject5TotMark) {
         this.subject5TotMark = subject5TotMark;
     }
 
-    public Character getSubject5Attendance() {
+    public Character getSubject5attendance() {
         return subject5Attendance;
     }
-    public void setSubject5Attendance(Character subject5Attendance) {
+    public void setSubject5attendance(Character subject5Attendance) {
         this.subject5Attendance = subject5Attendance;
     }
 
-    public String getSubject5Result() {
+    public String getSubject5result() {
         return subject5Result;
     }
-    public void setSubject5Result(String subject5Result) {
+    public void setSubject5result(String subject5Result) {
         this.subject5Result = subject5Result;
     }
 
-    public Integer getSubject6IntMark() {
+    public Integer getSubject6intmark() {
         return subject6IntMark;
     }
-    public void setSubject6IntMark(Integer subject6IntMark) {
+    public void setSubject6intmark(Integer subject6IntMark) {
         this.subject6IntMark = subject6IntMark;
     }
 
-    public Integer getSubject6ExtMark() {
+    public Integer getSubject6extmark() {
         return subject6ExtMark;
     }
-    public void setSubject6ExtMark(Integer subject6ExtMark) {
+    public void setSubject6extmark(Integer subject6ExtMark) {
         this.subject6ExtMark = subject6ExtMark;
     }
 
-    public Integer getSubject6TotMark() {
+    public Integer getSubject6totmark() {
         return subject6TotMark;
     }
-    public void setSubject6TotMark(Integer subject6TotMark) {
+    public void setSubject6totmark(Integer subject6TotMark) {
         this.subject6TotMark = subject6TotMark;
     }
 
-    public Character getSubject6Attendance() {
+    public Character getSubject6attendance() {
         return subject6Attendance;
     }
-    public void setSubject6Attendance(Character subject6Attendance) {
+    public void setSubject6attendance(Character subject6Attendance) {
         this.subject6Attendance = subject6Attendance;
     }
 
-    public String getSubject6Result() {
+    public String getSubject6result() {
         return subject6Result;
     }
-    public void setSubject6Result(String subject6Result) {
+    public void setSubject6result(String subject6Result) {
         this.subject6Result = subject6Result;
     }
 
-    public Integer getSubject7IntMark() {
+    public Integer getSubject7intmark() {
         return subject7IntMark;
     }
-    public void setSubject7IntMark(Integer subject7IntMark) {
+    public void setSubject7intmark(Integer subject7IntMark) {
         this.subject7IntMark = subject7IntMark;
     }
 
-    public Integer getSubject7ExtMark() {
+    public Integer getSubject7extmark() {
         return subject7ExtMark;
     }
-    public void setSubject7ExtMark(Integer subject7ExtMark) {
+    public void setSubject7extmark(Integer subject7ExtMark) {
         this.subject7ExtMark = subject7ExtMark;
     }
 
-    public Integer getSubject7TotMark() {
+    public Integer getSubject7totmark() {
         return subject7TotMark;
     }
-    public void setSubject7TotMark(Integer subject7TotMark) {
+    public void setSubject7totmark(Integer subject7TotMark) {
         this.subject7TotMark = subject7TotMark;
     }
 
-    public Character getSubject7Attendance() {
+    public Character getSubject7attendance() {
         return subject7Attendance;
     }
-    public void setSubject7Attendance(Character subject7Attendance) {
+    public void setSubject7attendance(Character subject7Attendance) {
         this.subject7Attendance = subject7Attendance;
     }
 
-    public String getSubject7Result() {
+    public String getSubject7result() {
         return subject7Result;
     }
-    public void setSubject7Result(String subject7Result) {
+    public void setSubject7result(String subject7Result) {
         this.subject7Result = subject7Result;
     }
 
-    public String getOverallResult() {
+    public String getOverallresult() {
         return OverallResult;
     }
-    public void setOverallResult(String OverallResult) {
+    public void setOverallresult(String OverallResult) {
         this.OverallResult = OverallResult;
     }
 
-    public Integer getRank() {
+    public Integer getrank() {
         return rank;
     }
-    public void setRank(Integer rank) {
+    public void setrank(Integer rank) {
         this.rank = rank;
     }
 

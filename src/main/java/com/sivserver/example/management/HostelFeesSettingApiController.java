@@ -40,16 +40,16 @@ public class HostelFeesSettingApiController extends WebMvcConfigurerAdapter {
     )
     {
         HostelFeesSetting hostelfeessett = new HostelFeesSetting();
-        hostelfeessett.setFeesSettingDate(feessettingdate);
-        hostelfeessett.setAcademicYear(academicyear);
-        hostelfeessett.setIndividualRoomFees(individualroomfees);
-        hostelfeessett.setGroupRoomFees(grouproomfees);
-        hostelfeessett.setSingleCotFees(singlecotfees);
-        hostelfeessett.setMultiCotFees(multicotfees);
+        hostelfeessett.setFeesSettingdate(feessettingdate);
+        hostelfeessett.setAcademicyear(academicyear);
+        hostelfeessett.setIndividualroomfees(individualroomfees);
+        hostelfeessett.setGrouproomfees(grouproomfees);
+        hostelfeessett.setSinglecotfees(singlecotfees);
+        hostelfeessett.setMulticotfees(multicotfees);
         hostelfeessett.setFoodFees(foodfees);
         hostelfeessett.setOthers(others);
-        hostelfeessett.setTotalFees(totalfees);
-        hostelfeessett.setLoginUser(loginuser);
+        hostelfeessett.setTotalfees(totalfees);
+        hostelfeessett.setLoginuser(loginuser);
 
         hostelfeessettingRepository.save(hostelfeessett);
     }

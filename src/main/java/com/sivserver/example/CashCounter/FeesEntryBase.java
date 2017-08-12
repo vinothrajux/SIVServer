@@ -18,99 +18,95 @@ public class FeesEntryBase {
     public void setRegno(String regno) {this.regno = regno;}
 
 
-    public String getAdmissionNo() {
+    public String getAdmissionno() {
         return admissionno;
     }
-    public void setAdmissionNo(String admissionno) {
+    public void setAdmissionno(String admissionno) {
         this.admissionno = admissionno;
     }
 
-    public Long getAdmissionFees() {
+    public Long getAdmissionfees() {
         return admissionfees;
     }
-    public void setAdmissionFees(Long admissionfees) {
+    public void setAdmissionfees(Long admissionfees) {
         this.admissionfees = admissionfees;
     }
 
-    public Long getTuitionFees() {
+    public Long getTuitionfees() {
         return tuitionfees;
     }
-    public void setTuitionFees(Long tuitionfees) {
+    public void setTuitionfees(Long tuitionfees) {
         this.tuitionfees = tuitionfees;
     }
 
-    public Long getTransportFees() {
+    public Long getTransportfees() {
         return transportFees;
     }
-    public void setTransportFees(Long transportFees) {
-        this.transportFees = transportFees;
-    }
+    public void setTransportfees(Long transportFees) {this.transportFees = transportFees;}
 
-    public Long getHostelFees() {
+    public Long getHostelfees() {
         return hostelfees;
     }
-    public void setHostelFees(Long hostelfees) {
+    public void setHostelfees(Long hostelfees) {
         this.hostelfees = hostelfees;
     }
 
 
-    public Long getFoodFees() {
+    public Long getFoodfees() {
         return foodfees;
     }
-    public void setFoodFees(Long foodfees) {
+    public void setFoodfees(Long foodfees) {
         this.foodfees = foodfees;
     }
 
 
-    public Long getTextBookStationaryFees() {
+    public Long getTextbookstationaryfees() {
         return textbookstationaryfees;
     }
-    public void setTextBookStationaryFees(Long textbookstationaryfees) {
-        this.textbookstationaryfees = textbookstationaryfees;
-    }
+    public void setTextbookstationaryfees(Long textbookstationaryfees) {this.textbookstationaryfees = textbookstationaryfees;}
 
-    public Long getMiscellaneousFees() {
+    public Long getMiscellaneousfees() {
         return miscellaneousfees;
     }
-    public void setMiscellaneousFees(Long miscellaneousfees) {
+    public void setMiscellaneousfees(Long miscellaneousfees) {
         this.miscellaneousfees = miscellaneousfees;
     }
 
-    public Long getSpecialFees() {
+    public Long getSpecialfees() {
         return specialfees;
     }
-    public void setSpecialFees(Long specialfees) {
+    public void setSpecialfees(Long specialfees) {
         this.specialfees = specialfees;
     }
 
-    public Long getPenaltyFees() {
+    public Long getPenaltyfees() {
         return penaltyfees;
     }
-    public void setPenaltyFees(Long penaltyfees) {
+    public void setPenaltyfees(Long penaltyfees) {
         this.penaltyfees = penaltyfees;
     }
 
-    public Long getPreviouBalanceFees() {
+    public Long getPrevioubalancefees() {
         return previousbalancefees;
     }
-    public void setPreviousBalanceFees(Long previousbalancefees) {
+    public void setPreviousbalancefees(Long previousbalancefees) {
         this.previousbalancefees = previousbalancefees;
     }
 
-    public Long getGroupInsuranceFees() {return groupinsurancefees; }
-    public void setGroupInsuranceFees(Long groupinsurancefees) {this.groupinsurancefees = groupinsurancefees; }
+    public Long getGroupinsurancefees() {return groupinsurancefees; }
+    public void setGroupinsurancefees(Long groupinsurancefees) {this.groupinsurancefees = groupinsurancefees; }
 
-    public Long getOthersFees() {return othersfees; }
-    public void setOthersFees(Long othersfees) {this.othersfees = othersfees; }
+    public Long getOthersfees() {return othersfees; }
+    public void setOthersfees(Long othersfees) {this.othersfees = othersfees; }
 
-    public Long getTotalFees() {return totalfees; }
-    public void setTotalFees(Long totalfees) {this.totalfees = totalfees; }
+    public Long getTotalfees() {return totalfees; }
+    public void setTotalfees(Long totalfees) {this.totalfees = totalfees; }
 
-    public String getAcademicYear() {return academicyear; }
-    public void setAcademicYear(String academicyear) {this.academicyear = academicyear; }
+    public String getAcademicyear() {return academicyear; }
+    public void setAcademicyear(String academicyear) {this.academicyear = academicyear; }
 
-    public String getLoginUser() {return loginuser; }
-    public void setLoginUser(String loginuser) {this.loginuser = loginuser; }
+    public String getLoginuser() {return loginuser; }
+    public void setLoginuser(String loginuser) {this.loginuser = loginuser; }
 
     @Id
     private String regno;

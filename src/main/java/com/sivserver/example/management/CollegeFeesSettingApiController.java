@@ -43,19 +43,19 @@ public class CollegeFeesSettingApiController extends WebMvcConfigurerAdapter {
     )
     {
         CollegeFeesSetting clgfeessett = new CollegeFeesSetting();
-        clgfeessett.setFeesSettingDate(feessettingdate);
-        clgfeessett.setBranchName(branchname);
-        clgfeessett.setBranchCode(branchcode);
-        clgfeessett.setAcademicYear(academicyear);
-        clgfeessett.setAdmissionFees(admissionfees);
-        clgfeessett.setTutionFees(tutionfees);
-        clgfeessett.setTextBookFees(textbookfees);
-        clgfeessett.setMiscalleneousFees(miscalleneousfees);
-        clgfeessett.setSpecialFees(specialfees);
-        clgfeessett.setGroupInsurance(groupinsurance);
+        clgfeessett.setFeesSettingdate(feessettingdate);
+        clgfeessett.setBranchname(branchname);
+        clgfeessett.setBranchcode(branchcode);
+        clgfeessett.setAcademicyear(academicyear);
+        clgfeessett.setAdmissionfees(admissionfees);
+        clgfeessett.setTutionfees(tutionfees);
+        clgfeessett.setTextBookfees(textbookfees);
+        clgfeessett.setMiscalleneousfees(miscalleneousfees);
+        clgfeessett.setSpecialfees(specialfees);
+        clgfeessett.setGroupinsurance(groupinsurance);
         clgfeessett.setOthers(others);
-        clgfeessett.setTotalFees(totalfees);
-        clgfeessett.setLoginUser(loginuser);
+        clgfeessett.setTotalfees(totalfees);
+        clgfeessett.setLoginuser(loginuser);
 
         collegefeessettingRepository.save(clgfeessett);
     }

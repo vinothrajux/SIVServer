@@ -12,24 +12,24 @@ import java.util.Date;
 @Table(name = "busdetail")
 public class BusDetail {
 
-    public String getBusNo(){
+    public String getBusno(){
         return busno;
     }
-    public void setBusNo(String busno) {
+    public void setBusno(String busno) {
         this.busno = busno;
     }
 
-    public String getDriverName() {
+    public String getDrivername() {
         return drivername;
     }
-    public void setDriverName(String drivername) {
+    public void setDrivername(String drivername) {
         this.drivername = drivername;
     }
 
-    public String getSeatNo() {
+    public String getSeatno() {
         return seatno;
     }
-    public void setSeatNo(String seatno) {
+    public void setSeatno(String seatno) {
         this.seatno = seatno;
     }
 

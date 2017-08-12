@@ -12,43 +12,43 @@ import java.util.Date;
 @Table(name = "hostelfeessetting")
 public class HostelFeesSetting {
 
-    public Date getFeesSettingDate(){
+    public Date getFeesSettingdate(){
         return feessettingdate;
     }
-    public void setFeesSettingDate(Date feessettingdate) {
+    public void setFeesSettingdate(Date feessettingdate) {
         this.feessettingdate = feessettingdate;
     }
 
-    public String getAcademicYear() {
+    public String getAcademicyear() {
         return academicyear;
     }
-    public void setAcademicYear(String academicyear) {
+    public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
     }
 
-    public Long getIndividualRoomFees() {
+    public Long getIndividualroomfees() {
         return individualroomfees;
     }
-    public void setIndividualRoomFees(Long individualroomfees) {this.individualroomfees = individualroomfees;}
+    public void setIndividualroomfees(Long individualroomfees) {this.individualroomfees = individualroomfees;}
 
-    public Long getGroupRoomFees() {
+    public Long getGrouproomfees() {
         return grouproomfees;
     }
-    public void setGroupRoomFees(Long grouproomfees) {
+    public void setGrouproomfees(Long grouproomfees) {
         this.grouproomfees = grouproomfees;
     }
 
-    public Long getSingleCotFees() {return singlecotfees; }
-    public void setSingleCotFees(Long singlecotfees) {this.singlecotfees = singlecotfees;}
+    public Long getSinglecotfees() {return singlecotfees; }
+    public void setSinglecotfees(Long singlecotfees) {this.singlecotfees = singlecotfees;}
 
-    public Long getMultiCotFees() {
+    public Long getMulticotfees() {
         return multicotfees;
     }
-    public void setMultiCotFees(Long multicotfees) {
+    public void setMulticotfees(Long multicotfees) {
         this.multicotfees = multicotfees;
     }
 
-    public Long getFoodFees() {
+    public Long getFoodfees() {
         return foodfees;
     }
     public void setFoodFees(Long foodfees) {
@@ -62,17 +62,17 @@ public class HostelFeesSetting {
         this.others = others;
     }
 
-    public Long getTotalFees() {
+    public Long getTotalfees() {
         return totalfees;
     }
-    public void setTotalFees(Long totalfees) {
+    public void setTotalfees(Long totalfees) {
         this.totalfees = totalfees;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 

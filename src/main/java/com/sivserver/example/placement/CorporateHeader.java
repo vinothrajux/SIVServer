@@ -13,65 +13,65 @@ import java.util.Date;
 @Table(name = "corporateheader")
 
 public class CorporateHeader {
-    public String getCorporateId(){
+    public String getCorporateid(){
         return corporateid;
     }
-    public void setCorporateId(String corporateid) {
+    public void setCorporateid(String corporateid) {
         this.corporateid = corporateid;
     }
 
-    public String getCorporateName(){
+    public String getCorporatename(){
         return corporatename;
     }
-    public void setCorporateName(String corporatename) {
+    public void setCorporatename(String corporatename) {
         this.corporatename = corporatename;
     }
 
-    public String getCorporateTpe() {
+    public String getCorporatetpe() {
         return corporatetype;
     }
-    public void setCoporateType(String corporatetype) {
+    public void setCoporatetype(String corporatetype) {
         this.corporatetype = corporatetype;
     }
 
-    public String getHRName() {
+    public String getHrname() {
         return hrname;
     }
-    public void setHRName(String hrname) {
+    public void setHrname(String hrname) {
         this.hrname = hrname;
     }
 
-    public String getContactNumber() {
+    public String getContactnumber() {
         return hrcontactnumber;
     }
-    public void setContactNumber(String hrcontactnumber) {
+    public void setContactnumber(String hrcontactnumber) {
         this.hrcontactnumber = hrcontactnumber;
     }
-    public String getHRAlternateContactNo() {
+    public String getHralternatecontactno() {
         return hralternatecontactno;
     }
-    public void setHRAlternateContactNo(String hralternatecontactno) {
+    public void setHralternatecontactno(String hralternatecontactno) {
         this.hralternatecontactno = hralternatecontactno;
     }
 
-    public String getHRMailId() {
+    public String getHrmailId() {
         return hrmailid;
     }
-    public void setHRMailId(String hrmailid) {
+    public void setHrmailId(String hrmailid) {
         this.hrmailid = hrmailid;
     }
 
-    public String getHRAltMailId() {
+    public String getHraltmailId() {
         return hraltmailid;
     }
-    public void setHRAltMailId(String hraltmailid) {
+    public void setHraltmailId(String hraltmailid) {
         this.hraltmailid = hraltmailid;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 

@@ -12,10 +12,10 @@ import java.util.Date;
 @Table(name = "transportfeessetting")
 public class TransportFeesSetting {
 
-    public Date getFeesSettingDate(){
+    public Date getFeesSettingdate(){
         return feessettingdate;
     }
-    public void setFeesSettingDate(Date feessettingdate) {
+    public void setFeesSettingdate(Date feessettingdate) {
         this.feessettingdate = feessettingdate;
     }
 
@@ -45,10 +45,10 @@ public class TransportFeesSetting {
     }
     public void setAmount(Long amount) {this.amount = amount;}
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 
