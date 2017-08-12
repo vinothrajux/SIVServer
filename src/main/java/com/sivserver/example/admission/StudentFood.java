@@ -25,10 +25,10 @@ public class StudentFood {
         this.branch = branch;
     }
 
-    public String getBranchCode() {
+    public String getBranchcode() {
         return branchcode;
     }
-    public void setBranchCode(String branchcode) {
+    public void setBranchcode(String branchcode) {
         this.branchcode = branchcode;
     }
 
@@ -40,31 +40,31 @@ public class StudentFood {
     }
 
 
-    public String getAcadYear() {
+    public String getAcadyear() {
         return academicYear;
     }
-    public void setAcadYear(String academicYear) {
+    public void setAcadyear(String academicYear) {
         this.academicYear = academicYear;
     }
 
-    public String getFoodType() {
+    public String getFoodtype() {
         return foodtype;
     }
-    public void setFoodType(String foodtype) {
+    public void setFoodtype(String foodtype) {
         this.foodtype = foodtype;
     }
 
-    public Long getFoodFees() {
+    public Long getFoodfees() {
         return foodfees;
     }
-    public void setFoodFees(Long foodfees) {
+    public void setFoodfees(Long foodfees) {
         this.foodfees = foodfees;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 

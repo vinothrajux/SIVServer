@@ -43,22 +43,22 @@ public class BformHeaderApicController extends WebMvcConfigurerAdapter {
             @RequestParam (value="loginuser", required=false) String loginuser
     ) {
         BformHeader bfromhead = new BformHeader();
-        bfromhead.setSlNo(slno);
+        bfromhead.setSlno(slno);
         bfromhead.setCategory(category);
-        bfromhead.setAllotedQuota(allotedquota);
+        bfromhead.setAllotedquota(allotedquota);
         bfromhead.setName(name);
         bfromhead.setGender(gender);
-        bfromhead.setDateofBirth(dob);
+        bfromhead.setDateofbirth(dob);
         bfromhead.setCommunity(community);
         bfromhead.setReleigion(religion);
-        bfromhead.setQualifiedExam(qualifiedexam);
-        bfromhead.setYearofPass(yearofpass);
-        bfromhead.setPhotoId(photoid);
+        bfromhead.setQualifiedexam(qualifiedexam);
+        bfromhead.setYearofpass(yearofpass);
+        bfromhead.setPhotoid(photoid);
         bfromhead.setRemarks(remarks);
         bfromhead.setBcode(bcode);
         bfromhead.setState(state);
-        bfromhead.setAcadYear(acadyear);
-        bfromhead.setApplicationNo(applicationno);
+        bfromhead.setAcadyear(acadyear);
+        bfromhead.setApplicationno(applicationno);
         bfromhead.setSemester(semester);
         bfromhead.setLoginuser(loginuser);
 

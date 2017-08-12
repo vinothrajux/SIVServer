@@ -13,60 +13,60 @@ import java.util.Date;
 @Table(name = "applicationfollowup")
 
 public class ApplicationFollowUp {
-    public Date getCurrentDate(){
+    public Date getCurrentdate(){
         return currentdate;
     }
-    public void setCurrentDate(Date currentdate) {
+    public void setCurrentdate(Date currentdate) {
         this.currentdate = currentdate;
     }
 
-    public String getEnquiryNo() {
+    public String getEnquiryno() {
         return enquiryNo;
     }
-    public void setEnquiryNo(String enquiryNo) {
+    public void setEnquiryno(String enquiryNo) {
         this.enquiryNo = enquiryNo;
     }
 
-    public String getApplicationNo() {
+    public String getApplicationno() {
         return applicationno;
     }
-    public void setApplicationNo(String applicationno) {
+    public void setApplicationno(String applicationno) {
         this.applicationno = applicationno;
     }
 
-    public String getCandidateName() {
+    public String getCandidatename() {
         return candidatename;
     }
-    public void setCandidateName(String candidatename) {
+    public void setCandidatename(String candidatename) {
         this.candidatename = candidatename;
     }
 
 
-    public String getFatherName() {
+    public String getFathername() {
         return fathername;
     }
-    public void setFatherName(String fathername) {
+    public void setFathername(String fathername) {
         this.fathername = fathername;
     }
 
-    public String getMobileNo() {
+    public String getMobileno() {
         return mobileno;
     }
-    public void setMobileNo(String mobileno) {
+    public void setMobileno(String mobileno) {
         this.mobileno = mobileno;
     }
 
-    public String getAlternativeMobileNo() {
+    public String getAlternativemobileno() {
         return alternativeMobileno;
     }
-    public void setAlternativeMobileNo(String alternativeMobileno) {
+    public void setAlternativemobileno(String alternativeMobileno) {
         this.alternativeMobileno = alternativeMobileno;
     }
 
-    public String getPreferredCourse() {
+    public String getPreferredcourse() {
         return preferredCourse;
     }
-    public void setPreferredCourse(String preferredCourse) {
+    public void setPreferredcourse(String preferredCourse) {
         this.preferredCourse = preferredCourse;
     }
 
@@ -77,10 +77,10 @@ public class ApplicationFollowUp {
         this.willingness = willingness;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 

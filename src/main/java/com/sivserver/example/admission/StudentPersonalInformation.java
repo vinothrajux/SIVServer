@@ -28,10 +28,10 @@ public class StudentPersonalInformation {
         this.admissionno = admissionno;
     }
 
-    public String getAcademicYear() {
+    public String getAcademicyear() {
         return academicyear;
     }
-    public void setAcademicYear(String academicyear) {
+    public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
     }
 
@@ -49,127 +49,127 @@ public class StudentPersonalInformation {
         this.gender = gender;
     }
 
-    public String getFatherName() {
+    public String getFathername() {
         return fathername;
     }
-    public void setFatherName(String fathername) {
+    public void setFathername(String fathername) {
         this.fathername = fathername;
     }
 
-    public String getMotherName() {
+    public String getMothername() {
         return mothername;
     }
-    public void setMotherName(String mothername) {this.mothername = mothername;}
+    public void setMothername(String mothername) {this.mothername = mothername;}
 
-    public String getPresentAddress1() {
+    public String getPresentaddress1() {
         return presentaddress1;
     }
-    public void setPresentAddress1(String presentaddress1) {
+    public void setPresentaddress1(String presentaddress1) {
         this.presentaddress1 = presentaddress1;
     }
 
-    public String getPresentAddress2() {
+    public String getPresentaddress2() {
         return presentaddress2;
     }
-    public void setPresentAddress2(String presentaddress2) {
+    public void setPresentaddress2(String presentaddress2) {
         this.presentaddress2 = presentaddress2;
     }
 
-    public String getPresentArea() {
+    public String getPresentarea() {
         return presentarea;
     }
-    public void setPresentArea(String presentarea) {
+    public void setPresentarea(String presentarea) {
         this.presentarea = presentarea;
     }
 
-    public Long getPresentPincode() {
+    public Long getPresentpincode() {
         return presentpincode;
     }
-    public void setPresentPincode(Long presentpincode) {
+    public void setPresentpincode(Long presentpincode) {
         this.presentpincode = presentpincode;
     }
 
-    public Long getPresentMobileNo() {
+    public Long getPresentmobileno() {
         return presentmobileno;
     }
-    public void setPresentMobileNo(Long presentmobileno) {
+    public void setPresentmobileno(Long presentmobileno) {
         this.presentmobileno = presentmobileno;
     }
 
-    public Long getPresentAltMobileNo() {
+    public Long getPresentaltmobileno() {
         return presentaltmobno;
     }
-    public void setPresentAltMobileNo(Long presentaltmobno) {
+    public void setPresentaltmobileno(Long presentaltmobno) {
         this.presentaltmobno = presentaltmobno;
     }
 
-    public String getPresentEmail() {
+    public String getPresentemail() {
         return presentemail;
     }
-    public void setPresentEmail(String presentemail) {
+    public void setPresentemail(String presentemail) {
         this.presentemail = presentemail;
     }
 
-    public String getPresentAltEmail() {
+    public String getPresentaltemail() {
         return presentaltemail;
     }
-    public void setPresentAltEmail(String presentaltemail) {
+    public void setPresentaltemail(String presentaltemail) {
         this.presentaltemail = presentaltemail;
     }
 
-    public String getPermanentAddress1() {
+    public String getPermanentaddress1() {
         return permanentaddress1;
     }
-    public void setPermanentAddress1(String permanentaddress1) {
+    public void setPermanentaddress1(String permanentaddress1) {
         this.permanentaddress1 = permanentaddress1;
     }
 
-    public String getPermanentAddress2() {
+    public String getPermanentaddress2() {
         return permanentaddress2;
     }
-    public void setPermanentAddress2(String permanentaddress2) {
+    public void setPermanentaddress2(String permanentaddress2) {
         this.permanentaddress2 = permanentaddress2;
     }
 
-    public String getPermanentArea() {
+    public String getPermanentarea() {
         return permanentarea;
     }
-    public void setPermanentArea(String permanentarea) {
+    public void setPermanentarea(String permanentarea) {
         this.permanentarea = permanentarea;
     }
 
-    public Long getPermanentPincode() {
+    public Long getPermanentpincode() {
         return permanentpincode;
     }
-    public void setPermanentPincode(Long permanentpincode) {
+    public void setPermanentpincode(Long permanentpincode) {
         this.permanentpincode = permanentpincode;
     }
 
-    public Long getPermanenttMobileNo() {
+    public Long getPermanenttmobileno() {
         return permanentmobileno;
     }
-    public void setPermanentMobileNo(Long permanentmobileno) {
+    public void setPermanentmobileno(Long permanentmobileno) {
         this.permanentmobileno = permanentmobileno;
     }
 
-    public Long getPermanentAltMobileNo() {
+    public Long getPermanentaltmobileno() {
         return permanentaltmobileno;
     }
-    public void setPermanentAltMobileNo(Long permanentaltmobileno) {
+    public void setPermanentaltmobileno(Long permanentaltmobileno) {
         this.permanentaltmobileno = permanentaltmobileno;
     }
 
-    public String getPermanentEmail() {
+    public String getPermanentemail() {
         return permanentemail;
     }
-    public void setPermanentEmail(String permanentemail) {
+    public void setPermanentemail(String permanentemail) {
         this.permanentemail = permanentemail;
     }
 
-    public String getPermanentAltEmail() {
+    public String getPermanentaltemail() {
         return permanentaltemail;
     }
-    public void setPermanentAltEmail(String permanentaltemail) {
+    public void setPermanentaltemail(String permanentaltemail) {
         this.permanentaltemail = permanentaltemail;
     }
 
@@ -181,10 +181,10 @@ public class StudentPersonalInformation {
         this.reference = reference;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 

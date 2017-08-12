@@ -19,10 +19,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "certificatesubmission")
 public class CertificateSubmission {
-    public String getAdmissionNo(){
+    public String getAdmissionno(){
         return admissionno;
     }
-    public void setAdmissionNo(String admissionno) {
+    public void setAdmissionno(String admissionno) {
         this.admissionno = admissionno;
     }
 
@@ -33,10 +33,10 @@ public class CertificateSubmission {
         this.regno = regno;
     }
 
-    public String getCandName() {
+    public String getCandname() {
         return candidatename;
     }
-    public void setCandName(String candidatename) {
+    public void setCandname(String candidatename) {
         this.candidatename = candidatename;
     }
 
@@ -47,10 +47,10 @@ public class CertificateSubmission {
         this.branch = branch;
     }
 
-    public String getBranchCode() {
+    public String getBranchcode() {
         return branchCode;
     }
-    public void setBranchCode(String branchCode) {
+    public void setBranchcode(String branchCode) {
         this.branchCode = branchCode;
     }
 
@@ -61,170 +61,170 @@ public class CertificateSubmission {
         this.semester = semester;
     }
 
-    public String getAcadYear() {
+    public String getAcadyear() {
         return academicYear;
     }
-    public void setAcadYear(String academicYear) {
+    public void setAcadyear(String academicYear) {
         this.academicYear = academicYear;
     }
 
-    public String getStudType() {
+    public String getStudtype() {
         return studentType;
     }
-    public void setStudType(String studentType) {
+    public void setStudtype(String studentType) {
         this.studentType = studentType;
     }
 
-    public String getFolioNo() {
+    public String getFoliono() {
         return foloiNo;
     }
-    public void setFolioNo(String foloiNo) {
+    public void setFoliono(String foloiNo) {
         this.foloiNo = foloiNo;
     }
 
-    public Boolean getMarkSheetSubmitted() {
+    public Boolean getMarksheetsubmitted() {
         return marksheetsubmitted;
     }
-    public void setMarkSheetSubmitted(Boolean marksheetsubmitted) {
+    public void setMarksheetsubmitted(Boolean marksheetsubmitted) {
         this.marksheetsubmitted = marksheetsubmitted;
     }
 
-    public String getMarksheetSlno() {
+    public String getMarksheetslno() {
         return marksheetSlNo;
     }
-    public void setMarksheetSlno(String marksheetSlNo) {
+    public void setMarksheetslno(String marksheetSlNo) {
         this.marksheetSlNo = marksheetSlNo;
     }
 
-    public Boolean getTransferCertifcateSubmitted() {
+    public Boolean getTransfercertifcatesubmitted() {
         return transfercertificatesubmitted;
     }
-    public void setTransferCertifcateSubmitted(Boolean transfercertificatesubmitted) {
+    public void setTransfercertifcatesubmitted(Boolean transfercertificatesubmitted) {
         this.transfercertificatesubmitted = transfercertificatesubmitted;
     }
 
-    public String getTransferCertificateSlNo() {
+    public String getTransfercertificateslno() {
         return transferCertificateSlNo;
     }
-    public void setTransferCertificateSlNo(String transferCertificateSlNo) {
+    public void setTransfercertificateslno(String transferCertificateSlNo) {
         this.transferCertificateSlNo = transferCertificateSlNo;
     }
 
-    public Boolean getCommunityCertificateSubmitted() {
+    public Boolean getCommunitycertificatesubmitted() {
         return communitycertificatesubmitted;
     }
-    public void setCommunityCertificateSubmitted(Boolean communitycertificatesubmitted) {
+    public void setCommunitycertificatesubmitted(Boolean communitycertificatesubmitted) {
         this.communitycertificatesubmitted = communitycertificatesubmitted;
     }
 
-    public String getCommunityCertificateSlNo() {
+    public String getCommunitycertificateslno() {
         return communityCertificateSlNo;
     }
-    public void setCommunityCertificateSlNo(String communityCertificateSlNo) {
+    public void setCommunitycertificateslno(String communityCertificateSlNo) {
         this.communityCertificateSlNo = communityCertificateSlNo;
     }
 
-    public Boolean getXeroxMarkSheetSubmitted() {
+    public Boolean getXeroxmarksheetsubmitted() {
         return xeroxmarksheetsubmitted;
     }
-    public void setXeroxMarkSheetSubmitted(Boolean xeroxmarksheetsubmitted) {
+    public void setXeroxmarksheetsubmitted(Boolean xeroxmarksheetsubmitted) {
         this.xeroxmarksheetsubmitted = xeroxmarksheetsubmitted;
     }
 
-    public Integer getXeroxMarksheetCopies() {
+    public Integer getXeroxmarksheetcopies() {
         return xeroxMarksheetCopies;
     }
-    public void setXeroxMarksheetCopies(Integer xeroxMarksheetCopies) {
+    public void setXeroxmarksheetcopies(Integer xeroxMarksheetCopies) {
         this.xeroxMarksheetCopies = xeroxMarksheetCopies;
     }
 
-    public Boolean getXeroxTransferCertifcateSubmitted() {
+    public Boolean getXeroxtransfercertifcatesubmitted() {
         return xeroxTransfercertificatesubmitted;
     }
-    public void setXeroxTransferCertifcateSubmitted(Boolean xeroxTransfercertificatesubmitted) {
+    public void setXeroxtransfercertifcatesubmitted(Boolean xeroxTransfercertificatesubmitted) {
         this.xeroxTransfercertificatesubmitted = xeroxTransfercertificatesubmitted;
     }
 
-    public Integer getXeroxTransferCertificateCopies() {
+    public Integer getXeroxtransfercertificatecopies() {
         return xeroxTransferCertificateCopies;
     }
-    public void setXeroxTransferCertificateCopies(Integer xeroxTransferCertificateCopies) {
+    public void setXeroxtransfercertificatecopies(Integer xeroxTransferCertificateCopies) {
         this.xeroxTransferCertificateCopies = xeroxTransferCertificateCopies;
     }
 
-    public Boolean getXeroxCommunityCertificateSubmitted() {
+    public Boolean getXeroxcommunitycertificatesubmitted() {
         return xeroxCommunitycertificatesubmitted;
     }
-    public void setXeroxCommunityCertificateSubmitted(Boolean xeroxCommunitycertificatesubmitted) {
+    public void setXeroxcommunitycertificatesubmitted(Boolean xeroxCommunitycertificatesubmitted) {
         this.xeroxCommunitycertificatesubmitted = xeroxCommunitycertificatesubmitted;
     }
 
-    public Integer getXeroxCommunityCertificateCopies() {
+    public Integer getXeroxcommunitycertificatecopies() {
         return xeroxCommunityCertificateCopies;
     }
-    public void setXeroxCommunityCertificateCopies(Integer xeroxCommunityCertificateCopies) {
+    public void setXeroxcommunitycertificatecopies(Integer xeroxCommunityCertificateCopies) {
         this.xeroxCommunityCertificateCopies = xeroxCommunityCertificateCopies;
     }
-    public Boolean getMigrationCertifcateSubmitted() {
+    public Boolean getMigrationcertifcatesubmitted() {
         return migrationcertificatesubmitted;
     }
-    public void setMigrationCertifcateSubmitted(Boolean migrationcertificatesubmitted) {
+    public void setMigrationcertifcatesubmitted(Boolean migrationcertificatesubmitted) {
         this.migrationcertificatesubmitted = migrationcertificatesubmitted;
     }
 
-    public String getMigrationCertificateSlNo() {
+    public String getMigrationcertificateslno() {
         return migrationCertificateSlNo;
     }
-    public void setMigrationCertificateSlNo(String migrationCertificateSlNo) {
+    public void setMigrationcertificateslno(String migrationCertificateSlNo) {
         this.migrationCertificateSlNo = migrationCertificateSlNo;
     }
 
-    public Boolean getConductCertifcateSubmitted() {
+    public Boolean getConductcertifcatesubmitted() {
         return conductcertificatesubmitted;
     }
-    public void setConductCertifcateSubmitted(Boolean conductcertificatesubmitted) {
+    public void setConductcertifcatesubmitted(Boolean conductcertificatesubmitted) {
         this.conductcertificatesubmitted = conductcertificatesubmitted;
     }
 
-    public String getConductCertificateSlNo() {
+    public String getConductcertificateslno() {
         return conductCertificateSlNo;
     }
-    public void setConductCertificateSlNo(String conductCertificateSlNo) {
+    public void setConductcertificateslno(String conductCertificateSlNo) {
         this.conductCertificateSlNo = conductCertificateSlNo;
     }
 
-    public Boolean getStampSizePotoSubmitted() {
+    public Boolean getStampsizepotosubmitted() {
         return stampSizePhotosubmitted;
     }
-    public void setStampSizePotoSubmitted(Boolean stampSizePhotosubmitted) {
+    public void setStampsizepotosubmitted(Boolean stampSizePhotosubmitted) {
         this.stampSizePhotosubmitted = stampSizePhotosubmitted;
     }
 
-    public Integer getStampSizePotoNos() {
+    public Integer getStampsizepotonos() {
         return stampSizePhotoCopies;
     }
-    public void setStampSizePotoNos(Integer stampSizePhotoCopies) {
+    public void setStampsizepotonos(Integer stampSizePhotoCopies) {
         this.stampSizePhotoCopies = stampSizePhotoCopies;
     }
 
-    public Boolean getPassPortSizePotoSubmitted() {
+    public Boolean getPassportsizepotosubmitted() {
         return passPortPhotosubmitted;
     }
-    public void setPassPortSizeSubmitted(Boolean passPortPhotosubmitted) {
+    public void setPassportsizesubmitted(Boolean passPortPhotosubmitted) {
         this.passPortPhotosubmitted = passPortPhotosubmitted;
     }
 
-    public Integer getPassPortSizePotoNos() {
+    public Integer getPassportsizepotonos() {
         return passportSizePhotoCopies;
     }
-    public void setPassPortSizePotoNos(Integer passportSizePhotoCopies) {
+    public void setPassportsizepotonos(Integer passportSizePhotoCopies) {
         this.passportSizePhotoCopies = passportSizePhotoCopies;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginUser;
     }
-    public void setLoginUser(String loginUser) {
+    public void setLoginuser(String loginUser) {
         this.loginUser = loginUser;
     }
 

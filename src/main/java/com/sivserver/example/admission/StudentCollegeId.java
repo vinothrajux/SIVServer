@@ -26,10 +26,8 @@ public class StudentCollegeId {
         this.admissionno = admissionno;
     }
 
-    public String getCandidateName() {
-        return candidatename;
-    }
-    public void setCandidateName(String candidatename) {
+    public String getCandidatename() {return candidatename;}
+    public void setCandidatename(String candidatename) {
         this.candidatename = candidatename;
     }
 
@@ -40,8 +38,8 @@ public class StudentCollegeId {
         this.branch = branch;
     }
 
-    public String getBrachCode() {      return branchcode;    }
-    public void setBranchCode(String branchcode) {
+    public String getBrachcode() {      return branchcode;    }
+    public void setBranchcode(String branchcode) {
         this.branchcode = branchcode;
     }
 
@@ -59,11 +57,11 @@ public class StudentCollegeId {
         this.semester = semester;
     }
 
-    public String getAcademicYear() {       return academicYear;    }
-    public void setAcademicYear(String academicYear) {this.academicYear = academicYear;    }
+    public String getAcademicyear() {return academicYear;}
+    public void setAcademicyear(String academicYear) {this.academicYear = academicYear;}
 
-    public Date getIdIssueDate() {     return idissueddate;    }
-    public void setIdIssueDate(Date idissueddate) {
+    public Date getIdissuedate() {     return idissueddate;    }
+    public void setIdissuedate(Date idissueddate) {
         this.idissueddate = idissueddate;
     }
 
@@ -74,7 +72,7 @@ public class StudentCollegeId {
         this.idcardno = idcardno;
     }
 
-    public String getIdType() {
+    public String getIdtype() {
         return idtype;
     }
     public void setIdtype(String idtype) {   this.idtype = idtype;  }
@@ -84,10 +82,10 @@ public class StudentCollegeId {
     }
     public void setIdstatus(String idstatus) {   this.idstatus = idstatus;  }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 

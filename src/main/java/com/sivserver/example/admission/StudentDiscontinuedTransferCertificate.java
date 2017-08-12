@@ -13,17 +13,17 @@ import java.util.Date;
 @Table(name = "studentdiscontinuedtctab")
 
 public class StudentDiscontinuedTransferCertificate {
-    public Date getEntryDate(){
+    public Date getEntrydate(){
         return entrydate;
     }
-    public void setEntryDate(Date entrydate) {
+    public void setEntrydate(Date entrydate) {
         this.entrydate = entrydate;
     }
 
-    public String getTcSerialNo() {
+    public String getTcserialno() {
         return tcserialno;
     }
-    public void setTcSerialNo(String tcserialno) {
+    public void setTcserialno(String tcserialno) {
         this.tcserialno = tcserialno;
     }
 
@@ -34,32 +34,32 @@ public class StudentDiscontinuedTransferCertificate {
         this.regno = regno;
     }
 
-    public String getAdmissionNo() {
+    public String getAdmissionno() {
         return admissionno;
     }
-    public void setAdmissionNo(String admissionno) {
+    public void setAdmissionno(String admissionno) {
         this.admissionno = admissionno;
     }
 
 
-    public String getCandidateName() {
+    public String getCandidatename() {
         return candname;
     }
-    public void setCandidateName(String candname) {
+    public void setCandidatename(String candname) {
         this.candname = candname;
     }
 
-    public String getFatherName() {
+    public String getFathername() {
         return fathername;
     }
-    public void setFatherName(String fathername) {
+    public void setFathername(String fathername) {
         this.fathername = fathername;
     }
 
-    public String getMotherName() {
+    public String getMothername() {
         return mothername;
     }
-    public void setMotherName(String mothername) {
+    public void setMothername(String mothername) {
         this.mothername = mothername;
     }
 
@@ -70,10 +70,10 @@ public class StudentDiscontinuedTransferCertificate {
         this.branch = branch;
     }
 
-    public String getBranchCode() {
+    public String getBranchcode() {
         return branchcode;
     }
-    public void setBranchCode(String branchcode) {
+    public void setBranchcode(String branchcode) {
         this.branchcode = branchcode;
     }
 
@@ -91,31 +91,31 @@ public class StudentDiscontinuedTransferCertificate {
         this.semester = semester;
     }
 
-    public String getAcademicYear() {
+    public String getAcademicyear() {
         return academicYear;
     }
-    public void setAcademicYear(String academicYear) {
+    public void setAcademicyear(String academicYear) {
         this.academicYear = academicYear;
     }
 
-    public String getStudentType() {
+    public String getStudenttype() {
         return studenttype;
     }
-    public void setStudentType(String studenttype) {
+    public void setStudenttype(String studenttype) {
         this.studenttype = studenttype;
     }
 
-    public Date getDateofBirth() {
+    public Date getDateofbirth() {
         return dob;
     }
-    public void setDateofBirth(Date dob) {
+    public void setDateofbirth(Date dob) {
         this.dob = dob;
     }
 
-    public String getDateofBirthWords() {
+    public String getDateofbirthwords() {
         return dobw;
     }
-    public void setDateofBirthWords(String dobw) {
+    public void setDateofbirthwords(String dobw) {
         this.dobw = dobw;
     }
 
@@ -154,31 +154,31 @@ public class StudentDiscontinuedTransferCertificate {
         this.caste = caste;
     }
 
-    public Date getDateofAdmission() {
+    public Date getDateofadmission() {
         return dateofadmission;
     }
-    public void setDateofAdmission(Date dateofadmission) {
+    public void setDateofadmission(Date dateofadmission) {
         this.dateofadmission = dateofadmission;
     }
 
-    public Date getLeftDate() {
+    public Date getLeftdate() {
         return leftdate;
     }
-    public void setLeftDate(Date leftdate) {
+    public void setLeftdate(Date leftdate) {
         this.leftdate = leftdate;
     }
 
-    public String getYearofStudent() {
+    public String getYearofstudent() {
         return yearofstudent;
     }
-    public void setYearofStudent(String yearofstudent) {
+    public void setYearofstudent(String yearofstudent) {
         this.yearofstudent = yearofstudent;
     }
 
-    public String getLastAppearedExam() {
+    public String getLastappearedexam() {
         return lastappearedexam;
     }
-    public void setLastAppearedExam(String lastappearedexam) {
+    public void setLastappearedexam(String lastappearedexam) {
         this.lastappearedexam = lastappearedexam;
     }
 
@@ -189,31 +189,31 @@ public class StudentDiscontinuedTransferCertificate {
         this.qualified = qualified;
     }
 
-    public String getReasonforTc() {
+    public String getReasonfortc() {
         return reasonfortc;
     }
-    public void setReasonforTc(String reasonfortc) {
+    public void setReasonfortc(String reasonfortc) {
         this.reasonfortc = reasonfortc;
     }
 
-    public Long getFeesBalance() {
+    public Long getFeesbalance() {
         return feesbalance;
     }
-    public void setFeesBalance(Long feesbalance) {
+    public void setFeesbalance(Long feesbalance) {
         this.feesbalance = feesbalance;
     }
 
-    public String getDurationFrom() {
+    public String getDurationfrom() {
         return durationfrom;
     }
-    public void setDurationFrom(String durationfrom) {
+    public void setDurationfrom(String durationfrom) {
         this.durationfrom = durationfrom;
     }
 
-    public String getDurationTo() {
+    public String getDurationto() {
         return durationto;
     }
-    public void setDurationTo(String durationto) {
+    public void setDurationto(String durationto) {
         this.durationto = durationto;
     }
 
@@ -224,10 +224,10 @@ public class StudentDiscontinuedTransferCertificate {
         this.approved = approved;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 

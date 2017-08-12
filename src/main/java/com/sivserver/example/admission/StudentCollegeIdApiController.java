@@ -38,17 +38,17 @@ public class StudentCollegeIdApiController extends WebMvcConfigurerAdapter {
         StudentCollegeId studemtCollegeId = new StudentCollegeId();
         studemtCollegeId.setRegno(regno);
         studemtCollegeId.setAdmissionno(admissionno);
-        studemtCollegeId.setCandidateName(candidatename);
+        studemtCollegeId.setCandidatename(candidatename);
         studemtCollegeId.setBranch(branch);
-        studemtCollegeId.setBranchCode(branchcode);
+        studemtCollegeId.setBranchcode(branchcode);
         studemtCollegeId.setBatch(Batch);
         studemtCollegeId.setSemester(semester);
-        studemtCollegeId.setAcademicYear(academicYear);
-        studemtCollegeId.setIdIssueDate(idissueddate);
+        studemtCollegeId.setAcademicyear(academicYear);
+        studemtCollegeId.setIdissuedate(idissueddate);
         studemtCollegeId.setidcardno(idcardno);
         studemtCollegeId.setIdtype(idtype);
         studemtCollegeId.setIdstatus(idstatus);
-        studemtCollegeId.setLoginUser(loginuser);
+        studemtCollegeId.setLoginuser(loginuser);
 
         studentCollegeIdRepository.save(studemtCollegeId);
 

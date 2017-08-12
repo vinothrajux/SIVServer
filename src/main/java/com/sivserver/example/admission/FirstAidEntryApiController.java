@@ -43,19 +43,19 @@ public class FirstAidEntryApiController extends WebMvcConfigurerAdapter {
 
     ) {
         FirstAidEntry firstaid = new FirstAidEntry();
-        firstaid.setCurrentDate(currentdate);
+        firstaid.setCurrentdate(currentdate);
         firstaid.setRegNo(regno);
-        firstaid.setAdmissionNo(admissionno);
+        firstaid.setAdmissionno(admissionno);
         firstaid.setName(name);
-        firstaid.setBranchName(branchname);
-        firstaid.setBranchCode(branchcode);
+        firstaid.setBranchname(branchname);
+        firstaid.setBranchcode(branchcode);
         firstaid.setBatch(batch);
         firstaid.setSemester(semester);
-        firstaid.setAcademicYear(academicyear);
-        firstaid.setReasonForFirstAid(reasonforfirstaid);
-        firstaid.setFirstAidDetails(firstaiddetails);
-        firstaid.setHospitalName(hospitalname);
-        firstaid.setHospitalFees(hospitalfees);
+        firstaid.setAcademicyear(academicyear);
+        firstaid.setReasonforfirstaid(reasonforfirstaid);
+        firstaid.setFirstaiddetails(firstaiddetails);
+        firstaid.setHospitalname(hospitalname);
+        firstaid.setHospitalfees(hospitalfees);
         firstaid.setRemarks(remarks);
         firstaid.setLoginuser(loginuser);
 

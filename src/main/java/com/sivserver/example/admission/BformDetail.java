@@ -13,17 +13,17 @@ import java.util.Date;
 @Table(name = "bformdetail")
 
 public class BformDetail  {
-    public String getApplicatonNo(){
+    public String getApplicatonno(){
         return applicationno;
     }
-    public void setApplicationNo(String applicationno) {
+    public void setApplicationno(String applicationno) {
         this.applicationno = applicationno;
     }
 
-    public String getPhotoId(){
+    public String getPhotoid(){
         return photoid;
     }
-    public void setPhotoId(String photoid) {
+    public void setPhotoid(String photoid) {
         this.photoid = photoid;
     }
 

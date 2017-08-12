@@ -40,7 +40,7 @@ public class StudentHostel {
         this.branch = branch;
     }
 
-    public String getBranchCode() {
+    public String getBranchcode() {
         return branchCode;
     }
     public void setBranchCode(String branchCode) {
@@ -54,24 +54,24 @@ public class StudentHostel {
         this.semester = semester;
     }
 
-    public String getAcadYear() {
+    public String getAcadyear() {
         return academicYear;
     }
-    public void setAcadYear(String academicYear) {
+    public void setAcadyear(String academicYear) {
         this.academicYear = academicYear;
     }
 
-    public String getOptedFacility() {
+    public String getOptedfacility() {
         return optdFacility;
     }
-    public void setOptedFacility(String optdFacility) {
+    public void setOptedfacility(String optdFacility) {
         this.optdFacility = optdFacility;
     }
 
-    public String getFoodType() {
+    public String getFoodtype() {
         return foodtype;
     }
-    public void setFoodType(String foodtype) {
+    public void setFoodtype(String foodtype) {
         this.foodtype = foodtype;
     }
 
@@ -82,10 +82,10 @@ public class StudentHostel {
         this.amount = amount;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 

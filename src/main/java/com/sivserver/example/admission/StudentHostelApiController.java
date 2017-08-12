@@ -52,11 +52,11 @@ public class StudentHostelApiController  extends WebMvcConfigurerAdapter {
         studhostel.setBranch(branch);
         studhostel.setBranchCode(branchCode);
         studhostel.setSemester(semester);
-        studhostel.setAcadYear(academicYear);
-        studhostel.setOptedFacility(optdFacility) ;
-        studhostel.setFoodType(foodtype) ;
+        studhostel.setAcadyear(academicYear);
+        studhostel.setOptedfacility(optdFacility) ;
+        studhostel.setFoodtype(foodtype) ;
         studhostel.setAmount(amount);
-        studhostel.setLoginUser(loginuser);
+        studhostel.setLoginuser(loginuser);
 
         studentHostelRepository.save(studhostel);
 

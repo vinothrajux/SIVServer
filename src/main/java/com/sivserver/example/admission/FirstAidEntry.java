@@ -14,10 +14,8 @@ import java.util.Date;
 @Table(name = "firstaidentry")
 public class FirstAidEntry {
 
-    public Date getCurrentDate(){
-        return currentdate;
-    }
-    public void setCurrentDate(Date currentdate) {
+    public Date getCurrentdate(){return currentdate;}
+    public void setCurrentdate(Date currentdate) {
         this.currentdate = currentdate;
     }
 
@@ -28,10 +26,10 @@ public class FirstAidEntry {
         this.regno = regno;
     }
 
-    public String getAdmissionNo(){
+    public String getAdmissionno(){
         return admissionno;
     }
-    public void setAdmissionNo(String admissionno) {
+    public void setAdmissionno(String admissionno) {
         this.admissionno = admissionno;
     }
 
@@ -43,17 +41,17 @@ public class FirstAidEntry {
     }
 
 
-    public String getBranchName() {
+    public String getBranchname() {
         return branchname;
     }
-    public void setBranchName(String branchname) {
+    public void setBranchname(String branchname) {
         this.branchname = branchname;
     }
 
-    public String getBranchCode() {
+    public String getBranchcode() {
         return branchcode;
     }
-    public void setBranchCode(String branchcode) {
+    public void setBranchcode(String branchcode) {
         this.branchcode = branchcode;
     }
 
@@ -73,38 +71,36 @@ public class FirstAidEntry {
     }
 
 
-    public String getAcademicYear() {
+    public String getAcademicyear() {
         return academicyear;
     }
-    public void setAcademicYear(String academicyear) {
+    public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
     }
 
-    public String getReasonForFirstAid() {
+    public String getReasonforfirstaid() {
         return reasonforfirstaid;
     }
-    public void setReasonForFirstAid(String reasonforfirstaid) {
+    public void setReasonforfirstaid(String reasonforfirstaid) {
         this.reasonforfirstaid = reasonforfirstaid;
     }
 
-    public String getFirstAidDetails() {
+    public String getFirstaiddetails() {
         return firstaiddetails;
     }
-    public void setFirstAidDetails(String firstaiddetails) {
+    public void setFirstaiddetails(String firstaiddetails) {
         this.firstaiddetails = firstaiddetails;
     }
 
-    public String getHospitalName() {
+    public String getHospitalname() {
         return hospitalname;
     }
-    public void setHospitalName(String hospitalname) {
-        this.hospitalname = hospitalname;
-    }
+    public void setHospitalname(String hospitalname) {this.hospitalname = hospitalname;}
 
-    public Long getHospitalFees() {
+    public Long getHospitalfees() {
         return hospitalfees;
     }
-    public void setHospitalFees(Long hospitalfees) {
+    public void setHospitalfees(Long hospitalfees) {
         this.hospitalfees = hospitalfees;
     }
 

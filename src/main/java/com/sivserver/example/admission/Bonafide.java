@@ -16,17 +16,15 @@ import java.util.Set;
 @Table(name = "bonafide")
 public class Bonafide {
 
-    public String getRegNo(){
-        return regno;
-    }
-    public void setRegNo(String regno) {
+    public String getRegno(){return regno;}
+    public void setRegno(String regno) {
         this.regno = regno;
     }
 
-    public String getAdmissionNo() {
+    public String getAdmissionno() {
         return admissionno;
     }
-    public void setAdmissionNo(String admissionno) {
+    public void setAdmissionno(String admissionno) {
         this.admissionno = admissionno;
     }
 
@@ -44,59 +42,53 @@ public class Bonafide {
         this.semester = semester;
     }
 
-    public String getBranchName() {
+    public String getBranchname() {
         return branchname;
     }
-    public void setBranchName(String branchname) {
-        this.branchname = branchname;
-    }
+    public void setBranchname(String branchname) {this.branchname = branchname; }
 
-    public String getBranchCode() {
-        return branchcode;
-    }
-    public void setBranchCode(String branchcode) {
-        this.branchcode = branchcode;
-    }
+    public String getBranchcode() {return branchcode;}
+    public void setBranchcode(String branchcode) {this.branchcode = branchcode;}
 
-    public String getAcademicYear() {
+    public String getAcademicyear() {
         return academicyear;
     }
-    public void setAcademicYear(String academicyear) {
+    public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
     }
 
-    public String getFatherName() {
+    public String getFathername() {
         return fathername;
     }
-    public void setFatherName(String fathername) {
+    public void setFathername(String fathername) {
         this.fathername = fathername;
     }
 
-    public Date getIssuedDate() {
+    public Date getIssueddate() {
         return issueddate;
     }
-    public void setIssuedDate(Date issueddate) {
+    public void setIssueddate(Date issueddate) {
         this.issueddate = issueddate;
     }
 
-    public String getCertficateFor() {
+    public String getCertficatefor() {
         return certificatefor;
     }
-    public void setCertficateFor(String certificatefor) {
+    public void setCertficatefor(String certificatefor) {
         this.certificatefor = certificatefor;
     }
 
-    public Integer getNoOfYears() {
+    public Integer getNoOfyears() {
         return noofyears;
     }
-    public void setNoOfYears(Integer noofyears) {
+    public void setNoOfyears(Integer noofyears) {
         this.noofyears = noofyears;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 

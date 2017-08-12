@@ -1,7 +1,5 @@
 package com.sivserver.example.admission;
 
-import org.hibernate.annotations.NaturalId;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -22,19 +20,6 @@ import javax.persistence.Table;
 @Table(name = "admissioncounselling")
 public class AdmissionCounselling {
 
-    public AdmissionCounselling()
-    {
-
-    }
-
-    public long getId() {
-
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
     public String getAdmissiontype(){
         return admissiontype;
     }
@@ -42,7 +27,7 @@ public class AdmissionCounselling {
         this.admissiontype = admissiontype;
     }
 
-    public String getApplno(){
+    public String getApplno() {
         return applno;
     }
     public void setApplno(String applno) {
@@ -140,20 +125,12 @@ public class AdmissionCounselling {
         this.loginuser = loginuser;
     }
 
-    @Id
-    @Column(name="COUNSELLING_ID")
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private long id;
 
     @NotNull
     private String admissiontype;
 
-   // @OneToOne(cascade = CascadeType.ALL)
-    // @JoinColumn(name = "APPLICATION_ID")
-    // private ApplicationSale applicationid;
-
-   @NotNull
-   private String applno;
+    @NotNull
+    private String applno;
 
     @NotNull
     private Date counsellingdate;
@@ -179,7 +156,7 @@ public class AdmissionCounselling {
     @NotNull
     private String counsellingstatus;
 
-    @NaturalId
+    @Id
     private String admissionno;
 
     @NotNull
@@ -194,9 +171,7 @@ public class AdmissionCounselling {
     @NotNull
     private String loginuser;
 
- //  @OneToMany(mappedBy="applicationno") This will insert more than one row with same value in child table
- //   @OneToMany(mappedBy="applicationno")
- //   private Set<ApplicationSale> appsale;
-
+ //  @OneToMany(mappedBy="applicationno")
+ //  private Set<ApplicationSale> appsale;
 
 }

@@ -69,37 +69,37 @@ public class StudentDiscontinuedTransferCertificateApiController extends WebMvcC
 
     ) {
         StudentDiscontinuedTransferCertificate studDisTranscert = new StudentDiscontinuedTransferCertificate();
-        studDisTranscert.setEntryDate(entrydate);
-        studDisTranscert.setTcSerialNo(tcserialno);
+        studDisTranscert.setEntrydate(entrydate);
+        studDisTranscert.setTcserialno(tcserialno);
         studDisTranscert.setRegno(regno);
-        studDisTranscert.setAdmissionNo(admissionno);
-        studDisTranscert.setCandidateName(candname);
-        studDisTranscert.setFatherName(fathername);
-        studDisTranscert.setMotherName(mothername);
+        studDisTranscert.setAdmissionno(admissionno);
+        studDisTranscert.setCandidatename(candname);
+        studDisTranscert.setFathername(fathername);
+        studDisTranscert.setMothername(mothername);
         studDisTranscert.setBranch(branch);
-        studDisTranscert.setBranchCode(branchcode);
+        studDisTranscert.setBranchcode(branchcode);
         studDisTranscert.setBatch(batch);
         studDisTranscert.setSemester(semester);
-        studDisTranscert.setAcademicYear(academicYear);
-        studDisTranscert.setStudentType(studenttype);
-        studDisTranscert.setDateofBirth(dob);
-        studDisTranscert.setDateofBirthWords(dobw);
+        studDisTranscert.setAcademicyear(academicYear);
+        studDisTranscert.setStudenttype(studenttype);
+        studDisTranscert.setDateofbirth(dob);
+        studDisTranscert.setDateofbirthwords(dobw);
         studDisTranscert.setReligion(religion);
         studDisTranscert.setNationality(nationality);
         studDisTranscert.setGender(gender);
         studDisTranscert.setCommunity(community);
         studDisTranscert.setCaste(caste);
-        studDisTranscert.setDateofAdmission(dateofadmission);
-        studDisTranscert.setLeftDate(leftdate);
-        studDisTranscert.setYearofStudent(yearofstudent);
-        studDisTranscert.setLastAppearedExam(lastappearedexam);
+        studDisTranscert.setDateofadmission(dateofadmission);
+        studDisTranscert.setLeftdate(leftdate);
+        studDisTranscert.setYearofstudent(yearofstudent);
+        studDisTranscert.setLastappearedexam(lastappearedexam);
         studDisTranscert.setQualified(qualified);
-        studDisTranscert.setReasonforTc(reasonfortc);
-        studDisTranscert.setFeesBalance(feesbalance);
-        studDisTranscert.setDurationFrom(durationfrom);
-        studDisTranscert.setDurationTo(durationto);
+        studDisTranscert.setReasonfortc(reasonfortc);
+        studDisTranscert.setFeesbalance(feesbalance);
+        studDisTranscert.setDurationfrom(durationfrom);
+        studDisTranscert.setDurationto(durationto);
         studDisTranscert.setApproved(approved);
-        studDisTranscert.setLoginUser(loginuser);
+        studDisTranscert.setLoginuser(loginuser);
 
 
         studentDiscontinuedTransferCertificateRepository.save(studDisTranscert);
