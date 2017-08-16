@@ -32,9 +32,9 @@ public class BusDetailApiController extends WebMvcConfigurerAdapter {
 //
 //   {
 //       BusDetail busdet =new BusDetail();
-//       busdet.setBusNo(busno);
-//       busdet.setDriverName(drivername);
-//       busdet.setSeatNo(seatno);
+//       busdet.setBusno(busno);
+//       busdet.setDrivername(drivername);
+//       busdet.setSeatno(seatno);
 //       busDetailRepository.save(busdet);
 //   }
 

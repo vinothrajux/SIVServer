@@ -42,19 +42,19 @@ public class FeesFollowupApiController  extends WebMvcConfigurerAdapter {
     )
     {
         FeesFollowup feesfollow = new FeesFollowup();
-        feesfollow.setCurrentDate(currentdate);
-        feesfollow.setRegNo(regno);
-        feesfollow.setAdmissionNo(admissionno);
+        feesfollow.setCurrentdate(currentdate);
+        feesfollow.setRegno(regno);
+        feesfollow.setAdmissionno(admissionno);
         feesfollow.setName(name);
         feesfollow.setSemester(semester);
-        feesfollow.setBranchName(branchname);
-        feesfollow.setBranchCode(branchcode);
-        feesfollow.setAcademicYear(academicyear);
-        feesfollow.setLastPaymentDate(lastpaymtdate);
-        feesfollow.setLastPaymentAmount(lastpaymtamount);
-        feesfollow.setDueDate(duedate);
+        feesfollow.setBranchname(branchname);
+        feesfollow.setBranchcode(branchcode);
+        feesfollow.setAcademicyear(academicyear);
+        feesfollow.setLastpaymentdate(lastpaymtdate);
+        feesfollow.setLastpaymentamount(lastpaymtamount);
+        feesfollow.setDuedate(duedate);
         feesfollow.setRemarks(remarks);
-        feesfollow.setLoginUser(loginuser);
+        feesfollow.setLoginuser(loginuser);
 
         feesFollowupRepository.save(feesfollow);
 

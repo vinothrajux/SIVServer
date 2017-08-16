@@ -34,6 +34,7 @@ public interface ApplicationSaleProjection {
     String getPrefferedcour1();
     String getPrefferedcour2();
     String getPrefferedcour3();
+    String getReference();
     String getWillingtojoin();
     Date getFollowupdate();
     Integer getApplicationprice();

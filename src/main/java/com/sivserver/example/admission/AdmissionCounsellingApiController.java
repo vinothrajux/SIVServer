@@ -30,7 +30,7 @@ public class AdmissionCounsellingApiController extends WebMvcConfigurerAdapter {
     @RequestMapping(method = RequestMethod.POST)
     public void admissionCounselling(
             @RequestParam(value ="admissiontype", required=false) String admissiontype,
-            @RequestParam (value="applno", required=false) String applno,
+            @RequestParam(value ="applno", required=false) String applno,
             @RequestParam (value="counsellingdate", required=false) Date counsellingdate,
             @RequestParam (value="allotedcourse", required=false) String allotedcourse,
             @RequestParam (value="branchcode", required=false) String branchcode,

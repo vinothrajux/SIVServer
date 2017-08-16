@@ -12,24 +12,24 @@ import javax.validation.constraints.NotNull;
 @Table(name = "corporatedetail")
 
 public class CorporateDetail {
-    public String getCorporateId(){
+    public String getCorporateid(){
         return corporateid;
     }
-    public void setCorporateId(String corporateid) {
+    public void setCorporateid(String corporateid) {
         this.corporateid = corporateid;
     }
 
-    public String getRequiredBranchCode(){
+    public String getRequiredbranchcode(){
         return requiredBranchCode;
     }
-    public void setRequiredBranchCode(String requiredBranchCode) {
+    public void setRequiredbranchcode(String requiredBranchCode) {
         this.requiredBranchCode = requiredBranchCode;
     }
 
-    public String getRequiredStudentCategory() {
+    public String getRequiredstudentcategory() {
         return requiredStudentCategory;
     }
-    public void setRequiredStudentCategory(String requiredStudentCategory) {
+    public void setRequiredstudentcategory(String requiredStudentCategory) {
         this.requiredStudentCategory = requiredStudentCategory;
     }
 

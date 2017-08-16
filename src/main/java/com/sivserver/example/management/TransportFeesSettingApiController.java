@@ -45,16 +45,16 @@ public class TransportFeesSettingApiController extends WebMvcConfigurerAdapter {
         BusDetail busDetail = new BusDetail();
         //create primary composite keys class name here
 
-        transportfeessett.setFeesSettingDate(feessettingdate);
+        transportfeessett.setFeesSettingdate(feessettingdate);
         transportfeessett.setAcademicyear(academicyear);
         transportfeessett.setRoute(route);
         transportfeessett.setStage(stage);
         transportfeessett.setAmount(amount);
-        transportfeessett.setLoginUser(loginuser);
+        transportfeessett.setLoginuser(loginuser);
 
-        busDetail.setBusNo(busno);
-        busDetail.setDriverName(drivername);
-        busDetail.setSeatNo(seatno);
+        busDetail.setBusno(busno);
+        busDetail.setDrivername(drivername);
+        busDetail.setSeatno(seatno);
 
         transportfeessettingRepository.save(transportfeessett);
         busDetailRepository.save(busDetail);

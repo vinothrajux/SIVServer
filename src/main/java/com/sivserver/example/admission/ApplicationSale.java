@@ -1,5 +1,7 @@
 package com.sivserver.example.admission;
 
+import org.hibernate.annotations.NaturalId;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -21,6 +23,81 @@ import javax.persistence.Table;
 @Table(name = "applicationsale")
 public class ApplicationSale {
 
+    public ApplicationSale()
+    {
+
+    }
+
+    public ApplicationSale(String applno)
+    {
+        this.applno=applno;
+
+    }
+
+    public ApplicationSale(String category,String applno,Date saledate,
+                           String appfor,String candfirstname,String candmiddlename,
+                           String candlastname,String gender,String candfathername,
+                           String candmothername,String presentaddress1,String presentaddress2,
+                           String presentarea,String presentpincode,String presentstate,
+                           String presentmobileno,String presentaltmobno,String presentemail,
+                           String presentaltemail,String permanentaddress1,String permanentaddress2,
+                           String permanentarea,String permanentpincode,String permanentstate,
+                           String permanentmobileno,String permanentaltmobno,String permanentemail,
+                           String permanentaltemail,String qualified,String prefferedcour1,
+                           String prefferedcour2,String prefferedcour3,String reference,
+                           String willingtojoin,Date followupdate,Integer applicationprice,
+                           String applicationpaidmode,String remarks,String loginuser)
+                {
+                    this.category=category;
+                    this.applno=applno;
+                    this.saledate=saledate;
+                    this.appfor=appfor;
+                    this.candfirstname=candfirstname;
+                    this.candmiddlename=candmiddlename;
+                    this.candlastname=candlastname;
+                    this.gender=gender;
+                    this.candfathername=candfathername;
+                    this.candmothername=candmothername;
+                    this.presentaddress1=presentaddress1;
+                    this.presentaddress2=presentaddress2;
+                    this.presentarea=presentarea;
+                    this.presentpincode=presentpincode;
+                    this.presentstate=presentstate;
+                    this.presentmobileno=presentmobileno;
+                    this.presentaltmobno=presentaltmobno;
+                    this.presentemail=presentemail;
+                    this.presentaltemail=presentaltemail;
+                    this.permanentaddress1=permanentaddress1;
+                    this.permanentaddress2=permanentaddress2;
+                    this.permanentarea=permanentarea;
+                    this.permanentpincode=permanentpincode;
+                    this.permanentstate=permanentstate;
+                    this.permanentmobileno=permanentmobileno;
+                    this.permanentaltmobno=permanentaltmobno;
+                    this.permanentemail=permanentemail;
+                    this.permanentaltemail=permanentaltemail;
+                    this.qualified=qualified;
+                    this.prefferedcour1=prefferedcour1;
+                    this.prefferedcour2=prefferedcour2;
+                    this.prefferedcour3=prefferedcour3;
+                    this.reference=reference;
+                    this.willingtojoin=willingtojoin;
+                    this.followupdate=followupdate;
+                    this.applicationprice=applicationprice;
+                    this.applicationpaidmode=applicationpaidmode;
+                    this.remarks=remarks;
+                    this.loginuser=loginuser;
+
+    }
+
+    public long getId() {
+
+        return id;
+    }
+
+        public void setId(long id) {
+          this.id = id;
+     }
 
     public String getCategory(){
         return category;
@@ -28,6 +105,9 @@ public class ApplicationSale {
     public void setCategory(String category) {
         this.category = category;
     }
+
+    public AdmissionCounselling getCounsellingid() {return counsellingid;}
+    public void setCounsellingid(AdmissionCounselling counsellingid) {this.counsellingid=counsellingid;}
 
     public String getApplno() {
         return applno;
@@ -244,6 +324,13 @@ public class ApplicationSale {
         this.prefferedcour3 = prefferedcour3;
     }
 
+    public String getReference() {
+        return reference;
+    }
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
+
     public String getWillingtojoin() {
         return willingtojoin;
     }
@@ -286,25 +373,37 @@ public class ApplicationSale {
         this.loginuser = loginuser;
     }
 
- //   public long getId() {
+    //public long getId() {
 
-//    return id;
-//          }
+    //return id;
+     //     }
 
- ///       public void setId(long id) {
- //       this.id = id;
-//   }
+    //    public void setId(long id) {
+  //      this.id = id;
+  // }
 
- //   @Id
- //   @GeneratedValue(strategy= GenerationType.AUTO)
-//    long id;
+   @Id
+   @Column(name="APPLICATION_ID")
+   @GeneratedValue(strategy= GenerationType.AUTO)
+   private long id;
 
     @NotNull
     private String category;
 
+     @OneToOne(cascade = CascadeType.ALL)
+     @JoinColumn(name = "COUNSELLING_ID")
+     private AdmissionCounselling counsellingid;
 
-    @Id
+    //@Id
+    //@Column(name = "application_no")
+   // @GeneratedValue(strategy = G )
+    @NaturalId(mutable = false)
+
+    @Column(name = "applno", unique = true,nullable = false, length = 100)
     private String applno;
+
+    //@NaturalId
+    //private String applno;
 
     @NotNull
     private Date saledate;
@@ -397,6 +496,9 @@ public class ApplicationSale {
     private String prefferedcour3;
 
     @NotNull
+    private String reference;
+
+    @NotNull
     private String willingtojoin;
 
     @NotNull
@@ -414,8 +516,11 @@ public class ApplicationSale {
     @NotNull
     private String loginuser;
 
-//    @ManyToOne
-//    @JoinColumn(name="application_no")
-//    private AdmissionCounselling applicationno;
+   //http://www.codejava.net/frameworks/hibernate/hibernate-one-to-one-mapping-with-foreign-key-annotations-example
+
+    //@ManyToOne This will insert more than one row with same value in child table
+    //@OneToOne
+    //@JoinColumn(name="application_no")
+    //private AdmissionCounselling applicationno;
 
 }
