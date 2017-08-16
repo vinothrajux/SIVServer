@@ -46,21 +46,21 @@ public class EquivalenceSubjectApiController extends WebMvcConfigurerAdapter {
     {
         EquivalenceSubject equivalence = new EquivalenceSubject();
         equivalence.setAcademicYear(academicYear);
-        equivalence.setOldBranch(oldbranch);
-        equivalence.setOldBranchCode(oldbranchcode);
-        equivalence.setOldSemester(oldsemester);
-        equivalence.setOldColumnNo(oldcolumnno);
-        equivalence.setOldScheme(oldscheme);
-        equivalence.setOldSubjectName(oldsubjectname);
-        equivalence.setOldSubjectCode(oldsubjectcode);
-        equivalence.setNewBranch(newbranch);
-        equivalence.setNewBranchCode(newbranchcode);
-        equivalence.setNewSemester(newsemester);
-        equivalence.setNewScheme(newscheme);
-        equivalence.setNewColumnNo(newcolumnno);
-        equivalence.setNewSubjectName(newsubjectname);
-        equivalence.setNewSubjectCode(newsubjectcode);
-        equivalence.setLoginUser(loginuser);
+        equivalence.setOldbranch(oldbranch);
+        equivalence.setOldbranchcode(oldbranchcode);
+        equivalence.setOldsemester(oldsemester);
+        equivalence.setOldcolumnno(oldcolumnno);
+        equivalence.setOldscheme(oldscheme);
+        equivalence.setOldsubjectname(oldsubjectname);
+        equivalence.setOldsubjectcode(oldsubjectcode);
+        equivalence.setNewbranch(newbranch);
+        equivalence.setNewbranchcode(newbranchcode);
+        equivalence.setNewsemester(newsemester);
+        equivalence.setNewscheme(newscheme);
+        equivalence.setNewcolumnno(newcolumnno);
+        equivalence.setNewsubjectname(newsubjectname);
+        equivalence.setNewsubjectcode(newsubjectcode);
+        equivalence.setLoginuser(loginuser);
 
         equivalencesubjectRepository.save(equivalence);
 

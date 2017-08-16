@@ -16,20 +16,20 @@ import java.util.Date;
 
 public class EgovSpellEntry {
 
-    public String getSpellNo(){
+    public String getSpellno(){
         return spellno;
     }
-    public void setSpellNo(String spellno) {
+    public void setSpellno(String spellno) {
         this.spellno = spellno;
     }
 
-    public Date getFromDate(){return fromdate;}
-    public void setFromDate(Date fromdate) {
+    public Date getFromdate(){return fromdate;}
+    public void setFromdate(Date fromdate) {
         this.fromdate = fromdate;
     }
 
-    public Date getToDate(){return todate;}
-    public void setToDate(Date todate) {
+    public Date getTodate(){return todate;}
+    public void setTodate(Date todate) {
         this.todate = todate;
     }
 
@@ -40,15 +40,15 @@ public class EgovSpellEntry {
         this.semester = semester;
     }
 
-    public String getAacademicYear(){
+    public String getAacademicyear(){
         return academicyear;
     }
-    public void setAcademicYear(String academicyear) {
+    public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
     }
 
-    public String getLoginUser(){return loginuser;}
-    public void setLoginUser(String loginuser) {
+    public String getLoginuser(){return loginuser;}
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 

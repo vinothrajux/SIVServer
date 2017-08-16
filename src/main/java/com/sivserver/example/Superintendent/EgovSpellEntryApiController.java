@@ -36,12 +36,12 @@ public class EgovSpellEntryApiController extends WebMvcConfigurerAdapter {
     )
     {
         EgovSpellEntry egov = new EgovSpellEntry();
-        egov.setSpellNo(spellno);
-        egov.setFromDate(fromdate);
-        egov.setToDate(todate);
+        egov.setSpellno(spellno);
+        egov.setFromdate(fromdate);
+        egov.setTodate(todate);
         egov.setSemester(semester);
-        egov.setAcademicYear(academicyear);
-        egov.setLoginUser(loginuser);
+        egov.setAcademicyear(academicyear);
+        egov.setLoginuser(loginuser);
 
         egovSpellEntryRepository.save(egov);
 

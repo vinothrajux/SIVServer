@@ -14,117 +14,117 @@ import javax.validation.constraints.NotNull;
 
 public class EquivalenceSubject {
 
-    public String getAcademicYear(){
-        return academicYear;
+    public String getAcademicyear(){
+        return academicyear;
     }
-    public void setAcademicYear(String academicYear) {
-        this.academicYear = academicYear;
+    public void setAcademicYear(String academicyear) {
+        this.academicyear = academicyear;
     }
 
-    public String getOldBranch(){return oldbranch;}
-    public void setOldBranch(String oldbranch) {
+    public String getOldbranch(){return oldbranch;}
+    public void setOldbranch(String oldbranch) {
         this.oldbranch = oldbranch;
     }
 
-    public String getOldBranchCode(){return oldbranchcode;}
-    public void setOldBranchCode(String oldbranchcode) {
+    public String getOldbranchcode(){return oldbranchcode;}
+    public void setOldbranchcode(String oldbranchcode) {
         this.oldbranchcode = oldbranchcode;
     }
 
-    public String getOldSemester(){
+    public String getOldsemester(){
         return oldsemester;
     }
-    public void setOldSemester(String oldsemester) {
+    public void setOldsemester(String oldsemester) {
         this.oldsemester = oldsemester;
     }
 
-    public String getOldColumnNo(){
+    public String getOldcolumnno(){
         return oldcolumnno;
     }
-    public void setOldColumnNo(String oldcolumnno) {
+    public void setOldcolumnno(String oldcolumnno) {
         this.oldcolumnno = oldcolumnno;
     }
 
-    public String getOldScheme(){
+    public String getOldscheme(){
         return oldscheme;
     }
-    public void setOldScheme(String oldscheme) {
+    public void setOldscheme(String oldscheme) {
         this.oldscheme = oldscheme;
     }
 
-    public String getOldSubjectName(){
+    public String getOldsubjectname(){
         return oldsubjectname;
     }
-    public void setOldSubjectName(String oldsubjectname) {
+    public void setOldsubjectname(String oldsubjectname) {
         this.oldsubjectname = oldsubjectname;
     }
 
-    public String getOldSubjectCode(){
+    public String getOldsubjectcode(){
         return oldsubjectcode;
     }
-    public void setOldSubjectCode(String oldsubjectcode) {
+    public void setOldsubjectcode(String oldsubjectcode) {
         this.oldsubjectcode = oldsubjectcode;
     }
 
-    public String getNewBranch(){
+    public String getNewbranch(){
         return newbranch;
     }
-    public void setNewBranch(String newbranch) {
+    public void setNewbranch(String newbranch) {
         this.newbranch = newbranch;
     }
 
-    public String getNewBranchCode(){
+    public String getNewbranchcode(){
         return newbranchcode;
     }
-    public void setNewBranchCode(String newbranchcode) {
+    public void setNewbranchcode(String newbranchcode) {
         this.newbranchcode = newbranchcode;
     }
 
-    public String getNewSemester(){
+    public String getNewsemester(){
         return newsemester;
     }
-    public void setNewSemester(String newsemester) {
+    public void setNewsemester(String newsemester) {
         this.newsemester = newsemester;
     }
 
-    public String getNewScheme(){
+    public String getNewscheme(){
         return newscheme;
     }
-    public void setNewScheme(String newscheme) {
+    public void setNewscheme(String newscheme) {
         this.newscheme = newscheme;
     }
 
-    public String getNewColumnNo(){
+    public String getNewcolumnno(){
         return newcolumnno;
     }
-    public void setNewColumnNo(String newcolumnno) {
+    public void setNewcolumnno(String newcolumnno) {
         this.newcolumnno = newcolumnno;
     }
 
-    public String getNewSubjectName(){
+    public String getNewsubjectname(){
         return newsubjectname;
     }
-    public void setNewSubjectName(String newsubjectname) {
+    public void setNewsubjectname(String newsubjectname) {
         this.newsubjectname = newsubjectname;
     }
 
-    public String getNewSubjectCode(){
+    public String getNewsubjectcode(){
         return newsubjectcode;
     }
-    public void setNewSubjectCode(String newsubjectcode) {
+    public void setNewsubjectcode(String newsubjectcode) {
         this.newsubjectcode = newsubjectcode;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 
 
     @Id
-    private String academicYear;
+    private String academicyear;
 
 
     @NotNull
