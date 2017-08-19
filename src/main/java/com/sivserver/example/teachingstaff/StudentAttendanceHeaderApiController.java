@@ -36,8 +36,8 @@ public class StudentAttendanceHeaderApiController extends WebMvcConfigurerAdapte
     @RequestMapping(method = RequestMethod.POST)
     public void studentAttendanceHeader(
             @RequestParam(value ="entrydate", required=false) Date entrydate,
-            @RequestParam (value="hour", required=false) Integer hour,
             @RequestParam (value="dayname", required=false) String dayname,
+            @RequestParam (value="hour", required=false) Integer hour,
             @RequestParam (value="branchcode", required=false) String branchcode,
             @RequestParam (value="batch", required=false) String batch,
             @RequestParam (value="semester", required=false) Integer semester,
@@ -50,8 +50,8 @@ public class StudentAttendanceHeaderApiController extends WebMvcConfigurerAdapte
     ) {
         StudentAttendanceHeader studAttHead = new StudentAttendanceHeader();
         studAttHead.setAttendanceEntryDate(entrydate);
-        studAttHead.setHour(hour);
         studAttHead.setDay(dayname);
+        studAttHead.setHour(hour);
         studAttHead.setBranchCode(branchcode);
         studAttHead.setBatch(batch);
         studAttHead.setSemester(semester);

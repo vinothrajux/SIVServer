@@ -21,10 +21,13 @@ public class BonafideApiController extends WebMvcConfigurerAdapter {
     @Autowired
     private BonafideRepository bonafideRepository;
 
+    @Autowired
+    private BonafideRepository bonafideRepositoryFetch;
 
     @RequestMapping(method = RequestMethod.POST)
 
     public void bonafide(
+            @RequestParam(value ="bonafideid", required=false) String bonafideid,
             @RequestParam(value ="regno", required=false) String regno,
             @RequestParam (value="admissionno", required=false) String admissionno,
             @RequestParam (value="name", required=false) String name,
@@ -40,6 +43,7 @@ public class BonafideApiController extends WebMvcConfigurerAdapter {
 
     ) {
         Bonafide bonafid = new Bonafide();
+        bonafid.setBonafideid(bonafideid);
         bonafid.setRegno(regno);
         bonafid.setAdmissionno(admissionno);
         bonafid.setName(name);
@@ -49,8 +53,8 @@ public class BonafideApiController extends WebMvcConfigurerAdapter {
         bonafid.setAcademicyear(academicyear);
         bonafid.setFathername(fathername);
         bonafid.setIssueddate(issueddate);
-        bonafid.setCertficatefor(certificatefor);
-        bonafid.setNoOfyears(noofyears);
+        bonafid.setCertificatefor(certificatefor);
+        bonafid.setNoofyears(noofyears);
         bonafid.setLoginuser(loginuser);
 
         bonafideRepository.save(bonafid);
@@ -58,5 +62,16 @@ public class BonafideApiController extends WebMvcConfigurerAdapter {
 
 
     }
+
+    @RequestMapping(method = RequestMethod.POST, value="/getBonafideDetail")
+    //@RequestMapping(method = RequestMethod.POST)
+    public BonafideProjection getBonafideDetail(@RequestParam (value ="bonafideid") String bonaId) {
+        BonafideProjection bonafideDetail = bonafideRepository.findOneByBonafideid(bonaId);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getBonafideDetail");
+        return bonafideDetail;
+
+    }
+
 
 }

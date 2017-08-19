@@ -72,7 +72,7 @@ public class ApplicationSaleApiController extends WebMvcConfigurerAdapter {
     ) {
         ApplicationSale appsale = new ApplicationSale();
         appsale.setCategory(category);
-        appsale.setCounsellingid(counsellingid);
+      //  appsale.setCounsellingid(counsellingid);
         appsale.setApplno(applno);
         appsale.setSaledate(saledate);
         appsale.setAppfor(appfor);

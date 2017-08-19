@@ -16,6 +16,12 @@ import java.util.Set;
 @Table(name = "bonafide")
 public class Bonafide {
 
+    public String getBonafideid(){return bonafideid;}
+    public void setBonafideid(String bonafideid) {
+        this.bonafideid = bonafideid;
+    }
+
+
     public String getRegno(){return regno;}
     public void setRegno(String regno) {
         this.regno = regno;
@@ -71,17 +77,17 @@ public class Bonafide {
         this.issueddate = issueddate;
     }
 
-    public String getCertficatefor() {
+    public String getCertificatefor() {
         return certificatefor;
     }
-    public void setCertficatefor(String certificatefor) {
+    public void setCertificatefor(String certificatefor) {
         this.certificatefor = certificatefor;
     }
 
-    public Integer getNoOfyears() {
+    public Integer getNoofyears() {
         return noofyears;
     }
-    public void setNoOfyears(Integer noofyears) {
+    public void setNoofyears(Integer noofyears) {
         this.noofyears = noofyears;
     }
 
@@ -94,6 +100,9 @@ public class Bonafide {
 
 
     @Id
+    private String bonafideid;
+
+    @NotNull
     private String regno;
 
     @NotNull

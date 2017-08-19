@@ -65,4 +65,12 @@ public class FirstAidEntryApiController extends WebMvcConfigurerAdapter {
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, value="/getFirstAidEntryDetail")
+    public Iterable<FirstAidEntry> getFirstAidEntryDetail(@RequestParam (value ="regno") String RegisterNumber) {
+        Iterable<FirstAidEntry> getfirstaidEntries = firstaidRepository.findAllByregno(RegisterNumber);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getApplicationDetail");
+        return getfirstaidEntries;
+    }
+
 }

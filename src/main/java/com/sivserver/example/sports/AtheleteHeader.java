@@ -60,38 +60,6 @@ public class AtheleteHeader {
         this.academicyear = academicyear;
     }
 
-    public String getTypeofsports() {
-        return typeofsports;
-    }
-
-    public void setTypeofsports(String typeofsports) {
-        this.typeofsports = typeofsports;
-    }
-
-    public String getSportscode() {
-        return sportscode;
-    }
-
-    public void setSportscode(String sportscode) {
-        this.sportscode = sportscode;
-    }
-
-    public String getPerformancelevel() {
-        return performancelevel;
-    }
-
-    public void setPerformancelevel(String performancelevel) {
-        this.performancelevel = performancelevel;
-    }
-
-    public String getHouse() {
-        return house;
-    }
-
-    public void setHouse(String house) {
-        this.house = house;
-    }
-
     public String getLoginuser() {
         return loginuser;
     }
@@ -118,18 +86,6 @@ public class AtheleteHeader {
 
     @NotNull
     private String academicyear;
-
-    @NotNull
-    private String typeofsports;
-
-    @NotNull
-    private String sportscode;
-
-    @NotNull
-    private String performancelevel;
-
-    @NotNull
-    private String house;
 
     @NotNull
     private String loginuser;

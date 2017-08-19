@@ -1,11 +1,12 @@
 package com.sivserver.example.admission;
 
 import org.hibernate.annotations.NaturalId;
-
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
-
+import javax.persistence.OneToOne;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 
 /**
  * Created by Seetha on 09-Jun-17.
@@ -21,7 +24,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "applicationsale")
-public class ApplicationSale {
+public class ApplicationSale implements java.io.Serializable{
 
     public ApplicationSale()
     {
@@ -90,14 +93,14 @@ public class ApplicationSale {
 
     }
 
-    public long getId() {
+   // public long getId() {
 
-        return id;
-    }
+   //     return id;
+   // }
 
-        public void setId(long id) {
-          this.id = id;
-     }
+    //    public void setId(long id) {
+    //      this.id = id;
+    // }
 
     public String getCategory(){
         return category;
@@ -106,8 +109,8 @@ public class ApplicationSale {
         this.category = category;
     }
 
-    public AdmissionCounselling getCounsellingid() {return counsellingid;}
-    public void setCounsellingid(AdmissionCounselling counsellingid) {this.counsellingid=counsellingid;}
+    public Long getApplicationid() {return applicationid;}
+    public void setApplicationid(Long applicationid) {this.applicationid=applicationid;}
 
     public String getApplno() {
         return applno;
@@ -373,6 +376,14 @@ public class ApplicationSale {
         this.loginuser = loginuser;
     }
 
+    public AdmissionCounselling getCounsellingid() {
+        return this.counsellingid;
+    }
+
+    public void setCounsellingid(AdmissionCounselling counsellingid) {
+        this.counsellingid = counsellingid;
+    }
+
     //public long getId() {
 
     //return id;
@@ -383,24 +394,26 @@ public class ApplicationSale {
   // }
 
    @Id
-   @Column(name="APPLICATION_ID")
-   @GeneratedValue(strategy= GenerationType.AUTO)
-   private long id;
+   @Column(name="APPLICATION_ID", unique = true, nullable = false)
+   @GeneratedValue(strategy= IDENTITY)
+   private Long applicationid;
+
+    @NotNull
+    private String applno;
 
     @NotNull
     private String category;
 
-     @OneToOne(cascade = CascadeType.ALL)
-     @JoinColumn(name = "COUNSELLING_ID")
-     private AdmissionCounselling counsellingid;
+   //  @OneToOne(cascade = CascadeType.ALL)
+   //  @JoinColumn(name = "COUNSELLING_ID")
+   //  private AdmissionCounselling counsellingid;
 
     //@Id
     //@Column(name = "application_no")
    // @GeneratedValue(strategy = G )
-    @NaturalId(mutable = false)
+   // @NaturalId(mutable = false)
 
-    @Column(name = "applno", unique = true,nullable = false, length = 100)
-    private String applno;
+   // @Column(name = "applno", unique = true,nullable = false, length = 100)
 
     //@NaturalId
     //private String applno;
@@ -516,11 +529,13 @@ public class ApplicationSale {
     @NotNull
     private String loginuser;
 
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "appid", cascade = CascadeType.ALL)
+    private AdmissionCounselling counsellingid;
    //http://www.codejava.net/frameworks/hibernate/hibernate-one-to-one-mapping-with-foreign-key-annotations-example
 
     //@ManyToOne This will insert more than one row with same value in child table
-    //@OneToOne
-    //@JoinColumn(name="application_no")
-    //private AdmissionCounselling applicationno;
+ //   @OneToOne
+ //   @JoinColumn(name="application_no")
+//   private AdmissionCounselling applicationno;
 
 }

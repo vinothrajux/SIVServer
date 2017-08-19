@@ -46,6 +46,16 @@ public class StaffAttendanceHeader {
         this.totalabsent = totalabsent;
     }
 
+    public Integer getTotalpermission() {return totalpermission;}
+    public void setTotalpermission(Integer totalpermission) {
+        this.totalpermission = totalpermission;
+    }
+
+    public String getAcademicyear() {return academicyear;}
+    public void setAcademicyear(String academicyear) {
+        this.academicyear = academicyear;
+    }
+
     public String getLoginUser() {
         return loginuser;
     }
@@ -67,6 +77,12 @@ public class StaffAttendanceHeader {
 
     @NotNull
     private Integer totalabsent;
+
+    @NotNull
+    private Integer totalpermission;
+
+    @NotNull
+    private String academicyear;
 
     @NotNull
     private String loginuser;

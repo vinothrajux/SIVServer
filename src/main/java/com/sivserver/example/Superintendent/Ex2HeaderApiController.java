@@ -25,6 +25,7 @@ public class Ex2HeaderApiController extends WebMvcConfigurerAdapter {
             @RequestParam(value ="examdate", required=false) Date examdate,
             @RequestParam (value="examday", required=false) String examday,
             @RequestParam (value="examsession", required=false) String examsession,
+            @RequestParam (value="monthandyearofexam", required=false) String monthandyearofexam,
             @RequestParam (value="questioncode", required=false) String questioncode,
             @RequestParam (value="branchcode", required=false) String branchcode,
             @RequestParam (value="semester", required=false) Integer semester,
@@ -40,6 +41,7 @@ public class Ex2HeaderApiController extends WebMvcConfigurerAdapter {
         ex2Head.setExamDate(examdate);
         ex2Head.setExamDay(examday);
         ex2Head.setExamSession(examsession);
+        ex2Head.setMonthandyearofexam(monthandyearofexam);
         ex2Head.setQuestionCode(questioncode);
         ex2Head.setBranchCode(branchcode);
         ex2Head.setSemester(semester);

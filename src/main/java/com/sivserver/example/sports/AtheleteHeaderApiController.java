@@ -41,10 +41,6 @@ public class AtheleteHeaderApiController extends WebMvcConfigurerAdapter {
             @RequestParam (value="batch", required=false) String batch,
             @RequestParam (value="semester", required=false) Integer semester,
             @RequestParam (value="academicyear", required=false) String academicyear,
-            @RequestParam (value="typeofsports", required=false) String typeofsports,
-            @RequestParam (value="sportscode", required=false) String sportscode,
-            @RequestParam (value="performancelevel", required=false) String performancelevel,
-            @RequestParam (value="house", required=false) String house,
             @RequestParam (value="loginuser", required=false) String loginuser
 
 
@@ -56,10 +52,6 @@ public class AtheleteHeaderApiController extends WebMvcConfigurerAdapter {
         athleteHead.setBatch(batch);
         athleteHead.setSemester(semester);
         athleteHead.setAcademicyear(academicyear);
-        athleteHead.setTypeofsports(typeofsports);
-        athleteHead.setSportscode(sportscode);
-        athleteHead.setPerformancelevel(performancelevel);
-        athleteHead.setHouse(house);
         athleteHead.setLoginuser(loginuser);
 
         atheleteHeaderRepository.save(athleteHead);

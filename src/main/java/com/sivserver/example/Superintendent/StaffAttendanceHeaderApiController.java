@@ -27,6 +27,8 @@ public class StaffAttendanceHeaderApiController extends WebMvcConfigurerAdapter 
             @RequestParam (value="branchcode", required=false) String branchcode,
             @RequestParam (value="totalpresent", required=false) Integer totalpresent,
             @RequestParam (value="totalabsent", required=false) Integer totalabsent,
+            @RequestParam (value="totalpermission", required=false) Integer totalpermission,
+            @RequestParam (value="academicyear", required=false) String academicyear,
             @RequestParam (value="loginuser", required=false) String loginuser
     ) {
         StaffAttendanceHeader staffAttHead = new StaffAttendanceHeader();
@@ -35,6 +37,8 @@ public class StaffAttendanceHeaderApiController extends WebMvcConfigurerAdapter 
         staffAttHead.setBranchCode(branchcode);
         staffAttHead.setTotalPresent(totalpresent);
         staffAttHead.setTotalAbsent(totalabsent);
+        staffAttHead.setTotalpermission(totalpermission);
+        staffAttHead.setAcademicyear(academicyear);
         staffAttHead.setLoginUser(loginuser);
 
         staffAttendanceHeaderRepository.save(staffAttHead);

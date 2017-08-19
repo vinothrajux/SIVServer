@@ -19,6 +19,7 @@ public class Ex2Header {
     public void setExamDate(Date examdate) {
         this.examdate = examdate;
     }
+
     public String getExamDay(){
         return examday;
     }
@@ -31,6 +32,13 @@ public class Ex2Header {
     }
     public void setExamSession(String examsession) {
         this.examsession = examsession;
+    }
+
+    public String getMonthandyearofexam(){
+        return monthandyearofexam;
+    }
+    public void setMonthandyearofexam(String monthandyearofexam) {
+        this.monthandyearofexam = monthandyearofexam;
     }
 
     public String getQuestionCode() {
@@ -105,6 +113,9 @@ public class Ex2Header {
 
     @NotNull
     private String examsession;
+
+    @NotNull
+    private String monthandyearofexam;
 
     @NotNull
     private String questioncode;

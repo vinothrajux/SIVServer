@@ -7,6 +7,6 @@ package com.sivserver.example.student;
 import org.springframework.data.repository.CrudRepository;
 
 public interface StudentBaseInformationRepository extends CrudRepository<StudentBaseInformation, String> {
-    StudentBaseInformation findByPoto(String poto);
+    Iterable<StudentBaseInformation> findAllByAcademicyearAndBatchAndSemesterAndBranchcodeAndStudenttype(String academicyear,String batch, String semester, String branchcode, String studenttype);
 }
 

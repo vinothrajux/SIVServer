@@ -20,18 +20,18 @@ public class StudentAttendanceHeader {
         this.entrydate = entrydate;
     }
 
-    public Integer getHour() {
-        return hour;
-    }
-    public void setHour(Integer hour) {
-        this.hour = hour;
-    }
-
     public String getDay() {
         return dayname;
     }
     public void setDay(String dayname) {
         this.dayname = dayname;
+    }
+
+    public Integer getHour() {
+        return hour;
+    }
+    public void setHour(Integer hour) {
+        this.hour = hour;
     }
 
     public String getBranchCode() {
@@ -88,10 +88,10 @@ public class StudentAttendanceHeader {
     private Date entrydate;
 
     @NotNull
-    private Integer hour;
+    private String dayname;
 
     @NotNull
-    private String dayname;
+    private Integer hour;
 
     @NotNull
     private String branchcode;
