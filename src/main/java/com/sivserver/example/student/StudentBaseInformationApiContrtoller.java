@@ -2,13 +2,12 @@ package com.sivserver.example.student;
 
 
 
+import com.sivserver.example.admission.StudentPersonalInformation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import java.util.List;
 
 
 /**
@@ -18,11 +17,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RestController
 @RequestMapping("/api/v1/studentbaseinformation")
 
-public class StudentBaseInformationApiContrtoller extends WebMvcConfigurerAdapter {
+public class StudentBaseInformationApiContrtoller {
 
-    @Autowired
+    //@Autowired
     private StudentBaseInformationRepository studentbaseinformationRepository;
 
+    @GetMapping(value="/all")
+    public List<StudentBaseInformation> getStudentBaseInformation() {return studentbaseinformationRepository.findAll();}
+
+    public StudentBaseInformationApiContrtoller(StudentBaseInformationRepository studentbaseinformationRepository)
+    {
+        this.studentbaseinformationRepository=studentbaseinformationRepository;
+    }
 
     @RequestMapping(method = RequestMethod.POST)
 
@@ -42,18 +48,20 @@ public class StudentBaseInformationApiContrtoller extends WebMvcConfigurerAdapte
 
     ) {
         StudentBaseInformation studbaseinfo = new StudentBaseInformation();
-        studbaseinfo.setRegNo(regno);
-        studbaseinfo.setAdmissionNo(admissionno);
-        studbaseinfo.setStudentName(name);
-        studbaseinfo.setSemester(semester);
-        studbaseinfo.setBranch(branch);
-        studbaseinfo.setBranchcode(branchcode);
-        studbaseinfo.setBatch(batch);
-        studbaseinfo.setScheme(scheme);
-        studbaseinfo.setAcademicYear(academicyear);
-        studbaseinfo.setStudentType(studenttype);
-        studbaseinfo.setPoto(poto);
-        studbaseinfo.setLoginUser(loginuser);
+        StudentPersonalInformation student_personal_regno = new StudentPersonalInformation(regno);
+        studbaseinfo.setRegNo(regno)
+                    .setAdmissionNo(admissionno)
+                    .setStudentName(name)
+                    .setSemester(semester)
+                    .setBranch(branch)
+                    .setBranchcode(branchcode)
+                    .setBatch(batch)
+                    .setScheme(scheme)
+                    .setAcademicYear(academicyear)
+                    .setStudentType(studenttype)
+                    .setPoto(poto)
+                    .setLoginUser(loginuser)
+                    .setStudent_personal_regno(student_personal_regno);
 
         studentbaseinformationRepository.save(studbaseinfo);
 

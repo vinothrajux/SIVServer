@@ -1,5 +1,6 @@
 package com.sivserver.example.admission;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -13,11 +14,17 @@ import java.util.Date;
 @Table(name = "studentpersonalinformation")
 public class StudentPersonalInformation {
 
+    public StudentPersonalInformation() {
+    }
 
-    public String getRegNo(){
+    public StudentPersonalInformation(String regno) {
+        this.regno = regno;
+    }
+
+    public String getRegno(){
         return regno;
     }
-    public void setRegNo(String regno) {
+    public void setRegno(String regno) {
         this.regno = regno;
     }
 
@@ -28,6 +35,14 @@ public class StudentPersonalInformation {
         this.admissionno = admissionno;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getAcademicyear() {
         return academicyear;
     }
@@ -36,10 +51,10 @@ public class StudentPersonalInformation {
     }
 
     public Date getDateofbirth() {
-        return dob;
+        return dateofbirth;
     }
-    public void setDateofbirth(Date dob) {
-        this.dob = dob;
+    public void setDateofbirth(Date dateofbirth) {
+        this.dateofbirth = dateofbirth;
     }
 
     public String getGender() {
@@ -82,25 +97,33 @@ public class StudentPersonalInformation {
         this.presentarea = presentarea;
     }
 
-    public Long getPresentpincode() {
+    public String getPresentpincode() {
         return presentpincode;
     }
-    public void setPresentpincode(Long presentpincode) {
+    public void setPresentpincode(String presentpincode) {
         this.presentpincode = presentpincode;
     }
 
-    public Long getPresentmobileno() {
+    public String getPresentstate() {
+        return presentstate;
+    }
+
+    public void setPresentstate(String presentstate) {
+        this.presentstate = presentstate;
+    }
+
+    public String getPresentmobileno() {
         return presentmobileno;
     }
-    public void setPresentmobileno(Long presentmobileno) {
+    public void setPresentmobileno(String presentmobileno) {
         this.presentmobileno = presentmobileno;
     }
 
-    public Long getPresentaltmobileno() {
-        return presentaltmobno;
+    public String getPresentaltmobileno() {
+        return presentaltmobileno;
     }
-    public void setPresentaltmobileno(Long presentaltmobno) {
-        this.presentaltmobno = presentaltmobno;
+    public void setPresentaltmobileno(String presentaltmobileno) {
+        this.presentaltmobileno = presentaltmobileno;
     }
 
     public String getPresentemail() {
@@ -138,24 +161,32 @@ public class StudentPersonalInformation {
         this.permanentarea = permanentarea;
     }
 
-    public Long getPermanentpincode() {
+    public String getPermanentpincode() {
         return permanentpincode;
     }
-    public void setPermanentpincode(Long permanentpincode) {
+    public void setPermanentpincode(String permanentpincode) {
         this.permanentpincode = permanentpincode;
     }
 
-    public Long getPermanenttmobileno() {
+    public String getPermanentstate() {
+        return permanentstate;
+    }
+
+    public void setPermanentstate(String permanentstate) {
+        this.permanentstate = permanentstate;
+    }
+
+    public String getPermanentmobileno() {
         return permanentmobileno;
     }
-    public void setPermanentmobileno(Long permanentmobileno) {
+    public void setPermanentmobileno(String permanentmobileno) {
         this.permanentmobileno = permanentmobileno;
     }
 
-    public Long getPermanentaltmobileno() {
+    public String getPermanentaltmobileno() {
         return permanentaltmobileno;
     }
-    public void setPermanentaltmobileno(Long permanentaltmobileno) {
+    public void setPermanentaltmobileno(String permanentaltmobileno) {
         this.permanentaltmobileno = permanentaltmobileno;
     }
 
@@ -190,78 +221,85 @@ public class StudentPersonalInformation {
 
 
     @Id
+    @Column(name = "regno",nullable=false)
     private String regno;
 
-    @NotNull
+
     private String admissionno;
 
-    @NotNull
+    private String name;
+
+
     private String academicyear;
 
-    @NotNull
-    private Date dob;
 
-    @NotNull
+    private Date dateofbirth;
+
+
     private String gender;
 
-    @NotNull
+
     private String fathername;
 
-    @NotNull
+
     private String mothername;
 
-    @NotNull
+
     private String presentaddress1;
 
-    @NotNull
+
     private String presentaddress2;
 
-    @NotNull
+
     private String presentarea;
 
-    @NotNull
-    private Long presentpincode;
 
-    @NotNull
-    private Long presentmobileno;
+    private String presentpincode;
 
-    @NotNull
-    private Long presentaltmobno;
+    private String presentstate;
 
-    @NotNull
+
+    private String presentmobileno;
+
+
+    private String presentaltmobileno;
+
+
     private String presentemail;
 
-    @NotNull
+
     private String presentaltemail;
 
-    @NotNull
+
     private String permanentaddress1;
 
-    @NotNull
+
     private String permanentaddress2;
 
-    @NotNull
+
     private String permanentarea;
 
-    @NotNull
-    private Long permanentpincode;
 
-    @NotNull
-    private Long permanentmobileno;
+    private String permanentpincode;
 
-    @NotNull
-    private Long permanentaltmobileno;
+    private String permanentstate;
 
-    @NotNull
+
+    private String permanentmobileno;
+
+
+    private String permanentaltmobileno;
+
+
     private String permanentemail;
 
-    @NotNull
+
     private String permanentaltemail;
 
 
-    @NotNull
+
     private String reference;
 
-    @NotNull
+
     private String loginuser;
 }
