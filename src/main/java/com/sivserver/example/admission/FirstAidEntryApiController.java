@@ -1,13 +1,11 @@
 package com.sivserver.example.admission;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Seetha on 30-Jun-17.
@@ -16,16 +14,25 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/firstaidentry")
 
-public class FirstAidEntryApiController extends WebMvcConfigurerAdapter {
+public class FirstAidEntryApiController {
 
-    @Autowired
+    //@Autowired
     private FirstAidEntryRepository firstaidRepository;
+
+    @GetMapping(value="/all")
+    public List<FirstAidEntry> getStudentFirstAidDetails() {return firstaidRepository.findAll();}
+
+    public FirstAidEntryApiController(FirstAidEntryRepository firstaidRepository)
+    {
+        this.firstaidRepository = firstaidRepository;
+    }
 
 
     @RequestMapping(method = RequestMethod.POST)
 
     public void firstAid(
             @RequestParam(value ="currentdate", required=false) Date currentdate,
+            @RequestParam(value ="firstaidid", required=false) String firstaidid,
             @RequestParam (value="regno", required=false) String regno,
             @RequestParam (value="admissionno", required=false) String admissionno,
             @RequestParam (value="name", required=false) String name,
@@ -42,8 +49,10 @@ public class FirstAidEntryApiController extends WebMvcConfigurerAdapter {
             @RequestParam (value="loginuser", required=false) String loginuser
 
     ) {
+        StudentPersonalInformation studentpersonalregno = new StudentPersonalInformation(regno);
         FirstAidEntry firstaid = new FirstAidEntry();
         firstaid.setCurrentdate(currentdate);
+        firstaid.setFirstaidid(firstaidid);
         firstaid.setRegNo(regno);
         firstaid.setAdmissionno(admissionno);
         firstaid.setName(name);

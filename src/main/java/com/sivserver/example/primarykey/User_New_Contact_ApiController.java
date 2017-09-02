@@ -40,7 +40,7 @@ public class User_New_Contact_ApiController {
 
     @RequestMapping(method = RequestMethod.POST)
     public void newusercont(
-            @RequestParam(value ="regno", required=false) String regno,
+            @RequestParam(value ="regno", required=false) Integer regno,
             @RequestParam(value ="Phoneno", required=false) String Phoneno
            // @RequestParam(value ="users", required=false) User_New users
 

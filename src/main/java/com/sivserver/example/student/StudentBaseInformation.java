@@ -17,33 +17,33 @@ public class StudentBaseInformation {
     public StudentBaseInformation() {
     }
 
-    public String getRegNo(){
+    public String getRegno(){
         return regno;
     }
-    public StudentBaseInformation setRegNo(String regno) {
+    public StudentBaseInformation setRegno(String regno) {
         this.regno = regno;
         return this;
     }
 
-    public String getAdmissionNo() {return admissionno;}
+    public String getAdmissionno() {return admissionno;}
 
-    public StudentBaseInformation setAdmissionNo(String admissionno) {
+    public StudentBaseInformation setAdmissionno(String admissionno) {
         this.admissionno = admissionno;
         return this;
     }
 
-    public String getStudentName() {
-        return name;
+    public String getStudentname() {
+        return studentname;
     }
-    public StudentBaseInformation setStudentName(String name) {
-        this.name = name;
+    public StudentBaseInformation setStudentname(String studentname) {
+        this.studentname = studentname;
         return this;
     }
 
-    public String getSemester() {
+    public Integer getSemester() {
         return semester;
     }
-    public StudentBaseInformation setSemester(String semester) {
+    public StudentBaseInformation setSemester(Integer semester) {
         this.semester = semester;
         return this;
     }
@@ -80,18 +80,18 @@ public class StudentBaseInformation {
         return this;
     }
 
-    public String getAcademicYear() {
+    public String getAcademicyear() {
         return academicyear;
     }
-    public StudentBaseInformation setAcademicYear(String academicyear) {
+    public StudentBaseInformation setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
         return this;
     }
 
-    public String getStudentType() {
+    public String getStudenttype() {
         return studenttype;
     }
-    public StudentBaseInformation setStudentType(String studenttype) {
+    public StudentBaseInformation setStudenttype(String studenttype) {
         this.studenttype = studenttype;
         return this;
     }
@@ -104,10 +104,10 @@ public class StudentBaseInformation {
         return this;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public StudentBaseInformation setLoginUser(String loginuser) {
+    public StudentBaseInformation setLoginuser(String loginuser) {
         this.loginuser = loginuser;
         return this;
     }
@@ -129,10 +129,10 @@ public class StudentBaseInformation {
     private String admissionno;
 
 
-    private String name;
+    private String studentname;
 
 
-    private String semester;
+    private Integer semester;
 
 
     private String branch;

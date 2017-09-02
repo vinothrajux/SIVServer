@@ -15,7 +15,7 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/studentpersonalinformation")
 
-public class StudentPersonalInformationApiController extends WebMvcConfigurerAdapter {
+public class StudentPersonalInformationApiController  {
 
     @Autowired
     private StudentPersonalInformationRepository studentPersonalInformationRepository;

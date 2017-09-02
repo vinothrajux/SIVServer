@@ -1,24 +1,31 @@
 package com.sivserver.example.admission;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/studentcollegeid")
 
 /**
  * Created by GBCorp on 30/06/2017.
  */
-public class StudentCollegeIdApiController extends WebMvcConfigurerAdapter {
+public class StudentCollegeIdApiController {
 
-    @Autowired
+    //@Autowired
+
     private StudentCollegeIdRepository studentCollegeIdRepository;
 
+    @GetMapping(value="/all")
+    public List<StudentCollegeId> getStudentCollegeIdInformation() {return studentCollegeIdRepository.findAll();}
+
+    public StudentCollegeIdApiController(StudentCollegeIdRepository studentCollegeIdRepository)
+    {
+        this.studentCollegeIdRepository = studentCollegeIdRepository;
+    }
     @RequestMapping(method = RequestMethod.POST)
     public void studemtCollegeId(
             @RequestParam(value="regno", required=false) String regno,
@@ -28,13 +35,14 @@ public class StudentCollegeIdApiController extends WebMvcConfigurerAdapter {
             @RequestParam (value="branchcode", required=false) String branchcode,
             @RequestParam (value="Batch", required=false) String Batch,
             @RequestParam (value="semester", required=false) Integer semester,
-            @RequestParam (value="academicYear", required=false) String academicYear,
+            @RequestParam (value="academicyear", required=false) String academicyear,
             @RequestParam (value="idissueddate", required=false) Date idissueddate,
             @RequestParam (value="idcardno", required=false) String idcardno,
             @RequestParam (value="idtype", required=false) String idtype,
             @RequestParam (value="idstatus", required=false) String idstatus,
             @RequestParam (value="loginuser", required=false) String loginuser
     ) {
+        StudentPersonalInformation studentpersonalregno = new StudentPersonalInformation(regno);
         StudentCollegeId studemtCollegeId = new StudentCollegeId();
         studemtCollegeId.setRegno(regno);
         studemtCollegeId.setAdmissionno(admissionno);
@@ -43,9 +51,9 @@ public class StudentCollegeIdApiController extends WebMvcConfigurerAdapter {
         studemtCollegeId.setBranchcode(branchcode);
         studemtCollegeId.setBatch(Batch);
         studemtCollegeId.setSemester(semester);
-        studemtCollegeId.setAcademicyear(academicYear);
-        studemtCollegeId.setIdissuedate(idissueddate);
-        studemtCollegeId.setidcardno(idcardno);
+        studemtCollegeId.setAcademicyear(academicyear);
+        studemtCollegeId.setIdissueddate(idissueddate);
+        studemtCollegeId.setIdcardno(idcardno);
         studemtCollegeId.setIdtype(idtype);
         studemtCollegeId.setIdstatus(idstatus);
         studemtCollegeId.setLoginuser(loginuser);

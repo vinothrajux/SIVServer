@@ -3,6 +3,7 @@ package com.sivserver.example.student;
 
 
 import com.sivserver.example.admission.StudentPersonalInformation;
+import com.sivserver.example.admission.StudentPersonalInformationProjection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -35,8 +36,8 @@ public class StudentBaseInformationApiContrtoller {
     public void studentbaseinformation(
             @RequestParam(value = "regno", required = false) String regno,
             @RequestParam(value = "admissionno", required = false) String admissionno,
-            @RequestParam(value = "name", required = false) String name,
-            @RequestParam(value = "semester", required = false) String semester,
+            @RequestParam(value = "studentname", required = false) String studentname,
+            @RequestParam(value = "semester", required = false) Integer semester,
             @RequestParam(value = "branch", required = false) String branch,
             @RequestParam(value = "branchcode", required = false) String branchcode,
             @RequestParam(value = "batch", required = false) String batch,
@@ -49,23 +50,32 @@ public class StudentBaseInformationApiContrtoller {
     ) {
         StudentBaseInformation studbaseinfo = new StudentBaseInformation();
         StudentPersonalInformation student_personal_regno = new StudentPersonalInformation(regno);
-        studbaseinfo.setRegNo(regno)
-                    .setAdmissionNo(admissionno)
-                    .setStudentName(name)
+        studbaseinfo.setRegno(regno)
+                    .setAdmissionno(admissionno)
+                    .setStudentname(studentname)
                     .setSemester(semester)
                     .setBranch(branch)
                     .setBranchcode(branchcode)
                     .setBatch(batch)
                     .setScheme(scheme)
-                    .setAcademicYear(academicyear)
-                    .setStudentType(studenttype)
+                    .setAcademicyear(academicyear)
+                    .setStudenttype(studenttype)
                     .setPoto(poto)
-                    .setLoginUser(loginuser)
+                    .setLoginuser(loginuser)
                     .setStudent_personal_regno(student_personal_regno);
 
         studentbaseinformationRepository.save(studbaseinfo);
 
 
     }
+
+    @RequestMapping(method = RequestMethod.POST, value="/getStudentBaseInformationDetail")
+    public StudentBaseInformationProjection getStudentBaseInformationDetail(@RequestParam (value ="regno") String registerNumber) {
+        StudentBaseInformationProjection getStudentBaseInformationDetail = studentbaseinformationRepository.findOneByRegno(registerNumber);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getStudentBaseInformationDetail");
+        return getStudentBaseInformationDetail;
+    }
+
 }
 

@@ -37,7 +37,7 @@ public class User_New_ApiController  {
 
         @RequestMapping(method = RequestMethod.POST)
         public void newuser(
-                @RequestParam(value ="regno", required=false) String regno,
+                @RequestParam(value ="regno", required=false) Integer regno,
                 @RequestParam(value ="name", required=false) String name,
                 @RequestParam(value ="Fees", required=false) Long Fees,
                 @RequestParam(value ="Department", required=false) String Department

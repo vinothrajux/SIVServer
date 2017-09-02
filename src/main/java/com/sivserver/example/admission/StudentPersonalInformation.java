@@ -1,11 +1,9 @@
 package com.sivserver.example.admission;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Seetha on 28-Jun-17.
@@ -13,6 +11,98 @@ import java.util.Date;
 @Entity
 @Table(name = "studentpersonalinformation")
 public class StudentPersonalInformation {
+
+    @Id
+    @Column(name = "regno",nullable=false)
+    private String regno;
+
+
+    private String admissionno;
+
+    private String name;
+
+
+    private String academicyear;
+
+
+    private Date dateofbirth;
+
+
+    private String gender;
+
+
+    private String fathername;
+
+
+    private String mothername;
+
+
+    private String presentaddress1;
+
+
+    private String presentaddress2;
+
+
+    private String presentarea;
+
+
+    private String presentpincode;
+
+    private String presentstate;
+
+
+    private String presentmobileno;
+
+
+    private String presentaltmobileno;
+
+
+    private String presentemail;
+
+
+    private String presentaltemail;
+
+
+    private String permanentaddress1;
+
+
+    private String permanentaddress2;
+
+
+    private String permanentarea;
+
+
+    private String permanentpincode;
+
+    private String permanentstate;
+
+
+    private String permanentmobileno;
+
+
+    private String permanentaltmobileno;
+
+
+    private String permanentemail;
+
+
+    private String permanentaltemail;
+
+
+
+    private String reference;
+
+
+    private String loginuser;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<FirstAidEntry> studentFirstAidRegno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<StudentCollegeId> studentCollegeId;
+
 
     public StudentPersonalInformation() {
     }
@@ -219,87 +309,19 @@ public class StudentPersonalInformation {
         this.loginuser = loginuser;
     }
 
+    public List<StudentCollegeId> getStudentCollegeId() {
+        return studentCollegeId;
+    }
 
-    @Id
-    @Column(name = "regno",nullable=false)
-    private String regno;
+    public void setStudentCollegeId(List<StudentCollegeId> studentCollegeId) {
+        this.studentCollegeId = studentCollegeId;
+    }
 
+    public List<FirstAidEntry> getStudentFirstAidRegno() {
+        return studentFirstAidRegno;
+    }
 
-    private String admissionno;
-
-    private String name;
-
-
-    private String academicyear;
-
-
-    private Date dateofbirth;
-
-
-    private String gender;
-
-
-    private String fathername;
-
-
-    private String mothername;
-
-
-    private String presentaddress1;
-
-
-    private String presentaddress2;
-
-
-    private String presentarea;
-
-
-    private String presentpincode;
-
-    private String presentstate;
-
-
-    private String presentmobileno;
-
-
-    private String presentaltmobileno;
-
-
-    private String presentemail;
-
-
-    private String presentaltemail;
-
-
-    private String permanentaddress1;
-
-
-    private String permanentaddress2;
-
-
-    private String permanentarea;
-
-
-    private String permanentpincode;
-
-    private String permanentstate;
-
-
-    private String permanentmobileno;
-
-
-    private String permanentaltmobileno;
-
-
-    private String permanentemail;
-
-
-    private String permanentaltemail;
-
-
-
-    private String reference;
-
-
-    private String loginuser;
+    public void setStudentFirstAidRegno(List<FirstAidEntry> studentFirstAidRegno) {
+        this.studentFirstAidRegno = studentFirstAidRegno;
+    }
 }

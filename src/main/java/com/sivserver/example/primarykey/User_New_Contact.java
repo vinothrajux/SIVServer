@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull;
 public class User_New_Contact {
     @Id
     @Column(name="regno")
-    private String regno;
+    private Integer regno;
     private String Phoneno;
 
     @OneToOne
@@ -38,11 +38,11 @@ public class User_New_Contact {
         return this;
     }
 
-    public String getRegno() {
+    public Integer getRegno() {
         return regno;
     }
 
-    public User_New_Contact setRegno(String regno) {
+    public User_New_Contact setRegno(Integer regno) {
         this.regno = regno;
         return this;
     }

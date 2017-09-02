@@ -13,7 +13,7 @@ public class User_New {
     @Id
     @NotNull
     @Column(name = "regno")
-    private String regno;
+    private Integer regno;
     private String name;
     private Long Fees;
     private String Department;
@@ -21,7 +21,7 @@ public class User_New {
     public User_New()
    {}
 
-   public User_New(String regno)
+   public User_New(Integer regno)
     {
         this.regno = regno;
     }
@@ -38,11 +38,11 @@ public class User_New {
 //        this.userLogs = userLogs;
 //    }
 
-    public String getRegno() {
+    public Integer getRegno() {
         return regno;
     }
 
-    public void setRegno(String regno) {
+    public void setRegno(Integer regno) {
         this.regno = regno;
     }
 

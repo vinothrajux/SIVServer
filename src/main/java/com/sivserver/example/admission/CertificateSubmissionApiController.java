@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Seetha on 19-Jun-17.
@@ -15,10 +16,18 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/certificatesubmission")
 
-public class CertificateSubmissionApiController extends WebMvcConfigurerAdapter {
+public class CertificateSubmissionApiController  {
 
-    @Autowired
+    //@Autowired
     private CertificateSubmissionRepository certificateSubmissionRepository;
+
+    @RequestMapping(value="/all")
+    public List<CertificateSubmission> getCertificateSubmissionDetail() {return certificateSubmissionRepository.findAll();}
+
+    public CertificateSubmissionApiController(CertificateSubmissionRepository certificateSubmissionRepository)
+    {
+        this.certificateSubmissionRepository = certificateSubmissionRepository;
+    }
 
 //    @Autowired
 //    private ApplicationSaleRepository applicationSaleRepository;
@@ -68,36 +77,39 @@ public class CertificateSubmissionApiController extends WebMvcConfigurerAdapter 
             @RequestParam (value="loginUser", required=false) String loginUser
     ) {
         CertificateSubmission certificateSubmission = new CertificateSubmission();
-        certificateSubmission.setAdmissionno(admissionno);
-        certificateSubmission.setRegno(regno);
-        certificateSubmission.setCandname(candidatename);
-        certificateSubmission.setBranch(branch);
-        certificateSubmission.setBranchcode(branchCode);
-        certificateSubmission.setSemester(semester);
-        certificateSubmission.setAcadyear(academicYear);
-        certificateSubmission.setStudtype(studentType);
-        certificateSubmission.setFoliono(foloiNo);
-        certificateSubmission.setMarksheetsubmitted(marksheetsubmitted);
-        certificateSubmission.setMarksheetslno(marksheetSlNo);
-        certificateSubmission.setTransfercertifcatesubmitted(transfercertificatesubmitted);
-        certificateSubmission.setTransfercertificateslno(transferCertificateSlNo);
-        certificateSubmission.setCommunitycertificatesubmitted(communitycertificatesubmitted);
-        certificateSubmission.setCommunitycertificateslno(communityCertificateSlNo);
-        certificateSubmission.setXeroxmarksheetsubmitted(xeroxmarksheetsubmitted);
-        certificateSubmission.setXeroxmarksheetcopies(xeroxMarksheetCopies);
-        certificateSubmission.setXeroxtransfercertifcatesubmitted(xeroxTransfercertificatesubmitted);
-        certificateSubmission.setXeroxtransfercertificatecopies(xeroxTransferCertificateCopies);
-        certificateSubmission.setXeroxcommunitycertificatesubmitted(xeroxCommunitycertificatesubmitted);
-        certificateSubmission.setXeroxcommunitycertificatecopies(xeroxCommunityCertificateCopies);
-        certificateSubmission.setMigrationcertifcatesubmitted(migrationcertificatesubmitted);
-        certificateSubmission.setMigrationcertificateslno(migrationCertificateSlNo);
-        certificateSubmission.setConductcertifcatesubmitted(conductcertificatesubmitted);
-        certificateSubmission.setConductcertificateslno(conductCertificateSlNo);
-        certificateSubmission.setStampsizepotosubmitted(stampSizePhotosubmitted);
-        certificateSubmission.setStampsizepotonos(stampSizePhotoCopies);
-        certificateSubmission.setPassportsizesubmitted(passPortPhotosubmitted);
-        certificateSubmission.setPassportsizepotonos(passportSizePhotoCopies);
-        certificateSubmission.setLoginuser(loginUser);
+        StudentPersonalInformation student_personal_regno = new StudentPersonalInformation(regno);
+        certificateSubmission.setAdmissionno(admissionno)
+                             .setRegno(regno)
+                             .setCandidatename(candidatename)
+                             .setBranch(branch)
+                             .setBranchCode(branchCode)
+                             .setSemester(semester)
+                             .setAcademicYear(academicYear)
+                             .setStudentType(studentType)
+                             .setFoloiNo(foloiNo)
+                             .setMarksheetsubmitted(marksheetsubmitted)
+                             .setMarksheetSlNo(marksheetSlNo)
+                             .setTransfercertificatesubmitted (transfercertificatesubmitted)
+                             .setTransferCertificateSlNo(transferCertificateSlNo)
+                             .setCommunitycertificatesubmitted(communitycertificatesubmitted)
+                             .setCommunityCertificateSlNo(communityCertificateSlNo)
+                             .setXeroxmarksheetsubmitted(xeroxmarksheetsubmitted)
+                             .setXeroxMarksheetCopies(xeroxMarksheetCopies)
+                             .setXeroxTransfercertificatesubmitted(xeroxTransfercertificatesubmitted)
+                             .setXeroxTransferCertificateCopies(xeroxTransferCertificateCopies)
+                             .setXeroxCommunitycertificatesubmitted(xeroxCommunitycertificatesubmitted)
+                             .setXeroxCommunityCertificateCopies(xeroxCommunityCertificateCopies)
+                             .setMigrationcertificatesubmitted(migrationcertificatesubmitted)
+                             .setMigrationCertificateSlNo(migrationCertificateSlNo)
+                             .setConductcertificatesubmitted(conductcertificatesubmitted)
+                             .setConductCertificateSlNo(conductCertificateSlNo)
+                             .setStampSizePhotosubmitted(stampSizePhotosubmitted)
+                             .setStampSizePhotoCopies(stampSizePhotoCopies)
+                             .setPassPortPhotosubmitted(passPortPhotosubmitted)
+                             .setPassportSizePhotoCopies(passportSizePhotoCopies)
+                             .setLoginUser(loginUser)
+                             .setStudent_personal_regno(student_personal_regno);
+
 
         certificateSubmissionRepository.save(certificateSubmission);
 
@@ -105,5 +117,12 @@ public class CertificateSubmissionApiController extends WebMvcConfigurerAdapter 
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, value="/getStudentCertificateSubmissionDetail")
+    public CertificateSubmission getStudentCertificateSubmissionDetail(@RequestParam (value ="regno") String registerNumber) {
+        CertificateSubmission studentCertificateSubmissionDetail = certificateSubmissionRepository.findOneByRegno(registerNumber);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getStudentCertificateSubmissionDetail");
+        return studentCertificateSubmissionDetail;
+    }
 
 }
