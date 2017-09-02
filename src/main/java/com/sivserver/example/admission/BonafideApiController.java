@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Seetha on 30-Jun-17.
@@ -16,10 +17,18 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/bonafide")
 
-public class BonafideApiController extends WebMvcConfigurerAdapter {
+public class BonafideApiController  {
 
-    @Autowired
+    //@Autowired
     private BonafideRepository bonafideRepository;
+
+    @RequestMapping(value="/all")
+    public List<Bonafide> getStudentBonafideDetail() {return bonafideRepository.findAll();}
+
+    public BonafideApiController(BonafideRepository bonafideRepository)
+    {
+        this.bonafideRepository=bonafideRepository;
+    }
 
     @Autowired
     private BonafideRepository bonafideRepositoryFetch;
@@ -43,6 +52,7 @@ public class BonafideApiController extends WebMvcConfigurerAdapter {
 
     ) {
         Bonafide bonafid = new Bonafide();
+        StudentPersonalInformation student_personal_regno = new StudentPersonalInformation(regno);
         bonafid.setBonafideid(bonafideid);
         bonafid.setRegno(regno);
         bonafid.setAdmissionno(admissionno);

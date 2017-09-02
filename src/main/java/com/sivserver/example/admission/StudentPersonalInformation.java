@@ -103,6 +103,9 @@ public class StudentPersonalInformation {
     @JoinColumn(name="regno",referencedColumnName = "regno")
     private List<StudentCollegeId> studentCollegeId;
 
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<Bonafide> studentBonafideId;
 
     public StudentPersonalInformation() {
     }
@@ -323,5 +326,13 @@ public class StudentPersonalInformation {
 
     public void setStudentFirstAidRegno(List<FirstAidEntry> studentFirstAidRegno) {
         this.studentFirstAidRegno = studentFirstAidRegno;
+    }
+
+    public List<Bonafide> getStudentBonafideId() {
+        return studentBonafideId;
+    }
+
+    public void setStudentBonafideId(List<Bonafide> studentBonafideId) {
+        this.studentBonafideId = studentBonafideId;
     }
 }
