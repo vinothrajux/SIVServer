@@ -31,51 +31,51 @@ public class DiplomaInternalBranchTestTimetableHeaderApiController extends WebMv
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "testtype", required = false) String testtype,
             @RequestParam(value = "maxmarks", required = false) Integer maxmarks,
-            @RequestParam(value = "subject1Colno", required = false) Integer subject1Colno,
-            @RequestParam(value = "subject1Codeno", required = false) String subject1Codeno,
-            @RequestParam(value = "subject1TestDate", required = false) Date subject1TestDate,
-            @RequestParam(value = "subject1TestDay", required = false) String subject1TestDay,
-            @RequestParam(value = "subject2Colno", required = false) Integer subject2Colno,
-            @RequestParam(value = "subject2Codeno", required = false) String subject2Codeno,
-            @RequestParam(value = "subject2TestDate", required = false) Date subject2TestDate,
-            @RequestParam(value = "subject2TestDay", required = false) String subject2TestDay,
-            @RequestParam(value = "subject3Colno", required = false) Integer subject3Colno,
-            @RequestParam(value = "subject3Codeno", required = false) String subject3Codeno,
-            @RequestParam(value = "subject3TestDate", required = false) Date subject3TestDate,
-            @RequestParam(value = "subject3TestDay", required = false) String subject3TestDay,
-            @RequestParam(value = "subject4Colno", required = false) Integer subject4Colno,
-            @RequestParam(value = "subject4Codeno", required = false) String subject4Codeno,
-            @RequestParam(value = "subject4TestDate", required = false) Date subject4TestDate,
-            @RequestParam(value = "subject4TestDay", required = false) String subject4TestDay,
+            @RequestParam(value = "subject1Colno", required = false) Integer subject1colno,
+            @RequestParam(value = "subject1Codeno", required = false) String subject1codeno,
+            @RequestParam(value = "subject1TestDate", required = false) Date subject1testdate,
+            @RequestParam(value = "subject1TestDay", required = false) String subject1testday,
+            @RequestParam(value = "subject2Colno", required = false) Integer subject2colno,
+            @RequestParam(value = "subject2Codeno", required = false) String subject2codeno,
+            @RequestParam(value = "subject2TestDate", required = false) Date subject2testdate,
+            @RequestParam(value = "subject2TestDay", required = false) String subject2testday,
+            @RequestParam(value = "subject3Colno", required = false) Integer subject3colno,
+            @RequestParam(value = "subject3Codeno", required = false) String subject3codeno,
+            @RequestParam(value = "subject3TestDate", required = false) Date subject3testdate,
+            @RequestParam(value = "subject3TestDay", required = false) String subject3testday,
+            @RequestParam(value = "subject4Colno", required = false) Integer subject4colno,
+            @RequestParam(value = "subject4Codeno", required = false) String subject4codeno,
+            @RequestParam(value = "subject4TestDate", required = false) Date subject4testdate,
+            @RequestParam(value = "subject4TestDay", required = false) String subject4testday,
             @RequestParam(value = "loginuser", required = false) String loginuser
 
     ) {
         DiplomaInternalBranchTestTimetableHeader dipIntBranTestTimeTabHead = new DiplomaInternalBranchTestTimetableHeader();
-        dipIntBranTestTimeTabHead.setTestId(testid);
-        dipIntBranTestTimeTabHead.setEntryDate(entrydate);
-        dipIntBranTestTimeTabHead.setBranchCode(branchcode);
+        dipIntBranTestTimeTabHead.setTestid(testid);
+        dipIntBranTestTimeTabHead.setEntrydate(entrydate);
+        dipIntBranTestTimeTabHead.setBranchcode(branchcode);
         dipIntBranTestTimeTabHead.setBatch(batch);
         dipIntBranTestTimeTabHead.setSemester(semester);
-        dipIntBranTestTimeTabHead.setAcademicYear(academicyear);
-        dipIntBranTestTimeTabHead.setTestType(testtype);
-        dipIntBranTestTimeTabHead.setMaximumMarks(maxmarks);
-        dipIntBranTestTimeTabHead.setSubject1ColumnNo(subject1Colno);
-        dipIntBranTestTimeTabHead.setSubject1CodeNo(subject1Codeno);
-        dipIntBranTestTimeTabHead.setSubject1Date(subject1TestDate);
-        dipIntBranTestTimeTabHead.setSubject1Day(subject1TestDay);
-        dipIntBranTestTimeTabHead.setSubject2ColumnNo(subject2Colno);
-        dipIntBranTestTimeTabHead.setSubject2CodeNo(subject2Codeno);
-        dipIntBranTestTimeTabHead.setSubject2Date(subject2TestDate);
-        dipIntBranTestTimeTabHead.setSubject2Day(subject2TestDay);
-        dipIntBranTestTimeTabHead.setSubject3ColumnNo(subject3Colno);
-        dipIntBranTestTimeTabHead.setSubject3CodeNo(subject3Codeno);
-        dipIntBranTestTimeTabHead.setSubject3Date(subject3TestDate);
-        dipIntBranTestTimeTabHead.setSubject3Day(subject3TestDay);
-        dipIntBranTestTimeTabHead.setSubject4ColumnNo(subject4Colno);
-        dipIntBranTestTimeTabHead.setSubject4CodeNo(subject4Codeno);
-        dipIntBranTestTimeTabHead.setSubject4Date(subject4TestDate);
-        dipIntBranTestTimeTabHead.setSubject4Day(subject4TestDay);
-        dipIntBranTestTimeTabHead.setLoginUser(loginuser);
+        dipIntBranTestTimeTabHead.setAcademicyear(academicyear);
+        dipIntBranTestTimeTabHead.setTesttype(testtype);
+        dipIntBranTestTimeTabHead.setMaximummarks(maxmarks);
+        dipIntBranTestTimeTabHead.setSubject1columnno(subject1colno);
+        dipIntBranTestTimeTabHead.setSubject1codeno(subject1codeno);
+        dipIntBranTestTimeTabHead.setSubject1date(subject1testdate);
+        dipIntBranTestTimeTabHead.setSubject1day(subject1testday);
+        dipIntBranTestTimeTabHead.setSubject2columnno(subject2colno);
+        dipIntBranTestTimeTabHead.setSubject2codeno(subject2codeno);
+        dipIntBranTestTimeTabHead.setSubject2date(subject2testdate);
+        dipIntBranTestTimeTabHead.setSubject2day(subject2testday);
+        dipIntBranTestTimeTabHead.setSubject3columnno(subject3colno);
+        dipIntBranTestTimeTabHead.setSubject3codeno(subject3codeno);
+        dipIntBranTestTimeTabHead.setSubject3date(subject3testdate);
+        dipIntBranTestTimeTabHead.setSubject3day(subject3testday);
+        dipIntBranTestTimeTabHead.setSubject4columnno(subject4colno);
+        dipIntBranTestTimeTabHead.setSubject4codeno(subject4codeno);
+        dipIntBranTestTimeTabHead.setSubject4date(subject4testdate);
+        dipIntBranTestTimeTabHead.setSubject4day(subject4testday);
+        dipIntBranTestTimeTabHead.setLoginuser(loginuser);
 
         diplomaInternalBranchTestTimetableHeaderRepository.save(dipIntBranTestTimeTabHead);
     }

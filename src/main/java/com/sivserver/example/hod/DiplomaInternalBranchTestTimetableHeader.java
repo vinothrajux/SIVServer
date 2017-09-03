@@ -13,26 +13,26 @@ import java.util.Date;
 @Table(name = "diplomainternalbranchtesttimetableheader")
 
 public class DiplomaInternalBranchTestTimetableHeader {
-    public String getTestId(){
+    public String getTestid(){
         return testid;
     }
-    public void setTestId(String testid) {
+    public void setTestid(String testid) {
         this.testid = testid;
     }
 
 
-    public Date getEntryDate(){
+    public Date getEntrydate(){
         return entrydate;
     }
-    public void setEntryDate(Date entrydate) {
+    public void setEntrydate(Date entrydate) {
         this.entrydate = entrydate;
     }
 
 
-    public String getBranchCode() {
+    public String getBranchcode() {
         return branchcode;
     }
-    public void setBranchCode(String branchcode) {
+    public void setBranchcode(String branchcode) {
         this.branchcode = branchcode;
     }
 
@@ -50,142 +50,142 @@ public class DiplomaInternalBranchTestTimetableHeader {
         this.semester = semester;
     }
 
-    public String getAcademicYear() {
+    public String getAcademicyear() {
         return academicyear;
     }
-    public void setAcademicYear(String academicyear) {
+    public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
     }
 
-    public String getTestType() {
+    public String getTesttype() {
         return testtype;
     }
-    public void setTestType(String testtype) {
+    public void setTesttype(String testtype) {
         this.testtype = testtype;
     }
 
-    public Integer getMaximumMarks() {
+    public Integer getMaximummarks() {
         return maxmarks;
     }
-    public void setMaximumMarks(Integer maxmarks) {
+    public void setMaximummarks(Integer maxmarks) {
         this.maxmarks = maxmarks;
     }
 
-    public Integer getSubject1ColumnNo() {
-        return subject1Colno;
+    public Integer getSubject1columnno() {
+        return subject1colno;
     }
-    public void setSubject1ColumnNo(Integer subject1Colno) {
-        this.subject1Colno = subject1Colno;
-    }
-
-    public String getSubject1CodeNo() {
-        return subject1Codeno;
-    }
-    public void setSubject1CodeNo(String subject1Codeno) {
-        this.subject1Codeno = subject1Codeno;
+    public void setSubject1columnno(Integer subject1colno) {
+        this.subject1colno = subject1colno;
     }
 
-    public Date getSubject1Date() {
-        return subject1TestDate;
+    public String getSubject1codeno() {
+        return subject1codeno;
     }
-    public void setSubject1Date(Date subject1TestDate) {
-        this.subject1TestDate = subject1TestDate;
-    }
-
-    public String getSubject1Day() {
-        return subject1TestDay;
-    }
-    public void setSubject1Day(String subject1TestDay) {
-        this.subject1TestDay = subject1TestDay;
+    public void setSubject1codeno(String subject1codeno) {
+        this.subject1codeno = subject1codeno;
     }
 
-    public Integer getSubject2ColumnNo() {
-        return subject2Colno;
+    public Date getSubject1date() {
+        return subject1testdate;
     }
-    public void setSubject2ColumnNo(Integer subject2Colno) {
-        this.subject2Colno = subject2Colno;
-    }
-
-    public String getSubject2CodeNo() {
-        return subject2Codeno;
-    }
-    public void setSubject2CodeNo(String subject2Codeno) {
-        this.subject2Codeno = subject2Codeno;
+    public void setSubject1date(Date subject1testdate) {
+        this.subject1testdate = subject1testdate;
     }
 
-    public Date getSubject2Date() {
-        return subject2TestDate;
+    public String getSubject1day() {
+        return subject1testday;
     }
-    public void setSubject2Date(Date subject2TestDate) {
-        this.subject2TestDate = subject2TestDate;
-    }
-
-    public String getSubject2Day() {
-        return subject2TestDay;
-    }
-    public void setSubject2Day(String subject2TestDay) {
-        this.subject2TestDay = subject2TestDay;
+    public void setSubject1day(String subject1testday) {
+        this.subject1testday = subject1testday;
     }
 
-    public Integer getSubject3ColumnNo() {
-        return subject3Colno;
+    public Integer getSubject2columnno() {
+        return subject2colno;
     }
-    public void setSubject3ColumnNo(Integer subject3Colno) {
-        this.subject3Colno = subject3Colno;
-    }
-
-    public String getSubject3CodeNo() {
-        return subject3Codeno;
-    }
-    public void setSubject3CodeNo(String subject3Codeno) {
-        this.subject3Codeno = subject3Codeno;
+    public void setSubject2columnno(Integer subject2colno) {
+        this.subject2colno = subject2colno;
     }
 
-    public Date getSubject3Date() {
-        return subject3TestDate;
+    public String getSubject2codeno() {
+        return subject2codeno;
     }
-    public void setSubject3Date(Date subject3TestDate) {
-        this.subject3TestDate = subject3TestDate;
-    }
-
-    public String getSubject3Day() {
-        return subject3TestDay;
-    }
-    public void setSubject3Day(String subject3TestDay) {
-        this.subject3TestDay = subject3TestDay;
+    public void setSubject2codeno(String subject2codeno) {
+        this.subject2codeno = subject2codeno;
     }
 
-    public Integer getSubject4ColumnNo() {
-        return subject4Colno;
+    public Date getSubject2date() {
+        return subject2testdate;
     }
-    public void setSubject4ColumnNo(Integer subject4Colno) {
-        this.subject4Colno = subject4Colno;
-    }
-
-    public String getSubject4CodeNo() {
-        return subject4Codeno;
-    }
-    public void setSubject4CodeNo(String subject4Codeno) {
-        this.subject4Codeno = subject4Codeno;
+    public void setSubject2date(Date subject2testdate) {
+        this.subject2testdate = subject2testdate;
     }
 
-    public Date getSubject4Date() {
-        return subject4TestDate;
+    public String getSubject2day() {
+        return subject2testday;
     }
-    public void setSubject4Date(Date subject4TestDate) {
-        this.subject4TestDate = subject4TestDate;
-    }
-
-    public String getSubject4Day() {
-        return subject4TestDay;
-    }
-    public void setSubject4Day(String subject4TestDay) {
-        this.subject4TestDay = subject4TestDay;
+    public void setSubject2day(String subject2testday) {
+        this.subject2testday = subject2testday;
     }
 
+    public Integer getSubject3columnno() {
+        return subject3colno;
+    }
+    public void setSubject3columnno(Integer subject3colno) {
+        this.subject3colno = subject3colno;
+    }
 
-    public String getLoginUser() {return loginuser;}
-    public void setLoginUser(String loginuser) {
+    public String getSubject3codeno() {
+        return subject3codeno;
+    }
+    public void setSubject3codeno(String subject3codeno) {
+        this.subject3codeno = subject3codeno;
+    }
+
+    public Date getSubject3date() {
+        return subject3testdate;
+    }
+    public void setSubject3date(Date subject3testdate) {
+        this.subject3testdate = subject3testdate;
+    }
+
+    public String getSubject3day() {
+        return subject3testday;
+    }
+    public void setSubject3day(String subject3testday) {
+        this.subject3testday = subject3testday;
+    }
+
+    public Integer getSubject4columnno() {
+        return subject4colno;
+    }
+    public void setSubject4columnno(Integer subject4colno) {
+        this.subject4colno = subject4colno;
+    }
+
+    public String getSubject4codeno() {
+        return subject4codeno;
+    }
+    public void setSubject4codeno(String subject4codeno) {
+        this.subject4codeno = subject4codeno;
+    }
+
+    public Date getSubject4date() {
+        return subject4testdate;
+    }
+    public void setSubject4date(Date subject4testdate) {
+        this.subject4testdate = subject4testdate;
+    }
+
+    public String getSubject4day() {
+        return subject4testday;
+    }
+    public void setSubject4day(String subject4testday) {
+        this.subject4testday = subject4testday;
+    }
+
+
+    public String getLoginuser() {return loginuser;}
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 
@@ -215,52 +215,52 @@ public class DiplomaInternalBranchTestTimetableHeader {
     private Integer maxmarks;
 
     @NotNull
-    private Integer subject1Colno;
+    private Integer subject1colno;
 
     @NotNull
-    private String subject1Codeno;
+    private String subject1codeno;
 
     @NotNull
-    private Date subject1TestDate;
+    private Date subject1testdate;
 
     @NotNull
-    private String subject1TestDay;
+    private String subject1testday;
 
     @NotNull
-    private Integer subject2Colno;
+    private Integer subject2colno;
 
     @NotNull
-    private String subject2Codeno;
+    private String subject2codeno;
 
     @NotNull
-    private Date subject2TestDate;
+    private Date subject2testdate;
 
     @NotNull
-    private String subject2TestDay;
+    private String subject2testday;
 
     @NotNull
-    private Integer subject3Colno;
+    private Integer subject3colno;
 
     @NotNull
-    private String subject3Codeno;
+    private String subject3codeno;
 
     @NotNull
-    private Date subject3TestDate;
+    private Date subject3testdate;
 
     @NotNull
-    private String subject3TestDay;
+    private String subject3testday;
 
     @NotNull
-    private Integer subject4Colno;
+    private Integer subject4colno;
 
     @NotNull
-    private String subject4Codeno;
+    private String subject4codeno;
 
     @NotNull
-    private Date subject4TestDate;
+    private Date subject4testdate;
 
     @NotNull
-    private String subject4TestDay;
+    private String subject4testday;
 
 
     @NotNull

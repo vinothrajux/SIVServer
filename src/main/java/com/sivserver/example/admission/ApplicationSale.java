@@ -376,13 +376,13 @@ public class ApplicationSale implements java.io.Serializable{
         this.loginuser = loginuser;
     }
 
-    public AdmissionCounselling getCounsellingid() {
-        return this.counsellingid;
-    }
-
-    public void setCounsellingid(AdmissionCounselling counsellingid) {
-        this.counsellingid = counsellingid;
-    }
+//    public AdmissionCounselling getCounsellingid() {
+//        return this.counsellingid;
+//    }
+//
+//    public void setCounsellingid(AdmissionCounselling counsellingid) {
+//        this.counsellingid = counsellingid;
+//    }
 
     //public long getId() {
 
@@ -529,8 +529,8 @@ public class ApplicationSale implements java.io.Serializable{
     @NotNull
     private String loginuser;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "appid", cascade = CascadeType.ALL)
-    private AdmissionCounselling counsellingid;
+//    @OneToOne(fetch = FetchType.LAZY, mappedBy = "appid", cascade = CascadeType.ALL)
+//    private AdmissionCounselling counsellingid;
    //http://www.codejava.net/frameworks/hibernate/hibernate-one-to-one-mapping-with-foreign-key-annotations-example
 
     //@ManyToOne This will insert more than one row with same value in child table

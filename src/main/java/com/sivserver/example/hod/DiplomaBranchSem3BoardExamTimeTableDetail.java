@@ -35,259 +35,257 @@ public class DiplomaBranchSem3BoardExamTimeTableDetail {
     }
 
     public Integer getSubject1intmark() {
-        return subject1IntMark;
+        return subject1intmark;
     }
-    public void setSubject1intmark(Integer subject1IntMark) {
-        this.subject1IntMark = subject1IntMark;
+    public void setSubject1intmark(Integer subject1intMark) {
+        this.subject1intmark = subject1intMark;
     }
 
     public Integer getSubject1extmark() {
-        return subject1ExtMark;
+        return subject1extmark;
     }
-    public void setSubject1extmark(Integer subject1ExtMark) {
-        this.subject1ExtMark = subject1ExtMark;
+    public void setSubject1extmark(Integer subject1extMark) {
+        this.subject1extmark = subject1extMark;
     }
 
     public Integer getSubject1totmark() {
-        return subject1TotMark;
+        return subject1totmark;
     }
-    public void setSubject1totmark(Integer subject1TotMark) {
-        this.subject1TotMark = subject1TotMark;
+    public void setSubject1totmark(Integer subject1totMark) {
+        this.subject1totmark = subject1totMark;
     }
 
     public Character getSubject1attendance() {
-        return subject1Attendance;
+        return subject1attendance;
     }
-    public void setSubject1attendance(Character subject1Attendance) {
-        this.subject1Attendance = subject1Attendance;
+    public void setSubject1attendance(Character subject1attendance) {
+        this.subject1attendance = subject1attendance;
     }
 
     public String getSubject1result() {
-        return subject1Result;
+        return subject1result;
     }
-    public void setSubject1result(String subject1Result) {
-        this.subject1Result = subject1Result;
+    public void setSubject1result(String subject1result) {
+        this.subject1result = subject1result;
     }
 
     public Integer getSubject2intmark() {
-        return subject2IntMark;
+        return subject2intmark;
     }
-    public void setSubject2intmark(Integer subject2IntMark) {
-        this.subject2IntMark = subject2IntMark;
+    public void setSubject2intmark(Integer subject2intmark) {
+        this.subject2intmark = subject2intmark;
     }
 
     public Integer getSubject2extmark() {
-        return subject2ExtMark;
+        return subject2extmark;
     }
-    public void setSubject2extmark(Integer subject2ExtMark) {
-        this.subject2ExtMark = subject2ExtMark;
+    public void setSubject2extmark(Integer subject2extMark) {
+        this.subject2extmark = subject2extMark;
     }
 
     public Integer getSubject2totmark() {
-        return subject2TotMark;
+        return subject2totmark;
     }
-    public void setSubject2totmark(Integer subject2TotMark) {
-        this.subject2TotMark = subject2TotMark;
+    public void setSubject2totmark(Integer subject2totMark) {
+        this.subject2totmark = subject2totMark;
     }
 
     public Character getSubject2attendance() {
-        return subject2Attendance;
+        return subject2attendance;
     }
-    public void setSubject2attendance(Character subject2Attendance) {
-        this.subject2Attendance = subject2Attendance;
+    public void setSubject2attendance(Character subject2attendance) {
+        this.subject2attendance = subject2attendance;
     }
 
     public String getSubject2result() {
-        return subject2Result;
+        return subject2result;
     }
-    public void setSubject2result(String subject2Result) {
-        this.subject2Result = subject2Result;
+    public void setSubject2result(String subject2result) {
+        this.subject2result = subject2result;
     }
 
     public Integer getSubject3intmark() {
-        return subject3IntMark;
+        return subject3intmark;
     }
-    public void setSubject3intmark(Integer subject3IntMark) {
-        this.subject3IntMark = subject3IntMark;
+    public void setSubject3intmark(Integer subject3intmark) {
+        this.subject3intmark = subject3intmark;
     }
 
     public Integer getSubject3extmark() {
-        return subject3ExtMark;
+        return subject3extmark;
     }
-    public void setSubject3extmark(Integer subject3ExtMark) {
-        this.subject3ExtMark = subject3ExtMark;
+    public void setSubject3extmark(Integer subject3extmark) {
+        this.subject3extmark = subject3extmark;
     }
 
     public Integer getSubject3totmark() {
-        return subject3TotMark;
+        return subject3totmark;
     }
-    public void setSubject3totmark(Integer subject3TotMark) {
-        this.subject3TotMark = subject3TotMark;
+    public void setSubject3totmark(Integer subject3totMark) {
+        this.subject3totmark = subject3totMark;
     }
 
     public Character getSubject3attendance() {
-        return subject3Attendance;
+        return subject3attendance;
     }
-    public void setSubject3attendance(Character subject3Attendance) {
-        this.subject3Attendance = subject3Attendance;
+    public void setSubject3attendance(Character subject3attendance) {
+        this.subject3attendance = subject3attendance;
     }
 
-    public String getSubject3result() {return subject3Result; }
-    public void setSubject3result(String subject3Result) {
-        this.subject3Result = subject3Result;
+    public String getSubject3result() {return subject3result; }
+    public void setSubject3result(String subject3result) {
+        this.subject3result = subject3result;
     }
 
     public Integer getSubject4intmark() {
-        return subject4IntMark;
+        return subject4intmark;
     }
-    public void setSubject4intmark(Integer subject4IntMark) {
-        this.subject4IntMark = subject4IntMark;
+    public void setSubject4intmark(Integer subject4intmark) {
+        this.subject4intmark = subject4intmark;
     }
 
     public Integer getSubject4extmark() {
-        return subject4ExtMark;
+        return subject4extmark;
     }
-    public void setSubject4extmark(Integer subject4ExtMark) {
-        this.subject4ExtMark = subject4ExtMark;
+    public void setSubject4extmark(Integer subject4extmark) {
+        this.subject4extmark = subject4extmark;
     }
 
     public Integer getSubject4totmark() {
-        return subject4TotMark;
+        return subject4totmark;
     }
-    public void setSubject4totmark(Integer subject4TotMark) {
-        this.subject4TotMark = subject4TotMark;
+    public void setSubject4totmark(Integer subject4totmark) {
+        this.subject4totmark = subject4totmark;
     }
 
     public Character getSubject4attendance() {
-        return subject4Attendance;
+        return subject4attendance;
     }
-    public void setSubject4attendance(Character subject4Attendance) {
-        this.subject4Attendance = subject4Attendance;
+    public void setSubject4attendance(Character subject4attendance) {
+        this.subject4attendance = subject4attendance;
     }
 
     public String getSubject4result() {
-        return subject4Result;
+        return subject4result;
     }
-    public void setSubject4result(String subject4Result) {
-        this.subject4Result = subject4Result;
+    public void setSubject4result(String subject4result) {
+        this.subject4result = subject4result;
     }
 
     public Integer getSubject5intmark() {
-        return subject5IntMark;
+        return subject5intmark;
     }
-    public void setSubject5intmark(Integer subject5IntMark) {
-        this.subject5IntMark = subject5IntMark;
+    public void setSubject5intmark(Integer subject5intmark) {
+        this.subject5intmark = subject5intmark;
     }
 
     public Integer getSubject5extmark() {
-        return subject5ExtMark;
+        return subject5extmark;
     }
-    public void setSubject5extmark(Integer subject5ExtMark) {
-        this.subject5ExtMark = subject5ExtMark;
+    public void setSubject5extmark(Integer subject5extmark) {
+        this.subject5extmark = subject5extmark;
     }
 
     public Integer getSubject5totmark() {
-        return subject5TotMark;
+        return subject5totmark;
     }
-    public void setSubject5totmark(Integer subject5TotMark) {
-        this.subject5TotMark = subject5TotMark;
+    public void setSubject5totmark(Integer subject5totmark) {
+        this.subject5totmark = subject5totmark;
     }
 
     public Character getSubject5attendance() {
-        return subject5Attendance;
+        return subject5attendance;
     }
-    public void setSubject5attendance(Character subject5Attendance) {
-        this.subject5Attendance = subject5Attendance;
+    public void setSubject5attendance(Character subject5attendance) {
+        this.subject5attendance = subject5attendance;
     }
 
     public String getSubject5result() {
-        return subject5Result;
+        return subject5result;
     }
-    public void setSubject5result(String subject5Result) {
-        this.subject5Result = subject5Result;
+    public void setSubject5result(String subject5result) {
+        this.subject5result = subject5result;
     }
 
     public Integer getSubject6intmark() {
-        return subject6IntMark;
+        return subject6intmark;
     }
-    public void setSubject6intmark(Integer subject6IntMark) {
-        this.subject6IntMark = subject6IntMark;
+    public void setSubject6intmark(Integer subject6intmark) {
+        this.subject6intmark = subject6intmark;
     }
 
     public Integer getSubject6extmark() {
-        return subject6ExtMark;
+        return subject6extmark;
     }
-    public void setSubject6extmark(Integer subject6ExtMark) {
-        this.subject6ExtMark = subject6ExtMark;
+    public void setSubject6extmark(Integer subject6extmark) {
+        this.subject6extmark = subject6extmark;
     }
 
-    public Integer getSubject6totmark() {
-        return subject6TotMark;
-    }
-    public void setSubject6totmark(Integer subject6TotMark) {
-        this.subject6TotMark = subject6TotMark;
+    public Integer getSubject6totmark() {return subject6totmark;}
+    public void setSubject6totmark(Integer subject6totmark) {
+        this.subject6totmark = subject6totmark;
     }
 
     public Character getSubject6attendance() {
-        return subject6Attendance;
+        return subject6attendance;
     }
-    public void setSubject6attendance(Character subject6Attendance) {
-        this.subject6Attendance = subject6Attendance;
+    public void setSubject6attendance(Character subject6attendance) {
+        this.subject6attendance = subject6attendance;
     }
 
     public String getSubject6result() {
-        return subject6Result;
+        return subject6result;
     }
-    public void setSubject6result(String subject6Result) {
-        this.subject6Result = subject6Result;
+    public void setSubject6result(String subject6result) {
+        this.subject6result = subject6result;
     }
 
     public Integer getSubject7intmark() {
-        return subject7IntMark;
+        return subject7intmark;
     }
-    public void setSubject7intmark(Integer subject7IntMark) {
-        this.subject7IntMark = subject7IntMark;
+    public void setSubject7intmark(Integer subject7intmark) {
+        this.subject7intmark = subject7intmark;
     }
 
     public Integer getSubject7extmark() {
-        return subject7ExtMark;
+        return subject7extmark;
     }
-    public void setSubject7extmark(Integer subject7ExtMark) {
-        this.subject7ExtMark = subject7ExtMark;
+    public void setSubject7extmark(Integer subject7extmark) {
+        this.subject7extmark = subject7extmark;
     }
 
     public Integer getSubject7totmark() {
-        return subject7TotMark;
+        return subject7totmark;
     }
-    public void setSubject7totmark(Integer subject7TotMark) {
-        this.subject7TotMark = subject7TotMark;
+    public void setSubject7totmark(Integer subject7totmark) {
+        this.subject7totmark = subject7totmark;
     }
 
     public Character getSubject7attendance() {
-        return subject7Attendance;
+        return subject7attendance;
     }
-    public void setSubject7attendance(Character subject7Attendance) {
-        this.subject7Attendance = subject7Attendance;
+    public void setSubject7attendance(Character subject7attendance) {
+        this.subject7attendance = subject7attendance;
     }
 
     public String getSubject7result() {
-        return subject7Result;
+        return subject7result;
     }
-    public void setSubject7result(String subject7Result) {
-        this.subject7Result = subject7Result;
+    public void setSubject7result(String subject7result) {
+        this.subject7result = subject7result;
     }
 
     public String getOverallresult() {
-        return OverallResult;
+        return Overallresult;
     }
-    public void setOverallresult(String OverallResult) {
-        this.OverallResult = OverallResult;
+    public void setOverallresult(String Overallresult) {
+        this.Overallresult = Overallresult;
     }
 
-    public Integer getrank() {
+    public Integer getRankank() {
         return rank;
     }
-    public void setrank(Integer rank) {
+    public void setRank(Integer rank) {
         this.rank = rank;
     }
 
@@ -301,112 +299,112 @@ public class DiplomaBranchSem3BoardExamTimeTableDetail {
     private String admissionno;
 
     @NotNull
-    private Integer subject1IntMark;
+    private Integer subject1intmark;
 
     @NotNull
-    private Integer subject1ExtMark;
+    private Integer subject1extmark;
 
     @NotNull
-    private Integer subject1TotMark;
+    private Integer subject1totmark;
 
     @NotNull
-    private Character subject1Attendance;
+    private Character subject1attendance;
 
     @NotNull
-    private String subject1Result;
+    private String subject1result;
 
     @NotNull
-    private Integer subject2IntMark;
+    private Integer subject2intmark;
 
     @NotNull
-    private Integer subject2ExtMark;
+    private Integer subject2extmark;
 
     @NotNull
-    private Integer subject2TotMark;
+    private Integer subject2totmark;
 
     @NotNull
-    private Character subject2Attendance;
+    private Character subject2attendance;
 
     @NotNull
-    private String subject2Result;
+    private String subject2result;
 
     @NotNull
-    private Integer subject3IntMark;
+    private Integer subject3intmark;
 
     @NotNull
-    private Integer subject3ExtMark;
+    private Integer subject3extmark;
 
     @NotNull
-    private Integer subject3TotMark;
+    private Integer subject3totmark;
 
     @NotNull
-    private Character subject3Attendance;
+    private Character subject3attendance;
 
     @NotNull
-    private String subject3Result;
+    private String subject3result;
 
     @NotNull
-    private Integer subject4IntMark;
+    private Integer subject4intmark;
 
     @NotNull
-    private Integer subject4ExtMark;
+    private Integer subject4extmark;
 
     @NotNull
-    private Integer subject4TotMark;
+    private Integer subject4totmark;
 
     @NotNull
-    private Character subject4Attendance;
+    private Character subject4attendance;
 
     @NotNull
-    private String subject4Result;
+    private String subject4result;
 
     @NotNull
-    private Integer subject5IntMark;
+    private Integer subject5intmark;
 
     @NotNull
-    private Integer subject5ExtMark;
+    private Integer subject5extmark;
 
     @NotNull
-    private Integer subject5TotMark;
+    private Integer subject5totmark;
 
     @NotNull
-    private Character subject5Attendance;
+    private Character subject5attendance;
 
     @NotNull
-    private String subject5Result;
+    private String subject5result;
 
     @NotNull
-    private Integer subject6IntMark;
+    private Integer subject6intmark;
 
     @NotNull
-    private Integer subject6ExtMark;
+    private Integer subject6extmark;
 
     @NotNull
-    private Integer subject6TotMark;
+    private Integer subject6totmark;
 
     @NotNull
-    private Character subject6Attendance;
+    private Character subject6attendance;
 
     @NotNull
-    private String subject6Result;
+    private String subject6result;
 
     @NotNull
-    private Integer subject7IntMark;
+    private Integer subject7intmark;
 
     @NotNull
-    private Integer subject7ExtMark;
+    private Integer subject7extmark;
 
     @NotNull
-    private Integer subject7TotMark;
+    private Integer subject7totmark;
 
     @NotNull
-    private Character subject7Attendance;
+    private Character subject7attendance;
 
     @NotNull
-    private String subject7Result;
+    private String subject7result;
 
     @NotNull
-    private String OverallResult;
+    private String Overallresult;
 
     @NotNull
     private Integer rank;

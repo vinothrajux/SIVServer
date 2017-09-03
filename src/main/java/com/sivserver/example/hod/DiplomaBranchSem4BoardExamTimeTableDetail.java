@@ -37,7 +37,7 @@ public class DiplomaBranchSem4BoardExamTimeTableDetail {
     public Integer getSubject1intmark() {
         return subject1intmark;
     }
-    public void setSubject1intmark(Integer subject1IntMark) {
+    public void setSubject1intmark(Integer subject1intmark) {
         this.subject1intmark = subject1intmark;
     }
 

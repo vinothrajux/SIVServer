@@ -24,42 +24,42 @@ public class DiplomaBranchSem3BoardExamTimeTableDetailApiController extends WebM
             @RequestParam(value = "examid", required = false) String examid,
             @RequestParam(value = "regno", required = false) String regno,
             @RequestParam(value = "admissionno", required = false) String admissionno,
-            @RequestParam(value = "subject1IntMark", required = false) Integer subject1IntMark,
-            @RequestParam(value = "subject1ExtMark", required = false) Integer subject1ExtMark,
-            @RequestParam(value = "subject1TotMark", required = false) Integer subject1TotMark,
-            @RequestParam(value = "subject1Attendance", required = false) Character subject1Attendance,
-            @RequestParam(value = "subject1Result", required = false) String subject1Result,
-            @RequestParam(value = "subject2IntMark", required = false) Integer subject2IntMark,
-            @RequestParam(value = "subject2ExtMark", required = false) Integer subject2ExtMark,
-            @RequestParam(value = "subject2TotMark", required = false) Integer subject2TotMark,
-            @RequestParam(value = "subject2Attendance", required = false) Character subject2Attendance,
-            @RequestParam(value = "subject2Result", required = false) String subject2Result,
-            @RequestParam(value = "subject3IntMark", required = false) Integer subject3IntMark,
-            @RequestParam(value = "subject3ExtMark", required = false) Integer subject3ExtMark,
-            @RequestParam(value = "subject3TotMark", required = false) Integer subject3TotMark,
-            @RequestParam(value = "subject3Attendance", required = false) Character subject3Attendance,
-            @RequestParam(value = "subject3Result", required = false) String subject3Result,
-            @RequestParam(value = "subject4IntMark", required = false) Integer subject4IntMark,
-            @RequestParam(value = "subject4ExtMark", required = false) Integer subject4ExtMark,
-            @RequestParam(value = "subject4TotMark", required = false) Integer subject4TotMark,
-            @RequestParam(value = "subject4Attendance", required = false) Character subject4Attendance,
-            @RequestParam(value = "subject4Result", required = false) String subject4Result,
-            @RequestParam(value = "subject5IntMark", required = false) Integer subject5IntMark,
-            @RequestParam(value = "subject5ExtMark", required = false) Integer subject5ExtMark,
-            @RequestParam(value = "subject5TotMark", required = false) Integer subject5TotMark,
-            @RequestParam(value = "subject5Attendance", required = false) Character subject5Attendance,
-            @RequestParam(value = "subject5Result", required = false) String subject5Result,
-            @RequestParam(value = "subject6IntMark", required = false) Integer subject6IntMark,
-            @RequestParam(value = "subject6ExtMark", required = false) Integer subject6ExtMark,
-            @RequestParam(value = "subject6TotMark", required = false) Integer subject6TotMark,
-            @RequestParam(value = "subject6Attendance", required = false) Character subject6Attendance,
-            @RequestParam(value = "subject6Result", required = false) String subject6Result,
-            @RequestParam(value = "subject7IntMark", required = false) Integer subject7IntMark,
-            @RequestParam(value = "subject7ExtMark", required = false) Integer subject7ExtMark,
-            @RequestParam(value = "subject7TotMark", required = false) Integer subject7TotMark,
-            @RequestParam(value = "subject7Attendance", required = false) Character subject7Attendance,
-            @RequestParam(value = "subject7Result", required = false) String subject7Result,
-            @RequestParam(value = "OverallResult", required = false) String OverallResult,
+            @RequestParam(value = "subject1IntMark", required = false) Integer subject1intmark,
+            @RequestParam(value = "subject1ExtMark", required = false) Integer subject1extmark,
+            @RequestParam(value = "subject1TotMark", required = false) Integer subject1totmark,
+            @RequestParam(value = "subject1Attendance", required = false) Character subject1attendance,
+            @RequestParam(value = "subject1Result", required = false) String subject1result,
+            @RequestParam(value = "subject2IntMark", required = false) Integer subject2intmark,
+            @RequestParam(value = "subject2ExtMark", required = false) Integer subject2extmark,
+            @RequestParam(value = "subject2TotMark", required = false) Integer subject2totmark,
+            @RequestParam(value = "subject2Attendance", required = false) Character subject2attendance,
+            @RequestParam(value = "subject2Result", required = false) String subject2result,
+            @RequestParam(value = "subject3IntMark", required = false) Integer subject3intmark,
+            @RequestParam(value = "subject3ExtMark", required = false) Integer subject3extmark,
+            @RequestParam(value = "subject3TotMark", required = false) Integer subject3totmark,
+            @RequestParam(value = "subject3Attendance", required = false) Character subject3attendance,
+            @RequestParam(value = "subject3Result", required = false) String subject3result,
+            @RequestParam(value = "subject4IntMark", required = false) Integer subject4intmark,
+            @RequestParam(value = "subject4ExtMark", required = false) Integer subject4extmark,
+            @RequestParam(value = "subject4TotMark", required = false) Integer subject4totmark,
+            @RequestParam(value = "subject4Attendance", required = false) Character subject4attendance,
+            @RequestParam(value = "subject4Result", required = false) String subject4result,
+            @RequestParam(value = "subject5IntMark", required = false) Integer subject5intmark,
+            @RequestParam(value = "subject5ExtMark", required = false) Integer subject5extmark,
+            @RequestParam(value = "subject5TotMark", required = false) Integer subject5totmark,
+            @RequestParam(value = "subject5Attendance", required = false) Character subject5attendance,
+            @RequestParam(value = "subject5Result", required = false) String subject5result,
+            @RequestParam(value = "subject6IntMark", required = false) Integer subject6intmark,
+            @RequestParam(value = "subject6ExtMark", required = false) Integer subject6extmark,
+            @RequestParam(value = "subject6TotMark", required = false) Integer subject6totmark,
+            @RequestParam(value = "subject6Attendance", required = false) Character subject6attendance,
+            @RequestParam(value = "subject6Result", required = false) String subject6result,
+            @RequestParam(value = "subject7IntMark", required = false) Integer subject7intmark,
+            @RequestParam(value = "subject7ExtMark", required = false) Integer subject7extmark,
+            @RequestParam(value = "subject7TotMark", required = false) Integer subject7totmark,
+            @RequestParam(value = "subject7Attendance", required = false) Character subject7attendance,
+            @RequestParam(value = "subject7Result", required = false) String subject7result,
+            @RequestParam(value = "OverallResult", required = false) String Overallresult,
             @RequestParam(value = "rank", required = false) Integer rank
 
     ) {
@@ -67,43 +67,43 @@ public class DiplomaBranchSem3BoardExamTimeTableDetailApiController extends WebM
         dipBranSem3BoardExamTimeTabDet.setExamId(examid);
         dipBranSem3BoardExamTimeTabDet.setRegno(regno);
         dipBranSem3BoardExamTimeTabDet.setAdmissionno(admissionno);
-        dipBranSem3BoardExamTimeTabDet.setSubject1intmark(subject1IntMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject1extmark(subject1ExtMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject1totmark(subject1TotMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject1attendance(subject1Attendance);
-        dipBranSem3BoardExamTimeTabDet.setSubject1result(subject1Result);
-        dipBranSem3BoardExamTimeTabDet.setSubject2intmark(subject2IntMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject2extmark(subject2ExtMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject2totmark(subject2TotMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject2attendance(subject2Attendance);
-        dipBranSem3BoardExamTimeTabDet.setSubject2result(subject2Result);
-        dipBranSem3BoardExamTimeTabDet.setSubject3intmark(subject3IntMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject3extmark(subject3ExtMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject3totmark(subject3TotMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject3attendance(subject3Attendance);
-        dipBranSem3BoardExamTimeTabDet.setSubject3result(subject3Result);
-        dipBranSem3BoardExamTimeTabDet.setSubject4intmark(subject4IntMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject4extmark(subject4ExtMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject4totmark(subject4TotMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject4attendance(subject4Attendance);
-        dipBranSem3BoardExamTimeTabDet.setSubject4result(subject4Result);
-        dipBranSem3BoardExamTimeTabDet.setSubject5intmark(subject5IntMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject5extmark(subject5ExtMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject5totmark(subject5TotMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject5attendance(subject5Attendance);
-        dipBranSem3BoardExamTimeTabDet.setSubject5result(subject5Result);
-        dipBranSem3BoardExamTimeTabDet.setSubject6intmark(subject6IntMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject6extmark(subject6ExtMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject6totmark(subject6TotMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject6attendance(subject6Attendance);
-        dipBranSem3BoardExamTimeTabDet.setSubject6result(subject6Result);
-        dipBranSem3BoardExamTimeTabDet.setSubject7intmark(subject7IntMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject7extmark(subject7ExtMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject7totmark(subject7TotMark);
-        dipBranSem3BoardExamTimeTabDet.setSubject7attendance(subject7Attendance);
-        dipBranSem3BoardExamTimeTabDet.setSubject7result(subject7Result);
-        dipBranSem3BoardExamTimeTabDet.setOverallresult(OverallResult);
-        dipBranSem3BoardExamTimeTabDet.setrank(rank);
+        dipBranSem3BoardExamTimeTabDet.setSubject1intmark(subject1intmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject1extmark(subject1extmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject1totmark(subject1totmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject1attendance(subject1attendance);
+        dipBranSem3BoardExamTimeTabDet.setSubject1result(subject1result);
+        dipBranSem3BoardExamTimeTabDet.setSubject2intmark(subject2intmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject2extmark(subject2extmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject2totmark(subject2totmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject2attendance(subject2attendance);
+        dipBranSem3BoardExamTimeTabDet.setSubject2result(subject2result);
+        dipBranSem3BoardExamTimeTabDet.setSubject3intmark(subject3intmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject3extmark(subject3extmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject3totmark(subject3totmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject3attendance(subject3attendance);
+        dipBranSem3BoardExamTimeTabDet.setSubject3result(subject3result);
+        dipBranSem3BoardExamTimeTabDet.setSubject4intmark(subject4intmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject4extmark(subject4extmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject4totmark(subject4totmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject4attendance(subject4attendance);
+        dipBranSem3BoardExamTimeTabDet.setSubject4result(subject4result);
+        dipBranSem3BoardExamTimeTabDet.setSubject5intmark(subject5intmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject5extmark(subject5extmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject5totmark(subject5totmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject5attendance(subject5attendance);
+        dipBranSem3BoardExamTimeTabDet.setSubject5result(subject5result);
+        dipBranSem3BoardExamTimeTabDet.setSubject6intmark(subject6intmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject6extmark(subject6extmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject6totmark(subject6totmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject6attendance(subject6attendance);
+        dipBranSem3BoardExamTimeTabDet.setSubject6result(subject6result);
+        dipBranSem3BoardExamTimeTabDet.setSubject7intmark(subject7intmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject7extmark(subject7extmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject7totmark(subject7totmark);
+        dipBranSem3BoardExamTimeTabDet.setSubject7attendance(subject7attendance);
+        dipBranSem3BoardExamTimeTabDet.setSubject7result(subject7result);
+        dipBranSem3BoardExamTimeTabDet.setOverallresult(Overallresult);
+        dipBranSem3BoardExamTimeTabDet.setRank(rank);
 
         diplomaBranchSem3BoardExamTimeTableDetailRepository.save(dipBranSem3BoardExamTimeTabDet);
     }

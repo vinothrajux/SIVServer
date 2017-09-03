@@ -26,39 +26,39 @@ public class DiplomaInternalBranchTestTimetableDetailApiController extends WebMv
             @RequestParam(value = "testid", required = false) String testid,
             @RequestParam(value = "regno", required = false) String regno,
             @RequestParam(value = "admissionno", required = false) String admissionno,
-            @RequestParam(value = "subject1Mark", required = false) Integer subject1Mark,
-            @RequestParam(value = "subject1Attendance", required = false) Character subject1Attendance,
-            @RequestParam(value = "subject1Result", required = false) String subject1Result,
-            @RequestParam(value = "subject2Mark", required = false) Integer subject2Mark,
-            @RequestParam(value = "subject2Attendance", required = false) Character subject2Attendance,
-            @RequestParam(value = "subject2Result", required = false) String subject2Result,
-            @RequestParam(value = "subject3Mark", required = false) Integer subject3Mark,
-            @RequestParam(value = "subject3Attendance", required = false) Character subject3Attendance,
-            @RequestParam(value = "subject3Result", required = false) String subject3Result,
-            @RequestParam(value = "subject4Mark", required = false) Integer subject4Mark,
-            @RequestParam(value = "subject4Attendance", required = false) Character subject4Attendance,
-            @RequestParam(value = "subject4Result", required = false) String subject4Result,
-            @RequestParam(value = "OverallResult", required = false) String OverallResult,
+            @RequestParam(value = "subject1Mark", required = false) Integer subject1mark,
+            @RequestParam(value = "subject1Attendance", required = false) Character subject1attendance,
+            @RequestParam(value = "subject1Result", required = false) String subject1result,
+            @RequestParam(value = "subject2Mark", required = false) Integer subject2mark,
+            @RequestParam(value = "subject2Attendance", required = false) Character subject2attendance,
+            @RequestParam(value = "subject2Result", required = false) String subject2result,
+            @RequestParam(value = "subject3Mark", required = false) Integer subject3mark,
+            @RequestParam(value = "subject3Attendance", required = false) Character subject3attendance,
+            @RequestParam(value = "subject3Result", required = false) String subject3result,
+            @RequestParam(value = "subject4Mark", required = false) Integer subject4mark,
+            @RequestParam(value = "subject4Attendance", required = false) Character subject4attendance,
+            @RequestParam(value = "subject4Result", required = false) String subject4result,
+            @RequestParam(value = "OverallResult", required = false) String Overallresult,
             @RequestParam(value = "rank", required = false) Integer rank
 
                 ) {
         DiplomaInternalBranchTestTimetableDetail dipIntBranTestTimeTabDet = new DiplomaInternalBranchTestTimetableDetail();
-        dipIntBranTestTimeTabDet.setTestId(testid);
+        dipIntBranTestTimeTabDet.setTestid(testid);
         dipIntBranTestTimeTabDet.setRegno(regno);
-        dipIntBranTestTimeTabDet.setAdmissionNo(admissionno);
-        dipIntBranTestTimeTabDet.setgetSubject1Mark(subject1Mark);
-        dipIntBranTestTimeTabDet.setSubject1Attendance(subject1Attendance);
-        dipIntBranTestTimeTabDet.setSubject1Result(subject1Result);
-        dipIntBranTestTimeTabDet.setgetSubject2Mark(subject2Mark);
-        dipIntBranTestTimeTabDet.setSubject2Attendance(subject2Attendance);
-        dipIntBranTestTimeTabDet.setSubject2Result(subject2Result);
-        dipIntBranTestTimeTabDet.setgetSubject3Mark(subject3Mark);
-        dipIntBranTestTimeTabDet.setSubject3Attendance(subject3Attendance);
-        dipIntBranTestTimeTabDet.setSubject3Result(subject3Result);
-        dipIntBranTestTimeTabDet.setgetSubject4Mark(subject4Mark);
-        dipIntBranTestTimeTabDet.setSubject4Attendance(subject4Attendance);
-        dipIntBranTestTimeTabDet.setSubject4Result(subject4Result);
-        dipIntBranTestTimeTabDet.setOverallResult(OverallResult);
+        dipIntBranTestTimeTabDet.setAdmissionno(admissionno);
+        dipIntBranTestTimeTabDet.setgetSubject1mark(subject1mark);
+        dipIntBranTestTimeTabDet.setSubject1attendance(subject1attendance);
+        dipIntBranTestTimeTabDet.setSubject1result(subject1result);
+        dipIntBranTestTimeTabDet.setgetSubject2mark(subject2mark);
+        dipIntBranTestTimeTabDet.setSubject2attendance(subject2attendance);
+        dipIntBranTestTimeTabDet.setSubject2result(subject2result);
+        dipIntBranTestTimeTabDet.setgetSubject3mark(subject3mark);
+        dipIntBranTestTimeTabDet.setSubject3attendance(subject3attendance);
+        dipIntBranTestTimeTabDet.setSubject3result(subject3result);
+        dipIntBranTestTimeTabDet.setgetSubject4mark(subject4mark);
+        dipIntBranTestTimeTabDet.setSubject4attendance(subject4attendance);
+        dipIntBranTestTimeTabDet.setSubject4result(subject4result);
+        dipIntBranTestTimeTabDet.setOverallresult(Overallresult);
         dipIntBranTestTimeTabDet.setRank(rank);
 
         diplomaInternalBranchTestTimetableDetailRepository.save(dipIntBranTestTimeTabDet);
