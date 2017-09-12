@@ -19,6 +19,8 @@ public class DiplomaBranchSem3BoardExamTimeTableDetail {
 
     private String admissionno;
 
+    private Hod_Compound_Key testkey;
+
     private Integer subject1IntMark;
 
     private Integer subject1ExtMark;
@@ -121,6 +123,15 @@ public class DiplomaBranchSem3BoardExamTimeTableDetail {
 
     public DiplomaBranchSem3BoardExamTimeTableDetail setAdmissionno(String admissionno) {
         this.admissionno = admissionno;
+        return this;
+    }
+
+    public Hod_Compound_Key getTestkey() {
+        return testkey;
+    }
+
+    public DiplomaBranchSem3BoardExamTimeTableDetail setTestkey(Hod_Compound_Key testkey) {
+        this.testkey = testkey;
         return this;
     }
 

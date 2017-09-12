@@ -1,9 +1,14 @@
 package com.sivserver.example.student;
 
+import com.sivserver.example.admission.Bonafide;
 import com.sivserver.example.admission.StudentPersonalInformation;
+import com.sivserver.example.hod.DiplomaInternalBranchTestTimetableDetail;
+import com.sivserver.example.hod.DiplomaInternalSem1TestTimetableDetail;
+import com.sivserver.example.hod.DiplomaInternalSem2TestTimetableDetail;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 //import java.util.Date;
 
 /**
@@ -125,6 +130,30 @@ public class StudentBaseInformation {
         return this;
     }
 
+    public List<DiplomaInternalBranchTestTimetableDetail> getDiplomaInternalBranchTestTimetableDetail_regno() {
+        return diplomaInternalBranchTestTimetableDetail_regno;
+    }
+
+    public void setDiplomaInternalBranchTestTimetableDetail_regno(List<DiplomaInternalBranchTestTimetableDetail> diplomaInternalBranchTestTimetableDetail_regno) {
+        this.diplomaInternalBranchTestTimetableDetail_regno = diplomaInternalBranchTestTimetableDetail_regno;
+    }
+
+    public List<DiplomaInternalSem1TestTimetableDetail> getDiplomaInternalSem1TestTimetableDetail_regno() {
+        return diplomaInternalSem1TestTimetableDetail_regno;
+    }
+
+    public void setDiplomaInternalSem1TestTimetableDetail_regno(List<DiplomaInternalSem1TestTimetableDetail> diplomaInternalSem1TestTimetableDetail_regno) {
+        this.diplomaInternalSem1TestTimetableDetail_regno = diplomaInternalSem1TestTimetableDetail_regno;
+    }
+
+    public List<DiplomaInternalSem2TestTimetableDetail> getDiplomaInternalSem2TestTimetableDetail_regno() {
+        return diplomaInternalSem2TestTimetableDetail_regno;
+    }
+
+    public void setDiplomaInternalSem2TestTimetableDetail_regno(List<DiplomaInternalSem2TestTimetableDetail> diplomaInternalSem2TestTimetableDetail_regno) {
+        this.diplomaInternalSem2TestTimetableDetail_regno = diplomaInternalSem2TestTimetableDetail_regno;
+    }
+
     @Id
     @Column(name="regno")
     private String regno;
@@ -166,5 +195,16 @@ public class StudentBaseInformation {
     @JoinColumn(name="student_base_regno",nullable=false,referencedColumnName = "regno")
     private StudentPersonalInformation student_personal_regno;
 
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<DiplomaInternalBranchTestTimetableDetail> diplomaInternalBranchTestTimetableDetail_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<DiplomaInternalSem1TestTimetableDetail> diplomaInternalSem1TestTimetableDetail_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<DiplomaInternalSem2TestTimetableDetail> diplomaInternalSem2TestTimetableDetail_regno;
 
 }

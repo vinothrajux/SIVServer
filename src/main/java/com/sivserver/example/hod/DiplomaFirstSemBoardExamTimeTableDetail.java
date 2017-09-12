@@ -18,6 +18,8 @@ public class DiplomaFirstSemBoardExamTimeTableDetail {
 
     private String admissionno;
 
+    private Hod_Compound_Key fetch_details;
+
     private Integer subject1IntMark;
 
     private Integer subject1ExtMark;
@@ -130,6 +132,15 @@ public class DiplomaFirstSemBoardExamTimeTableDetail {
 
     public DiplomaFirstSemBoardExamTimeTableDetail setAdmissionno(String admissionno) {
         this.admissionno = admissionno;
+        return this;
+    }
+
+    public Hod_Compound_Key getFetch_details() {
+        return fetch_details;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setFetch_details(Hod_Compound_Key fetch_details) {
+        this.fetch_details = fetch_details;
         return this;
     }
 

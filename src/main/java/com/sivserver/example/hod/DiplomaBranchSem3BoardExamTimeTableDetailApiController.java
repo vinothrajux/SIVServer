@@ -30,6 +30,10 @@ public class DiplomaBranchSem3BoardExamTimeTableDetailApiController  {
     public void diplomaBranchSem3BoardExamTtDetail(
             @RequestParam(value = "regno", required = false) String regno,
             @RequestParam(value = "admissionno", required = false) String admissionno,
+            @RequestParam(value = "branchcode", required = false) String branchcode,
+            @RequestParam(value = "batch", required = false) String batch,
+            @RequestParam(value = "semester", required = false) String semester,
+            @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "subject1IntMark", required = false) Integer subject1IntMark,
             @RequestParam(value = "subject1ExtMark", required = false) Integer subject1ExtMark,
             @RequestParam(value = "subject1TotMark", required = false) Integer subject1TotMark,
@@ -72,10 +76,11 @@ public class DiplomaBranchSem3BoardExamTimeTableDetailApiController  {
     ) {
         DiplomaBranchSem3BoardExamTimeTableDetail dipBranSem3BoardExamTimeTabDet = new DiplomaBranchSem3BoardExamTimeTableDetail();
         StudentBaseInformation student_base_regno = new StudentBaseInformation(regno);
-
+        Hod_Compound_Key key = new Hod_Compound_Key(branchcode,batch,semester,academicyear);
 
         dipBranSem3BoardExamTimeTabDet.setRegno(regno)
                                         .setAdmissionno(admissionno)
+                                        .setTestkey(key)
                                         .setSubject1IntMark(subject1IntMark)
                                         .setSubject1ExtMark(subject1ExtMark)
                                         .setSubject1TotMark(subject1TotMark)

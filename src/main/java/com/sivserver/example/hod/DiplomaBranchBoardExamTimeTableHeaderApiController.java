@@ -28,8 +28,6 @@ public class DiplomaBranchBoardExamTimeTableHeaderApiController extends WebMvcCo
             @RequestParam(value = "batch", required = false) String batch,
             @RequestParam(value = "semester", required = false) String semester,
             @RequestParam(value = "academicyear", required = false) String academicyear,
-            @RequestParam(value = "monthofexam", required = false) String monthofexam,
-            @RequestParam(value = "yearofexam", required = false) String yearofexam,
             @RequestParam(value = "maxmarks", required = false) Integer maxmarks,
             @RequestParam(value = "subject1Colno", required = false) Integer subject1Colno,
             @RequestParam(value = "subject1Codeno", required = false) String subject1Codeno,
@@ -67,8 +65,6 @@ public class DiplomaBranchBoardExamTimeTableHeaderApiController extends WebMvcCo
         Hod_Compound_Key key = new Hod_Compound_Key(branchcode,batch,semester,academicyear);
         dipBranBoardExamTimeTabHead.setDiploma_Board_Exam_Time_Table_Compound_Key(key);
         dipBranBoardExamTimeTabHead.setEntrydate(entrydate);
-        dipBranBoardExamTimeTabHead.setMonthofexam(monthofexam);
-        dipBranBoardExamTimeTabHead.setYearofexam(yearofexam);
         dipBranBoardExamTimeTabHead.setMaxmarks(maxmarks);
         dipBranBoardExamTimeTabHead.setSubject1Colno(subject1Colno);
         dipBranBoardExamTimeTabHead.setSubject1Codeno(subject1Codeno);

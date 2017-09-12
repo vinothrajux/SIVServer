@@ -1,5 +1,7 @@
 package com.sivserver.example.hod;
 
+import org.hibernate.annotations.Columns;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -18,10 +20,6 @@ public class DiplomaBranchBoardExamTimeTableHeader {
     Hod_Compound_Key diploma_Board_Exam_Time_Table_Compound_Key;
 
     private Date entrydate;
-
-    private String monthofexam;
-
-    private String yearofexam;
 
     private Integer maxmarks;
 
@@ -102,22 +100,6 @@ public class DiplomaBranchBoardExamTimeTableHeader {
 
     public void setEntrydate(Date entrydate) {
         this.entrydate = entrydate;
-    }
-
-    public String getMonthofexam() {
-        return monthofexam;
-    }
-
-    public void setMonthofexam(String monthofexam) {
-        this.monthofexam = monthofexam;
-    }
-
-    public String getYearofexam() {
-        return yearofexam;
-    }
-
-    public void setYearofexam(String yearofexam) {
-        this.yearofexam = yearofexam;
     }
 
     public Integer getMaxmarks() {
