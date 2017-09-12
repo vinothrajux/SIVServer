@@ -65,6 +65,9 @@ public class AdmissionCounselling {
     public AdmissionCounselling() {
     }
 
+    public AdmissionCounselling(String applno) {
+        this.applno = applno;
+    }
 
     public String getAdmissiontype(){
         return admissiontype;

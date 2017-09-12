@@ -1,11 +1,11 @@
 package com.sivserver.example.hod;
 
+import com.sivserver.example.student.StudentBaseInformation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import java.util.List;
 
 /**
  * Created by GBCorp on 05/07/2017.
@@ -13,15 +13,21 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RestController
 @RequestMapping("/api/v1/diplomabranchsem6boardexamtimetabledetail")
 
-public class DiplomaBranchSem6BoardExamTimeTableDetailApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+public class DiplomaBranchSem6BoardExamTimeTableDetailApiController {
+    //@Autowired
     private DiplomaBranchSem6BoardExamTimeTableDetailRepository diplomaBranchSem6BoardExamTimeTableDetailRepository;
 
+    @GetMapping(value="/all")
+    public List<DiplomaBranchSem6BoardExamTimeTableDetail> getDiplomaBranchSem6BoardExamTimeTableDetail() {return diplomaBranchSem6BoardExamTimeTableDetailRepository.findAll();}
+
+    public DiplomaBranchSem6BoardExamTimeTableDetailApiController(DiplomaBranchSem6BoardExamTimeTableDetailRepository diplomaBranchSem6BoardExamTimeTableDetailRepository)
+    {
+        this.diplomaBranchSem6BoardExamTimeTableDetailRepository = diplomaBranchSem6BoardExamTimeTableDetailRepository;
+    }
 
     @RequestMapping(method = RequestMethod.POST)
 
     public void diplomaBranchSem6BoardExamTtDetail(
-            @RequestParam(value = "examid", required = false) String examid,
             @RequestParam(value = "regno", required = false) String regno,
             @RequestParam(value = "admissionno", required = false) String admissionno,
             @RequestParam(value = "subject1IntMark", required = false) Integer subject1IntMark,
@@ -60,50 +66,55 @@ public class DiplomaBranchSem6BoardExamTimeTableDetailApiController extends WebM
             @RequestParam(value = "subject7Attendance", required = false) Character subject7Attendance,
             @RequestParam(value = "subject7Result", required = false) String subject7Result,
             @RequestParam(value = "OverallResult", required = false) String OverallResult,
-            @RequestParam(value = "rank", required = false) Integer rank
+            @RequestParam(value = "rank", required = false) Integer rank,
+            @RequestParam(value = "monthandyearofexam", required = false) String monthandyearofexam
 
     ) {
         DiplomaBranchSem6BoardExamTimeTableDetail dipBranSem6BoardExamTimeTabDet = new DiplomaBranchSem6BoardExamTimeTableDetail();
-        dipBranSem6BoardExamTimeTabDet.setExamId(examid);
-        dipBranSem6BoardExamTimeTabDet.setRegno(regno);
-        dipBranSem6BoardExamTimeTabDet.setAdmissionNo(admissionno);
-        dipBranSem6BoardExamTimeTabDet.setSubject1IntMark(subject1IntMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject1ExtMark(subject1ExtMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject1TotMark(subject1TotMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject1Attendance(subject1Attendance);
-        dipBranSem6BoardExamTimeTabDet.setSubject1Result(subject1Result);
-        dipBranSem6BoardExamTimeTabDet.setSubject2IntMark(subject2IntMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject2ExtMark(subject2ExtMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject2TotMark(subject2TotMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject2Attendance(subject2Attendance);
-        dipBranSem6BoardExamTimeTabDet.setSubject2Result(subject2Result);
-        dipBranSem6BoardExamTimeTabDet.setSubject3IntMark(subject3IntMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject3ExtMark(subject3ExtMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject3TotMark(subject3TotMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject3Attendance(subject3Attendance);
-        dipBranSem6BoardExamTimeTabDet.setSubject3Result(subject3Result);
-        dipBranSem6BoardExamTimeTabDet.setSubject4IntMark(subject4IntMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject4ExtMark(subject4ExtMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject4TotMark(subject4TotMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject4Attendance(subject4Attendance);
-        dipBranSem6BoardExamTimeTabDet.setSubject4Result(subject4Result);
-        dipBranSem6BoardExamTimeTabDet.setSubject5IntMark(subject5IntMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject5ExtMark(subject5ExtMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject5TotMark(subject5TotMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject5Attendance(subject5Attendance);
-        dipBranSem6BoardExamTimeTabDet.setSubject5Result(subject5Result);
-        dipBranSem6BoardExamTimeTabDet.setSubject6IntMark(subject6IntMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject6ExtMark(subject6ExtMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject6TotMark(subject6TotMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject6Attendance(subject6Attendance);
-        dipBranSem6BoardExamTimeTabDet.setSubject6Result(subject6Result);
-        dipBranSem6BoardExamTimeTabDet.setSubject7IntMark(subject7IntMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject7ExtMark(subject7ExtMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject7TotMark(subject7TotMark);
-        dipBranSem6BoardExamTimeTabDet.setSubject7Attendance(subject7Attendance);
-        dipBranSem6BoardExamTimeTabDet.setSubject7Result(subject7Result);
-        dipBranSem6BoardExamTimeTabDet.setOverallResult(OverallResult);
-        dipBranSem6BoardExamTimeTabDet.setRank(rank);
+        StudentBaseInformation student_base_regno = new StudentBaseInformation(regno);
+
+
+        dipBranSem6BoardExamTimeTabDet.setRegno(regno)
+                .setAdmissionno(admissionno)
+                .setSubject1IntMark(subject1IntMark)
+                .setSubject1ExtMark(subject1ExtMark)
+                .setSubject1TotMark(subject1TotMark)
+                .setSubject1Attendance(subject1Attendance)
+                .setSubject1Result(subject1Result)
+                .setSubject2IntMark(subject2IntMark)
+                .setSubject2ExtMark(subject2ExtMark)
+                .setSubject2TotMark(subject2TotMark)
+                .setSubject2Attendance(subject2Attendance)
+                .setSubject2Result(subject2Result)
+                .setSubject3IntMark(subject3IntMark)
+                .setSubject3ExtMark(subject3ExtMark)
+                .setSubject3TotMark(subject3TotMark)
+                .setSubject3Attendance(subject3Attendance)
+                .setSubject3Result(subject3Result)
+                .setSubject4IntMark(subject4IntMark)
+                .setSubject4ExtMark(subject4ExtMark)
+                .setSubject4TotMark(subject4TotMark)
+                .setSubject4Attendance(subject4Attendance)
+                .setSubject4Result(subject4Result)
+                .setSubject5IntMark(subject5IntMark)
+                .setSubject5ExtMark(subject5ExtMark)
+                .setSubject5TotMark(subject5TotMark)
+                .setSubject5Attendance(subject5Attendance)
+                .setSubject5Result(subject5Result)
+                .setSubject6IntMark(subject6IntMark)
+                .setSubject6ExtMark(subject6ExtMark)
+                .setSubject6TotMark(subject6TotMark)
+                .setSubject6Attendance(subject6Attendance)
+                .setSubject6Result(subject6Result)
+                .setSubject7IntMark(subject7IntMark)
+                .setSubject7ExtMark(subject7ExtMark)
+                .setSubject7TotMark(subject7TotMark)
+                .setSubject7Attendance(subject7Attendance)
+                .setSubject7Result(subject7Result)
+                .setOverallResult(OverallResult)
+                .setRank(rank)
+                .setMonthandyearofexam(monthandyearofexam)
+                .setStudent_base_regno(student_base_regno);
 
         diplomaBranchSem6BoardExamTimeTableDetailRepository.save(dipBranSem6BoardExamTimeTabDet);
     }

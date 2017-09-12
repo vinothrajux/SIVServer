@@ -23,11 +23,10 @@ public class DiplomaBranchBoardExamTimeTableHeaderApiController extends WebMvcCo
     @RequestMapping(method = RequestMethod.POST)
 
     public void diplomaBranchBoardExamTtHeader(
-            @RequestParam(value = "examid", required = false) String examid,
             @RequestParam(value = "entrydate", required = false) Date entrydate,
             @RequestParam(value = "branchcode", required = false) String branchcode,
             @RequestParam(value = "batch", required = false) String batch,
-            @RequestParam(value = "semester", required = false) Integer semester,
+            @RequestParam(value = "semester", required = false) String semester,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "monthofexam", required = false) String monthofexam,
             @RequestParam(value = "yearofexam", required = false) String yearofexam,
@@ -60,47 +59,46 @@ public class DiplomaBranchBoardExamTimeTableHeaderApiController extends WebMvcCo
             @RequestParam(value = "subject7Codeno", required = false) String subject7Codeno,
             @RequestParam(value = "subject7TestDate", required = false) Date subject7TestDate,
             @RequestParam(value = "subject7TestDay", required = false) String subject7TestDay,
+            @RequestParam(value = "monthandyearofexam", required = false) String monthandyearofexam,
             @RequestParam(value = "loginuser", required = false) String loginuser
 
     ) {
         DiplomaBranchBoardExamTimeTableHeader dipBranBoardExamTimeTabHead = new DiplomaBranchBoardExamTimeTableHeader();
-        dipBranBoardExamTimeTabHead.setExamid(examid);
+        Hod_Compound_Key key = new Hod_Compound_Key(branchcode,batch,semester,academicyear);
+        dipBranBoardExamTimeTabHead.setDiploma_Board_Exam_Time_Table_Compound_Key(key);
         dipBranBoardExamTimeTabHead.setEntrydate(entrydate);
-        dipBranBoardExamTimeTabHead.setBranchcode(branchcode);
-        dipBranBoardExamTimeTabHead.setBatch(batch);
-        dipBranBoardExamTimeTabHead.setSemester(semester);
-        dipBranBoardExamTimeTabHead.setAcademicyear(academicyear);
         dipBranBoardExamTimeTabHead.setMonthofexam(monthofexam);
         dipBranBoardExamTimeTabHead.setYearofexam(yearofexam);
-        dipBranBoardExamTimeTabHead.setMaximummarks(maxmarks);
-        dipBranBoardExamTimeTabHead.setSubject1columnno(subject1Colno);
-        dipBranBoardExamTimeTabHead.setSubject1codeno(subject1Codeno);
-        dipBranBoardExamTimeTabHead.setSubject1date(subject1TestDate);
-        dipBranBoardExamTimeTabHead.setSubject1day(subject1TestDay);
-        dipBranBoardExamTimeTabHead.setSubject2columnno(subject2Colno);
-        dipBranBoardExamTimeTabHead.setSubject2codeno(subject2Codeno);
-        dipBranBoardExamTimeTabHead.setSubject2date(subject2TestDate);
-        dipBranBoardExamTimeTabHead.setSubject2day(subject2TestDay);
-        dipBranBoardExamTimeTabHead.setSubject3columnno(subject3Colno);
-        dipBranBoardExamTimeTabHead.setSubject3codeno(subject3Codeno);
-        dipBranBoardExamTimeTabHead.setSubject3date(subject3TestDate);
-        dipBranBoardExamTimeTabHead.setSubject3day(subject3TestDay);
-        dipBranBoardExamTimeTabHead.setSubject4columnno(subject4Colno);
-        dipBranBoardExamTimeTabHead.setSubject4codeno(subject4Codeno);
-        dipBranBoardExamTimeTabHead.setSubject4date(subject4TestDate);
-        dipBranBoardExamTimeTabHead.setSubject4day(subject4TestDay);
-        dipBranBoardExamTimeTabHead.setSubject5columnno(subject5Colno);
-        dipBranBoardExamTimeTabHead.setSubject5codeno(subject5Codeno);
-        dipBranBoardExamTimeTabHead.setSubject5date(subject5TestDate);
-        dipBranBoardExamTimeTabHead.setSubject5day(subject5TestDay);
-        dipBranBoardExamTimeTabHead.setSubject6columnno(subject6Colno);
-        dipBranBoardExamTimeTabHead.setSubject6codeno(subject6Codeno);
-        dipBranBoardExamTimeTabHead.setSubject6date(subject6TestDate);
-        dipBranBoardExamTimeTabHead.setSubject6day(subject6TestDay);
-        dipBranBoardExamTimeTabHead.setSubject7columnno(subject7Colno);
-        dipBranBoardExamTimeTabHead.setSubject7codeno(subject7Codeno);
-        dipBranBoardExamTimeTabHead.setSubject7date(subject7TestDate);
-        dipBranBoardExamTimeTabHead.setSubject7day(subject7TestDay);
+        dipBranBoardExamTimeTabHead.setMaxmarks(maxmarks);
+        dipBranBoardExamTimeTabHead.setSubject1Colno(subject1Colno);
+        dipBranBoardExamTimeTabHead.setSubject1Codeno(subject1Codeno);
+        dipBranBoardExamTimeTabHead.setSubject1TestDate(subject1TestDate);
+        dipBranBoardExamTimeTabHead.setSubject1TestDay(subject1TestDay);
+        dipBranBoardExamTimeTabHead.setSubject2Colno(subject2Colno);
+        dipBranBoardExamTimeTabHead.setSubject2Codeno(subject2Codeno);
+        dipBranBoardExamTimeTabHead.setSubject2TestDate(subject2TestDate);
+        dipBranBoardExamTimeTabHead.setSubject2TestDay(subject2TestDay);
+        dipBranBoardExamTimeTabHead.setSubject3Colno(subject3Colno);
+        dipBranBoardExamTimeTabHead.setSubject3Codeno(subject3Codeno);
+        dipBranBoardExamTimeTabHead.setSubject3TestDate(subject3TestDate);
+        dipBranBoardExamTimeTabHead.setSubject3TestDay(subject3TestDay);
+        dipBranBoardExamTimeTabHead.setSubject4Colno(subject4Colno);
+        dipBranBoardExamTimeTabHead.setSubject4Codeno(subject4Codeno);
+        dipBranBoardExamTimeTabHead.setSubject4TestDate(subject4TestDate);
+        dipBranBoardExamTimeTabHead.setSubject4TestDay(subject4TestDay);
+        dipBranBoardExamTimeTabHead.setSubject5Colno(subject5Colno);
+        dipBranBoardExamTimeTabHead.setSubject5Codeno(subject5Codeno);
+        dipBranBoardExamTimeTabHead.setSubject5TestDate(subject5TestDate);
+        dipBranBoardExamTimeTabHead.setSubject5TestDay(subject5TestDay);
+        dipBranBoardExamTimeTabHead.setSubject6Colno(subject6Colno);
+        dipBranBoardExamTimeTabHead.setSubject6Codeno(subject6Codeno);
+        dipBranBoardExamTimeTabHead.setSubject6TestDate(subject6TestDate);
+        dipBranBoardExamTimeTabHead.setSubject6TestDay(subject6TestDay);
+        dipBranBoardExamTimeTabHead.setSubject7Colno(subject7Colno);
+        dipBranBoardExamTimeTabHead.setSubject7Codeno(subject7Codeno);
+        dipBranBoardExamTimeTabHead.setSubject7TestDate(subject7TestDate);
+        dipBranBoardExamTimeTabHead.setSubject7TestDay(subject7TestDay);
+        dipBranBoardExamTimeTabHead.setMonthandyearofexam(monthandyearofexam);
         dipBranBoardExamTimeTabHead.setLoginuser(loginuser);
 
         diplomaBranchBoardExamTimeTableHeaderRepository.save(dipBranBoardExamTimeTabHead);

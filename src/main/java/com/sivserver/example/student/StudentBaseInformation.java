@@ -17,6 +17,10 @@ public class StudentBaseInformation {
     public StudentBaseInformation() {
     }
 
+    public StudentBaseInformation(String regno) {
+        this.regno = regno;
+    }
+
     public String getRegno(){
         return regno;
     }
