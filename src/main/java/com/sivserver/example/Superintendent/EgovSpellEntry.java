@@ -16,63 +16,57 @@ import java.util.Date;
 
 public class EgovSpellEntry {
 
-    public String getSpellno(){
-        return spellno;
-    }
-    public void setSpellno(String spellno) {
-        this.spellno = spellno;
+    @Id
+    Egovernance_SpellEntry_Compound_Key egovernance_spellEntry_compound_key;
+
+    private Date fromdate;
+
+    private Date todate;
+
+    private Integer noofhours;
+
+    private String loginuser;
+
+    public EgovSpellEntry() {
     }
 
-    public Date getFromdate(){return fromdate;}
+    public Egovernance_SpellEntry_Compound_Key getEgovernance_spellEntry_compound_key() {
+        return egovernance_spellEntry_compound_key;
+    }
+
+    public void setEgovernance_spellEntry_compound_key(Egovernance_SpellEntry_Compound_Key egovernance_spellEntry_compound_key) {
+        this.egovernance_spellEntry_compound_key = egovernance_spellEntry_compound_key;
+    }
+
+    public Date getFromdate() {
+        return fromdate;
+    }
+
     public void setFromdate(Date fromdate) {
         this.fromdate = fromdate;
     }
 
-    public Date getTodate(){return todate;}
+    public Date getTodate() {
+        return todate;
+    }
+
     public void setTodate(Date todate) {
         this.todate = todate;
     }
 
-    public String getSemester(){
-        return semester;
-    }
-    public void setSemester(String semester) {
-        this.semester = semester;
+    public Integer getNoofhours() {
+        return noofhours;
     }
 
-    public String getAacademicyear(){
-        return academicyear;
-    }
-    public void setAcademicyear(String academicyear) {
-        this.academicyear = academicyear;
+    public void setNoofhours(Integer noofhours) {
+        this.noofhours = noofhours;
     }
 
-    public String getLoginuser(){return loginuser;}
+    public String getLoginuser() {
+        return loginuser;
+    }
+
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
-
-
-
-    @Id
-    private String spellno;
-
-
-    @NotNull
-    private Date fromdate;
-
-    @NotNull
-    private Date todate;
-
-
-    @NotNull
-    private String semester;
-
-    @NotNull
-    private String academicyear;
-
-    @NotNull
-    private String loginuser;
-
-
 }

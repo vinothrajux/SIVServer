@@ -30,9 +30,12 @@ public class FuelFillingApiController extends WebMvcConfigurerAdapter {
             @RequestParam(value = "driverid", required = false) String driverid,
             @RequestParam(value = "drivername", required = false) String drivername,
             @RequestParam(value = "nooflitres", required = false) String nooflitres,
+            @RequestParam(value = "fillingtimekms", required = false) Long fillingtimekms,
             @RequestParam(value = "amount", required = false) Long amount,
             @RequestParam(value = "lastfilleddate", required = false) Date lastfilleddate,
             @RequestParam(value = "lastfilledlitres", required = false) String lastfilledlitres,
+            @RequestParam(value = "lastfillingkms", required = false) Long lastfillingkms,
+            @RequestParam(value = "totalkilometers", required = false) Long totalkilometers,
             @RequestParam(value = "loginuser", required = false) String loginuser
 
     )
@@ -46,9 +49,12 @@ public class FuelFillingApiController extends WebMvcConfigurerAdapter {
         fuel.setDriverid(driverid);
         fuel.setDrivername(drivername);
         fuel.setNooflitres(nooflitres);
+        fuel.setFillingtimekms(fillingtimekms);
         fuel.setAmount(amount);
         fuel.setLastfilleddate(lastfilleddate);
         fuel.setLastfilledlitres(lastfilledlitres);
+        fuel.setLastfillingkms(lastfillingkms);
+        fuel.setTotalkilometers(totalkilometers);
         fuel.setLoginuser(loginuser);
 
         fuelfillingRepository.save(fuel);

@@ -38,20 +38,20 @@ public class Ex2HeaderApiController extends WebMvcConfigurerAdapter {
             @RequestParam (value="semester", required=false) String loginuser
     ) {
         Ex2Header ex2Head = new Ex2Header();
-        ex2Head.setExamDate(examdate);
-        ex2Head.setExamDay(examday);
-        ex2Head.setExamSession(examsession);
+        ex2Head.setExamdate(examdate);
+        ex2Head.setExamday(examday);
+        ex2Head.setExamsession(examsession);
         ex2Head.setMonthandyearofexam(monthandyearofexam);
-        ex2Head.setQuestionCode(questioncode);
-        ex2Head.setBranchCode(branchcode);
+        ex2Head.setQuestioncode(questioncode);
+        ex2Head.setBranchcode(branchcode);
         ex2Head.setSemester(semester);
-        ex2Head.setAcademicYear(academicyear);
-        ex2Head.setSubjectCode(subjectcode);
-        ex2Head.setSubjectColumnNo(columnno);
-        ex2Head.setTotalPresent(totalpresent);
-        ex2Head.setTotalAbsent(totalabsent);
-        ex2Head.setTotalMalPractice(totalmalpractice);
-        ex2Head.setLoginUser(loginuser);
+        ex2Head.setAcademicyear(academicyear);
+        ex2Head.setSubjectcode(subjectcode);
+        ex2Head.setColumnno(columnno);
+        ex2Head.setTotalpresent(totalpresent);
+        ex2Head.setTotalabsent(totalabsent);
+        ex2Head.setTotalmalpractice(totalmalpractice);
+        ex2Head.setLoginuser(loginuser);
 
         ex2HeaderRepository.save(ex2Head);
 

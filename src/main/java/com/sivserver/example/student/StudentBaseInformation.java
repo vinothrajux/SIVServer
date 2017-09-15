@@ -1,5 +1,6 @@
 package com.sivserver.example.student;
 
+import com.sivserver.example.Superintendent.Scholarship;
 import com.sivserver.example.admission.Bonafide;
 import com.sivserver.example.admission.StudentPersonalInformation;
 import com.sivserver.example.hod.DiplomaInternalBranchTestTimetableDetail;
@@ -15,6 +16,9 @@ import com.sivserver.example.security.SecurityStudentVisitorPass;
 import com.sivserver.example.sports.AtheleteHeader;
 import com.sivserver.example.sports.SportsOdForm;
 import com.sivserver.example.stores.StoresSalesHeader;
+import com.sivserver.example.transport.MtcConcession;
+import com.sivserver.example.transport.StudentTransport;
+import com.sivserver.example.transport.TrainConcession;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -236,6 +240,38 @@ public class StudentBaseInformation {
         this.storesSalesHeader_regno = storesSalesHeader_regno;
     }
 
+    public List<Scholarship> getScholarship_regno() {
+        return scholarship_regno;
+    }
+
+    public void setScholarship_regno(List<Scholarship> scholarship_regno) {
+        this.scholarship_regno = scholarship_regno;
+    }
+
+    public List<MtcConcession> getMtcConcession_regno() {
+        return mtcConcession_regno;
+    }
+
+    public void setMtcConcession_regno(List<MtcConcession> mtcConcession_regno) {
+        this.mtcConcession_regno = mtcConcession_regno;
+    }
+
+    public List<StudentTransport> getStudentTransport_regno() {
+        return studentTransport_regno;
+    }
+
+    public void setStudentTransport_regno(List<StudentTransport> studentTransport_regno) {
+        this.studentTransport_regno = studentTransport_regno;
+    }
+
+    public List<TrainConcession> getTrainConcession_regno() {
+        return trainConcession_regno;
+    }
+
+    public void setTrainConcession_regno(List<TrainConcession> trainConcession_regno) {
+        this.trainConcession_regno = trainConcession_regno;
+    }
+
     @Id
     @Column(name="regno")
     private String regno;
@@ -324,5 +360,21 @@ public class StudentBaseInformation {
     @OneToMany
     @JoinColumn(name="regno",referencedColumnName = "regno")
     private List<StoresSalesHeader> storesSalesHeader_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<Scholarship> scholarship_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<MtcConcession> mtcConcession_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<StudentTransport> studentTransport_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<TrainConcession> trainConcession_regno;
 
 }

@@ -1,11 +1,11 @@
 package com.sivserver.example.transport;
 
+import com.sivserver.example.student.StudentBaseInformation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import java.util.List;
 
 
 /**
@@ -14,13 +14,23 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RestController
 @RequestMapping("/api/v1/mtcconcession")
 
-public class MtcConcessionApiController extends WebMvcConfigurerAdapter {
+public class MtcConcessionApiController  {
 
-    @Autowired
+    //@Autowired
     private MtcConcessionRepository mtcconcessionRepository;
+
+    @GetMapping(value="/all")
+
+    public List<MtcConcession> getMtcConcessionDetail() {return mtcconcessionRepository.findAll();}
+
+    public MtcConcessionApiController(MtcConcessionRepository mtcconcessionRepository)
+    {
+        this.mtcconcessionRepository = mtcconcessionRepository;
+    }
 
     @RequestMapping(method = RequestMethod.POST)
     public void mtcconcession(
+            @RequestParam(value = "mtcconcessionid", required = false) String mtcconcessionid,
             @RequestParam(value = "regno", required = false) String regno,
             @RequestParam(value = "admissionno", required = false) String admissionno,
             @RequestParam(value = "name", required = false) String name,
@@ -40,9 +50,10 @@ public class MtcConcessionApiController extends WebMvcConfigurerAdapter {
             )
     {
         MtcConcession mtcconc = new MtcConcession();
+        StudentBaseInformation studentBaseInformation = new StudentBaseInformation(regno);
+        mtcconc.setMtcconcessionid(mtcconcessionid);
         mtcconc.setRegno(regno);
         mtcconc.setAdmissionno(admissionno);
-        mtcconc.setName(name);
         mtcconc.setSemester(semester);
         mtcconc.setBranchname(branchname);
         mtcconc.setBranchcode(branchcode);
