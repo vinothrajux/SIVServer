@@ -1,13 +1,11 @@
 package com.sivserver.example.library;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by GBCorp on 18/07/2017.
@@ -15,27 +13,24 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/librarybookissuereturnentry")
 
-public class LibraryBookIssueReturnHeaderApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+public class LibraryBookIssueReturnHeaderApiController {
+    //@Autowired
     private LibraryBookIssueReturnHeaderRepository libraryBookIssueReturnHeaderRepository;
 
-//    @Autowired
-//    private ApplicationSaleRepository applicationSaleRepository;
-//
-//
-//    @RequestMapping(method = RequestMethod.GET, value="/getApplcationDetail")
-//    public ApplicationSaleDetailProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
-//        ApplicationSaleDetailProjection applicationDetail = applicationSaleRepository.findOneByApplno(applicationNumber);
-//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-//
-//        return applicationDetail;
-//
-//    }
+    @GetMapping(value="/all")
+
+    public List<LibraryBookIssueReturnHeader> getLibraryBookIssueReturnHeader() {return libraryBookIssueReturnHeaderRepository.findAll();}
+
+    public LibraryBookIssueReturnHeaderApiController(LibraryBookIssueReturnHeaderRepository libraryBookIssueReturnHeaderRepository)
+    {
+        this.libraryBookIssueReturnHeaderRepository = libraryBookIssueReturnHeaderRepository;
+    }
 
 
     @RequestMapping(method = RequestMethod.POST)
     public void libbookissrethead(
             @RequestParam(value ="currentdate", required=false) Date currentdate,
+            @RequestParam(value ="regno", required=false) String regno,
             @RequestParam(value ="memberid", required=false) String memberid,
             @RequestParam (value="branchcode", required=false) String branchcode,
             @RequestParam (value="batch", required=false) String batch,
@@ -44,6 +39,7 @@ public class LibraryBookIssueReturnHeaderApiController extends WebMvcConfigurerA
             @RequestParam (value="loginuser", required=false) String loginuser
                ) {
         LibraryBookIssueReturnHeader libBookIssRetHead = new LibraryBookIssueReturnHeader();
+        LibraryMemberDetail LibraryBookIssueReturnHeader_regno = new LibraryMemberDetail(regno);
         libBookIssRetHead.setCurrentdate(currentdate);
         libBookIssRetHead.setMemberid(memberid);
         libBookIssRetHead.setBranchcode(branchcode);

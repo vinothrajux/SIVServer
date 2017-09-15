@@ -1,5 +1,6 @@
 package com.sivserver.example.placement;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -13,6 +14,34 @@ import java.util.Date;
 @Table(name = "campusrequestdetail")
 
 public class CampusRequestDetail {
+
+
+    @Id
+    private Integer id;
+
+    @Column(name="requestid")
+    private String requestid;
+
+    private String branchcode;
+
+    private Integer semester;
+
+    private String studentcategory;
+
+    private String typeofstudent;
+
+    private Integer numberofstudents;
+
+    public CampusRequestDetail() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getRequestid() {
         return requestid;
@@ -61,28 +90,5 @@ public class CampusRequestDetail {
     public void setNumberofstudents(Integer numberofstudents) {
         this.numberofstudents = numberofstudents;
     }
-
-
-
-    @Id
-    private String requestid;
-
-    @NotNull
-    private String branchcode;
-
-    @NotNull
-    private Integer semester;
-
-    @NotNull
-    private String studentcategory;
-
-    @NotNull
-    private String typeofstudent;
-
-    @NotNull
-    private Integer numberofstudents;
-
-
-
 }
 

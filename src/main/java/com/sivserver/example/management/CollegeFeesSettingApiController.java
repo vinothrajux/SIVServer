@@ -27,10 +27,9 @@ public class CollegeFeesSettingApiController extends WebMvcConfigurerAdapter {
     @RequestMapping(method = RequestMethod.POST)
 
     public void collegeFeesSetting(
-            @RequestParam(value = "feessettingdate", required = false) Date feessettingdate,
-            @RequestParam(value = "branchname", required = false) String branchname,
             @RequestParam(value = "branchcode", required = false) String branchcode,
             @RequestParam(value = "academicyear", required = false) String academicyear,
+            @RequestParam(value = "feessettingdate", required = false) Date feessettingdate,
             @RequestParam(value = "admissionfees", required = false) Long admissionfees,
             @RequestParam(value = "tutionfees", required = false) Long tutionfees,
             @RequestParam(value = "textbookfees", required = false) Long textbookfees,
@@ -43,13 +42,12 @@ public class CollegeFeesSettingApiController extends WebMvcConfigurerAdapter {
     )
     {
         CollegeFeesSetting clgfeessett = new CollegeFeesSetting();
-        clgfeessett.setFeesSettingdate(feessettingdate);
-        clgfeessett.setBranchname(branchname);
-        clgfeessett.setBranchcode(branchcode);
-        clgfeessett.setAcademicyear(academicyear);
+        Management_College_Fees_Compound_Key key = new Management_College_Fees_Compound_Key(branchcode, academicyear);
+        clgfeessett.setManagement_college_fees_compound_key(key);
+        clgfeessett.setFeessettingdate(feessettingdate);
         clgfeessett.setAdmissionfees(admissionfees);
         clgfeessett.setTutionfees(tutionfees);
-        clgfeessett.setTextBookfees(textbookfees);
+        clgfeessett.setTextbookfees(textbookfees);
         clgfeessett.setMiscalleneousfees(miscalleneousfees);
         clgfeessett.setSpecialfees(specialfees);
         clgfeessett.setGroupinsurance(groupinsurance);

@@ -1,9 +1,10 @@
 package com.sivserver.example.library;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.sivserver.example.hostel.HostelStudentVisitorDetail;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 /**
  * Created by GBCorp on 17/07/2017.
@@ -12,25 +13,40 @@ import javax.validation.constraints.NotNull;
 @Table(name = "librarybookentrydetail")
 
 public class LibraryBookEntryDetail {
-    public String getBookid(){
+
+     @Id
+     private Integer slno;
+
+     @Column(name="bookid")
+     private String bookid;
+
+     private String branchcode;
+
+    public LibraryBookEntryDetail() {
+    }
+
+    public Integer getSlno() {
+        return slno;
+    }
+
+    public void setSlno(Integer slno) {
+        this.slno = slno;
+    }
+
+    public String getBookid() {
         return bookid;
     }
+
     public void setBookid(String bookid) {
         this.bookid = bookid;
     }
 
-    public String getBranchcode(){
+    public String getBranchcode() {
         return branchcode;
     }
-    public void setBranchcode(String booktype) {
+
+    public void setBranchcode(String branchcode) {
         this.branchcode = branchcode;
     }
-
-     @Id
-    private String bookid;
-
-    @NotNull
-    private String branchcode;
-
 
 }

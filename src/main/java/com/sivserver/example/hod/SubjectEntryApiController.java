@@ -26,11 +26,11 @@ public class SubjectEntryApiController extends WebMvcConfigurerAdapter {
     @RequestMapping(method = RequestMethod.POST)
 
     public void subjectEntry(
-            @RequestParam(value = "branchname", required = false) String branchname,
+            @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "branchcode", required = false) String branchcode,
             @RequestParam(value = "semester", required = false) String semester,
-            @RequestParam(value = "subjectname", required = false) String subjectname,
             @RequestParam(value = "subjectcode", required = false) String subjectcode,
+            @RequestParam(value = "subjectname", required = false) String subjectname,
             @RequestParam(value = "scheme", required = false) String scheme,
             @RequestParam(value = "hours", required = false) String hours,
             @RequestParam(value = "reqhours", required = false) String reqhours,
@@ -41,20 +41,18 @@ public class SubjectEntryApiController extends WebMvcConfigurerAdapter {
             @RequestParam(value = "loginuser", required = false) String loginuser
     ) {
         SubjectEntry subjent = new SubjectEntry();
+        Hod_Subject_Entry_Compound_Key key = new Hod_Subject_Entry_Compound_Key(academicyear, branchcode, semester, subjectcode);
 
-        subjent.setBranchName(branchname);
-        subjent.setBranchCode(branchcode);
-        subjent.setSemester(semester);
-        subjent.setSubjectName(subjectname);
-        subjent.setSubjectCode(subjectcode);
+        subjent.setHod_subject_entry_compound_key(key);
+        subjent.setSubjectname(subjectname);
         subjent.setScheme(scheme);
         subjent.setHours(hours);
-        subjent.setRequiredHours(reqhours);
-        subjent.setInShort(inshort);
-        subjent.setAllottedHours(allottedhours);
-        subjent.setSubjectType(subjecttype);
-        subjent.setColumnName(columnname);
-        subjent.setLoginUser(loginuser);
+        subjent.setReqhours(reqhours);
+        subjent.setInshort(inshort);
+        subjent.setAllottedhours(allottedhours);
+        subjent.setSubjecttype(subjecttype);
+        subjent.setColumnname(columnname);
+        subjent.setLoginuser(loginuser);
 
         subjectentryRepository.save(subjent);
     }

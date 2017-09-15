@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RestController
 @RequestMapping("/api/v1/questionentry")
 
-public class QuestionEntryApiController extends WebMvcConfigurerAdapter {
+public class QuestionEntryApiController  {
 
     @Autowired
     private QuestionEntryRepository questionentryRepository;
@@ -45,24 +45,24 @@ public class QuestionEntryApiController extends WebMvcConfigurerAdapter {
     ) {
         QuestionEntry quesentry = new QuestionEntry();
 
-        quesentry.setSNO(sno);
-        quesentry.setBranchName(branchname);
-        quesentry.setBranchCode(branchcode);
-        quesentry.setAcademicYear(academicyear);
+        quesentry.setSno(sno);
+        quesentry.setBranchname(branchname);
+        quesentry.setBranchcode(branchcode);
+        quesentry.setAcademicyear(academicyear);
         quesentry.setSemester(semester);
         quesentry.setBatch(batch);
         quesentry.setScheme(scheme);
-        quesentry.setSubjectName(subjectname);
-        quesentry.setSubjectCode(subjectcode);
+        quesentry.setSubjectname(subjectname);
+        quesentry.setSubjectcode(subjectcode);
         quesentry.setMark(mark);
         quesentry.setUnit(unit);
         quesentry.setModel(model);
         quesentry.setCategory(category);
-        quesentry.setQuestionType(questiontype);
+        quesentry.setQuestiontype(questiontype);
         quesentry.setQuestion(question);
         quesentry.setImportant(important);
         quesentry.setSelected(selected);
-        quesentry.setLoginUser(loginuser);
+        quesentry.setLoginuser(loginuser);
 
         questionentryRepository.save(quesentry);
     }

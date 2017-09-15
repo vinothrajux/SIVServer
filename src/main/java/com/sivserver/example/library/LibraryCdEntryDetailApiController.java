@@ -1,11 +1,10 @@
 package com.sivserver.example.library;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import java.util.List;
 
 /**
  * Created by GBCorp on 18/07/2017.
@@ -13,31 +12,28 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RestController
 @RequestMapping("/api/v1/librarycdentrydetail")
 
-public class LibraryCdEntryDetailApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+public class LibraryCdEntryDetailApiController  {
+    //@Autowired
     private LibraryCdEntryDetailRepository libraryCdEntryDetailRepository;
 
-//    @Autowired
-//    private ApplicationSaleRepository applicationSaleRepository;
-//
-//
-//    @RequestMapping(method = RequestMethod.GET, value="/getApplcationDetail")
-//    public ApplicationSaleDetailProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
-//        ApplicationSaleDetailProjection applicationDetail = applicationSaleRepository.findOneByApplno(applicationNumber);
-//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-//
-//        return applicationDetail;
-//
-//    }
+    @GetMapping("value=/all")
+    public List<LibraryCdEntryDetail> getLibraryCdEntryDetail() {return libraryCdEntryDetailRepository.findAll();}
 
+    public LibraryCdEntryDetailApiController(LibraryCdEntryDetailRepository libraryCdEntryDetailRepository)
+    {
+        this.libraryCdEntryDetailRepository = libraryCdEntryDetailRepository;
+    }
 
     @RequestMapping(method = RequestMethod.POST)
     public void libcdentdet(
+            @RequestParam(value ="cdid", required=false) Integer slno,
             @RequestParam(value ="cdid", required=false) String cdid,
             @RequestParam(value ="branchcode", required=false) String branchcode
 
     ) {
         LibraryCdEntryDetail libcdentdet = new LibraryCdEntryDetail();
+        LibraryCdEntryHeader libraryCdEntryDetail_regno = new LibraryCdEntryHeader(cdid);
+        libcdentdet.setSlno(slno);
         libcdentdet.setCdid(cdid);
         libcdentdet.setBranchcode(branchcode);
 

@@ -14,43 +14,50 @@ import java.util.Date;
 @Table(name = "subjectentry")
 
 public class SubjectEntry {
+    @Id
+    Hod_Subject_Entry_Compound_Key hod_subject_entry_compound_key;
 
-    public String getBranchName(){
-    return branchname;
-}
-    public void setBranchName(String branchname) {
-        this.branchname = branchname;
+    private String subjectname;
+
+    private String scheme;
+
+    private String hours;
+
+    private String reqhours;
+
+    private String inshort;
+
+    private String allottedhours;
+
+    private String subjecttype;
+
+    private String columnname;
+
+    private String loginuser;
+
+    public SubjectEntry() {
     }
 
-    public String getBranchCode() {
-        return branchcode;
-    }
-    public void setBranchCode(String branchcode) {
-        this.branchcode = branchcode;
+    public Hod_Subject_Entry_Compound_Key getHod_subject_entry_compound_key() {
+        return hod_subject_entry_compound_key;
     }
 
-    public String getSemester() {
-        return semester;
-    }
-    public void setSemester(String semester) {
-        this.semester = semester;
+    public void setHod_subject_entry_compound_key(Hod_Subject_Entry_Compound_Key hod_subject_entry_compound_key) {
+        this.hod_subject_entry_compound_key = hod_subject_entry_compound_key;
     }
 
-    public String getSubjectName() {
+    public String getSubjectname() {
         return subjectname;
     }
-    public void setSubjectName(String subjectname) {
-        this.subjectname = subjectname;
-    }
 
-    public String getSubjectCode() {return subjectcode;}
-    public void setSubjectCode(String subjectcode) {
-        this.subjectcode = subjectcode;
+    public void setSubjectname(String subjectname) {
+        this.subjectname = subjectname;
     }
 
     public String getScheme() {
         return scheme;
     }
+
     public void setScheme(String scheme) {
         this.scheme = scheme;
     }
@@ -58,89 +65,56 @@ public class SubjectEntry {
     public String getHours() {
         return hours;
     }
+
     public void setHours(String hours) {
         this.hours = hours;
     }
 
-    public String getRequiredHours() {
+    public String getReqhours() {
         return reqhours;
     }
-    public void setRequiredHours(String reqhours) {
+
+    public void setReqhours(String reqhours) {
         this.reqhours = reqhours;
     }
 
-    public String getInShort() {return inshort;}
-    public void setInShort(String inshort) {
+    public String getInshort() {
+        return inshort;
+    }
+
+    public void setInshort(String inshort) {
         this.inshort = inshort;
     }
 
-    public String getAllottedHours() {
+    public String getAllottedhours() {
         return allottedhours;
     }
-    public void setAllottedHours(String allottedhours) {
+
+    public void setAllottedhours(String allottedhours) {
         this.allottedhours = allottedhours;
     }
 
-    public String getSubjectType() {
+    public String getSubjecttype() {
         return subjecttype;
     }
-    public void setSubjectType(String subjecttype) {
+
+    public void setSubjecttype(String subjecttype) {
         this.subjecttype = subjecttype;
     }
 
-    public String getColumnName() {
+    public String getColumnname() {
         return columnname;
     }
-    public void setColumnName(String columnname) {
+
+    public void setColumnname(String columnname) {
         this.columnname = columnname;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
-
-
-    @NotNull
-    private String branchname;
-
-    @NotNull
-    private String branchcode;
-
-    @NotNull
-    private String semester;
-
-    @NotNull
-    private String subjectname;
-
-    @Id
-    private String subjectcode;
-
-    @NotNull
-    private String scheme;
-
-    @NotNull
-    private String hours;
-
-    @NotNull
-    private String reqhours;
-
-    @NotNull
-    private String inshort;
-
-    @NotNull
-    private String allottedhours;
-
-    @NotNull
-    private String subjecttype;
-
-    @NotNull
-    private String columnname;
-
-    @NotNull
-    private String loginuser;
-
-
 }

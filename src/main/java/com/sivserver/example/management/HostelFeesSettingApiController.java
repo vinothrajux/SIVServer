@@ -18,7 +18,7 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/hostelfeessetting")
 
-public class HostelFeesSettingApiController extends WebMvcConfigurerAdapter {
+public class HostelFeesSettingApiController {
 
     @Autowired
     private HostelFeesSettingRepository hostelfeessettingRepository;
@@ -40,13 +40,13 @@ public class HostelFeesSettingApiController extends WebMvcConfigurerAdapter {
     )
     {
         HostelFeesSetting hostelfeessett = new HostelFeesSetting();
-        hostelfeessett.setFeesSettingdate(feessettingdate);
+        hostelfeessett.setFeessettingdate(feessettingdate);
         hostelfeessett.setAcademicyear(academicyear);
         hostelfeessett.setIndividualroomfees(individualroomfees);
         hostelfeessett.setGrouproomfees(grouproomfees);
         hostelfeessett.setSinglecotfees(singlecotfees);
         hostelfeessett.setMulticotfees(multicotfees);
-        hostelfeessett.setFoodFees(foodfees);
+        hostelfeessett.setFoodfees(foodfees);
         hostelfeessett.setOthers(others);
         hostelfeessett.setTotalfees(totalfees);
         hostelfeessett.setLoginuser(loginuser);

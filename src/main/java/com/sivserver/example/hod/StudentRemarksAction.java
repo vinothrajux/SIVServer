@@ -1,10 +1,9 @@
 package com.sivserver.example.hod;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by GBCorp on 02/07/2017.
@@ -13,65 +12,95 @@ import java.util.Date;
 @Table(name = "studentremarksaction")
 
 public class StudentRemarksAction {
-    public String getRegno(){
+
+    @Id
+    private String followupid;
+
+    @Column(name="remarkid")
+    private String remarkid;
+
+    private String regno;
+
+
+    private Date remarkactiondate;
+
+
+    private String remarkactionday;
+
+
+    private String remarkactiondetails;
+
+
+    private String statusofaction;
+
+
+    private String loginuser;
+
+
+    public StudentRemarksAction() {
+    }
+
+    public String getFollowupid() {
+        return followupid;
+    }
+
+    public void setFollowupid(String followupid) {
+        this.followupid = followupid;
+    }
+
+    public String getRemarkid() {
+        return remarkid;
+    }
+
+    public void setRemarkid(String remarkid) {
+        this.remarkid = remarkid;
+    }
+
+    public String getRegno() {
         return regno;
     }
+
     public void setRegno(String regno) {
         this.regno = regno;
     }
 
-
-    public Date getRemarksActionDate() {
+    public Date getRemarkactiondate() {
         return remarkactiondate;
     }
-    public void setRemarksActionDate(Date remarkactiondate) {
+
+    public void setRemarkactiondate(Date remarkactiondate) {
         this.remarkactiondate = remarkactiondate;
     }
 
-    public String getRemarksActionDay() {
+    public String getRemarkactionday() {
         return remarkactionday;
     }
-    public void setRemarksActionDay(String remarkactionday) {
+
+    public void setRemarkactionday(String remarkactionday) {
         this.remarkactionday = remarkactionday;
     }
 
-    public String getRemarksActionDetails() {
+    public String getRemarkactiondetails() {
         return remarkactiondetails;
     }
-    public void setRemarksActionDetails(String remarkactiondetails) {
+
+    public void setRemarkactiondetails(String remarkactiondetails) {
         this.remarkactiondetails = remarkactiondetails;
     }
 
-    public String getStatusofAction() {
+    public String getStatusofaction() {
         return statusofaction;
     }
-    public void setStatusofAction(String statusofaction) {
+
+    public void setStatusofaction(String statusofaction) {
         this.statusofaction = statusofaction;
     }
 
-    public String getLoginUser() {return loginuser;}
-    public void setLoginUser(String loginuser) {
-        this.loginuser = loginuser;
+    public String getLoginuser() {
+        return loginuser;
     }
 
-
-    @Id
-    private String regno;
-
-    @NotNull
-    private Date remarkactiondate;
-
-    @NotNull
-    private String remarkactionday;
-
-    @NotNull
-    private String remarkactiondetails;
-
-    @NotNull
-    private String statusofaction;
-
-    @NotNull
-    private String loginuser;
-
-
+    public void setLoginuser(String loginuser) {
+        this.loginuser = loginuser;
+    }
 }

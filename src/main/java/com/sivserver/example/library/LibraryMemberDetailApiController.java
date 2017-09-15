@@ -1,11 +1,11 @@
 package com.sivserver.example.library;
 
+import com.sivserver.example.student.StudentBaseInformation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import java.util.List;
 
 /**
  * Created by GBCorp on 17/07/2017.
@@ -14,21 +14,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RequestMapping("/api/v1/librarymemberdetail")
 
 public class LibraryMemberDetailApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+    //@Autowired
     private LibraryMemberDetailRepository libraryMemberDetailRepository;
 
-//    @Autowired
-//    private ApplicationSaleRepository applicationSaleRepository;
-//
-//
-//    @RequestMapping(method = RequestMethod.GET, value="/getApplcationDetail")
-//    public ApplicationSaleDetailProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
-//        ApplicationSaleDetailProjection applicationDetail = applicationSaleRepository.findOneByApplno(applicationNumber);
-//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-//
-//        return applicationDetail;
-//
-//    }
+    @GetMapping(value="/all")
+
+    public List<LibraryMemberDetail> getLibraryMemberDetail() {return libraryMemberDetailRepository.findAll();}
+
+    public LibraryMemberDetailApiController(LibraryMemberDetailRepository libraryMemberDetailRepository)
+    {
+        this.libraryMemberDetailRepository = libraryMemberDetailRepository;
+    }
 
 
     @RequestMapping(method = RequestMethod.POST)
@@ -46,16 +42,17 @@ public class LibraryMemberDetailApiController extends WebMvcConfigurerAdapter {
 
     ) {
         LibraryMemberDetail libMemDet = new LibraryMemberDetail();
-        libMemDet.setMemberid(memberid);
-        libMemDet.setMembertype(membertype);
-        libMemDet.setRegno(regno);
-        libMemDet.setBranchCode(branchcode);
-        libMemDet.setBatch(batch);
-        libMemDet.setSemester(semester);
-        libMemDet.setAcadyear(academicyear);
-        libMemDet.setEligiblenoofbooks(eligiblenoofbooks);
-        libMemDet.setNoofbookstaken(noofbookstaken);
-        libMemDet.setLoginuser(loginuser);
+        StudentBaseInformation student_base_regno = new StudentBaseInformation(regno);
+        libMemDet.setMemberid(memberid)
+                    .setRegno(regno)
+                    .setBranchcode(branchcode)
+                    .setBatch(batch)
+                    .setSemester(semester)
+                    .setAcademicyear(academicyear)
+                    .setEligiblenoofbooks(eligiblenoofbooks)
+                    .setNoofbookstaken(noofbookstaken)
+                    .setLoginuser(loginuser)
+                    .setStudent_base_regno(student_base_regno);
 
         libraryMemberDetailRepository.save(libMemDet);
 

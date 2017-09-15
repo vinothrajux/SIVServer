@@ -2,12 +2,12 @@ package com.sivserver.example.hostel;
 
 import com.sivserver.example.library.LibraryBookEntryDetail;
 import com.sivserver.example.library.LibraryBookEntryDetailRepository;
+import com.sivserver.example.student.StudentBaseInformation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import java.util.List;
 
 /**
  * Created by GBCorp on 18/07/2017.
@@ -16,9 +16,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RequestMapping("/api/v1/hostelstudentdata")
 
 public class HostelStudentDetailApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+    //@Autowired
     private HostelStudentDetailRepository hostelStudentDetailRepository;
 
+    @GetMapping (value="/all")
+    public List<HostelStudentDetail> getHostelStudentDetail() {return  hostelStudentDetailRepository.findAll();}
+
+    public HostelStudentDetailApiController(HostelStudentDetailRepository hostelStudentDetailRepository)
+    {
+        this.hostelStudentDetailRepository = hostelStudentDetailRepository;
+    }
 //    @Autowired
 //    private ApplicationSaleRepository applicationSaleRepository;
 //
@@ -36,6 +43,7 @@ public class HostelStudentDetailApiController extends WebMvcConfigurerAdapter {
     @RequestMapping(method = RequestMethod.POST)
     public void hosStudData(
             @RequestParam(value ="regno", required=false) String regno,
+            @RequestParam(value ="admissionno", required=false) String admissionno,
             @RequestParam(value ="branchcode", required=false) String branchcode,
             @RequestParam(value ="batch", required=false) String batch,
             @RequestParam(value ="semester", required=false) Integer semester,
@@ -76,43 +84,46 @@ public class HostelStudentDetailApiController extends WebMvcConfigurerAdapter {
 
     ) {
         HostelStudentDetail hoststuddata = new HostelStudentDetail();
-        hoststuddata.setRegno(regno);
-        hoststuddata.setBranchcode(branchcode);
-        hoststuddata.setBatch(batch);
-        hoststuddata.setSemester(semester);
-        hoststuddata.setAcademicyear(academicyear);
-        hoststuddata.setGuardian1name(guardian1name);
-        hoststuddata.setGuardian1address1(guardian1address1);
-        hoststuddata.setGuardian1address2(guardian1address2);
-        hoststuddata.setGuardian1area(guardian1area);
-        hoststuddata.setGuardian1pincode(guardian1pincode);
-        hoststuddata.setGuardian1state(guardian1state);
-        hoststuddata.setGuardian1mobile(guardian1mobile);
-        hoststuddata.setGuardian1altmobile(guardian1altmobile);
-        hoststuddata.setGuardian1email(guardian1email);
-        hoststuddata.setGuardian1altemail(guardian1altemail);
-        hoststuddata.setGuardian2name(guardian2name);
-        hoststuddata.setGuardian2address1(guardian2address1);
-        hoststuddata.setGuardian2address2(guardian2address2);
-        hoststuddata.setGuardian2area(guardian2area);
-        hoststuddata.setGuardian2pincode(guardian2pincode);
-        hoststuddata.setGuardian2state(guardian2state);
-        hoststuddata.setGuardian2mobile(guardian2mobile);
-        hoststuddata.setGuardian2altmobile(guardian2altmobile);
-        hoststuddata.setGuardian2email(guardian2email);
-        hoststuddata.setGuardian2altemail(guardian2altemail);
-        hoststuddata.setPrevioushostelexperience(previoushostelexperience);
-        hoststuddata.setPrevioushostelname(previoushostelname);
-        hoststuddata.setPrevioushosteladdress1(previoushosteladdress1);
-        hoststuddata.setPrevioushosteladdress2(previoushosteladdress2);
-        hoststuddata.setPrevioushostelarea(previoushostelarea);
-        hoststuddata.setPrevioushostelpincode(previoushostelpincode);
-        hoststuddata.setPrevioushostelstate(previoushostelstate);
-        hoststuddata.setPrevioushostelmobile(previoushostelmobile);
-        hoststuddata.setPrevioushostelaltmobile(previoushostelaltmobile);
-        hoststuddata.setPrevioushostelemail(previoushostelemail);
-        hoststuddata.setPrevioushostelaltemail(previoushostelaltemail);
-        hoststuddata.setLoginuser(loginuser);
+        StudentBaseInformation student_base_regno = new StudentBaseInformation(regno);
+        hoststuddata.setRegno(regno)
+                    .setBranchcode(branchcode)
+                    .setBatch(batch)
+                    .setSemester(semester)
+                    .setAcademicyear(academicyear)
+                    .setGuardian1name(guardian1name)
+                    .setGuardian1address1(guardian1address1)
+                    .setGuardian1address2(guardian1address2)
+                    .setGuardian1area(guardian1area)
+                    .setGuardian1pincode(guardian1pincode)
+                    .setGuardian1state(guardian1state)
+                    .setGuardian1mobile(guardian1mobile)
+                    .setGuardian1altmobile(guardian1altmobile)
+                    .setGuardian1email(guardian1email)
+                    .setGuardian1altemail(guardian1altemail)
+                    .setGuardian2name(guardian2name)
+                    .setGuardian2address1(guardian2address1)
+                    .setGuardian2address2(guardian2address2)
+                    .setGuardian2area(guardian2area)
+                    .setGuardian2pincode(guardian2pincode)
+                    .setGuardian2state(guardian2state)
+                    .setGuardian2mobile(guardian2mobile)
+                    .setGuardian2altmobile(guardian2altmobile)
+                    .setGuardian2email(guardian2email)
+                    .setGuardian2altemail(guardian2altemail)
+                    .setPrevioushostelexperience(previoushostelexperience)
+                    .setPrevioushostelname(previoushostelname)
+                    .setPrevioushosteladdress1(previoushosteladdress1)
+                    .setPrevioushosteladdress2(previoushosteladdress2)
+                    .setPrevioushostelarea(previoushostelarea)
+                    .setPrevioushostelpincode(previoushostelpincode)
+                    .setPrevioushostelstate(previoushostelstate)
+                    .setPrevioushostelmobile(previoushostelmobile)
+                    .setPrevioushostelaltmobile(previoushostelaltmobile)
+                    .setPrevioushostelemail(previoushostelemail)
+                    .setPrevioushostelaltemail(previoushostelaltemail)
+                    .setLoginuser(loginuser)
+                    .setStudent_base_regno(student_base_regno);
+
 
 
 

@@ -14,6 +14,23 @@ import java.util.Date;
 
 public class CampusScheduler {
 
+
+    @Id
+    private String scheduleid;
+
+    private Date scheduledate;
+
+    private String scheduleday;
+
+    private String typeofevent;
+
+    private String remarks;
+
+    private String loginuser;
+
+    public CampusScheduler() {
+    }
+
     public String getScheduleid() {
         return scheduleid;
     }
@@ -61,26 +78,4 @@ public class CampusScheduler {
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
-
-
-
-    @Id
-    private String scheduleid;
-
-    @NotNull
-    private Date scheduledate;
-
-    @NotNull
-    private String scheduleday;
-
-    @NotNull
-    private String typeofevent;
-
-    @NotNull
-    private String remarks;
-
-    @NotNull
-    private String loginuser;
-
-
 }

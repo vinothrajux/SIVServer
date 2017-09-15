@@ -5,6 +5,13 @@ import com.sivserver.example.admission.StudentPersonalInformation;
 import com.sivserver.example.hod.DiplomaInternalBranchTestTimetableDetail;
 import com.sivserver.example.hod.DiplomaInternalSem1TestTimetableDetail;
 import com.sivserver.example.hod.DiplomaInternalSem2TestTimetableDetail;
+import com.sivserver.example.hod.StudentRemarksEntry;
+import com.sivserver.example.hostel.HostelStudentLeaveDetail;
+import com.sivserver.example.library.LibraryUsage;
+import com.sivserver.example.parent.StudentLeaveLetter;
+import com.sivserver.example.security.SecurityStudentLateComers;
+import com.sivserver.example.security.SecurityStudentOutPass;
+import com.sivserver.example.security.SecurityStudentVisitorPass;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -154,6 +161,54 @@ public class StudentBaseInformation {
         this.diplomaInternalSem2TestTimetableDetail_regno = diplomaInternalSem2TestTimetableDetail_regno;
     }
 
+    public List<StudentRemarksEntry> getStudentRemarksEntry_regno() {
+        return studentRemarksEntry_regno;
+    }
+
+    public void setStudentRemarksEntry_regno(List<StudentRemarksEntry> studentRemarksEntry_regno) {
+        this.studentRemarksEntry_regno = studentRemarksEntry_regno;
+    }
+
+    public List<LibraryUsage> getLibraryUsage_regno() {
+        return libraryUsage_regno;
+    }
+
+    public void setLibraryUsage_regno(List<LibraryUsage> libraryUsage_regno) {
+        this.libraryUsage_regno = libraryUsage_regno;
+    }
+
+    public List<StudentLeaveLetter> getStudentLeaveLetter_regno() {
+        return studentLeaveLetter_regno;
+    }
+
+    public void setStudentLeaveLetter_regno(List<StudentLeaveLetter> studentLeaveLetter_regno) {
+        this.studentLeaveLetter_regno = studentLeaveLetter_regno;
+    }
+
+    public List<SecurityStudentVisitorPass> getSecurityStudentVisitorPass_regno() {
+        return securityStudentVisitorPass_regno;
+    }
+
+    public void setSecurityStudentVisitorPass_regno(List<SecurityStudentVisitorPass> securityStudentVisitorPass_regno) {
+        this.securityStudentVisitorPass_regno = securityStudentVisitorPass_regno;
+    }
+
+    public List<SecurityStudentLateComers> getSecurityStudentLateComers_regno() {
+        return securityStudentLateComers_regno;
+    }
+
+    public void setSecurityStudentLateComers_regno(List<SecurityStudentLateComers> securityStudentLateComers_regno) {
+        this.securityStudentLateComers_regno = securityStudentLateComers_regno;
+    }
+
+    public List<SecurityStudentOutPass> getSecurityStudentOutPass_regno() {
+        return securityStudentOutPass_regno;
+    }
+
+    public void setSecurityStudentOutPass_regno(List<SecurityStudentOutPass> securityStudentOutPass_regno) {
+        this.securityStudentOutPass_regno = securityStudentOutPass_regno;
+    }
+
     @Id
     @Column(name="regno")
     private String regno;
@@ -206,5 +261,29 @@ public class StudentBaseInformation {
     @OneToMany
     @JoinColumn(name="regno",referencedColumnName = "regno")
     private List<DiplomaInternalSem2TestTimetableDetail> diplomaInternalSem2TestTimetableDetail_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<StudentRemarksEntry> studentRemarksEntry_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<LibraryUsage> libraryUsage_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<StudentLeaveLetter> studentLeaveLetter_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<SecurityStudentVisitorPass> securityStudentVisitorPass_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<SecurityStudentLateComers> securityStudentLateComers_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<SecurityStudentOutPass> securityStudentOutPass_regno;
 
 }

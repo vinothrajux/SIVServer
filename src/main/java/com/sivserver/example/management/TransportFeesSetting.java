@@ -12,65 +12,57 @@ import java.util.Date;
 @Table(name = "transportfeessetting")
 public class TransportFeesSetting {
 
-    public Date getFeesSettingdate(){
+     private Date feessettingdate;
+
+     @Id
+     Management_Transport_Fees_Compound_Key management_transport_fees_compound_key;
+
+    private String route;
+
+    private Long amount;
+
+    private String loginuser;
+
+    public TransportFeesSetting() {
+    }
+
+    public Date getFeessettingdate() {
         return feessettingdate;
     }
-    public void setFeesSettingdate(Date feessettingdate) {
+
+    public void setFeessettingdate(Date feessettingdate) {
         this.feessettingdate = feessettingdate;
     }
 
-    public String getAcademicyear() {
-        return academicyear;
+    public Management_Transport_Fees_Compound_Key getManagement_transport_fees_compound_key() {
+        return management_transport_fees_compound_key;
     }
-    public void setAcademicyear(String academicyear) {
-        this.academicyear = academicyear;
+
+    public void setManagement_transport_fees_compound_key(Management_Transport_Fees_Compound_Key management_transport_fees_compound_key) {
+        this.management_transport_fees_compound_key = management_transport_fees_compound_key;
     }
 
     public String getRoute() {
         return route;
     }
+
     public void setRoute(String route) {
         this.route = route;
-    }
-
-    public String getStage() {
-        return stage;
-    }
-    public void setStage(String stage) {
-        this.stage = stage;
     }
 
     public Long getAmount() {
         return amount;
     }
-    public void setAmount(Long amount) {this.amount = amount;}
+
+    public void setAmount(Long amount) {
+        this.amount = amount;
+    }
 
     public String getLoginuser() {
         return loginuser;
     }
+
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
-
-
-    @NotNull
-    private Date feessettingdate;
-
-    @NotNull
-    private String academicyear;
-
-    @Id
-    private String route;
-
-    @NotNull
-    private String stage;
-
-    @NotNull
-    private Long amount;
-
-
-    @NotNull
-    private String loginuser;
-
-
 }
