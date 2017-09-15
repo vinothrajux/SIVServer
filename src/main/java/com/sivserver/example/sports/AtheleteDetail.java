@@ -1,5 +1,6 @@
 package com.sivserver.example.sports;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,6 +13,35 @@ import javax.validation.constraints.NotNull;
 @Table(name = "atheletedetail")
 
 public class AtheleteDetail {
+    @Id
+    private Integer id;
+
+    @Column(name="athleteid")
+    private String atheleteid;
+
+    private String typeofsports;
+
+    private String sportscode;
+
+    private String areainsports;
+
+    private String performancelevel;
+
+    private String house;
+
+    private String loginuser;
+
+    public AtheleteDetail() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getAtheleteid() {
         return atheleteid;
     }
@@ -44,7 +74,6 @@ public class AtheleteDetail {
         this.areainsports = areainsports;
     }
 
-
     public String getPerformancelevel() {
         return performancelevel;
     }
@@ -61,27 +90,11 @@ public class AtheleteDetail {
         this.house = house;
     }
 
+    public String getLoginuser() {
+        return loginuser;
+    }
 
-
-    @Id
-    private String atheleteid;
-
-    @NotNull
-    private String typeofsports;
-
-    @NotNull
-    private String sportscode;
-
-    @NotNull
-    private String areainsports;
-
-    @NotNull
-    private String performancelevel;
-
-    @NotNull
-    private String house;
-
-    @NotNull
-    private String loginuser;
-
+    public void setLoginuser(String loginuser) {
+        this.loginuser = loginuser;
+    }
 }

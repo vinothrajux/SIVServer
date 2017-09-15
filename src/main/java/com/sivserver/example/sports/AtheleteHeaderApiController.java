@@ -2,12 +2,12 @@ package com.sivserver.example.sports;
 
 import com.sivserver.example.placement.CorporateHeader;
 import com.sivserver.example.placement.CorporateHeaderRepository;
+import com.sivserver.example.student.StudentBaseInformation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import java.util.List;
 
 /**
  * Created by GBCorp on 14/07/2017.
@@ -15,22 +15,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RestController
 @RequestMapping("/api/v1/atheleteheader")
 
-public class AtheleteHeaderApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+public class AtheleteHeaderApiController {
+    //@Autowired
     private AtheleteHeaderRepository atheleteHeaderRepository;
 
-//    @Autowired
-//    private ApplicationSaleRepository applicationSaleRepository;
-//
-//
-//    @RequestMapping(method = RequestMethod.GET, value="/getApplcationDetail")
-//    public ApplicationSaleDetailProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
-//        ApplicationSaleDetailProjection applicationDetail = applicationSaleRepository.findOneByApplno(applicationNumber);
-//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-//
-//        return applicationDetail;
-//
-//    }
+    @GetMapping(value="/all")
+
+    public List<AtheleteHeader> getAtheleteHeaderDetail() {return atheleteHeaderRepository.findAll();}
+
+    public AtheleteHeaderApiController(AtheleteHeaderRepository atheleteHeaderRepository)
+    {
+        this.atheleteHeaderRepository = atheleteHeaderRepository;
+    }
 
 
     @RequestMapping(method = RequestMethod.POST)
@@ -46,6 +42,7 @@ public class AtheleteHeaderApiController extends WebMvcConfigurerAdapter {
 
     ) {
         AtheleteHeader athleteHead = new AtheleteHeader();
+        StudentBaseInformation studentBaseInformation = new StudentBaseInformation(regno);
         athleteHead.setAtheleteid (atheleteid);
         athleteHead.setRegno(regno);
         athleteHead.setBranchcode(branchcode);

@@ -1,13 +1,11 @@
 package com.sivserver.example.stores;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by GBCorp on 05/07/2017.
@@ -15,14 +13,23 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/storespurchasedetail")
 
-public class StoresPurchaseDetailApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+public class StoresPurchaseDetailApiController {
+    //@Autowired
     private StoresPurchaseDetailRepository storesPurchaseDetailRepository;
 
+    @GetMapping(value="/all")
+
+    public List<StoresPurchaseDetail>  getStoresPurchaseDetail() {return storesPurchaseDetailRepository.findAll();}
+
+    public StoresPurchaseDetailApiController(StoresPurchaseDetailRepository storesPurchaseDetailRepository)
+    {
+        this.storesPurchaseDetailRepository = storesPurchaseDetailRepository;
+    }
 
     @RequestMapping(method = RequestMethod.POST)
 
     public void storesPurDet(
+            @RequestParam(value = "id", required = false) Integer id,
             @RequestParam(value = "vendorId", required = false) String vendorId,
             @RequestParam(value = "billno", required = false) String billno,
             @RequestParam(value = "itemHsnCode", required = false) String itemHsnCode,
@@ -32,9 +39,11 @@ public class StoresPurchaseDetailApiController extends WebMvcConfigurerAdapter {
             @RequestParam(value = "itemTotalPrice", required = false) Long itemTotalPrice
                 ) {
         StoresPurchaseDetail storepurchdet = new StoresPurchaseDetail();
+        StoresPurchaseHeader storesPurchaseHeader = new StoresPurchaseHeader(billno);
+        storepurchdet.setId(id);
         storepurchdet.setVendorId(vendorId);
-        storepurchdet.setBillNo(billno);
-        storepurchdet.setItemHSNCode(itemHsnCode);
+        storepurchdet.setBillno(billno);
+        storepurchdet.setItemHsnCode(itemHsnCode);
         storepurchdet.setItemName(itemName);
         storepurchdet.setItemQuantity(itemQuantity);
         storepurchdet.setItemUnitPrice(itemUnitPrice);

@@ -12,26 +12,63 @@ import javax.validation.constraints.NotNull;
 @Table(name = "storespurchasedetail")
 
 public class StoresPurchaseDetail {
-    public String getVendorId(){
+
+    @Id
+    private Integer id;
+
+    private String vendorId;
+
+    private String billno;
+
+    private String itemHsnCode;
+
+    private String itemName;
+
+    private Integer itemQuantity;
+
+    private Long itemUnitPrice;
+
+    private Long itemTotalPrice;
+
+    public StoresPurchaseDetail() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getVendorId() {
         return vendorId;
     }
+
     public void setVendorId(String vendorId) {
         this.vendorId = vendorId;
     }
 
-    public String getBillNo() {return billno;}
-    public void setBillNo(String billno) {
+    public String getBillno() {
+        return billno;
+    }
+
+    public void setBillno(String billno) {
         this.billno = billno;
     }
 
-    public String getItemHSNCode() {
+    public String getItemHsnCode() {
         return itemHsnCode;
     }
-    public void setItemHSNCode(String itemHsnCode) {this.itemHsnCode = itemHsnCode;}
+
+    public void setItemHsnCode(String itemHsnCode) {
+        this.itemHsnCode = itemHsnCode;
+    }
 
     public String getItemName() {
         return itemName;
     }
+
     public void setItemName(String itemName) {
         this.itemName = itemName;
     }
@@ -39,6 +76,7 @@ public class StoresPurchaseDetail {
     public Integer getItemQuantity() {
         return itemQuantity;
     }
+
     public void setItemQuantity(Integer itemQuantity) {
         this.itemQuantity = itemQuantity;
     }
@@ -46,35 +84,16 @@ public class StoresPurchaseDetail {
     public Long getItemUnitPrice() {
         return itemUnitPrice;
     }
+
     public void setItemUnitPrice(Long itemUnitPrice) {
         this.itemUnitPrice = itemUnitPrice;
     }
+
     public Long getItemTotalPrice() {
         return itemTotalPrice;
     }
+
     public void setItemTotalPrice(Long itemTotalPrice) {
         this.itemTotalPrice = itemTotalPrice;
     }
-
-    @Id
-    private String vendorId;
-
-    @NotNull
-    private String billno;
-
-    @NotNull
-    private String itemHsnCode;
-
-    @NotNull
-    private String itemName;
-
-    @NotNull
-    private Integer itemQuantity;
-
-    @NotNull
-    private Long itemUnitPrice;
-
-    @NotNull
-    private Long itemTotalPrice;
-
 }

@@ -16,7 +16,7 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/stenocircular")
 
-public class CircularApiController extends WebMvcConfigurerAdapter {
+public class CircularApiController {
 
     @Autowired
     private CircularRepository stenocircularRepository;
@@ -24,6 +24,7 @@ public class CircularApiController extends WebMvcConfigurerAdapter {
     @RequestMapping(method = RequestMethod.POST)
 
     public void stenocircular(
+            @RequestParam(value = "circularid", required = false) String circularid,
             @RequestParam(value = "currentdate", required = false) Date currentdate,
             @RequestParam(value = "circulartype", required = false) String circulartype,
             @RequestParam(value = "circulardate", required = false) Date circulardate,
@@ -40,6 +41,8 @@ public class CircularApiController extends WebMvcConfigurerAdapter {
     {
         Circular steno = new Circular();
 
+
+        steno.setCircularid(circularid);
         steno.setCurrentdate(currentdate);
         steno.setCirculartype(circulartype);
         steno.setCirculardate(circulardate);
@@ -48,7 +51,7 @@ public class CircularApiController extends WebMvcConfigurerAdapter {
         steno.setBranchcode(branchcode);
         steno.setSemester(semester);
         steno.setAcademicyear(academicyear);
-        steno.setLoginUser(loginuser);
+        steno.setLoginuser(loginuser);
 
         stenocircularRepository.save(steno);
 

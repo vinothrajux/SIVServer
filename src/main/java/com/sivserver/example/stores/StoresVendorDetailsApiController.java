@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RestController
 @RequestMapping("/api/v1/storesvendordetails")
 
-public class StoresVendorDetailsApiController extends WebMvcConfigurerAdapter {
+public class StoresVendorDetailsApiController {
     @Autowired
     private StoresVendorDetailsRepository storesVendorDetailsRepository;
 
@@ -44,18 +44,18 @@ public class StoresVendorDetailsApiController extends WebMvcConfigurerAdapter {
         storevendet.setVendorId(vendorId);
         storevendet.setVendorName(vendorName);
         storevendet.setContactPersonName(contactPersonName);
-        storevendet.setContactPersonMobileNo(contactPersonMobNo);
-        storevendet.setContactPersonAlternteMobileNo(contactPersonAlternateMobNo);
+        storevendet.setContactPersonMobNo(contactPersonMobNo);
+        storevendet.setContactPersonAlternateMobNo(contactPersonAlternateMobNo);
         storevendet.setVendorAddress1(vendorAddress1);
         storevendet.setVendorAddress2(vendorAddress2);
         storevendet.setVendorArea(vendorArea);
         storevendet.setVendorPin(vendorPin);
         storevendet.setVendorEmail(vendorEmail);
         storevendet.setVendorAlternateEmail(vendorAlternateEmail);
-        storevendet.setVendorPANNo(vendorPanNo);
+        storevendet.setVendorPanNo(vendorPanNo);
         storevendet.setVendorGSTNo(vendorGSTNo);
-        storevendet.setVendorStatus(vendorDeleted);
-        storevendet.setLoginUser(loginuser);
+        storevendet.setVendorDeleted(vendorDeleted);
+        storevendet.setLoginuser(loginuser);
 
         storesVendorDetailsRepository.save(storevendet);
 

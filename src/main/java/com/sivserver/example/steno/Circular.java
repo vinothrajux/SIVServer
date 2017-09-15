@@ -15,14 +15,51 @@ import java.util.Date;
 
 public class Circular {
 
-    public Date getCurrentdate(){return currentdate;}
+
+    @Id
+    private String circularid;
+
+    private Date currentdate;
+
+    private String circulartype;
+
+    private Date circulardate;
+
+    private String circularparticular;
+
+    private String branch;
+
+    private String branchcode;
+
+    private String semester;
+
+    private String academicyear;
+
+    private String loginuser;
+
+    public Circular() {
+    }
+
+    public String getCircularid() {
+        return circularid;
+    }
+
+    public void setCircularid(String circularid) {
+        this.circularid = circularid;
+    }
+
+    public Date getCurrentdate() {
+        return currentdate;
+    }
+
     public void setCurrentdate(Date currentdate) {
         this.currentdate = currentdate;
     }
 
-    public String getCirculartype(){
+    public String getCirculartype() {
         return circulartype;
     }
+
     public void setCirculartype(String circulartype) {
         this.circulartype = circulartype;
     }
@@ -30,11 +67,15 @@ public class Circular {
     public Date getCirculardate() {
         return circulardate;
     }
+
     public void setCirculardate(Date circulardate) {
         this.circulardate = circulardate;
     }
 
-    public String getCircularparticular() {return circularparticular;}
+    public String getCircularparticular() {
+        return circularparticular;
+    }
+
     public void setCircularparticular(String circularparticular) {
         this.circularparticular = circularparticular;
     }
@@ -42,6 +83,7 @@ public class Circular {
     public String getBranch() {
         return branch;
     }
+
     public void setBranch(String branch) {
         this.branch = branch;
     }
@@ -49,6 +91,7 @@ public class Circular {
     public String getBranchcode() {
         return branchcode;
     }
+
     public void setBranchcode(String branchcode) {
         this.branchcode = branchcode;
     }
@@ -56,6 +99,7 @@ public class Circular {
     public String getSemester() {
         return semester;
     }
+
     public void setSemester(String semester) {
         this.semester = semester;
     }
@@ -63,44 +107,16 @@ public class Circular {
     public String getAcademicyear() {
         return academicyear;
     }
+
     public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
     }
 
-
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
-
-
-    @Id
-    private Date currentdate;
-
-    @NotNull
-    private String circulartype;
-
-    @NotNull
-    private Date circulardate;
-
-    @NotNull
-    private String circularparticular;
-
-    @NotNull
-    private String branch;
-
-    @NotNull
-    private String branchcode;
-
-    @NotNull
-    private String semester;
-
-    @NotNull
-    private String academicyear;
-
-
-    @NotNull
-    private String loginuser;
 }

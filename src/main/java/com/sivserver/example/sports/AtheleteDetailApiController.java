@@ -1,11 +1,10 @@
 package com.sivserver.example.sports;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import java.util.List;
 
 /**
  * Created by GBCorp on 14/07/2017.
@@ -13,26 +12,24 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RestController
 @RequestMapping("/api/v1/atheletedetail")
 
-public class AtheleteDetailApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+public class AtheleteDetailApiController  {
+    //@Autowired
     private AtheleteDetailRepository atheleteDetailRepository;
 
-//    @Autowired
-//    private ApplicationSaleRepository applicationSaleRepository;
-//
-//
-//    @RequestMapping(method = RequestMethod.GET, value="/getApplcationDetail")
-//    public ApplicationSaleDetailProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
-//        ApplicationSaleDetailProjection applicationDetail = applicationSaleRepository.findOneByApplno(applicationNumber);
-//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-//
-//        return applicationDetail;
-//
-//    }
+    @GetMapping(value="/all")
+
+    public List<AtheleteDetail> getAtheleteDetail() {return atheleteDetailRepository.findAll(); }
+
+    public AtheleteDetailApiController(AtheleteDetailRepository atheleteDetailRepository)
+    {
+        this.atheleteDetailRepository = atheleteDetailRepository;
+    }
+
 
 
     @RequestMapping(method = RequestMethod.POST)
     public void atheletedet(
+            @RequestParam(value ="id", required=false) Integer id,
             @RequestParam(value ="atheleteid", required=false) String atheleteid,
             @RequestParam(value ="typeofsports", required=false) String typeofsports,
             @RequestParam (value="sportscode", required=false) String sportscode,
@@ -42,6 +39,7 @@ public class AtheleteDetailApiController extends WebMvcConfigurerAdapter {
 
     ) {
         AtheleteDetail athleteDet = new AtheleteDetail();
+        AtheleteHeader atheleteHeader = new AtheleteHeader(atheleteid);
         athleteDet.setAtheleteid (atheleteid);
         athleteDet.setTypeofsports(typeofsports);
         athleteDet.setSportscode(sportscode);

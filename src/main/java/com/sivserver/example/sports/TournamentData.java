@@ -13,6 +13,53 @@ import java.util.Date;
 @Table(name = "tournamentdata")
 
 public class TournamentData {
+
+    @Id
+    private String tournamentid;
+
+    private Date tournamentdate;
+
+    private String tournamentday;
+
+    private String sportstype;
+
+    private String sportscode;
+
+    private String tournamentname;
+
+    private String tournamentlevel;
+
+    private String tournamentlocation;
+
+    private String locationaddress1;
+
+    private String locationaddress2;
+
+    private String locationarea;
+
+    private String locationpincode;
+
+    private String locationstate;
+
+    private String physicaldirectormobileno;
+
+    private String physicaldirectoraltmobileno;
+
+    private String physicaldirectoremail;
+
+    private String physicaldirectoraltemail;
+
+    private Date tournamentstartdate;
+
+    private Date tournamentenddate;
+
+    private Integer tournamentnoofdays;
+
+    private String loginuser;
+
+    public TournamentData() {
+    }
+
     public String getTournamentid() {
         return tournamentid;
     }
@@ -44,7 +91,6 @@ public class TournamentData {
     public void setSportstype(String sportstype) {
         this.sportstype = sportstype;
     }
-
 
     public String getSportscode() {
         return sportscode;
@@ -85,6 +131,7 @@ public class TournamentData {
     public void setLocationaddress1(String locationaddress1) {
         this.locationaddress1 = locationaddress1;
     }
+
     public String getLocationaddress2() {
         return locationaddress2;
     }
@@ -92,6 +139,7 @@ public class TournamentData {
     public void setLocationaddress2(String locationaddress2) {
         this.locationaddress2 = locationaddress2;
     }
+
     public String getLocationarea() {
         return locationarea;
     }
@@ -123,6 +171,7 @@ public class TournamentData {
     public void setPhysicaldirectormobileno(String physicaldirectormobileno) {
         this.physicaldirectormobileno = physicaldirectormobileno;
     }
+
     public String getPhysicaldirectoraltmobileno() {
         return physicaldirectoraltmobileno;
     }
@@ -138,6 +187,7 @@ public class TournamentData {
     public void setPhysicaldirectoremail(String physicaldirectoremail) {
         this.physicaldirectoremail = physicaldirectoremail;
     }
+
     public String getPhysicaldirectoraltemail() {
         return physicaldirectoraltemail;
     }
@@ -177,69 +227,4 @@ public class TournamentData {
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
-
-    @Id
-    private String tournamentid;
-
-    @NotNull
-    private Date tournamentdate;
-
-    @NotNull
-    private String tournamentday;
-
-    @NotNull
-    private String sportstype;
-
-    @NotNull
-    private String sportscode;
-
-    @NotNull
-    private String tournamentname;
-
-    @NotNull
-    private String tournamentlevel;
-
-    @NotNull
-    private String tournamentlocation;
-
-    @NotNull
-    private String locationaddress1;
-
-    @NotNull
-    private String locationaddress2;
-
-    @NotNull
-    private String locationarea;
-
-    @NotNull
-    private String locationpincode;
-
-    @NotNull
-    private String locationstate;
-
-    @NotNull
-    private String physicaldirectormobileno;
-
-    @NotNull
-    private String physicaldirectoraltmobileno;
-
-    @NotNull
-    private String physicaldirectoremail;
-
-    @NotNull
-    private String physicaldirectoraltemail;
-
-    @NotNull
-    private Date tournamentstartdate;
-
-    @NotNull
-    private Date tournamentenddate;
-
-    @NotNull
-    private Integer tournamentnoofdays;
-
-    @NotNull
-    private String loginuser;
-
-
 }

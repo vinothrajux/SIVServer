@@ -12,6 +12,9 @@ import com.sivserver.example.parent.StudentLeaveLetter;
 import com.sivserver.example.security.SecurityStudentLateComers;
 import com.sivserver.example.security.SecurityStudentOutPass;
 import com.sivserver.example.security.SecurityStudentVisitorPass;
+import com.sivserver.example.sports.AtheleteHeader;
+import com.sivserver.example.sports.SportsOdForm;
+import com.sivserver.example.stores.StoresSalesHeader;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -209,6 +212,30 @@ public class StudentBaseInformation {
         this.securityStudentOutPass_regno = securityStudentOutPass_regno;
     }
 
+    public List<AtheleteHeader> getAtheleteHeader_regno() {
+        return atheleteHeader_regno;
+    }
+
+    public void setAtheleteHeader_regno(List<AtheleteHeader> atheleteHeader_regno) {
+        this.atheleteHeader_regno = atheleteHeader_regno;
+    }
+
+    public List<SportsOdForm> getSportsOdForm_regno() {
+        return sportsOdForm_regno;
+    }
+
+    public void setSportsOdForm_regno(List<SportsOdForm> sportsOdForm_regno) {
+        this.sportsOdForm_regno = sportsOdForm_regno;
+    }
+
+    public List<StoresSalesHeader> getStoresSalesHeader_regno() {
+        return storesSalesHeader_regno;
+    }
+
+    public void setStoresSalesHeader_regno(List<StoresSalesHeader> storesSalesHeader_regno) {
+        this.storesSalesHeader_regno = storesSalesHeader_regno;
+    }
+
     @Id
     @Column(name="regno")
     private String regno;
@@ -285,5 +312,17 @@ public class StudentBaseInformation {
     @OneToMany
     @JoinColumn(name="regno",referencedColumnName = "regno")
     private List<SecurityStudentOutPass> securityStudentOutPass_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<AtheleteHeader> atheleteHeader_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<SportsOdForm> sportsOdForm_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<StoresSalesHeader> storesSalesHeader_regno;
 
 }

@@ -12,6 +12,21 @@ import javax.validation.constraints.NotNull;
 @Table(name = "sportskitsstock")
 
 public class SportsKitsStock {
+
+    @Id
+    private String itemcode;
+
+    private String itemname;
+
+    private Integer quantityinhand;
+
+    private String itemstatus;
+
+    private String loginuser;
+
+    public SportsKitsStock() {
+    }
+
     public String getItemcode() {
         return itemcode;
     }
@@ -28,11 +43,11 @@ public class SportsKitsStock {
         this.itemname = itemname;
     }
 
-    public Integer getQuanitityinhand() {
+    public Integer getQuantityinhand() {
         return quantityinhand;
     }
 
-    public void setQuanitityinhand(Integer quantityinhand) {
+    public void setQuantityinhand(Integer quantityinhand) {
         this.quantityinhand = quantityinhand;
     }
 
@@ -44,7 +59,6 @@ public class SportsKitsStock {
         this.itemstatus = itemstatus;
     }
 
-
     public String getLoginuser() {
         return loginuser;
     }
@@ -52,22 +66,5 @@ public class SportsKitsStock {
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
-
-
-    @Id
-    private String itemcode;
-
-    @NotNull
-    private String itemname;
-
-    @NotNull
-    private Integer quantityinhand;
-
-    @NotNull
-    private String itemstatus;
-
-    @NotNull
-    private String loginuser;
-
 }
 

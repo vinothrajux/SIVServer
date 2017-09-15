@@ -17,18 +17,6 @@ public class SportsKitsStockApiController extends WebMvcConfigurerAdapter {
     @Autowired
     private SportsKitsStockRepository sportsKitsStockRepository;
 
-//    @Autowired
-//    private ApplicationSaleRepository applicationSaleRepository;
-//
-//
-//    @RequestMapping(method = RequestMethod.GET, value="/getApplcationDetail")
-//    public ApplicationSaleDetailProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
-//        ApplicationSaleDetailProjection applicationDetail = applicationSaleRepository.findOneByApplno(applicationNumber);
-//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-//
-//        return applicationDetail;
-//
-//    }
 
 
     @RequestMapping(method = RequestMethod.POST)
@@ -44,7 +32,7 @@ public class SportsKitsStockApiController extends WebMvcConfigurerAdapter {
         SportsKitsStock sportkitstk = new SportsKitsStock();
         sportkitstk.setItemcode(itemcode);
         sportkitstk.setItemname(itemname);
-        sportkitstk.setQuanitityinhand(quantityinhand);
+        sportkitstk.setQuantityinhand(quantityinhand);
         sportkitstk.setItemstatus(itemstatus);
         sportkitstk.setLoginuser(loginuser);
 

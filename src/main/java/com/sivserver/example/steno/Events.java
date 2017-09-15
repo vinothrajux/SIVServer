@@ -15,15 +15,50 @@ import java.util.Date;
 
 public class Events {
 
+    @Id
+    private String eventid;
 
-    public Date getCurrentdate(){return currentdate;}
+    private Date currentdate;
+
+    private String eventtype;
+
+    private Date eventdate;
+
+    private String eventparticular;
+
+    private String branch;
+
+    private String branchcode;
+
+    private String semester;
+
+    private String academicyear;
+
+    private String loginuser;
+
+    public Events() {
+    }
+
+    public String getEventid() {
+        return eventid;
+    }
+
+    public void setEventid(String eventid) {
+        this.eventid = eventid;
+    }
+
+    public Date getCurrentdate() {
+        return currentdate;
+    }
+
     public void setCurrentdate(Date currentdate) {
         this.currentdate = currentdate;
     }
 
-    public String getEventtype(){
+    public String getEventtype() {
         return eventtype;
     }
+
     public void setEventtype(String eventtype) {
         this.eventtype = eventtype;
     }
@@ -31,11 +66,15 @@ public class Events {
     public Date getEventdate() {
         return eventdate;
     }
+
     public void setEventdate(Date eventdate) {
         this.eventdate = eventdate;
     }
 
-    public String getEventparticular() {return eventparticular;}
+    public String getEventparticular() {
+        return eventparticular;
+    }
+
     public void setEventparticular(String eventparticular) {
         this.eventparticular = eventparticular;
     }
@@ -43,6 +82,7 @@ public class Events {
     public String getBranch() {
         return branch;
     }
+
     public void setBranch(String branch) {
         this.branch = branch;
     }
@@ -50,6 +90,7 @@ public class Events {
     public String getBranchcode() {
         return branchcode;
     }
+
     public void setBranchcode(String branchcode) {
         this.branchcode = branchcode;
     }
@@ -57,6 +98,7 @@ public class Events {
     public String getSemester() {
         return semester;
     }
+
     public void setSemester(String semester) {
         this.semester = semester;
     }
@@ -64,44 +106,16 @@ public class Events {
     public String getAcademicyear() {
         return academicyear;
     }
+
     public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
     }
 
-
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
-
-
-    @Id
-    private Date currentdate;
-
-    @NotNull
-    private String eventtype;
-
-    @NotNull
-    private Date eventdate;
-
-    @NotNull
-    private String eventparticular;
-
-    @NotNull
-    private String branch;
-
-    @NotNull
-    private String branchcode;
-
-    @NotNull
-    private String semester;
-
-    @NotNull
-    private String academicyear;
-
-
-    @NotNull
-    private String loginuser;
 }

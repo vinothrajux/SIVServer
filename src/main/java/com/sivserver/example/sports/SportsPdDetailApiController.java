@@ -19,20 +19,6 @@ public class SportsPdDetailApiController extends WebMvcConfigurerAdapter {
     @Autowired
     private SportsPdDetailRepository sportsPdDetailRepository;
 
-//    @Autowired
-//    private ApplicationSaleRepository applicationSaleRepository;
-//
-//
-//    @RequestMapping(method = RequestMethod.GET, value="/getApplcationDetail")
-//    public ApplicationSaleDetailProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
-//        ApplicationSaleDetailProjection applicationDetail = applicationSaleRepository.findOneByApplno(applicationNumber);
-//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-//
-//        return applicationDetail;
-//
-//    }
-
-
     @RequestMapping(method = RequestMethod.POST)
     public void sportsodform(
             @RequestParam(value ="institutecode", required=false) String institutecode,

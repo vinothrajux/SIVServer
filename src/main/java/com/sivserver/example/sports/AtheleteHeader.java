@@ -1,9 +1,8 @@
 package com.sivserver.example.sports;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 /**
  * Created by GBCorp on 14/07/2017.
@@ -12,6 +11,40 @@ import javax.validation.constraints.NotNull;
 @Table(name = "atheleteheader")
 
 public class AtheleteHeader {
+
+    @Id
+    private String atheleteid;
+
+    @Column(name="regno")
+    private String regno;
+
+
+    private String branchcode;
+
+
+    private String batch;
+
+
+    private Integer semester;
+
+
+    private String academicyear;
+
+
+    private String loginuser;
+
+    @OneToMany
+    @JoinColumn(name="atheleteid",referencedColumnName = "atheleteid")
+    private List<AtheleteDetail> atheleteDetail_regno;
+
+
+    public AtheleteHeader() {
+    }
+
+    public AtheleteHeader(String atheleteid) {
+        this.atheleteid = atheleteid;
+    }
+
     public String getAtheleteid() {
         return atheleteid;
     }
@@ -68,27 +101,12 @@ public class AtheleteHeader {
         this.loginuser = loginuser;
     }
 
+    public List<AtheleteDetail> getAtheleteDetail_regno() {
+        return atheleteDetail_regno;
+    }
 
-    @Id
-    private String atheleteid;
-
-    @NotNull
-    private String regno;
-
-    @NotNull
-    private String branchcode;
-
-    @NotNull
-    private String batch;
-
-    @NotNull
-    private Integer semester;
-
-    @NotNull
-    private String academicyear;
-
-    @NotNull
-    private String loginuser;
-
+    public void setAtheleteDetail_regno(List<AtheleteDetail> atheleteDetail_regno) {
+        this.atheleteDetail_regno = atheleteDetail_regno;
+    }
 }
 
