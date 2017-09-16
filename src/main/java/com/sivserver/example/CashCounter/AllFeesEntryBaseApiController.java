@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import java.util.Date;
-
 /**
  * Created by GBCorp on 01/07/2017.
  */
@@ -16,16 +14,20 @@ import java.util.Date;
 @RequestMapping("/api/v1/feesentrybase")
 
 
-public class FeesEntryBaseApiController extends WebMvcConfigurerAdapter {
+public class AllFeesEntryBaseApiController extends WebMvcConfigurerAdapter {
     @Autowired
-    private FeesEntryBaseRepository feesEntryBaseRepository;
+    private AllFeesEntryBaseRepository allFeesEntryBaseRepository;
 
 
     @RequestMapping(method = RequestMethod.POST)
 
     public void feesBaseEntry(
             @RequestParam(value ="regno", required=false) String regno,
+            @RequestParam (value="academicyear", required=false) String academicyear,
             @RequestParam (value="admissionno", required=false) String admissionno,
+            @RequestParam (value="branchcode", required=false) String branchcode,
+            @RequestParam (value="batch", required=false) String batch,
+            @RequestParam (value="semester", required=false) String semester,
             @RequestParam (value="admissionfees", required=false) Long admissionfees,
             @RequestParam (value="tuitionfees", required=false) Long tuitionfees,
             @RequestParam (value="transportFees", required=false) Long transportFees,
@@ -39,18 +41,18 @@ public class FeesEntryBaseApiController extends WebMvcConfigurerAdapter {
             @RequestParam (value="groupinsurancefees", required=false) Long groupinsurancefees,
             @RequestParam (value="othersfees", required=false) Long othersfees,
             @RequestParam (value="totalfees", required=false) Long totalfees,
-            @RequestParam (value="academicyear", required=false) String academicyear,
             @RequestParam (value="loginuser", required=false) String loginuser
 
 
     )
     {
-        FeesEntryBase feesEntry = new FeesEntryBase();
-        feesEntry.setRegno(regno);
+        AllFeesEntryBase feesEntry = new AllFeesEntryBase();
+        Cash_Counter_Compound_Key key = new Cash_Counter_Compound_Key(regno,academicyear);
+        feesEntry.setCash_Counter_Compound_Key(key);
         feesEntry.setAdmissionno(admissionno);
         feesEntry.setAdmissionfees(admissionfees);
         feesEntry.setTuitionfees(tuitionfees);
-        feesEntry.setTransportfees(transportFees);
+        feesEntry.setTransportFees(transportFees);
         feesEntry.setHostelfees(hostelfees);
         feesEntry.setFoodfees(foodfees);
         feesEntry.setTextbookstationaryfees(textbookstationaryfees);
@@ -61,11 +63,10 @@ public class FeesEntryBaseApiController extends WebMvcConfigurerAdapter {
         feesEntry.setGroupinsurancefees(groupinsurancefees);
         feesEntry.setOthersfees(othersfees);
         feesEntry.setTotalfees(totalfees);
-        feesEntry.setAcademicyear(academicyear);
         feesEntry.setLoginuser(loginuser);
 
 
-        feesEntryBaseRepository.save(feesEntry);
+        allFeesEntryBaseRepository.save(feesEntry);
 
 
 

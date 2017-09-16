@@ -16,7 +16,7 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/stenoevents")
 
-public class EventsApiController extends WebMvcConfigurerAdapter {
+public class EventsApiController {
 
     @Autowired
     private EventsRepository stenoeventsRepository;
@@ -24,6 +24,7 @@ public class EventsApiController extends WebMvcConfigurerAdapter {
     @RequestMapping(method = RequestMethod.POST)
 
     public void stenoevents(
+            @RequestParam(value = "eventid", required = false) String eventid,
             @RequestParam(value = "currentdate", required = false) Date currentdate,
             @RequestParam(value = "eventtype", required = false) String eventtype,
             @RequestParam(value = "eventdate", required = false) Date eventdate,
@@ -40,6 +41,7 @@ public class EventsApiController extends WebMvcConfigurerAdapter {
     {
         Events steno = new Events();
 
+        steno.setEventid(eventid);
         steno.setCurrentdate(currentdate);
         steno.setEventtype(eventtype);
         steno.setEventdate(eventdate);
@@ -48,7 +50,7 @@ public class EventsApiController extends WebMvcConfigurerAdapter {
         steno.setBranchcode(branchcode);
         steno.setSemester(semester);
         steno.setAcademicyear(academicyear);
-        steno.setLoginUser(loginuser);
+        steno.setLoginuser(loginuser);
 
         stenoeventsRepository.save(steno);
 

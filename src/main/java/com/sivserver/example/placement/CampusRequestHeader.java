@@ -1,10 +1,9 @@
 package com.sivserver.example.placement;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by GBCorp on 07/07/2017.
@@ -13,6 +12,40 @@ import java.util.Date;
 @Table(name = "campusrequestheader")
 
 public class CampusRequestHeader {
+
+    private Date entrydate;
+
+    @Id
+    @Column(name="requestid")
+    private String requestid;
+
+    @Column(name="corporateid")
+    private String corporateid;
+
+    private String requesttype;
+
+    private Date campusreqfromdate;
+
+    private Date campusreqtodate;
+
+    private String academicyear;
+
+    private String remarks;
+
+    private Date followupdate;
+
+    private String loginuser;
+
+    @OneToMany
+    @JoinColumn(name="requestid",referencedColumnName = "requestid")
+    private List<CampusRequestDetail> campusRequestDetail_requestid;
+
+    public CampusRequestHeader() {
+    }
+
+    public CampusRequestHeader(String requestid) {
+        this.requestid = requestid;
+    }
 
     public Date getEntrydate() {
         return entrydate;
@@ -94,35 +127,12 @@ public class CampusRequestHeader {
         this.loginuser = loginuser;
     }
 
-    @NotNull
-    private Date entrydate;
+    public List<CampusRequestDetail> getCampusRequestDetail_requestid() {
+        return campusRequestDetail_requestid;
+    }
 
-    @Id
-    private String requestid;
-
-    @NotNull
-    private String corporateid;
-
-    @NotNull
-    private String requesttype;
-
-    @NotNull
-    private Date campusreqfromdate;
-
-    @NotNull
-    private Date campusreqtodate;
-
-    @NotNull
-    private String academicyear;
-
-    @NotNull
-    private String remarks;
-
-    @NotNull
-    private Date followupdate;
-
-    @NotNull
-    private String loginuser;
-
+    public void setCampusRequestDetail_requestid(List<CampusRequestDetail> campusRequestDetail_requestid) {
+        this.campusRequestDetail_requestid = campusRequestDetail_requestid;
+    }
 }
 

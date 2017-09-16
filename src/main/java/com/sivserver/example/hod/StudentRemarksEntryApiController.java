@@ -1,13 +1,12 @@
 package com.sivserver.example.hod;
 
+import com.sivserver.example.student.StudentBaseInformation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by GBCorp on 01/07/2017.
@@ -16,13 +15,23 @@ import java.util.Date;
 @RequestMapping("/api/v1/studentremarksentry")
 
 public class StudentRemarksEntryApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+    //@Autowired
     private StudentRemarksEntryRepository studentRemarksEntryRepository;
+
+    @GetMapping(value="/all")
+
+    public List<StudentRemarksEntry> getStudentRemarksEntryDetail() {return studentRemarksEntryRepository.findAll(); }
+
+    public StudentRemarksEntryApiController(StudentRemarksEntryRepository studentRemarksEntryRepository)
+    {
+        this.studentRemarksEntryRepository = studentRemarksEntryRepository;
+    }
 
 
     @RequestMapping(method = RequestMethod.POST)
 
     public void subjectAllocation(
+            @RequestParam(value = "remarkid", required = false) String remarkid,
             @RequestParam(value = "regno", required = false) String regno,
             @RequestParam(value = "branchcode", required = false) String branchcode,
             @RequestParam(value = "batch", required = false) String batch,
@@ -36,17 +45,19 @@ public class StudentRemarksEntryApiController extends WebMvcConfigurerAdapter {
 
     ) {
         StudentRemarksEntry studRemarks = new StudentRemarksEntry();
+        StudentBaseInformation diplomaInternalBranchTestTimetableDetail_regno = new StudentBaseInformation(regno);
 
+        studRemarks.setRemarkid(remarkid);
         studRemarks.setRegno(regno);
-        studRemarks.setBranchCode(branchcode);
+        studRemarks.setBranchcode(branchcode);
         studRemarks.setBatch(batch);
         studRemarks.setSemester(semester);
-        studRemarks.setAcademicYear(academicyear);
+        studRemarks.setAcademicyear(academicyear);
         studRemarks.setRemarks(remarks);
-        studRemarks.setPrimaryAction(primaryaction);
-        studRemarks.setRemarkDate(remarkdate);
-        studRemarks.setRemarkDay(remarkday);
-        studRemarks.setLoginUser(loginuser);
+        studRemarks.setPrimaryaction(primaryaction);
+        studRemarks.setRemarkdate(remarkdate);
+        studRemarks.setRemarkday(remarkday);
+        studRemarks.setLoginuser(loginuser);
 
         studentRemarksEntryRepository.save(studRemarks);
     }

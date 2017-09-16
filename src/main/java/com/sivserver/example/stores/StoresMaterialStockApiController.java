@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RestController
 @RequestMapping("/api/v1/storesmaterialstock")
 
-public class StoresMaterialStockApiController  extends WebMvcConfigurerAdapter {
+public class StoresMaterialStockApiController  {
     @Autowired
     private StoresMaterialStockRepository storesMaterialStockRepository;
 
@@ -28,7 +28,7 @@ public class StoresMaterialStockApiController  extends WebMvcConfigurerAdapter {
 
     ) {
         StoresMaterialStock storesMatStk = new StoresMaterialStock();
-        storesMatStk.setItemHSNCode(itemHsnCode);
+        storesMatStk.setItemHsnCode(itemHsnCode);
         storesMatStk.setItemName(itemName);
         storesMatStk.setItemStockInHand(itemStockInHand);
         storesMatStk.setItemMinimumLevel(itemMinimumLevel);

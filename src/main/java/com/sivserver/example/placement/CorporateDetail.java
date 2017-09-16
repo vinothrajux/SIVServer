@@ -1,5 +1,6 @@
 package com.sivserver.example.placement;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,37 +13,50 @@ import javax.validation.constraints.NotNull;
 @Table(name = "corporatedetail")
 
 public class CorporateDetail {
-    public String getCorporateid(){
+
+    @Id
+    private Integer id;
+
+    @Column(name="corporateid")
+    private String corporateid;
+
+    private String requiredBranchCode;
+
+    private String requiredStudentCategory;
+
+    public CorporateDetail() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCorporateid() {
         return corporateid;
     }
+
     public void setCorporateid(String corporateid) {
         this.corporateid = corporateid;
     }
 
-    public String getRequiredbranchcode(){
+    public String getRequiredBranchCode() {
         return requiredBranchCode;
     }
-    public void setRequiredbranchcode(String requiredBranchCode) {
+
+    public void setRequiredBranchCode(String requiredBranchCode) {
         this.requiredBranchCode = requiredBranchCode;
     }
 
-    public String getRequiredstudentcategory() {
+    public String getRequiredStudentCategory() {
         return requiredStudentCategory;
     }
-    public void setRequiredstudentcategory(String requiredStudentCategory) {
+
+    public void setRequiredStudentCategory(String requiredStudentCategory) {
         this.requiredStudentCategory = requiredStudentCategory;
     }
-
-
-    @NotNull
-    private String corporateid;
-
-    @Id
-    private String requiredBranchCode;
-
-    @NotNull
-    private String requiredStudentCategory;
-
-
 }
 

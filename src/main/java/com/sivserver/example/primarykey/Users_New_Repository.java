@@ -1,6 +1,5 @@
 package com.sivserver.example.primarykey;
 
-import com.sivserver.example.security.SecurityLateComers;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

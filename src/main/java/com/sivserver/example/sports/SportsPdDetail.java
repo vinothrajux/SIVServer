@@ -13,6 +13,45 @@ import java.util.Date;
 @Table(name = "sportspddetail")
 
 public class SportsPdDetail {
+
+    @Id
+    private String institutecode;
+
+    private String institutename;
+
+    private String instituteaddress1;
+
+    private String instituteaddress2;
+
+    private String institutearea;
+
+    private String institutepin;
+
+    private String physicaldirector1name;
+
+    private String physicaldirector1mobile;
+
+    private String physicaldirector1altmobile;
+
+    private String physicaldirector1email;
+
+    private String physicaldirector1altemail;
+
+    private String physicaldirector2name;
+
+    private String physicaldirector2mobile;
+
+    private String physicaldirector2altmobile;
+
+    private String physicaldirector2email;
+
+    private String physicaldirector2altemail;
+
+    private String loginuser;
+
+    public SportsPdDetail() {
+    }
+
     public String getInstitutecode() {
         return institutecode;
     }
@@ -44,7 +83,6 @@ public class SportsPdDetail {
     public void setInstituteaddress2(String instituteaddress2) {
         this.instituteaddress2 = instituteaddress2;
     }
-
 
     public String getInstitutearea() {
         return institutearea;
@@ -149,59 +187,5 @@ public class SportsPdDetail {
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
-
-
-    @Id
-    private String institutecode;
-
-    @NotNull
-    private String institutename;
-
-    @NotNull
-    private String instituteaddress1;
-
-    @NotNull
-    private String instituteaddress2;
-
-    @NotNull
-    private String institutearea;
-
-    @NotNull
-    private String institutepin;
-
-    @NotNull
-    private String physicaldirector1name;
-
-    @NotNull
-    private String physicaldirector1mobile;
-
-    @NotNull
-    private String physicaldirector1altmobile;
-
-    @NotNull
-    private String physicaldirector1email;
-
-    @NotNull
-    private String physicaldirector1altemail;
-
-    @NotNull
-    private String physicaldirector2name;
-
-    @NotNull
-    private String physicaldirector2mobile;
-
-    @NotNull
-    private String physicaldirector2altmobile;
-
-    @NotNull
-    private String physicaldirector2email;
-
-    @NotNull
-    private String physicaldirector2altemail;
-
-    @NotNull
-    private String loginuser;
-
-
 }
 

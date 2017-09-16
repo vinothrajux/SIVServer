@@ -1,13 +1,11 @@
 package com.sivserver.example.stores;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by GBCorp on 05/07/2017.
@@ -15,9 +13,18 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/storespurchaseheader")
 
-public class StoresPurchaseHeaderApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+public class StoresPurchaseHeaderApiController  {
+   // @Autowired
     private StoresPurchaseHeaderRepository storesPurchaseHeaderRepository;
+
+    @GetMapping("value=/all")
+
+    public List<StoresPurchaseHeader> getStoresPurchaseHeaderDetail() {return storesPurchaseHeaderRepository.findAll();}
+
+    public StoresPurchaseHeaderApiController(StoresPurchaseHeaderRepository storesPurchaseHeaderRepository)
+    {
+        this.storesPurchaseHeaderRepository = storesPurchaseHeaderRepository;
+    }
 
 
     @RequestMapping(method = RequestMethod.POST)
@@ -39,6 +46,7 @@ public class StoresPurchaseHeaderApiController extends WebMvcConfigurerAdapter {
 
     ) {
         StoresPurchaseHeader storepurchhead = new StoresPurchaseHeader();
+        StoresVendorDetails storesVendorDetails = new StoresVendorDetails(vendorId);
         storepurchhead.setPurchaseDate(purchaseDate);
         storepurchhead.setBillno(billno);
         storepurchhead.setVendorId(vendorId);
@@ -51,7 +59,7 @@ public class StoresPurchaseHeaderApiController extends WebMvcConfigurerAdapter {
         storepurchhead.setChequeNo(chequeNo);
         storepurchhead.setBankName(bankName);
         storepurchhead.setAcademicYear(academicYear);
-        storepurchhead.setLoginUser(loginuser);
+        storepurchhead.setLoginuser(loginuser);
 
         storesPurchaseHeaderRepository.save(storepurchhead);
 

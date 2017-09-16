@@ -15,7 +15,7 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/diplomainternalbranchtesttimetableheader")
 
-public class DiplomaInternalBranchTestTimetableHeaderApiController extends WebMvcConfigurerAdapter {
+public class DiplomaInternalBranchTestTimetableHeaderApiController  {
     @Autowired
     private DiplomaInternalBranchTestTimetableHeaderRepository diplomaInternalBranchTestTimetableHeaderRepository;
 
@@ -23,58 +23,53 @@ public class DiplomaInternalBranchTestTimetableHeaderApiController extends WebMv
     @RequestMapping(method = RequestMethod.POST)
 
     public void diplomaInternalTestTtHeader(
-            @RequestParam(value = "testid", required = false) String testid,
             @RequestParam(value = "entrydate", required = false) Date entrydate,
             @RequestParam(value = "branchcode", required = false) String branchcode,
             @RequestParam(value = "batch", required = false) String batch,
-            @RequestParam(value = "semester", required = false) Integer semester,
+            @RequestParam(value = "semester", required = false) String semester,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "testtype", required = false) String testtype,
             @RequestParam(value = "maxmarks", required = false) Integer maxmarks,
-            @RequestParam(value = "subject1Colno", required = false) Integer subject1colno,
-            @RequestParam(value = "subject1Codeno", required = false) String subject1codeno,
-            @RequestParam(value = "subject1TestDate", required = false) Date subject1testdate,
-            @RequestParam(value = "subject1TestDay", required = false) String subject1testday,
-            @RequestParam(value = "subject2Colno", required = false) Integer subject2colno,
-            @RequestParam(value = "subject2Codeno", required = false) String subject2codeno,
-            @RequestParam(value = "subject2TestDate", required = false) Date subject2testdate,
-            @RequestParam(value = "subject2TestDay", required = false) String subject2testday,
-            @RequestParam(value = "subject3Colno", required = false) Integer subject3colno,
-            @RequestParam(value = "subject3Codeno", required = false) String subject3codeno,
-            @RequestParam(value = "subject3TestDate", required = false) Date subject3testdate,
-            @RequestParam(value = "subject3TestDay", required = false) String subject3testday,
-            @RequestParam(value = "subject4Colno", required = false) Integer subject4colno,
-            @RequestParam(value = "subject4Codeno", required = false) String subject4codeno,
-            @RequestParam(value = "subject4TestDate", required = false) Date subject4testdate,
-            @RequestParam(value = "subject4TestDay", required = false) String subject4testday,
+            @RequestParam(value = "subject1Colno", required = false) Integer subject1Colno,
+            @RequestParam(value = "subject1Codeno", required = false) String subject1Codeno,
+            @RequestParam(value = "subject1TestDate", required = false) Date subject1TestDate,
+            @RequestParam(value = "subject1TestDay", required = false) String subject1TestDay,
+            @RequestParam(value = "subject2Colno", required = false) Integer subject2Colno,
+            @RequestParam(value = "subject2Codeno", required = false) String subject2Codeno,
+            @RequestParam(value = "subject2TestDate", required = false) Date subject2TestDate,
+            @RequestParam(value = "subject2TestDay", required = false) String subject2TestDay,
+            @RequestParam(value = "subject3Colno", required = false) Integer subject3Colno,
+            @RequestParam(value = "subject3Codeno", required = false) String subject3Codeno,
+            @RequestParam(value = "subject3TestDate", required = false) Date subject3TestDate,
+            @RequestParam(value = "subject3TestDay", required = false) String subject3TestDay,
+            @RequestParam(value = "subject4Colno", required = false) Integer subject4Colno,
+            @RequestParam(value = "subject4Codeno", required = false) String subject4Codeno,
+            @RequestParam(value = "subject4TestDate", required = false) Date subject4TestDate,
+            @RequestParam(value = "subject4TestDay", required = false) String subject4TestDay,
             @RequestParam(value = "loginuser", required = false) String loginuser
 
     ) {
         DiplomaInternalBranchTestTimetableHeader dipIntBranTestTimeTabHead = new DiplomaInternalBranchTestTimetableHeader();
-        dipIntBranTestTimeTabHead.setTestid(testid);
+        Diploma_Hod_Compound_Key_Internal_Test key = new Diploma_Hod_Compound_Key_Internal_Test(branchcode,batch,semester,academicyear,testtype);
+        dipIntBranTestTimeTabHead.setDiploma_hod_compound_key_internal_test(key);
         dipIntBranTestTimeTabHead.setEntrydate(entrydate);
-        dipIntBranTestTimeTabHead.setBranchcode(branchcode);
-        dipIntBranTestTimeTabHead.setBatch(batch);
-        dipIntBranTestTimeTabHead.setSemester(semester);
-        dipIntBranTestTimeTabHead.setAcademicyear(academicyear);
-        dipIntBranTestTimeTabHead.setTesttype(testtype);
-        dipIntBranTestTimeTabHead.setMaximummarks(maxmarks);
-        dipIntBranTestTimeTabHead.setSubject1columnno(subject1colno);
-        dipIntBranTestTimeTabHead.setSubject1codeno(subject1codeno);
-        dipIntBranTestTimeTabHead.setSubject1date(subject1testdate);
-        dipIntBranTestTimeTabHead.setSubject1day(subject1testday);
-        dipIntBranTestTimeTabHead.setSubject2columnno(subject2colno);
-        dipIntBranTestTimeTabHead.setSubject2codeno(subject2codeno);
-        dipIntBranTestTimeTabHead.setSubject2date(subject2testdate);
-        dipIntBranTestTimeTabHead.setSubject2day(subject2testday);
-        dipIntBranTestTimeTabHead.setSubject3columnno(subject3colno);
-        dipIntBranTestTimeTabHead.setSubject3codeno(subject3codeno);
-        dipIntBranTestTimeTabHead.setSubject3date(subject3testdate);
-        dipIntBranTestTimeTabHead.setSubject3day(subject3testday);
-        dipIntBranTestTimeTabHead.setSubject4columnno(subject4colno);
-        dipIntBranTestTimeTabHead.setSubject4codeno(subject4codeno);
-        dipIntBranTestTimeTabHead.setSubject4date(subject4testdate);
-        dipIntBranTestTimeTabHead.setSubject4day(subject4testday);
+        dipIntBranTestTimeTabHead.setMaxmarks(maxmarks);
+        dipIntBranTestTimeTabHead.setSubject1Colno(subject1Colno);
+        dipIntBranTestTimeTabHead.setSubject1Codeno(subject1Codeno);
+        dipIntBranTestTimeTabHead.setSubject1TestDate(subject1TestDate);
+        dipIntBranTestTimeTabHead.setSubject1TestDay(subject1TestDay);
+        dipIntBranTestTimeTabHead.setSubject2Colno(subject2Colno);
+        dipIntBranTestTimeTabHead.setSubject2Codeno(subject2Codeno);
+        dipIntBranTestTimeTabHead.setSubject2TestDate(subject2TestDate);
+        dipIntBranTestTimeTabHead.setSubject2TestDay(subject2TestDay);
+        dipIntBranTestTimeTabHead.setSubject3Colno(subject3Colno);
+        dipIntBranTestTimeTabHead.setSubject3Codeno(subject3Codeno);
+        dipIntBranTestTimeTabHead.setSubject3TestDate(subject3TestDate);
+        dipIntBranTestTimeTabHead.setSubject3TestDay(subject3TestDay);
+        dipIntBranTestTimeTabHead.setSubject4Colno(subject4Colno);
+        dipIntBranTestTimeTabHead.setSubject4Codeno(subject4Codeno);
+        dipIntBranTestTimeTabHead.setSubject4TestDate(subject4TestDate);
+        dipIntBranTestTimeTabHead.setSubject4TestDay(subject4TestDay);
         dipIntBranTestTimeTabHead.setLoginuser(loginuser);
 
         diplomaInternalBranchTestTimetableHeaderRepository.save(dipIntBranTestTimeTabHead);

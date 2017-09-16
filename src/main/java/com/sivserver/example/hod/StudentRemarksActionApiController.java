@@ -1,13 +1,11 @@
 package com.sivserver.example.hod;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by GBCorp on 02/07/2017.
@@ -16,13 +14,23 @@ import java.util.Date;
 @RequestMapping("/api/v1/studentremarksaction")
 
 public class StudentRemarksActionApiController extends WebMvcConfigurerAdapter{
-    @Autowired
+    //@Autowired
     private StudentRemarksActionRepository studentRemarksActionRepository;
 
+    @GetMapping(value="/all")
+
+    public List<StudentRemarksAction> getStudentRemarksActionDetail() {return studentRemarksActionRepository.findAll(); }
+
+    public StudentRemarksActionApiController(StudentRemarksActionRepository studentRemarksActionRepository)
+    {
+        this.studentRemarksActionRepository = studentRemarksActionRepository;
+    }
 
     @RequestMapping(method = RequestMethod.POST)
 
     public void studentsRemAction(
+            @RequestParam(value = "followupid", required = false) String followupid,
+            @RequestParam(value = "remarkid", required = false) String remarkid,
             @RequestParam(value = "regno", required = false) String regno,
             @RequestParam(value = "remarkactiondate", required = false) Date remarkactiondate,
             @RequestParam(value = "remarkactionday", required = false) String remarkactionday,
@@ -32,13 +40,16 @@ public class StudentRemarksActionApiController extends WebMvcConfigurerAdapter{
 
     ) {
         StudentRemarksAction studRemarksAction = new StudentRemarksAction();
+        StudentRemarksEntry StudentRemarksAction_remarkid = new StudentRemarksEntry(remarkid);
 
+        studRemarksAction.setFollowupid(followupid);
+        studRemarksAction.setRemarkid(remarkid);
         studRemarksAction.setRegno(regno);
-        studRemarksAction.setRemarksActionDate(remarkactiondate);
-        studRemarksAction.setRemarksActionDay(remarkactionday);
-        studRemarksAction.setRemarksActionDetails(remarkactiondetails);
-        studRemarksAction.setStatusofAction(statusofaction);
-        studRemarksAction.setLoginUser(loginuser);
+        studRemarksAction.setRemarkactiondate(remarkactiondate);
+        studRemarksAction.setRemarkactionday(remarkactionday);
+        studRemarksAction.setRemarkactiondetails(remarkactiondetails);
+        studRemarksAction.setStatusofaction(statusofaction);
+        studRemarksAction.setLoginuser(loginuser);
 
         studentRemarksActionRepository.save(studRemarksAction);
     }

@@ -28,19 +28,20 @@ public class EgovSpellEntryApiController extends WebMvcConfigurerAdapter {
 
     public void egovspellentry(
             @RequestParam(value = "spellno", required = false) String spellno,
-            @RequestParam(value = "fromdate", required = false) Date fromdate,
-            @RequestParam(value = "todate", required = false) Date todate,
             @RequestParam(value = "semester", required = false) String semester,
             @RequestParam(value = "academicyear", required = false) String academicyear,
+            @RequestParam(value = "fromdate", required = false) Date fromdate,
+            @RequestParam(value = "todate", required = false) Date todate,
+            @RequestParam(value = "noofhours", required = false) Integer noofhours,
             @RequestParam(value = "loginuser", required = false) String loginuser
     )
     {
         EgovSpellEntry egov = new EgovSpellEntry();
-        egov.setSpellno(spellno);
+        Egovernance_SpellEntry_Compound_Key key = new Egovernance_SpellEntry_Compound_Key(spellno,semester,academicyear);
+
         egov.setFromdate(fromdate);
         egov.setTodate(todate);
-        egov.setSemester(semester);
-        egov.setAcademicyear(academicyear);
+        egov.setNoofhours(noofhours);
         egov.setLoginuser(loginuser);
 
         egovSpellEntryRepository.save(egov);

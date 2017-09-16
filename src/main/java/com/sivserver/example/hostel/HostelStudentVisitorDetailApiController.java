@@ -1,13 +1,11 @@
 package com.sivserver.example.hostel;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by GBCorp on 19/07/2017.
@@ -15,28 +13,26 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/hostelstudentvisitor")
 
-public class HostelStudentVisitorDetailApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+public class HostelStudentVisitorDetailApiController  {
+    //@Autowired
     private HostelStudentVisitorDetailRepository hostelStudentVisitorDetailRepository;
 
-//    @Autowired
-//    private ApplicationSaleRepository applicationSaleRepository;
-//
-//
-//    @RequestMapping(method = RequestMethod.GET, value="/getApplcationDetail")
-//    public ApplicationSaleDetailProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
-//        ApplicationSaleDetailProjection applicationDetail = applicationSaleRepository.findOneByApplno(applicationNumber);
-//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-//
-//        return applicationDetail;
-//
-//    }
+    @GetMapping(value="/all")
 
+    public List<HostelStudentVisitorDetail> getHostelStudentVisitorDetail() {return hostelStudentVisitorDetailRepository.findAll();}
+
+
+    public HostelStudentVisitorDetailApiController(HostelStudentVisitorDetailRepository hostelStudentVisitorDetailRepository)
+    {
+        this.hostelStudentVisitorDetailRepository = hostelStudentVisitorDetailRepository;
+    }
 
     @RequestMapping(method = RequestMethod.POST)
     public void hosStudVisitDet(
+            @RequestParam(value ="visitorid", required=false) String visitorid,
             @RequestParam(value ="currentdate", required=false) Date currentdate,
             @RequestParam(value ="regno", required=false) String regno,
+            @RequestParam(value ="admissionno", required=false) String admissionno,
             @RequestParam(value ="branchcode", required=false) String branchcode,
             @RequestParam(value ="batch", required=false) String batch,
             @RequestParam(value ="semester", required=false) Integer semester,
@@ -63,8 +59,11 @@ public class HostelStudentVisitorDetailApiController extends WebMvcConfigurerAda
 
     ) {
         HostelStudentVisitorDetail hoststudvisitdet = new HostelStudentVisitorDetail();
+        HostelStudentDetail hostelStudentLeaveDetail_regno = new HostelStudentDetail(regno);
+        hoststudvisitdet.setVisitorid(visitorid);
         hoststudvisitdet.setCurrentdate(currentdate);
         hoststudvisitdet.setRegno(regno);
+        hoststudvisitdet.setAdmissionno(admissionno);
         hoststudvisitdet.setBranchcode(branchcode);
         hoststudvisitdet.setBatch(batch);
         hoststudvisitdet.setSemester(semester);

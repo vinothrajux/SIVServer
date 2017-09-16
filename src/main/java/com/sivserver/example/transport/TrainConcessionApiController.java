@@ -1,23 +1,35 @@
 package com.sivserver.example.transport;
 
+import com.sivserver.example.student.StudentBaseInformation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Seetha on 17-Jul-17.
  */
-public class TrainConcessionApiController extends WebMvcConfigurerAdapter {
+public class TrainConcessionApiController  {
 
-    @Autowired
+   // @Autowired
     private TrainConcessionRepository trainconcessionRepository;
 
+    @GetMapping(value="/all")
+
+    public List<TrainConcession> getTrainConcessionDetail() {return trainconcessionRepository.findAll();}
+
+    public TrainConcessionApiController(TrainConcessionRepository trainconcessionRepository)
+    {
+        this.trainconcessionRepository = trainconcessionRepository;
+    }
     @RequestMapping(method = RequestMethod.POST)
     public void trainconcession(
+            @RequestParam(value = "trainconcessionid", required = false) String trainconcessionid,
             @RequestParam(value = "regno", required = false) String regno,
             @RequestParam(value = "admissionno", required = false) String admissionno,
             @RequestParam(value = "name", required = false) String name,
@@ -41,9 +53,10 @@ public class TrainConcessionApiController extends WebMvcConfigurerAdapter {
     )
     {
         TrainConcession mtcconc = new TrainConcession();
+        StudentBaseInformation studentBaseInformation = new StudentBaseInformation(regno);
+
         mtcconc.setRegno(regno);
         mtcconc.setAdmissionno(admissionno);
-        mtcconc.setName(name);
         mtcconc.setSemester(semester);
         mtcconc.setBranchname(branchname);
         mtcconc.setBranchcode(branchcode);
@@ -56,7 +69,7 @@ public class TrainConcessionApiController extends WebMvcConfigurerAdapter {
         mtcconc.setDob(dob);
         mtcconc.setCertno(certno);
         mtcconc.setCertdate(certdate);
-        mtcconc.setPeriodFrom(periodfrom);
+        mtcconc.setPeriodfrom(periodfrom);
         mtcconc.setPeriodto(periodto);
         mtcconc.setLoginuser(loginuser);
 

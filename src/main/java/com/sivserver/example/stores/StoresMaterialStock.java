@@ -13,14 +13,31 @@ import javax.validation.constraints.NotNull;
 
 public class StoresMaterialStock {
 
-    public String getItemHSNCode() {
+
+    @Id
+    private String itemHsnCode;
+
+    private String itemName;
+
+    private Long itemStockInHand;
+
+    private Long itemMinimumLevel;
+
+    public StoresMaterialStock() {
+    }
+
+    public String getItemHsnCode() {
         return itemHsnCode;
     }
-    public void setItemHSNCode(String itemHsnCode) {this.itemHsnCode = itemHsnCode;}
+
+    public void setItemHsnCode(String itemHsnCode) {
+        this.itemHsnCode = itemHsnCode;
+    }
 
     public String getItemName() {
         return itemName;
     }
+
     public void setItemName(String itemName) {
         this.itemName = itemName;
     }
@@ -28,6 +45,7 @@ public class StoresMaterialStock {
     public Long getItemStockInHand() {
         return itemStockInHand;
     }
+
     public void setItemStockInHand(Long itemStockInHand) {
         this.itemStockInHand = itemStockInHand;
     }
@@ -35,23 +53,9 @@ public class StoresMaterialStock {
     public Long getItemMinimumLevel() {
         return itemMinimumLevel;
     }
+
     public void setItemMinimumLevel(Long itemMinimumLevel) {
         this.itemMinimumLevel = itemMinimumLevel;
     }
-
-
-    @Id
-    private String itemHsnCode;
-
-    @NotNull
-    private String itemName;
-
-    @NotNull
-    private Long itemStockInHand;
-
-    @NotNull
-    private Long itemMinimumLevel;
-
-
 }
 

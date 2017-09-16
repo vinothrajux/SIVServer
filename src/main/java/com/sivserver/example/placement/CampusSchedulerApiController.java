@@ -15,7 +15,7 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/campusscheduler")
 
-public class CampusSchedulerApiController extends WebMvcConfigurerAdapter {
+public class CampusSchedulerApiController  {
     @Autowired
     private CampusSchedulerRepository campusScheduleRepository;
 

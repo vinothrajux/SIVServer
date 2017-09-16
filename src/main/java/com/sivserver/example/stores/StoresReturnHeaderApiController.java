@@ -1,13 +1,11 @@
 package com.sivserver.example.stores;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by GBCorp on 05/07/2017.
@@ -15,10 +13,18 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/storesreturnheader")
 
-public class StoresReturnHeaderApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+public class StoresReturnHeaderApiController {
+    //@Autowired
     private StoresReturnHeaderRepository storesReturnHeaderRepository;
 
+    @GetMapping(value="/all")
+
+    public List<StoresReturnHeader> getStoresReturnHeaderDetail() {return storesReturnHeaderRepository.findAll();}
+
+    public StoresReturnHeaderApiController(StoresReturnHeaderRepository storesReturnHeaderRepository)
+    {
+        this.storesReturnHeaderRepository = storesReturnHeaderRepository;
+    }
 
     @RequestMapping(method = RequestMethod.POST)
 
@@ -39,6 +45,7 @@ public class StoresReturnHeaderApiController extends WebMvcConfigurerAdapter {
 
     ) {
         StoresReturnHeader storeRethead = new StoresReturnHeader();
+        StoresVendorDetails storesVendorDetails = new StoresVendorDetails(vendorId);
         storeRethead.setReturnDate(returnDate);
         storeRethead.setBillno(billno);
         storeRethead.setVendorId(vendorId);
@@ -51,7 +58,7 @@ public class StoresReturnHeaderApiController extends WebMvcConfigurerAdapter {
         storeRethead.setChequeNo(chequeNo);
         storeRethead.setBankName(bankName);
         storeRethead.setAcademicYear(academicYear);
-        storeRethead.setLoginUser(loginuser);
+        storeRethead.setLoginuser(loginuser);
 
         storesReturnHeaderRepository.save(storeRethead);
 

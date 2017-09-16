@@ -1,10 +1,11 @@
 package com.sivserver.example.placement;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.sivserver.example.parent.StudentLeaveLetter;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by GBCorp on 07/07/2017.
@@ -13,94 +14,136 @@ import java.util.Date;
 @Table(name = "corporateheader")
 
 public class CorporateHeader {
-    public String getCorporateid(){
+
+    @Id
+    @Column(name="corporateid")
+    private String corporateid;
+
+
+    private String corporatename;
+
+
+    private String corporatetype;
+
+
+    private String hrname;
+
+
+    private String hrcontactnumber;
+
+
+    private String hralternatecontactno;
+
+
+    private String hrmailid;
+
+
+    private String hraltmailid;
+
+
+    private String loginuser;
+
+    @OneToMany
+    @JoinColumn(name="corporateid",referencedColumnName = "corporateid")
+    private List<CorporateDetail> corporateDetail_regno;
+
+    @OneToMany
+    @JoinColumn(name="corporateid",referencedColumnName = "corporateid")
+    private List<CampusRequestHeader> campusRequestHeader_corporateid;
+
+
+    public CorporateHeader() {
+    }
+
+    public CorporateHeader(String corporateid) {
+        this.corporateid = corporateid;
+    }
+
+    public String getCorporateid() {
         return corporateid;
     }
+
     public void setCorporateid(String corporateid) {
         this.corporateid = corporateid;
     }
 
-    public String getCorporatename(){
+    public String getCorporatename() {
         return corporatename;
     }
+
     public void setCorporatename(String corporatename) {
         this.corporatename = corporatename;
     }
 
-    public String getCorporatetpe() {
+    public String getCorporatetype() {
         return corporatetype;
     }
-    public void setCoporatetype(String corporatetype) {
+
+    public void setCorporatetype(String corporatetype) {
         this.corporatetype = corporatetype;
     }
 
     public String getHrname() {
         return hrname;
     }
+
     public void setHrname(String hrname) {
         this.hrname = hrname;
     }
 
-    public String getContactnumber() {
+    public String getHrcontactnumber() {
         return hrcontactnumber;
     }
-    public void setContactnumber(String hrcontactnumber) {
+
+    public void setHrcontactnumber(String hrcontactnumber) {
         this.hrcontactnumber = hrcontactnumber;
     }
+
     public String getHralternatecontactno() {
         return hralternatecontactno;
     }
+
     public void setHralternatecontactno(String hralternatecontactno) {
         this.hralternatecontactno = hralternatecontactno;
     }
 
-    public String getHrmailId() {
+    public String getHrmailid() {
         return hrmailid;
     }
-    public void setHrmailId(String hrmailid) {
+
+    public void setHrmailid(String hrmailid) {
         this.hrmailid = hrmailid;
     }
 
-    public String getHraltmailId() {
+    public String getHraltmailid() {
         return hraltmailid;
     }
-    public void setHraltmailId(String hraltmailid) {
+
+    public void setHraltmailid(String hraltmailid) {
         this.hraltmailid = hraltmailid;
     }
 
     public String getLoginuser() {
         return loginuser;
     }
+
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 
-    @NotNull
-    private String corporateid;
+    public List<CorporateDetail> getCorporateDetail_regno() {
+        return corporateDetail_regno;
+    }
 
-    @Id
-    private String corporatename;
+    public void setCorporateDetail_regno(List<CorporateDetail> corporateDetail_regno) {
+        this.corporateDetail_regno = corporateDetail_regno;
+    }
 
-    @NotNull
-    private String corporatetype;
+    public List<CampusRequestHeader> getCampusRequestHeader_corporateid() {
+        return campusRequestHeader_corporateid;
+    }
 
-    @NotNull
-    private String hrname;
-
-    @NotNull
-    private String hrcontactnumber;
-
-    @NotNull
-    private String hralternatecontactno;
-
-    @NotNull
-    private String hrmailid;
-
-    @NotNull
-    private String hraltmailid;
-
-    @NotNull
-    private String loginuser;
-
-
+    public void setCampusRequestHeader_corporateid(List<CampusRequestHeader> campusRequestHeader_corporateid) {
+        this.campusRequestHeader_corporateid = campusRequestHeader_corporateid;
+    }
 }

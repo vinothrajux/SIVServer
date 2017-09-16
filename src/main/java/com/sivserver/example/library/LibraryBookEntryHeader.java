@@ -1,10 +1,11 @@
 package com.sivserver.example.library;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.NaturalId;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by GBCorp on 17/07/2017.
@@ -13,30 +14,79 @@ import java.util.Date;
 @Table(name = "librarybookentryheader")
 
 public class LibraryBookEntryHeader {
-    public String getBookid(){
+
+    @Id
+    @Column(name="regno")
+    private String bookid;
+
+    private String booktype;
+
+    @NaturalId
+    private String bookslno;
+
+    private String cubboardno;
+
+    private String bookname;
+
+    private String authorname;
+
+    private String publishername;
+
+    private String purchasedfrom;
+
+    private Date purchaseddate;
+
+    private Long unitprice;
+
+    private Integer noofcopies;
+
+    private Long totalprice;
+
+    private String bookstatus;
+
+    private String academicyear;
+
+    private String loginuser;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<LibraryBookEntryDetail> libraryBookEntryDetail_regno;
+
+    public LibraryBookEntryHeader() {
+    }
+
+    public LibraryBookEntryHeader(String bookid) {
+        this.bookid = bookid;
+    }
+
+    public String getBookid() {
         return bookid;
     }
+
     public void setBookid(String bookid) {
         this.bookid = bookid;
     }
 
-    public String getBooktype(){
+    public String getBooktype() {
         return booktype;
     }
+
     public void setBooktype(String booktype) {
         this.booktype = booktype;
     }
 
-    public String getBookslno(){
+    public String getBookslno() {
         return bookslno;
     }
+
     public void setBookslno(String bookslno) {
         this.bookslno = bookslno;
     }
 
-    public String getCubboardno(){
+    public String getCubboardno() {
         return cubboardno;
     }
+
     public void setCubboardno(String cubboardno) {
         this.cubboardno = cubboardno;
     }
@@ -44,12 +94,15 @@ public class LibraryBookEntryHeader {
     public String getBookname() {
         return bookname;
     }
+
     public void setBookname(String bookname) {
         this.bookname = bookname;
     }
+
     public String getAuthorname() {
         return authorname;
     }
+
     public void setAuthorname(String authorname) {
         this.authorname = authorname;
     }
@@ -57,6 +110,7 @@ public class LibraryBookEntryHeader {
     public String getPublishername() {
         return publishername;
     }
+
     public void setPublishername(String publishername) {
         this.publishername = publishername;
     }
@@ -64,6 +118,7 @@ public class LibraryBookEntryHeader {
     public String getPurchasedfrom() {
         return purchasedfrom;
     }
+
     public void setPurchasedfrom(String purchasedfrom) {
         this.purchasedfrom = purchasedfrom;
     }
@@ -71,6 +126,7 @@ public class LibraryBookEntryHeader {
     public Date getPurchaseddate() {
         return purchaseddate;
     }
+
     public void setPurchaseddate(Date purchaseddate) {
         this.purchaseddate = purchaseddate;
     }
@@ -78,6 +134,7 @@ public class LibraryBookEntryHeader {
     public Long getUnitprice() {
         return unitprice;
     }
+
     public void setUnitprice(Long unitprice) {
         this.unitprice = unitprice;
     }
@@ -85,6 +142,7 @@ public class LibraryBookEntryHeader {
     public Integer getNoofcopies() {
         return noofcopies;
     }
+
     public void setNoofcopies(Integer noofcopies) {
         this.noofcopies = noofcopies;
     }
@@ -92,6 +150,7 @@ public class LibraryBookEntryHeader {
     public Long getTotalprice() {
         return totalprice;
     }
+
     public void setTotalprice(Long totalprice) {
         this.totalprice = totalprice;
     }
@@ -99,6 +158,7 @@ public class LibraryBookEntryHeader {
     public String getBookstatus() {
         return bookstatus;
     }
+
     public void setBookstatus(String bookstatus) {
         this.bookstatus = bookstatus;
     }
@@ -106,6 +166,7 @@ public class LibraryBookEntryHeader {
     public String getAcademicyear() {
         return academicyear;
     }
+
     public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
     }
@@ -113,55 +174,16 @@ public class LibraryBookEntryHeader {
     public String getLoginuser() {
         return loginuser;
     }
+
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 
+    public List<LibraryBookEntryDetail> getLibraryBookEntryDetail_regno() {
+        return libraryBookEntryDetail_regno;
+    }
 
-    @NotNull
-    private String bookid;
-
-    @NotNull
-    private String booktype;
-
-    @Id
-    private String bookslno;
-
-    @NotNull
-    private String cubboardno;
-
-    @NotNull
-    private String bookname;
-
-    @NotNull
-    private String authorname;
-
-    @NotNull
-    private String publishername;
-
-    @NotNull
-    private String purchasedfrom;
-
-    @NotNull
-    private Date purchaseddate;
-
-    @NotNull
-    private Long unitprice;
-
-    @NotNull
-    private Integer noofcopies;
-
-    @NotNull
-    private Long totalprice;
-
-    @NotNull
-    private String bookstatus;
-
-    @NotNull
-    private String academicyear;
-
-
-    @NotNull
-    private String loginuser;
-
+    public void setLibraryBookEntryDetail_regno(List<LibraryBookEntryDetail> libraryBookEntryDetail_regno) {
+        this.libraryBookEntryDetail_regno = libraryBookEntryDetail_regno;
+    }
 }

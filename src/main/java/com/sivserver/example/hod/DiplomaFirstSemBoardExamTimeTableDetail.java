@@ -1,8 +1,8 @@
 package com.sivserver.example.hod;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.sivserver.example.student.StudentBaseInformation;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -12,451 +12,532 @@ import javax.validation.constraints.NotNull;
 @Table(name = "diplomafirstsemboardexamtimetabledetail")
 
 public class DiplomaFirstSemBoardExamTimeTableDetail {
-    public String getExamid(){
-        return examid;
-    }
-    public void setExamid(String examid) {
-        this.examid = examid;
+    @Id
+    @Column(name = "regno")
+    private String regno;
+
+    private String admissionno;
+
+    private Hod_Compound_Key fetch_details;
+
+    private Integer subject1IntMark;
+
+    private Integer subject1ExtMark;
+
+    private Integer subject1TotMark;
+
+    private Character subject1Attendance;
+
+    private String subject1Result;
+
+    private Integer subject2IntMark;
+
+    private Integer subject2ExtMark;
+
+    private Integer subject2TotMark;
+
+    private Character subject2Attendance;
+
+    private String subject2Result;
+
+    private Integer subject3IntMark;
+
+    private Integer subject3ExtMark;
+
+    private Integer subject3TotMark;
+
+    private Character subject3Attendance;
+
+    private String subject3Result;
+
+    private Integer subject4IntMark;
+
+    private Integer subject4ExtMark;
+
+    private Integer subject4TotMark;
+
+    private Character subject4Attendance;
+
+    private String subject4Result;
+
+    private Integer subject5IntMark;
+
+    private Integer subject5ExtMark;
+
+    private Integer subject5TotMark;
+
+    private Character subject5Attendance;
+
+    private String subject5Result;
+
+    private Integer subject6IntMark;
+
+    private Integer subject6ExtMark;
+
+    private Integer subject6TotMark;
+
+    private Character subject6Attendance;
+
+    private String subject6Result;
+
+    private Integer subject7IntMark;
+
+    private Integer subject7ExtMark;
+
+    private Integer subject7TotMark;
+
+    private Character subject7Attendance;
+
+    private String subject7Result;
+
+    private Integer subject8IntMark;
+
+    private Integer subject8ExtMark;
+
+    private Integer subject8TotMark;
+
+    private Character subject8Attendance;
+
+    private String subject8Result;
+
+    private String OverallResult;
+
+    private Integer rank;
+
+    private String monthandyearofexam;
+
+    @OneToOne
+    @JoinColumn(name="student_base_regno",nullable=false,referencedColumnName = "regno")
+    private StudentBaseInformation student_base_regno;
+
+    public DiplomaFirstSemBoardExamTimeTableDetail() {
     }
 
-    public String getRegno(){
-        return regno;
-    }
-    public void setRegno(String regno) {
+    public DiplomaFirstSemBoardExamTimeTableDetail(String regno) {
         this.regno = regno;
     }
 
+    public String getRegno() {
+        return regno;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setRegno(String regno) {
+        this.regno = regno;
+        return this;
+    }
 
     public String getAdmissionno() {
         return admissionno;
     }
-    public void setAdmissionno(String admissionno) {
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setAdmissionno(String admissionno) {
         this.admissionno = admissionno;
+        return this;
     }
 
-    public Integer getSubject1intmark() {
-        return subject1intmark;
-    }
-    public void setSubject1intmark(Integer subject1intmark) {
-        this.subject1intmark = subject1intmark;
+    public Hod_Compound_Key getFetch_details() {
+        return fetch_details;
     }
 
-    public Integer getSubject1extmark() {
-        return subject1extmark;
-    }
-    public void setSubject1extmark(Integer subject1extmark) {
-        this.subject1extmark = subject1extmark;
+    public DiplomaFirstSemBoardExamTimeTableDetail setFetch_details(Hod_Compound_Key fetch_details) {
+        this.fetch_details = fetch_details;
+        return this;
     }
 
-    public Integer getSubject1totmark() {
-        return subject1totmark;
-    }
-    public void setSubject1totmark(Integer subject1totmark) {
-        this.subject1totmark = subject1totmark;
+    public Integer getSubject1IntMark() {
+        return subject1IntMark;
     }
 
-    public Character getSubject1attendance() {
-        return subject1attendance;
-    }
-    public void setSubject1attendance(Character subject1attendance) {
-        this.subject1attendance = subject1attendance;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject1IntMark(Integer subject1IntMark) {
+        this.subject1IntMark = subject1IntMark;
+        return this;
     }
 
-    public String getSubject1result() {
-        return subject1result;
-    }
-    public void setSubject1result(String subject1result) {
-        this.subject1result = subject1result;
+    public Integer getSubject1ExtMark() {
+        return subject1ExtMark;
     }
 
-    public Integer getSubject2intmark() {
-        return subject2intmark;
-    }
-    public void setSubject2intmark(Integer subject2intmark) {
-        this.subject2intmark = subject2intmark;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject1ExtMark(Integer subject1ExtMark) {
+        this.subject1ExtMark = subject1ExtMark;
+        return this;
     }
 
-    public Integer getSubject2extmark() {
-        return subject2extmark;
-    }
-    public void setSubject2extmark(Integer subject2extmark) {
-        this.subject2extmark = subject2extmark;
+    public Integer getSubject1TotMark() {
+        return subject1TotMark;
     }
 
-    public Integer getSubject2totmark() {
-        return subject2totmark;
-    }
-    public void setSubject2totmark(Integer subject2totmark) {
-        this.subject2totmark = subject2totmark;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject1TotMark(Integer subject1TotMark) {
+        this.subject1TotMark = subject1TotMark;
+        return this;
     }
 
-    public Character getSubject2attendance() {
-        return subject2attendance;
-    }
-    public void setSubject2attendance(Character subject2attendance) {
-        this.subject2attendance = subject2attendance;
+    public Character getSubject1Attendance() {
+        return subject1Attendance;
     }
 
-    public String getSubject2result() {
-        return subject2result;
-    }
-    public void setSubject2result(String subject2result) {
-        this.subject2result = subject2result;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject1Attendance(Character subject1Attendance) {
+        this.subject1Attendance = subject1Attendance;
+        return this;
     }
 
-    public Integer getSubject3intmark() {
-        return subject3intmark;
-    }
-    public void setSubject3intmark(Integer subject3intmark) {
-        this.subject3intmark = subject3intmark;
+    public String getSubject1Result() {
+        return subject1Result;
     }
 
-    public Integer getSubject3extmark() {
-        return subject3extmark;
-    }
-    public void setSubject3extmark(Integer subject3extmark) {
-        this.subject3extmark = subject3extmark;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject1Result(String subject1Result) {
+        this.subject1Result = subject1Result;
+        return this;
     }
 
-    public Integer getSubject3totmark() {
-        return subject3totmark;
-    }
-    public void setSubject3totmark(Integer subject3totmark) {
-        this.subject3totmark = subject3totmark;
+    public Integer getSubject2IntMark() {
+        return subject2IntMark;
     }
 
-    public Character getSubject3attendance() {
-        return subject3attendance;
-    }
-    public void setSubject3attendance(Character subject3attendance) {
-        this.subject3attendance = subject3attendance;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject2IntMark(Integer subject2IntMark) {
+        this.subject2IntMark = subject2IntMark;
+        return this;
     }
 
-    public String getSubject3result() {
-        return subject3result;
-    }
-    public void setSubject3result(String subject3result) {
-        this.subject3result = subject3result;
+    public Integer getSubject2ExtMark() {
+        return subject2ExtMark;
     }
 
-    public Integer getSubject4intmark() {return subject4intmark;}
-    public void setSubject4intmark(Integer subject4intmark) {
-        this.subject4intmark = subject4intmark;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject2ExtMark(Integer subject2ExtMark) {
+        this.subject2ExtMark = subject2ExtMark;
+        return this;
     }
 
-    public Integer getSubject4extmark() {
-        return subject4extmark;
-    }
-    public void setSubject4extmark(Integer subject4ExtMark) {
-        this.subject4extmark = subject4extmark;
+    public Integer getSubject2TotMark() {
+        return subject2TotMark;
     }
 
-    public Integer getSubject4totmark() {
-        return subject4totmark;
-    }
-    public void setSubject4totmark(Integer subject4totMark) {
-        this.subject4totmark = subject4totMark;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject2TotMark(Integer subject2TotMark) {
+        this.subject2TotMark = subject2TotMark;
+        return this;
     }
 
-    public Character getSubject4attendance() {
-        return subject4attendance;
-    }
-    public void setSubject4attendance(Character subject4attendance) {
-        this.subject4attendance = subject4attendance;
+    public Character getSubject2Attendance() {
+        return subject2Attendance;
     }
 
-    public String getSubject4result() {
-        return subject4result;
-    }
-    public void setSubject4result(String subject4result) {
-        this.subject4result = subject4result;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject2Attendance(Character subject2Attendance) {
+        this.subject2Attendance = subject2Attendance;
+        return this;
     }
 
-    public Integer getSubject5intmark() {
-        return subject5intmark;
-    }
-    public void setSubject5intmark(Integer subject5intmark) {
-        this.subject5intmark = subject5intmark;
+    public String getSubject2Result() {
+        return subject2Result;
     }
 
-    public Integer getSubject5extmark() {
-        return subject5extmark;
-    }
-    public void setSubject5extmark(Integer subject5extmark) {
-        this.subject5extmark = subject5extmark;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject2Result(String subject2Result) {
+        this.subject2Result = subject2Result;
+        return this;
     }
 
-    public Integer getSubject5totmark() {
-        return subject5totmark;
-    }
-    public void setSubject5totmark(Integer subject5totmark) {
-        this.subject5totmark = subject5totmark;
+    public Integer getSubject3IntMark() {
+        return subject3IntMark;
     }
 
-    public Character getSubject5attendance() {
-        return subject5attendance;
-    }
-    public void setSubject5attendance(Character subject5attendance) {
-        this.subject5attendance = subject5attendance;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject3IntMark(Integer subject3IntMark) {
+        this.subject3IntMark = subject3IntMark;
+        return this;
     }
 
-    public String getSubject5result() {
-        return subject5result;
-    }
-    public void setSubject5result(String subject5result) {
-        this.subject5result = subject5result;
+    public Integer getSubject3ExtMark() {
+        return subject3ExtMark;
     }
 
-    public Integer getSubject6intmark() {
-        return subject6intmark;
-    }
-    public void setSubject6IntMark(Integer subject6intmark) {
-        this.subject6intmark = subject6intmark;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject3ExtMark(Integer subject3ExtMark) {
+        this.subject3ExtMark = subject3ExtMark;
+        return this;
     }
 
-    public Integer getSubject6extmark() {
-        return subject6extmark;
-    }
-    public void setSubject6extmark(Integer subject6extmark) {
-        this.subject6extmark = subject6extmark;
+    public Integer getSubject3TotMark() {
+        return subject3TotMark;
     }
 
-    public Integer getSubject6totmark() {
-        return subject6totmark;
-    }
-    public void setSubject6totmark(Integer subject6totmark) {
-        this.subject6totmark = subject6totmark;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject3TotMark(Integer subject3TotMark) {
+        this.subject3TotMark = subject3TotMark;
+        return this;
     }
 
-    public Character getSubject6attendance() {
-        return subject6attendance;
-    }
-    public void setSubject6attendance(Character subject6attendance) {
-        this.subject6attendance = subject6attendance;
+    public Character getSubject3Attendance() {
+        return subject3Attendance;
     }
 
-    public String getSubject6result() {
-        return subject6result;
-    }
-    public void setSubject6result(String subject6result) {
-        this.subject6result = subject6result;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject3Attendance(Character subject3Attendance) {
+        this.subject3Attendance = subject3Attendance;
+        return this;
     }
 
-    public Integer getSubject7intmark() {
-        return subject7intmark;
-    }
-    public void setSubject7intmark(Integer subject7intmark) {
-        this.subject7intmark = subject7intmark;
+    public String getSubject3Result() {
+        return subject3Result;
     }
 
-    public Integer getSubject7extmark() {
-        return subject7extmark;
-    }
-    public void setSubject7extmark(Integer subject7extmark) {
-        this.subject7extmark = subject7extmark;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject3Result(String subject3Result) {
+        this.subject3Result = subject3Result;
+        return this;
     }
 
-    public Integer getSubject7totmark() {
-        return subject7totmark;
-    }
-    public void setSubject7totmark(Integer subject7totMark) {
-        this.subject7totmark = subject7totMark;
+    public Integer getSubject4IntMark() {
+        return subject4IntMark;
     }
 
-    public Character getSubject7attendance() {
-        return subject7attendance;
-    }
-    public void setSubject7attendance(Character subject7attendance) {this.subject7attendance = subject7attendance;}
-
-    public String getSubject7result() {
-        return subject7result;
-    }
-    public void setSubject7result(String subject7result) {
-        this.subject7result = subject7result;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject4IntMark(Integer subject4IntMark) {
+        this.subject4IntMark = subject4IntMark;
+        return this;
     }
 
-    public Integer getSubject8intmark() {
-        return subject8intmark;
-    }
-    public void setSubject8intmark(Integer subject8intmark) {
-        this.subject8intmark = subject8intmark;
+    public Integer getSubject4ExtMark() {
+        return subject4ExtMark;
     }
 
-    public Integer getSubject8extmark() {
-        return subject8extmark;
-    }
-    public void setSubject8extmark(Integer subject8extmark) {
-        this.subject8extmark = subject8extmark;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject4ExtMark(Integer subject4ExtMark) {
+        this.subject4ExtMark = subject4ExtMark;
+        return this;
     }
 
-    public Integer getSubject8totmark() {
-        return subject8totmark;
-    }
-    public void setSubject8totmark(Integer subject8totmark) {
-        this.subject8totmark = subject8totmark;
+    public Integer getSubject4TotMark() {
+        return subject4TotMark;
     }
 
-    public Character getSubject8attendance() {
-        return subject8attendance;
-    }
-    public void setSubject8attendance(Character subject8attendance) {
-        this.subject8attendance = subject8attendance;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject4TotMark(Integer subject4TotMark) {
+        this.subject4TotMark = subject4TotMark;
+        return this;
     }
 
-    public String getSubject8result() {
-        return subject8result;
-    }
-    public void setSubject8result(String subject8result) {
-        this.subject8result = subject8result;
+    public Character getSubject4Attendance() {
+        return subject4Attendance;
     }
 
-    public String getOverallresult() {
-        return Overallresult;
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject4Attendance(Character subject4Attendance) {
+        this.subject4Attendance = subject4Attendance;
+        return this;
     }
-    public void setOverallresult(String Overallresult) {
-        this.Overallresult = Overallresult;
+
+    public String getSubject4Result() {
+        return subject4Result;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject4Result(String subject4Result) {
+        this.subject4Result = subject4Result;
+        return this;
+    }
+
+    public Integer getSubject5IntMark() {
+        return subject5IntMark;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject5IntMark(Integer subject5IntMark) {
+        this.subject5IntMark = subject5IntMark;
+        return this;
+    }
+
+    public Integer getSubject5ExtMark() {
+        return subject5ExtMark;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject5ExtMark(Integer subject5ExtMark) {
+        this.subject5ExtMark = subject5ExtMark;
+        return this;
+    }
+
+    public Integer getSubject5TotMark() {
+        return subject5TotMark;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject5TotMark(Integer subject5TotMark) {
+        this.subject5TotMark = subject5TotMark;
+        return this;
+    }
+
+    public Character getSubject5Attendance() {
+        return subject5Attendance;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject5Attendance(Character subject5Attendance) {
+        this.subject5Attendance = subject5Attendance;
+        return this;
+    }
+
+    public String getSubject5Result() {
+        return subject5Result;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject5Result(String subject5Result) {
+        this.subject5Result = subject5Result;
+        return this;
+    }
+
+    public Integer getSubject6IntMark() {
+        return subject6IntMark;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject6IntMark(Integer subject6IntMark) {
+        this.subject6IntMark = subject6IntMark;
+        return this;
+
+    }
+
+    public Integer getSubject6ExtMark() {
+        return subject6ExtMark;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject6ExtMark(Integer subject6ExtMark) {
+        this.subject6ExtMark = subject6ExtMark;
+        return this;
+    }
+
+    public Integer getSubject6TotMark() {
+        return subject6TotMark;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject6TotMark(Integer subject6TotMark) {
+        this.subject6TotMark = subject6TotMark;
+        return this;
+    }
+
+    public Character getSubject6Attendance() {
+        return subject6Attendance;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject6Attendance(Character subject6Attendance) {
+        this.subject6Attendance = subject6Attendance;
+        return this;
+    }
+
+    public String getSubject6Result() {
+        return subject6Result;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject6Result(String subject6Result) {
+        this.subject6Result = subject6Result;
+        return this;
+    }
+
+    public Integer getSubject7IntMark() {
+        return subject7IntMark;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject7IntMark(Integer subject7IntMark) {
+        this.subject7IntMark = subject7IntMark;
+        return this;
+    }
+
+    public Integer getSubject7ExtMark() {
+        return subject7ExtMark;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject7ExtMark(Integer subject7ExtMark) {
+        this.subject7ExtMark = subject7ExtMark;
+        return this;
+    }
+
+    public Integer getSubject7TotMark() {
+        return subject7TotMark;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject7TotMark(Integer subject7TotMark) {
+        this.subject7TotMark = subject7TotMark;
+        return this;
+    }
+
+    public Character getSubject7Attendance() {
+        return subject7Attendance;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject7Attendance(Character subject7Attendance) {
+        this.subject7Attendance = subject7Attendance;
+        return this;
+    }
+
+    public String getSubject7Result() {
+        return subject7Result;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject7Result(String subject7Result) {
+        this.subject7Result = subject7Result;
+        return this;
+    }
+
+    public Integer getSubject8IntMark() {
+        return subject8IntMark;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject8IntMark(Integer subject8IntMark) {
+        this.subject8IntMark = subject8IntMark;
+        return this;
+    }
+
+    public Integer getSubject8ExtMark() {
+        return subject8ExtMark;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject8ExtMark(Integer subject8ExtMark) {
+        this.subject8ExtMark = subject8ExtMark;
+        return this;
+    }
+
+    public Integer getSubject8TotMark() {
+        return subject8TotMark;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject8TotMark(Integer subject8TotMark) {
+        this.subject8TotMark = subject8TotMark;
+        return this;
+    }
+
+    public Character getSubject8Attendance() {
+        return subject8Attendance;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject8Attendance(Character subject8Attendance) {
+        this.subject8Attendance = subject8Attendance;
+        return this;
+    }
+
+    public String getSubject8Result() {
+        return subject8Result;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setSubject8Result(String subject8Result) {
+        this.subject8Result = subject8Result;
+        return this;
+    }
+
+    public String getOverallResult() {
+        return OverallResult;
+    }
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setOverallResult(String overallResult) {
+        OverallResult = overallResult;
+        return this;
     }
 
     public Integer getRank() {
         return rank;
     }
-    public void setRank(Integer rank) {
+
+    public DiplomaFirstSemBoardExamTimeTableDetail setRank(Integer rank) {
         this.rank = rank;
+        return this;
     }
 
-    @Id
-    private String examid;
+    public String getMonthandyearofexam() {
+        return monthandyearofexam;
+    }
 
-    @NotNull
-    private String regno;
+    public DiplomaFirstSemBoardExamTimeTableDetail setMonthandyearofexam(String monthandyearofexam) {
+        this.monthandyearofexam = monthandyearofexam;
+        return this;
+    }
 
-    @NotNull
-    private String admissionno;
+    public StudentBaseInformation getStudent_base_regno() {
+        return student_base_regno;
+    }
 
-    @NotNull
-    private Integer subject1intmark;
-
-    @NotNull
-    private Integer subject1extmark;
-
-    @NotNull
-    private Integer subject1totmark;
-
-    @NotNull
-    private Character subject1attendance;
-
-    @NotNull
-    private String subject1result;
-
-    @NotNull
-    private Integer subject2intmark;
-
-    @NotNull
-    private Integer subject2extmark;
-
-    @NotNull
-    private Integer subject2totmark;
-
-    @NotNull
-    private Character subject2attendance;
-
-    @NotNull
-    private String subject2result;
-
-    @NotNull
-    private Integer subject3intmark;
-
-    @NotNull
-    private Integer subject3extmark;
-
-    @NotNull
-    private Integer subject3totmark;
-
-    @NotNull
-    private Character subject3attendance;
-
-    @NotNull
-    private String subject3result;
-
-    @NotNull
-    private Integer subject4intmark;
-
-    @NotNull
-    private Integer subject4extmark;
-
-    @NotNull
-    private Integer subject4totmark;
-
-    @NotNull
-    private Character subject4attendance;
-
-    @NotNull
-    private String subject4result;
-
-    @NotNull
-    private Integer subject5intmark;
-
-    @NotNull
-    private Integer subject5extmark;
-
-    @NotNull
-    private Integer subject5totmark;
-
-    @NotNull
-    private Character subject5attendance;
-
-    @NotNull
-    private String subject5result;
-
-    @NotNull
-    private Integer subject6intmark;
-
-    @NotNull
-    private Integer subject6extmark;
-
-    @NotNull
-    private Integer subject6totmark;
-
-    @NotNull
-    private Character subject6attendance;
-
-    @NotNull
-    private String subject6result;
-
-    @NotNull
-    private Integer subject7intmark;
-
-    @NotNull
-    private Integer subject7extmark;
-
-    @NotNull
-    private Integer subject7totmark;
-
-    @NotNull
-    private Character subject7attendance;
-
-    @NotNull
-    private String subject7result;
-
-    @NotNull
-    private Integer subject8intmark;
-
-    @NotNull
-    private Integer subject8extmark;
-
-    @NotNull
-    private Integer subject8totmark;
-
-    @NotNull
-    private Character subject8attendance;
-
-    @NotNull
-    private String subject8result;
-
-    @NotNull
-    private String Overallresult;
-
-    @NotNull
-    private Integer rank;
-
+    public DiplomaFirstSemBoardExamTimeTableDetail setStudent_base_regno(StudentBaseInformation student_base_regno) {
+        this.student_base_regno = student_base_regno;
+        return this;
+    }
 }

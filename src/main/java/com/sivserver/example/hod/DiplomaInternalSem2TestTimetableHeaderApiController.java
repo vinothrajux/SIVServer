@@ -23,11 +23,10 @@ public class DiplomaInternalSem2TestTimetableHeaderApiController extends WebMvcC
     @RequestMapping(method = RequestMethod.POST)
 
     public void diplomaInternalTestSem2TtHeader(
-            @RequestParam(value = "testid", required = false) String testid,
             @RequestParam(value = "entrydate", required = false) Date entrydate,
             @RequestParam(value = "branchcode", required = false) String branchcode,
             @RequestParam(value = "batch", required = false) String batch,
-            @RequestParam(value = "semester", required = false) Integer semester,
+            @RequestParam(value = "semester", required = false) String semester,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "testtype", required = false) String testtype,
             @RequestParam(value = "maxmarks", required = false) Integer maxmarks,
@@ -59,39 +58,36 @@ public class DiplomaInternalSem2TestTimetableHeaderApiController extends WebMvcC
 
     ) {
         DiplomaInternalSem2TestTimetableHeader dipIntSem2TestTimeTabHead = new DiplomaInternalSem2TestTimetableHeader();
-        dipIntSem2TestTimeTabHead.setTestId(testid);
-        dipIntSem2TestTimeTabHead.setEntryDate(entrydate);
-        dipIntSem2TestTimeTabHead.setBranchCode(branchcode);
-        dipIntSem2TestTimeTabHead.setBatch(batch);
-        dipIntSem2TestTimeTabHead.setSemester(semester);
-        dipIntSem2TestTimeTabHead.setAcademicYear(academicyear);
-        dipIntSem2TestTimeTabHead.setTestType(testtype);
-        dipIntSem2TestTimeTabHead.setMaximumMarks(maxmarks);
-        dipIntSem2TestTimeTabHead.setSubject1ColumnNo(subject1Colno);
-        dipIntSem2TestTimeTabHead.setSubject1CodeNo(subject1Codeno);
-        dipIntSem2TestTimeTabHead.setSubject1Date(subject1TestDate);
-        dipIntSem2TestTimeTabHead.setSubject1Day(subject1TestDay);
-        dipIntSem2TestTimeTabHead.setSubject2ColumnNo(subject2Colno);
-        dipIntSem2TestTimeTabHead.setSubject2CodeNo(subject2Codeno);
-        dipIntSem2TestTimeTabHead.setSubject2Date(subject2TestDate);
-        dipIntSem2TestTimeTabHead.setSubject2Day(subject2TestDay);
-        dipIntSem2TestTimeTabHead.setSubject3ColumnNo(subject3Colno);
-        dipIntSem2TestTimeTabHead.setSubject3CodeNo(subject3Codeno);
-        dipIntSem2TestTimeTabHead.setSubject3Date(subject3TestDate);
-        dipIntSem2TestTimeTabHead.setSubject3Day(subject3TestDay);
-        dipIntSem2TestTimeTabHead.setSubject4ColumnNo(subject4Colno);
-        dipIntSem2TestTimeTabHead.setSubject4CodeNo(subject4Codeno);
-        dipIntSem2TestTimeTabHead.setSubject4Date(subject4TestDate);
-        dipIntSem2TestTimeTabHead.setSubject4Day(subject4TestDay);
-        dipIntSem2TestTimeTabHead.setSubject5ColumnNo(subject5Colno);
-        dipIntSem2TestTimeTabHead.setSubject5CodeNo(subject5Codeno);
-        dipIntSem2TestTimeTabHead.setSubject5Date(subject5TestDate);
-        dipIntSem2TestTimeTabHead.setSubject5Day(subject5TestDay);
-        dipIntSem2TestTimeTabHead.setSubject6ColumnNo(subject6Colno);
-        dipIntSem2TestTimeTabHead.setSubject6CodeNo(subject6Codeno);
-        dipIntSem2TestTimeTabHead.setSubject6Date(subject6TestDate);
-        dipIntSem2TestTimeTabHead.setSubject6Day(subject6TestDay);
-        dipIntSem2TestTimeTabHead.setLoginUser(loginuser);
+        Diploma_Hod_Compound_Key_Internal_Test key = new Diploma_Hod_Compound_Key_Internal_Test(branchcode,batch,semester,academicyear,testtype);
+
+        dipIntSem2TestTimeTabHead.setEntrydate(entrydate);
+        dipIntSem2TestTimeTabHead.setDiploma_hod_compound_key_internal_test(key);
+        dipIntSem2TestTimeTabHead.setMaxmarks(maxmarks);
+        dipIntSem2TestTimeTabHead.setSubject1Colno(subject1Colno);
+        dipIntSem2TestTimeTabHead.setSubject1Codeno(subject1Codeno);
+        dipIntSem2TestTimeTabHead.setSubject1TestDate(subject1TestDate);
+        dipIntSem2TestTimeTabHead.setSubject1TestDay(subject1TestDay);
+        dipIntSem2TestTimeTabHead.setSubject2Colno(subject2Colno);
+        dipIntSem2TestTimeTabHead.setSubject2Codeno(subject2Codeno);
+        dipIntSem2TestTimeTabHead.setSubject2TestDate(subject2TestDate);
+        dipIntSem2TestTimeTabHead.setSubject2TestDay(subject2TestDay);
+        dipIntSem2TestTimeTabHead.setSubject3Colno(subject3Colno);
+        dipIntSem2TestTimeTabHead.setSubject3Codeno(subject3Codeno);
+        dipIntSem2TestTimeTabHead.setSubject3TestDate(subject3TestDate);
+        dipIntSem2TestTimeTabHead.setSubject3TestDay(subject3TestDay);
+        dipIntSem2TestTimeTabHead.setSubject4Colno(subject4Colno);
+        dipIntSem2TestTimeTabHead.setSubject4Codeno(subject4Codeno);
+        dipIntSem2TestTimeTabHead.setSubject4TestDate(subject4TestDate);
+        dipIntSem2TestTimeTabHead.setSubject4TestDay(subject4TestDay);
+        dipIntSem2TestTimeTabHead.setSubject5Colno(subject5Colno);
+        dipIntSem2TestTimeTabHead.setSubject5Codeno(subject5Codeno);
+        dipIntSem2TestTimeTabHead.setSubject5TestDate(subject5TestDate);
+        dipIntSem2TestTimeTabHead.setSubject5TestDay(subject5TestDay);
+        dipIntSem2TestTimeTabHead.setSubject6Colno(subject6Colno);
+        dipIntSem2TestTimeTabHead.setSubject6Codeno(subject6Codeno);
+        dipIntSem2TestTimeTabHead.setSubject6TestDate(subject6TestDate);
+        dipIntSem2TestTimeTabHead.setSubject6TestDay(subject6TestDay);
+        dipIntSem2TestTimeTabHead.setLoginuser(loginuser);
 
         diplomaInternalSem2TestTimetableHeaderRepository.save(dipIntSem2TestTimeTabHead);
 

@@ -13,139 +13,147 @@ import java.util.Date;
 @Table(name = "ex2header")
 
 public class Ex2Header {
-    public Date getExamDate(){
+    @Id
+    private Date examdate;
+
+    private String examday;
+
+    private String examsession;
+
+    private String monthandyearofexam;
+
+    private String questioncode;
+
+    private String branchcode;
+
+    private Integer semester;
+
+    private String academicyear;
+
+    private String subjectcode;
+
+    private Integer columnno;
+
+    private Integer totalpresent;
+
+    private Integer totalabsent;
+
+    private Integer totalmalpractice;
+
+    private String loginuser;
+
+    public Ex2Header() {
+    }
+
+    public Date getExamdate() {
         return examdate;
     }
-    public void setExamDate(Date examdate) {
+
+    public void setExamdate(Date examdate) {
         this.examdate = examdate;
     }
 
-    public String getExamDay(){
+    public String getExamday() {
         return examday;
     }
-    public void setExamDay(String examday) {
+
+    public void setExamday(String examday) {
         this.examday = examday;
     }
 
-    public String getExamSession(){
+    public String getExamsession() {
         return examsession;
     }
-    public void setExamSession(String examsession) {
+
+    public void setExamsession(String examsession) {
         this.examsession = examsession;
     }
 
-    public String getMonthandyearofexam(){
+    public String getMonthandyearofexam() {
         return monthandyearofexam;
     }
+
     public void setMonthandyearofexam(String monthandyearofexam) {
         this.monthandyearofexam = monthandyearofexam;
     }
 
-    public String getQuestionCode() {
+    public String getQuestioncode() {
         return questioncode;
     }
-    public void setQuestionCode(String questioncode) {
+
+    public void setQuestioncode(String questioncode) {
         this.questioncode = questioncode;
     }
 
-    public String getBranchCode() {
+    public String getBranchcode() {
         return branchcode;
     }
-    public void setBranchCode(String branchcode) {
+
+    public void setBranchcode(String branchcode) {
         this.branchcode = branchcode;
     }
 
     public Integer getSemester() {
         return semester;
     }
+
     public void setSemester(Integer semester) {
         this.semester = semester;
     }
 
-    public String getAcademicYear() {return academicyear;}
-    public void setAcademicYear(String academicyear) {
+    public String getAcademicyear() {
+        return academicyear;
+    }
+
+    public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
     }
 
-    public String getSubjectCode() {
+    public String getSubjectcode() {
         return subjectcode;
     }
-    public void setSubjectCode(String subjectcode) {
+
+    public void setSubjectcode(String subjectcode) {
         this.subjectcode = subjectcode;
     }
 
-    public Integer getSubjectColumnNo() {
+    public Integer getColumnno() {
         return columnno;
     }
-    public void setSubjectColumnNo(Integer columnno) {
+
+    public void setColumnno(Integer columnno) {
         this.columnno = columnno;
     }
 
-    public Integer getTotalPresent() {
+    public Integer getTotalpresent() {
         return totalpresent;
     }
-    public void setTotalPresent(Integer totalpresent) {
+
+    public void setTotalpresent(Integer totalpresent) {
         this.totalpresent = totalpresent;
     }
 
-    public Integer getTotalAbsent() {return totalabsent;}
-    public void setTotalAbsent(Integer totalabsent) {
+    public Integer getTotalabsent() {
+        return totalabsent;
+    }
+
+    public void setTotalabsent(Integer totalabsent) {
         this.totalabsent = totalabsent;
     }
 
-    public Integer getTotalMalPractice() {return totalmalpractice;}
-    public void setTotalMalPractice(Integer totalmalpractice) {
+    public Integer getTotalmalpractice() {
+        return totalmalpractice;
+    }
+
+    public void setTotalmalpractice(Integer totalmalpractice) {
         this.totalmalpractice = totalmalpractice;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
-
-    @Id
-    private Date examdate;
-
-    @NotNull
-    private String examday;
-
-    @NotNull
-    private String examsession;
-
-    @NotNull
-    private String monthandyearofexam;
-
-    @NotNull
-    private String questioncode;
-
-
-    @NotNull
-    private String branchcode;
-
-    @NotNull
-    private Integer semester;
-
-    @NotNull
-    private String academicyear;
-
-    @NotNull
-    private String subjectcode;
-
-    @NotNull
-    private Integer columnno;
-
-    @NotNull
-    private Integer totalpresent;
-
-    @NotNull
-    private Integer totalabsent;
-
-    @NotNull
-    private Integer totalmalpractice;
-
-    @NotNull
-    private String loginuser;
-
 }

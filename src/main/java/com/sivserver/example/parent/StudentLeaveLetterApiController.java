@@ -1,13 +1,12 @@
 package com.sivserver.example.parent;
 
+import com.sivserver.example.student.StudentBaseInformation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by GBCorp on 29/06/2017.
@@ -15,30 +14,25 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/studentleaveletter")
 
-public class StudentLeaveLetterApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+public class StudentLeaveLetterApiController  {
+    //@Autowired
     private StudentLeaveLetterRepository studentLeaveLetterRepository;
 
-//    @Autowired
-//    private ApplicationSaleRepository applicationSaleRepository;
-//
-//
-//    @RequestMapping(method = RequestMethod.GET, value="/getApplcationDetail")
-//    public ApplicationSaleDetailProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
-//        ApplicationSaleDetailProjection applicationDetail = applicationSaleRepository.findOneByApplno(applicationNumber);
-//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-//
-//        return applicationDetail;
-//
-//    }
+    @GetMapping(value="/all")
 
+    public List<StudentLeaveLetter> getStudentLeaveLetterDetail() {return studentLeaveLetterRepository.findAll();}
+
+    public StudentLeaveLetterApiController(StudentLeaveLetterRepository studentLeaveLetterRepository)
+    {
+        this.studentLeaveLetterRepository = studentLeaveLetterRepository;
+    }
 
     @RequestMapping(method = RequestMethod.POST)
-    public void studentFood(
+    public void studentLeave(
             @RequestParam(value ="entrydate", required=false) Date entrydate,
             @RequestParam(value ="regno", required=false) String regno,
-            @RequestParam (value="branch", required=false) String branch,
             @RequestParam (value="branchcode", required=false) String branchcode,
+            @RequestParam (value="batch", required=false) String batch,
             @RequestParam (value="semester", required=false) Integer semester,
             @RequestParam (value="academicYear", required=false) String academicYear,
             @RequestParam (value="fromdate", required=false) Date fromdate,
@@ -49,12 +43,12 @@ public class StudentLeaveLetterApiController extends WebMvcConfigurerAdapter {
 
     ) {
         StudentLeaveLetter studleave = new StudentLeaveLetter();
-        studleave.setLeaveentrydate(entrydate);
+        StudentBaseInformation studentBaseInformation = new StudentBaseInformation(regno);
+        studleave.setEntrydate(entrydate);
         studleave.setRegno(regno);
-        studleave.setBranch(branch);
         studleave.setBranchcode(branchcode);
         studleave.setSemester(semester);
-        studleave.setAcadyear(academicYear);
+        studleave.setAcademicYear(academicYear);
         studleave.setFromdate(fromdate);
         studleave.setTodate(todate);
         studleave.setNoofdays(noofdays);

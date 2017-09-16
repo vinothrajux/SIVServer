@@ -1,13 +1,11 @@
 package com.sivserver.example.placement;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by GBCorp on 07/07/2017.
@@ -15,23 +13,18 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/campusrequestheader")
 
-public class CampusRequestHeaderApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+public class CampusRequestHeaderApiController {
+    //@Autowired
     private CampusRequestHeaderRepository campusRequestHeaderRepository;
 
-//    @Autowired
-//    private ApplicationSaleRepository applicationSaleRepository;
-//
-//
-//    @RequestMapping(method = RequestMethod.GET, value="/getApplcationDetail")
-//    public ApplicationSaleDetailProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
-//        ApplicationSaleDetailProjection applicationDetail = applicationSaleRepository.findOneByApplno(applicationNumber);
-//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-//
-//        return applicationDetail;
-//
-//    }
+    @GetMapping(value="/all")
 
+    public List<CampusRequestHeader> getCampusRequestHeaderDetail() {return campusRequestHeaderRepository.findAll();}
+
+    public CampusRequestHeaderApiController(CampusRequestHeaderRepository campusRequestHeaderRepository)
+    {
+        this.campusRequestHeaderRepository = campusRequestHeaderRepository;
+    }
 
     @RequestMapping(method = RequestMethod.POST)
     public void campRequestHead(
@@ -49,6 +42,7 @@ public class CampusRequestHeaderApiController extends WebMvcConfigurerAdapter {
 
     ) {
         CampusRequestHeader campReqHeader = new CampusRequestHeader();
+        CorporateHeader corporateHeader = new CorporateHeader(corporateid);
         campReqHeader.setEntrydate(entrydate);
         campReqHeader.setRequestid(requestId);
         campReqHeader.setCorporateid(corporateid);

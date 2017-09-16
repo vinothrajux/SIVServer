@@ -5,6 +5,6 @@ package com.sivserver.example.CashCounter;
  */
 import org.springframework.data.repository.CrudRepository;
 
-public interface FeesPaymentRepository extends CrudRepository<FeesPayment, String> {
-    FeesPayment findBybillno(String billno);
+public interface AllFeesPaymentRepository extends CrudRepository<AllFeesPayment, String> {
+    AllFeesPayment findBybillno(String billno);
 }

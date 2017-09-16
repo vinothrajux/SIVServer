@@ -1,13 +1,12 @@
 package com.sivserver.example.library;
 
+import com.sivserver.example.student.StudentBaseInformation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by GBCorp on 18/07/2017.
@@ -15,27 +14,26 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/libraryusage")
 
-public class LibraryUsageApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+public class LibraryUsageApiController  {
+    //@Autowired
     private LibraryUsageRepository libraryUsageRepository;
 
-//    @Autowired
-//    private ApplicationSaleRepository applicationSaleRepository;
-//
-//
-//    @RequestMapping(method = RequestMethod.GET, value="/getApplcationDetail")
-//    public ApplicationSaleDetailProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
-//        ApplicationSaleDetailProjection applicationDetail = applicationSaleRepository.findOneByApplno(applicationNumber);
-//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-//
-//        return applicationDetail;
-//
-//    }
+    @GetMapping(value="/all")
+
+    public List<LibraryUsage> getLibraryUsage() {return libraryUsageRepository.findAll(); }
+
+    public LibraryUsageApiController(LibraryUsageRepository libraryUsageRepository)
+    {
+        this.libraryUsageRepository = libraryUsageRepository;
+    }
+
+
 
 
     @RequestMapping(method = RequestMethod.POST)
     public void libusage(
             @RequestParam(value ="currentdate", required=false) Date currentdate,
+            @RequestParam(value ="regno", required=false) String regno,
             @RequestParam(value ="memberid", required=false) String memberid,
             @RequestParam (value="branchcode", required=false) String branchcode,
             @RequestParam (value="batch", required=false) String batch,
@@ -48,6 +46,7 @@ public class LibraryUsageApiController extends WebMvcConfigurerAdapter {
             @RequestParam (value="loginuser", required=false) String loginuser
     ) {
         LibraryUsage libraryusage = new LibraryUsage();
+        StudentBaseInformation libraryUsage_regno = new StudentBaseInformation(regno);
         libraryusage.setCurrentdate(currentdate);
         libraryusage.setMemberid(memberid);
         libraryusage.setBranchcode(branchcode);

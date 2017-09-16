@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RestController
 @RequestMapping("/api/v1/transportfeessetting")
 
-public class TransportFeesSettingApiController extends WebMvcConfigurerAdapter {
+public class TransportFeesSettingApiController {
 
     @Autowired
     private TransportFeesSettingRepository transportfeessettingRepository;
@@ -27,10 +27,10 @@ public class TransportFeesSettingApiController extends WebMvcConfigurerAdapter {
     @RequestMapping(method = RequestMethod.POST)
 
     public void transportFeesSetting(
-            @RequestParam(value = "feessettingdate", required = false) Date feessettingdate,
             @RequestParam(value = "academicyear", required = false) String academicyear,
-            @RequestParam(value = "route", required = false) String route,
             @RequestParam(value = "stage", required = false) String stage,
+            @RequestParam(value = "feessettingdate", required = false) Date feessettingdate,
+            @RequestParam(value = "route", required = false) String route,
             @RequestParam(value = "amount", required = false) Long amount,
             @RequestParam(value = "loginuser", required = false) String loginuser,
             @RequestParam(value = "busno", required = false) String busno,
@@ -42,22 +42,21 @@ public class TransportFeesSettingApiController extends WebMvcConfigurerAdapter {
 
     {
         TransportFeesSetting transportfeessett = new TransportFeesSetting();
-        BusDetail busDetail = new BusDetail();
+        Management_Transport_Fees_Compound_Key key = new Management_Transport_Fees_Compound_Key(academicyear, stage);
+      //  TransportFeesSetting key = new BusDetail();
         //create primary composite keys class name here
 
-        transportfeessett.setFeesSettingdate(feessettingdate);
-        transportfeessett.setAcademicyear(academicyear);
+        transportfeessett.setFeessettingdate(feessettingdate);
         transportfeessett.setRoute(route);
-        transportfeessett.setStage(stage);
         transportfeessett.setAmount(amount);
         transportfeessett.setLoginuser(loginuser);
 
-        busDetail.setBusno(busno);
-        busDetail.setDrivername(drivername);
-        busDetail.setSeatno(seatno);
+        //busDetail.setBusno(busno);
+        //busDetail.setDrivername(drivername);
+        //busDetail.setSeatno(seatno);
 
         transportfeessettingRepository.save(transportfeessett);
-        busDetailRepository.save(busDetail);
+        //busDetailRepository.save(busDetail);
 
 
     }

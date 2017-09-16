@@ -47,12 +47,12 @@ public class CorporateHeaderApiController extends WebMvcConfigurerAdapter {
         CorporateHeader corpHeader = new CorporateHeader();
         corpHeader.setCorporateid(corporateid);
         corpHeader.setCorporatename(corporatename);
-        corpHeader.setCoporatetype(corporatetype);
+        corpHeader.setCorporatetype(corporatetype);
         corpHeader.setHrname(hrname);
-        corpHeader.setContactnumber(hrcontactnumber);
+        corpHeader.setHrcontactnumber(hrcontactnumber);
         corpHeader.setHralternatecontactno(hralternatecontactno);
-        corpHeader.setHrmailId(hrmailid);
-        corpHeader.setHraltmailId(hraltmailid);
+        corpHeader.setHrmailid(hrmailid);
+        corpHeader.setHraltmailid(hraltmailid);
         corpHeader.setLoginuser(loginuser);
 
         corporateHeaderRepository.save(corpHeader);

@@ -1,11 +1,11 @@
 package com.sivserver.example.hod;
 
+import com.sivserver.example.student.StudentBaseInformation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import java.util.List;
 
 /**
  * Created by GBCorp on 04/07/2017.
@@ -13,17 +13,28 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RestController
 @RequestMapping("/api/v1/diplomainternalsem2testtimetabledetail")
 
-public class DiplomaInternalSem2TestTimetableDetailApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+public class DiplomaInternalSem2TestTimetableDetailApiController  {
+    //@Autowired
     private DiplomaInternalSem2TestTimetableDetailRepository diplomaInternalSem2TestTimetableDetailRepository;
 
+    @GetMapping(value="/all")
+    public List<DiplomaInternalSem2TestTimetableDetail> getDiplomaInternalSem2TestTimetableDetail() {return diplomaInternalSem2TestTimetableDetailRepository.findAll();}
 
+    public DiplomaInternalSem2TestTimetableDetailApiController(DiplomaInternalSem2TestTimetableDetailRepository diplomaInternalSem2TestTimetableDetailRepository)
+    {
+        this.diplomaInternalSem2TestTimetableDetailRepository = diplomaInternalSem2TestTimetableDetailRepository;
+    }
     @RequestMapping(method = RequestMethod.POST)
 
     public void diplomaInternalTestSem2TtDetail(
             @RequestParam(value = "testid", required = false) String testid,
             @RequestParam(value = "regno", required = false) String regno,
             @RequestParam(value = "admissionno", required = false) String admissionno,
+            @RequestParam(value = "branchcode", required = false) String branchcode,
+            @RequestParam(value = "batch", required = false) String batch,
+            @RequestParam(value = "semester", required = false) String semester,
+            @RequestParam(value = "academicyear", required = false) String academicyear,
+            @RequestParam(value = "testtype", required = false) String testtype,
             @RequestParam(value = "subject1Mark", required = false) Integer subject1Mark,
             @RequestParam(value = "subject1Attendance", required = false) Character subject1Attendance,
             @RequestParam(value = "subject1Result", required = false) String subject1Result,
@@ -47,25 +58,29 @@ public class DiplomaInternalSem2TestTimetableDetailApiController extends WebMvcC
 
     ) {
         DiplomaInternalSem2TestTimetableDetail dipIntSem2TestTimeTabDet = new DiplomaInternalSem2TestTimetableDetail();
-        dipIntSem2TestTimeTabDet.setTestId(testid);
+        StudentBaseInformation diplomaInternalBranchTestTimetableDetail_regno = new StudentBaseInformation(regno);
+        Diploma_Hod_Compound_Key_Internal_Test key = new Diploma_Hod_Compound_Key_Internal_Test(branchcode, batch, semester, academicyear, testtype);
+
+        dipIntSem2TestTimeTabDet.setTestid(testid);
         dipIntSem2TestTimeTabDet.setRegno(regno);
-        dipIntSem2TestTimeTabDet.setAdmissionNo(admissionno);
-        dipIntSem2TestTimeTabDet.setgetSubject1Mark(subject1Mark);
+        dipIntSem2TestTimeTabDet.setFetch_details(key);
+        dipIntSem2TestTimeTabDet.setAdmissionno(admissionno);
+        dipIntSem2TestTimeTabDet.setSubject1Mark(subject1Mark);
         dipIntSem2TestTimeTabDet.setSubject1Attendance(subject1Attendance);
         dipIntSem2TestTimeTabDet.setSubject1Result(subject1Result);
-        dipIntSem2TestTimeTabDet.setgetSubject2Mark(subject2Mark);
+        dipIntSem2TestTimeTabDet.setSubject2Mark(subject2Mark);
         dipIntSem2TestTimeTabDet.setSubject2Attendance(subject2Attendance);
         dipIntSem2TestTimeTabDet.setSubject2Result(subject2Result);
-        dipIntSem2TestTimeTabDet.setgetSubject3Mark(subject3Mark);
+        dipIntSem2TestTimeTabDet.setSubject3Mark(subject3Mark);
         dipIntSem2TestTimeTabDet.setSubject3Attendance(subject3Attendance);
         dipIntSem2TestTimeTabDet.setSubject3Result(subject3Result);
-        dipIntSem2TestTimeTabDet.setgetSubject4Mark(subject4Mark);
+        dipIntSem2TestTimeTabDet.setSubject4Mark(subject4Mark);
         dipIntSem2TestTimeTabDet.setSubject4Attendance(subject4Attendance);
         dipIntSem2TestTimeTabDet.setSubject4Result(subject4Result);
-        dipIntSem2TestTimeTabDet.setgetSubject5Mark(subject5Mark);
+        dipIntSem2TestTimeTabDet.setSubject5Mark(subject5Mark);
         dipIntSem2TestTimeTabDet.setSubject5Attendance(subject5Attendance);
         dipIntSem2TestTimeTabDet.setSubject5Result(subject5Result);
-        dipIntSem2TestTimeTabDet.setgetSubject6Mark(subject6Mark);
+        dipIntSem2TestTimeTabDet.setSubject6Mark(subject6Mark);
         dipIntSem2TestTimeTabDet.setSubject6Attendance(subject6Attendance);
         dipIntSem2TestTimeTabDet.setSubject6Result(subject6Result);
         dipIntSem2TestTimeTabDet.setOverallResult(OverallResult);

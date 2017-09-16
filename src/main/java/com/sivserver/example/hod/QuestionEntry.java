@@ -14,68 +14,132 @@ import javax.validation.constraints.NotNull;
 
 public class QuestionEntry {
 
-    public Integer getSNO(){return sno;}
-    public void setSNO(Integer sno) {
+    @Id
+    private Integer sno;
+
+    private Integer shufflequestionno;
+
+    private String branchname;
+
+    private String branchcode;
+
+    private String academicyear;
+
+    private String scheme;
+
+    private String semester;
+
+    private String batch;
+
+    private String subjectname;
+
+    private String subjectcode;
+
+    private Integer mark;
+
+    private String unit;
+
+    private String model;
+
+    private String category;
+
+    private String questiontype;
+
+    private String question;
+
+    private Boolean important;
+
+    private Boolean selected;
+
+    private String loginuser;
+
+    public QuestionEntry() {
+    }
+
+    public Integer getSno() {
+        return sno;
+    }
+
+    public void setSno(Integer sno) {
         this.sno = sno;
     }
 
-    public String getBranchName(){
+    public Integer getShufflequestionno() {
+        return shufflequestionno;
+    }
+
+    public void setShufflequestionno(Integer shufflequestionno) {
+        this.shufflequestionno = shufflequestionno;
+    }
+
+    public String getBranchname() {
         return branchname;
     }
-    public void setBranchName(String branchname) {
+
+    public void setBranchname(String branchname) {
         this.branchname = branchname;
     }
 
-    public String getBranchCode() {
+    public String getBranchcode() {
         return branchcode;
     }
-    public void setBranchCode(String branchcode) {
+
+    public void setBranchcode(String branchcode) {
         this.branchcode = branchcode;
     }
 
-    public String getAcademicYear() {
+    public String getAcademicyear() {
         return academicyear;
     }
-    public void setAcademicYear(String academicyear) {
-        this.academicyear = academicyear;
-    }
 
-    public String getSemester() {
-        return semester;
-    }
-    public void setSemester(String semester) {
-        this.semester = semester;
+    public void setAcademicyear(String academicyear) {
+        this.academicyear = academicyear;
     }
 
     public String getScheme() {
         return scheme;
     }
+
     public void setScheme(String scheme) {
         this.scheme = scheme;
+    }
+
+    public String getSemester() {
+        return semester;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
     }
 
     public String getBatch() {
         return batch;
     }
+
     public void setBatch(String batch) {
         this.batch = batch;
     }
 
-    public String getSubjectName() {
+    public String getSubjectname() {
         return subjectname;
     }
-    public void setSubjectName(String subjectname) {
+
+    public void setSubjectname(String subjectname) {
         this.subjectname = subjectname;
     }
 
-    public String getSubjectCode() {return subjectcode;}
-    public void setSubjectCode(String subjectcode) {
+    public String getSubjectcode() {
+        return subjectcode;
+    }
+
+    public void setSubjectcode(String subjectcode) {
         this.subjectcode = subjectcode;
     }
 
     public Integer getMark() {
         return mark;
     }
+
     public void setMark(Integer mark) {
         this.mark = mark;
     }
@@ -83,6 +147,7 @@ public class QuestionEntry {
     public String getUnit() {
         return unit;
     }
+
     public void setUnit(String unit) {
         this.unit = unit;
     }
@@ -90,25 +155,31 @@ public class QuestionEntry {
     public String getModel() {
         return model;
     }
+
     public void setModel(String model) {
         this.model = model;
     }
 
-    public String getCategory() {return category;}
+    public String getCategory() {
+        return category;
+    }
+
     public void setCategory(String category) {
         this.category = category;
     }
 
-    public String getQuestionType() {
+    public String getQuestiontype() {
         return questiontype;
     }
-    public void setQuestionType(String questiontype) {
+
+    public void setQuestiontype(String questiontype) {
         this.questiontype = questiontype;
     }
 
     public String getQuestion() {
         return question;
     }
+
     public void setQuestion(String question) {
         this.question = question;
     }
@@ -116,6 +187,7 @@ public class QuestionEntry {
     public Boolean getImportant() {
         return important;
     }
+
     public void setImportant(Boolean important) {
         this.important = important;
     }
@@ -123,70 +195,16 @@ public class QuestionEntry {
     public Boolean getSelected() {
         return selected;
     }
+
     public void setSelected(Boolean selected) {
         this.selected = selected;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+
+    public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
-
-
-    @Id
-    private Integer sno;
-
-    @NotNull
-    private String branchname;
-
-    @NotNull
-    private String branchcode;
-
-    @NotNull
-    private String academicyear;
-
-    @NotNull
-    private String scheme;
-
-    @NotNull
-    private String semester;
-
-    @NotNull
-    private String batch;
-
-    @NotNull
-    private String subjectname;
-
-    @NotNull
-    private String subjectcode;
-
-    @NotNull
-    private Integer mark;
-
-    @NotNull
-    private String unit;
-
-    @NotNull
-    private String model;
-
-    @NotNull
-    private String category;
-
-    @NotNull
-    private String questiontype;
-
-    @NotNull
-    private String question;
-
-    @NotNull
-    private Boolean important;
-
-    @NotNull
-    private Boolean selected;
-
-    @NotNull
-    private String loginuser;
-
 }

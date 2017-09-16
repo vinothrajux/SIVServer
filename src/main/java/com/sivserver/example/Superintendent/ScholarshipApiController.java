@@ -2,14 +2,13 @@ package com.sivserver.example.Superintendent;
 
 import com.sivserver.example.CashCounter.FeesFollowup;
 import com.sivserver.example.CashCounter.FeesFollowupRepository;
+import com.sivserver.example.student.StudentBaseInformation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Seetha on 01-Jul-17.
@@ -18,15 +17,24 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/scholarship")
 
-public class ScholarshipApiController extends WebMvcConfigurerAdapter {
+public class ScholarshipApiController {
 
-    @Autowired
+    //@Autowired
     private ScholarshipRepository scholarshipRepository;
 
+    @GetMapping(value="/all")
+
+    public List<Scholarship> getScholarship() {return scholarshipRepository.findAll();}
+
+    public ScholarshipApiController(ScholarshipRepository scholarshipRepository)
+    {
+        this.scholarshipRepository = scholarshipRepository;
+    }
 
     @RequestMapping(method = RequestMethod.POST)
 
     public void scholarship(
+            @RequestParam(value ="scholarshipid", required=false) String scholarshipid,
             @RequestParam(value ="currentdate", required=false) Date currentdate,
             @RequestParam (value="regno", required=false) String regno,
             @RequestParam (value="admissionno", required=false) String admissionno,
@@ -54,28 +62,29 @@ public class ScholarshipApiController extends WebMvcConfigurerAdapter {
     )
     {
         Scholarship scho = new Scholarship();
-        scho.setCurrentDate(currentdate);
-        scho.setRegNo(regno);
-        scho.setAdmissionNo(admissionno);
-        scho.setBranchName(branchname);
-        scho.setBranchCode(branchcode);
+        StudentBaseInformation studentBaseInformation = new StudentBaseInformation(regno);
+        scho.setCurrentdate(currentdate);
+        scho.setRegno(regno);
+        scho.setAdmissionno(admissionno);
+        scho.setBranchname(branchname);
+        scho.setBranchcode(branchcode);
         scho.setBatch(batch);
         scho.setSemester(semester);
-        scho.setAcademicYear(academicyear);
+        scho.setAcademicyear(academicyear);
         scho.setName(name);
-        scho.setFatherName(fathername);
-        scho.setMobileNo(mobileno);
+        scho.setFathername(fathername);
+        scho.setMobileno(mobileno);
         scho.setCommunity(community);
-        scho.setScholarshipAmount(scholarshipamount);
-        scho.setAppliedDate(applieddate);
+        scho.setScholarshipamount(scholarshipamount);
+        scho.setApplieddate(applieddate);
         scho.setStatus(status);
-        scho.setScholarshipType(scholarshiptype);
-        scho.setSactionedDate(sactioneddate);
-        scho.setAccountNo(bankaccountno);
-        scho.setBankAccountName(bankaccountname);
-        scho.setIFSCCode(ifsccode);
-        scho.setBankBranch(bankbranch);
-        scho.setLoginUser(loginuser);
+        scho.setScholarshiptype(scholarshiptype);
+        scho.setSactioneddate(sactioneddate);
+        scho.setBankaccountno(bankaccountno);
+        scho.setBankaccountname(bankaccountname);
+        scho.setIfsccode(ifsccode);
+        scho.setBankbranch(bankbranch);
+        scho.setLoginuser(loginuser);
 
 
         scholarshipRepository.save(scho);
