@@ -1,13 +1,9 @@
 package com.sivserver.example.admission;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Seetha on 19-Jun-17.
@@ -15,10 +11,18 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/studentacademicinfo")
 
-public class StudentAcademicInfoApiController extends WebMvcConfigurerAdapter {
+public class StudentAcademicInfoApiController  {
 
-    @Autowired
+   // @Autowired
     private StudentAcademicInfoRepository studentacademicinfoRepository;
+
+    @GetMapping(value="/all")
+    public List<StudentAcademicInfo> getStudentAcademicInformation() {return studentacademicinfoRepository.findAll();}
+
+    public StudentAcademicInfoApiController(StudentAcademicInfoRepository studentacademicinfoRepository)
+    {
+        this.studentacademicinfoRepository = studentacademicinfoRepository;
+    }
 
 
     @RequestMapping(method = RequestMethod.POST)
@@ -37,22 +41,29 @@ public class StudentAcademicInfoApiController extends WebMvcConfigurerAdapter {
             @RequestParam (value="loginuser", required=false) String loginuser
     ) {
         StudentAcademicInfo studentacademicinfo = new StudentAcademicInfo();
-        studentacademicinfo.setRegno(regno);
-        studentacademicinfo.setCommunity(community);
-        studentacademicinfo.setReligion(religion);
-        studentacademicinfo.setCaste(caste);
-        studentacademicinfo.setNational(national);
-        studentacademicinfo.setBloodgroup(bloodgroup);
-        studentacademicinfo.setDurationfrom(durationfrom);
-        studentacademicinfo.setDurationto(durationto);
-        studentacademicinfo.setAdmitteddate(admitteddate);
-        studentacademicinfo.setAacademicyear(academicyear);
-        studentacademicinfo.setLoginuser(loginuser);
-
-
+        StudentPersonalInformation student_personal_regno = new StudentPersonalInformation(regno);
+        studentacademicinfo.setRegno(regno)
+                            .setCommunity(community)
+                            .setReligion(religion)
+                            .setCaste(caste)
+                            .setNational(national)
+                            .setBloodgroup(bloodgroup)
+                            .setDurationfrom(durationfrom)
+                            .setDurationto(durationto)
+                            .setAdmitteddate(admitteddate)
+                            .setAcademicyear(academicyear)
+                            .setLoginuser(loginuser)
+                            .setStudent_personal_regno(student_personal_regno);
 
         studentacademicinfoRepository.save(studentacademicinfo);
     }
 
+    @RequestMapping(method = RequestMethod.POST, value="/getStudentAcademicInformationDetail")
+    public StudentAcademicInfoProjection getStudentAcademicInformationDetail(@RequestParam (value ="regno") String registerNumber) {
+        StudentAcademicInfoProjection studentAcademicInformationDetail = studentacademicinfoRepository.findOneByRegno(registerNumber);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getStudentAcademicInformationDetail");
+        return studentAcademicInformationDetail;
+    }
 
 }

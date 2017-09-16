@@ -1,8 +1,8 @@
 package com.sivserver.example.student;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.sivserver.example.admission.StudentPersonalInformation;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 //import java.util.Date;
 
@@ -14,123 +14,153 @@ import javax.validation.constraints.NotNull;
 
 public class StudentBaseInformation {
 
-    public String getRegNo(){
+    public StudentBaseInformation() {
+    }
+
+    public String getRegno(){
         return regno;
     }
-    public void setRegNo(String regno) {
+    public StudentBaseInformation setRegno(String regno) {
         this.regno = regno;
+        return this;
     }
 
-    public String getAdmissionNo() {return admissionno;}
-    public void setAdmissionNo(String admissionno) {
+    public String getAdmissionno() {return admissionno;}
+
+    public StudentBaseInformation setAdmissionno(String admissionno) {
         this.admissionno = admissionno;
+        return this;
     }
 
-    public String getStudentName() {
-        return name;
+    public String getStudentname() {
+        return studentname;
     }
-    public void setStudentName(String name) {this.name = name;}
+    public StudentBaseInformation setStudentname(String studentname) {
+        this.studentname = studentname;
+        return this;
+    }
 
-    public String getSemester() {
+    public Integer getSemester() {
         return semester;
     }
-    public void setSemester(String semester) {
+    public StudentBaseInformation setSemester(Integer semester) {
         this.semester = semester;
+        return this;
     }
 
     public String getBranch() {
         return branch;
     }
-    public void setBranch(String branch) {
+    public StudentBaseInformation setBranch(String branch) {
         this.branch = branch;
+        return this;
     }
 
     public String getBranchcode() {
         return branchcode;
     }
-    public void setBranchcode(String branchcode) {
+    public StudentBaseInformation setBranchcode(String branchcode) {
         this.branchcode = branchcode;
+        return this;
     }
 
     public String getBatch() {
         return batch;
     }
-    public void setBatch(String batch) {
+    public StudentBaseInformation setBatch(String batch) {
         this.batch = batch;
+        return this;
     }
 
     public String getScheme() {
         return scheme;
     }
-    public void setScheme(String scheme) {
+    public StudentBaseInformation setScheme(String scheme) {
         this.scheme = scheme;
+        return this;
     }
 
-    public String getAcademicYear() {
+    public String getAcademicyear() {
         return academicyear;
     }
-    public void setAcademicYear(String academicyear) {
+    public StudentBaseInformation setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
+        return this;
     }
 
-    public String getStudentType() {
+    public String getStudenttype() {
         return studenttype;
     }
-    public void setStudentType(String studenttype) {
+    public StudentBaseInformation setStudenttype(String studenttype) {
         this.studenttype = studenttype;
+        return this;
     }
 
     public String getPoto() {
         return poto;
     }
-    public void setPoto(String poto) {
+    public StudentBaseInformation setPoto(String poto) {
         this.poto = poto;
+        return this;
     }
 
-    public String getLoginUser() {
+    public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginUser(String loginuser) {
+    public StudentBaseInformation setLoginuser(String loginuser) {
         this.loginuser = loginuser;
+        return this;
     }
 
+    public StudentPersonalInformation getStudent_personal_regno() {
+        return student_personal_regno;
+    }
 
+    public StudentBaseInformation setStudent_personal_regno(StudentPersonalInformation student_personal_regno) {
+        this.student_personal_regno = student_personal_regno;
+        return this;
+    }
 
     @Id
+    @Column(name="regno")
     private String regno;
 
-    @NotNull
+
     private String admissionno;
 
-    @NotNull
-    private String name;
 
-    @NotNull
-    private String semester;
+    private String studentname;
 
-    @NotNull
+
+    private Integer semester;
+
+
     private String branch;
 
-    @NotNull
+
     private String branchcode;
 
-    @NotNull
+
     private String batch;
 
-    @NotNull
+
     private String scheme;
 
-    @NotNull
+
     private String academicyear;
 
-    @NotNull
+
     private String studenttype;
 
-    @NotNull
+
     private String poto;
 
-    @NotNull
+
     private String loginuser;
+
+    @OneToOne
+    @JoinColumn(name="student_base_regno",nullable=false,referencedColumnName = "regno")
+    private StudentPersonalInformation student_personal_regno;
 
 
 }

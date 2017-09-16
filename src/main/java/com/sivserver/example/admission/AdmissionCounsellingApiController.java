@@ -1,13 +1,10 @@
 package com.sivserver.example.admission;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Seetha on 19-Jun-17.
@@ -15,10 +12,21 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/admissioncounselling")
 
-public class AdmissionCounsellingApiController extends WebMvcConfigurerAdapter {
+public class AdmissionCounsellingApiController {
 
-    @Autowired
+ //   @Autowired
     private AdmissionCounsellingRepository admissioncounsellingRepository;
+
+    @GetMapping(value="/all")
+    public List<AdmissionCounselling> getAdmissionCounselling(){
+        return admissioncounsellingRepository.findAll();
+    }
+
+    public AdmissionCounsellingApiController(AdmissionCounsellingRepository admissioncounsellingRepository)
+    {
+        this.admissioncounsellingRepository = admissioncounsellingRepository;
+    }
+
 
     @Autowired
     private ApplicationSaleRepository applicationSaleRepository;
@@ -30,6 +38,7 @@ public class AdmissionCounsellingApiController extends WebMvcConfigurerAdapter {
     @RequestMapping(method = RequestMethod.POST)
     public void admissionCounselling(
             @RequestParam(value ="admissiontype", required=false) String admissiontype,
+
             //@RequestParam(value ="applicationid", required=false) Long applicationid,
             //@RequestParam(value ="appid", required=false) ApplicationSale appid,
             @RequestParam(value ="applno", required=false) String applno,
@@ -48,24 +57,25 @@ public class AdmissionCounsellingApiController extends WebMvcConfigurerAdapter {
             @RequestParam (value="loginuser", required=false) String loginuser
 
     ) {
+
         AdmissionCounselling admcouns = new AdmissionCounselling();
-       // admcouns.setApplicationid(applicationid);
-      //  admcouns.setAppid(appid);
-        admcouns.setAdmissiontype(admissiontype);
-        admcouns.setApplno(applno);
-        admcouns.setCounsellingdate(counsellingdate);
-        admcouns.setAllotedcourse(allotedcourse);
-        admcouns.setBranchcode(branchcode);
-        admcouns.setTransport(transport);
-        admcouns.setTransportstage(transportstage);
-        admcouns.setHostel(hostel);
-        admcouns.setFood(food);
-        admcouns.setCounsellingstatus(counsellingstatus);
-        admcouns.setAdmissionno(admissionno);
-        admcouns.setTotalfees(totalfees);
-        admcouns.setFollowupdate(followupdate);
-        admcouns.setRemarks(remarks);
-        admcouns.setLoginuser(loginuser);
+        ApplicationSale appsale = new ApplicationSale(applno);
+        admcouns.setAdmissiontype(admissiontype)
+                .setApplno(applno)
+                .setCounsellingdate(counsellingdate)
+                .setAllotedcourse(allotedcourse)
+                .setBranchcode(branchcode)
+                .setTransport(transport)
+                .setTransportstage(transportstage)
+                .setHostel(hostel)
+                .setFood(food)
+                .setCounsellingstatus(counsellingstatus)
+                .setAdmissionno(admissionno)
+                .setTotalfees(totalfees)
+                .setFollowupdate(followupdate)
+                .setRemarks(remarks)
+                .setLoginuser(loginuser)
+                .setAppsale(appsale);
 
         admissioncounsellingRepository.save(admcouns);
 

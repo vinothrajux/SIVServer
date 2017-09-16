@@ -1,5 +1,6 @@
 package com.sivserver.example.admission;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 //import javax.persistence.OneToMany;
@@ -16,13 +17,18 @@ import java.util.Set;
 @Table(name = "bonafide")
 public class Bonafide {
 
-    public String getBonafideid(){return bonafideid;}
+    public String getBonafideid() {
+        return bonafideid;
+    }
+
     public void setBonafideid(String bonafideid) {
         this.bonafideid = bonafideid;
     }
 
+    public String getRegno() {
+        return regno;
+    }
 
-    public String getRegno(){return regno;}
     public void setRegno(String regno) {
         this.regno = regno;
     }
@@ -30,6 +36,7 @@ public class Bonafide {
     public String getAdmissionno() {
         return admissionno;
     }
+
     public void setAdmissionno(String admissionno) {
         this.admissionno = admissionno;
     }
@@ -37,6 +44,7 @@ public class Bonafide {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -44,6 +52,7 @@ public class Bonafide {
     public String getSemester() {
         return semester;
     }
+
     public void setSemester(String semester) {
         this.semester = semester;
     }
@@ -51,14 +60,23 @@ public class Bonafide {
     public String getBranchname() {
         return branchname;
     }
-    public void setBranchname(String branchname) {this.branchname = branchname; }
 
-    public String getBranchcode() {return branchcode;}
-    public void setBranchcode(String branchcode) {this.branchcode = branchcode;}
+    public void setBranchname(String branchname) {
+        this.branchname = branchname;
+    }
+
+    public String getBranchcode() {
+        return branchcode;
+    }
+
+    public void setBranchcode(String branchcode) {
+        this.branchcode = branchcode;
+    }
 
     public String getAcademicyear() {
         return academicyear;
     }
+
     public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
     }
@@ -66,6 +84,7 @@ public class Bonafide {
     public String getFathername() {
         return fathername;
     }
+
     public void setFathername(String fathername) {
         this.fathername = fathername;
     }
@@ -73,6 +92,7 @@ public class Bonafide {
     public Date getIssueddate() {
         return issueddate;
     }
+
     public void setIssueddate(Date issueddate) {
         this.issueddate = issueddate;
     }
@@ -80,6 +100,7 @@ public class Bonafide {
     public String getCertificatefor() {
         return certificatefor;
     }
+
     public void setCertificatefor(String certificatefor) {
         this.certificatefor = certificatefor;
     }
@@ -87,6 +108,7 @@ public class Bonafide {
     public Integer getNoofyears() {
         return noofyears;
     }
+
     public void setNoofyears(Integer noofyears) {
         this.noofyears = noofyears;
     }
@@ -94,48 +116,48 @@ public class Bonafide {
     public String getLoginuser() {
         return loginuser;
     }
+
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
     }
 
-
     @Id
     private String bonafideid;
 
-    @NotNull
+    @Column(name="regno")
     private String regno;
 
-    @NotNull
+
     private String admissionno;
 
-    @NotNull
+
     private String name;
 
-    @NotNull
+
     private String semester;
 
-    @NotNull
+
     private String branchname;
 
-    @NotNull
+
     private String branchcode;
 
-    @NotNull
+
     private String academicyear;
 
-    @NotNull
+
     private String fathername;
 
-    @NotNull
+
     private Date issueddate;
 
-    @NotNull
+
     private String certificatefor;
 
-    @NotNull
+
     private Integer noofyears;
 
-    @NotNull
+
     private String loginuser;
 
 

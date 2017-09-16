@@ -15,7 +15,7 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/studentpersonalinformation")
 
-public class StudentPersonalInformationApiController extends WebMvcConfigurerAdapter {
+public class StudentPersonalInformationApiController  {
 
     @Autowired
     private StudentPersonalInformationRepository studentPersonalInformationRepository;
@@ -26,25 +26,28 @@ public class StudentPersonalInformationApiController extends WebMvcConfigurerAda
     public void studentpersonalinformation(
             @RequestParam(value ="regno", required=false) String regno,
             @RequestParam (value="admissionno", required=false) String admissionno,
+            @RequestParam (value="name", required=false) String name,
             @RequestParam (value="academicyear", required=false) String academicyear,
-            @RequestParam (value="dob", required=false) Date dob,
+            @RequestParam (value="dateofbirth", required=false) Date dateofbirth,
             @RequestParam (value="gender", required=false) String gender,
             @RequestParam (value="fathername", required=false) String fathername,
             @RequestParam (value="mothername", required=false) String mothername,
             @RequestParam (value="presentaddress1", required=false) String presentaddress1,
             @RequestParam (value="presentaddress2", required=false) String presentaddress2,
             @RequestParam (value="presentarea", required=false) String presentarea,
-            @RequestParam (value="presentpincode", required=false) Long presentpincode,
-            @RequestParam (value="presentmobileno", required=false) Long presentmobileno,
-            @RequestParam (value="presentaltmobno", required=false) Long presentaltmobno,
+            @RequestParam (value="presentpincode", required=false) String presentpincode,
+            @RequestParam (value="presentstate", required=false) String presentstate,
+            @RequestParam (value="presentmobileno", required=false) String presentmobileno,
+            @RequestParam (value="presentaltmobileno", required=false) String presentaltmobileno,
             @RequestParam(value ="presentemail", required=false) String presentemail,
             @RequestParam(value ="presentaltemail", required=false) String presentaltemail,
             @RequestParam (value="permanentaddress1", required=false) String permanentaddress1,
             @RequestParam (value="permanentaddress2", required=false) String permanentaddress2,
             @RequestParam (value="permanentarea", required=false) String permanentarea,
-            @RequestParam (value="permanentpincode", required=false) Long permanentpincode,
-            @RequestParam (value="permanentmobileno", required=false) Long permanentmobileno,
-            @RequestParam (value="permanentaltmobileno", required=false) Long permanentaltmobileno,
+            @RequestParam (value="permanentpincode", required=false) String permanentpincode,
+            @RequestParam (value="permanentstate", required=false) String permanentstate,
+            @RequestParam (value="permanentmobileno", required=false) String permanentmobileno,
+            @RequestParam (value="permanentaltmobileno", required=false) String permanentaltmobileno,
             @RequestParam (value="permanentemail", required=false) String permanentemail,
             @RequestParam (value="permanentaltemail", required=false) String permanentaltemail,
             @RequestParam (value="reference", required=false) String reference,
@@ -52,10 +55,11 @@ public class StudentPersonalInformationApiController extends WebMvcConfigurerAda
 
     ) {
         StudentPersonalInformation studpersonalinfo = new StudentPersonalInformation();
-        studpersonalinfo.setRegNo(regno);
+        studpersonalinfo.setRegno(regno);
         studpersonalinfo.setAdmissionno(admissionno);
+        studpersonalinfo.setName(name);
         studpersonalinfo.setAcademicyear(academicyear);
-        studpersonalinfo.setDateofbirth(dob);
+        studpersonalinfo.setDateofbirth(dateofbirth);
         studpersonalinfo.setGender(gender);
         studpersonalinfo.setFathername(fathername);
         studpersonalinfo.setMothername(mothername);
@@ -63,14 +67,16 @@ public class StudentPersonalInformationApiController extends WebMvcConfigurerAda
         studpersonalinfo.setPresentaddress2(presentaddress2);
         studpersonalinfo.setPresentarea(presentarea);
         studpersonalinfo.setPresentpincode(presentpincode);
+        studpersonalinfo.setPresentstate(presentstate);
         studpersonalinfo.setPresentmobileno(presentmobileno);
-        studpersonalinfo.setPresentaltmobileno(presentaltmobno);
+        studpersonalinfo.setPresentaltmobileno(presentaltmobileno);
         studpersonalinfo.setPresentemail(presentemail);
         studpersonalinfo.setPresentaltemail(presentaltemail);
         studpersonalinfo.setPermanentaddress1(permanentaddress1);
         studpersonalinfo.setPermanentaddress2(permanentaddress2);
         studpersonalinfo.setPermanentarea(permanentarea);
         studpersonalinfo.setPermanentpincode(permanentpincode);
+        studpersonalinfo.setPermanentstate(permanentstate);
         studpersonalinfo.setPermanentmobileno(permanentmobileno);
         studpersonalinfo.setPermanentaltmobileno(permanentaltmobileno);
         studpersonalinfo.setPermanentemail(permanentemail);
@@ -83,5 +89,14 @@ public class StudentPersonalInformationApiController extends WebMvcConfigurerAda
 
 
     }
+
+    @RequestMapping(method = RequestMethod.POST, value="/getStudentPersonalInformationDetail")
+    public StudentPersonalInformationProjection getStudentPersonalInformationDetail(@RequestParam (value ="regno") String registerNumber) {
+        StudentPersonalInformationProjection studentPersonalInformationDetail = studentPersonalInformationRepository.findOneByRegno(registerNumber);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getStudentPersonalInformationDetail");
+        return studentPersonalInformationDetail;
+    }
+
 
 }

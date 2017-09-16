@@ -1,21 +1,8 @@
 package com.sivserver.example.admission;
 
-import org.hibernate.annotations.NaturalId;
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.Date;
-import javax.persistence.OneToOne;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
-import static javax.persistence.GenerationType.IDENTITY;
+import java.util.Date;
+import javax.persistence.*;
 
 
 /**
@@ -24,7 +11,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "applicationsale")
-public class ApplicationSale implements java.io.Serializable{
+public class ApplicationSale {
 
     public ApplicationSale()
     {
@@ -37,80 +24,12 @@ public class ApplicationSale implements java.io.Serializable{
 
     }
 
-    public ApplicationSale(String category,String applno,Date saledate,
-                           String appfor,String candfirstname,String candmiddlename,
-                           String candlastname,String gender,String candfathername,
-                           String candmothername,String presentaddress1,String presentaddress2,
-                           String presentarea,String presentpincode,String presentstate,
-                           String presentmobileno,String presentaltmobno,String presentemail,
-                           String presentaltemail,String permanentaddress1,String permanentaddress2,
-                           String permanentarea,String permanentpincode,String permanentstate,
-                           String permanentmobileno,String permanentaltmobno,String permanentemail,
-                           String permanentaltemail,String qualified,String prefferedcour1,
-                           String prefferedcour2,String prefferedcour3,String reference,
-                           String willingtojoin,Date followupdate,Integer applicationprice,
-                           String applicationpaidmode,String remarks,String loginuser)
-                {
-                    this.category=category;
-                    this.applno=applno;
-                    this.saledate=saledate;
-                    this.appfor=appfor;
-                    this.candfirstname=candfirstname;
-                    this.candmiddlename=candmiddlename;
-                    this.candlastname=candlastname;
-                    this.gender=gender;
-                    this.candfathername=candfathername;
-                    this.candmothername=candmothername;
-                    this.presentaddress1=presentaddress1;
-                    this.presentaddress2=presentaddress2;
-                    this.presentarea=presentarea;
-                    this.presentpincode=presentpincode;
-                    this.presentstate=presentstate;
-                    this.presentmobileno=presentmobileno;
-                    this.presentaltmobno=presentaltmobno;
-                    this.presentemail=presentemail;
-                    this.presentaltemail=presentaltemail;
-                    this.permanentaddress1=permanentaddress1;
-                    this.permanentaddress2=permanentaddress2;
-                    this.permanentarea=permanentarea;
-                    this.permanentpincode=permanentpincode;
-                    this.permanentstate=permanentstate;
-                    this.permanentmobileno=permanentmobileno;
-                    this.permanentaltmobno=permanentaltmobno;
-                    this.permanentemail=permanentemail;
-                    this.permanentaltemail=permanentaltemail;
-                    this.qualified=qualified;
-                    this.prefferedcour1=prefferedcour1;
-                    this.prefferedcour2=prefferedcour2;
-                    this.prefferedcour3=prefferedcour3;
-                    this.reference=reference;
-                    this.willingtojoin=willingtojoin;
-                    this.followupdate=followupdate;
-                    this.applicationprice=applicationprice;
-                    this.applicationpaidmode=applicationpaidmode;
-                    this.remarks=remarks;
-                    this.loginuser=loginuser;
-
-    }
-
-   // public long getId() {
-
-   //     return id;
-   // }
-
-    //    public void setId(long id) {
-    //      this.id = id;
-    // }
-
     public String getCategory(){
         return category;
     }
     public void setCategory(String category) {
         this.category = category;
     }
-
-    public Long getApplicationid() {return applicationid;}
-    public void setApplicationid(Long applicationid) {this.applicationid=applicationid;}
 
     public String getApplno() {
         return applno;
@@ -376,6 +295,7 @@ public class ApplicationSale implements java.io.Serializable{
         this.loginuser = loginuser;
     }
 
+   // HEAD
 //    public AdmissionCounselling getCounsellingid() {
 //        return this.counsellingid;
 //    }
@@ -393,149 +313,130 @@ public class ApplicationSale implements java.io.Serializable{
   //      this.id = id;
   // }
 
-   @Id
-   @Column(name="APPLICATION_ID", unique = true, nullable = false)
-   @GeneratedValue(strategy= IDENTITY)
-   private Long applicationid;
+    @Id
+    @Column(name="applno",nullable = false)
 
-    @NotNull
     private String applno;
 
-    @NotNull
+
     private String category;
 
-   //  @OneToOne(cascade = CascadeType.ALL)
-   //  @JoinColumn(name = "COUNSELLING_ID")
-   //  private AdmissionCounselling counsellingid;
 
-    //@Id
-    //@Column(name = "application_no")
-   // @GeneratedValue(strategy = G )
-   // @NaturalId(mutable = false)
-
-   // @Column(name = "applno", unique = true,nullable = false, length = 100)
-
-    //@NaturalId
-    //private String applno;
-
-    @NotNull
     private Date saledate;
 
-    @NotNull
+
     private String appfor;
 
-    @NotNull
+
     private String candfirstname;
 
-    @NotNull
+
     private String candmiddlename;
 
-    @NotNull
+
     private String candlastname;
 
-    @NotNull
+
     private String gender;
 
-    @NotNull
+
     private String candfathername;
 
-    @NotNull
+
     private String candmothername;
 
-    @NotNull
+
     private String presentaddress1;
 
-    @NotNull
+
     private String presentaddress2;
 
-    @NotNull
+
     private String presentarea;
 
-    @NotNull
+
     private String presentpincode;
 
-    @NotNull
+
     private String presentstate;
 
-    @NotNull
+
     private String presentmobileno;
 
-    @NotNull
+
     private String presentaltmobno;
 
-    @NotNull
+
     private String presentemail;
 
-    @NotNull
+
     private String presentaltemail;
 
-    @NotNull
+
     private String permanentaddress1;
 
-    @NotNull
+
     private String permanentaddress2;
 
-    @NotNull
+
     private String permanentarea;
 
-    @NotNull
+
     private String permanentpincode;
 
-    @NotNull
+
     private String permanentstate;
 
-    @NotNull
+
     private String permanentmobileno;
 
-    @NotNull
+
     private String permanentaltmobno;
 
-    @NotNull
+
     private String permanentemail;
 
-    @NotNull
+
     private String permanentaltemail;
 
-    @NotNull
+
     private String qualified;
 
-    @NotNull
+
     private String prefferedcour1;
 
-    @NotNull
+
     private String prefferedcour2;
 
-    @NotNull
+
     private String prefferedcour3;
 
-    @NotNull
+
     private String reference;
 
-    @NotNull
+
     private String willingtojoin;
 
-    @NotNull
+
     private Date followupdate;
 
-    @NotNull
+
     private Integer applicationprice;
 
-    @NotNull
+
     private String applicationpaidmode;
 
-    @NotNull
+
     private String remarks;
 
-    @NotNull
     private String loginuser;
+
 
 //    @OneToOne(fetch = FetchType.LAZY, mappedBy = "appid", cascade = CascadeType.ALL)
 //    private AdmissionCounselling counsellingid;
    //http://www.codejava.net/frameworks/hibernate/hibernate-one-to-one-mapping-with-foreign-key-annotations-example
 
-    //@ManyToOne This will insert more than one row with same value in child table
- //   @OneToOne
- //   @JoinColumn(name="application_no")
-//   private AdmissionCounselling applicationno;
+
+
 
 }

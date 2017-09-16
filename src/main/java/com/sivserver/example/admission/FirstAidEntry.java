@@ -1,5 +1,6 @@
 package com.sivserver.example.admission;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -13,6 +14,17 @@ import java.util.Date;
 @Entity
 @Table(name = "firstaidentry")
 public class FirstAidEntry {
+
+    public FirstAidEntry() {
+    }
+
+    public String getFirstaidid() {
+        return firstaidid;
+    }
+
+    public void setFirstaidid(String firstaidid) {
+        this.firstaidid = firstaidid;
+    }
 
     public Date getCurrentdate(){return currentdate;}
     public void setCurrentdate(Date currentdate) {
@@ -118,56 +130,52 @@ public class FirstAidEntry {
         this.loginuser = loginuser;
     }
 
-
-
-
-
-
-
-    @Id
     private Date currentdate;
 
-    @NotNull
+    @Id
+    private String firstaidid;
+
+    @Column(name="regno")
     private String regno;
 
-    @NotNull
+
     private String admissionno;
 
-    @NotNull
+
     private String name;
 
-    @NotNull
+
     private String branchname;
 
-    @NotNull
+
     private String branchcode;
 
-    @NotNull
+
     private String batch;
 
-    @NotNull
+
     private String semester;
 
-    @NotNull
+
     private String academicyear;
 
-    @NotNull
+
     private String reasonforfirstaid;
 
-    @NotNull
+
     private String firstaiddetails;
 
-    @NotNull
+
     private String hospitalname;
 
-    @NotNull
+
     private Long hospitalfees;
 
-    @NotNull
+
     private String remarks;
 
 
-    @NotNull
+
     private String loginuser;
 
 }
