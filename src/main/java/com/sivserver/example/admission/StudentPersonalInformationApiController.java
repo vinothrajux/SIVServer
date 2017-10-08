@@ -1,5 +1,10 @@
 package com.sivserver.example.admission;
 
+import com.google.gson.Gson;
+import com.sivserver.example.student.StudentBaseInformationProjection;
+import com.sivserver.example.student.StudentBaseInformationRepository;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,6 +24,9 @@ public class StudentPersonalInformationApiController  {
 
     @Autowired
     private StudentPersonalInformationRepository studentPersonalInformationRepository;
+
+    @Autowired
+    private StudentBaseInformationRepository studentBaseInformationRepository;
 
 
     @RequestMapping(method = RequestMethod.POST)
@@ -96,6 +104,35 @@ public class StudentPersonalInformationApiController  {
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
         System.out.println("Inside getStudentPersonalInformationDetail");
         return studentPersonalInformationDetail;
+    }
+
+    StudentProfileInformation studentProfileInformation;
+    @RequestMapping(method = RequestMethod.POST, value="/getStudentProfileInformationDetail")
+    public StudentProfileInformation getStudentProfileInformationDetail(@RequestParam (value ="regno") String registerNumber) {
+        StudentPersonalInformationProjection studentPersonalInformationDetail = studentPersonalInformationRepository.findOneByRegno(registerNumber);
+        StudentBaseInformationProjection studentBaseInformationDetail = studentBaseInformationRepository.findOneByRegno(registerNumber);
+
+//        JSONObject jsonObject =  new JSONObject(studentPersonalInformationDetail);
+////        studentProfileInformation.setStudentpersonalinfo(studentPersonalInformationDetail);
+////        studentProfileInformation.setStudentbaseinfo(studentBaseInformationDetail);
+////        System.out.println("test2");
+//        System.out.println(jsonObject);
+        return studentProfileInformation;
+//        String studentPersonalInformationString = studentPersonalInformationDetail.toString();
+//        String studentBaseInformationString = studentBaseInformationDetail.toString();
+//        JSONObject studentProfileJson = new JSONObject();
+//
+//        try {
+//            JSONObject studentPersonaljsonObj = new JSONObject(studentPersonalInformationDetail);
+//            JSONObject studentBasejsonObj = new JSONObject(studentBaseInformationDetail);
+//
+//            studentProfileJson.put("studentPersonalInfo",studentPersonaljsonObj);
+//            studentProfileJson.put("studentBaseInfo",studentBasejsonObj);
+//        } catch (JSONException e) {
+//
+//        }
+//        return studentProfileJson.toString();
+////        return "test";
     }
 
 

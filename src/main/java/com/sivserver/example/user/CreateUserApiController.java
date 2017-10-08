@@ -36,7 +36,7 @@ public class CreateUserApiController extends WebMvcConfigurerAdapter {
     ) {
         User user = new User();
 
-        user.setUserName(username);
+        user.setUsername(username);
         user.setPassword(password);
         user.setUserRole(userRole);
         user.setStudentId(studentID);

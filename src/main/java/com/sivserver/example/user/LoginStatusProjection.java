@@ -5,6 +5,7 @@ package com.sivserver.example.user;
  */
 public interface LoginStatusProjection {
     String getUserRole();
+    String getUsername();
     String getFirstName();
     String getLastName();
     //String getUserName();
