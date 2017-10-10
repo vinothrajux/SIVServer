@@ -63,10 +63,10 @@ public class StudentBaseInformation {
         return this;
     }
 
-    public Integer getSemester() {
+    public String getSemester() {
         return semester;
     }
-    public StudentBaseInformation setSemester(Integer semester) {
+    public StudentBaseInformation setSemester(String semester) {
         this.semester = semester;
         return this;
     }
@@ -283,7 +283,7 @@ public class StudentBaseInformation {
     private String studentname;
 
 
-    private Integer semester;
+    private String semester;
 
 
     private String branch;

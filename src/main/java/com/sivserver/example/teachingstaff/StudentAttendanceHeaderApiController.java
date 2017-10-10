@@ -40,7 +40,7 @@ public class StudentAttendanceHeaderApiController extends WebMvcConfigurerAdapte
             @RequestParam (value="hour", required=false) Integer hour,
             @RequestParam (value="branchcode", required=false) String branchcode,
             @RequestParam (value="batch", required=false) String batch,
-            @RequestParam (value="semester", required=false) Integer semester,
+            @RequestParam (value="semester", required=false) String semester,
             @RequestParam (value="academiyear", required=false) String academiyear,
             @RequestParam (value="totalPresent", required=false) Integer totalPresent,
             @RequestParam (value="totalAbsent", required=false) Integer totalAbsent,

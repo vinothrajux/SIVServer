@@ -48,10 +48,10 @@ public class StudentAttendanceHeader {
         this.batch = batch;
     }
 
-    public Integer getSemester() {
+    public String getSemester() {
         return semester;
     }
-    public void setSemester(Integer semester) {
+    public void setSemester(String semester) {
         this.semester = semester;
     }
 
@@ -100,7 +100,7 @@ public class StudentAttendanceHeader {
     private String batch;
 
     @NotNull
-    private Integer semester;
+    private String semester;
 
     @NotNull
     private String academiyear;
