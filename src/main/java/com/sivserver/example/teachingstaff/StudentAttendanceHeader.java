@@ -105,7 +105,6 @@ public class StudentAttendanceHeader {
     @NotNull
     private String academiyear;
 
-
     @NotNull
     private Integer totalPresent;
 

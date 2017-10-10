@@ -54,5 +54,6 @@ public class StudentAttendanceDetail {
     @NotNull
     private String status;
 
+    
 
 }
