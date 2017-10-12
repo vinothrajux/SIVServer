@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Seetha on 28-Jun-17.
@@ -108,31 +110,14 @@ public class StudentPersonalInformationApiController  {
 
     StudentProfileInformation studentProfileInformation;
     @RequestMapping(method = RequestMethod.POST, value="/getStudentProfileInformationDetail")
-    public StudentProfileInformation getStudentProfileInformationDetail(@RequestParam (value ="regno") String registerNumber) {
+    public List<Object> getStudentProfileInformationDetail(@RequestParam (value ="regno") String registerNumber) {
         StudentPersonalInformationProjection studentPersonalInformationDetail = studentPersonalInformationRepository.findOneByRegno(registerNumber);
         StudentBaseInformationProjection studentBaseInformationDetail = studentBaseInformationRepository.findOneByRegno(registerNumber);
+        List<Object> list = new ArrayList<Object>();
+        list.add(studentPersonalInformationDetail);
+        list.add(studentBaseInformationDetail);
 
-//        JSONObject jsonObject =  new JSONObject(studentPersonalInformationDetail);
-////        studentProfileInformation.setStudentpersonalinfo(studentPersonalInformationDetail);
-////        studentProfileInformation.setStudentbaseinfo(studentBaseInformationDetail);
-////        System.out.println("test2");
-//        System.out.println(jsonObject);
-        return studentProfileInformation;
-//        String studentPersonalInformationString = studentPersonalInformationDetail.toString();
-//        String studentBaseInformationString = studentBaseInformationDetail.toString();
-//        JSONObject studentProfileJson = new JSONObject();
-//
-//        try {
-//            JSONObject studentPersonaljsonObj = new JSONObject(studentPersonalInformationDetail);
-//            JSONObject studentBasejsonObj = new JSONObject(studentBaseInformationDetail);
-//
-//            studentProfileJson.put("studentPersonalInfo",studentPersonaljsonObj);
-//            studentProfileJson.put("studentBaseInfo",studentBasejsonObj);
-//        } catch (JSONException e) {
-//
-//        }
-//        return studentProfileJson.toString();
-////        return "test";
+        return list;
     }
 
 
