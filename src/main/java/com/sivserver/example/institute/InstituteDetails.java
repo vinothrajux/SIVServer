@@ -1,6 +1,7 @@
 package com.sivserver.example.institute;
 
 import com.sivserver.example.admission.FirstAidEntry;
+import com.sivserver.example.user.User;
 
 import javax.persistence.*;
 import java.util.List;
@@ -69,6 +70,10 @@ public class InstituteDetails {
     @OneToMany
     @JoinColumn(name="instituteid",referencedColumnName = "instituteid")
     private List<InstituteBusRouteDetails> instituteBusRouteDetailsinstituteid;
+
+    @OneToMany
+    @JoinColumn(name="instituteid",referencedColumnName = "instituteid")
+    private List<User> userInstituteid;
 
     public InstituteDetails() {
     }
@@ -253,4 +258,11 @@ public class InstituteDetails {
         this.instituteBusRouteDetailsinstituteid = instituteBusRouteDetailsinstituteid;
     }
 
+    public List<User> getUserInstituteid() {
+        return userInstituteid;
+    }
+
+    public void setUserInstituteid(List<User> userInstituteid) {
+        this.userInstituteid = userInstituteid;
+    }
 }
