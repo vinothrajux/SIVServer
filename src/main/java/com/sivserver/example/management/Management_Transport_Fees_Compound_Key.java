@@ -11,6 +11,9 @@ public class Management_Transport_Fees_Compound_Key implements Serializable {
     private String academicyear;
     private String stage;
 
+    public Management_Transport_Fees_Compound_Key() {
+    }
+
     public Management_Transport_Fees_Compound_Key(String academicyear, String stage) {
         this.academicyear = academicyear;
         this.stage = stage;

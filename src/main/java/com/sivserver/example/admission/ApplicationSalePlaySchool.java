@@ -70,6 +70,8 @@ public class ApplicationSalePlaySchool {
 
     private String remarks;
 
+    private String academicyear;
+
     private String loginuser;
 
     public ApplicationSalePlaySchool() {
@@ -309,6 +311,14 @@ public class ApplicationSalePlaySchool {
 
     public void setRemarks(String remarks) {
         this.remarks = remarks;
+    }
+
+    public String getAcademicyear() {
+        return academicyear;
+    }
+
+    public void setAcademicyear(String academicyear) {
+        this.academicyear = academicyear;
     }
 
     public String getLoginuser() {

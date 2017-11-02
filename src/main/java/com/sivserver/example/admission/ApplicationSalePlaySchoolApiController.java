@@ -58,6 +58,7 @@ public class ApplicationSalePlaySchoolApiController {
             @RequestParam (value="applicationprice", required=false) Long applicationprice,
             @RequestParam (value="applicationpaidmode", required=false) String applicationpaidmode,
             @RequestParam (value="remarks", required=false) String remarks,
+            @RequestParam (value="academicyear", required=false) String academicyear,
             @RequestParam (value="loginuser", required=false) String loginuser
 
     ) {
@@ -91,6 +92,7 @@ public class ApplicationSalePlaySchoolApiController {
         appsaleplayschool.setApplicationprice(applicationprice);
         appsaleplayschool.setApplicationpaidmode(applicationpaidmode);
         appsaleplayschool.setRemarks(remarks);
+        appsaleplayschool.setAcademicyear(academicyear);
         appsaleplayschool.setLoginuser(loginuser);
 
         applicationSalePlaySchoolRepository.save(appsaleplayschool);
