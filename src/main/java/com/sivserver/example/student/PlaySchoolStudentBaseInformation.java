@@ -1,8 +1,11 @@
 package com.sivserver.example.student;
 
+import com.sivserver.example.admission.FirstAidEntry;
 import com.sivserver.example.admission.StudentPersonalInformation;
+import com.sivserver.example.teachingstaff.StudentAttendanceDetailPlaySchool;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by GBCorp on 01/11/2017.
@@ -29,6 +32,10 @@ public class PlaySchoolStudentBaseInformation {
     @OneToOne
     @JoinColumn(name="student_base_registernumber",nullable=false,referencedColumnName = "registernumber")
     private PlaySchoolStudentPersonalInformation play_school_student_personal_regno;
+
+    @OneToMany
+    @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
+    private List<StudentAttendanceDetailPlaySchool> studentAttendanceDetailPlaySchoolRegno;
 
     public PlaySchoolStudentBaseInformation() {
     }
@@ -107,5 +114,13 @@ public class PlaySchoolStudentBaseInformation {
     public PlaySchoolStudentBaseInformation setPlay_school_student_personal_regno(PlaySchoolStudentPersonalInformation play_school_student_personal_regno) {
         this.play_school_student_personal_regno = play_school_student_personal_regno;
         return this;
+    }
+
+    public List<StudentAttendanceDetailPlaySchool> getStudentAttendanceDetailPlaySchoolRegno() {
+        return studentAttendanceDetailPlaySchoolRegno;
+    }
+
+    public void setStudentAttendanceDetailPlaySchoolRegno(List<StudentAttendanceDetailPlaySchool> studentAttendanceDetailPlaySchoolRegno) {
+        this.studentAttendanceDetailPlaySchoolRegno = studentAttendanceDetailPlaySchoolRegno;
     }
 }
