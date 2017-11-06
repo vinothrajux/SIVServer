@@ -1,11 +1,11 @@
 package com.sivserver.example.admission;
 
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import java.util.List;
 
 /**
  * Created by GBCorp on 28/06/2017.
@@ -13,9 +13,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @RestController
 @RequestMapping("/api/v1/studentfood")
 
-public class StudentFoodApiController extends WebMvcConfigurerAdapter {
-    @Autowired
+public class StudentFoodApiController  {
+
     private StudentFoodRepository studentFoodRepository;
+
+    @RequestMapping(value="/all")
+    public List<StudentFood> getStudentFoodDetail() {return studentFoodRepository.findAll();}
+
 
 //    @Autowired
 //    private ApplicationSaleRepository applicationSaleRepository;
@@ -43,19 +47,29 @@ public class StudentFoodApiController extends WebMvcConfigurerAdapter {
             @RequestParam (value="loginuser", required=false) String loginuser
     ) {
         StudentFood studfood = new StudentFood();
-        studfood.setRegno(regno);
-        studfood.setBranch(branch);
-        studfood.setBranchcode(branchcode);
-        studfood.setSemester(semester);
-        studfood.setAcadyear(academicYear);
-        studfood.setFoodtype(foodtype);
-        studfood.setFoodfees(foodfees);
-        studfood.setLoginuser(loginuser);
+        StudentPersonalInformation student_personal_regno = new StudentPersonalInformation(regno);
+
+        studfood.setRegno(regno)
+                .setBranch(branch)
+                .setBranchcode(branchcode)
+                .setSemester(semester)
+                .setAcademicYear(academicYear)
+                .setFoodtype(foodtype)
+                .setFoodfees(foodfees)
+                .setLoginuser(loginuser);
 
         studentFoodRepository.save(studfood);
 
 
 
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value="/getStudentFoodDetail")
+    public StudentFood getStudentFoodDetail(@RequestParam (value ="regno") String registerNumber) {
+        StudentFood studentfoodDetail = studentFoodRepository.findOneByRegno(registerNumber);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getStudentFoodDetails");
+        return studentfoodDetail;
     }
 
 

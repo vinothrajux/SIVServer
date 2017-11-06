@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Seetha on 19-Jun-17.
@@ -16,10 +17,20 @@ import java.util.Date;
 @RestController
 @RequestMapping("/api/v1/studenthostel")
 
-public class StudentHostelApiController  extends WebMvcConfigurerAdapter {
+public class StudentHostelApiController   {
 
-    @Autowired
+    // @Autowired
     private StudentHostelRepository studentHostelRepository;
+
+    @RequestMapping(value = "/all")
+    public List<StudentHostel> getStudentHostelDetail() {
+        return studentHostelRepository.findAll();
+    }
+
+    public StudentHostelApiController(StudentHostelRepository studentHostelRepository) {
+        this.studentHostelRepository = studentHostelRepository;
+    }
+
 
 //    @Autowired
 //    private ApplicationSaleRepository applicationSaleRepository;
@@ -37,30 +48,39 @@ public class StudentHostelApiController  extends WebMvcConfigurerAdapter {
 
     @RequestMapping(method = RequestMethod.POST)
     public void studentHostel(
-            @RequestParam(value ="regno", required=false) String regno,
-            @RequestParam (value="branch", required=false) String branch,
-            @RequestParam (value="branchCode", required=false) String branchCode,
-            @RequestParam (value="semester", required=false) Integer semester,
-            @RequestParam (value="academicYear", required=false) String academicYear,
-            @RequestParam (value="optdFacility", required=false) String optdFacility,
-            @RequestParam (value="foodtype", required=false) String foodtype,
-            @RequestParam (value="amount", required=false) Long amount,
-            @RequestParam (value="loginuser", required=false) String loginuser
+            @RequestParam(value = "regno", required = false) String regno,
+            @RequestParam(value = "branch", required = false) String branch,
+            @RequestParam(value = "branchCode", required = false) String branchCode,
+            @RequestParam(value = "semester", required = false) Integer semester,
+            @RequestParam(value = "academicYear", required = false) String academicYear,
+            @RequestParam(value = "optdFacility", required = false) String optdFacility,
+            @RequestParam(value = "foodtype", required = false) String foodtype,
+            @RequestParam(value = "amount", required = false) Long amount,
+            @RequestParam(value = "loginuser", required = false) String loginuser
     ) {
         StudentHostel studhostel = new StudentHostel();
-        studhostel.setRegno(regno);
-        studhostel.setBranch(branch);
-        studhostel.setBranchCode(branchCode);
-        studhostel.setSemester(semester);
-        studhostel.setAcadyear(academicYear);
-        studhostel.setOptedfacility(optdFacility) ;
-        studhostel.setFoodtype(foodtype) ;
-        studhostel.setAmount(amount);
-        studhostel.setLoginuser(loginuser);
+        StudentPersonalInformation student_personal_regno = new StudentPersonalInformation(regno);
+        studhostel.setRegno(regno)
+                .setBranch(branch)
+                .setBranchCode(branchCode)
+                .setSemester(semester)
+                .setAcademicYear(academicYear)
+                .setOptdFacility(optdFacility)
+                .setFoodtype(foodtype)
+                .setAmount(amount)
+                .setLoginuser(loginuser);
 
         studentHostelRepository.save(studhostel);
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, value = "/getStudentHostelDetail")
+    public StudentHostel getStudentHostelDetail(@RequestParam(value = "regno") String registerNumber) {
+        StudentHostel studentHostelDetail = studentHostelRepository.findOneByRegno(registerNumber);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getStudentCertificateSubmissionDetail");
+        return studentHostelDetail;
 
+
+    }
 }

@@ -25,95 +25,125 @@ import javax.persistence.Table;
 @Table(name = "studenthostel")
 public class StudentHostel {
 
+    public StudentHostel() {
+    }
 
-    public String getRegno(){
+    public StudentHostel(String regno) {
+        this.regno = regno;
+    }
+
+    public String getRegno() {
         return regno;
     }
-    public void setRegno(String regno) {
+
+    public StudentHostel setRegno(String regno) {
         this.regno = regno;
+        return this;
     }
 
     public String getBranch() {
         return branch;
     }
-    public void setBranch(String branch) {
+
+    public StudentHostel setBranch(String branch) {
         this.branch = branch;
+        return this;
     }
 
-    public String getBranchcode() {
+    public String getBranchCode() {
         return branchCode;
     }
-    public void setBranchCode(String branchCode) {
+
+    public StudentHostel setBranchCode(String branchCode) {
         this.branchCode = branchCode;
+        return this;
     }
 
     public Integer getSemester() {
         return semester;
     }
-    public void setSemester(Integer semester) {
+
+    public StudentHostel setSemester(Integer semester) {
         this.semester = semester;
+        return this;
     }
 
-    public String getAcadyear() {
+    public String getAcademicYear() {
         return academicYear;
     }
-    public void setAcadyear(String academicYear) {
+
+    public StudentHostel setAcademicYear(String academicYear) {
         this.academicYear = academicYear;
+        return this;
     }
 
-    public String getOptedfacility() {
+    public String getOptdFacility() {
         return optdFacility;
     }
-    public void setOptedfacility(String optdFacility) {
+
+    public StudentHostel setOptdFacility(String optdFacility) {
         this.optdFacility = optdFacility;
+        return this;
     }
 
     public String getFoodtype() {
         return foodtype;
     }
-    public void setFoodtype(String foodtype) {
+
+    public StudentHostel setFoodtype(String foodtype) {
         this.foodtype = foodtype;
+        return this;
     }
 
     public Long getAmount() {
         return amount;
     }
-    public void setAmount(Long amount) {
+
+    public StudentHostel setAmount(Long amount) {
         this.amount = amount;
+        return this;
     }
 
     public String getLoginuser() {
         return loginuser;
     }
-    public void setLoginuser(String loginuser) {
+
+    public StudentHostel setLoginuser(String loginuser) {
         this.loginuser = loginuser;
+        return this;
     }
 
     @Id
+    @Column(name="regno")
     private String regno;
 
 
-    @NotNull
+
     private String branch;
 
-    @NotNull
+
     private String branchCode;
 
-    @NotNull
+
     private Integer semester;
 
-    @NotNull
+
     private String academicYear;
 
-    @NotNull
+
     private String optdFacility;
 
-    @NotNull
+
     private String foodtype;
 
-    @NotNull
+
     private Long amount;
 
-    @NotNull
+
     private String loginuser;
+
+    @OneToOne
+    @JoinColumn(name="student_hostel_regno",nullable=false,referencedColumnName = "regno")
+    private StudentPersonalInformation student_personal_regno;
+
 }
