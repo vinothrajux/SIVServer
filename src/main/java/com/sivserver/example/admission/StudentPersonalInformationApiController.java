@@ -1,5 +1,10 @@
 package com.sivserver.example.admission;
 
+import com.google.gson.Gson;
+import com.sivserver.example.student.StudentBaseInformationProjection;
+import com.sivserver.example.student.StudentBaseInformationRepository;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -7,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Seetha on 28-Jun-17.
@@ -19,6 +26,9 @@ public class StudentPersonalInformationApiController  {
 
     @Autowired
     private StudentPersonalInformationRepository studentPersonalInformationRepository;
+
+    @Autowired
+    private StudentBaseInformationRepository studentBaseInformationRepository;
 
 
     @RequestMapping(method = RequestMethod.POST)
@@ -96,6 +106,18 @@ public class StudentPersonalInformationApiController  {
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
         System.out.println("Inside getStudentPersonalInformationDetail");
         return studentPersonalInformationDetail;
+    }
+
+    StudentProfileInformation studentProfileInformation;
+    @RequestMapping(method = RequestMethod.POST, value="/getStudentProfileInformationDetail")
+    public List<Object> getStudentProfileInformationDetail(@RequestParam (value ="regno") String registerNumber) {
+        StudentPersonalInformationProjection studentPersonalInformationDetail = studentPersonalInformationRepository.findOneByRegno(registerNumber);
+        StudentBaseInformationProjection studentBaseInformationDetail = studentBaseInformationRepository.findOneByRegno(registerNumber);
+        List<Object> list = new ArrayList<Object>();
+        list.add(studentPersonalInformationDetail);
+        list.add(studentBaseInformationDetail);
+
+        return list;
     }
 
 

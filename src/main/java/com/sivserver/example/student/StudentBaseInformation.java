@@ -16,6 +16,7 @@ import com.sivserver.example.security.SecurityStudentVisitorPass;
 import com.sivserver.example.sports.AtheleteHeader;
 import com.sivserver.example.sports.SportsOdForm;
 import com.sivserver.example.stores.StoresSalesHeader;
+import com.sivserver.example.teachingstaff.StudentAttendanceDetail;
 import com.sivserver.example.transport.MtcConcession;
 import com.sivserver.example.transport.StudentTransport;
 import com.sivserver.example.transport.TrainConcession;
@@ -63,10 +64,10 @@ public class StudentBaseInformation {
         return this;
     }
 
-    public Integer getSemester() {
+    public String getSemester() {
         return semester;
     }
-    public StudentBaseInformation setSemester(Integer semester) {
+    public StudentBaseInformation setSemester(String semester) {
         this.semester = semester;
         return this;
     }
@@ -272,6 +273,14 @@ public class StudentBaseInformation {
         this.trainConcession_regno = trainConcession_regno;
     }
 
+    public List<StudentAttendanceDetail> getStudentAttendance_regno() {
+        return studentAttendance_regno;
+    }
+
+    public void setStudentAttendance_regno(List<StudentAttendanceDetail> studentAttendance_regno) {
+        this.studentAttendance_regno = studentAttendance_regno;
+    }
+
     @Id
     @Column(name="regno")
     private String regno;
@@ -283,7 +292,7 @@ public class StudentBaseInformation {
     private String studentname;
 
 
-    private Integer semester;
+    private String semester;
 
 
     private String branch;
@@ -376,5 +385,9 @@ public class StudentBaseInformation {
     @OneToMany
     @JoinColumn(name="regno",referencedColumnName = "regno")
     private List<TrainConcession> trainConcession_regno;
+
+    @OneToMany
+    @JoinColumn(name="regno",referencedColumnName = "regno")
+    private List<StudentAttendanceDetail> studentAttendance_regno;
 
 }

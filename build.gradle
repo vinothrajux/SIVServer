@@ -32,6 +32,10 @@ dependencies {
 	compile("com.h2database:h2")
 	testCompile("junit:junit")
 	compile 'org.json:json:20090211'
+	compile 'com.google.code.gson:gson:2.8.2'
+	compile 'com.fasterxml.jackson.core:jackson-core:2.7.3'
+	compile 'com.fasterxml.jackson.core:jackson-annotations:2.7.3'
+	compile 'com.fasterxml.jackson.core:jackson-databind:2.7.3'
 
 
 }

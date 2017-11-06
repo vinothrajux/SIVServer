@@ -1,27 +1,38 @@
 package com.sivserver.example.user;
 
+import com.sivserver.example.institute.InstituteDetails;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import java.util.List;
 
 /**
  * Created by Seetha on 17-Jun-17.
  */
 @RestController
 @RequestMapping("/api/v1/createuser")
-public class CreateUserApiController extends WebMvcConfigurerAdapter {
+public class CreateUserApiController{
 
 
 
-    @Autowired
+    //@Autowired
     private UserRepository userRepository;
+
+    @GetMapping(value="/all")
+
+    public List<User> getUserDetails() {return userRepository.findAll();}
+
+    public CreateUserApiController(UserRepository userRepository)
+    {
+        this.userRepository=userRepository;
+    }
+
 
 
     @RequestMapping(method = RequestMethod.POST)
     public void createUser(
+            @RequestParam(value ="instituteid", required=false) String instituteid,
             @RequestParam(value ="username", required=false) String username,
             @RequestParam (value="password", required=false) String password,
             @RequestParam (value="userRole", required=false) String userRole,
@@ -34,9 +45,11 @@ public class CreateUserApiController extends WebMvcConfigurerAdapter {
             @RequestParam (value="semester", required=false) Integer semester,
             @RequestParam (value="academicYear", required=false) String academicYear
     ) {
+        InstituteDetails instituteDetails = new InstituteDetails(instituteid);
         User user = new User();
 
-        user.setUserName(username);
+        user.setInstituteid(instituteid);
+        user.setUsername(username);
         user.setPassword(password);
         user.setUserRole(userRole);
         user.setStudentId(studentID);
@@ -46,7 +59,6 @@ public class CreateUserApiController extends WebMvcConfigurerAdapter {
         user.setSemester(semester);
         user.setAcadamicYear(academicYear);
         user.setDesignation(designation);
-        user.setAcadamicYear(academicYear);
         user.setStaffId(staffID);
 
         userRepository.save(user);

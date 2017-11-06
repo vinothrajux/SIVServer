@@ -40,6 +40,7 @@ public class StudentAttendanceDetailApiController  extends WebMvcConfigurerAdapt
 
     @RequestMapping(method = RequestMethod.POST)
     public void studentAttendanceDetail(
+            @RequestParam(value ="id", required=false ) Integer id,
             @RequestParam(value ="entrydate", required=false) Date entrydate,
             @RequestParam (value="hour", required=false) Integer hour,
             @RequestParam (value="regno", required=false) String regno,
@@ -47,7 +48,8 @@ public class StudentAttendanceDetailApiController  extends WebMvcConfigurerAdapt
 
     ) {
         StudentAttendanceDetail studAttDet = new StudentAttendanceDetail();
-        studAttDet.setAttendanceEntryDate(entrydate);
+        studAttDet.setId(id);
+        studAttDet.setEntrydate(entrydate);
         studAttDet.setHour(hour);
         studAttDet.setRegno(regno);
         studAttDet.setStatus(status);

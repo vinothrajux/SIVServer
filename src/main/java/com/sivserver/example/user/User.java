@@ -11,10 +11,21 @@ import javax.validation.constraints.NotNull;
 @Table(name = "users")
 public class User {
 
-    public String getUserName(){
+    public User() {
+    }
+
+    public String getInstituteid() {
+        return instituteid;
+    }
+
+    public void setInstituteid(String instituteid) {
+        this.instituteid = instituteid;
+    }
+
+    public String getUsername(){
         return username;
     }
-    public void setUserName(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
@@ -88,49 +99,41 @@ public class User {
         this.designation = designation;
     }
 
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    @Column(name="instituteid")
+    private String instituteid;
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    long id;
-
-    @NotNull
     private String username;
 
-    @NotNull
+
     private String password;
 
-    @NotNull
+
     private String userRole;
 
-    @NotNull
+
     private String studentId;
 
-    @NotNull
+
     private String firstName;
 
-    @NotNull
+
     private String lastName;
 
-    @NotNull
+
     private String branchCode;
 
-    @NotNull
+
     private Integer semester;
 
-    @NotNull
+
     private String academicYear;
 
-    @NotNull
+
     private String designation;
 
-    @NotNull
+
     private String staffId;
 
 }

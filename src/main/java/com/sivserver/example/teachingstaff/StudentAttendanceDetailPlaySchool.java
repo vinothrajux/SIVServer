@@ -4,35 +4,26 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
- * Created by GBCorp on 01/07/2017.
+ * Created by GBCorp on 03/11/2017.
  */
 @Entity
-@Table(name = "studentattendancedetail")
-
-public class StudentAttendanceDetail {
-
+@Table(name="studentattendancedetailplayschool")
+public class StudentAttendanceDetailPlaySchool {
     @Id
 
     private Integer id;
 
     private Date entrydate;
 
-
-    private Integer hour;
-
-
-    @Column(name="regno")
-    private String regno;
-
+    @Column(name="registernumber")
+    private String registernumber;
 
     private String status;
 
-
-    public StudentAttendanceDetail() {
+    public StudentAttendanceDetailPlaySchool() {
     }
 
     public Integer getId() {
@@ -51,20 +42,12 @@ public class StudentAttendanceDetail {
         this.entrydate = entrydate;
     }
 
-    public Integer getHour() {
-        return hour;
+    public String getRegisternumber() {
+        return registernumber;
     }
 
-    public void setHour(Integer hour) {
-        this.hour = hour;
-    }
-
-    public String getRegno() {
-        return regno;
-    }
-
-    public void setRegno(String regno) {
-        this.regno = regno;
+    public void setRegisternumber(String registernumber) {
+        this.registernumber = registernumber;
     }
 
     public String getStatus() {
@@ -75,3 +58,4 @@ public class StudentAttendanceDetail {
         this.status = status;
     }
 }
+

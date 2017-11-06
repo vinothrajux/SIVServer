@@ -37,7 +37,7 @@ public class StudentBaseInformationApiContrtoller {
             @RequestParam(value = "regno", required = false) String regno,
             @RequestParam(value = "admissionno", required = false) String admissionno,
             @RequestParam(value = "studentname", required = false) String studentname,
-            @RequestParam(value = "semester", required = false) Integer semester,
+            @RequestParam(value = "semester", required = false) String semester,
             @RequestParam(value = "branch", required = false) String branch,
             @RequestParam(value = "branchcode", required = false) String branchcode,
             @RequestParam(value = "batch", required = false) String batch,
