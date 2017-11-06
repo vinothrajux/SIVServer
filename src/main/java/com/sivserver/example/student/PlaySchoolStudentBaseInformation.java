@@ -1,5 +1,6 @@
 package com.sivserver.example.student;
 
+import com.sivserver.example.CashCounter.FeesPaymentPlaySchool;
 import com.sivserver.example.admission.FirstAidEntry;
 import com.sivserver.example.admission.StudentPersonalInformation;
 import com.sivserver.example.teachingstaff.StudentAttendanceDetailPlaySchool;
@@ -36,6 +37,10 @@ public class PlaySchoolStudentBaseInformation {
     @OneToMany
     @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
     private List<StudentAttendanceDetailPlaySchool> studentAttendanceDetailPlaySchoolRegno;
+
+    @OneToMany
+    @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
+    private List<FeesPaymentPlaySchool> feesPaymentPlaySchoolRegno;
 
     public PlaySchoolStudentBaseInformation() {
     }
@@ -122,5 +127,13 @@ public class PlaySchoolStudentBaseInformation {
 
     public void setStudentAttendanceDetailPlaySchoolRegno(List<StudentAttendanceDetailPlaySchool> studentAttendanceDetailPlaySchoolRegno) {
         this.studentAttendanceDetailPlaySchoolRegno = studentAttendanceDetailPlaySchoolRegno;
+    }
+
+    public List<FeesPaymentPlaySchool> getFeesPaymentPlaySchoolRegno() {
+        return feesPaymentPlaySchoolRegno;
+    }
+
+    public void setFeesPaymentPlaySchoolRegno(List<FeesPaymentPlaySchool> feesPaymentPlaySchoolRegno) {
+        this.feesPaymentPlaySchoolRegno = feesPaymentPlaySchoolRegno;
     }
 }
