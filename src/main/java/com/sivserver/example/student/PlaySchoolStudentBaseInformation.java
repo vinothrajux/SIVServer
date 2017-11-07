@@ -3,7 +3,10 @@ package com.sivserver.example.student;
 import com.sivserver.example.CashCounter.FeesPaymentPlaySchool;
 import com.sivserver.example.admission.FirstAidEntry;
 import com.sivserver.example.admission.StudentPersonalInformation;
+import com.sivserver.example.teachingstaff.ChildsPickupPlaySchool;
+import com.sivserver.example.teachingstaff.EmergencyMessagePlaySchool;
 import com.sivserver.example.teachingstaff.StudentAttendanceDetailPlaySchool;
+import com.sivserver.example.transport.TransportChangePlaySchool;
 
 import javax.persistence.*;
 import java.util.List;
@@ -41,6 +44,18 @@ public class PlaySchoolStudentBaseInformation {
     @OneToMany
     @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
     private List<FeesPaymentPlaySchool> feesPaymentPlaySchoolRegno;
+
+    @OneToMany
+    @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
+    private List<TransportChangePlaySchool> transportChangePlaySchoolRegno;
+
+    @OneToMany
+    @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
+    private List<EmergencyMessagePlaySchool> emergencyMessagePlaySchoolRegno;
+
+    @OneToMany
+    @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
+    private List<ChildsPickupPlaySchool> childsPickupPlaySchoolRegno;
 
     public PlaySchoolStudentBaseInformation() {
     }
@@ -135,5 +150,29 @@ public class PlaySchoolStudentBaseInformation {
 
     public void setFeesPaymentPlaySchoolRegno(List<FeesPaymentPlaySchool> feesPaymentPlaySchoolRegno) {
         this.feesPaymentPlaySchoolRegno = feesPaymentPlaySchoolRegno;
+    }
+
+    public List<TransportChangePlaySchool> getTransportChangePlaySchoolRegno() {
+        return transportChangePlaySchoolRegno;
+    }
+
+    public void setTransportChangePlaySchoolRegno(List<TransportChangePlaySchool> transportChangePlaySchoolRegno) {
+        this.transportChangePlaySchoolRegno = transportChangePlaySchoolRegno;
+    }
+
+    public List<EmergencyMessagePlaySchool> getEmergencyMessagePlaySchoolRegno() {
+        return emergencyMessagePlaySchoolRegno;
+    }
+
+    public void setEmergencyMessagePlaySchoolRegno(List<EmergencyMessagePlaySchool> emergencyMessagePlaySchoolRegno) {
+        this.emergencyMessagePlaySchoolRegno = emergencyMessagePlaySchoolRegno;
+    }
+
+    public List<ChildsPickupPlaySchool> getChildsPickupPlaySchoolRegno() {
+        return childsPickupPlaySchoolRegno;
+    }
+
+    public void setChildsPickupPlaySchoolRegno(List<ChildsPickupPlaySchool> childsPickupPlaySchoolRegno) {
+        this.childsPickupPlaySchoolRegno = childsPickupPlaySchoolRegno;
     }
 }
