@@ -1,11 +1,10 @@
 package com.sivserver.example.student;
 
 import com.sivserver.example.CashCounter.FeesPaymentPlaySchool;
-import com.sivserver.example.admission.FirstAidEntry;
-import com.sivserver.example.admission.StudentPersonalInformation;
 import com.sivserver.example.teachingstaff.ChildsPickupPlaySchool;
 import com.sivserver.example.teachingstaff.EmergencyMessagePlaySchool;
 import com.sivserver.example.teachingstaff.StudentAttendanceDetailPlaySchool;
+import com.sivserver.example.teachingstaff.StudentsMonthlyProgressPlaySchool;
 import com.sivserver.example.transport.TransportChangePlaySchool;
 
 import javax.persistence.*;
@@ -56,6 +55,10 @@ public class PlaySchoolStudentBaseInformation {
     @OneToMany
     @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
     private List<ChildsPickupPlaySchool> childsPickupPlaySchoolRegno;
+
+    @OneToMany
+    @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
+    private List<StudentsMonthlyProgressPlaySchool> studentsMonthlyProgressPlaySchoolRegno;
 
     public PlaySchoolStudentBaseInformation() {
     }
@@ -174,5 +177,13 @@ public class PlaySchoolStudentBaseInformation {
 
     public void setChildsPickupPlaySchoolRegno(List<ChildsPickupPlaySchool> childsPickupPlaySchoolRegno) {
         this.childsPickupPlaySchoolRegno = childsPickupPlaySchoolRegno;
+    }
+
+    public List<StudentsMonthlyProgressPlaySchool> getStudentsMonthlyProgressPlaySchoolRegno() {
+        return studentsMonthlyProgressPlaySchoolRegno;
+    }
+
+    public void setStudentsMonthlyProgressPlaySchoolRegno(List<StudentsMonthlyProgressPlaySchool> studentsMonthlyProgressPlaySchoolRegno) {
+        this.studentsMonthlyProgressPlaySchoolRegno = studentsMonthlyProgressPlaySchoolRegno;
     }
 }
