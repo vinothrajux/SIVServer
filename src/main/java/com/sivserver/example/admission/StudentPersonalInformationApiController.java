@@ -111,7 +111,9 @@ public class StudentPersonalInformationApiController  {
     StudentProfileInformation studentProfileInformation;
     @RequestMapping(method = RequestMethod.POST, value="/getStudentProfileInformationDetail")
     public List<Object> getStudentProfileInformationDetail(@RequestParam (value ="regno") String registerNumber) {
+        /* fetching data from table1*/
         StudentPersonalInformationProjection studentPersonalInformationDetail = studentPersonalInformationRepository.findOneByRegno(registerNumber);
+        /* fetching data from table2*/
         StudentBaseInformationProjection studentBaseInformationDetail = studentBaseInformationRepository.findOneByRegno(registerNumber);
         List<Object> list = new ArrayList<Object>();
         list.add(studentPersonalInformationDetail);
