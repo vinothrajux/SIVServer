@@ -14,7 +14,7 @@ import java.util.Date;
 public class StudentsMonthlyProgressPlaySchool {
 
     @Id
-    private String remark_id;
+    private String remarkid;
 
     private Date entrydate;
 
@@ -58,12 +58,12 @@ public class StudentsMonthlyProgressPlaySchool {
     public StudentsMonthlyProgressPlaySchool() {
     }
 
-    public String getRemark_id() {
-        return remark_id;
+    public String getRemarkid() {
+        return remarkid;
     }
 
-    public void setRemark_id(String remark_id) {
-        this.remark_id = remark_id;
+    public void setRemarkid(String remarkid) {
+        this.remarkid = remarkid;
     }
 
     public Date getEntrydate() {

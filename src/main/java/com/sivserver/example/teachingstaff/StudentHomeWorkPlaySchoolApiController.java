@@ -25,7 +25,7 @@ public class StudentHomeWorkPlaySchoolApiController {
 
     @RequestMapping(method = RequestMethod.POST)
     public void studentHomeWorkPlaySchool(
-            @RequestParam(value ="home_work_id", required=false) String home_work_id,
+            @RequestParam(value ="homeworkid", required=false) String homeworkid,
             @RequestParam (value="entrydate", required=false) Date entrydate,
             @RequestParam (value="entryday", required=false) String entryday,
             @RequestParam (value="program", required=false) String program,
@@ -38,7 +38,7 @@ public class StudentHomeWorkPlaySchoolApiController {
     ) {
         StudentHomeWorkPlaySchool ps_student_home_work = new StudentHomeWorkPlaySchool();
 
-        ps_student_home_work.setHome_work_id(home_work_id);
+        ps_student_home_work.setHomeworkid(homeworkid);
         ps_student_home_work.setEntrydate(entrydate);
         ps_student_home_work.setEntryday(entryday);
         ps_student_home_work.setProgram(program);

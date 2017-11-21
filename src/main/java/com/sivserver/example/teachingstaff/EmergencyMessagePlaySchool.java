@@ -14,7 +14,7 @@ import java.util.Date;
 public class EmergencyMessagePlaySchool {
 
     @Id
-    private String emergency_message_id;
+    private String emergencymessageid;
 
     private Date entrydate;
 
@@ -40,12 +40,12 @@ public class EmergencyMessagePlaySchool {
     public EmergencyMessagePlaySchool() {
     }
 
-    public String getEmergency_message_id() {
-        return emergency_message_id;
+    public String getEmergencymessageid() {
+        return emergencymessageid;
     }
 
-    public void setEmergency_message_id(String emergency_message_id) {
-        this.emergency_message_id = emergency_message_id;
+    public void setEmergencymessageid(String emergencymessageid) {
+        this.emergencymessageid = emergencymessageid;
     }
 
     public Date getEntrydate() {

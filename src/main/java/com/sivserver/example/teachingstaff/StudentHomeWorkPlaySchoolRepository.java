@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Created by GBCorp on 07/11/2017.
  */
 public interface StudentHomeWorkPlaySchoolRepository extends JpaRepository<StudentHomeWorkPlaySchool, String> {
-StudentHomeWorkPlaySchool findByHome_work_id(String home_work_id);
+StudentHomeWorkPlaySchool findByHomeworkid(String homeworkid);
 }
