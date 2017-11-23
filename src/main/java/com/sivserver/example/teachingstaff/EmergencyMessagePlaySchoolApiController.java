@@ -10,14 +10,14 @@ import java.util.List;
  * Created by GBCorp on 07/11/2017.
  */
 @RestController
-@RequestMapping("/api/v1/emergencymessageapicontroller")
+@RequestMapping("/api/v1/emergencymessageplayschool")
 public class EmergencyMessagePlaySchoolApiController {
 
     private EmergencyMessagePlaySchoolRepository emergencyMessagePlaySchoolRepository;
 
     @GetMapping(value="/all")
 
-    public List<EmergencyMessagePlaySchool> getEmergencyPlaySchoolDetails() { return emergencyMessagePlaySchoolRepository.findAll();}
+    public List<EmergencyMessagePlaySchool> getEmergencyMessagePlaySchoolDetails() { return emergencyMessagePlaySchoolRepository.findAll();}
 
     public EmergencyMessagePlaySchoolApiController(EmergencyMessagePlaySchoolRepository emergencyMessagePlaySchoolRepository)
     {
