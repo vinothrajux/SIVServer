@@ -27,7 +27,7 @@ public class TransportChangePlaySchoolApiController {
 
     @RequestMapping(method = RequestMethod.POST)
     public void transportchangeplayschool(
-            @RequestParam(value = "transport_change_id", required = false) String transport_change_id,
+            @RequestParam(value = "transportchangeid", required = false) String transportchangeid,
             @RequestParam(value = "entrydate", required = false) Date entrydate,
             @RequestParam(value = "registernumber", required = false) String registernumber,
             @RequestParam(value = "name", required = false) String name,
@@ -49,7 +49,7 @@ public class TransportChangePlaySchoolApiController {
         TransportChangePlaySchool ps_transport_change = new TransportChangePlaySchool();
         PlaySchoolStudentBaseInformation ps_student_base_info = new PlaySchoolStudentBaseInformation();
 
-        ps_transport_change.setTransport_change_id(transport_change_id);
+        ps_transport_change.setTransportchangeid(transportchangeid);
         ps_transport_change.setEntrydate(entrydate);
         ps_transport_change.setRegisternumber(registernumber);
         ps_transport_change.setName(name);

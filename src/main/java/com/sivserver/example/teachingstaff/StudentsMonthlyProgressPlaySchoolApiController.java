@@ -26,7 +26,7 @@ public class StudentsMonthlyProgressPlaySchoolApiController {
 
     @RequestMapping(method = RequestMethod.POST)
     public void studentMonthlyProgressPlaySchool(
-            @RequestParam(value ="remark_id", required=false) String remark_id,
+            @RequestParam(value ="remarkid", required=false) String remarkid,
             @RequestParam (value="entrydate", required=false) Date entrydate,
             @RequestParam (value="entryday", required=false) String entryday,
             @RequestParam (value="month", required=false) String month,
@@ -51,7 +51,7 @@ public class StudentsMonthlyProgressPlaySchoolApiController {
         StudentsMonthlyProgressPlaySchool ps_Students_Monthly_progress = new StudentsMonthlyProgressPlaySchool();
         PlaySchoolStudentBaseInformation ps_student_base_info = new PlaySchoolStudentBaseInformation();
 
-        ps_Students_Monthly_progress.setRemark_id(remark_id);
+        ps_Students_Monthly_progress.setRemarkid(remarkid);
         ps_Students_Monthly_progress.setEntrydate(entrydate);
         ps_Students_Monthly_progress.setEntryday(entryday);
         ps_Students_Monthly_progress.setMonth(month);

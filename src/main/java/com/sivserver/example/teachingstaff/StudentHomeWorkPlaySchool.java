@@ -12,7 +12,7 @@ import java.util.Date;
 @Table(name="studenthomeworkplayschool")
 public class StudentHomeWorkPlaySchool {
     @Id
-    private String home_work_id;
+    private String homeworkid;
 
     private Date entrydate;
 
@@ -33,12 +33,12 @@ public class StudentHomeWorkPlaySchool {
     public StudentHomeWorkPlaySchool() {
     }
 
-    public String getHome_work_id() {
-        return home_work_id;
+    public String getHomeworkid() {
+        return homeworkid;
     }
 
-    public void setHome_work_id(String home_work_id) {
-        this.home_work_id = home_work_id;
+    public void setHomeworkid(String homeworkid) {
+        this.homeworkid = homeworkid;
     }
 
     public Date getEntrydate() {

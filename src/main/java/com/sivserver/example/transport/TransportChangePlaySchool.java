@@ -14,7 +14,7 @@ import java.util.Date;
 public class TransportChangePlaySchool {
 
     @Id
-    private String transport_change_id;
+    private String transportchangeid;
 
     private Date entrydate;
 
@@ -48,12 +48,12 @@ public class TransportChangePlaySchool {
     public TransportChangePlaySchool() {
     }
 
-    public String getTransport_change_id() {
-        return transport_change_id;
+    public String getTransportchangeid() {
+        return transportchangeid;
     }
 
-    public void setTransport_change_id(String transport_change_id) {
-        this.transport_change_id = transport_change_id;
+    public void setTransportchangeid(String transportchangeid) {
+        this.transportchangeid = transportchangeid;
     }
 
     public Date getEntrydate() {

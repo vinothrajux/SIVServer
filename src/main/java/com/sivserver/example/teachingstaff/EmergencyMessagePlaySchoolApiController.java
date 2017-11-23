@@ -26,7 +26,7 @@ public class EmergencyMessagePlaySchoolApiController {
 
     @RequestMapping(method = RequestMethod.POST)
     public void emergencymessageplayschool(
-            @RequestParam(value = "emergency_message_id", required = false) String emergency_message_id,
+            @RequestParam(value = "emergencymessageid", required = false) String emergencymessageid,
             @RequestParam(value = "entrydate", required = false) Date entrydate,
             @RequestParam(value = "day", required = false) String day,
             @RequestParam(value = "time", required = false) String time,
@@ -44,7 +44,7 @@ public class EmergencyMessagePlaySchoolApiController {
         EmergencyMessagePlaySchool ps_emergency_message = new EmergencyMessagePlaySchool();
         PlaySchoolStudentBaseInformation ps_student_base_info = new PlaySchoolStudentBaseInformation();
 
-        ps_emergency_message.setEmergency_message_id(emergency_message_id);
+        ps_emergency_message.setEmergencymessageid(emergencymessageid);
         ps_emergency_message.setEntrydate(entrydate);
         ps_emergency_message.setDay(day);
         ps_emergency_message.setTime(time);
