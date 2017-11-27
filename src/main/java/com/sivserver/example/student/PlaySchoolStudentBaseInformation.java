@@ -22,13 +22,13 @@ public class PlaySchoolStudentBaseInformation {
 
     private String candidatename;
 
-    private String class_studying;
+    private String standardstudying;
 
     private String section;
 
     private String academicyear;
 
-    private String student_status;
+    private String studentstatus;
 
     private String loginuser;
 
@@ -85,12 +85,12 @@ public class PlaySchoolStudentBaseInformation {
         return this;
     }
 
-    public String getClass_studying() {
-        return class_studying;
+    public String getStandardstudying() {
+        return standardstudying;
     }
 
-    public PlaySchoolStudentBaseInformation setClass_studying(String class_studying) {
-        this.class_studying = class_studying;
+    public PlaySchoolStudentBaseInformation setStandardstudying(String standardstudying) {
+        this.standardstudying = standardstudying;
         return this;
     }
 
@@ -112,12 +112,12 @@ public class PlaySchoolStudentBaseInformation {
         return this;
     }
 
-    public String getStudent_status() {
-        return student_status;
+    public String getStudentstatus() {
+        return studentstatus;
     }
 
-    public PlaySchoolStudentBaseInformation setStudent_status(String student_status) {
-        this.student_status = student_status;
+    public PlaySchoolStudentBaseInformation setStudentstatus(String studentstatus) {
+        this.studentstatus = studentstatus;
         return this;
     }
 
