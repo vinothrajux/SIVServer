@@ -27,10 +27,10 @@ public class PlaySchoolStudentBaseInformationApiController {
     public void playschoolstudentbaseinformation(
             @RequestParam(value = "registernumber", required = false) String registernumber,
             @RequestParam(value = "candidatename", required = false) String candidatename,
-            @RequestParam(value = "class_studying", required = false) String class_studying,
+            @RequestParam(value = "standardstudying", required = false) String standardstudying,
             @RequestParam(value = "section", required = false) String section,
             @RequestParam(value = "academicyear", required = false) String academicyear,
-            @RequestParam(value = "student_status", required = false) String student_status,
+            @RequestParam(value = "studentstatus", required = false) String studentstatus,
             @RequestParam(value = "loginuser", required = false) String loginuser
 
     ) {
@@ -38,10 +38,10 @@ public class PlaySchoolStudentBaseInformationApiController {
         PlaySchoolStudentPersonalInformation playschoolstudentpersonalinfo = new PlaySchoolStudentPersonalInformation(registernumber);
         playschoolstudentbaseinfo.setRegisternumber(registernumber)
                                     .setCandidatename(candidatename)
-                                    .setClass_studying(class_studying)
+                                    .setStandardstudying(standardstudying)
                                     .setSection(section)
                                     .setAcademicyear(academicyear)
-                                    .setStudent_status(student_status)
+                                    .setStudentstatus(studentstatus)
                                     .setLoginuser(loginuser)
                                     .setPlay_school_student_personal_regno(playschoolstudentpersonalinfo);
 

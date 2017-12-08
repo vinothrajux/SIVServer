@@ -1,8 +1,11 @@
 package com.sivserver.example.student;
 
-import com.sivserver.example.admission.FirstAidEntry;
-import com.sivserver.example.admission.StudentPersonalInformation;
+import com.sivserver.example.CashCounter.FeesPaymentPlaySchool;
+import com.sivserver.example.teachingstaff.ChildsPickupPlaySchool;
+import com.sivserver.example.teachingstaff.EmergencyMessagePlaySchool;
 import com.sivserver.example.teachingstaff.StudentAttendanceDetailPlaySchool;
+import com.sivserver.example.teachingstaff.StudentsMonthlyProgressPlaySchool;
+import com.sivserver.example.transport.TransportChangePlaySchool;
 
 import javax.persistence.*;
 import java.util.List;
@@ -19,13 +22,13 @@ public class PlaySchoolStudentBaseInformation {
 
     private String candidatename;
 
-    private String class_studying;
+    private String standardstudying;
 
     private String section;
 
     private String academicyear;
 
-    private String student_status;
+    private String studentstatus;
 
     private String loginuser;
 
@@ -36,6 +39,26 @@ public class PlaySchoolStudentBaseInformation {
     @OneToMany
     @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
     private List<StudentAttendanceDetailPlaySchool> studentAttendanceDetailPlaySchoolRegno;
+
+    @OneToMany
+    @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
+    private List<FeesPaymentPlaySchool> feesPaymentPlaySchoolRegno;
+
+    @OneToMany
+    @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
+    private List<TransportChangePlaySchool> transportChangePlaySchoolRegno;
+
+    @OneToMany
+    @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
+    private List<EmergencyMessagePlaySchool> emergencyMessagePlaySchoolRegno;
+
+    @OneToMany
+    @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
+    private List<ChildsPickupPlaySchool> childsPickupPlaySchoolRegno;
+
+    @OneToMany
+    @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
+    private List<StudentsMonthlyProgressPlaySchool> studentsMonthlyProgressPlaySchoolRegno;
 
     public PlaySchoolStudentBaseInformation() {
     }
@@ -62,12 +85,12 @@ public class PlaySchoolStudentBaseInformation {
         return this;
     }
 
-    public String getClass_studying() {
-        return class_studying;
+    public String getStandardstudying() {
+        return standardstudying;
     }
 
-    public PlaySchoolStudentBaseInformation setClass_studying(String class_studying) {
-        this.class_studying = class_studying;
+    public PlaySchoolStudentBaseInformation setStandardstudying(String standardstudying) {
+        this.standardstudying = standardstudying;
         return this;
     }
 
@@ -89,12 +112,12 @@ public class PlaySchoolStudentBaseInformation {
         return this;
     }
 
-    public String getStudent_status() {
-        return student_status;
+    public String getStudentstatus() {
+        return studentstatus;
     }
 
-    public PlaySchoolStudentBaseInformation setStudent_status(String student_status) {
-        this.student_status = student_status;
+    public PlaySchoolStudentBaseInformation setStudentstatus(String studentstatus) {
+        this.studentstatus = studentstatus;
         return this;
     }
 
@@ -122,5 +145,45 @@ public class PlaySchoolStudentBaseInformation {
 
     public void setStudentAttendanceDetailPlaySchoolRegno(List<StudentAttendanceDetailPlaySchool> studentAttendanceDetailPlaySchoolRegno) {
         this.studentAttendanceDetailPlaySchoolRegno = studentAttendanceDetailPlaySchoolRegno;
+    }
+
+    public List<FeesPaymentPlaySchool> getFeesPaymentPlaySchoolRegno() {
+        return feesPaymentPlaySchoolRegno;
+    }
+
+    public void setFeesPaymentPlaySchoolRegno(List<FeesPaymentPlaySchool> feesPaymentPlaySchoolRegno) {
+        this.feesPaymentPlaySchoolRegno = feesPaymentPlaySchoolRegno;
+    }
+
+    public List<TransportChangePlaySchool> getTransportChangePlaySchoolRegno() {
+        return transportChangePlaySchoolRegno;
+    }
+
+    public void setTransportChangePlaySchoolRegno(List<TransportChangePlaySchool> transportChangePlaySchoolRegno) {
+        this.transportChangePlaySchoolRegno = transportChangePlaySchoolRegno;
+    }
+
+    public List<EmergencyMessagePlaySchool> getEmergencyMessagePlaySchoolRegno() {
+        return emergencyMessagePlaySchoolRegno;
+    }
+
+    public void setEmergencyMessagePlaySchoolRegno(List<EmergencyMessagePlaySchool> emergencyMessagePlaySchoolRegno) {
+        this.emergencyMessagePlaySchoolRegno = emergencyMessagePlaySchoolRegno;
+    }
+
+    public List<ChildsPickupPlaySchool> getChildsPickupPlaySchoolRegno() {
+        return childsPickupPlaySchoolRegno;
+    }
+
+    public void setChildsPickupPlaySchoolRegno(List<ChildsPickupPlaySchool> childsPickupPlaySchoolRegno) {
+        this.childsPickupPlaySchoolRegno = childsPickupPlaySchoolRegno;
+    }
+
+    public List<StudentsMonthlyProgressPlaySchool> getStudentsMonthlyProgressPlaySchoolRegno() {
+        return studentsMonthlyProgressPlaySchoolRegno;
+    }
+
+    public void setStudentsMonthlyProgressPlaySchoolRegno(List<StudentsMonthlyProgressPlaySchool> studentsMonthlyProgressPlaySchoolRegno) {
+        this.studentsMonthlyProgressPlaySchoolRegno = studentsMonthlyProgressPlaySchoolRegno;
     }
 }

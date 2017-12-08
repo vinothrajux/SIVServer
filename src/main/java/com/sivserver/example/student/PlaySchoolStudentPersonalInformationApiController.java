@@ -1,7 +1,9 @@
 package com.sivserver.example.student;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +15,9 @@ import java.util.List;
 public class PlaySchoolStudentPersonalInformationApiController {
 
     private PlaySchoolStudentPersonalInformationRepository playSchoolStudentPersonalInformationRepository;
+
+    @Autowired
+    private PlaySchoolStudentBaseInformationRepository playSchoolStudentBaseInformationRepository;
 
     @GetMapping(value="/all")
 
@@ -140,6 +145,27 @@ public class PlaySchoolStudentPersonalInformationApiController {
         playschoolstudentpersonalinformation.setLoginuser(loginuser);
 
         playSchoolStudentPersonalInformationRepository.save(playschoolstudentpersonalinformation);
+    }
+
+    PlaySchoolStudentProfileInformation playSchoolStudentProfileInformation;
+    @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolStudentProfileInformationDetail")
+
+    public List<Object> getPlaySchoolStudentProfileInformationDetail(@RequestParam (value ="registernumber") String registerNumber) {
+        /* fetching data from table1*/
+
+        PlaySchoolStudentBaseInformationProjection playSchoolStudentBaseInformationDetail = playSchoolStudentBaseInformationRepository.findOneByRegisternumber(registerNumber);
+
+        /* fetching data from table2 */
+
+        PlaySchoolStudentPersonalInformationProjection playSchoolStudentPersonalInformationDetail = playSchoolStudentPersonalInformationRepository.findOneByRegisternumber(registerNumber);
+
+        List<Object> list = new ArrayList<Object>();
+
+        list.add(playSchoolStudentBaseInformationDetail);
+        list.add(playSchoolStudentPersonalInformationDetail);
+
+        return list;
+
     }
 
     }

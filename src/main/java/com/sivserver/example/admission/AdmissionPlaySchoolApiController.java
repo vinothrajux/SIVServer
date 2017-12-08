@@ -201,10 +201,10 @@ public class AdmissionPlaySchoolApiController {
 
         ps_student_base_info.setRegisternumber(registernumber)
                             .setCandidatename(candidatename)
-                            .setClass_studying(admissionfor)
+                            .setStandardstudying(admissionfor)
                             .setSection(section)
                             .setAcademicyear(academicyear)
-                            .setStudent_status(admissionstatus)
+                            .setStudentstatus(admissionstatus)
                             .setLoginuser(loginuser)
                             .setPlay_school_student_personal_regno(ps_student_pers_info);
 
