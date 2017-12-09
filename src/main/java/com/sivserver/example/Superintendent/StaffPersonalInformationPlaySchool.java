@@ -12,7 +12,7 @@ import java.util.Date;
 @Table(name="staffpersonalinformationplayschool")
 public class StaffPersonalInformationPlaySchool {
 
-    private Date date_of_join;
+    private Date dateofjoin;
 
     @Id
     private String staffid;
@@ -25,9 +25,15 @@ public class StaffPersonalInformationPlaySchool {
 
     private Integer age;
 
+    private String gender;
+
     private String bloodgroup;
 
     private String maritalstatus;
+
+    private String aadharnumber;
+
+    private String panno;
 
     private String fathersname;
 
@@ -57,13 +63,13 @@ public class StaffPersonalInformationPlaySchool {
 
     private Long percentage;
 
-    private String month_year_of_pass;
+    private String monthyearofpass;
 
     private String experience;
 
-    private Integer no_of_years;
+    private Integer noofyears;
 
-    private String logiuser;
+    private String loginuser;
 
     public StaffPersonalInformationPlaySchool() {
     }
@@ -72,12 +78,12 @@ public class StaffPersonalInformationPlaySchool {
         this.staffid = staffid;
     }
 
-    public Date getDate_of_join() {
-        return date_of_join;
+    public Date getDateofjoin() {
+        return dateofjoin;
     }
 
-    public void setDate_of_join(Date date_of_join) {
-        this.date_of_join = date_of_join;
+    public void setDateofjoin(Date dateofjoin) {
+        this.dateofjoin = dateofjoin;
     }
 
     public String getStaffid() {
@@ -248,12 +254,12 @@ public class StaffPersonalInformationPlaySchool {
         this.percentage = percentage;
     }
 
-    public String getMonth_year_of_pass() {
-        return month_year_of_pass;
+    public String getMonthyearofpass() {
+        return monthyearofpass;
     }
 
-    public void setMonth_year_of_pass(String month_year_of_pass) {
-        this.month_year_of_pass = month_year_of_pass;
+    public void setMonthyearofpass(String monthyearofpass) {
+        this.monthyearofpass = monthyearofpass;
     }
 
     public String getExperience() {
@@ -264,20 +270,44 @@ public class StaffPersonalInformationPlaySchool {
         this.experience = experience;
     }
 
-    public Integer getNo_of_years() {
-        return no_of_years;
+    public Integer getNoofyears() {
+        return noofyears;
     }
 
-    public void setNo_of_years(Integer no_of_years) {
-        this.no_of_years = no_of_years;
+    public void setNoofyears(Integer noofyears) {
+        this.noofyears = noofyears;
     }
 
-    public String getLogiuser() {
-        return logiuser;
+    public String getLoginuser() {
+        return loginuser;
     }
 
-    public void setLogiuser(String logiuser) {
-        this.logiuser = logiuser;
+    public void setLoginuser(String loginuser) {
+        this.loginuser = loginuser;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getAadharnumber() {
+        return aadharnumber;
+    }
+
+    public void setAadharnumber(String aadharnumber) {
+        this.aadharnumber = aadharnumber;
+    }
+
+    public String getPanno() {
+        return panno;
+    }
+
+    public void setPanno(String panno) {
+        this.panno = panno;
     }
 }
 

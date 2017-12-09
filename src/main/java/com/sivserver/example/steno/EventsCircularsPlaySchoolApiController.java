@@ -1,5 +1,6 @@
 package com.sivserver.example.steno;
 
+import com.sivserver.example.admission.ApplicationSaleProjection;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -53,4 +54,12 @@ public class EventsCircularsPlaySchoolApiController {
         eventsCircularsPlaySchoolRepository.save(ps_events_circulars);
     }
 
+    @RequestMapping(method = RequestMethod.POST, value="/getEventsCircularsPlaySchoolDetail")
+    public EventsCircularsPlaySchoolProjection getEventsCiruclarsPlaySchoolDetail(@RequestParam (value ="eventid") String eventid) {
+        EventsCircularsPlaySchoolProjection eventscircularsPlaySchoolDetail = eventsCircularsPlaySchoolRepository.findOneByEventid(eventid);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getEventsCircularsPlaySchoolDetail");
+        return eventscircularsPlaySchoolDetail;
     }
+
+}

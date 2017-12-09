@@ -1,5 +1,6 @@
 package com.sivserver.example.Superintendent;
 
+import com.sivserver.example.steno.EventsCircularsPlaySchoolProjection;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -26,14 +27,17 @@ public class StaffPersonalInformationPlaySchoolApiController {
     @RequestMapping(method = RequestMethod.POST)
 
     public void staffpersonalinformationplayschool(
-            @RequestParam(value ="date_of_join", required=false) Date date_of_join,
+            @RequestParam(value ="dateofjoin", required=false) Date dateofjoin,
             @RequestParam(value ="staffid", required=false) String staffid,
             @RequestParam(value ="staffname", required=false) String staffname,
             @RequestParam (value="designation", required=false) String designation,
             @RequestParam (value="dateofbirth", required=false) Date dateofbirth,
             @RequestParam (value="age", required=false) Integer age,
+            @RequestParam (value="gender", required=false) String gender,
             @RequestParam (value="bloodgroup", required=false) String bloodgroup,
             @RequestParam (value="maritalstatus", required=false) String maritalstatus,
+            @RequestParam (value="aadharnumber", required=false) String aadharnumber,
+            @RequestParam (value="panno", required=false) String panno,
             @RequestParam (value="fathersname", required=false) String fathersname,
             @RequestParam (value="mothersname", required=false) String mothersname,
             @RequestParam (value="spousename", required=false) String spousename,
@@ -48,22 +52,25 @@ public class StaffPersonalInformationPlaySchoolApiController {
             @RequestParam (value="course", required=false) String course,
             @RequestParam (value="university", required=false) String university,
             @RequestParam (value="percentage", required=false) Long percentage,
-            @RequestParam (value="month_year_of_pass", required=false) String month_year_of_pass,
+            @RequestParam (value="monthyearofpass", required=false) String monthyearofpass,
             @RequestParam (value="experience", required=false) String experience,
-            @RequestParam (value="no_of_years", required=false) Integer no_of_years,
+            @RequestParam (value="noofyears", required=false) Integer noofyears,
             @RequestParam (value="loginuser", required=false) String loginuser
     )
     {
         StaffPersonalInformationPlaySchool ps_staff_personal_info = new StaffPersonalInformationPlaySchool();
 
-        ps_staff_personal_info.setDate_of_join(date_of_join);
+        ps_staff_personal_info.setDateofjoin(dateofjoin);
         ps_staff_personal_info.setStaffid(staffid);
         ps_staff_personal_info.setStaffname(staffname);
         ps_staff_personal_info.setDesignation(designation);
         ps_staff_personal_info.setDateofbirth(dateofbirth);
         ps_staff_personal_info.setAge(age);
+        ps_staff_personal_info.setGender(gender);
         ps_staff_personal_info.setBloodgroup(bloodgroup);
         ps_staff_personal_info.setMaritalstatus(maritalstatus);
+        ps_staff_personal_info.setAadharnumber(aadharnumber);
+        ps_staff_personal_info.setPanno(panno);
         ps_staff_personal_info.setFathersname(fathersname);
         ps_staff_personal_info.setMothersname(mothersname);
         ps_staff_personal_info.setSpousename(spousename);
@@ -78,15 +85,23 @@ public class StaffPersonalInformationPlaySchoolApiController {
         ps_staff_personal_info.setCourse(course);
         ps_staff_personal_info.setUniversity(university);
         ps_staff_personal_info.setPercentage(percentage);
-        ps_staff_personal_info.setMonth_year_of_pass(month_year_of_pass);
+        ps_staff_personal_info.setMonthyearofpass(monthyearofpass);
         ps_staff_personal_info.setExperience(experience);
-        ps_staff_personal_info.setNo_of_years(no_of_years);
-        ps_staff_personal_info.setLogiuser(loginuser);
+        ps_staff_personal_info.setNoofyears(noofyears);
+        ps_staff_personal_info.setLoginuser(loginuser);
 
         staffPersonalInformationPlaySchoolRepository.save(ps_staff_personal_info);
 
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, value="/getStaffPersonalInformationPlaySchoolDetail")
+    public StaffPersonalInformationPlaySchoolProjection getStaffPersonalInformationPlaySchoolDetail(@RequestParam (value ="staffid") String staffid) {
+        StaffPersonalInformationPlaySchoolProjection staffPersonalInformationPlaySchoolDetail = staffPersonalInformationPlaySchoolRepository.findOneByStaffid(staffid);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getStaffPersonalInformationPlaySchoolDetail");
+        return staffPersonalInformationPlaySchoolDetail;
     }
+
+}
 

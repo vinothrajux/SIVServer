@@ -7,5 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface EventsCircularsPlaySchoolRepository extends JpaRepository<EventsCircularsPlaySchool,String> {
     EventsCircularsPlaySchool findByEventid(String eventid);
+    EventsCircularsPlaySchoolProjection findOneByEventid(String eventid);
 
 }

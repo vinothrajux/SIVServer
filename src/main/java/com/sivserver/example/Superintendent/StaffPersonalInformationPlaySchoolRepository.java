@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface StaffPersonalInformationPlaySchoolRepository extends JpaRepository<StaffPersonalInformationPlaySchool, String> {
 StaffPersonalInformationPlaySchool findByStaffid(String staffid);
+StaffPersonalInformationPlaySchoolProjection findOneByStaffid(String staffid);
 }
