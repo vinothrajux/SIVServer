@@ -254,4 +254,13 @@ public class AdmissionPlaySchoolApiController {
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolAdmissionDetail")
+    public AdmissionPlaySchoolProjection getPlaySchoolAdmissionDetail(@RequestParam (value ="applno") String applicationNumber) {
+        AdmissionPlaySchoolProjection playschooladmissionDetail = admissionPlaySchoolRepository.findOneByApplno(applicationNumber);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getPlaySchoolAdmissionDetail");
+        return playschooladmissionDetail;
     }
+
+
+}

@@ -27,27 +27,27 @@ public class FeesPaymentPlaySchool {
 
     private String academicyear;
 
-    private String school_fees_title;
+    private String schoolfeestitle;
 
-    private Long school_fees;
+    private Long schoolfees;
 
-    private Long school_fees_paid;
+    private Long schoolfeespaid;
 
-    private String transport_fees_title;
+    private String transportfeestitle;
 
-    private Long transport_fees;
+    private Long transportfees;
 
-    private Long transport_fees_paid;
+    private Long transportfeespaid;
 
     private Long totalfees;
 
-    private Long total_fees_paid;
+    private Long totalfeespaid;
 
     private Long balance;
 
     private Date duedate;
 
-    private String payment_method;
+    private String paymentmethod;
 
     private String chequeno;
 
@@ -108,52 +108,52 @@ public class FeesPaymentPlaySchool {
         this.academicyear = academicyear;
     }
 
-    public String getSchool_fees_title() {
-        return school_fees_title;
+    public String getSchoolfeestitle() {
+        return schoolfeestitle;
     }
 
-    public void setSchool_fees_title(String school_fees_title) {
-        this.school_fees_title = school_fees_title;
+    public void setSchoolfeestitle(String schoolfeestitle) {
+        this.schoolfeestitle = schoolfeestitle;
     }
 
-    public Long getSchool_fees() {
-        return school_fees;
+    public Long getSchoolfees() {
+        return schoolfees;
     }
 
-    public void setSchool_fees(Long school_fees) {
-        this.school_fees = school_fees;
+    public void setSchoolfees(Long school_fees) {
+        this.schoolfees = schoolfees;
     }
 
-    public Long getSchool_fees_paid() {
-        return school_fees_paid;
+    public Long getSchoolfeespaid() {
+        return schoolfeespaid;
     }
 
-    public void setSchool_fees_paid(Long school_fees_paid) {
-        this.school_fees_paid = school_fees_paid;
+    public void setSchoolfeespaid(Long school_fees_paid) {
+        this.schoolfeespaid = schoolfeespaid;
     }
 
-    public String getTransport_fees_title() {
-        return transport_fees_title;
+    public String getTransportfeestitle() {
+        return transportfeestitle;
     }
 
-    public void setTransport_fees_title(String transport_fees_title) {
-        this.transport_fees_title = transport_fees_title;
+    public void setTransportfeestitle(String transportfeestitle) {
+        this.transportfeestitle = transportfeestitle;
     }
 
-    public Long getTransport_fees() {
-        return transport_fees;
+    public Long getTransportfees() {
+        return transportfees;
     }
 
-    public void setTransport_fees(Long transport_fees) {
-        this.transport_fees = transport_fees;
+    public void setTransportfees(Long transportfees) {
+        this.transportfees = transportfees;
     }
 
-    public Long getTransport_fees_paid() {
-        return transport_fees_paid;
+    public Long getTransportfeespaid() {
+        return transportfeespaid;
     }
 
-    public void setTransport_fees_paid(Long transport_fees_paid) {
-        this.transport_fees_paid = transport_fees_paid;
+    public void setTransportfeespaid(Long transportfeespaid) {
+        this.transportfeespaid = transportfeespaid;
     }
 
     public Long getTotalfees() {
@@ -164,12 +164,12 @@ public class FeesPaymentPlaySchool {
         this.totalfees = totalfees;
     }
 
-    public Long getTotal_fees_paid() {
-        return total_fees_paid;
+    public Long getTotalfeespaid() {
+        return totalfeespaid;
     }
 
-    public void setTotal_fees_paid(Long total_fees_paid) {
-        this.total_fees_paid = total_fees_paid;
+    public void setTotalfeespaid(Long totalfeespaid) {
+        this.totalfeespaid = totalfeespaid;
     }
 
     public Long getBalance() {
@@ -188,12 +188,12 @@ public class FeesPaymentPlaySchool {
         this.duedate = duedate;
     }
 
-    public String getPayment_method() {
-        return payment_method;
+    public String getPaymentmethod() {
+        return paymentmethod;
     }
 
-    public void setPayment_method(String payment_method) {
-        this.payment_method = payment_method;
+    public void setPaymentmethod(String paymentmethod) {
+        this.paymentmethod = paymentmethod;
     }
 
     public String getChequeno() {

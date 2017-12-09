@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface FeesPaymentPlaySchoolRepository extends JpaRepository<FeesPaymentPlaySchool, String> {
     FeesPaymentPlaySchool findByBillno(String billno);
+    FeesPaymentPlaySchoolProjection findOneByBillno(String billno);
 }

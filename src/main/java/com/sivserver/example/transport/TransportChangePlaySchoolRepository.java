@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface TransportChangePlaySchoolRepository extends JpaRepository<TransportChangePlaySchool, String>{
     TransportChangePlaySchool findByTransportchangeid(String transportchangeid);
+    TransportChangePlaySchoolProjection  findOneByTransportchangeid(String transportchangeid);
 }

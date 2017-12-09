@@ -99,4 +99,13 @@ public class ApplicationSalePlaySchoolApiController {
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolApplcationDetail")
+    public ApplicationSalePlaySchoolProjection getPlaySchoolApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
+        ApplicationSalePlaySchoolProjection playschoolapplicationDetail = applicationSalePlaySchoolRepository.findOneByApplno(applicationNumber);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getPlaySchoolApplcationDetail");
+        return playschoolapplicationDetail;
+    }
+
+
 }

@@ -27,17 +27,17 @@ public class TransportChangePlaySchool {
 
     private String section;
 
-    private String transport_required;
+    private String transportrequired;
 
     private String stage;
 
-    private Long transport_init_fees;
+    private Long transportinitfees;
 
-    private Long transport_term1_fees;
+    private Long transportterm1fees;
 
-    private Long transport_term2_fees;
+    private Long transportterm2fees;
 
-    private Long transport_total_fees;
+    private Long transporttotalfees;
 
     private String academicyear;
 
@@ -96,12 +96,12 @@ public class TransportChangePlaySchool {
         this.section = section;
     }
 
-    public String getTransport_required() {
-        return transport_required;
+    public String getTransportrequired() {
+        return transportrequired;
     }
 
-    public void setTransport_required(String transport_required) {
-        this.transport_required = transport_required;
+    public void setTransportrequired(String transportrequired) {
+        this.transportrequired = transportrequired;
     }
 
     public String getStage() {
@@ -112,36 +112,36 @@ public class TransportChangePlaySchool {
         this.stage = stage;
     }
 
-    public Long getTransport_init_fees() {
-        return transport_init_fees;
+    public Long getTransportinitfees() {
+        return transportinitfees;
     }
 
-    public void setTransport_init_fees(Long transport_init_fees) {
-        this.transport_init_fees = transport_init_fees;
+    public void setTransportinitfees(Long transportinitfees) {
+        this.transportinitfees = transportinitfees;
     }
 
-    public Long getTransport_term1_fees() {
-        return transport_term1_fees;
+    public Long getTransportterm1fees() {
+        return transportterm1fees;
     }
 
-    public void setTransport_term1_fees(Long transport_term1_fees) {
-        this.transport_term1_fees = transport_term1_fees;
+    public void setTransportterm1fees(Long transportterm1fees) {
+        this.transportterm1fees = transportterm1fees;
     }
 
-    public Long getTransport_term2_fees() {
-        return transport_term2_fees;
+    public Long getTransportterm2fees() {
+        return transportterm2fees;
     }
 
-    public void setTransport_term2_fees(Long transport_term2_fees) {
-        this.transport_term2_fees = transport_term2_fees;
+    public void setTransportterm2fees(Long transportterm2fees) {
+        this.transportterm2fees = transportterm2fees;
     }
 
-    public Long getTransport_total_fees() {
-        return transport_total_fees;
+    public Long getTransporttotalfees() {
+        return transporttotalfees;
     }
 
-    public void setTransport_total_fees(Long transport_total_fees) {
-        this.transport_total_fees = transport_total_fees;
+    public void setTransporttotalfees(Long transporttotalfees) {
+        this.transporttotalfees = transporttotalfees;
     }
 
     public String getAcademicyear() {

@@ -1,6 +1,6 @@
 package com.sivserver.example.admission;
 
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 import com.sivserver.example.student.StudentBaseInformationProjection;
 import com.sivserver.example.student.StudentBaseInformationRepository;
 import org.json.JSONException;
