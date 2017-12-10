@@ -35,9 +35,9 @@ public class ChildsPickupPlaySchoolApiController {
             @RequestParam(value = "program", required = false) String program,
             @RequestParam(value = "section", required = false) String section,
             @RequestParam(value = "academicyear", required = false) String academicyear,
-            @RequestParam(value = "pickup_person_name", required = false) String pickup_person_name,
-            @RequestParam(value = "pickup_person_relation", required = false) String pickup_person_relation,
-            @RequestParam(value = "pickup_person_mobileno", required = false) String pickup_person_mobileno,
+            @RequestParam(value = "pickuppersonname", required = false) String pickuppersonname,
+            @RequestParam(value = "pickuppersonrelation", required = false) String pickuppersonrelation,
+            @RequestParam(value = "pickuppersonmobileno", required = false) String pickuppersonmobileno,
             @RequestParam(value = "remarks", required = false) String remarks,
             @RequestParam(value = "loginuser", required = false) String loginuser
 
@@ -56,9 +56,9 @@ public class ChildsPickupPlaySchoolApiController {
         ps_childs_pickup.setProgram(program);
         ps_childs_pickup.setSection(section);
         ps_childs_pickup.setAcademicyear(academicyear);
-        ps_childs_pickup.setPickup_person_name(pickup_person_name);
-        ps_childs_pickup.setPickup_person_relation(pickup_person_relation);
-        ps_childs_pickup.setPickup_person_mobileno(pickup_person_mobileno);
+        ps_childs_pickup.setPickuppersonname(pickuppersonname);
+        ps_childs_pickup.setPickuppersonrelation(pickuppersonrelation);
+        ps_childs_pickup.setPickuppersonmobileno(pickuppersonmobileno);
         ps_childs_pickup.setRemarks(remarks);
         ps_childs_pickup.setLoginuser(loginuser);
 
@@ -68,4 +68,13 @@ public class ChildsPickupPlaySchoolApiController {
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, value="/getChildsPickupPlaySchoolDetail")
+    public ChildsPickupPlaySchoolProjection getChildsPickupPlaySchoolDetail(@RequestParam (value ="pickupid") String pickupid) {
+        ChildsPickupPlaySchoolProjection playschoolChildsPickupDetail = childsPickupPlaySchoolRepository.findOneByPickupid(pickupid);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getChildsPickupPlaySchoolDetail");
+        return playschoolChildsPickupDetail;
     }
+
+
+}

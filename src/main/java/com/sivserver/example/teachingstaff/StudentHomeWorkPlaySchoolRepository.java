@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface StudentHomeWorkPlaySchoolRepository extends JpaRepository<StudentHomeWorkPlaySchool, String> {
 StudentHomeWorkPlaySchool findByHomeworkid(String homeworkid);
+StudentHomeWorkPlaySchoolProjection findOneByHomeworkid(String homeworkid);
 }

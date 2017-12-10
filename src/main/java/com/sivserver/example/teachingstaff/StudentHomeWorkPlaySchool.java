@@ -26,7 +26,7 @@ public class StudentHomeWorkPlaySchool {
 
     private String subjectcategory;
 
-    private String homework_content;
+    private String homeworkcontent;
 
     private String loginuser;
 
@@ -89,12 +89,12 @@ public class StudentHomeWorkPlaySchool {
         this.subjectcategory = subjectcategory;
     }
 
-    public String getHomework_content() {
-        return homework_content;
+    public String getHomeworkcontent() {
+        return homeworkcontent;
     }
 
-    public void setHomework_content(String homework_content) {
-        this.homework_content = homework_content;
+    public void setHomeworkcontent(String homeworkcontent) {
+        this.homeworkcontent = homeworkcontent;
     }
 
     public String getLoginuser() {

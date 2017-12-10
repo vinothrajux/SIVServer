@@ -104,7 +104,7 @@ public class StudentPersonalInformationApiController  {
     public StudentPersonalInformationProjection getStudentPersonalInformationDetail(@RequestParam (value ="regno") String registerNumber) {
         StudentPersonalInformationProjection studentPersonalInformationDetail = studentPersonalInformationRepository.findOneByRegno(registerNumber);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getStudentPersonalInformationDetail");
+        System.out.println("Inside getStudentPersonalInformationDetail"+registerNumber);
         return studentPersonalInformationDetail;
     }
 

@@ -35,16 +35,16 @@ public class StudentsMonthlyProgressPlaySchoolApiController {
             @RequestParam (value="program", required=false) String program,
             @RequestParam (value="section", required=false) String section,
             @RequestParam (value="academicyear", required=false) String academicyear,
-            @RequestParam (value="category1_rating", required=false) Integer category1_rating,
-            @RequestParam (value="category2_rating", required=false) Integer category2_rating,
-            @RequestParam (value="category3_rating", required=false) Integer category3_rating,
-            @RequestParam (value="category4_rating", required=false) Integer category4_rating,
-            @RequestParam (value="category5_rating", required=false) Integer category5_rating,
-            @RequestParam (value="category6_rating", required=false) Integer category6_rating,
-            @RequestParam (value="category7_rating", required=false) Integer category7_rating,
-            @RequestParam (value="category8_rating", required=false) Integer category8_rating,
-            @RequestParam (value="category9_rating", required=false) Integer category9_rating,
-            @RequestParam (value="category10_rating", required=false) Integer category10_rating,
+            @RequestParam (value="category1rating", required=false) Integer category1rating,
+            @RequestParam (value="category2rating", required=false) Integer category2rating,
+            @RequestParam (value="category3rating", required=false) Integer category3rating,
+            @RequestParam (value="category4rating", required=false) Integer category4rating,
+            @RequestParam (value="category5rating", required=false) Integer category5rating,
+            @RequestParam (value="category6rating", required=false) Integer category6rating,
+            @RequestParam (value="category7rating", required=false) Integer category7rating,
+            @RequestParam (value="category8rating", required=false) Integer category8rating,
+            @RequestParam (value="category9rating", required=false) Integer category9rating,
+            @RequestParam (value="category10rating", required=false) Integer category10rating,
             @RequestParam (value="loginuser", required=false) String loginuser
 
     ) {
@@ -60,20 +60,28 @@ public class StudentsMonthlyProgressPlaySchoolApiController {
         ps_Students_Monthly_progress.setProgram(program);
         ps_Students_Monthly_progress.setSection(section);
         ps_Students_Monthly_progress.setAcademicyear(academicyear);
-        ps_Students_Monthly_progress.setCategory1_rating(category1_rating);
-        ps_Students_Monthly_progress.setCategory2_rating(category2_rating);
-        ps_Students_Monthly_progress.setCategory3_rating(category3_rating);
-        ps_Students_Monthly_progress.setCategory4_rating(category4_rating);
-        ps_Students_Monthly_progress.setCategory5_rating(category5_rating);
-        ps_Students_Monthly_progress.setCategory6_rating(category6_rating);
-        ps_Students_Monthly_progress.setCategory7_rating(category7_rating);
-        ps_Students_Monthly_progress.setCategory8_rating(category8_rating);
-        ps_Students_Monthly_progress.setCategory9_rating(category9_rating);
-        ps_Students_Monthly_progress.setCategory10_rating(category10_rating);
+        ps_Students_Monthly_progress.setCategory1rating(category1rating);
+        ps_Students_Monthly_progress.setCategory2rating(category2rating);
+        ps_Students_Monthly_progress.setCategory3rating(category3rating);
+        ps_Students_Monthly_progress.setCategory4rating(category4rating);
+        ps_Students_Monthly_progress.setCategory5rating(category5rating);
+        ps_Students_Monthly_progress.setCategory6rating(category6rating);
+        ps_Students_Monthly_progress.setCategory7rating(category7rating);
+        ps_Students_Monthly_progress.setCategory8rating(category8rating);
+        ps_Students_Monthly_progress.setCategory9rating(category9rating);
+        ps_Students_Monthly_progress.setCategory10rating(category10rating);
         ps_Students_Monthly_progress.setLoginuser(loginuser);
 
         studentsMonthlyProgressPlaySchoolRepository.save(ps_Students_Monthly_progress);
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, value="/getStudentMonthlyProgressPlaySchoolDetail")
+    public StudentsMonthlyProgressPlaySchoolProjection getStudentMonthlyProgressPlaySchoolDetail(@RequestParam (value ="remarkid") String remarkid) {
+        StudentsMonthlyProgressPlaySchoolProjection playschoolstudentMonthlyProgressDetail = studentsMonthlyProgressPlaySchoolRepository.findOneByRemarkid(remarkid);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getStudentMonthlyProgressPlaySchoolDetail");
+        return playschoolstudentMonthlyProgressDetail;
     }
+
+}

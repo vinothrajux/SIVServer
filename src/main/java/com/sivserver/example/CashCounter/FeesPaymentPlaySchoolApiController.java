@@ -93,8 +93,9 @@ public class FeesPaymentPlaySchoolApiController {
     public List<Object> getPlaySchoolFeesPaymentInformationDetail(@RequestParam (value ="billno") String billno) {
 
         FeesPaymentPlaySchoolProjection feesPaymentPlaySchoolProjection = feesPaymentPlaySchoolRepository.findOneByBillno(billno);
-
-        PlaySchoolStudentBaseInformationProjection playSchoolStudentBaseInformationProjection = playSchoolStudentBaseInformationRepository.findOneByRegisternumber(billno);
+        String regno = feesPaymentPlaySchoolProjection.getRegisternumber();
+        System.out.println("test:"+regno);
+        PlaySchoolStudentBaseInformationProjection playSchoolStudentBaseInformationProjection = playSchoolStudentBaseInformationRepository.findOneByRegisternumber(regno);
 
         List<Object> list = new ArrayList<Object>();
 

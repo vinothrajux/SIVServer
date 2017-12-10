@@ -1,5 +1,6 @@
 package com.sivserver.example.teachingstaff;
 
+import com.sivserver.example.admission.AdmissionPlaySchoolProjection;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -32,7 +33,7 @@ public class StudentHomeWorkPlaySchoolApiController {
             @RequestParam (value="section", required=false) String section,
             @RequestParam (value="academicyear", required=false) String academicyear,
             @RequestParam (value="subjectcategory", required=false) String subjectcategory,
-            @RequestParam (value="homework_content", required=false) String homework_content,
+            @RequestParam (value="homeworkcontent", required=false) String homeworkcontent,
             @RequestParam (value="loginuser", required=false) String loginuser
 
     ) {
@@ -45,7 +46,7 @@ public class StudentHomeWorkPlaySchoolApiController {
         ps_student_home_work.setSection(section);
         ps_student_home_work.setAcademicyear(academicyear);
         ps_student_home_work.setSubjectcategory(subjectcategory);
-        ps_student_home_work.setHomework_content(homework_content);
+        ps_student_home_work.setHomeworkcontent(homeworkcontent);
         ps_student_home_work.setLoginuser(loginuser);
 
         studentHomeWorkPlaySchoolRepository.save(ps_student_home_work);
@@ -53,5 +54,14 @@ public class StudentHomeWorkPlaySchoolApiController {
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, value="/getStudentHomeWorkPlaySchoolDetail")
+    public StudentHomeWorkPlaySchoolProjection getStudentHomeWorkPlaySchoolDetail(@RequestParam (value ="homeworkid") String homeworkid) {
+        StudentHomeWorkPlaySchoolProjection playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findOneByHomeworkid(homeworkid);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getStudentHomeWorkPlaySchoolDetail");
+        return playschoolstudentHomeWorkDetail;
     }
+
+
+}
 

@@ -33,11 +33,11 @@ public class ChildsPickupPlaySchool {
 
     private String academicyear;
 
-    private String pickup_person_name;
+    private String pickuppersonname;
 
-    private String pickup_person_relation;
+    private String pickuppersonrelation;
 
-    private String pickup_person_mobileno;
+    private String pickuppersonmobileno;
 
     private String remarks;
 
@@ -118,28 +118,28 @@ public class ChildsPickupPlaySchool {
         this.academicyear = academicyear;
     }
 
-    public String getPickup_person_name() {
-        return pickup_person_name;
+    public String getPickuppersonname() {
+        return pickuppersonname;
     }
 
-    public void setPickup_person_name(String pickup_person_name) {
-        this.pickup_person_name = pickup_person_name;
+    public void setPickuppersonname(String pickuppersonname) {
+        this.pickuppersonname = pickuppersonname;
     }
 
-    public String getPickup_person_relation() {
-        return pickup_person_relation;
+    public String getPickuppersonrelation() {
+        return pickuppersonrelation;
     }
 
-    public void setPickup_person_relation(String pickup_person_relation) {
-        this.pickup_person_relation = pickup_person_relation;
+    public void setPickuppersonrelation(String pickuppersonrelation) {
+        this.pickuppersonrelation = pickuppersonrelation;
     }
 
-    public String getPickup_person_mobileno() {
-        return pickup_person_mobileno;
+    public String getPickuppersonmobileno() {
+        return pickuppersonmobileno;
     }
 
-    public void setPickup_person_mobileno(String pickup_person_mobileno) {
-        this.pickup_person_mobileno = pickup_person_mobileno;
+    public void setPickuppersonmobileno(String pickuppersonmobileno) {
+        this.pickuppersonmobileno = pickuppersonmobileno;
     }
 
     public String getRemarks() {

@@ -8,4 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface PlaySchoolStudentBaseInformationRepository extends JpaRepository<PlaySchoolStudentBaseInformation, String> {
 PlaySchoolStudentBaseInformation findByRegisternumber(String registernumber);
 PlaySchoolStudentBaseInformationProjection findOneByRegisternumber(String registernumber);
+Iterable<PlaySchoolStudentBaseInformation> findAllByStandardstudyingAndSectionAndAcademicyearAndStudentstatus(String standardstudying,String section, String academicyear, String studentstatus);
 }

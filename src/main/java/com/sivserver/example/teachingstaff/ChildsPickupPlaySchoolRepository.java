@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface ChildsPickupPlaySchoolRepository extends JpaRepository<ChildsPickupPlaySchool, String > {
 ChildsPickupPlaySchool findByPickupid(String pickupid);
+ChildsPickupPlaySchoolProjection findOneByPickupid(String pickupid);
 }
