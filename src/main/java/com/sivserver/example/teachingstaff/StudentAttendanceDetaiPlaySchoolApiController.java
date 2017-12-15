@@ -9,8 +9,12 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.zip.DataFormatException;
 
 /**
  * Created by GBCorp on 03/11/2017.
@@ -24,6 +28,8 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
     @Autowired
     private PlaySchoolStudentBaseInformationRepository playSchoolStudentBaseInformationRepository;
 
+    @Autowired
+    private StudentAttendanceHeaderPlaySchoolRepository studentAttendanceHeaderPlaySchoolRepository;
 
     @GetMapping(value="/all")
 
@@ -76,13 +82,58 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
 
     @RequestMapping(method = RequestMethod.POST, value="/setStudentListAttendance")
     public void getStudentLists(
-            @RequestParam(value ="setattendancedetail", required=false) String setattendancedetail
+            @RequestParam(value ="setattendancedetail", required=false) String setattendancedetail,
+            @RequestParam(value ="selectedclassdetail", required=false) String selectedclassdetail
     ){
+        System.out.println("entered");
+        //System.out.println("selectedclassattendance"+selectedclassdetail.toString());
                 String registernumber = "";
                 String presentstatus = "";
         Date date = new Date();
         try {
+
+            JSONObject selectedclassdetailObj = new JSONObject(selectedclassdetail);
+            String entrydate = selectedclassdetailObj.getString("entrydate");
+            String standardstudying = selectedclassdetailObj.getString("standardstudying");
+            String section = selectedclassdetailObj.getString("section");
+            String academicyear = selectedclassdetailObj.getString("academicyear");
+            StudentAttendanceHeaderPlaySchool studentAttendanceHeaderPlaySchool = new StudentAttendanceHeaderPlaySchool();
+            Student_Attendance_Play_School_Compound_Key student_attendance_play_school_compound_key = new Student_Attendance_Play_School_Compound_Key();
+            //Date entryDate = new Date(entrydate);
+
+//            Integer rowcount = studentAttendanceHeaderPlaySchoolRepository.countALLBySetStudent_attendance_play_school_compound_key(student_attendance_play_school_compound_key);
+//            System.out.println("count:"+rowcount);
+
             JSONArray jsonArrayObj = new JSONArray(setattendancedetail);
+            Integer number_of_present=0, number_of_absent=0;
+            for (int i=0; i<jsonArrayObj.length(); i++ ){
+                JSONObject objectInArray = jsonArrayObj.getJSONObject(i);
+                presentstatus = objectInArray.getString("presentstatus");
+
+                if (presentstatus.equals("1")){
+                    number_of_present = number_of_present+1;
+                } else if (presentstatus.equals("0")){
+                    number_of_absent = number_of_absent+1;
+                }
+            }
+
+            try {
+                Date entryDate = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH).parse(entrydate);
+                student_attendance_play_school_compound_key.setEntrydate(entryDate);
+                student_attendance_play_school_compound_key.setSection(section);
+                student_attendance_play_school_compound_key.setProgram(standardstudying);
+                student_attendance_play_school_compound_key.setAcdemicyear(academicyear);
+
+                studentAttendanceHeaderPlaySchool.setStudent_attendance_play_school_compound_key(student_attendance_play_school_compound_key);
+                studentAttendanceHeaderPlaySchool.setNo_of_absent(number_of_absent);
+                studentAttendanceHeaderPlaySchool.setNo_of_present(number_of_present);
+                studentAttendanceHeaderPlaySchoolRepository.save(studentAttendanceHeaderPlaySchool);
+            }
+            catch (ParseException e){
+                e.printStackTrace();
+            }
+
+
             for (int i=0; i<jsonArrayObj.length(); i++ ){
                 JSONObject objectInArray = jsonArrayObj.getJSONObject(i);
                 registernumber = objectInArray.getString("registernumber");

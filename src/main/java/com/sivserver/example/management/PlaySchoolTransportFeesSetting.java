@@ -19,10 +19,6 @@ public class PlaySchoolTransportFeesSetting {
 
     private Long transport_initial_fees;
 
-    private Long transport_term1_fees;
-
-    private Long transport_term2_fees;
-
     private String loginuser;
 
     public PlaySchoolTransportFeesSetting() {
@@ -50,22 +46,6 @@ public class PlaySchoolTransportFeesSetting {
 
     public void setTransport_initial_fees(Long transport_initial_fees) {
         this.transport_initial_fees = transport_initial_fees;
-    }
-
-    public Long getTransport_term1_fees() {
-        return transport_term1_fees;
-    }
-
-    public void setTransport_term1_fees(Long transport_term1_fees) {
-        this.transport_term1_fees = transport_term1_fees;
-    }
-
-    public Long getTransport_term2_fees() {
-        return transport_term2_fees;
-    }
-
-    public void setTransport_term2_fees(Long transport_term2_fees) {
-        this.transport_term2_fees = transport_term2_fees;
     }
 
     public String getLoginuser() {

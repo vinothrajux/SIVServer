@@ -1,5 +1,6 @@
 package com.sivserver.example.admission;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +17,10 @@ import java.util.List;
 public class ApplicationSalePlaySchoolApiController {
 
     private ApplicationSalePlaySchoolRepository applicationSalePlaySchoolRepository;
+
+
+    @Autowired
+    private PlaySchoolApplicationNoGenerateRepository playSchoolApplicationNoGenerateRepository;
 
     @RequestMapping(value="/all")
 
@@ -59,10 +64,14 @@ public class ApplicationSalePlaySchoolApiController {
             @RequestParam (value="applicationpaidmode", required=false) String applicationpaidmode,
             @RequestParam (value="remarks", required=false) String remarks,
             @RequestParam (value="academicyear", required=false) String academicyear,
-            @RequestParam (value="loginuser", required=false) String loginuser
+            @RequestParam (value="loginuser", required=false) String loginuser,
+            @RequestParam (value="idno", required=false) Integer idno,
+            @RequestParam (value="enquiryno", required=false) Integer enquiryno
+
 
     ) {
         ApplicationSalePlaySchool appsaleplayschool = new ApplicationSalePlaySchool();
+        PlaySchoolApplicationNoGenerate appnogenerate = new PlaySchoolApplicationNoGenerate();
         appsaleplayschool.setApplno(applno);
         appsaleplayschool.setCategory(category);
         appsaleplayschool.setSaledate(saledate);
@@ -95,13 +104,19 @@ public class ApplicationSalePlaySchoolApiController {
         appsaleplayschool.setAcademicyear(academicyear);
         appsaleplayschool.setLoginuser(loginuser);
 
+
         applicationSalePlaySchoolRepository.save(appsaleplayschool);
 
+        appnogenerate.setIdno(idno);
+        appnogenerate.setEnquiryno(enquiryno);
+
+        playSchoolApplicationNoGenerateRepository.save(appnogenerate);
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolApplcationDetail")
     public ApplicationSalePlaySchoolProjection getPlaySchoolApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
         ApplicationSalePlaySchoolProjection playschoolapplicationDetail = applicationSalePlaySchoolRepository.findOneByApplno(applicationNumber);
+
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
         System.out.println("Inside getPlaySchoolApplcationDetail");
         return playschoolapplicationDetail;

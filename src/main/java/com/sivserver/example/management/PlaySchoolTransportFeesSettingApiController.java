@@ -25,8 +25,6 @@ public class PlaySchoolTransportFeesSettingApiController {
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "stage", required = false) String stage,
             @RequestParam(value = "transport_initial_fees", required = false) Long transport_initial_fees,
-            @RequestParam(value = "transport_term1_fees", required = false) Long transport_term1_fees,
-            @RequestParam(value = "transport_term2_fees", required = false) Long transport_term2_fees,
             @RequestParam(value = "loginuser", required = false) String loginuser
     )
     {
@@ -36,8 +34,6 @@ public class PlaySchoolTransportFeesSettingApiController {
         ps_transport_fees_set.setFees_setting_date(fees_setting_date);
         ps_transport_fees_set.setManagement_Transport_Fees_Compound_Key(key);
         ps_transport_fees_set.setTransport_initial_fees(transport_initial_fees);
-        ps_transport_fees_set.setTransport_term1_fees(transport_term1_fees);
-        ps_transport_fees_set.setTransport_term2_fees(transport_term2_fees);
         ps_transport_fees_set.setLoginuser(loginuser);
 
         playSchoolTransportFeesSettingRepository.save(ps_transport_fees_set);

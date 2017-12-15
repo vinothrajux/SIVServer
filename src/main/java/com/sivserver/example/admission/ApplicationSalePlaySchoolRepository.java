@@ -8,4 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface ApplicationSalePlaySchoolRepository extends JpaRepository<ApplicationSalePlaySchool, String> {
 ApplicationSalePlaySchool findByApplno(String applno);
 ApplicationSalePlaySchoolProjection findOneByApplno(String applno);
+
+
+
 }
