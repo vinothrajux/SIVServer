@@ -22,6 +22,9 @@ public class FeesPaymentPlaySchoolApiController {
     @Autowired
     private PlaySchoolStudentBaseInformationRepository playSchoolStudentBaseInformationRepository;
 
+    @Autowired
+    private PlaySchoolBillNoGenerateRepository playSchoolBillNoGenerateRepository;
+
     @GetMapping(value="/all")
 
     public List<FeesPaymentPlaySchool> getFeesPaymentPlaySchoolDetails() {return feesPaymentPlaySchoolRepository.findAll();}
@@ -33,7 +36,7 @@ public class FeesPaymentPlaySchoolApiController {
 
     @RequestMapping(method = RequestMethod.POST)
 
-    public void feesPaymentPlaySchool(
+    public String feesPaymentPlaySchool(
             @RequestParam(value = "billdate", required = false) Date billdate,
             @RequestParam(value = "billno", required = false) String billno,
             @RequestParam(value = "registernumber", required = false) String registernumber,
@@ -54,14 +57,21 @@ public class FeesPaymentPlaySchoolApiController {
             @RequestParam(value = "chequeno", required = false) String chequeno,
             @RequestParam(value = "chequedate", required = false) Date chequedate,
             @RequestParam(value = "bankname", required = false) String bankname,
-            @RequestParam(value = "loginuser", required = false) String loginuser
+            @RequestParam(value = "loginuser", required = false) String loginuser,
+            @RequestParam(value = "idno", required = false) Integer idno
+
 
     ) {
         FeesPaymentPlaySchool ps_fees_payment = new FeesPaymentPlaySchool();
         PlaySchoolStudentBaseInformation ps_student_base_info = new PlaySchoolStudentBaseInformation();
+        PlaySchoolBillNoGenerate psbillnogenerate = new PlaySchoolBillNoGenerate();
+
+        PlaySchoolBillNoGenerateProjection playschoolBillNo = playSchoolBillNoGenerateRepository.findOneByIdno(idno);
+        Integer lastbillnotable = playschoolBillNo.getLastbillno();
+        lastbillnotable++;
 
         ps_fees_payment.setBilldate(billdate);
-        ps_fees_payment.setBillno(billno);
+        ps_fees_payment.setBillno(lastbillnotable.toString());
         ps_fees_payment.setRegisternumber(registernumber);
         ps_fees_payment.setProgram(program);
         ps_fees_payment.setSection(section);
@@ -84,7 +94,13 @@ public class FeesPaymentPlaySchoolApiController {
 
         feesPaymentPlaySchoolRepository.save(ps_fees_payment);
 
+        psbillnogenerate.setIdno(idno);
+        Long lastbillno = new Long(lastbillnotable);
+        psbillnogenerate.setLastBillno(lastbillno);
 
+        playSchoolBillNoGenerateRepository.save(psbillnogenerate);
+
+        return lastbillnotable.toString();
     }
 
     FeesPaymentPlaySchoolInformation feesPaymentPlaySchoolInformation;

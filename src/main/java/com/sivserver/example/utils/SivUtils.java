@@ -18,6 +18,13 @@ public class SivUtils {
             return true;
         }
     }
+
+    public String getServerPhotoGalleryLocalPath(){
+        return "C:/wamp/www/SIVWeb/images/uploaded/";
+    }
+    public String getServerPhotoGalleryPath(){
+        return "http://192.168.43.195/SIVWeb/images/uploaded/";
+    }
     /**
      * Apply sha-512
      * digest the string

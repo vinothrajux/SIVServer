@@ -36,6 +36,8 @@ public class AdmissionPlaySchoolApiController {
     @Autowired
     private PlaySchoolBalanceFeesRepository playSchoolBalanceFeesRepository;
 
+    @Autowired
+    private PlaySchoolProgramAdmissionNoGenerateRepository playSchoolProgramAdmissionNoGenerateRepository;
 
 
     @GetMapping(value="/all")
@@ -119,7 +121,13 @@ public class AdmissionPlaySchoolApiController {
             @RequestParam (value="term2transportfees", required=false) Long term2transportfees,
             @RequestParam (value="total_term2_fees", required=false) Long total_term2_fees,
             @RequestParam (value="term2_fees_due_date", required=false) Date term2_fees_due_date,
-            @RequestParam (value="grand_total_fees", required=false) Long grand_total_fees
+            @RequestParam (value="grand_total_fees", required=false) Long grand_total_fees,
+            @RequestParam (value="idno", required=false) Integer idno,
+            @RequestParam (value="todprgno", required=false) Long todprgno,
+            @RequestParam (value="prekgprgno", required=false) Long prekgprgno,
+            @RequestParam (value="kgoneprgno", required=false) Long kgoneprgno,
+            @RequestParam (value="kgtwoprgno", required=false) Long kgtwoprgno,
+            @RequestParam (value="waitlistno", required=false) Long waitlistno
 
 
     ) {
@@ -129,6 +137,7 @@ public class AdmissionPlaySchoolApiController {
         PlaySchoolStudentBaseInformation ps_student_base_info = new PlaySchoolStudentBaseInformation();
         PlaySchoolFeesEntryBase ps_fees_base_info = new PlaySchoolFeesEntryBase();
         PlaySchoolBalanceFees ps_fees_bal_info = new PlaySchoolBalanceFees();
+        PlaySchoolProgramAdmissionNoGenerate psadmissionno = new PlaySchoolProgramAdmissionNoGenerate();
 
         admissionplayschool.setApplno(applno)
                 .setAdmissiondate(admissiondate)
@@ -247,14 +256,21 @@ public class AdmissionPlaySchoolApiController {
 
         playSchoolBalanceFeesRepository.save(ps_fees_bal_info);
 
+        psadmissionno.setIdno(idno);
+        psadmissionno.setTodprgno(todprgno);
+        psadmissionno.setPrekgprgno(prekgprgno);
+        psadmissionno.setKgoneprgno(kgoneprgno);
+        psadmissionno.setKgtwoprgno(kgtwoprgno);
+        psadmissionno.setWaitlistno(waitlistno);
 
+        playSchoolProgramAdmissionNoGenerateRepository.save(psadmissionno);
 
 
 
 
     }
 
-    @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolAdmissionDetail")
+        @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolAdmissionDetail")
     public AdmissionPlaySchoolProjection getPlaySchoolAdmissionDetail(@RequestParam (value ="applno") String applicationNumber) {
         AdmissionPlaySchoolProjection playschooladmissionDetail = admissionPlaySchoolRepository.findOneByApplno(applicationNumber);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
