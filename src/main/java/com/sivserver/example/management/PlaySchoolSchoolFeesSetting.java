@@ -12,44 +12,50 @@ import java.util.Date;
 @Table(name="playschoolschoolfeessetting")
 public class PlaySchoolSchoolFeesSetting {
 
-    private Date fees_setting_date;
+    private Date feessettingdate;
 
     @Id
-    Management_Playschool_Fees_Compound_Key management_Playschool_Fees_Compound_Key;
+    Management_Playschool_Fees_Compound_Key managementplayschoolfeescompoundkey;
 
     private Long admissionfees;
 
-    private Date admissionfees_due_date;
+    private Date admissionfeesduedate;
 
-    private Long term1fees;
+    private Long materialkitfees;
 
-    private Date term1fees_due_date;
+    private Long activityfees;
 
-    private Long term2fees;
+    private Long tuitionfees;
 
-    private Date term2fees_due_date;
+    private Long totalfees;
 
-    private Long grandtotalfees;
+    private Long installment1fees;
+
+    private Long installment2fees;
+
+    private Date installment1duedate;
+
+    private Date installment2duedate;
 
     private String loginuser;
 
     public PlaySchoolSchoolFeesSetting() {
     }
 
-    public Date getFees_setting_date() {
-        return fees_setting_date;
+    public Date getFeessettingdate() {
+        return feessettingdate;
     }
 
-    public void setFees_setting_date(Date fees_setting_date) {
-        this.fees_setting_date = fees_setting_date;
+    public void setFeessettingdate(Date feessettingdate) {
+        this.feessettingdate = feessettingdate;
     }
 
-    public Management_Playschool_Fees_Compound_Key getManagement_Playschool_Fees_Compound_Key() {
-        return management_Playschool_Fees_Compound_Key;
+    public Management_Playschool_Fees_Compound_Key getManagementplayschoolfeescompoundkey() {
+        return managementplayschoolfeescompoundkey;
     }
 
-    public void setManagement_Playschool_Fees_Compound_Key(Management_Playschool_Fees_Compound_Key management_Playschool_Fees_Compound_Key) {
-        this.management_Playschool_Fees_Compound_Key = management_Playschool_Fees_Compound_Key;
+    public void setManagementplayschoolfeescompoundkey(Management_Playschool_Fees_Compound_Key managementplayschoolfeescompoundkey) {
+        this.managementplayschoolfeescompoundkey = managementplayschoolfeescompoundkey;
     }
 
     public Long getAdmissionfees() {
@@ -60,52 +66,76 @@ public class PlaySchoolSchoolFeesSetting {
         this.admissionfees = admissionfees;
     }
 
-    public Date getAdmissionfees_due_date() {
-        return admissionfees_due_date;
+    public Date getAdmissionfeesduedate() {
+        return admissionfeesduedate;
     }
 
-    public void setAdmissionfees_due_date(Date admissionfees_due_date) {
-        this.admissionfees_due_date = admissionfees_due_date;
+    public void setAdmissionfeesduedate(Date admissionfeesduedate) {
+        this.admissionfeesduedate = admissionfeesduedate;
     }
 
-    public Long getTerm1fees() {
-        return term1fees;
+    public Long getMaterialkitfees() {
+        return materialkitfees;
     }
 
-    public void setTerm1fees(Long term1fees) {
-        this.term1fees = term1fees;
+    public void setMaterialkitfees(Long materialkitfees) {
+        this.materialkitfees = materialkitfees;
     }
 
-    public Date getTerm1fees_due_date() {
-        return term1fees_due_date;
+    public Long getActivityfees() {
+        return activityfees;
     }
 
-    public void setTerm1fees_due_date(Date term1fees_due_date) {
-        this.term1fees_due_date = term1fees_due_date;
+    public void setActivityfees(Long activityfees) {
+        this.activityfees = activityfees;
     }
 
-    public Long getTerm2fees() {
-        return term2fees;
+    public Long getTuitionfees() {
+        return tuitionfees;
     }
 
-    public void setTerm2fees(Long term2fees) {
-        this.term2fees = term2fees;
+    public void setTuitionfees(Long tuitionfees) {
+        this.tuitionfees = tuitionfees;
     }
 
-    public Date getTerm2fees_due_date() {
-        return term2fees_due_date;
+    public Long getTotalfees() {
+        return totalfees;
     }
 
-    public void setTerm2fees_due_date(Date term2fees_due_date) {
-        this.term2fees_due_date = term2fees_due_date;
+    public void setTotalfees(Long totalfees) {
+        this.totalfees = totalfees;
     }
 
-    public Long getGrandtotalfees() {
-        return grandtotalfees;
+    public Long getInstallment1fees() {
+        return installment1fees;
     }
 
-    public void setGrandtotalfees(Long grandtotalfees) {
-        this.grandtotalfees = grandtotalfees;
+    public void setInstallment1fees(Long installment1fees) {
+        this.installment1fees = installment1fees;
+    }
+
+    public Long getInstallment2fees() {
+        return installment2fees;
+    }
+
+    public void setInstallment2fees(Long installment2fees) {
+        this.installment2fees = installment2fees;
+    }
+
+    public Date getInstallment1duedate() {
+        return installment1duedate;
+    }
+
+    public void setInstallment1duedate(Date installment1duedate) {
+        this.installment1duedate = installment1duedate;
+    }
+
+    public Date getInstallment2duedate() {
+        return installment2duedate;
+    }
+
+    public void setInstallment2duedate(Date installment2duedate) {
+        this.installment2duedate = installment2duedate;
     }
 
     public String getLoginuser() {

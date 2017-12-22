@@ -18,7 +18,7 @@ public class AdmissionPlaySchool {
 
     private Date admissiondate;
 
-    private String admissionfor;
+    private String appfor;
 
     private String admissionstatus;
 
@@ -64,12 +64,12 @@ public class AdmissionPlaySchool {
         return this;
     }
 
-    public String getAdmissionfor() {
-        return admissionfor;
+    public String getAppfor() {
+        return appfor;
     }
 
-    public AdmissionPlaySchool setAdmissionfor(String admissionfor) {
-        this.admissionfor = admissionfor;
+    public AdmissionPlaySchool setAppfor(String appfor) {
+        this.appfor = appfor;
         return this;
     }
 

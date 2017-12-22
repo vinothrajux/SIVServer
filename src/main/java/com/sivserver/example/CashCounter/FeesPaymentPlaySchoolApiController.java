@@ -44,18 +44,19 @@ public class FeesPaymentPlaySchoolApiController {
             @RequestParam(value = "section", required = false) String section,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "schoolfeestitle", required = false) String schoolfeestitle,
-            @RequestParam(value = "schoolfees", required = false) Long schoolfees,
-            @RequestParam(value = "schoolfeespaid", required = false) Long schoolfeespaid,
-            @RequestParam(value = "transportfeestitle", required = false) String transportfeestitle,
-            @RequestParam(value = "transportfees", required = false) Long transportfees,
-            @RequestParam(value = "transportfeespaid", required = false) Long transportfeespaid,
+            @RequestParam(value = "materialkitfees", required = false) Long materialkitfees,
+            @RequestParam(value = "materialkitfeespaid", required = false) Long materialkitfeespaid,
+            @RequestParam(value = "activityfees", required = false) String activityfees,
+            @RequestParam(value = "activityfeespaid", required = false) Long activityfeespaid,
+            @RequestParam(value = "tuitionfees", required = false) Long tuitionfees,
+            @RequestParam(value = "tuitionfeespaid", required = false) Long tuitionfeespaid,
             @RequestParam(value = "totalfees", required = false) Long totalfees,
             @RequestParam(value = "totalfeespaid", required = false) Long totalfeespaid,
-            @RequestParam(value = "balance", required = false) Long balance,
+            @RequestParam(value = "balancefees", required = false) Long balancefees,
             @RequestParam(value = "duedate", required = false) Date duedate,
             @RequestParam(value = "paymentmethod", required = false) String paymentmethod,
             @RequestParam(value = "chequeno", required = false) String chequeno,
-            @RequestParam(value = "chequedate", required = false) Date chequedate,
+            @RequestParam(value = "chequedate", required = false) String chequedate,
             @RequestParam(value = "bankname", required = false) String bankname,
             @RequestParam(value = "loginuser", required = false) String loginuser,
             @RequestParam(value = "idno", required = false) Integer idno
@@ -77,14 +78,15 @@ public class FeesPaymentPlaySchoolApiController {
         ps_fees_payment.setSection(section);
         ps_fees_payment.setAcademicyear(academicyear);
         ps_fees_payment.setSchoolfeestitle(schoolfeestitle);
-        ps_fees_payment.setSchoolfees(schoolfees);
-        ps_fees_payment.setSchoolfeespaid(schoolfeespaid);
-        ps_fees_payment.setTransportfeestitle(transportfeestitle);
-        ps_fees_payment.setTransportfees(transportfees);
-        ps_fees_payment.setTransportfeespaid(transportfeespaid);
+        ps_fees_payment.setMaterialkitfees(materialkitfees);
+        ps_fees_payment.setMaterialkitfeespaid(materialkitfeespaid);
+        ps_fees_payment.setActivityfees(activityfeespaid);
+        ps_fees_payment.setActivityfeespaid(activityfeespaid);
+        ps_fees_payment.setTuitionfees(tuitionfees);
+        ps_fees_payment.setTuitionfeespaid(tuitionfeespaid);
         ps_fees_payment.setTotalfees(totalfees);
         ps_fees_payment.setTotalfeespaid(totalfeespaid);
-        ps_fees_payment.setBalance(balance);
+        ps_fees_payment.setBalancefees(balancefees);
         ps_fees_payment.setDuedate(duedate);
         ps_fees_payment.setPaymentmethod(paymentmethod);
         ps_fees_payment.setChequeno(chequeno);

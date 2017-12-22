@@ -3,6 +3,7 @@ package com.sivserver.example.CashCounter;
 import com.sivserver.example.student.PlaySchoolStudentPersonalInformation;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by GBCorp on 01/11/2017.
@@ -14,25 +15,19 @@ public class PlaySchoolFeesEntryBase {
     @Column(name="registernumber")
     private String registernumber;
 
-    private Long admissionfees;
+    private Long materialkitfees;
 
-    private Long transportfees;
+    private Long activityfees;
 
-    private Long total_admission_fees;
+    private Long tuitionfees;
 
-    private Long term1fees;
+    private Long totalfees;
 
-    private Long term1transportfees;
+    private Long installment1fees;
 
-    private Long total_term1_fees;
+    private Long installment2fees;
 
-    private Long term2fees;
-
-    private Long term2transportfees;
-
-    private Long total_term2_fees;
-
-    private Long grand_total_fees;
+    private Date admissionfeesduedate;
 
     private String academicyear;
 
@@ -58,84 +53,66 @@ public class PlaySchoolFeesEntryBase {
         return this;
     }
 
-    public Long getAdmissionfees() {
-        return admissionfees;
+    public Long getMaterialkitfees() {
+        return materialkitfees;
     }
 
-    public PlaySchoolFeesEntryBase setAdmissionfees(Long admissionfees) {
-        this.admissionfees = admissionfees;
+    public PlaySchoolFeesEntryBase setMaterialkitfees(Long materialkitfees) {
+        this.materialkitfees = materialkitfees;
         return this;
     }
 
-    public Long getTransportfees() {
-        return transportfees;
+    public Long getActivityfees() {
+        return activityfees;
     }
 
-    public PlaySchoolFeesEntryBase setTransportfees(Long transportfees) {
-        this.transportfees = transportfees;
+    public PlaySchoolFeesEntryBase setActivityfees(Long activityfees) {
+        this.activityfees = activityfees;
         return this;
     }
 
-    public Long getTotal_admission_fees() {
-        return total_admission_fees;
+    public Long getTuitionfees() {
+        return tuitionfees;
     }
 
-    public PlaySchoolFeesEntryBase setTotal_admission_fees(Long total_admission_fees) {
-        this.total_admission_fees = total_admission_fees;
+    public PlaySchoolFeesEntryBase setTuitionfees(Long tuitionfees) {
+        this.tuitionfees = tuitionfees;
         return this;
     }
 
-    public Long getTerm1fees() {
-        return term1fees;
+    public Long getTotalfees() {
+        return totalfees;
     }
 
-    public PlaySchoolFeesEntryBase setTerm1fees(Long term1fees) {
-        this.term1fees = term1fees;
+    public PlaySchoolFeesEntryBase setTotalfees(Long totalfees) {
+        this.totalfees = totalfees;
         return this;
     }
 
-    public Long getTerm1transportfees() {
-        return term1transportfees;
+    public Long getInstallment1fees() {
+        return installment1fees;
     }
 
-    public PlaySchoolFeesEntryBase setTerm1transportfees(Long term1transportfees) {
-        this.term1transportfees = term1transportfees;
+    public PlaySchoolFeesEntryBase setInstallment1fees(Long installment1fees) {
+        this.installment1fees = installment1fees;
         return this;
     }
 
-    public Long getTotal_term1_fees() {
-        return total_term1_fees;
+    public Long getInstallment2fees() {
+        return installment2fees;
     }
 
-    public PlaySchoolFeesEntryBase setTotal_term1_fees(Long total_term1_fees) {
-        this.total_term1_fees = total_term1_fees;
+    public PlaySchoolFeesEntryBase setInstallment2fees(Long installment2fees) {
+        this.installment2fees = installment2fees;
         return this;
     }
 
-    public Long getTerm2fees() {
-        return term2fees;
+    public Date getAdmissionfeesduedate() {
+        return admissionfeesduedate;
     }
 
-    public PlaySchoolFeesEntryBase setTerm2fees(Long term2fees) {
-        this.term2fees = term2fees;
-        return this;
-    }
-
-    public Long getTerm2transportfees() {
-        return term2transportfees;
-    }
-
-    public PlaySchoolFeesEntryBase setTerm2transportfees(Long term2transportfees) {
-        this.term2transportfees = term2transportfees;
-        return this;
-    }
-
-    public Long getTotal_term2_fees() {
-        return total_term2_fees;
-    }
-
-    public PlaySchoolFeesEntryBase setTotal_term2_fees(Long total_term2_fees) {
-        this.total_term2_fees = total_term2_fees;
+    public PlaySchoolFeesEntryBase setAdmissionfeesduedate(Date admissionfeesduedate) {
+        this.admissionfeesduedate = admissionfeesduedate;
         return this;
     }
 
@@ -145,15 +122,6 @@ public class PlaySchoolFeesEntryBase {
 
     public PlaySchoolFeesEntryBase setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
-        return this;
-    }
-
-    public Long getGrand_total_fees() {
-        return grand_total_fees;
-    }
-
-    public PlaySchoolFeesEntryBase setGrand_total_fees(Long grand_total_fees) {
-        this.grand_total_fees = grand_total_fees;
         return this;
     }
 

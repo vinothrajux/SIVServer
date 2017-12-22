@@ -1,5 +1,7 @@
 package com.sivserver.example.management;
 
+import com.sivserver.example.CashCounter.PlaySchoolFeesEntryBaseProjection;
+import com.sivserver.example.student.PlaySchoolStudentBaseInformation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,31 +23,38 @@ public class PlaySchoolSchoolFeesSettingApiController {
     @RequestMapping(method = RequestMethod.POST)
 
     public void playschoolFeesSetting(
-            @RequestParam(value = "fees_setting_date", required = false) Date fees_setting_date,
+
+            @RequestParam(value = "feessettingdate", required = false) Date feessettingdate,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "program", required = false) String program,
             @RequestParam(value = "admissionfees", required = false) Long admissionfees,
-            @RequestParam(value = "admissionfees_due_date", required = false) Date admissionfees_due_date,
-            @RequestParam(value = "term1fees", required = false) Long term1fees,
-            @RequestParam(value = "term1fees_due_date", required = false) Date term1fees_due_date,
-            @RequestParam(value = "term2fees", required = false) Long term2fees,
-            @RequestParam(value = "term2fees_due_date", required = false) Date term2fees_due_date,
-            @RequestParam(value = "grandtotalfees", required = false) Long grandtotalfees,
+            @RequestParam(value = "admissionfeesduedate", required = false) Date admissionfeesduedate,
+            @RequestParam(value = "materialkitfees", required = false) Long materialkitfees,
+            @RequestParam(value = "activityfees", required = false) Long activityfees,
+            @RequestParam(value = "tuitionfees", required = false) Long tuitionfees,
+            @RequestParam(value = "totalfees", required = false) Long totalfees,
+            @RequestParam(value = "installment1fees", required = false) Long installment1fees,
+            @RequestParam(value = "installment2fees", required = false) Long installment2fees,
+            @RequestParam(value = "installment1duedate", required = false) Date installment1duedate,
+            @RequestParam(value = "installment2duedate", required = false) Date installment2duedate,
             @RequestParam(value = "loginuser", required = false) String loginuser
     )
     {
         PlaySchoolSchoolFeesSetting ps_School_Fees_Set = new PlaySchoolSchoolFeesSetting();
         Management_Playschool_Fees_Compound_Key key = new Management_Playschool_Fees_Compound_Key(program, academicyear);
 
-        ps_School_Fees_Set.setFees_setting_date(fees_setting_date);
-        ps_School_Fees_Set.setManagement_Playschool_Fees_Compound_Key(key);
+        ps_School_Fees_Set.setFeessettingdate(feessettingdate);
+        ps_School_Fees_Set.setManagementplayschoolfeescompoundkey(key);
         ps_School_Fees_Set.setAdmissionfees(admissionfees);
-        ps_School_Fees_Set.setAdmissionfees_due_date(admissionfees_due_date);
-        ps_School_Fees_Set.setTerm1fees(term1fees);
-        ps_School_Fees_Set.setTerm1fees_due_date(term1fees_due_date);
-        ps_School_Fees_Set.setTerm2fees(term2fees);
-        ps_School_Fees_Set.setTerm2fees_due_date(term2fees_due_date);
-        ps_School_Fees_Set.setGrandtotalfees(grandtotalfees);
+        ps_School_Fees_Set.setAdmissionfeesduedate(admissionfeesduedate);
+        ps_School_Fees_Set.setMaterialkitfees(materialkitfees);
+        ps_School_Fees_Set.setActivityfees(activityfees);
+        ps_School_Fees_Set.setTuitionfees(tuitionfees);
+        ps_School_Fees_Set.setTotalfees(totalfees);
+        ps_School_Fees_Set.setInstallment1fees(installment1fees);
+        ps_School_Fees_Set.setInstallment2fees(installment2fees);
+        ps_School_Fees_Set.setInstallment1duedate(installment1duedate);
+        ps_School_Fees_Set.setInstallment2duedate(installment2duedate);
         ps_School_Fees_Set.setLoginuser(loginuser);
 
         playSchoolSchoolFeesSettingRepository.save(ps_School_Fees_Set);
@@ -53,4 +62,25 @@ public class PlaySchoolSchoolFeesSettingApiController {
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolFeesDetail")
+    public PlaySchoolSchoolFeesSettingProjection getPlaySchoolFeesDetail(@RequestParam (value ="managementplayschoolfeescompoundkey", required = false) Management_Playschool_Fees_Compound_Key mgmtpsfeescompkey) {
+        PlaySchoolSchoolFeesSettingProjection playschoolfeesDetail = playSchoolSchoolFeesSettingRepository.findOneByManagementplayschoolfeescompoundkey(mgmtpsfeescompkey);
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getPlaySchoolFeesDetail");
+        return playschoolfeesDetail;
     }
+
+
+//    @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolFeesDetail")
+//    public PlaySchoolSchoolFeesSettingProjection getPlaySchoolFeesDetail(
+//            @RequestParam(value ="program", required=false) String program,
+//            @RequestParam (value="academicyear", required=false) String academicyear
+//    ){
+////        Iterable<StudentBaseInformation> studentList = studentbaseinformationRepository.findByAcademicyearAndBranchcode(academicyear, branchcode);
+//        PlaySchoolSchoolFeesSettingProjection playschoolfeesDetail = playSchoolFeesEntryBaseRepository.findOneByProgramAndAcademicyear(program, academicyear );
+//
+//        System.out.println("Inside getPlaySchoolFeesDetail");
+//        return playschoolfeesDetail;
+//    }
+
+}

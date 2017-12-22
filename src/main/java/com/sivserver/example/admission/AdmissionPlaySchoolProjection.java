@@ -8,7 +8,7 @@ import java.util.Date;
 public interface AdmissionPlaySchoolProjection {
     String getApplno();
     Date getAdmissiondate();
-    String getAdmissionfor();
+    String getAppfor();
     String getAdmissionstatus();
     String getRegisternumber();
     String getSection();

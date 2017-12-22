@@ -29,21 +29,23 @@ public class FeesPaymentPlaySchool {
 
     private String schoolfeestitle;
 
-    private Long schoolfees;
+    private Long materialkitfees;
 
-    private Long schoolfeespaid;
+    private Long materialkitfeespaid;
 
-    private String transportfeestitle;
+    private Long activityfees;
 
-    private Long transportfees;
+    private Long activityfeespaid;
 
-    private Long transportfeespaid;
+    private Long tuitionfees;
+
+    private Long tuitionfeespaid;
 
     private Long totalfees;
 
     private Long totalfeespaid;
 
-    private Long balance;
+    private Long balancefees;
 
     private Date duedate;
 
@@ -51,7 +53,7 @@ public class FeesPaymentPlaySchool {
 
     private String chequeno;
 
-    private Date chequedate;
+    private String chequedate;
 
     private String bankname;
 
@@ -116,44 +118,52 @@ public class FeesPaymentPlaySchool {
         this.schoolfeestitle = schoolfeestitle;
     }
 
-    public Long getSchoolfees() {
-        return schoolfees;
+    public Long getMaterialkitfees() {
+        return materialkitfees;
     }
 
-    public void setSchoolfees(Long school_fees) {
-        this.schoolfees = schoolfees;
+    public void setMaterialkitfees(Long materialkitfees) {
+        this.materialkitfees = materialkitfees;
     }
 
-    public Long getSchoolfeespaid() {
-        return schoolfeespaid;
+    public Long getMaterialkitfeespaid() {
+        return materialkitfeespaid;
     }
 
-    public void setSchoolfeespaid(Long school_fees_paid) {
-        this.schoolfeespaid = schoolfeespaid;
+    public void setMaterialkitfeespaid(Long materialkitfeespaid) {
+        this.materialkitfeespaid = materialkitfeespaid;
     }
 
-    public String getTransportfeestitle() {
-        return transportfeestitle;
+    public Long getActivityfees() {
+        return activityfees;
     }
 
-    public void setTransportfeestitle(String transportfeestitle) {
-        this.transportfeestitle = transportfeestitle;
+    public void setActivityfees(Long activityfees) {
+        this.activityfees = activityfees;
     }
 
-    public Long getTransportfees() {
-        return transportfees;
+    public Long getActivityfeespaid() {
+        return activityfeespaid;
     }
 
-    public void setTransportfees(Long transportfees) {
-        this.transportfees = transportfees;
+    public void setActivityfeespaid(Long activityfeespaid) {
+        this.activityfeespaid = activityfeespaid;
     }
 
-    public Long getTransportfeespaid() {
-        return transportfeespaid;
+    public Long getTuitionfees() {
+        return tuitionfees;
     }
 
-    public void setTransportfeespaid(Long transportfeespaid) {
-        this.transportfeespaid = transportfeespaid;
+    public void setTuitionfees(Long tuitionfees) {
+        this.tuitionfees = tuitionfees;
+    }
+
+    public Long getTuitionfeespaid() {
+        return tuitionfeespaid;
+    }
+
+    public void setTuitionfeespaid(Long tuitionfeespaid) {
+        this.tuitionfeespaid = tuitionfeespaid;
     }
 
     public Long getTotalfees() {
@@ -172,12 +182,12 @@ public class FeesPaymentPlaySchool {
         this.totalfeespaid = totalfeespaid;
     }
 
-    public Long getBalance() {
-        return balance;
+    public Long getBalancefees() {
+        return balancefees;
     }
 
-    public void setBalance(Long balance) {
-        this.balance = balance;
+    public void setBalancefees(Long balancefees) {
+        this.balancefees = balancefees;
     }
 
     public Date getDuedate() {
@@ -204,11 +214,11 @@ public class FeesPaymentPlaySchool {
         this.chequeno = chequeno;
     }
 
-    public Date getChequedate() {
+    public String getChequedate() {
         return chequedate;
     }
 
-    public void setChequedate(Date chequedate) {
+    public void setChequedate(String chequedate) {
         this.chequedate = chequedate;
     }
 
