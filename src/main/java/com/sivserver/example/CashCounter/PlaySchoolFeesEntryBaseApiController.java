@@ -29,13 +29,15 @@ public class PlaySchoolFeesEntryBaseApiController {
 
     public void playschoolfeesentrybase(
             @RequestParam(value = "registernumber", required = false) String registernumber,
-            @RequestParam(value = "materialkitfees", required = false) Long materialkitfees,
-            @RequestParam(value = "activityfees", required = false) Long activityfees,
-            @RequestParam(value = "tuitionfees", required = false) Long tuitionfees,
-            @RequestParam(value = "totalfees", required = false) Long totalfees,
-            @RequestParam(value = "installment1fees", required = false) Long installment1fees,
-            @RequestParam(value = "installment2fees", required = false) Long installment2fees,
-            @RequestParam(value = "admissionfeesduedate", required = false) Date admissionfeesduedate,
+            @RequestParam(value = "registrationfees", required = false) Double registrationfees,
+            @RequestParam(value = "materialkitfees", required = false) Double materialkitfees,
+            @RequestParam(value = "activityfees", required = false) Double activityfees,
+            @RequestParam(value = "tuitionfees", required = false) Double tuitionfees,
+            @RequestParam(value = "totalfees", required = false) Double totalfees,
+            @RequestParam(value = "installment1fees", required = false) Double installment1fees,
+            @RequestParam(value = "installment2fees", required = false) Double installment2fees,
+            @RequestParam(value = "installment1duedate", required = false) Date installment1duedate,
+            @RequestParam(value = "installment2duedate", required = false) Date installment2duedate,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "loginuser", required = false) String loginuser
 
@@ -44,13 +46,15 @@ public class PlaySchoolFeesEntryBaseApiController {
         PlaySchoolStudentPersonalInformation playschoolstudentpersonalinfo = new PlaySchoolStudentPersonalInformation(registernumber);
 
         playschoolfeesentrybaseinfo.setRegisternumber(registernumber)
+                                    .setRegistrationfees(registrationfees)
                                     .setMaterialkitfees(materialkitfees)
                                     .setActivityfees(activityfees)
                                     .setTuitionfees(tuitionfees)
                                     .setTotalfees(totalfees)
                                     .setInstallment1fees(installment1fees)
                                     .setInstallment2fees(installment2fees)
-                                    .setAdmissionfeesduedate(admissionfeesduedate)
+                                    .setInstallment1duedate(installment1duedate)
+                                    .setInstallment2duedate(installment2duedate)
                                     .setAcademicyear(academicyear)
                                     .setLoginuser(loginuser)
                                     .setPlay_school_student_personal_regno(playschoolstudentpersonalinfo);

@@ -19,6 +19,9 @@ import java.util.List;
 
 public class AdmissionPlaySchoolApiController {
 
+
+
+
     private AdmissionPlaySchoolRepository admissionPlaySchoolRepository;
 
     @Autowired
@@ -111,16 +114,17 @@ public class AdmissionPlaySchoolApiController {
             @RequestParam (value="pickuppersoncontactno", required=false) String pickuppersoncontactno,
             @RequestParam (value="pickuppersonaltcontactno", required=false) String pickuppersonaltcontactno,
             @RequestParam (value="pickuppersonrelationship", required=false) String pickuppersonrelationship,
-            @RequestParam (value="materialkitfees", required=false) Long materialkitfees,
-            @RequestParam (value="activityfees", required=false) Long activityfees,
-            @RequestParam (value="tuitionfees", required=false) Long tuitionfees,
-            @RequestParam (value="transportfees", required=false) Long transportfees,
-            @RequestParam (value="totalfees", required=false) Long totalfees,
-            @RequestParam (value="installment1fees", required=false) Long installment1fees,
-            @RequestParam (value="installment2fees", required=false) Long installment2fees,
-            @RequestParam (value="admissionfeesduedate", required=false) Date admissionfeesduedate,
-            @RequestParam (value="transportduedate", required=false) Date transportduedate,
-            @RequestParam (value="paymentmethod", required=false) String paymentmethod,
+            @RequestParam (value="registrationfees", required=false) Double registrationfees,
+            @RequestParam (value="materialkitfees", required=false) Double materialkitfees,
+            @RequestParam (value="activityfees", required=false) Double activityfees,
+            @RequestParam (value="tuitionfees", required=false) Double tuitionfees,
+            @RequestParam (value="transportfees", required=false) Double transportfees,
+            @RequestParam (value="totalfees", required=false) Double totalfees,
+            @RequestParam (value="installment1fees", required=false) Double installment1fees,
+            @RequestParam (value="installment2fees", required=false) Double installment2fees,
+            @RequestParam (value="installment1duedate", required=false) Date installment1duedate,
+            @RequestParam (value="installment2duedate", required=false) Date installment2duedate,
+            @RequestParam (value="transportfeesmethod", required=false) String transportfeesmethod,
             @RequestParam (value="idno", required=false) Integer idno,
             @RequestParam (value="todprgno", required=false) Long todprgno,
             @RequestParam (value="prekgprgno", required=false) Long prekgprgno,
@@ -221,13 +225,15 @@ public class AdmissionPlaySchoolApiController {
         playSchoolStudentBaseInformationRepository.save(ps_student_base_info);
 
         ps_fees_base_info.setRegisternumber(registernumber)
+                            .setRegistrationfees(registrationfees)
                             .setMaterialkitfees(materialkitfees)
                             .setActivityfees(activityfees)
                             .setTuitionfees(tuitionfees)
                             .setTotalfees(totalfees)
                             .setInstallment1fees(installment1fees)
                             .setInstallment2fees(installment2fees)
-                            .setAdmissionfeesduedate(admissionfeesduedate)
+                            .setInstallment1duedate(installment1duedate)
+                            .setInstallment2duedate(installment2duedate)
                             .setAcademicyear(academicyear)
                             .setLoginuser(loginuser)
                             .setPlay_school_student_personal_regno(ps_student_pers_info);
@@ -235,13 +241,15 @@ public class AdmissionPlaySchoolApiController {
         playSchoolFeesEntryBaseRepository.save(ps_fees_base_info);
 
         ps_fees_bal_info.setRegisternumber(registernumber)
+                        .setRegistrationfees(registrationfees)
                         .setMaterialkitfees(materialkitfees)
                         .setActivityfees(activityfees)
                         .setTuitionfees(tuitionfees)
                         .setTotalfees(totalfees)
                         .setInstallment1fees(installment1fees)
                         .setInstallment2fees(installment2fees)
-                        .setAdmissionfeesduedate(admissionfeesduedate)
+                        .setInstallment1duedate(installment1duedate)
+                        .setInstallment2duedate(installment2duedate)
                         .setAcademicyear(academicyear)
                         .setLoginuser(loginuser)
                         .setPlay_school_student_personal_regno(ps_student_pers_info);
@@ -257,17 +265,22 @@ public class AdmissionPlaySchoolApiController {
 
         playSchoolProgramAdmissionNoGenerateRepository.save(psadmissionno);
 
-        pstransportfees.setRegisternumber(registernumber)
-                        .setTransport(transport)
-                        .setStage(transportstage)
-                        .setPaymentmethod(paymentmethod)
-                        .setTransportfees(transportfees)
-                        .setTransportduedate(transportduedate)
-                        .setAcademicyear(academicyear)
-                        .setLoginuser(loginuser)
-                        .setPlay_school_student_personal_regno(ps_student_pers_info);
 
 
+        if (transport.equals("SCHOOL VAN")) {
+            pstransportfees.setRegisternumber(registernumber)
+                    .setTransport(transport)
+                    .setStage(transportstage)
+                    .setTransportpaymentmethod(transportfeesmethod)
+                    .setTransportfees(transportfees)
+                    .setTransportduedate(installment1duedate)
+                    .setAcademicyear(academicyear)
+                    .setLoginuser(loginuser)
+                    .setPlay_school_student_personal_regno(ps_student_pers_info);
+
+            playSchoolTransportFeesEntryRepository.save(pstransportfees);
+
+        }
 
     }
 

@@ -8,13 +8,15 @@ import java.util.Date;
 public interface PlaySchoolFeesEntryBaseProjection {
 
     String getRegisternumber();
-    Long getMaterialkitfees();
-    Long getActivityfees();
-    Long getTuitionfees();
-    Long getTotalfees();
-    Long getInstallment1fees();
-    Long getInstallment2fees();
-    Date getAdmissionfeesduedate();
+    Double getRegistrationfees();
+    Double getMaterialkitfees();
+    Double getActivityfees();
+    Double getTuitionfees();
+    Double getTotalfees();
+    Double getInstallment1fees();
+    Double getInstallment2fees();
+    Date getInstallment1duedate();
+    Date getInstallment2duedate();
     String getAcademicyear();
 
 }

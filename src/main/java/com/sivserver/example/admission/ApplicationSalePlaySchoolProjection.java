@@ -15,7 +15,7 @@ public interface ApplicationSalePlaySchoolProjection {
     String getCandmiddlename();
     String getCandlastname();
     Date getDateofbirth();
-    Long getAge();
+    Float getAge();
     String getGender();
     String getCandfathername();
     String getCandmothername();

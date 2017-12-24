@@ -30,8 +30,8 @@ public class PlaySchoolTransportFeesEntryApiController {
             @RequestParam(value = "registernumber", required = false) String registernumber,
             @RequestParam(value = "transport", required = false) String transport,
             @RequestParam(value = "stage", required = false) String stage,
-            @RequestParam(value = "paymentmethod", required = false) String paymentmethod,
-            @RequestParam(value = "transportfees", required = false) Long transportfees,
+            @RequestParam(value = "transportfeesmethod", required = false) String transportfeesmethod,
+            @RequestParam(value = "transportfees", required = false) Double transportfees,
             @RequestParam(value = "transportduedate", required = false) Date transportduedate,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "loginuser", required = false) String loginuser
@@ -44,7 +44,7 @@ public class PlaySchoolTransportFeesEntryApiController {
         playschooltransportfeesentryinfo.setRegisternumber(registernumber)
                 .setTransport(transport)
                 .setStage(stage)
-                .setPaymentmethod(paymentmethod)
+                .setTransportpaymentmethod(transportfeesmethod)
                 .setTransportfees(transportfees)
                 .setTransportduedate(transportduedate)
                 .setAcademicyear(academicyear)

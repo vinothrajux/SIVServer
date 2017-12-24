@@ -21,9 +21,9 @@ public class PlaySchoolTransportFeesEntry {
 
     private String stage;
 
-    private String paymentmethod;
+    private String transportfeesmethod;
 
-    private Long transportfees;
+    private Double transportfees;
 
     private Date transportduedate;
 
@@ -69,20 +69,20 @@ public class PlaySchoolTransportFeesEntry {
         return this;
     }
 
-    public String getPaymentmethod() {
-        return paymentmethod;
+    public String getTransportpaymentmethod() {
+        return transportfeesmethod;
     }
 
-    public PlaySchoolTransportFeesEntry setPaymentmethod(String paymentmethod) {
-        this.paymentmethod = paymentmethod;
+    public PlaySchoolTransportFeesEntry setTransportpaymentmethod(String transportfeesmethod) {
+        this.transportfeesmethod = transportfeesmethod;
         return this;
     }
 
-    public Long getTransportfees() {
+    public Double getTransportfees() {
         return transportfees;
     }
 
-    public PlaySchoolTransportFeesEntry setTransportfees(Long transportfees) {
+    public PlaySchoolTransportFeesEntry setTransportfees(Double transportfees) {
         this.transportfees = transportfees;
         return this;
     }
