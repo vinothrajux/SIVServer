@@ -63,7 +63,9 @@ public class PlaySchoolSchoolFeesSettingApiController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolFeesDetail")
-    public PlaySchoolSchoolFeesSettingProjection getPlaySchoolFeesDetail(@RequestParam (value ="managementplayschoolfeescompoundkey", required = false) Management_Playschool_Fees_Compound_Key mgmtpsfeescompkey) {
+//    public PlaySchoolSchoolFeesSettingProjection getPlaySchoolFeesDetail(@RequestParam (value ="managementplayschoolfeescompoundkey", required = false) Management_Playschool_Fees_Compound_Key mgmtpsfeescompkey) {
+    public PlaySchoolSchoolFeesSettingProjection getPlaySchoolFeesDetail(@RequestParam (value ="program", required = false) String program,@RequestParam (value ="academicyear", required = false) String academicyear)  {
+        Management_Playschool_Fees_Compound_Key mgmtpsfeescompkey = new Management_Playschool_Fees_Compound_Key(program,academicyear);
         PlaySchoolSchoolFeesSettingProjection playschoolfeesDetail = playSchoolSchoolFeesSettingRepository.findOneByManagementplayschoolfeescompoundkey(mgmtpsfeescompkey);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
         System.out.println("Inside getPlaySchoolFeesDetail");

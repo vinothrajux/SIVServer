@@ -9,6 +9,8 @@ public interface PlaySchoolSchoolFeesSettingProjection {
 
     Date getFeessettingdate();
     Management_Playschool_Fees_Compound_Key getManagementplayschoolfeescompoundkey();
+//    Management_Playschool_Fees_Compound_Key getProgram();
+//    Management_Playschool_Fees_Compound_Key getAcademicyear();
     Long getAdmissionfees();
     Date getAdmissionfeesduedate();
     Long getMaterialkitfees();

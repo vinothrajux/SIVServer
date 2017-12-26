@@ -1,11 +1,16 @@
 package com.sivserver.example.admission;
 
+import com.sivserver.example.management.Management_Playschool_Fees_Compound_Key;
+import com.sivserver.example.management.PlaySchoolSchoolFeesSettingProjection;
+import com.sivserver.example.management.PlaySchoolSchoolFeesSettingRepository;
+import com.sivserver.example.student.StudentBaseInformationProjection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +26,9 @@ public class ApplicationSalePlaySchoolApiController {
 
     @Autowired
     private PlaySchoolApplicationNoGenerateRepository playSchoolApplicationNoGenerateRepository;
+
+    @Autowired
+    private PlaySchoolSchoolFeesSettingRepository playSchoolSchoolFeesSettingRepository;
 
     @RequestMapping(value="/all")
 
@@ -122,5 +130,20 @@ public class ApplicationSalePlaySchoolApiController {
         return playschoolapplicationDetail;
     }
 
+
+    ApplicationFeesInformation applicationFeesInformation;
+    @RequestMapping(method = RequestMethod.POST, value="/getApplicationFeesDetails")
+    public List<Object> getStudentProfileInformationDetail(@RequestParam (value ="applno") String applicationNumber,@RequestParam (value ="appfor") String program,@RequestParam (value ="academicyear") String academicyear) {
+        /* fetching data from table1*/
+        ApplicationSalePlaySchoolProjection playschoolapplicationDetail = applicationSalePlaySchoolRepository.findOneByApplno(applicationNumber);
+        /* fetching data from table2*/
+        Management_Playschool_Fees_Compound_Key mgmtpsfeescompkey = new Management_Playschool_Fees_Compound_Key(program,academicyear);
+        PlaySchoolSchoolFeesSettingProjection playschoolfeesDetail = playSchoolSchoolFeesSettingRepository.findOneByManagementplayschoolfeescompoundkey(mgmtpsfeescompkey);
+        List<Object> list = new ArrayList<Object>();
+        list.add(playschoolapplicationDetail);
+        list.add(playschoolfeesDetail);
+
+        return list;
+    }
 
 }
