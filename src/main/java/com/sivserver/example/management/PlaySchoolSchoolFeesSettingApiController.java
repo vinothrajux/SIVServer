@@ -27,14 +27,13 @@ public class PlaySchoolSchoolFeesSettingApiController {
             @RequestParam(value = "feessettingdate", required = false) Date feessettingdate,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "program", required = false) String program,
-            @RequestParam(value = "admissionfees", required = false) Long admissionfees,
-            @RequestParam(value = "admissionfeesduedate", required = false) Date admissionfeesduedate,
-            @RequestParam(value = "materialkitfees", required = false) Long materialkitfees,
-            @RequestParam(value = "activityfees", required = false) Long activityfees,
-            @RequestParam(value = "tuitionfees", required = false) Long tuitionfees,
-            @RequestParam(value = "totalfees", required = false) Long totalfees,
-            @RequestParam(value = "installment1fees", required = false) Long installment1fees,
-            @RequestParam(value = "installment2fees", required = false) Long installment2fees,
+            @RequestParam(value = "registrationfees", required = false) Double registrationfees,
+            @RequestParam(value = "materialkitfees", required = false) Double materialkitfees,
+            @RequestParam(value = "activityfees", required = false) Double activityfees,
+            @RequestParam(value = "tuitionfees", required = false) Double tuitionfees,
+            @RequestParam(value = "totalfees", required = false) Double totalfees,
+            @RequestParam(value = "installment1fees", required = false) Double installment1fees,
+            @RequestParam(value = "installment2fees", required = false) Double installment2fees,
             @RequestParam(value = "installment1duedate", required = false) Date installment1duedate,
             @RequestParam(value = "installment2duedate", required = false) Date installment2duedate,
             @RequestParam(value = "loginuser", required = false) String loginuser
@@ -45,8 +44,7 @@ public class PlaySchoolSchoolFeesSettingApiController {
 
         ps_School_Fees_Set.setFeessettingdate(feessettingdate);
         ps_School_Fees_Set.setManagementplayschoolfeescompoundkey(key);
-        ps_School_Fees_Set.setAdmissionfees(admissionfees);
-        ps_School_Fees_Set.setAdmissionfeesduedate(admissionfeesduedate);
+        ps_School_Fees_Set.setRegistrationfees(registrationfees);
         ps_School_Fees_Set.setMaterialkitfees(materialkitfees);
         ps_School_Fees_Set.setActivityfees(activityfees);
         ps_School_Fees_Set.setTuitionfees(tuitionfees);

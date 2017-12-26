@@ -17,21 +17,19 @@ public class PlaySchoolSchoolFeesSetting {
     @Id
     Management_Playschool_Fees_Compound_Key managementplayschoolfeescompoundkey;
 
-    private Long admissionfees;
+    private Double registrationfees;
 
-    private Date admissionfeesduedate;
+    private Double materialkitfees;
 
-    private Long materialkitfees;
+    private Double activityfees;
 
-    private Long activityfees;
+    private Double tuitionfees;
 
-    private Long tuitionfees;
+    private Double totalfees;
 
-    private Long totalfees;
+    private Double installment1fees;
 
-    private Long installment1fees;
-
-    private Long installment2fees;
+    private Double installment2fees;
 
     private Date installment1duedate;
 
@@ -58,67 +56,59 @@ public class PlaySchoolSchoolFeesSetting {
         this.managementplayschoolfeescompoundkey = managementplayschoolfeescompoundkey;
     }
 
-    public Long getAdmissionfees() {
-        return admissionfees;
+    public Double getRegistrationfees() {
+        return registrationfees;
     }
 
-    public void setAdmissionfees(Long admissionfees) {
-        this.admissionfees = admissionfees;
+    public void setRegistrationfees(Double registrationfees) {
+        this.registrationfees = registrationfees;
     }
 
-    public Date getAdmissionfeesduedate() {
-        return admissionfeesduedate;
-    }
-
-    public void setAdmissionfeesduedate(Date admissionfeesduedate) {
-        this.admissionfeesduedate = admissionfeesduedate;
-    }
-
-    public Long getMaterialkitfees() {
+    public Double getMaterialkitfees() {
         return materialkitfees;
     }
 
-    public void setMaterialkitfees(Long materialkitfees) {
+    public void setMaterialkitfees(Double materialkitfees) {
         this.materialkitfees = materialkitfees;
     }
 
-    public Long getActivityfees() {
+    public Double getActivityfees() {
         return activityfees;
     }
 
-    public void setActivityfees(Long activityfees) {
+    public void setActivityfees(Double activityfees) {
         this.activityfees = activityfees;
     }
 
-    public Long getTuitionfees() {
+    public Double getTuitionfees() {
         return tuitionfees;
     }
 
-    public void setTuitionfees(Long tuitionfees) {
+    public void setTuitionfees(Double tuitionfees) {
         this.tuitionfees = tuitionfees;
     }
 
-    public Long getTotalfees() {
+    public Double getTotalfees() {
         return totalfees;
     }
 
-    public void setTotalfees(Long totalfees) {
+    public void setTotalfees(Double totalfees) {
         this.totalfees = totalfees;
     }
 
-    public Long getInstallment1fees() {
+    public Double getInstallment1fees() {
         return installment1fees;
     }
 
-    public void setInstallment1fees(Long installment1fees) {
+    public void setInstallment1fees(Double installment1fees) {
         this.installment1fees = installment1fees;
     }
 
-    public Long getInstallment2fees() {
+    public Double getInstallment2fees() {
         return installment2fees;
     }
 
-    public void setInstallment2fees(Long installment2fees) {
+    public void setInstallment2fees(Double installment2fees) {
         this.installment2fees = installment2fees;
     }
 
