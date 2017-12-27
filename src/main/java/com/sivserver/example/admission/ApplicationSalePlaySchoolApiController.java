@@ -50,7 +50,7 @@ public class ApplicationSalePlaySchoolApiController {
             @RequestParam (value="candmiddlename", required=false) String candmiddlename,
             @RequestParam (value="candlastname", required=false) String candlastname,
             @RequestParam (value="dateofbirth", required=false) Date dateofbirth,
-            @RequestParam (value="age", required=false) Float age,
+            @RequestParam (value="age", required=false) float age,
             @RequestParam (value="gender", required=false) String gender,
             @RequestParam (value="candfathername", required=false) String candfathername,
             @RequestParam (value="candmothername", required=false) String candmothername,

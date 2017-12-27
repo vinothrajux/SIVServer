@@ -28,7 +28,7 @@ public class ApplicationSalePlaySchool {
 
     private Date dateofbirth;
 
-    private Float age;
+    private float age;
 
     private String gender;
 
@@ -145,11 +145,11 @@ public class ApplicationSalePlaySchool {
         this.dateofbirth = dateofbirth;
     }
 
-    public Float getAge() {
+    public float getAge() {
         return age;
     }
 
-    public void setAge(Float age) {
+    public void setAge(float age) {
         this.age = age;
     }
 
