@@ -120,7 +120,7 @@ public class ApplicationSalePlaySchoolApiController {
 
         playSchoolApplicationNoGenerateRepository.save(appnogenerate);
     }
-
+// THIS API CAN BE USED TO FETCH THE APPLICATION DETAIL
     @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolApplcationDetail")
     public ApplicationSalePlaySchoolProjection getPlaySchoolApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
         ApplicationSalePlaySchoolProjection playschoolapplicationDetail = applicationSalePlaySchoolRepository.findOneByApplno(applicationNumber);
@@ -130,7 +130,7 @@ public class ApplicationSalePlaySchoolApiController {
         return playschoolapplicationDetail;
     }
 
-
+// THIS API CAN BE USED TO FETCH THE APPLICATION AND FEES INFORMATION FOR THE ADMISSION PLAY SCHOOL WINDOW
     ApplicationFeesInformation applicationFeesInformation;
     @RequestMapping(method = RequestMethod.POST, value="/getApplicationFeesDetails")
     public List<Object> getStudentProfileInformationDetail(@RequestParam (value ="applno") String applicationNumber,@RequestParam (value ="appfor") String program,@RequestParam (value ="academicyear") String academicyear) {

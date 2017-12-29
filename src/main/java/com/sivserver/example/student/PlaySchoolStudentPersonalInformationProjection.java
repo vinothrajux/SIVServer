@@ -10,7 +10,7 @@ public interface PlaySchoolStudentPersonalInformationProjection {
     String getRegisternumber();
     String getCandidatename();
     Date getDateofbirth();
-    Long getAge();
+    float getAge();
     String getGender();
     String getCandfathername();
     String getCandmothername();
@@ -46,6 +46,12 @@ public interface PlaySchoolStudentPersonalInformationProjection {
     String getMothersofficephoneno();
     String getMothersofficealtphoneno();
     String getMothersofficeextensionno();
+    String getSiblings();
+    String getSiblingname();
+    Date getSiblingdob();
+    float getSiblingage();
+    String getMedicaldetails();
+    String getAllergies();
     Date getFathersdob();
     Date getMothersdob();
     Date getParentsweddingdate();

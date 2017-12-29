@@ -25,7 +25,7 @@ public class PlaySchoolStudentPersonalInformation {
 
     private Date dateofbirth;
 
-    private Long age;
+    private float age;
 
     private String gender;
 
@@ -97,6 +97,18 @@ public class PlaySchoolStudentPersonalInformation {
 
     private String mothersofficeextensionno;
 
+    private String siblings;
+
+    private String siblingname;
+
+    private Date siblingdob;
+
+    private float siblingage;
+
+    private String medicaldetails;
+
+    private String allergies;
+
     private Date fathersdob;
 
     private Date mothersdob;
@@ -152,11 +164,11 @@ public class PlaySchoolStudentPersonalInformation {
         this.dateofbirth = dateofbirth;
     }
 
-    public Long getAge() {
+    public float getAge() {
         return age;
     }
 
-    public void setAge(Long age) {
+    public void setAge(float age) {
         this.age = age;
     }
 
@@ -438,6 +450,54 @@ public class PlaySchoolStudentPersonalInformation {
 
     public void setMothersofficeextensionno(String mothersofficeextensionno) {
         this.mothersofficeextensionno = mothersofficeextensionno;
+    }
+
+    public String getSiblings() {
+        return siblings;
+    }
+
+    public void setSiblings(String siblings) {
+        this.siblings = siblings;
+    }
+
+    public String getSiblingname() {
+        return siblingname;
+    }
+
+    public void setSiblingname(String siblingname) {
+        this.siblingname = siblingname;
+    }
+
+    public Date getSiblingdob() {
+        return siblingdob;
+    }
+
+    public void setSiblingdob(Date siblingdob) {
+        this.siblingdob = siblingdob;
+    }
+
+    public float getSiblingage() {
+        return siblingage;
+    }
+
+    public void setSiblingage(float siblingage) {
+        this.siblingage = siblingage;
+    }
+
+    public String getMedicaldetails() {
+        return medicaldetails;
+    }
+
+    public void setMedicaldetails(String medicaldetails) {
+        this.medicaldetails = medicaldetails;
+    }
+
+    public String getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(String allergies) {
+        this.allergies = allergies;
     }
 
     public Date getFathersdob() {

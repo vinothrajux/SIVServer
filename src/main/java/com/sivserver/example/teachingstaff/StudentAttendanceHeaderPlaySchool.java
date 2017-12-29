@@ -14,13 +14,13 @@ public class StudentAttendanceHeaderPlaySchool {
 
 
     @Id
-    Student_Attendance_Play_School_Compound_Key student_attendance_play_school_compound_key;
+    Student_Attendance_Play_School_Compound_Key studentattendanceplayschoolcompoundkey;
 
     private String entryday;
 
-    private Integer no_of_present;
+    private Integer noofpresent;
 
-    private Integer no_of_absent;
+    private Integer noofabsent;
 
     private String loginuser;
 
@@ -35,28 +35,28 @@ public class StudentAttendanceHeaderPlaySchool {
         this.entryday = entryday;
     }
 
-    public Student_Attendance_Play_School_Compound_Key getStudent_attendance_play_school_compound_key() {
-        return student_attendance_play_school_compound_key;
+    public Student_Attendance_Play_School_Compound_Key getStudentattendanceplayschoolcompoundkey() {
+        return studentattendanceplayschoolcompoundkey;
     }
 
-    public void setStudent_attendance_play_school_compound_key(Student_Attendance_Play_School_Compound_Key student_attendance_play_school_compound_key) {
-        this.student_attendance_play_school_compound_key = student_attendance_play_school_compound_key;
+    public void setStudentattendanceplayschoolcompoundkey(Student_Attendance_Play_School_Compound_Key studentattendanceplayschoolcompoundkey) {
+        this.studentattendanceplayschoolcompoundkey = studentattendanceplayschoolcompoundkey;
     }
 
-    public Integer getNo_of_present() {
-        return no_of_present;
+    public Integer getNoofpresent() {
+        return noofpresent;
     }
 
-    public void setNo_of_present(Integer no_of_present) {
-        this.no_of_present = no_of_present;
+    public void setNoofpresent(Integer noofpresent) {
+        this.noofpresent = noofpresent;
     }
 
-    public Integer getNo_of_absent() {
-        return no_of_absent;
+    public Integer getNoofabsent() {
+        return noofabsent;
     }
 
-    public void setNo_of_absent(Integer no_of_absent) {
-        this.no_of_absent = no_of_absent;
+    public void setNoofabsent(Integer noofabsent) {
+        this.noofabsent = noofabsent;
     }
 
     public String getLoginuser() {
