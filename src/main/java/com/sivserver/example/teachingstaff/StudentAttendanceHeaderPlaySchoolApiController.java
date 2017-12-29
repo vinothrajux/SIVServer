@@ -1,5 +1,8 @@
 package com.sivserver.example.teachingstaff;
 
+import com.sivserver.example.admission.ApplicationSalePlaySchoolProjection;
+import com.sivserver.example.management.Management_Playschool_Fees_Compound_Key;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -13,6 +16,9 @@ import java.util.List;
 public class StudentAttendanceHeaderPlaySchoolApiController {
 
     private StudentAttendanceHeaderPlaySchoolRepository studentAttendanceHeaderPlaySchoolRepository;
+
+//    @Autowired
+//    private StudentAttendanceHeaderPlaySchoolRepository studentAttendanceHeaderPlaySchoolRepository;
 
     @GetMapping(value="/all")
 
@@ -30,8 +36,8 @@ public class StudentAttendanceHeaderPlaySchoolApiController {
             @RequestParam (value="program", required=false) String program,
             @RequestParam (value="section", required=false) String section,
             @RequestParam (value="academicyear", required=false) String academicyear,
-            @RequestParam (value="no_of_present", required=false) Integer no_of_present,
-            @RequestParam (value="no_of_absent", required=false) Integer no_of_absent,
+            @RequestParam (value="noofpresent", required=false) Integer noofpresent,
+            @RequestParam (value="noofabsent", required=false) Integer noofabsent,
             @RequestParam (value="loginuser", required=false) String loginuser
 
 
@@ -40,12 +46,24 @@ public class StudentAttendanceHeaderPlaySchoolApiController {
         Student_Attendance_Play_School_Compound_Key key = new Student_Attendance_Play_School_Compound_Key(entrydate,program,section,academicyear);
 
         ps_student_att_head.setEntryday(entryday);
-        ps_student_att_head.setStudent_attendance_play_school_compound_key(key);
-        ps_student_att_head.setNo_of_present(no_of_present);
-        ps_student_att_head.setNo_of_absent(no_of_absent);
+        ps_student_att_head.setStudentattendanceplayschoolcompoundkey(key);
+        ps_student_att_head.setNoofpresent(noofpresent);
+        ps_student_att_head.setNoofabsent(noofabsent);
         ps_student_att_head.setLoginuser(loginuser);
 
         studentAttendanceHeaderPlaySchoolRepository.save(ps_student_att_head);
     }
+    //THIS API USED TO CHECK WHETHER THE ATTENDANCE ALREADY ENTERED FOR THAT DAY
 
+    @RequestMapping(method = RequestMethod.POST, value="/getStudentAttendanceHeaderEntryCheckPlaySchoolDetail")
+    public StudentAttendanceHeaderEntryCheckPlaySchoolProjection getStudentAttendanceHeaderEntryCheckPlaySchoolDetail(@RequestParam (value ="entrydate") Date entrydate,@RequestParam (value ="program") String program,@RequestParam (value ="section") String section,@RequestParam (value ="acdemicyear") String acdemicyear) {
+
+        Student_Attendance_Play_School_Compound_Key studattpscompkey = new Student_Attendance_Play_School_Compound_Key(entrydate,program,section,acdemicyear);
+        StudentAttendanceHeaderEntryCheckPlaySchoolProjection playschoolstudentattendanceentrycheckDetail = studentAttendanceHeaderPlaySchoolRepository.findOneByStudentattendanceplayschoolcompoundkey(studattpscompkey);
+
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getStudentAttendanceHeaderEntryCheckPlaySchoolDetail");
+        return playschoolstudentattendanceentrycheckDetail;
     }
+
+}

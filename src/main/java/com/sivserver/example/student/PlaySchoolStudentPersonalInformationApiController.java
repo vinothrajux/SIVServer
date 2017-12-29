@@ -34,7 +34,7 @@ public class PlaySchoolStudentPersonalInformationApiController {
             @RequestParam (value="registernumber", required=false) String registernumber,
             @RequestParam (value="candidatename", required=false) String candidatename,
             @RequestParam (value="dateofbirth", required=false) Date dateofbirth,
-            @RequestParam (value="age", required=false) Long age,
+            @RequestParam (value="age", required=false) float age,
             @RequestParam (value="gender", required=false) String gender,
             @RequestParam (value="candfathername", required=false) String candfathername,
             @RequestParam (value="candmothername", required=false) String candmothername,
@@ -74,11 +74,19 @@ public class PlaySchoolStudentPersonalInformationApiController {
             @RequestParam (value="mothersofficestate", required=false) String mothersofficestate,
             @RequestParam (value="mothersofficephoneno", required=false) String mothersofficephoneno,
             @RequestParam (value="mothersofficealtphoneno", required=false) String mothersofficealtphoneno,
+            @RequestParam (value="mothersofficeextensionno", required=false) String mothersofficeextensionno,
+            @RequestParam (value="siblings", required=false) String siblings,
+            @RequestParam (value="siblingname", required=false) String siblingname,
+            @RequestParam (value="siblingdob", required=false) Date siblingdob,
+            @RequestParam (value="siblingage", required=false) float siblingage,
+            @RequestParam (value="medicaldetails", required=false) String medicaldetails,
+            @RequestParam (value="allergies", required=false) String allergies,
+
             @RequestParam (value="fathersdob", required=false) Date fathersdob,
             @RequestParam (value="mothersdob", required=false) Date mothersdob,
             @RequestParam (value="parentsweddingdate", required=false) Date parentsweddingdate,
             @RequestParam (value="religion", required=false) String religion,
-            @RequestParam (value="mothersofficeextensionno", required=false) String mothersofficeextensionno,
+
             @RequestParam (value="pickuppersonname", required=false) String pickuppersonname,
             @RequestParam (value="pickuppersoncontactno", required=false) String pickuppersoncontactno,
             @RequestParam (value="pickuppersonaltcontactno", required=false) String pickuppersonaltcontactno,
@@ -131,6 +139,12 @@ public class PlaySchoolStudentPersonalInformationApiController {
         playschoolstudentpersonalinformation.setMothersofficephoneno(mothersofficephoneno);
         playschoolstudentpersonalinformation.setMothersofficealtphoneno(mothersofficealtphoneno);
         playschoolstudentpersonalinformation.setMothersofficeextensionno(mothersofficeextensionno);
+        playschoolstudentpersonalinformation.setSiblings(siblings);
+        playschoolstudentpersonalinformation.setSiblingname(siblingname);
+        playschoolstudentpersonalinformation.setSiblingdob(siblingdob);
+        playschoolstudentpersonalinformation.setSiblingage(siblingage);
+        playschoolstudentpersonalinformation.setMedicaldetails(medicaldetails);
+        playschoolstudentpersonalinformation.setAllergies(allergies);
         playschoolstudentpersonalinformation.setFathersdob(fathersdob);
         playschoolstudentpersonalinformation.setMothersdob(mothersdob);
         playschoolstudentpersonalinformation.setParentsweddingdate(parentsweddingdate);

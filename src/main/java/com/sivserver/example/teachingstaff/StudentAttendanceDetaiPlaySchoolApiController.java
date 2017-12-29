@@ -1,5 +1,6 @@
 package com.sivserver.example.teachingstaff;
 
+import com.sivserver.example.admission.ApplicationSalePlaySchoolProjection;
 import com.sivserver.example.student.PlaySchoolStudentBaseInformation;
 import com.sivserver.example.student.PlaySchoolStudentBaseInformationRepository;
 import com.sivserver.example.student.PlaySchoolStudentPersonalInformation;
@@ -124,9 +125,9 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
                 student_attendance_play_school_compound_key.setProgram(standardstudying);
                 student_attendance_play_school_compound_key.setAcdemicyear(academicyear);
 
-                studentAttendanceHeaderPlaySchool.setStudent_attendance_play_school_compound_key(student_attendance_play_school_compound_key);
-                studentAttendanceHeaderPlaySchool.setNo_of_absent(number_of_absent);
-                studentAttendanceHeaderPlaySchool.setNo_of_present(number_of_present);
+                studentAttendanceHeaderPlaySchool.setStudentattendanceplayschoolcompoundkey(student_attendance_play_school_compound_key);
+                studentAttendanceHeaderPlaySchool.setNoofabsent(number_of_absent);
+                studentAttendanceHeaderPlaySchool.setNoofpresent(number_of_present);
                 studentAttendanceHeaderPlaySchoolRepository.save(studentAttendanceHeaderPlaySchool);
             }
             catch (ParseException e){
@@ -162,4 +163,14 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
         //return studentList;
     }
 
+    // THIS API CAN BE USED TO FETCH THE ENTERED ATTENDANCE DETAIL AT PARENT END MOBILE APP
+    @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolFetchEnteredAttendanceDetail")
+    public StudentAttendanceDetailFetchPlaySchool getPlaySchoolFetchEnteredAttendanceDetail(@RequestParam (value ="entrydate") Date entrydate,@RequestParam (value ="registernumber") String registernumber) {
+        StudentAttendanceDetailFetchPlaySchool playschoolindstudentattendanceDetail = studentAttendanceDetailPlaySchoolRepository.findByEntrydateAndRegisternumber(entrydate,registernumber);
+
+        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+        System.out.println("Inside getPlaySchoolFetchEnteredAttendanceDetail");
+        return playschoolindstudentattendanceDetail;
     }
+
+}

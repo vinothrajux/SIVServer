@@ -70,7 +70,7 @@ public class AdmissionPlaySchoolApiController {
             @RequestParam (value="candmiddlename", required=false) String candmiddlename,
             @RequestParam (value="candlastname", required=false) String candlastname,
             @RequestParam (value="dateofbirth", required=false) Date dateofbirth,
-            @RequestParam (value="age", required=false) Long age,
+            @RequestParam (value="age", required=false) float age,
             @RequestParam (value="gender", required=false) String gender,
             @RequestParam (value="candfathername", required=false) String candfathername,
             @RequestParam (value="candmothername", required=false) String candmothername,
@@ -106,6 +106,12 @@ public class AdmissionPlaySchoolApiController {
             @RequestParam (value="mothersofficephoneno", required=false) String mothersofficephoneno,
             @RequestParam (value="mothersofficealtphoneno", required=false) String mothersofficealtphoneno,
             @RequestParam (value="mothersofficeextensionno", required=false) String mothersofficeextensionno,
+            @RequestParam (value="siblings", required=false) String siblings,
+            @RequestParam (value="siblingname", required=false) String siblingname,
+            @RequestParam (value="siblingdob", required=false) Date siblingdob,
+            @RequestParam (value="siblingage", required=false) float siblingage,
+            @RequestParam (value="medicaldetails", required=false) String medicaldetails,
+            @RequestParam (value="allergies", required=false) String allergies,
             @RequestParam (value="fathersdob", required=false) Date fathersdob,
             @RequestParam (value="mothersdob", required=false) Date mothersdob,
             @RequestParam (value="parentsweddingdate", required=false) Date parentsweddingdate,
@@ -198,6 +204,12 @@ public class AdmissionPlaySchoolApiController {
         ps_student_pers_info.setMothersofficephoneno(mothersofficephoneno);
         ps_student_pers_info.setMothersofficealtphoneno(mothersofficealtphoneno);
         ps_student_pers_info.setMothersofficeextensionno(mothersofficeextensionno);
+        ps_student_pers_info.setSiblings(siblings);
+        ps_student_pers_info.setSiblingname(siblingname);
+        ps_student_pers_info.setSiblingdob(siblingdob);
+        ps_student_pers_info.setSiblingage(siblingage);
+        ps_student_pers_info.setMedicaldetails(medicaldetails);
+        ps_student_pers_info.setAllergies(allergies);
         ps_student_pers_info.setFathersdob(fathersdob);
         ps_student_pers_info.setMothersdob(mothersdob);
         ps_student_pers_info.setParentsweddingdate(parentsweddingdate);
