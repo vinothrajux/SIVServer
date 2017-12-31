@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -45,6 +46,9 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
     public void studentAttendanceDetailplayschool(
             @RequestParam(value ="id", required=false) Integer id,
             @RequestParam (value="entrydate", required=false) Date entrydate,
+            @RequestParam (value="program", required=false) String program,
+            @RequestParam (value="section", required=false) String section,
+            @RequestParam (value="academicyear", required=false) String academicyear,
             @RequestParam (value="registernumber", required=false) String registernumber,
             @RequestParam (value="status", required=false) String status
 
@@ -67,14 +71,25 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
             @RequestParam(value ="standardstudying", required=false) String standardstudying,
             @RequestParam (value="section", required=false) String section,
             @RequestParam (value="academicyear", required=false) String academicyear,
-            @RequestParam (value="studentstatus", required=false) String studentstatus
+            @RequestParam (value="studentstatus", required=false) String studentstatus,
+            @RequestParam (value="entrydate", required=false) Date entrydate
     ){
         System.out.println("branch:"+standardstudying);
         System.out.println("batch:"+section);
         System.out.println("academicyear:"+academicyear);
         System.out.println("branchcode:"+studentstatus);
+        //studentAttendanceHeaderPlaySchoolRepository.find
+        Student_Attendance_Play_School_Compound_Key studattpscompkey = new Student_Attendance_Play_School_Compound_Key(entrydate,standardstudying,section,academicyear);
+        StudentAttendanceHeaderEntryCheckPlaySchoolProjection playschoolstudentattendanceentrycheckDetail = studentAttendanceHeaderPlaySchoolRepository.findOneByStudentattendanceplayschoolcompoundkey(studattpscompkey);
 //        Iterable<StudentBaseInformation> studentList = studentbaseinformationRepository.findByAcademicyearAndBranchcode(academicyear, branchcode);
-            Iterable<PlaySchoolStudentBaseInformation> studentList = playSchoolStudentBaseInformationRepository.findAllByStandardstudyingAndSectionAndAcademicyearAndStudentstatus(standardstudying, section, academicyear, studentstatus);
+        Iterable<PlaySchoolStudentBaseInformation> studentList = null;
+        if(playschoolstudentattendanceentrycheckDetail==null){
+            System.out.println("is null");
+            studentList = playSchoolStudentBaseInformationRepository.findAllByStandardstudyingAndSectionAndAcademicyearAndStudentstatus(standardstudying, section, academicyear, studentstatus);
+        }else{
+            System.out.println("is not null");
+        }
+
 
         System.out.println("Inside getApplicationDetail");
         return studentList;
@@ -142,9 +157,20 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
                 System.out.println("setattendancedetail"+i+":"+objectInArray.getString("presentstatus"));
                 StudentAttendanceDetailPlaySchool studentAttendanceDetailPlaySchool = new StudentAttendanceDetailPlaySchool();
                 //studentAttendanceDetailPlaySchool.setId(i);
-                studentAttendanceDetailPlaySchool.setEntrydate(date);
+                //Date entrydateconvert = new Date(entrydate);
+                Date entryDatec = null;
+                try {
+                    entryDatec = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH).parse(entrydate);
+                    studentAttendanceDetailPlaySchool.setEntrydate(entryDatec);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
                 studentAttendanceDetailPlaySchool.setRegisternumber(registernumber);
                 studentAttendanceDetailPlaySchool.setStatus(presentstatus);
+                studentAttendanceDetailPlaySchool.setProgram(standardstudying);
+                studentAttendanceDetailPlaySchool.setSection(section);
+                studentAttendanceDetailPlaySchool.setAcademicyear(academicyear);
 
                 studentAttendanceDetailPlaySchoolRepository.save(studentAttendanceDetailPlaySchool);
             }
@@ -165,11 +191,29 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
 
     // THIS API CAN BE USED TO FETCH THE ENTERED ATTENDANCE DETAIL AT PARENT END MOBILE APP
     @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolFetchEnteredAttendanceDetail")
-    public StudentAttendanceDetailFetchPlaySchool getPlaySchoolFetchEnteredAttendanceDetail(@RequestParam (value ="entrydate") Date entrydate,@RequestParam (value ="registernumber") String registernumber) {
-        StudentAttendanceDetailFetchPlaySchool playschoolindstudentattendanceDetail = studentAttendanceDetailPlaySchoolRepository.findByEntrydateAndRegisternumber(entrydate,registernumber);
+    public StudentAttendanceDetailFetchPlaySchool getPlaySchoolFetchEnteredAttendanceDetail(@RequestParam (value ="registernumber") String registernumber) {
+                //Date entrydate = new Date();
+        StudentAttendanceDetailFetchPlaySchool playschoolindstudentattendanceDetail = null;
+        try {
+            LocalDateTime now = LocalDateTime.now();
+            int year = now.getYear();
+            int month = now.getMonthValue();
+            int day = now.getDayOfMonth();
+            String curDate= year + "-"+month+"-"+day+ " 00:00:00";
+            //String curDate= "2017-12-12 00:00:00";
+            Date date1=new SimpleDateFormat("MM-dd-yyyy HH:mm:ss").parse(curDate);
 
-        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getPlaySchoolFetchEnteredAttendanceDetail");
+            java.sql.Timestamp ts = java.sql.Timestamp.valueOf( curDate ) ;
+            System.out.println(ts);
+            System.out.println("test:"+ts);
+            System.out.println("test");
+            playschoolindstudentattendanceDetail = studentAttendanceDetailPlaySchoolRepository.findByEntrydateAndRegisternumber(ts,registernumber);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+
         return playschoolindstudentattendanceDetail;
     }
 

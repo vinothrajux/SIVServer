@@ -1,8 +1,14 @@
 package com.sivserver.example.teachingstaff;
 
 import com.sivserver.example.admission.AdmissionPlaySchoolProjection;
+import com.sivserver.example.student.PlaySchoolStudentBaseInformationProjection;
+import com.sivserver.example.student.PlaySchoolStudentBaseInformationRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -14,6 +20,9 @@ import java.util.List;
 public class StudentHomeWorkPlaySchoolApiController {
 
     private StudentHomeWorkPlaySchoolRepository studentHomeWorkPlaySchoolRepository;
+
+    @Autowired
+    private PlaySchoolStudentBaseInformationRepository playSchoolStudentBaseInformationRepository;
 
     @GetMapping(value="/all")
 
@@ -62,6 +71,41 @@ public class StudentHomeWorkPlaySchoolApiController {
         return playschoolstudentHomeWorkDetail;
     }
 
+    @RequestMapping(method = RequestMethod.POST, value="/getStudentHomeWorkListPlaySchool")
+    public void getStudentHomeWorkListPlaySchool(@RequestParam (value ="registernumber") String registernumber) {
 
+        PlaySchoolStudentBaseInformationProjection playSchoolStudentBaseInformationProjection = playSchoolStudentBaseInformationRepository.findOneByRegisternumber(registernumber);
+        String academicyear=playSchoolStudentBaseInformationProjection.getAcademicyear();
+        String program=playSchoolStudentBaseInformationProjection.getStandardstudying();
+        String section=playSchoolStudentBaseInformationProjection.getSection();
+
+        LocalDateTime now = LocalDateTime.now();
+        int year = now.getYear();
+        int month = now.getMonthValue();
+        int day = now.getDayOfMonth();
+        String curDate= year + "-"+month+"-"+day+ " 00:00:00";
+        //String curDate= "2017-12-12 00:00:00";
+        Date date1;
+        try {
+            date1=new SimpleDateFormat("MM-dd-yyyy HH:mm:ss").parse(curDate);
+
+
+        java.sql.Timestamp ts = java.sql.Timestamp.valueOf( curDate ) ;
+        System.out.println("Inside getStudentHomeWorkPlaySchoolDetail");
+        System.out.println(academicyear);
+        System.out.println(program);
+        System.out.println(section);
+        System.out.println(ts);
+
+        Iterable<StudentHomeWorkPlaySchoolProjection> playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByAcademicyearAndProgramAndSectionAndEntrydate(academicyear,program,section,ts);
+
+            System.out.println(playschoolstudentHomeWorkDetail);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+//        System.out.println("Inside getStudentHomeWorkPlaySchoolDetail");
+//        return playschoolstudentHomeWorkDetail;
+    }
 }
 

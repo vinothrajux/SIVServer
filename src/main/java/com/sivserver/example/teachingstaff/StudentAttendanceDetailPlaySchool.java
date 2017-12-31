@@ -15,6 +15,12 @@ public class StudentAttendanceDetailPlaySchool {
 
     private Date entrydate;
 
+    private String program;
+
+    private String section;
+
+    private String academicyear;
+
     @Column(name="registernumber")
     private String registernumber;
 
@@ -37,6 +43,30 @@ public class StudentAttendanceDetailPlaySchool {
 
     public void setEntrydate(Date entrydate) {
         this.entrydate = entrydate;
+    }
+
+    public String getProgram() {
+        return program;
+    }
+
+    public void setProgram(String program) {
+        this.program = program;
+    }
+
+    public String getSection() {
+        return section;
+    }
+
+    public void setSection(String section) {
+        this.section = section;
+    }
+
+    public String getAcademicyear() {
+        return academicyear;
+    }
+
+    public void setAcademicyear(String academicyear) {
+        this.academicyear = academicyear;
     }
 
     public String getRegisternumber() {
