@@ -72,7 +72,8 @@ public class StudentHomeWorkPlaySchoolApiController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/getStudentHomeWorkListPlaySchool")
-    public void getStudentHomeWorkListPlaySchool(@RequestParam (value ="registernumber") String registernumber) {
+    public Iterable<StudentHomeWorkPlaySchoolProjection> getStudentHomeWorkListPlaySchool(@RequestParam (value ="registernumber") String registernumber, @RequestParam (value ="hwdate", required = false) Date hwdate, @RequestParam (value ="currentdatestatus") Boolean currentdatestatus) {
+
 
         PlaySchoolStudentBaseInformationProjection playSchoolStudentBaseInformationProjection = playSchoolStudentBaseInformationRepository.findOneByRegisternumber(registernumber);
         String academicyear=playSchoolStudentBaseInformationProjection.getAcademicyear();
@@ -86,6 +87,7 @@ public class StudentHomeWorkPlaySchoolApiController {
         String curDate= year + "-"+month+"-"+day+ " 00:00:00";
         //String curDate= "2017-12-12 00:00:00";
         Date date1;
+        Iterable<StudentHomeWorkPlaySchoolProjection> playschoolstudentHomeWorkDetail = null;
         try {
             date1=new SimpleDateFormat("MM-dd-yyyy HH:mm:ss").parse(curDate);
 
@@ -96,8 +98,12 @@ public class StudentHomeWorkPlaySchoolApiController {
         System.out.println(program);
         System.out.println(section);
         System.out.println(ts);
-
-        Iterable<StudentHomeWorkPlaySchoolProjection> playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByAcademicyearAndProgramAndSectionAndEntrydate(academicyear,program,section,ts);
+        if(currentdatestatus){
+            playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByAcademicyearAndProgramAndSectionAndEntrydate(academicyear,program,section,ts);
+        }else{
+            playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByAcademicyearAndProgramAndSectionAndEntrydate(academicyear,program,section,hwdate);
+        }
+//        playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByAcademicyearAndProgramAndSectionAndEntrydate(academicyear,program,section,ts);
 
             System.out.println(playschoolstudentHomeWorkDetail);
         } catch (ParseException e) {
@@ -105,7 +111,7 @@ public class StudentHomeWorkPlaySchoolApiController {
         }
 //        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
 //        System.out.println("Inside getStudentHomeWorkPlaySchoolDetail");
-//        return playschoolstudentHomeWorkDetail;
+        return playschoolstudentHomeWorkDetail;
     }
 }
 
