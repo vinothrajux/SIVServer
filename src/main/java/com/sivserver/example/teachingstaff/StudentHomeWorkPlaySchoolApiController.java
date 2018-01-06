@@ -24,6 +24,9 @@ public class StudentHomeWorkPlaySchoolApiController {
     @Autowired
     private PlaySchoolStudentBaseInformationRepository playSchoolStudentBaseInformationRepository;
 
+    @Autowired
+    private PlaySchoolHomeWorkIdGenerateRepository playSchoolHomeWorkIdGenerateRepository;
+
     @GetMapping(value="/all")
 
     public List<StudentHomeWorkPlaySchool> getStudentHomeWorkPlaySchoolDetails() {return studentHomeWorkPlaySchoolRepository.findAll();}
@@ -43,10 +46,13 @@ public class StudentHomeWorkPlaySchoolApiController {
             @RequestParam (value="academicyear", required=false) String academicyear,
             @RequestParam (value="subjectcategory", required=false) String subjectcategory,
             @RequestParam (value="homeworkcontent", required=false) String homeworkcontent,
-            @RequestParam (value="loginuser", required=false) String loginuser
+            @RequestParam (value="loginuser", required=false) String loginuser,
+            @RequestParam (value="idno", required=false) Integer idno,
+            @RequestParam (value="hwid", required=false) Integer hwid
 
     ) {
         StudentHomeWorkPlaySchool ps_student_home_work = new StudentHomeWorkPlaySchool();
+        PlaySchoolHomeWorkIdGenerate pshomeworidgenerate = new PlaySchoolHomeWorkIdGenerate();
 
         ps_student_home_work.setHomeworkid(homeworkid);
         ps_student_home_work.setEntrydate(entrydate);
@@ -60,7 +66,10 @@ public class StudentHomeWorkPlaySchoolApiController {
 
         studentHomeWorkPlaySchoolRepository.save(ps_student_home_work);
 
+        pshomeworidgenerate.setIdno(idno);
+        pshomeworidgenerate.setHwid(hwid);
 
+        playSchoolHomeWorkIdGenerateRepository.save(pshomeworidgenerate);
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/getStudentHomeWorkPlaySchoolDetail")

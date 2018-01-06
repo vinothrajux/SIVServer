@@ -14,6 +14,7 @@ public interface EventsCircularsPlaySchoolProjection {
     String getProgram();
     String getSection();
     String getAcademicyear();
+    String getEventtitle();
     String getMessage();
 
 }

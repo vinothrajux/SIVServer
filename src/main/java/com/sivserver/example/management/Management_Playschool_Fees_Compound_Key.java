@@ -13,12 +13,16 @@ public class Management_Playschool_Fees_Compound_Key implements Serializable {
 
     private String Academicyear;
 
+   // private String instiuteid;
+
     public Management_Playschool_Fees_Compound_Key() {
     }
 
     public Management_Playschool_Fees_Compound_Key(String program, String academicyear) {
         this.program = program;
-        Academicyear = academicyear;
+        this.Academicyear = academicyear;
+     //   this.instiuteid = instituteid;
+
     }
 
     public String getProgram() {
@@ -36,4 +40,12 @@ public class Management_Playschool_Fees_Compound_Key implements Serializable {
     public void setAcademicyear(String academicyear) {
         Academicyear = academicyear;
     }
+
+//    public String getInstiuteid() {
+//        return instiuteid;
+//    }
+//
+//    public void setInstiuteid(String instiuteid) {
+//        this.instiuteid = instiuteid;
+//    }
 }

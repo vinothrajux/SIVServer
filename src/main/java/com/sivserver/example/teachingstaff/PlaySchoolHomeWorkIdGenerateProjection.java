@@ -6,5 +6,5 @@ package com.sivserver.example.teachingstaff;
 public interface PlaySchoolHomeWorkIdGenerateProjection {
 
     Integer getIdno();
-    Integer getHomeworkid();
+    Integer getHwid();
 }

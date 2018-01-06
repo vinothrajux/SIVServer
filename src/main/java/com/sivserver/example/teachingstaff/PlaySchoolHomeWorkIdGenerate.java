@@ -15,7 +15,8 @@ public class PlaySchoolHomeWorkIdGenerate {
     @Id
     private Integer idno;
 
-    private Integer homeworkid;
+    private Integer hwid;
+
 
 
     public PlaySchoolHomeWorkIdGenerate() {
@@ -29,12 +30,11 @@ public class PlaySchoolHomeWorkIdGenerate {
         this.idno = idno;
     }
 
-    public Integer getHomeworkid() {
-        return homeworkid;
+    public Integer getHwid() {
+        return hwid;
     }
 
-    public void setHomeworkid(Integer homeworkid) {
-        this.homeworkid = homeworkid;
+    public void setHwid(Integer hwid) {
+        this.hwid = hwid;
     }
-
 }

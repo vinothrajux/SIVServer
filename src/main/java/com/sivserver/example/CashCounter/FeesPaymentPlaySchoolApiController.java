@@ -59,6 +59,7 @@ public class FeesPaymentPlaySchoolApiController {
             @RequestParam(value = "chequedate", required = false) String chequedate,
             @RequestParam(value = "bankname", required = false) String bankname,
             @RequestParam(value = "loginuser", required = false) String loginuser,
+            @RequestParam(value = "instituteid", required = false) String instituteid,
             @RequestParam(value = "idno", required = false) Integer idno
 
 
@@ -93,6 +94,7 @@ public class FeesPaymentPlaySchoolApiController {
         ps_fees_payment.setChequedate(chequedate);
         ps_fees_payment.setBankname(bankname);
         ps_fees_payment.setLoginuser(loginuser);
+        ps_fees_payment.setInstituteid(instituteid);
 
         feesPaymentPlaySchoolRepository.save(ps_fees_payment);
 

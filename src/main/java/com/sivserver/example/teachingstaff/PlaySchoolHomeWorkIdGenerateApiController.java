@@ -30,13 +30,13 @@ public class PlaySchoolHomeWorkIdGenerateApiController {
 
     public void playschoolhomeworkidgenerate(
             @RequestParam(value ="idno", required=false) Integer idno,
-            @RequestParam(value ="homeworkid", required=false) Integer homeworkid
+            @RequestParam(value ="hwid", required=false) Integer hwid
 
     ) {
         PlaySchoolHomeWorkIdGenerate lasthomeworkid = new PlaySchoolHomeWorkIdGenerate();
 
         lasthomeworkid.setIdno(idno);
-        lasthomeworkid.setHomeworkid(homeworkid);
+        lasthomeworkid.setHwid(hwid);
 
         playSchoolHomeWorkIdGenerateRepository.save(lasthomeworkid);
 

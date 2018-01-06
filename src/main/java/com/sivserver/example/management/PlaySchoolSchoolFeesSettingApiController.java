@@ -27,6 +27,7 @@ public class PlaySchoolSchoolFeesSettingApiController {
             @RequestParam(value = "feessettingdate", required = false) Date feessettingdate,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "program", required = false) String program,
+           // @RequestParam(value = "instituteid", required = false) String instituteid,
             @RequestParam(value = "registrationfees", required = false) Double registrationfees,
             @RequestParam(value = "materialkitfees", required = false) Double materialkitfees,
             @RequestParam(value = "activityfees", required = false) Double activityfees,

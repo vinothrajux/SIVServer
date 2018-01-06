@@ -27,6 +27,8 @@ public class EventsCircularsPlaySchool {
 
     private String academicyear;
 
+    private String eventtitle;
+
     private String message;
 
     private String loginuser;
@@ -88,6 +90,14 @@ public class EventsCircularsPlaySchool {
 
     public void setAcademicyear(String academicyear) {
         this.academicyear = academicyear;
+    }
+
+    public String getEventtitle() {
+        return eventtitle;
+    }
+
+    public void setEventtitle(String eventtitle) {
+        this.eventtitle = eventtitle;
     }
 
     public String getMessage() {

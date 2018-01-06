@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -67,13 +68,16 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/getStudentListAttendance")
-    public Iterable<PlaySchoolStudentBaseInformation> getStudentLists(
+    public List<Object> getStudentLists(
             @RequestParam(value ="standardstudying", required=false) String standardstudying,
             @RequestParam (value="section", required=false) String section,
             @RequestParam (value="academicyear", required=false) String academicyear,
             @RequestParam (value="studentstatus", required=false) String studentstatus,
             @RequestParam (value="entrydate", required=false) Date entrydate
     ){
+        ChildPickUpJoinHibernate childPickUpJoinHibernate = new ChildPickUpJoinHibernate();
+        List<Object> list = new ArrayList<Object>();
+        list=childPickUpJoinHibernate.jointable();
         System.out.println("branch:"+standardstudying);
         System.out.println("batch:"+section);
         System.out.println("academicyear:"+academicyear);
@@ -92,7 +96,7 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
 
 
         System.out.println("Inside getApplicationDetail");
-        return studentList;
+        return list;
     }
 
 

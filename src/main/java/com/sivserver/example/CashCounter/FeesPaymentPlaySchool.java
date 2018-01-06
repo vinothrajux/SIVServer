@@ -59,6 +59,8 @@ public class FeesPaymentPlaySchool {
 
     private String loginuser;
 
+    private String instituteid;
+
     public FeesPaymentPlaySchool() {
     }
 
@@ -236,5 +238,13 @@ public class FeesPaymentPlaySchool {
 
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
+    }
+
+    public String getInstituteid() {
+        return instituteid;
+    }
+
+    public void setInstituteid(String instituteid) {
+        this.instituteid = instituteid;
     }
 }
