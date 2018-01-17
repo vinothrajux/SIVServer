@@ -35,6 +35,8 @@ public class AdmissionPlaySchool {
 
     private String loginuser;
 
+    private Integer instituteid;
+
     @OneToOne
     @JoinColumn(name="couns_applno",nullable = false,referencedColumnName = "applno" )
     private ApplicationSalePlaySchool appsale;
@@ -135,6 +137,14 @@ public class AdmissionPlaySchool {
         this.loginuser = loginuser;
         return this;
     }
+    public Integer getInstituteid() {
+        return instituteid;
+    }
+
+    public AdmissionPlaySchool setInstituteid(Integer instituteid) {
+        this.instituteid = instituteid;
+        return this;
+    }
 
     public ApplicationSalePlaySchool getAppsale() {
         return appsale;
@@ -144,5 +154,6 @@ public class AdmissionPlaySchool {
         this.appsale = appsale;
         return this;
     }
+
 }
 

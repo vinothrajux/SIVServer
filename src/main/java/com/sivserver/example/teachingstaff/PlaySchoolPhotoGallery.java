@@ -32,6 +32,11 @@ public class PlaySchoolPhotoGallery {
 
     private String imagetitle;
 
+    private String loginuser;
+
+    private Integer instituteid;
+
+
     public PlaySchoolPhotoGallery() {
     }
 
@@ -105,5 +110,21 @@ public class PlaySchoolPhotoGallery {
 
     public void setImagetitle(String imagetitle) {
         this.imagetitle = imagetitle;
+    }
+
+    public String getLoginuser() {
+        return loginuser;
+    }
+
+    public void setLoginuser(String loginuser) {
+        this.loginuser = loginuser;
+    }
+
+    public Integer getInstituteid() {
+        return instituteid;
+    }
+
+    public void setInstituteid(Integer instituteid) {
+        this.instituteid = instituteid;
     }
 }

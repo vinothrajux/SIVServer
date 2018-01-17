@@ -10,6 +10,8 @@ import java.security.NoSuchAlgorithmException;
  * Created by Seetha on 15-Jun-17.
  */
 public class SivUtils {
+    public static final String crossoriginurl = "http://localhost";
+//    public static final String crossoriginurl = "http://siv.gbcorp.in";
     public static boolean isUserLoggedIn(){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if(null == auth.getPrincipal() || auth.getPrincipal().toString().contentEquals("anonymousUser")){

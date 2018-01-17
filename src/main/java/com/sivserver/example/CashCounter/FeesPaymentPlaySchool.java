@@ -59,7 +59,7 @@ public class FeesPaymentPlaySchool {
 
     private String loginuser;
 
-    private String instituteid;
+    private Integer instituteid;
 
     public FeesPaymentPlaySchool() {
     }
@@ -240,11 +240,11 @@ public class FeesPaymentPlaySchool {
         this.loginuser = loginuser;
     }
 
-    public String getInstituteid() {
+    public Integer getInstituteid() {
         return instituteid;
     }
 
-    public void setInstituteid(String instituteid) {
+    public void setInstituteid(Integer instituteid) {
         this.instituteid = instituteid;
     }
 }

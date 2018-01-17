@@ -15,6 +15,7 @@ public interface StudentHomeWorkPlaySchoolProjection {
     String getAcademicyear();
     String getSubjectcategory();
     String getHomeworkcontent();
+    Integer getInstituteid();
 
 
 }

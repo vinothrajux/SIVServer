@@ -1,16 +1,16 @@
 package com.sivserver.example.placement;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
 
 /**
  * Created by GBCorp on 07/07/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/corporateheader")
 
 public class CorporateHeaderApiController extends WebMvcConfigurerAdapter {

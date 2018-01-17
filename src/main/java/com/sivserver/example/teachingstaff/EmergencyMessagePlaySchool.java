@@ -37,6 +37,8 @@ public class EmergencyMessagePlaySchool {
 
     private String loginuser;
 
+    private Integer instituteid;
+
     public EmergencyMessagePlaySchool() {
     }
 
@@ -126,5 +128,13 @@ public class EmergencyMessagePlaySchool {
 
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
+    }
+
+    public Integer getInstituteid() {
+        return instituteid;
+    }
+
+    public void setInstituteid(Integer instituteid) {
+        this.instituteid = instituteid;
     }
 }

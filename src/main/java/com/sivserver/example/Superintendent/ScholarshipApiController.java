@@ -10,11 +10,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by Seetha on 01-Jul-17.
  */
 
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/scholarship")
 
 public class ScholarshipApiController {

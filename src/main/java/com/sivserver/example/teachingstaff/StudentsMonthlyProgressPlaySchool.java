@@ -55,6 +55,9 @@ public class StudentsMonthlyProgressPlaySchool {
 
     private String loginuser;
 
+    private Integer instituteid;
+
+
     public StudentsMonthlyProgressPlaySchool() {
     }
 
@@ -216,5 +219,13 @@ public class StudentsMonthlyProgressPlaySchool {
 
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
+    }
+
+    public Integer getInstituteid() {
+        return instituteid;
+    }
+
+    public void setInstituteid(Integer instituteid) {
+        this.instituteid = instituteid;
     }
 }

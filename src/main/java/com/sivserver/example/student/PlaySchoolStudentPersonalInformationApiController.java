@@ -7,10 +7,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by GBCorp on 01/11/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/playschoolstudentpersonalinformation")
 public class PlaySchoolStudentPersonalInformationApiController {
 
@@ -94,7 +97,8 @@ public class PlaySchoolStudentPersonalInformationApiController {
             @RequestParam (value="transport", required=false) String transport,
             @RequestParam (value="transportstage", required=false) String transportstage,
             @RequestParam (value="academicyear", required=false) String academicyear,
-            @RequestParam (value="loginuser", required=false) String loginuser
+            @RequestParam (value="loginuser", required=false) String loginuser,
+            @RequestParam (value="instituteid", required=false) Integer instituteid
 
 
             ) {
@@ -157,6 +161,7 @@ public class PlaySchoolStudentPersonalInformationApiController {
         playschoolstudentpersonalinformation.setTransportstage(transportstage);
         playschoolstudentpersonalinformation.setAcademicyear(academicyear);
         playschoolstudentpersonalinformation.setLoginuser(loginuser);
+        playschoolstudentpersonalinformation.setInstituteid(instituteid);
 
         playSchoolStudentPersonalInformationRepository.save(playschoolstudentpersonalinformation);
     }

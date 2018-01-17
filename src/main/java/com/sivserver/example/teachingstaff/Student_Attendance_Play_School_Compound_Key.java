@@ -18,6 +18,7 @@ public class Student_Attendance_Play_School_Compound_Key implements Serializable
     private String acdemicyear;
 
 
+
     public Student_Attendance_Play_School_Compound_Key() {
     }
 
@@ -59,4 +60,5 @@ public class Student_Attendance_Play_School_Compound_Key implements Serializable
     public void setAcdemicyear(String acdemicyear) {
         this.acdemicyear = acdemicyear;
     }
+
 }

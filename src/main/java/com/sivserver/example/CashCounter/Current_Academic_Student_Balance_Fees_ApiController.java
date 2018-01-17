@@ -5,10 +5,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by GBCorp on 10/09/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/current_Academic_Student_Balance_Fees")
 
 public class Current_Academic_Student_Balance_Fees_ApiController {

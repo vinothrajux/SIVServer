@@ -24,5 +24,6 @@ public interface FeesPaymentPlaySchoolProjection {
     String getChequeno();
     Date getChequedate();
     String getBankname();
+    Integer getInstituteid();
 
 }

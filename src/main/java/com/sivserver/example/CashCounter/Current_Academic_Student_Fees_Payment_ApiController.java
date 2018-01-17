@@ -5,12 +5,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
 import static org.omg.IOP.TAG_ORB_TYPE.value;
 
 /**
  * Created by GBCorp on 10/09/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/current_Academic_Student_Fees_Payment")
 
 public class Current_Academic_Student_Fees_Payment_ApiController {

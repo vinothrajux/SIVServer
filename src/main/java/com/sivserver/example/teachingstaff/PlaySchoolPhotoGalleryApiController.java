@@ -12,10 +12,13 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by Seetha on 16-Dec-17.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/playschoolphotogallery")
 public class PlaySchoolPhotoGalleryApiController {
     @Autowired
@@ -39,7 +42,9 @@ public class PlaySchoolPhotoGalleryApiController {
             @RequestParam(value = "studentlist", required = false) String studentlist,
             @RequestParam(value = "imagepath", required = false) String imagepath,
             @RequestParam(value = "imagetitle", required = false) String imagetitle,
-            @RequestParam(value = "encodedimage", required = false) String encodedimage
+            @RequestParam(value = "encodedimage", required = false) String encodedimage,
+            @RequestParam(value = "loginuser", required = false) String loginuser,
+            @RequestParam(value = "instituteid", required = false) Integer instituteid
 
     ){
         SivUtils sivUtils = new SivUtils();
@@ -78,6 +83,8 @@ public class PlaySchoolPhotoGalleryApiController {
         playSchoolPhotoGallery.setStudentlist(studentlist);
         playSchoolPhotoGallery.setImagepath(imagepath);
         playSchoolPhotoGallery.setImagetitle(imagetitle);
+        playSchoolPhotoGallery.setLoginuser(loginuser);
+        playSchoolPhotoGallery.setInstituteid(instituteid);
 
         playSchoolPhotoGalleryRepository.save(playSchoolPhotoGallery);
     }

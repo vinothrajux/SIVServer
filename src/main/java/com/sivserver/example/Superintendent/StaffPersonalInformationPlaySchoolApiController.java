@@ -6,10 +6,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by GBCorp on 07/11/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/staffpersonalinformationplayschool")
 public class StaffPersonalInformationPlaySchoolApiController {
 
@@ -55,7 +58,8 @@ public class StaffPersonalInformationPlaySchoolApiController {
             @RequestParam (value="monthyearofpass", required=false) String monthyearofpass,
             @RequestParam (value="experience", required=false) String experience,
             @RequestParam (value="noofyears", required=false) Integer noofyears,
-            @RequestParam (value="loginuser", required=false) String loginuser
+            @RequestParam (value="loginuser", required=false) String loginuser,
+            @RequestParam (value="instituteid", required=false) Integer instituteid
     )
     {
         StaffPersonalInformationPlaySchool ps_staff_personal_info = new StaffPersonalInformationPlaySchool();
@@ -89,6 +93,7 @@ public class StaffPersonalInformationPlaySchoolApiController {
         ps_staff_personal_info.setExperience(experience);
         ps_staff_personal_info.setNoofyears(noofyears);
         ps_staff_personal_info.setLoginuser(loginuser);
+        ps_staff_personal_info.setInstituteid(instituteid);
 
         staffPersonalInformationPlaySchoolRepository.save(ps_staff_personal_info);
 

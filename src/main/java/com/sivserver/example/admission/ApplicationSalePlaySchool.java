@@ -74,6 +74,8 @@ public class ApplicationSalePlaySchool {
 
     private String loginuser;
 
+    private Integer instituteid;
+
     public ApplicationSalePlaySchool() {
     }
 
@@ -327,5 +329,13 @@ public class ApplicationSalePlaySchool {
 
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
+    }
+
+    public Integer getInstituteid() {
+        return instituteid;
+    }
+
+    public void setInstituteid(Integer instituteid) {
+        this.instituteid = instituteid;
     }
 }

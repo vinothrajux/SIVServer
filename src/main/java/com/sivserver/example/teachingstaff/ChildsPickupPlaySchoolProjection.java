@@ -21,4 +21,5 @@ public interface ChildsPickupPlaySchoolProjection {
     String getPickuppersonmobileno();
     String getRemarks();
 
+
 }

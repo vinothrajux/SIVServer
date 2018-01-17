@@ -37,6 +37,7 @@ public interface ApplicationSalePlaySchoolProjection {
     String getApplicationpaidmode();
     String getRemarks();
     String getAcademicyear();
+    Integer getInstituteid();
 
 
 

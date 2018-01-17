@@ -8,16 +8,20 @@ import com.sivserver.example.teachingstaff.StudentHomeWorkPlaySchoolProjection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.soap.Text;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by GBCorp on 07/11/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/eventscircularsplayschool")
 public class EventsCircularsPlaySchoolApiController {
 
@@ -50,6 +54,7 @@ public class EventsCircularsPlaySchoolApiController {
             @RequestParam(value = "eventtitle", required = false) String eventtitle,
             @RequestParam(value = "message", required = false) String message,
             @RequestParam(value = "loginuser", required = false) String loginuser,
+            @RequestParam(value = "instituteid", required = false) Integer instituteid,
             @RequestParam(value = "id", required = false) Integer id,
             @RequestParam(value = "evecirid", required = false) Integer evecirid
 
@@ -69,6 +74,8 @@ public class EventsCircularsPlaySchoolApiController {
         ps_events_circulars.setEventtitle(eventtitle);
         ps_events_circulars.setMessage(message);
         ps_events_circulars.setLoginuser(loginuser);
+        ps_events_circulars.setInstituteid(instituteid);
+
 
         eventsCircularsPlaySchoolRepository.save(ps_events_circulars);
 

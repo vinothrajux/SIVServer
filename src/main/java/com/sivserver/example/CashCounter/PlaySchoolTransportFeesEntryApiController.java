@@ -6,10 +6,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by Seetha on 18-Dec-17.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/playschooltransportfeesentry")
 public class PlaySchoolTransportFeesEntryApiController {
 
@@ -34,7 +37,8 @@ public class PlaySchoolTransportFeesEntryApiController {
             @RequestParam(value = "transportfees", required = false) Double transportfees,
             @RequestParam(value = "transportduedate", required = false) Date transportduedate,
             @RequestParam(value = "academicyear", required = false) String academicyear,
-            @RequestParam(value = "loginuser", required = false) String loginuser
+            @RequestParam(value = "loginuser", required = false) String loginuser,
+            @RequestParam(value = "instituteid", required = false) Integer instituteid
 
     ) {
         PlaySchoolTransportFeesEntry playschooltransportfeesentryinfo = new PlaySchoolTransportFeesEntry();
@@ -49,7 +53,7 @@ public class PlaySchoolTransportFeesEntryApiController {
                 .setTransportduedate(transportduedate)
                 .setAcademicyear(academicyear)
                 .setLoginuser(loginuser)
-
+                .setInstituteid(instituteid)
                 .setPlay_school_student_personal_regno(playschoolstudentpersonalinfo);
 
 

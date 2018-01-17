@@ -4,18 +4,18 @@ import com.sivserver.example.admission.ApplicationSale;
 import com.sivserver.example.management.CollegeFeesSetting;
 import com.sivserver.example.management.CollegeFeesSettingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Date;
+
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
 
 /**
  * Created by Seetha on 19-Jun-17.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/hostelfeessetting")
 
 public class HostelFeesSettingApiController {

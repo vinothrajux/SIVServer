@@ -12,10 +12,13 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by GBCorp on 07/11/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/studenthomeworkplayschool")
 public class StudentHomeWorkPlaySchoolApiController {
 
@@ -47,6 +50,7 @@ public class StudentHomeWorkPlaySchoolApiController {
             @RequestParam (value="subjectcategory", required=false) String subjectcategory,
             @RequestParam (value="homeworkcontent", required=false) String homeworkcontent,
             @RequestParam (value="loginuser", required=false) String loginuser,
+            @RequestParam (value="instituteid", required=false) Integer instituteid,
             @RequestParam (value="idno", required=false) Integer idno,
             @RequestParam (value="hwid", required=false) Integer hwid
 
@@ -63,6 +67,7 @@ public class StudentHomeWorkPlaySchoolApiController {
         ps_student_home_work.setSubjectcategory(subjectcategory);
         ps_student_home_work.setHomeworkcontent(homeworkcontent);
         ps_student_home_work.setLoginuser(loginuser);
+        ps_student_home_work.setInstituteid(instituteid);
 
         studentHomeWorkPlaySchoolRepository.save(ps_student_home_work);
 

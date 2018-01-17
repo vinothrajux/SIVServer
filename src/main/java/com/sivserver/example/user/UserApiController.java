@@ -7,12 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
 import static sun.misc.Version.println;
 
 /**
  * Created by Seetha on 13-Jun-17.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/user")
 public class UserApiController extends WebMvcConfigurerAdapter {
    @Autowired

@@ -38,6 +38,8 @@ public class PlaySchoolBalanceFees {
 
     private String loginuser;
 
+    private Integer instituteid;
+
     @OneToOne
     @JoinColumn(name="student_base_registernumber",nullable=false,referencedColumnName = "registernumber")
     private PlaySchoolStudentPersonalInformation play_school_student_personal_regno;
@@ -156,6 +158,15 @@ public class PlaySchoolBalanceFees {
 
     public PlaySchoolBalanceFees setLoginuser(String loginuser) {
         this.loginuser = loginuser;
+        return this;
+    }
+
+    public Integer getInstituteid() {
+        return instituteid;
+    }
+
+    public PlaySchoolBalanceFees setInstituteid(Integer instituteid) {
+        this.instituteid = instituteid;
         return this;
     }
 

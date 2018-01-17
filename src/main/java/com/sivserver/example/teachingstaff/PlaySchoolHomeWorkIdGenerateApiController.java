@@ -6,10 +6,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by GB Corp on 12/23/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/playschoolhomeworkidgenerate")
 
 public class PlaySchoolHomeWorkIdGenerateApiController {

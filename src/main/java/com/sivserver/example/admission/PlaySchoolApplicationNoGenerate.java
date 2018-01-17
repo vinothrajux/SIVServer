@@ -17,6 +17,8 @@ public class PlaySchoolApplicationNoGenerate {
 
     private Integer enquiryno;
 
+    private Integer instituteid;
+
 
     public PlaySchoolApplicationNoGenerate() {
     }
@@ -35,5 +37,13 @@ public class PlaySchoolApplicationNoGenerate {
 
     public void setEnquiryno(Integer enquiryno) {
         this.enquiryno = enquiryno;
+    }
+
+    public Integer getInstituteid() {
+        return instituteid;
+    }
+
+    public void setInstituteid(Integer instituteid) {
+        this.instituteid = instituteid;
     }
 }

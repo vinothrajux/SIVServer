@@ -3,17 +3,17 @@ package com.sivserver.example.management;
 import com.sivserver.example.CashCounter.PlaySchoolFeesEntryBaseProjection;
 import com.sivserver.example.student.PlaySchoolStudentBaseInformation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
 
 /**
  * Created by GBCorp on 02/11/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/playschoolschoolfeessetting")
 public class PlaySchoolSchoolFeesSettingApiController {
 
@@ -27,7 +27,7 @@ public class PlaySchoolSchoolFeesSettingApiController {
             @RequestParam(value = "feessettingdate", required = false) Date feessettingdate,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "program", required = false) String program,
-           // @RequestParam(value = "instituteid", required = false) String instituteid,
+            @RequestParam(value = "instituteid", required = false) Integer instituteid,
             @RequestParam(value = "registrationfees", required = false) Double registrationfees,
             @RequestParam(value = "materialkitfees", required = false) Double materialkitfees,
             @RequestParam(value = "activityfees", required = false) Double activityfees,
@@ -41,7 +41,7 @@ public class PlaySchoolSchoolFeesSettingApiController {
     )
     {
         PlaySchoolSchoolFeesSetting ps_School_Fees_Set = new PlaySchoolSchoolFeesSetting();
-        Management_Playschool_Fees_Compound_Key key = new Management_Playschool_Fees_Compound_Key(program, academicyear);
+        Management_Playschool_Fees_Compound_Key key = new Management_Playschool_Fees_Compound_Key(program, academicyear,instituteid);
 
         ps_School_Fees_Set.setFeessettingdate(feessettingdate);
         ps_School_Fees_Set.setManagementplayschoolfeescompoundkey(key);
@@ -63,8 +63,8 @@ public class PlaySchoolSchoolFeesSettingApiController {
 
     @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolFeesDetail")
 //    public PlaySchoolSchoolFeesSettingProjection getPlaySchoolFeesDetail(@RequestParam (value ="managementplayschoolfeescompoundkey", required = false) Management_Playschool_Fees_Compound_Key mgmtpsfeescompkey) {
-    public PlaySchoolSchoolFeesSettingProjection getPlaySchoolFeesDetail(@RequestParam (value ="program", required = false) String program,@RequestParam (value ="academicyear", required = false) String academicyear)  {
-        Management_Playschool_Fees_Compound_Key mgmtpsfeescompkey = new Management_Playschool_Fees_Compound_Key(program,academicyear);
+    public PlaySchoolSchoolFeesSettingProjection getPlaySchoolFeesDetail(@RequestParam (value ="program", required = false) String program,@RequestParam (value ="academicyear", required = false) String academicyear,@RequestParam (value ="instituteid", required = false) Integer instituteid)  {
+        Management_Playschool_Fees_Compound_Key mgmtpsfeescompkey = new Management_Playschool_Fees_Compound_Key(program,academicyear,instituteid);
         PlaySchoolSchoolFeesSettingProjection playschoolfeesDetail = playSchoolSchoolFeesSettingRepository.findOneByManagementplayschoolfeescompoundkey(mgmtpsfeescompkey);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
         System.out.println("Inside getPlaySchoolFeesDetail");

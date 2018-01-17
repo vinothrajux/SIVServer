@@ -32,6 +32,8 @@ public class PlaySchoolStudentBaseInformation {
 
     private String loginuser;
 
+    private Integer instituteid;
+
     @OneToOne
     @JoinColumn(name="student_base_registernumber",nullable=false,referencedColumnName = "registernumber")
     private PlaySchoolStudentPersonalInformation play_school_student_personal_regno;
@@ -127,6 +129,15 @@ public class PlaySchoolStudentBaseInformation {
 
     public PlaySchoolStudentBaseInformation setLoginuser(String loginuser) {
         this.loginuser = loginuser;
+        return this;
+    }
+
+    public Integer getInstituteid() {
+        return instituteid;
+    }
+
+    public PlaySchoolStudentBaseInformation setInstituteid(Integer instituteid) {
+        this.instituteid = instituteid;
         return this;
     }
 

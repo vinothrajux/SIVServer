@@ -5,10 +5,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by GBCorp on 22/08/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/primaryusercontact")
 
 public class User_New_Contact_ApiController {

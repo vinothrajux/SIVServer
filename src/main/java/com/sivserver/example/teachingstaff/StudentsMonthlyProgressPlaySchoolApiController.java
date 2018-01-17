@@ -6,10 +6,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by GBCorp on 08/11/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/studentsmonthlyprogressplayschool")
 public class StudentsMonthlyProgressPlaySchoolApiController {
 
@@ -45,7 +48,8 @@ public class StudentsMonthlyProgressPlaySchoolApiController {
             @RequestParam (value="category8rating", required=false) Integer category8rating,
             @RequestParam (value="category9rating", required=false) Integer category9rating,
             @RequestParam (value="category10rating", required=false) Integer category10rating,
-            @RequestParam (value="loginuser", required=false) String loginuser
+            @RequestParam (value="loginuser", required=false) String loginuser,
+            @RequestParam (value="instituteid", required=false) Integer instituteid
 
     ) {
         StudentsMonthlyProgressPlaySchool ps_Students_Monthly_progress = new StudentsMonthlyProgressPlaySchool();
@@ -71,6 +75,7 @@ public class StudentsMonthlyProgressPlaySchoolApiController {
         ps_Students_Monthly_progress.setCategory9rating(category9rating);
         ps_Students_Monthly_progress.setCategory10rating(category10rating);
         ps_Students_Monthly_progress.setLoginuser(loginuser);
+        ps_Students_Monthly_progress.setInstituteid(instituteid);
 
         studentsMonthlyProgressPlaySchoolRepository.save(ps_Students_Monthly_progress);
 

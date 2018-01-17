@@ -30,6 +30,8 @@ public class StudentHomeWorkPlaySchool {
 
     private String loginuser;
 
+    private Integer instituteid;
+
     public StudentHomeWorkPlaySchool() {
     }
 
@@ -103,5 +105,13 @@ public class StudentHomeWorkPlaySchool {
 
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
+    }
+
+    public Integer getInstituteid() {
+        return instituteid;
+    }
+
+    public void setInstituteid(Integer instituteid) {
+        this.instituteid = instituteid;
     }
 }

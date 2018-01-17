@@ -15,6 +15,8 @@ public interface AdmissionPlaySchoolProjection {
     String getTransport();
     String getTransportstage();
     String getAcademicyear();
+    Integer getInstituteid();
+
 
 
 }

@@ -71,6 +71,8 @@ public class StaffPersonalInformationPlaySchool {
 
     private String loginuser;
 
+    private Integer instituteid;
+
     public StaffPersonalInformationPlaySchool() {
     }
 
@@ -308,6 +310,14 @@ public class StaffPersonalInformationPlaySchool {
 
     public void setPanno(String panno) {
         this.panno = panno;
+    }
+
+    public Integer getInstituteid() {
+        return instituteid;
+    }
+
+    public void setInstituteid(Integer instituteid) {
+        this.instituteid = instituteid;
     }
 }
 

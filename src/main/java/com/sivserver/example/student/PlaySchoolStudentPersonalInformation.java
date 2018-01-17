@@ -133,6 +133,8 @@ public class PlaySchoolStudentPersonalInformation {
 
     private String loginuser;
 
+    private Integer instituteid;
+
     public PlaySchoolStudentPersonalInformation() {
     }
 
@@ -594,5 +596,13 @@ public class PlaySchoolStudentPersonalInformation {
 
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
+    }
+
+    public Integer getInstituteid() {
+        return instituteid;
+    }
+
+    public void setInstituteid(Integer instituteid) {
+        this.instituteid = instituteid;
     }
 }

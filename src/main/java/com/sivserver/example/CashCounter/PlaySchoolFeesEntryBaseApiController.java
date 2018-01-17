@@ -7,10 +7,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by GBCorp on 01/11/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/playschoolfeesentrybase")
 public class PlaySchoolFeesEntryBaseApiController {
 
@@ -39,7 +42,8 @@ public class PlaySchoolFeesEntryBaseApiController {
             @RequestParam(value = "installment1duedate", required = false) Date installment1duedate,
             @RequestParam(value = "installment2duedate", required = false) Date installment2duedate,
             @RequestParam(value = "academicyear", required = false) String academicyear,
-            @RequestParam(value = "loginuser", required = false) String loginuser
+            @RequestParam(value = "loginuser", required = false) String loginuser,
+            @RequestParam(value = "instituteid", required = false) Integer instituteid
 
     ) {
         PlaySchoolFeesEntryBase playschoolfeesentrybaseinfo = new PlaySchoolFeesEntryBase();
@@ -57,6 +61,7 @@ public class PlaySchoolFeesEntryBaseApiController {
                                     .setInstallment2duedate(installment2duedate)
                                     .setAcademicyear(academicyear)
                                     .setLoginuser(loginuser)
+                                    .setInstituteid(instituteid)
                                     .setPlay_school_student_personal_regno(playschoolstudentpersonalinfo);
 
         playSchoolFeesEntryBaseRepository.save(playschoolfeesentrybaseinfo);

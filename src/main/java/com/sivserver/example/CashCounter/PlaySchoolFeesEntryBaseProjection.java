@@ -18,5 +18,5 @@ public interface PlaySchoolFeesEntryBaseProjection {
     Date getInstallment1duedate();
     Date getInstallment2duedate();
     String getAcademicyear();
-
+    Integer getInstituteid();
 }

@@ -6,10 +6,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by Seetha on 15-Dec-17.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/playschoolbillnogenerate")
 
 public class PlaySchoolBillNoGenerateApiController {

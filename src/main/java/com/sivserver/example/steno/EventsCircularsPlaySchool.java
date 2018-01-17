@@ -3,6 +3,7 @@ package com.sivserver.example.steno;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.xml.soap.Text;
 import java.util.Date;
 
 /**
@@ -32,6 +33,8 @@ public class EventsCircularsPlaySchool {
     private String message;
 
     private String loginuser;
+
+    private Integer instituteid;
 
     public EventsCircularsPlaySchool() {
     }
@@ -114,5 +117,13 @@ public class EventsCircularsPlaySchool {
 
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
+    }
+
+    public Integer getInstituteid() {
+        return instituteid;
+    }
+
+    public void setInstituteid(Integer instituteid) {
+        this.instituteid = instituteid;
     }
 }

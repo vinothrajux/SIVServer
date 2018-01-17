@@ -3,16 +3,16 @@ package com.sivserver.example.management;
 
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
 
 /**
  * Created by Seetha on 19-Jun-17.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/transportfeessetting")
 
 public class TransportFeesSettingApiController {
@@ -35,14 +35,15 @@ public class TransportFeesSettingApiController {
             @RequestParam(value = "loginuser", required = false) String loginuser,
             @RequestParam(value = "busno", required = false) String busno,
             @RequestParam(value = "drivername", required = false) String drivername,
-            @RequestParam(value = "seatno", required = false) String seatno
+            @RequestParam(value = "seatno", required = false) String seatno,
+            @RequestParam(value = "instituteid", required = false) Integer instituteid
 
 
     )
 
     {
         TransportFeesSetting transportfeessett = new TransportFeesSetting();
-        Management_Transport_Fees_Compound_Key key = new Management_Transport_Fees_Compound_Key(academicyear, stage);
+        Management_Transport_Fees_Compound_Key key = new Management_Transport_Fees_Compound_Key(academicyear, stage,instituteid);
       //  TransportFeesSetting key = new BusDetail();
         //create primary composite keys class name here
 

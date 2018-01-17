@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface PlaySchoolApplicationNoGenerateRepository extends JpaRepository<PlaySchoolApplicationNoGenerate,Integer> {
    // PlaySchoolApplicationNoGenerate findOneByIdno(Integer Idno);
-    PlaySchoolApplicationNoGenerateProjection findOneByIdno(Integer Idno);
+    PlaySchoolApplicationNoGenerateProjection findOneByIdnoAndInstituteid(Integer Idno,Integer instituteid);
 }

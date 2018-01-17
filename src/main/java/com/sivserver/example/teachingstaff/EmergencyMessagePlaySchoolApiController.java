@@ -6,10 +6,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by GBCorp on 07/11/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/emergencymessageplayschool")
 public class EmergencyMessagePlaySchoolApiController {
 
@@ -36,7 +39,8 @@ public class EmergencyMessagePlaySchoolApiController {
             @RequestParam(value = "section", required = false) String section,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "message", required = false) String message,
-            @RequestParam(value = "loginuser", required = false) String loginuser
+            @RequestParam(value = "loginuser", required = false) String loginuser,
+            @RequestParam(value = "instituteid", required = false) Integer instituteid
 
 
     )
@@ -55,6 +59,7 @@ public class EmergencyMessagePlaySchoolApiController {
         ps_emergency_message.setAcademicyear(academicyear);
         ps_emergency_message.setMessage(message);
         ps_emergency_message.setLoginuser(loginuser);
+        ps_emergency_message.setInstituteid(instituteid);
 
         emergencyMessagePlaySchoolRepository.save(ps_emergency_message);
 

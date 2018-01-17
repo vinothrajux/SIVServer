@@ -11,4 +11,5 @@ public interface PlaySchoolStudentBaseInformationProjection {
     String getSection();
     String getAcademicyear();
     String getStudentstatus();
+    Integer getInstituteid();
 }

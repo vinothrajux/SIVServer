@@ -19,10 +19,13 @@ import java.util.List;
 import java.util.Locale;
 import java.util.zip.DataFormatException;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by GBCorp on 03/11/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/studentattendancedetailplayschool")
 public class StudentAttendanceDetaiPlaySchoolApiController {
 
@@ -68,16 +71,13 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/getStudentListAttendance")
-    public List<Object> getStudentLists(
+    public Iterable<PlaySchoolStudentBaseInformation> getStudentLists(
             @RequestParam(value ="standardstudying", required=false) String standardstudying,
             @RequestParam (value="section", required=false) String section,
             @RequestParam (value="academicyear", required=false) String academicyear,
             @RequestParam (value="studentstatus", required=false) String studentstatus,
             @RequestParam (value="entrydate", required=false) Date entrydate
     ){
-        ChildPickUpJoinHibernate childPickUpJoinHibernate = new ChildPickUpJoinHibernate();
-        List<Object> list = new ArrayList<Object>();
-        list=childPickUpJoinHibernate.jointable();
         System.out.println("branch:"+standardstudying);
         System.out.println("batch:"+section);
         System.out.println("academicyear:"+academicyear);
@@ -85,7 +85,8 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
         //studentAttendanceHeaderPlaySchoolRepository.find
         Student_Attendance_Play_School_Compound_Key studattpscompkey = new Student_Attendance_Play_School_Compound_Key(entrydate,standardstudying,section,academicyear);
         StudentAttendanceHeaderEntryCheckPlaySchoolProjection playschoolstudentattendanceentrycheckDetail = studentAttendanceHeaderPlaySchoolRepository.findOneByStudentattendanceplayschoolcompoundkey(studattpscompkey);
-//        Iterable<StudentBaseInformation> studentList = studentbaseinformationRepository.findByAcademicyearAndBranchcode(academicyear, branchcode);
+        //        Iterable<StudentBaseInformation> studentList = studentbaseinformationRepository.findByAcademicyearAndBranchcode(academicyear, branchcode);
+        //Iterable<PlaySchoolStudentBaseInformation> studentList = playSchoolStudentBaseInformationRepository.findAllByStandardstudyingAndSectionAndAcademicyearAndStudentstatus(standardstudying, section, academicyear, studentstatus);
         Iterable<PlaySchoolStudentBaseInformation> studentList = null;
         if(playschoolstudentattendanceentrycheckDetail==null){
             System.out.println("is null");
@@ -96,7 +97,7 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
 
 
         System.out.println("Inside getApplicationDetail");
-        return list;
+        return studentList;
     }
 
 
@@ -117,6 +118,7 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
             String standardstudying = selectedclassdetailObj.getString("standardstudying");
             String section = selectedclassdetailObj.getString("section");
             String academicyear = selectedclassdetailObj.getString("academicyear");
+            String instituteid = selectedclassdetailObj.getString("instituteid");
             StudentAttendanceHeaderPlaySchool studentAttendanceHeaderPlaySchool = new StudentAttendanceHeaderPlaySchool();
             Student_Attendance_Play_School_Compound_Key student_attendance_play_school_compound_key = new Student_Attendance_Play_School_Compound_Key();
             //Date entryDate = new Date(entrydate);

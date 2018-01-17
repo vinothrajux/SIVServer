@@ -10,10 +10,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by GBCorp on 06/11/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/feespaymentplayschool")
 public class FeesPaymentPlaySchoolApiController {
 
@@ -59,7 +62,7 @@ public class FeesPaymentPlaySchoolApiController {
             @RequestParam(value = "chequedate", required = false) String chequedate,
             @RequestParam(value = "bankname", required = false) String bankname,
             @RequestParam(value = "loginuser", required = false) String loginuser,
-            @RequestParam(value = "instituteid", required = false) String instituteid,
+            @RequestParam(value = "instituteid", required = false) Integer instituteid,
             @RequestParam(value = "idno", required = false) Integer idno
 
 

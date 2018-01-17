@@ -35,5 +35,5 @@ public interface StaffPersonalInformationPlaySchoolProjection {
     String getMonthyearofpass();
     String getExperience();
     Integer getNoofyears();
-
+    Integer getInstituteid();
 }

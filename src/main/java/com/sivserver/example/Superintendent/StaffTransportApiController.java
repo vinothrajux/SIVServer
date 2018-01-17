@@ -3,17 +3,17 @@ package com.sivserver.example.Superintendent;
 import com.sivserver.example.transport.StudentTransport;
 import com.sivserver.example.transport.StudentTransportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
 
 /**
  * Created by Seetha on 01-Jul-17.
  */
 
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/stafftransport")
 
 public class StaffTransportApiController extends WebMvcConfigurerAdapter {

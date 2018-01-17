@@ -1,9 +1,6 @@
 package com.sivserver.example.teachingstaff;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -14,7 +11,8 @@ import java.util.Date;
 public class ChildsPickupPlaySchool {
 
     @Id
-    private String pickupid;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer pickupid;
 
     private Date pickupddate;
 
@@ -43,14 +41,17 @@ public class ChildsPickupPlaySchool {
 
     private String loginuser;
 
+    private Integer instituteid;
+
+
     public ChildsPickupPlaySchool() {
     }
 
-    public String getPickupid() {
+    public Integer getPickupid() {
         return pickupid;
     }
 
-    public void setPickupid(String pickupid) {
+    public void setPickupid(Integer pickupid) {
         this.pickupid = pickupid;
     }
 
@@ -156,5 +157,13 @@ public class ChildsPickupPlaySchool {
 
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
+    }
+
+    public Integer getInstituteid() {
+        return instituteid;
+    }
+
+    public void setInstituteid(Integer instituteid) {
+        this.instituteid = instituteid;
     }
 }

@@ -26,6 +26,8 @@ public class StudentAttendanceDetailPlaySchool {
 
     private String status;
 
+
+
     public StudentAttendanceDetailPlaySchool() {
     }
 
@@ -84,5 +86,6 @@ public class StudentAttendanceDetailPlaySchool {
     public void setStatus(String status) {
         this.status = status;
     }
+
 }
 

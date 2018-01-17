@@ -7,7 +7,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/studentcollegeid")
 
 /**

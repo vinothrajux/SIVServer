@@ -5,19 +5,19 @@ import com.sivserver.example.management.PlaySchoolSchoolFeesSettingProjection;
 import com.sivserver.example.management.PlaySchoolSchoolFeesSettingRepository;
 import com.sivserver.example.student.StudentBaseInformationProjection;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by GBCorp on 25/10/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("api/v1/playschoolapplicationsale")
 public class ApplicationSalePlaySchoolApiController {
 
@@ -73,6 +73,7 @@ public class ApplicationSalePlaySchoolApiController {
             @RequestParam (value="remarks", required=false) String remarks,
             @RequestParam (value="academicyear", required=false) String academicyear,
             @RequestParam (value="loginuser", required=false) String loginuser,
+            @RequestParam (value="instituteid", required=false) Integer instituteid,
             @RequestParam (value="idno", required=false) Integer idno,
             @RequestParam (value="enquiryno", required=false) Integer enquiryno
 
@@ -111,6 +112,7 @@ public class ApplicationSalePlaySchoolApiController {
         appsaleplayschool.setRemarks(remarks);
         appsaleplayschool.setAcademicyear(academicyear);
         appsaleplayschool.setLoginuser(loginuser);
+        appsaleplayschool.setInstituteid(instituteid);
 
 
         applicationSalePlaySchoolRepository.save(appsaleplayschool);
@@ -133,11 +135,11 @@ public class ApplicationSalePlaySchoolApiController {
 // THIS API CAN BE USED TO FETCH THE APPLICATION AND FEES INFORMATION FOR THE ADMISSION PLAY SCHOOL WINDOW
     ApplicationFeesInformation applicationFeesInformation;
     @RequestMapping(method = RequestMethod.POST, value="/getApplicationFeesDetails")
-    public List<Object> getStudentProfileInformationDetail(@RequestParam (value ="applno") String applicationNumber,@RequestParam (value ="appfor") String program,@RequestParam (value ="academicyear") String academicyear) {
+    public List<Object> getStudentProfileInformationDetail(@RequestParam (value ="applno") String applicationNumber,@RequestParam (value ="appfor") String program,@RequestParam (value ="academicyear") String academicyear,@RequestParam (value ="instituteid") Integer instituteid) {
         /* fetching data from table1*/
         ApplicationSalePlaySchoolProjection playschoolapplicationDetail = applicationSalePlaySchoolRepository.findOneByApplno(applicationNumber);
         /* fetching data from table2*/
-        Management_Playschool_Fees_Compound_Key mgmtpsfeescompkey = new Management_Playschool_Fees_Compound_Key(program,academicyear);
+        Management_Playschool_Fees_Compound_Key mgmtpsfeescompkey = new Management_Playschool_Fees_Compound_Key(program,academicyear,instituteid);
         PlaySchoolSchoolFeesSettingProjection playschoolfeesDetail = playSchoolSchoolFeesSettingRepository.findOneByManagementplayschoolfeescompoundkey(mgmtpsfeescompkey);
         List<Object> list = new ArrayList<Object>();
         list.add(playschoolapplicationDetail);

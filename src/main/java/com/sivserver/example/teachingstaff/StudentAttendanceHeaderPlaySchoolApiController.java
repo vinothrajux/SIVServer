@@ -8,10 +8,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by GBCorp on 03/11/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/studentattendanceheaderplayschool")
 public class StudentAttendanceHeaderPlaySchoolApiController {
 
@@ -36,6 +39,7 @@ public class StudentAttendanceHeaderPlaySchoolApiController {
             @RequestParam (value="program", required=false) String program,
             @RequestParam (value="section", required=false) String section,
             @RequestParam (value="academicyear", required=false) String academicyear,
+            @RequestParam (value="instituteid", required=false) Integer instituteid,
             @RequestParam (value="noofpresent", required=false) Integer noofpresent,
             @RequestParam (value="noofabsent", required=false) Integer noofabsent,
             @RequestParam (value="loginuser", required=false) String loginuser
@@ -56,7 +60,7 @@ public class StudentAttendanceHeaderPlaySchoolApiController {
     //THIS API USED TO CHECK WHETHER THE ATTENDANCE ALREADY ENTERED FOR THAT DAY
 
     @RequestMapping(method = RequestMethod.POST, value="/getStudentAttendanceHeaderEntryCheckPlaySchoolDetail")
-    public StudentAttendanceHeaderEntryCheckPlaySchoolProjection getStudentAttendanceHeaderEntryCheckPlaySchoolDetail(@RequestParam (value ="entrydate") Date entrydate,@RequestParam (value ="program") String program,@RequestParam (value ="section") String section,@RequestParam (value ="acdemicyear") String acdemicyear) {
+    public StudentAttendanceHeaderEntryCheckPlaySchoolProjection getStudentAttendanceHeaderEntryCheckPlaySchoolDetail(@RequestParam (value ="entrydate") Date entrydate,@RequestParam (value ="program") String program,@RequestParam (value ="section") String section,@RequestParam (value ="acdemicyear") String acdemicyear,@RequestParam (value ="instituteid") Integer instituteid ) {
 
         Student_Attendance_Play_School_Compound_Key studattpscompkey = new Student_Attendance_Play_School_Compound_Key(entrydate,program,section,acdemicyear);
         StudentAttendanceHeaderEntryCheckPlaySchoolProjection playschoolstudentattendanceentrycheckDetail = studentAttendanceHeaderPlaySchoolRepository.findOneByStudentattendanceplayschoolcompoundkey(studattpscompkey);

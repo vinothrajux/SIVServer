@@ -6,10 +6,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by Seetha on 03-Jan-18.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/playschooleventidgenerate")
 
 public class PlaySchoolEventIdGenerateApiController {

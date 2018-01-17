@@ -6,4 +6,5 @@ package com.sivserver.example.admission;
 public interface PlaySchoolApplicationNoGenerateProjection {
     Integer getIdno();
     Integer getEnquiryno();
+    Integer getInstituteid();
 }

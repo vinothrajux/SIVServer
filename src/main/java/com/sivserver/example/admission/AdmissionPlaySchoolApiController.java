@@ -11,10 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
+import static com.sivserver.example.utils.SivUtils.crossoriginurl;
+
 /**
  * Created by GBCorp on 31/10/2017.
  */
 @RestController
+@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/admissionplayschool")
 
 public class AdmissionPlaySchoolApiController {
@@ -136,7 +139,8 @@ public class AdmissionPlaySchoolApiController {
             @RequestParam (value="prekgprgno", required=false) Long prekgprgno,
             @RequestParam (value="kgoneprgno", required=false) Long kgoneprgno,
             @RequestParam (value="kgtwoprgno", required=false) Long kgtwoprgno,
-            @RequestParam (value="waitlistno", required=false) Long waitlistno
+            @RequestParam (value="waitlistno", required=false) Long waitlistno,
+            @RequestParam (value="instituteid", required=false) Integer instituteid
 
 
     ) {
@@ -159,6 +163,7 @@ public class AdmissionPlaySchoolApiController {
                 .setTransportstage(transportstage)
                 .setAcademicyear(academicyear)
                 .setLoginuser(loginuser)
+                .setInstituteid(instituteid)
                 .setAppsale(appsale);
 
         admissionPlaySchoolRepository.save(admissionplayschool);
