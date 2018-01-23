@@ -17,16 +17,19 @@ public class Student_Attendance_Play_School_Compound_Key implements Serializable
 
     private String acdemicyear;
 
+    private Integer instituteid;
+
 
 
     public Student_Attendance_Play_School_Compound_Key() {
     }
 
-    public Student_Attendance_Play_School_Compound_Key(Date entrydate, String program, String section, String acdemicyear) {
+    public Student_Attendance_Play_School_Compound_Key(Date entrydate, String program, String section, String acdemicyear, Integer instituteid) {
         this.entrydate = entrydate;
         this.program = program;
         this.section = section;
         this.acdemicyear = acdemicyear;
+        this.instituteid = instituteid;
     }
 
     public Date getEntrydate() {
@@ -61,4 +64,11 @@ public class Student_Attendance_Play_School_Compound_Key implements Serializable
         this.acdemicyear = acdemicyear;
     }
 
+    public Integer getInstituteid() {
+        return instituteid;
+    }
+
+    public void setInstituteid(Integer instituteid) {
+        this.instituteid = instituteid;
+    }
 }

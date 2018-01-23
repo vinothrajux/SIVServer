@@ -1,6 +1,7 @@
 package com.sivserver.example.management;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -21,7 +22,7 @@ public class PlaySchoolTransportFeesSettingApiController {
     @RequestMapping(method = RequestMethod.POST)
 
     public void playschoolTransportFeesSetting(
-            @RequestParam(value = "fees_setting_date", required = false) Date fees_setting_date,
+            @RequestParam(value = "fees_setting_date", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date fees_setting_date,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "stage", required = false) String stage,
             @RequestParam(value = "instituteid", required = false) Integer instituteid,

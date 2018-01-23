@@ -6,6 +6,7 @@ import com.sivserver.example.student.PlaySchoolStudentBaseInformationRepository;
 import com.sivserver.example.student.PlaySchoolStudentPersonalInformation;
 import com.sivserver.example.student.PlaySchoolStudentPersonalInformationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -72,7 +73,7 @@ public class AdmissionPlaySchoolApiController {
             @RequestParam (value="candfirstname", required=false) String candfirstname,
             @RequestParam (value="candmiddlename", required=false) String candmiddlename,
             @RequestParam (value="candlastname", required=false) String candlastname,
-            @RequestParam (value="dateofbirth", required=false) Date dateofbirth,
+            @RequestParam (value="dateofbirth", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date dateofbirth,
             @RequestParam (value="age", required=false) float age,
             @RequestParam (value="gender", required=false) String gender,
             @RequestParam (value="candfathername", required=false) String candfathername,
@@ -111,13 +112,13 @@ public class AdmissionPlaySchoolApiController {
             @RequestParam (value="mothersofficeextensionno", required=false) String mothersofficeextensionno,
             @RequestParam (value="siblings", required=false) String siblings,
             @RequestParam (value="siblingname", required=false) String siblingname,
-            @RequestParam (value="siblingdob", required=false) Date siblingdob,
+            @RequestParam (value="siblingdob", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date siblingdob,
             @RequestParam (value="siblingage", required=false) float siblingage,
             @RequestParam (value="medicaldetails", required=false) String medicaldetails,
             @RequestParam (value="allergies", required=false) String allergies,
-            @RequestParam (value="fathersdob", required=false) Date fathersdob,
-            @RequestParam (value="mothersdob", required=false) Date mothersdob,
-            @RequestParam (value="parentsweddingdate", required=false) Date parentsweddingdate,
+            @RequestParam (value="fathersdob", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date fathersdob,
+            @RequestParam (value="mothersdob", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date mothersdob,
+            @RequestParam (value="parentsweddingdate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date parentsweddingdate,
             @RequestParam (value="religion", required=false) String religion,
             @RequestParam (value="pickuppersonname", required=false) String pickuppersonname,
             @RequestParam (value="pickuppersoncontactno", required=false) String pickuppersoncontactno,
@@ -131,8 +132,8 @@ public class AdmissionPlaySchoolApiController {
             @RequestParam (value="totalfees", required=false) Double totalfees,
             @RequestParam (value="installment1fees", required=false) Double installment1fees,
             @RequestParam (value="installment2fees", required=false) Double installment2fees,
-            @RequestParam (value="installment1duedate", required=false) Date installment1duedate,
-            @RequestParam (value="installment2duedate", required=false) Date installment2duedate,
+            @RequestParam (value="installment1duedate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date installment1duedate,
+            @RequestParam (value="installment2duedate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date installment2duedate,
             @RequestParam (value="transportfeesmethod", required=false) String transportfeesmethod,
             @RequestParam (value="idno", required=false) Integer idno,
             @RequestParam (value="todprgno", required=false) Long todprgno,

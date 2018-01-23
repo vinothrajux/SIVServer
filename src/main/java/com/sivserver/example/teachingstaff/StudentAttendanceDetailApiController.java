@@ -3,6 +3,7 @@ package com.sivserver.example.teachingstaff;
 import com.sivserver.example.student.StudentBaseInformation;
 import com.sivserver.example.student.StudentBaseInformationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -41,7 +42,7 @@ public class StudentAttendanceDetailApiController  extends WebMvcConfigurerAdapt
     @RequestMapping(method = RequestMethod.POST)
     public void studentAttendanceDetail(
             @RequestParam(value ="id", required=false ) Integer id,
-            @RequestParam(value ="entrydate", required=false) Date entrydate,
+            @RequestParam(value ="entrydate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate,
             @RequestParam (value="hour", required=false) Integer hour,
             @RequestParam (value="regno", required=false) String regno,
             @RequestParam (value="status", required=false) String status
@@ -67,6 +68,7 @@ public class StudentAttendanceDetailApiController  extends WebMvcConfigurerAdapt
             @RequestParam (value="semester", required=false) String semester,
             @RequestParam (value="branchcode", required=false) String branchcode,
             @RequestParam (value="studenttype", required=false) String studenttype
+
     ){
         System.out.println("Academicyear:"+academicyear);
         System.out.println("batch:"+batch);

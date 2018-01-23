@@ -5,6 +5,7 @@ import com.sivserver.example.management.PlaySchoolSchoolFeesSettingProjection;
 import com.sivserver.example.management.PlaySchoolSchoolFeesSettingRepository;
 import com.sivserver.example.student.StudentBaseInformationProjection;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -44,12 +45,12 @@ public class ApplicationSalePlaySchoolApiController {
     public void playschoolapplicationsale(
             @RequestParam(value ="applno", required=false) String applno,
             @RequestParam(value ="category", required=false) String category,
-            @RequestParam (value="saledate", required=false) Date saledate,
+            @RequestParam (value="saledate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date saledate,
             @RequestParam (value="appfor", required=false) String appfor,
             @RequestParam (value="candfirstname", required=false) String candfirstname,
             @RequestParam (value="candmiddlename", required=false) String candmiddlename,
             @RequestParam (value="candlastname", required=false) String candlastname,
-            @RequestParam (value="dateofbirth", required=false) Date dateofbirth,
+            @RequestParam (value="dateofbirth", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date dateofbirth,
             @RequestParam (value="age", required=false) float age,
             @RequestParam (value="gender", required=false) String gender,
             @RequestParam (value="candfathername", required=false) String candfathername,
@@ -67,7 +68,7 @@ public class ApplicationSalePlaySchoolApiController {
             @RequestParam (value="mothersemail", required=false) String mothersemail,
             @RequestParam (value="reference", required=false) String reference,
             @RequestParam (value="willingtojoin", required=false) String willingtojoin,
-            @RequestParam (value="followupdate", required=false) Date followupdate,
+            @RequestParam (value="followupdate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date followupdate,
             @RequestParam (value="applicationprice", required=false) Long applicationprice,
             @RequestParam (value="applicationpaidmode", required=false) String applicationpaidmode,
             @RequestParam (value="remarks", required=false) String remarks,

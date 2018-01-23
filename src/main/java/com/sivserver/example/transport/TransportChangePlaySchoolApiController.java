@@ -2,6 +2,7 @@ package com.sivserver.example.transport;
 
 import com.sivserver.example.admission.ApplicationSalePlaySchoolProjection;
 import com.sivserver.example.student.PlaySchoolStudentBaseInformation;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -32,7 +33,7 @@ public class TransportChangePlaySchoolApiController {
     @RequestMapping(method = RequestMethod.POST)
     public void transportchangeplayschool(
             @RequestParam(value = "transportchangeid", required = false) String transportchangeid,
-            @RequestParam(value = "entrydate", required = false) Date entrydate,
+            @RequestParam(value = "entrydate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate,
             @RequestParam(value = "registernumber", required = false) String registernumber,
             @RequestParam(value = "name", required = false) String name,
             @RequestParam(value = "program", required = false) String program,

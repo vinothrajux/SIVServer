@@ -4,6 +4,7 @@ import com.sivserver.example.admission.AdmissionPlaySchoolProjection;
 import com.sivserver.example.student.PlaySchoolStudentBaseInformationProjection;
 import com.sivserver.example.student.PlaySchoolStudentBaseInformationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
@@ -42,7 +43,7 @@ public class StudentHomeWorkPlaySchoolApiController {
     @RequestMapping(method = RequestMethod.POST)
     public void studentHomeWorkPlaySchool(
             @RequestParam(value ="homeworkid", required=false) String homeworkid,
-            @RequestParam (value="entrydate", required=false) Date entrydate,
+            @RequestParam (value="entrydate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate,
             @RequestParam (value="entryday", required=false) String entryday,
             @RequestParam (value="program", required=false) String program,
             @RequestParam (value="section", required=false) String section,
@@ -86,7 +87,7 @@ public class StudentHomeWorkPlaySchoolApiController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/getStudentHomeWorkListPlaySchool")
-    public Iterable<StudentHomeWorkPlaySchoolProjection> getStudentHomeWorkListPlaySchool(@RequestParam (value ="registernumber") String registernumber, @RequestParam (value ="hwdate", required = false) Date hwdate, @RequestParam (value ="currentdatestatus") Boolean currentdatestatus) {
+    public Iterable<StudentHomeWorkPlaySchoolProjection> getStudentHomeWorkListPlaySchool(@RequestParam (value ="registernumber") String registernumber, @RequestParam (value ="hwdate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date hwdate, @RequestParam (value ="currentdatestatus") Boolean currentdatestatus) {
 
 
         PlaySchoolStudentBaseInformationProjection playSchoolStudentBaseInformationProjection = playSchoolStudentBaseInformationRepository.findOneByRegisternumber(registernumber);

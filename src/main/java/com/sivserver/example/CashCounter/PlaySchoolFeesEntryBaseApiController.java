@@ -2,6 +2,7 @@ package com.sivserver.example.CashCounter;
 
 import com.sivserver.example.admission.AdmissionPlaySchoolProjection;
 import com.sivserver.example.student.PlaySchoolStudentPersonalInformation;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -39,8 +40,8 @@ public class PlaySchoolFeesEntryBaseApiController {
             @RequestParam(value = "totalfees", required = false) Double totalfees,
             @RequestParam(value = "installment1fees", required = false) Double installment1fees,
             @RequestParam(value = "installment2fees", required = false) Double installment2fees,
-            @RequestParam(value = "installment1duedate", required = false) Date installment1duedate,
-            @RequestParam(value = "installment2duedate", required = false) Date installment2duedate,
+            @RequestParam(value = "installment1duedate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date installment1duedate,
+            @RequestParam(value = "installment2duedate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date installment2duedate,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "loginuser", required = false) String loginuser,
             @RequestParam(value = "instituteid", required = false) Integer instituteid

@@ -6,6 +6,7 @@ import com.sivserver.example.student.PlaySchoolStudentBaseInformationRepository;
 import com.sivserver.example.teachingstaff.PlaySchoolHomeWorkIdGenerate;
 import com.sivserver.example.teachingstaff.StudentHomeWorkPlaySchoolProjection;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import javax.xml.soap.Text;
@@ -45,8 +46,8 @@ public class EventsCircularsPlaySchoolApiController {
     @RequestMapping(method = RequestMethod.POST)
     public void eventscircularsplayschool(
             @RequestParam(value = "eventid", required = false) String eventid,
-            @RequestParam(value = "entrydate", required = false) Date entrydate,
-            @RequestParam(value = "eventdate", required = false) Date eventdate,
+            @RequestParam(value = "entrydate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate,
+            @RequestParam(value = "eventdate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date eventdate,
             @RequestParam(value = "eventday", required = false) String eventday,
             @RequestParam(value = "program", required = false) String program,
             @RequestParam(value = "section", required = false) String section,
@@ -95,7 +96,7 @@ public class EventsCircularsPlaySchoolApiController {
 
 
     @RequestMapping(method = RequestMethod.POST, value="/getStudentEventCircularListPlaySchool")
-    public Iterable<EventsCircularsPlaySchoolProjection> getStudentEventCircularListPlaySchool(@RequestParam (value ="registernumber") String registernumber, @RequestParam (value ="hwdate", required = false) Date hwdate) {
+    public Iterable<EventsCircularsPlaySchoolProjection> getStudentEventCircularListPlaySchool(@RequestParam (value ="registernumber") String registernumber, @RequestParam (value ="hwdate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date hwdate) {
 
 
         PlaySchoolStudentBaseInformationProjection playSchoolStudentBaseInformationProjection = playSchoolStudentBaseInformationRepository.findOneByRegisternumber(registernumber);

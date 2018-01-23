@@ -3,6 +3,7 @@ package com.sivserver.example.teachingstaff;
 import com.sivserver.example.admission.ApplicationSalePlaySchoolProjection;
 import com.sivserver.example.management.Management_Playschool_Fees_Compound_Key;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -34,7 +35,7 @@ public class StudentAttendanceHeaderPlaySchoolApiController {
 
     @RequestMapping(method = RequestMethod.POST)
     public void studentAttendanceHeaderplayschool(
-            @RequestParam(value ="entrydate", required=false) Date entrydate,
+            @RequestParam(value ="entrydate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate,
             @RequestParam (value="entryday", required=false) String entryday,
             @RequestParam (value="program", required=false) String program,
             @RequestParam (value="section", required=false) String section,
@@ -47,7 +48,7 @@ public class StudentAttendanceHeaderPlaySchoolApiController {
 
     ) {
         StudentAttendanceHeaderPlaySchool ps_student_att_head = new StudentAttendanceHeaderPlaySchool();
-        Student_Attendance_Play_School_Compound_Key key = new Student_Attendance_Play_School_Compound_Key(entrydate,program,section,academicyear);
+        Student_Attendance_Play_School_Compound_Key key = new Student_Attendance_Play_School_Compound_Key(entrydate,program,section,academicyear,instituteid);
 
         ps_student_att_head.setEntryday(entryday);
         ps_student_att_head.setStudentattendanceplayschoolcompoundkey(key);
@@ -60,9 +61,13 @@ public class StudentAttendanceHeaderPlaySchoolApiController {
     //THIS API USED TO CHECK WHETHER THE ATTENDANCE ALREADY ENTERED FOR THAT DAY
 
     @RequestMapping(method = RequestMethod.POST, value="/getStudentAttendanceHeaderEntryCheckPlaySchoolDetail")
-    public StudentAttendanceHeaderEntryCheckPlaySchoolProjection getStudentAttendanceHeaderEntryCheckPlaySchoolDetail(@RequestParam (value ="entrydate") Date entrydate,@RequestParam (value ="program") String program,@RequestParam (value ="section") String section,@RequestParam (value ="acdemicyear") String acdemicyear,@RequestParam (value ="instituteid") Integer instituteid ) {
+    public StudentAttendanceHeaderEntryCheckPlaySchoolProjection getStudentAttendanceHeaderEntryCheckPlaySchoolDetail(@RequestParam (value ="entrydate") @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate,
+                                                                                                                      @RequestParam (value ="program") String program,
+                                                                                                                      @RequestParam (value ="section") String section,
+                                                                                                                      @RequestParam (value ="acdemicyear") String acdemicyear,
+                                                                                                                      @RequestParam (value ="instituteid") Integer instituteid ) {
 
-        Student_Attendance_Play_School_Compound_Key studattpscompkey = new Student_Attendance_Play_School_Compound_Key(entrydate,program,section,acdemicyear);
+        Student_Attendance_Play_School_Compound_Key studattpscompkey = new Student_Attendance_Play_School_Compound_Key(entrydate,program,section,acdemicyear,instituteid);
         StudentAttendanceHeaderEntryCheckPlaySchoolProjection playschoolstudentattendanceentrycheckDetail = studentAttendanceHeaderPlaySchoolRepository.findOneByStudentattendanceplayschoolcompoundkey(studattpscompkey);
 
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);

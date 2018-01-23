@@ -7,6 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
@@ -45,7 +46,7 @@ public class ChildsPickupPlaySchoolApiController {
     @RequestMapping(method = RequestMethod.POST)
     public void childspickupplayschool(
             @RequestParam(value = "pickupid", required = false) Integer pickupid,
-            @RequestParam(value = "pickupddate", required = false) Date pickupddate,
+            @RequestParam(value = "pickupddate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date pickupddate,
             @RequestParam(value = "pickupday", required = false) String pickupday,
             @RequestParam(value = "pickuptime", required = false) String pickuptime,
             @RequestParam(value = "registernumber", required = false) String registernumber,
@@ -95,12 +96,13 @@ public class ChildsPickupPlaySchoolApiController {
             @RequestParam (value="section", required=false) String section,
             @RequestParam (value="academicyear", required=false) String academicyear,
             @RequestParam (value="studentstatus", required=false) String studentstatus,
-            @RequestParam (value="entrydate", required=false) Date entrydate
+            @RequestParam (value="instituteid", required=false) Integer instituteid,
+            @RequestParam (value="entrydate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate
 
     ){
         ChildPickUpJoinHibernate childPickUpJoinHibernate = new ChildPickUpJoinHibernate();
         List<PlaySchoolStudentBaseInformation> students;
-        students=childPickUpJoinHibernate.jointable(standardstudying, section, academicyear, entrydate);
+        students=childPickUpJoinHibernate.jointable(standardstudying, section, academicyear, entrydate, instituteid);
 
         for (PlaySchoolStudentBaseInformation student : students){
             for(int i=0; i<student.getStudentAttendanceDetailPlaySchoolRegno().size() ; i++){
@@ -153,13 +155,14 @@ public class ChildsPickupPlaySchoolApiController {
             String entrydate=pickupdetailsattributesObj.getString("entrydate");
             Date pickupdate=null;
             try {
-                pickupdate=new SimpleDateFormat("MM/dd/yyyy").parse(entrydate);
+                pickupdate=new SimpleDateFormat("dd/MM/yyyy").parse(entrydate);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
             String program=pickupdetailsattributesObj.getString("standardstudying");
             String section=pickupdetailsattributesObj.getString("section");
             String academicyear=pickupdetailsattributesObj.getString("academicyear");
+            Integer instituteid=Integer.parseInt(pickupdetailsattributesObj.getString("instituteid"));
 
             String candidatename, registernumber, pickuppersonname, pickuppersoncontactno, pickuppersonrelationship, pickuptime, remarks;
             for (int i=0; i<pickupdetailsArrayObj.length(); i++ ){
@@ -186,7 +189,7 @@ public class ChildsPickupPlaySchoolApiController {
                 childsPickupPlaySchool.setRegisternumber(registernumber);
                 childsPickupPlaySchool.setRemarks(remarks);
                 childsPickupPlaySchool.setSection(section);
-                childsPickupPlaySchool.setInstituteid(0);
+                childsPickupPlaySchool.setInstituteid(instituteid);
                 childsPickupPlaySchoolRepository.save(childsPickupPlaySchool);
                 System.out.println("date:"+entrydate);
 
@@ -202,7 +205,7 @@ public class ChildsPickupPlaySchoolApiController {
 
     // PARENT CHILD'S PICK UP ANDROID VIEW MODULE API
     @RequestMapping(method = RequestMethod.POST, value="/getStudentPickupPlaySchool")
-    public ChildsPickupPlaySchoolProjection getStudentPickupPlaySchool(@RequestParam (value ="registernumber") String registernumber, @RequestParam (value ="hwdate", required = false) Date hwdate) {
+    public ChildsPickupPlaySchoolProjection getStudentPickupPlaySchool(@RequestParam (value ="registernumber") String registernumber, @RequestParam (value ="hwdate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date hwdate) {
 
 
         PlaySchoolStudentBaseInformationProjection playSchoolStudentBaseInformationProjection = playSchoolStudentBaseInformationRepository.findOneByRegisternumber(registernumber);

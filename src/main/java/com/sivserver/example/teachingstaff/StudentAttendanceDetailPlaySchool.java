@@ -26,7 +26,7 @@ public class StudentAttendanceDetailPlaySchool {
 
     private String status;
 
-
+    private Integer instituteid;
 
     public StudentAttendanceDetailPlaySchool() {
     }
@@ -87,5 +87,12 @@ public class StudentAttendanceDetailPlaySchool {
         this.status = status;
     }
 
+    public Integer getInstituteid() {
+        return instituteid;
+    }
+
+    public void setInstituteid(Integer instituteid) {
+        this.instituteid = instituteid;
+    }
 }
 

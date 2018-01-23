@@ -3,6 +3,7 @@ package com.sivserver.example.management;
 import com.sivserver.example.CashCounter.PlaySchoolFeesEntryBaseProjection;
 import com.sivserver.example.student.PlaySchoolStudentBaseInformation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -24,7 +25,7 @@ public class PlaySchoolSchoolFeesSettingApiController {
 
     public void playschoolFeesSetting(
 
-            @RequestParam(value = "feessettingdate", required = false) Date feessettingdate,
+            @RequestParam(value = "feessettingdate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date feessettingdate,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "program", required = false) String program,
             @RequestParam(value = "instituteid", required = false) Integer instituteid,
@@ -35,8 +36,8 @@ public class PlaySchoolSchoolFeesSettingApiController {
             @RequestParam(value = "totalfees", required = false) Double totalfees,
             @RequestParam(value = "installment1fees", required = false) Double installment1fees,
             @RequestParam(value = "installment2fees", required = false) Double installment2fees,
-            @RequestParam(value = "installment1duedate", required = false) Date installment1duedate,
-            @RequestParam(value = "installment2duedate", required = false) Date installment2duedate,
+            @RequestParam(value = "installment1duedate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date installment1duedate,
+            @RequestParam(value = "installment2duedate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date installment2duedate,
             @RequestParam(value = "loginuser", required = false) String loginuser
     )
     {

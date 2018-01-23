@@ -1,6 +1,7 @@
 package com.sivserver.example.CashCounter;
 
 import com.sivserver.example.student.PlaySchoolStudentPersonalInformation;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -35,7 +36,7 @@ public class PlaySchoolTransportFeesEntryApiController {
             @RequestParam(value = "stage", required = false) String stage,
             @RequestParam(value = "transportfeesmethod", required = false) String transportfeesmethod,
             @RequestParam(value = "transportfees", required = false) Double transportfees,
-            @RequestParam(value = "transportduedate", required = false) Date transportduedate,
+            @RequestParam(value = "transportduedate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date transportduedate,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "loginuser", required = false) String loginuser,
             @RequestParam(value = "instituteid", required = false) Integer instituteid

@@ -3,6 +3,7 @@ package com.sivserver.example.teachingstaff;
 import com.sivserver.example.utils.SivUtils;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
@@ -34,7 +35,7 @@ public class PlaySchoolPhotoGalleryApiController {
 
     @RequestMapping(method = RequestMethod.POST)
     public void playschoolphotoupload(
-            @RequestParam(value = "uploaddate", required = false) Date uploaddate,
+            @RequestParam(value = "uploaddate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date uploaddate,
             @RequestParam(value = "academicyear", required = false) String academicyear,
             @RequestParam(value = "program", required = false) String program,
             @RequestParam(value = "section", required = false) String section,

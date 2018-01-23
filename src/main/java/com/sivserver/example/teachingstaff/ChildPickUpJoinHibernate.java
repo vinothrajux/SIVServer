@@ -18,7 +18,7 @@ import java.util.List;
  * Created by Seetha on 04-Jan-18.
  */
 public class ChildPickUpJoinHibernate {
-    public static List<PlaySchoolStudentBaseInformation> jointable(String standardstudying, String section, String academicyear, Date entrydate){
+    public static List<PlaySchoolStudentBaseInformation> jointable(String standardstudying, String section, String academicyear, Date entrydate, Integer instituteid){
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -28,6 +28,7 @@ public class ChildPickUpJoinHibernate {
         criteria.add(Restrictions.eq("standardstudying",standardstudying));
         criteria.add(Restrictions.eq("section",section));
         criteria.add(Restrictions.eq("academicyear",academicyear));
+        criteria.add(Restrictions.eq("instituteid",instituteid));
 
         List<PlaySchoolStudentBaseInformation> students = criteria.list();
 

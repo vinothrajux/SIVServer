@@ -17,6 +17,10 @@
     <property name="connection.username">postgres</property>
     <property name="connection.password">root</property>
 
+    <!--<property name="connection.url">jdbc:postgresql://sivadb.c1dgfcwvwcf2.us-east-2.rds.amazonaws.com:5432/sivadb?stringtype=unspecified</property>-->
+    <!--<property name="connection.username">gbcorp</property>-->
+    <!--<property name="connection.password">gooseberry2017</property>-->
+
     <!-- JDBC connection pool (use the built-in) -->
     <property name="connection.pool_size">1</property>
 

@@ -1,6 +1,7 @@
 package com.sivserver.example.teachingstaff;
 
 import com.sivserver.example.student.PlaySchoolStudentBaseInformation;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -30,7 +31,7 @@ public class EmergencyMessagePlaySchoolApiController {
     @RequestMapping(method = RequestMethod.POST)
     public void emergencymessageplayschool(
             @RequestParam(value = "emergencymessageid", required = false) String emergencymessageid,
-            @RequestParam(value = "entrydate", required = false) Date entrydate,
+            @RequestParam(value = "entrydate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate,
             @RequestParam(value = "day", required = false) String day,
             @RequestParam(value = "time", required = false) String time,
             @RequestParam(value = "registernumber", required = false) String registernumber,

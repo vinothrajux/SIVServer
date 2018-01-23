@@ -4,6 +4,7 @@ import com.sivserver.example.student.PlaySchoolStudentBaseInformation;
 import com.sivserver.example.student.PlaySchoolStudentBaseInformationProjection;
 import com.sivserver.example.student.PlaySchoolStudentBaseInformationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class FeesPaymentPlaySchoolApiController {
     @RequestMapping(method = RequestMethod.POST)
 
     public String feesPaymentPlaySchool(
-            @RequestParam(value = "billdate", required = false) Date billdate,
+            @RequestParam(value = "billdate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date billdate,
             @RequestParam(value = "billno", required = false) String billno,
             @RequestParam(value = "registernumber", required = false) String registernumber,
             @RequestParam(value = "program", required = false) String program,
@@ -56,7 +57,7 @@ public class FeesPaymentPlaySchoolApiController {
             @RequestParam(value = "totalfees", required = false) Long totalfees,
             @RequestParam(value = "totalfeespaid", required = false) Long totalfeespaid,
             @RequestParam(value = "balancefees", required = false) Long balancefees,
-            @RequestParam(value = "duedate", required = false) Date duedate,
+            @RequestParam(value = "duedate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date duedate,
             @RequestParam(value = "paymentmethod", required = false) String paymentmethod,
             @RequestParam(value = "chequeno", required = false) String chequeno,
             @RequestParam(value = "chequedate", required = false) String chequedate,

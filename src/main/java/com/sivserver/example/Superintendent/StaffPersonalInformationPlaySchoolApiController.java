@@ -1,6 +1,7 @@
 package com.sivserver.example.Superintendent;
 
 import com.sivserver.example.steno.EventsCircularsPlaySchoolProjection;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -30,11 +31,11 @@ public class StaffPersonalInformationPlaySchoolApiController {
     @RequestMapping(method = RequestMethod.POST)
 
     public void staffpersonalinformationplayschool(
-            @RequestParam(value ="dateofjoin", required=false) Date dateofjoin,
+            @RequestParam(value ="dateofjoin", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date dateofjoin,
             @RequestParam(value ="staffid", required=false) String staffid,
             @RequestParam(value ="staffname", required=false) String staffname,
             @RequestParam (value="designation", required=false) String designation,
-            @RequestParam (value="dateofbirth", required=false) Date dateofbirth,
+            @RequestParam (value="dateofbirth", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date dateofbirth,
             @RequestParam (value="age", required=false) Integer age,
             @RequestParam (value="gender", required=false) String gender,
             @RequestParam (value="bloodgroup", required=false) String bloodgroup,

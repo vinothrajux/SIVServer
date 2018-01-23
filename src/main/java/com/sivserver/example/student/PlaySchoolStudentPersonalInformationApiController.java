@@ -1,6 +1,8 @@
 package com.sivserver.example.student;
 
+import com.sivserver.example.teachingstaff.ChildsPickupPlaySchoolProjection;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -36,7 +38,7 @@ public class PlaySchoolStudentPersonalInformationApiController {
     public void playschoolapplicationsale(
             @RequestParam (value="registernumber", required=false) String registernumber,
             @RequestParam (value="candidatename", required=false) String candidatename,
-            @RequestParam (value="dateofbirth", required=false) Date dateofbirth,
+            @RequestParam (value="dateofbirth", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date dateofbirth,
             @RequestParam (value="age", required=false) float age,
             @RequestParam (value="gender", required=false) String gender,
             @RequestParam (value="candfathername", required=false) String candfathername,
@@ -54,7 +56,7 @@ public class PlaySchoolStudentPersonalInformationApiController {
             @RequestParam (value="mothersemail", required=false) String mothersemail,
             @RequestParam (value="reference", required=false) String reference,
             @RequestParam (value="willingtojoin", required=false) String willingtojoin,
-            @RequestParam (value="followupdate", required=false) Date followupdate,
+            @RequestParam (value="followupdate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date followupdate,
             @RequestParam (value="applicationprice", required=false) Long applicationprice,
             @RequestParam (value="applicationpaidmode", required=false) String applicationpaidmode,
             @RequestParam (value="remarks", required=false) String remarks,
@@ -80,14 +82,14 @@ public class PlaySchoolStudentPersonalInformationApiController {
             @RequestParam (value="mothersofficeextensionno", required=false) String mothersofficeextensionno,
             @RequestParam (value="siblings", required=false) String siblings,
             @RequestParam (value="siblingname", required=false) String siblingname,
-            @RequestParam (value="siblingdob", required=false) Date siblingdob,
+            @RequestParam (value="siblingdob", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date siblingdob,
             @RequestParam (value="siblingage", required=false) float siblingage,
             @RequestParam (value="medicaldetails", required=false) String medicaldetails,
             @RequestParam (value="allergies", required=false) String allergies,
 
-            @RequestParam (value="fathersdob", required=false) Date fathersdob,
-            @RequestParam (value="mothersdob", required=false) Date mothersdob,
-            @RequestParam (value="parentsweddingdate", required=false) Date parentsweddingdate,
+            @RequestParam (value="fathersdob", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date fathersdob,
+            @RequestParam (value="mothersdob", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date mothersdob,
+            @RequestParam (value="parentsweddingdate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date parentsweddingdate,
             @RequestParam (value="religion", required=false) String religion,
 
             @RequestParam (value="pickuppersonname", required=false) String pickuppersonname,
@@ -104,6 +106,7 @@ public class PlaySchoolStudentPersonalInformationApiController {
             ) {
         PlaySchoolStudentPersonalInformation playschoolstudentpersonalinformation = new PlaySchoolStudentPersonalInformation();
 
+        playschoolstudentpersonalinformation.setRegisternumber(registernumber);
         playschoolstudentpersonalinformation.setCandidatename(candidatename);
         playschoolstudentpersonalinformation.setDateofbirth(dateofbirth);
         playschoolstudentpersonalinformation.setAge(age);
@@ -114,7 +117,7 @@ public class PlaySchoolStudentPersonalInformationApiController {
         playschoolstudentpersonalinformation.setPresentaddress2(presentaddress2);
         playschoolstudentpersonalinformation.setPresentarea(presentarea);
         playschoolstudentpersonalinformation.setPresentpincode(presentpincode);
-        playschoolstudentpersonalinformation.setPresentstate(presentstate);
+//        playschoolstudentpersonalinformation.setPresentstate(presentstate);
         playschoolstudentpersonalinformation.setFathersmobileno(fathersmobileno);
         playschoolstudentpersonalinformation.setFathersaltmobno(fathersaltmobno);
         playschoolstudentpersonalinformation.setMothersmobileno(mothersmobileno);
@@ -169,7 +172,7 @@ public class PlaySchoolStudentPersonalInformationApiController {
     PlaySchoolStudentProfileInformation playSchoolStudentProfileInformation;
     @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolStudentProfileInformationDetail")
 
-    public List<Object> getPlaySchoolStudentProfileInformationDetail(@RequestParam (value ="registernumber") String registerNumber) {
+    public List<Object> getPlaySchoolStudentProfileInformationDetail(@RequestParam (value ="registernumbersearch") String registerNumber) {
         /* fetching data from table1*/
 
         PlaySchoolStudentBaseInformationProjection playSchoolStudentBaseInformationDetail = playSchoolStudentBaseInformationRepository.findOneByRegisternumber(registerNumber);
@@ -186,5 +189,7 @@ public class PlaySchoolStudentPersonalInformationApiController {
         return list;
 
     }
+
+
 
     }

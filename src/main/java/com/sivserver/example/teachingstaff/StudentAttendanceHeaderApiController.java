@@ -1,6 +1,7 @@
 package com.sivserver.example.teachingstaff;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,7 +36,7 @@ public class StudentAttendanceHeaderApiController extends WebMvcConfigurerAdapte
 
     @RequestMapping(method = RequestMethod.POST)
     public void studentAttendanceHeader(
-            @RequestParam(value ="entrydate", required=false) Date entrydate,
+            @RequestParam(value ="entrydate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate,
             @RequestParam (value="dayname", required=false) String dayname,
             @RequestParam (value="hour", required=false) Integer hour,
             @RequestParam (value="branchcode", required=false) String branchcode,

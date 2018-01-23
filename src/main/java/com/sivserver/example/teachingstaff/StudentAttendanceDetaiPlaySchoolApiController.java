@@ -8,6 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
@@ -76,21 +77,23 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
             @RequestParam (value="section", required=false) String section,
             @RequestParam (value="academicyear", required=false) String academicyear,
             @RequestParam (value="studentstatus", required=false) String studentstatus,
-            @RequestParam (value="entrydate", required=false) Date entrydate
+            @RequestParam (value="instituteid", required=false) Integer instituteid,
+            @RequestParam (value="entrydate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate
+
     ){
         System.out.println("branch:"+standardstudying);
         System.out.println("batch:"+section);
         System.out.println("academicyear:"+academicyear);
         System.out.println("branchcode:"+studentstatus);
         //studentAttendanceHeaderPlaySchoolRepository.find
-        Student_Attendance_Play_School_Compound_Key studattpscompkey = new Student_Attendance_Play_School_Compound_Key(entrydate,standardstudying,section,academicyear);
+        Student_Attendance_Play_School_Compound_Key studattpscompkey = new Student_Attendance_Play_School_Compound_Key(entrydate,standardstudying,section,academicyear,instituteid);
         StudentAttendanceHeaderEntryCheckPlaySchoolProjection playschoolstudentattendanceentrycheckDetail = studentAttendanceHeaderPlaySchoolRepository.findOneByStudentattendanceplayschoolcompoundkey(studattpscompkey);
         //        Iterable<StudentBaseInformation> studentList = studentbaseinformationRepository.findByAcademicyearAndBranchcode(academicyear, branchcode);
         //Iterable<PlaySchoolStudentBaseInformation> studentList = playSchoolStudentBaseInformationRepository.findAllByStandardstudyingAndSectionAndAcademicyearAndStudentstatus(standardstudying, section, academicyear, studentstatus);
         Iterable<PlaySchoolStudentBaseInformation> studentList = null;
         if(playschoolstudentattendanceentrycheckDetail==null){
             System.out.println("is null");
-            studentList = playSchoolStudentBaseInformationRepository.findAllByStandardstudyingAndSectionAndAcademicyearAndStudentstatus(standardstudying, section, academicyear, studentstatus);
+            studentList = playSchoolStudentBaseInformationRepository.findAllByStandardstudyingAndSectionAndAcademicyearAndStudentstatusAndInstituteid(standardstudying, section, academicyear, studentstatus, instituteid);
         }else{
             System.out.println("is not null");
         }
@@ -118,7 +121,7 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
             String standardstudying = selectedclassdetailObj.getString("standardstudying");
             String section = selectedclassdetailObj.getString("section");
             String academicyear = selectedclassdetailObj.getString("academicyear");
-            String instituteid = selectedclassdetailObj.getString("instituteid");
+            Integer instituteid = Integer.parseInt(selectedclassdetailObj.getString("instituteid"));
             StudentAttendanceHeaderPlaySchool studentAttendanceHeaderPlaySchool = new StudentAttendanceHeaderPlaySchool();
             Student_Attendance_Play_School_Compound_Key student_attendance_play_school_compound_key = new Student_Attendance_Play_School_Compound_Key();
             //Date entryDate = new Date(entrydate);
@@ -145,6 +148,7 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
                 student_attendance_play_school_compound_key.setSection(section);
                 student_attendance_play_school_compound_key.setProgram(standardstudying);
                 student_attendance_play_school_compound_key.setAcdemicyear(academicyear);
+                student_attendance_play_school_compound_key.setInstituteid(instituteid);
 
                 studentAttendanceHeaderPlaySchool.setStudentattendanceplayschoolcompoundkey(student_attendance_play_school_compound_key);
                 studentAttendanceHeaderPlaySchool.setNoofabsent(number_of_absent);
@@ -177,6 +181,7 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
                 studentAttendanceDetailPlaySchool.setProgram(standardstudying);
                 studentAttendanceDetailPlaySchool.setSection(section);
                 studentAttendanceDetailPlaySchool.setAcademicyear(academicyear);
+                studentAttendanceDetailPlaySchool.setInstituteid(instituteid);
 
                 studentAttendanceDetailPlaySchoolRepository.save(studentAttendanceDetailPlaySchool);
             }

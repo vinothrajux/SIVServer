@@ -7,4 +7,5 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface StudentAttendanceDetailRepository extends CrudRepository<StudentAttendanceDetail, String> {
     StudentAttendanceDetail findByregno(String regno);
+
 }
