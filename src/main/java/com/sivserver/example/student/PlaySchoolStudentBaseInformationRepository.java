@@ -9,6 +9,7 @@ public interface PlaySchoolStudentBaseInformationRepository extends JpaRepositor
 PlaySchoolStudentBaseInformation findByRegisternumber(String registernumber);
 PlaySchoolStudentBaseInformationProjection findOneByRegisternumber(String registernumber);
 Iterable<PlaySchoolStudentBaseInformation> findAllByStandardstudyingAndSectionAndAcademicyearAndStudentstatusAndInstituteid(String standardstudying,String section, String academicyear, String studentstatus, Integer instituteid);
+Iterable<PlaySchoolStudentBaseInformation> findAllByStandardstudyingAndSectionAndAcademicyearAndInstituteid(String standardstudying,String section, String academicyear, Integer instituteid);
 //Iterable<PlaySchoolStudentBaseInformationProjection> findAllByProgramAndSectionAndAcademicyearAndInstituteidOrderByRegisternumber(String program,String section,String academicyear,Integer instituteid );
 
 }

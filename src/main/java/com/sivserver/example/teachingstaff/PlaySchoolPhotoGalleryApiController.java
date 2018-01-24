@@ -1,5 +1,6 @@
 package com.sivserver.example.teachingstaff;
 
+import com.sivserver.example.student.PlaySchoolStudentBaseInformation;
 import com.sivserver.example.utils.SivUtils;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ import static com.sivserver.example.utils.SivUtils.crossoriginurl;
 public class PlaySchoolPhotoGalleryApiController {
     @Autowired
     private PlaySchoolPhotoGalleryRepository playSchoolPhotoGalleryRepository;
+
+//    @Autowired
+//    private  playSchoolPhotoGalleryRepository;
 
     @RequestMapping(value="/all", method = RequestMethod.POST)
     public List<PlaySchoolPhotoGallery> getPlaySchoolPhotoGallery() { return playSchoolPhotoGalleryRepository.findAll();}
@@ -88,5 +92,30 @@ public class PlaySchoolPhotoGalleryApiController {
         playSchoolPhotoGallery.setInstituteid(instituteid);
 
         playSchoolPhotoGalleryRepository.save(playSchoolPhotoGallery);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value="/getStudentListAttendance")
+    public Iterable<PlaySchoolStudentBaseInformation> getStudentLists(
+            @RequestParam(value ="program", required=false) String program,
+            @RequestParam (value="section", required=false) String section,
+            @RequestParam (value="academicyear", required=false) String academicyear,
+            @RequestParam (value="instituteid", required=false) Integer instituteid
+
+    ){
+
+
+//        StudentAttendanceHeaderEntryCheckPlaySchoolProjection playschoolstudentattendanceentrycheckDetail = studentAttendanceHeaderPlaySchoolRepository.findOneByStudentattendanceplayschoolcompoundkey(studattpscompkey);
+
+        Iterable<PlaySchoolStudentBaseInformation> studentList = null;
+//        if(playschoolstudentattendanceentrycheckDetail==null){
+//            System.out.println("is null");
+//            studentList = playSchoolStudentBaseInformationRepository.findAllByStandardstudyingAndSectionAndAcademicyearAndStudentstatusAndInstituteid(standardstudying, section, academicyear, studentstatus, instituteid);
+//        }else{
+//            System.out.println("is not null");
+//        }
+//
+//
+//        System.out.println("Inside getApplicationDetail");
+        return studentList;
     }
 }

@@ -14,7 +14,7 @@ import static sun.misc.Version.println;
  * Created by Seetha on 13-Jun-17.
  */
 @RestController
-@CrossOrigin(origins = crossoriginurl)
+//@CrossOrigin(origins = crossoriginurl)
 @RequestMapping("/api/v1/user")
 public class UserApiController extends WebMvcConfigurerAdapter {
    @Autowired
