@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface InstituteDetailsRepository extends JpaRepository<InstituteDetails, String> {
 
-    InstituteDetails findByInstituteid(String instituteid);
+    InstituteDetails findByInstituteid(Integer instituteid);
 }

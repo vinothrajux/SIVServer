@@ -10,10 +10,14 @@ import java.util.Date;
 @Table(name="playschoolphotogallery")
 public class PlaySchoolPhotoGallery {
 
+    private Long photoid;
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    private Integer photoid;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+    public Long getPhotoid() {
+        return photoid;
+    }
 
     private Date uploaddate;
 
@@ -25,9 +29,10 @@ public class PlaySchoolPhotoGallery {
 
     private String uploadedby;
 
-    private String studentlist;
+    private String name;
 
-    @Id
+    private String registernumber;
+
     private String imagepath;
 
     private String imagetitle;
@@ -40,13 +45,11 @@ public class PlaySchoolPhotoGallery {
     public PlaySchoolPhotoGallery() {
     }
 
-//    public Integer getPhotoid() {
-//        return photoid;
-//    }
-//
-//    public void setPhotoid(Integer photoid) {
-//        this.photoid = photoid;
-//    }
+
+
+    public void setPhotoid(Long photoid) {
+        this.photoid = photoid;
+    }
 
     public Date getUploaddate() {
         return uploaddate;
@@ -88,14 +91,6 @@ public class PlaySchoolPhotoGallery {
         this.uploadedby = uploadedby;
     }
 
-    public String getStudentlist() {
-        return studentlist;
-    }
-
-    public void setStudentlist(String studentlist) {
-        this.studentlist = studentlist;
-    }
-
     public String getImagepath() {
         return imagepath;
     }
@@ -126,5 +121,21 @@ public class PlaySchoolPhotoGallery {
 
     public void setInstituteid(Integer instituteid) {
         this.instituteid = instituteid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getRegisternumber() {
+        return registernumber;
+    }
+
+    public void setRegisternumber(String registernumber) {
+        this.registernumber = registernumber;
     }
 }

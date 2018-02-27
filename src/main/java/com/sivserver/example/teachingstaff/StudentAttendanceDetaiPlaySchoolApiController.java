@@ -202,7 +202,8 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
 
     // THIS API CAN BE USED TO FETCH THE ENTERED ATTENDANCE DETAIL AT PARENT END MOBILE APP
     @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolFetchEnteredAttendanceDetail")
-    public StudentAttendanceDetailFetchPlaySchool getPlaySchoolFetchEnteredAttendanceDetail(@RequestParam (value ="registernumber") String registernumber) {
+    public StudentAttendanceDetailFetchPlaySchool getPlaySchoolFetchEnteredAttendanceDetail(@RequestParam (value ="registernumber") String registernumber,
+                                                                                            @RequestParam (value ="instituteid") Integer instituteid) {
                 //Date entrydate = new Date();
         StudentAttendanceDetailFetchPlaySchool playschoolindstudentattendanceDetail = null;
         try {
@@ -218,7 +219,7 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
             System.out.println(ts);
             System.out.println("test:"+ts);
             System.out.println("test");
-            playschoolindstudentattendanceDetail = studentAttendanceDetailPlaySchoolRepository.findByEntrydateAndRegisternumber(ts,registernumber);
+            playschoolindstudentattendanceDetail = studentAttendanceDetailPlaySchoolRepository.findByEntrydateAndRegisternumberAndInstituteid(ts,registernumber,instituteid);
         } catch (ParseException e) {
             e.printStackTrace();
         }

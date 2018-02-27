@@ -87,10 +87,10 @@ public class StudentHomeWorkPlaySchoolApiController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/getStudentHomeWorkListPlaySchool")
-    public Iterable<StudentHomeWorkPlaySchoolProjection> getStudentHomeWorkListPlaySchool(@RequestParam (value ="registernumber") String registernumber, @RequestParam (value ="hwdate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date hwdate, @RequestParam (value ="currentdatestatus") Boolean currentdatestatus) {
+    public Iterable<StudentHomeWorkPlaySchoolProjection> getStudentHomeWorkListPlaySchool(@RequestParam (value ="registernumber") String registernumber, @RequestParam (value ="hwdate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date hwdate, @RequestParam (value ="currentdatestatus") Boolean currentdatestatus, @RequestParam (value = "instituteid") Integer instituteid) {
 
 
-        PlaySchoolStudentBaseInformationProjection playSchoolStudentBaseInformationProjection = playSchoolStudentBaseInformationRepository.findOneByRegisternumber(registernumber);
+        PlaySchoolStudentBaseInformationProjection playSchoolStudentBaseInformationProjection = playSchoolStudentBaseInformationRepository.findOneByRegisternumberAndInstituteid(registernumber, instituteid);
         String academicyear=playSchoolStudentBaseInformationProjection.getAcademicyear();
         String program=playSchoolStudentBaseInformationProjection.getStandardstudying();
         String section=playSchoolStudentBaseInformationProjection.getSection();
@@ -104,7 +104,7 @@ public class StudentHomeWorkPlaySchoolApiController {
         Date date1;
         Iterable<StudentHomeWorkPlaySchoolProjection> playschoolstudentHomeWorkDetail = null;
         try {
-            date1=new SimpleDateFormat("MM-dd-yyyy HH:mm:ss").parse(curDate);
+            date1=new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(curDate);
 
 
         java.sql.Timestamp ts = java.sql.Timestamp.valueOf( curDate ) ;
@@ -114,9 +114,9 @@ public class StudentHomeWorkPlaySchoolApiController {
         System.out.println(section);
         System.out.println(ts);
         if(currentdatestatus){
-            playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByAcademicyearAndProgramAndSectionAndEntrydate(academicyear,program,section,ts);
+            playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByAcademicyearAndProgramAndSectionAndEntrydateAndInstituteid(academicyear,program,section,ts, instituteid);
         }else{
-            playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByAcademicyearAndProgramAndSectionAndEntrydate(academicyear,program,section,hwdate);
+            playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByAcademicyearAndProgramAndSectionAndEntrydateAndInstituteid(academicyear,program,section,hwdate, instituteid);
         }
 //        playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByAcademicyearAndProgramAndSectionAndEntrydate(academicyear,program,section,ts);
 

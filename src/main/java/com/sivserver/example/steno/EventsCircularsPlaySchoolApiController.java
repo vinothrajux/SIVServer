@@ -13,8 +13,7 @@ import javax.xml.soap.Text;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import static com.sivserver.example.utils.SivUtils.crossoriginurl;
 
@@ -96,15 +95,24 @@ public class EventsCircularsPlaySchoolApiController {
 
 
     @RequestMapping(method = RequestMethod.POST, value="/getStudentEventCircularListPlaySchool")
-    public Iterable<EventsCircularsPlaySchoolProjection> getStudentEventCircularListPlaySchool(@RequestParam (value ="registernumber") String registernumber, @RequestParam (value ="hwdate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date hwdate) {
+    public Iterable<EventsCircularsPlaySchoolProjection> getStudentEventCircularListPlaySchool(@RequestParam (value ="registernumber") String registernumber, @RequestParam (value ="hwdate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date hwdate, @RequestParam (value ="instituteid") Integer instituteid) {
 
 
         PlaySchoolStudentBaseInformationProjection playSchoolStudentBaseInformationProjection = playSchoolStudentBaseInformationRepository.findOneByRegisternumber(registernumber);
         String academicyear=playSchoolStudentBaseInformationProjection.getAcademicyear();
         String program=playSchoolStudentBaseInformationProjection.getStandardstudying();
         String section=playSchoolStudentBaseInformationProjection.getSection();
-        String alternateProgram ="ALL";
-        String alternateSection ="ALL";
+        String AllProgram ="ALL";
+        String AllSection ="ALL";
+        List<String> programs = new ArrayList<>();
+        programs.add(program);
+        programs.add(AllProgram);
+
+        List<String> sections = new ArrayList<>();
+        sections.add(section);
+        sections.add(AllSection);
+
+//        String[] Programs= new String[]{program,AllProgram};
         LocalDateTime now = LocalDateTime.now();
         int year = now.getYear();
         int month = now.getMonthValue();
@@ -114,17 +122,20 @@ public class EventsCircularsPlaySchoolApiController {
         Date date1;
         Iterable<EventsCircularsPlaySchoolProjection> playschoolstudentEventCircularDetail = null;
         try {
-            date1=new SimpleDateFormat("MM-dd-yyyy HH:mm:ss").parse(curDate);
+            date1=new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(curDate);
 
 
             java.sql.Timestamp ts = java.sql.Timestamp.valueOf( curDate ) ;
+            long oneDay = 1 * 24 * 60 * 60 * 1000;
+            ts.setTime(ts.getTime()-oneDay);
             System.out.println("Inside getStudentHomeWorkPlaySchoolDetail");
             System.out.println(academicyear);
             System.out.println(program);
             System.out.println(section);
             System.out.println(ts);
+            System.out.println(instituteid);
 
-            playschoolstudentEventCircularDetail = eventsCircularsPlaySchoolRepository.findAllByAcademicyearAndProgramOrProgramAndSectionOrSectionAndEntrydateAfter(academicyear,program,alternateProgram,section,alternateSection,ts);
+            playschoolstudentEventCircularDetail = eventsCircularsPlaySchoolRepository.findAllByAcademicyearAndProgramInAndSectionInAndEventdateAfterAndInstituteidOrderByEventdateAsc(academicyear,programs,sections,ts,instituteid);
 //        playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByAcademicyearAndProgramAndSectionAndEntrydate(academicyear,program,section,ts);
 
             System.out.println(playschoolstudentEventCircularDetail);

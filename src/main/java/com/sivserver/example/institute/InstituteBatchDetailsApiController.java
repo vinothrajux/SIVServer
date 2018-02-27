@@ -29,7 +29,7 @@ public class InstituteBatchDetailsApiController {
     @RequestMapping(method = RequestMethod.POST)
     public void institutebatchdetailsdet(
 
-            @RequestParam(value ="instituteid", required=false) String instituteid,
+            @RequestParam(value ="instituteid", required=false) Integer instituteid,
             @RequestParam(value ="batch", required=false) String batch
 
 

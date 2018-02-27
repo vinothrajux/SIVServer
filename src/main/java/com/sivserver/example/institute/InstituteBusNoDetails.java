@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class InstituteBusNoDetails {
 
     @Column(name="instituteid")
-    private String instituteid;
+    private Integer instituteid;
 
     @Id
     private String busno;
@@ -22,11 +22,11 @@ public class InstituteBusNoDetails {
     public InstituteBusNoDetails() {
     }
 
-    public String getInstituteid() {
+    public Integer getInstituteid() {
         return instituteid;
     }
 
-    public void setInstituteid(String instituteid) {
+    public void setInstituteid(Integer instituteid) {
         this.instituteid = instituteid;
     }
 

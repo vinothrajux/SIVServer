@@ -30,7 +30,7 @@ public class InstituteBusRouteDetailsApiController {
     @RequestMapping(method = RequestMethod.POST)
     public void institutebusroutedetailsdet(
 
-            @RequestParam(value ="instituteid", required=false) String instituteid,
+            @RequestParam(value ="instituteid", required=false) Integer instituteid,
             @RequestParam(value ="route", required=false) String route,
             @RequestParam(value ="stage", required=false) String stage
 

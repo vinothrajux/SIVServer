@@ -14,11 +14,11 @@ public class User {
     public User() {
     }
 
-    public String getInstituteid() {
+    public Integer getInstituteid() {
         return instituteid;
     }
 
-    public void setInstituteid(String instituteid) {
+    public void setInstituteid(Integer instituteid) {
         this.instituteid = instituteid;
     }
 
@@ -101,7 +101,7 @@ public class User {
 
 
     @Column(name="instituteid")
-    private String instituteid;
+    private Integer instituteid;
 
     @Id
     private String username;

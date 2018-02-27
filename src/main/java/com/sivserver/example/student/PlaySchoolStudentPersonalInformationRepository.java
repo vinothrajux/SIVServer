@@ -8,4 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface PlaySchoolStudentPersonalInformationRepository extends JpaRepository<PlaySchoolStudentPersonalInformation,String> {
 PlaySchoolStudentPersonalInformation findByRegisternumber(String registernumber);
 PlaySchoolStudentPersonalInformationProjection findOneByRegisternumber(String registernumber);
+PlaySchoolStudentPersonalInformationProjection findOneByRegisternumberAndInstituteid(String registernumber, Integer instituteid);
 }

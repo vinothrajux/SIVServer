@@ -7,24 +7,44 @@ import java.util.Date;
  */
 public interface StudentsMonthlyProgressPlaySchoolProjection {
 
-    String getRemarkid();
+
+    Student_Assessment_Play_School_Compound_Key getStudent_assessment_play_school_compound_key();
     Date getEntrydate();
-    String getEntryday();
-    String getMonth();
-    String getRegisternumber();
     String getName();
     String getProgram();
     String getSection();
     String getAcademicyear();
-    Integer getCategory1rating();
-    Integer getCategory2rating();
-    Integer getCategory3rating();
-    Integer getCategory4rating();
-    Integer getCategory5rating();
-    Integer getCategory6rating();
-    Integer getCategory7rating();
-    Integer getCategory8rating();
-    Integer getCategory9rating();
-    Integer getCategory10rating();
+    Integer getGrossmotorskills();
+    Integer getFinemotorskills();
+    Integer getConceptknowledge();
+    Integer getActivityparticipation();
+    Integer getSocialbehavior();
+    Integer getDiningetiquettes();
+    Integer getLanguageskills();
+    Integer getListeningskills();
+    Integer getNoofworkingdays();
+    Integer getNoofdaysattended();
+    Integer getFluency();
+    Integer getAccuracy();
+    Integer getClarity();
+    Integer getLegibility();
+    Integer getNeatness();
+    Integer getGames();
+    Integer getArtsandcrafts();
+    Integer getObedience();
+    Integer getResponsibility();
+    Integer getPunctuality();
+    Integer getRegularity();
+    Integer getHomework();
+    Integer getHandwriting();
+    Integer getPersonalhygiene();
+    Integer getSharing();
+    Integer getUniform();
+    Integer getNails();
+    Integer getHair();
+    Integer getCleanliness();
+    float getHeight();
+    float getWeight();
+
 }
 

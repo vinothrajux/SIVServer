@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name="institutebusroutedetails")
 public class InstituteBusRouteDetails {
 
-    private String instituteid;
+    private Integer instituteid;
 
     @Id
     InstituteBusRouteCompoundKey instituteBusRouteCompoundKeyId;
@@ -19,11 +19,11 @@ public class InstituteBusRouteDetails {
     public InstituteBusRouteDetails() {
     }
 
-    public String getInstituteid() {
+    public Integer getInstituteid() {
         return instituteid;
     }
 
-    public void setInstituteid(String instituteid) {
+    public void setInstituteid(Integer instituteid) {
         this.instituteid = instituteid;
     }
 

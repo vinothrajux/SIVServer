@@ -8,5 +8,6 @@ public interface LoginStatusProjection {
     String getUsername();
     String getFirstName();
     String getLastName();
+    Integer getInstituteid();
     //String getUserName();
 }

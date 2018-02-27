@@ -14,16 +14,9 @@ import java.util.Date;
 public class StudentsMonthlyProgressPlaySchool {
 
     @Id
-    private String remarkid;
+    Student_Assessment_Play_School_Compound_Key student_assessment_play_school_compound_key;
 
     private Date entrydate;
-
-    private String entryday;
-
-    private String month;
-
-    @Column(name="registernumber")
-    private String registernumber;
 
     private String name;
 
@@ -33,40 +26,80 @@ public class StudentsMonthlyProgressPlaySchool {
 
     private String academicyear;
 
-    private Integer category1rating;
+    private Integer grossmotorskills;
 
-    private Integer category2rating;
+    private Integer finemotorskills;
 
-    private Integer category3rating;
+    private Integer conceptknowledge;
 
-    private Integer category4rating;
+    private Integer activityparticipation;
 
-    private Integer category5rating;
+    private Integer socialbehavior;
 
-    private Integer category6rating;
+    private Integer diningetiquettes;
 
-    private Integer category7rating;
+    private Integer languageskills;
 
-    private Integer category8rating;
+    private Integer listeningskills;
 
-    private Integer category9rating;
+    private Integer noofworkingdays;
 
-    private Integer category10rating;
+    private Integer noofdaysattended;
+
+    private Integer fluency;
+
+    private Integer accuracy;
+
+    private Integer clarity;
+
+    private Integer legibility;
+
+    private Integer neatness;
+
+    private Integer games;
+
+    private Integer artsandcrafts;
+
+    private Integer obedience;
+
+    private Integer responsibility;
+
+    private Integer punctuality;
+
+    private Integer regularity;
+
+    private Integer homework;
+
+    private Integer handwriting;
+
+    private Integer personalhygiene;
+
+    private Integer sharing;
+
+    private Integer uniform;
+
+    private Integer nails;
+
+    private Integer hair;
+
+    private Integer cleanliness;
+
+    private float height;
+
+    private float weight;
 
     private String loginuser;
-
-    private Integer instituteid;
 
 
     public StudentsMonthlyProgressPlaySchool() {
     }
 
-    public String getRemarkid() {
-        return remarkid;
+    public Student_Assessment_Play_School_Compound_Key getStudent_assessment_play_school_compound_key() {
+        return student_assessment_play_school_compound_key;
     }
 
-    public void setRemarkid(String remarkid) {
-        this.remarkid = remarkid;
+    public void setStudent_assessment_play_school_compound_key(Student_Assessment_Play_School_Compound_Key student_assessment_play_school_compound_key) {
+        this.student_assessment_play_school_compound_key = student_assessment_play_school_compound_key;
     }
 
     public Date getEntrydate() {
@@ -75,30 +108,6 @@ public class StudentsMonthlyProgressPlaySchool {
 
     public void setEntrydate(Date entrydate) {
         this.entrydate = entrydate;
-    }
-
-    public String getEntryday() {
-        return entryday;
-    }
-
-    public void setEntryday(String entryday) {
-        this.entryday = entryday;
-    }
-
-    public String getMonth() {
-        return month;
-    }
-
-    public void setMonth(String month) {
-        this.month = month;
-    }
-
-    public String getRegisternumber() {
-        return registernumber;
-    }
-
-    public void setRegisternumber(String registernumber) {
-        this.registernumber = registernumber;
     }
 
     public String getName() {
@@ -133,84 +142,252 @@ public class StudentsMonthlyProgressPlaySchool {
         this.academicyear = academicyear;
     }
 
-    public Integer getCategory1rating() {
-        return category1rating;
+    public Integer getGrossmotorskills() {
+        return grossmotorskills;
     }
 
-    public void setCategory1rating(Integer category1rating) {
-        this.category1rating = category1rating;
+    public void setGrossmotorskills(Integer grossmotorskills) {
+        this.grossmotorskills = grossmotorskills;
     }
 
-    public Integer getCategory2rating() {
-        return category2rating;
+    public Integer getFinemotorskills() {
+        return finemotorskills;
     }
 
-    public void setCategory2rating(Integer category2rating) {
-        this.category2rating = category2rating;
+    public void setFinemotorskills(Integer finemotorskills) {
+        this.finemotorskills = finemotorskills;
     }
 
-    public Integer getCategory3rating() {
-        return category3rating;
+    public Integer getConceptknowledge() {
+        return conceptknowledge;
     }
 
-    public void setCategory3rating(Integer category3rating) {
-        this.category3rating = category3rating;
+    public void setConceptknowledge(Integer conceptknowledge) {
+        this.conceptknowledge = conceptknowledge;
     }
 
-    public Integer getCategory4rating() {
-        return category4rating;
+    public Integer getActivityparticipation() {
+        return activityparticipation;
     }
 
-    public void setCategory4rating(Integer category4rating) {
-        this.category4rating = category4rating;
+    public void setActivityparticipation(Integer activityparticipation) {
+        this.activityparticipation = activityparticipation;
     }
 
-    public Integer getCategory5rating() {
-        return category5rating;
+    public Integer getSocialbehavior() {
+        return socialbehavior;
     }
 
-    public void setCategory5rating(Integer category5rating) {
-        this.category5rating = category5rating;
+    public void setSocialbehavior(Integer socialbehavior) {
+        this.socialbehavior = socialbehavior;
     }
 
-    public Integer getCategory6rating() {
-        return category6rating;
+    public Integer getDiningetiquettes() {
+        return diningetiquettes;
     }
 
-    public void setCategory6rating(Integer category6rating) {
-        this.category6rating = category6rating;
+    public void setDiningetiquettes(Integer diningetiquettes) {
+        this.diningetiquettes = diningetiquettes;
     }
 
-    public Integer getCategory7rating() {
-        return category7rating;
+    public Integer getLanguageskills() {
+        return languageskills;
     }
 
-    public void setCategory7rating(Integer category7rating) {
-        this.category7rating = category7rating;
+    public void setLanguageskills(Integer languageskills) {
+        this.languageskills = languageskills;
     }
 
-    public Integer getCategory8rating() {
-        return category8rating;
+    public Integer getListeningskills() {
+        return listeningskills;
     }
 
-    public void setCategory8rating(Integer category8rating) {
-        this.category8rating = category8rating;
+    public void setListeningskills(Integer listeningskills) {
+        this.listeningskills = listeningskills;
     }
 
-    public Integer getCategory9rating() {
-        return category9rating;
+    public Integer getNoofworkingdays() {
+        return noofworkingdays;
     }
 
-    public void setCategory9rating(Integer category9rating) {
-        this.category9rating = category9rating;
+    public void setNoofworkingdays(Integer noofworkingdays) {
+        this.noofworkingdays = noofworkingdays;
     }
 
-    public Integer getCategory10rating() {
-        return category10rating;
+    public Integer getNoofdaysattended() {
+        return noofdaysattended;
     }
 
-    public void setCategory10rating(Integer category10rating) {
-        this.category10rating = category10rating;
+    public void setNoofdaysattended(Integer noofdaysattended) {
+        this.noofdaysattended = noofdaysattended;
+    }
+
+    public Integer getFluency() {
+        return fluency;
+    }
+
+    public void setFluency(Integer fluency) {
+        this.fluency = fluency;
+    }
+
+    public Integer getAccuracy() {
+        return accuracy;
+    }
+
+    public void setAccuracy(Integer accuracy) {
+        this.accuracy = accuracy;
+    }
+
+    public Integer getClarity() {
+        return clarity;
+    }
+
+    public void setClarity(Integer clarity) {
+        this.clarity = clarity;
+    }
+
+    public Integer getLegibility() {
+        return legibility;
+    }
+
+    public void setLegibility(Integer legibility) {
+        this.legibility = legibility;
+    }
+
+    public Integer getNeatness() {
+        return neatness;
+    }
+
+    public void setNeatness(Integer neatness) {
+        this.neatness = neatness;
+    }
+
+    public Integer getGames() {
+        return games;
+    }
+
+    public void setGames(Integer games) {
+        this.games = games;
+    }
+
+    public Integer getArtsandcrafts() {
+        return artsandcrafts;
+    }
+
+    public void setArtsandcrafts(Integer artsandcrafts) {
+        this.artsandcrafts = artsandcrafts;
+    }
+
+    public Integer getObedience() {
+        return obedience;
+    }
+
+    public void setObedience(Integer obedience) {
+        this.obedience = obedience;
+    }
+
+    public Integer getResponsibility() {
+        return responsibility;
+    }
+
+    public void setResponsibility(Integer responsibility) {
+        this.responsibility = responsibility;
+    }
+
+    public Integer getPunctuality() {
+        return punctuality;
+    }
+
+    public void setPunctuality(Integer punctuality) {
+        this.punctuality = punctuality;
+    }
+
+    public Integer getRegularity() {
+        return regularity;
+    }
+
+    public void setRegularity(Integer regularity) {
+        this.regularity = regularity;
+    }
+
+    public Integer getHomework() {
+        return homework;
+    }
+
+    public void setHomework(Integer homework) {
+        this.homework = homework;
+    }
+
+    public Integer getHandwriting() {
+        return handwriting;
+    }
+
+    public void setHandwriting(Integer handwriting) {
+        this.handwriting = handwriting;
+    }
+
+    public Integer getPersonalhygiene() {
+        return personalhygiene;
+    }
+
+    public void setPersonalhygiene(Integer personalhygiene) {
+        this.personalhygiene = personalhygiene;
+    }
+
+    public Integer getSharing() {
+        return sharing;
+    }
+
+    public void setSharing(Integer sharing) {
+        this.sharing = sharing;
+    }
+
+    public Integer getUniform() {
+        return uniform;
+    }
+
+    public void setUniform(Integer uniform) {
+        this.uniform = uniform;
+    }
+
+    public Integer getNails() {
+        return nails;
+    }
+
+    public void setNails(Integer nails) {
+        this.nails = nails;
+    }
+
+    public Integer getHair() {
+        return hair;
+    }
+
+    public void setHair(Integer hair) {
+        this.hair = hair;
+    }
+
+    public Integer getCleanliness() {
+        return cleanliness;
+    }
+
+    public void setCleanliness(Integer cleanliness) {
+        this.cleanliness = cleanliness;
+    }
+
+    public float getHeight() {
+        return height;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
     }
 
     public String getLoginuser() {
@@ -221,11 +398,4 @@ public class StudentsMonthlyProgressPlaySchool {
         this.loginuser = loginuser;
     }
 
-    public Integer getInstituteid() {
-        return instituteid;
-    }
-
-    public void setInstituteid(Integer instituteid) {
-        this.instituteid = instituteid;
-    }
 }

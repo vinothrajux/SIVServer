@@ -172,14 +172,15 @@ public class PlaySchoolStudentPersonalInformationApiController {
     PlaySchoolStudentProfileInformation playSchoolStudentProfileInformation;
     @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolStudentProfileInformationDetail")
 
-    public List<Object> getPlaySchoolStudentProfileInformationDetail(@RequestParam (value ="registernumbersearch") String registerNumber) {
+    public List<Object> getPlaySchoolStudentProfileInformationDetail(@RequestParam (value ="registernumber") String registerNumber,
+                                                                     @RequestParam (value ="instituteid") Integer instituteid) {
         /* fetching data from table1*/
 
-        PlaySchoolStudentBaseInformationProjection playSchoolStudentBaseInformationDetail = playSchoolStudentBaseInformationRepository.findOneByRegisternumber(registerNumber);
+        PlaySchoolStudentBaseInformationProjection playSchoolStudentBaseInformationDetail = playSchoolStudentBaseInformationRepository.findOneByRegisternumberAndInstituteid(registerNumber, instituteid);
 
         /* fetching data from table2 */
 
-        PlaySchoolStudentPersonalInformationProjection playSchoolStudentPersonalInformationDetail = playSchoolStudentPersonalInformationRepository.findOneByRegisternumber(registerNumber);
+        PlaySchoolStudentPersonalInformationProjection playSchoolStudentPersonalInformationDetail = playSchoolStudentPersonalInformationRepository.findOneByRegisternumberAndInstituteid(registerNumber, instituteid);
 
         List<Object> list = new ArrayList<Object>();
 

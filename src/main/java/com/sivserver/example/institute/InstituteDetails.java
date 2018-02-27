@@ -15,7 +15,7 @@ public class InstituteDetails {
 
     @Id
     @Column(name="instituteid",nullable=false)
-    private String instituteid;
+    private Integer instituteid;
 
     private String institutecode;
 
@@ -78,15 +78,15 @@ public class InstituteDetails {
     public InstituteDetails() {
     }
 
-    public InstituteDetails(String instituteid) {
+    public InstituteDetails(Integer instituteid) {
         this.instituteid = instituteid;
     }
 
-    public String getInstituteid() {
+    public Integer getInstituteid() {
         return instituteid;
     }
 
-    public void setInstituteid(String instituteid) {
+    public void setInstituteid(Integer instituteid) {
         this.instituteid = instituteid;
     }
 

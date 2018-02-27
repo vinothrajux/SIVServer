@@ -35,7 +35,7 @@ public class CreateUserApiController{
 
     @RequestMapping(method = RequestMethod.POST)
     public void createUser(
-            @RequestParam(value ="instituteid", required=false) String instituteid,
+            @RequestParam(value ="instituteid", required=false) Integer instituteid,
             @RequestParam(value ="username", required=false) String username,
             @RequestParam (value="password", required=false) String password,
             @RequestParam (value="userRole", required=false) String userRole,

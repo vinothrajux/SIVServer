@@ -29,6 +29,10 @@ public class SivUtils {
     public String getServerPhotoGalleryPath(){
         return "http://192.168.43.195/SIVWeb/images/uploaded/";
     }
+
+    public String getServerUploadPath(){
+        return "http://192.168.43.195/SIVWeb/images/uploaded";
+    }
     /**
      * Apply sha-512
      * digest the string

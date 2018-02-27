@@ -9,5 +9,5 @@ import java.util.Date;
  */
 public interface StudentAttendanceDetailPlaySchoolRepository extends JpaRepository<StudentAttendanceDetailPlaySchool, Integer> {
 StudentAttendanceDetailPlaySchool findById(Integer id);
-StudentAttendanceDetailFetchPlaySchool findByEntrydateAndRegisternumber(Date entrydate,String registernumber);
+StudentAttendanceDetailFetchPlaySchool findByEntrydateAndRegisternumberAndInstituteid(Date entrydate,String registernumber, Integer instituteid);
 }

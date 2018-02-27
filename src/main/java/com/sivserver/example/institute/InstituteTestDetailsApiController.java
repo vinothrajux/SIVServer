@@ -28,7 +28,7 @@ public class InstituteTestDetailsApiController {
     @RequestMapping(method = RequestMethod.POST)
     public void institutetestdetailsdet(
 
-            @RequestParam(value ="instituteid", required=false) String instituteid,
+            @RequestParam(value ="instituteid", required=false) Integer instituteid,
             @RequestParam(value ="testname", required=false) String testname
 
 
