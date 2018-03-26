@@ -7,5 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface AdmissionPlaySchoolRepository extends JpaRepository<AdmissionPlaySchool, String> {
 AdmissionPlaySchool findByApplno(String applno);
+//AdmissionPlaySchool findTopByInstituteidOrderByRegisternumberDesc(Integer instituteid);
+AdmissionPlaySchool findTopByInstituteidAndAcademicyearOrderByRegisternumberDesc(Integer instituteid, String academicyear);
 AdmissionPlaySchoolProjection findOneByApplno(String applno);
 }

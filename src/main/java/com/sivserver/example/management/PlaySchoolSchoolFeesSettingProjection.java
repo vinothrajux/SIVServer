@@ -18,7 +18,11 @@ public interface PlaySchoolSchoolFeesSettingProjection {
     Double getTotalfees();
     Double getInstallment1fees();
     Double getInstallment2fees();
+    Double getInstallment3fees();
+    Double getOtherfees();
     Date getInstallment1duedate();
     Date getInstallment2duedate();
+    Date getInstallment3duedate();
+    Date getOtherfeesduedate();
 
 }

@@ -44,7 +44,7 @@ public class ApplicationSalePlaySchoolApiController {
 
     public void playschoolapplicationsale(
             @RequestParam(value ="applno", required=false) String applno,
-            @RequestParam(value ="category", required=false) String category,
+//            @RequestParam(value ="category", required=false) String category,
             @RequestParam (value="saledate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date saledate,
             @RequestParam (value="appfor", required=false) String appfor,
             @RequestParam (value="candfirstname", required=false) String candfirstname,
@@ -74,16 +74,16 @@ public class ApplicationSalePlaySchoolApiController {
             @RequestParam (value="remarks", required=false) String remarks,
             @RequestParam (value="academicyear", required=false) String academicyear,
             @RequestParam (value="loginuser", required=false) String loginuser,
-            @RequestParam (value="instituteid", required=false) Integer instituteid,
-            @RequestParam (value="idno", required=false) Integer idno,
-            @RequestParam (value="enquiryno", required=false) Integer enquiryno
+            @RequestParam (value="instituteid", required=false) Integer instituteid
+//            @RequestParam (value="idno", required=false) Integer idno
+//            @RequestParam (value="enquiryno", required=false) Integer enquiryno
 
 
     ) {
         ApplicationSalePlaySchool appsaleplayschool = new ApplicationSalePlaySchool();
         PlaySchoolApplicationNoGenerate appnogenerate = new PlaySchoolApplicationNoGenerate();
         appsaleplayschool.setApplno(applno);
-        appsaleplayschool.setCategory(category);
+//        appsaleplayschool.setCategory(category);
         appsaleplayschool.setSaledate(saledate);
         appsaleplayschool.setAppfor(appfor);
         appsaleplayschool.setCandfirstname(candfirstname);
@@ -118,10 +118,10 @@ public class ApplicationSalePlaySchoolApiController {
 
         applicationSalePlaySchoolRepository.save(appsaleplayschool);
 
-        appnogenerate.setIdno(idno);
-        appnogenerate.setEnquiryno(enquiryno);
-
-        playSchoolApplicationNoGenerateRepository.save(appnogenerate);
+//        appnogenerate.setIdno(idno);
+////        appnogenerate.setEnquiryno(enquiryno);
+//
+//        playSchoolApplicationNoGenerateRepository.save(appnogenerate);
     }
 // THIS API CAN BE USED TO FETCH THE APPLICATION DETAIL
     @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolApplcationDetail")
@@ -136,17 +136,25 @@ public class ApplicationSalePlaySchoolApiController {
 // THIS API CAN BE USED TO FETCH THE APPLICATION AND FEES INFORMATION FOR THE ADMISSION PLAY SCHOOL WINDOW
     ApplicationFeesInformation applicationFeesInformation;
     @RequestMapping(method = RequestMethod.POST, value="/getApplicationFeesDetails")
-    public List<Object> getStudentProfileInformationDetail(@RequestParam (value ="applno") String applicationNumber,@RequestParam (value ="appfor") String program,@RequestParam (value ="academicyear") String academicyear,@RequestParam (value ="instituteid") Integer instituteid) {
+    public List<Object> getStudentProfileInformationDetail(@RequestParam (value ="applno") String applicationNumber, @RequestParam (value ="instituteid") Integer userinstituteid) {
         /* fetching data from table1*/
         ApplicationSalePlaySchoolProjection playschoolapplicationDetail = applicationSalePlaySchoolRepository.findOneByApplno(applicationNumber);
-        /* fetching data from table2*/
-        Management_Playschool_Fees_Compound_Key mgmtpsfeescompkey = new Management_Playschool_Fees_Compound_Key(program,academicyear,instituteid);
-        PlaySchoolSchoolFeesSettingProjection playschoolfeesDetail = playSchoolSchoolFeesSettingRepository.findOneByManagementplayschoolfeescompoundkey(mgmtpsfeescompkey);
-        List<Object> list = new ArrayList<Object>();
-        list.add(playschoolapplicationDetail);
-        list.add(playschoolfeesDetail);
+        String academicyear = playschoolapplicationDetail.getAcademicyear();
+        Integer instituteid = playschoolapplicationDetail.getInstituteid();
+        String program = playschoolapplicationDetail.getAppfor();
+        if (instituteid == userinstituteid){
 
-        return list;
+        /* fetching data from table2*/
+            Management_Playschool_Fees_Compound_Key mgmtpsfeescompkey = new Management_Playschool_Fees_Compound_Key(program,academicyear,instituteid);
+            PlaySchoolSchoolFeesSettingProjection playschoolfeesDetail = playSchoolSchoolFeesSettingRepository.findOneByManagementplayschoolfeescompoundkey(mgmtpsfeescompkey);
+            List<Object> list = new ArrayList<Object>();
+            list.add(playschoolapplicationDetail);
+            list.add(playschoolfeesDetail);
+
+            return list;
+        }else {
+            return null;
+        }
     }
 
 }

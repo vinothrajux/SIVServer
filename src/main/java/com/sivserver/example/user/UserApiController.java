@@ -1,11 +1,16 @@
 package com.sivserver.example.user;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sivserver.example.institute.InstituteDetails;
+import com.sivserver.example.institute.InstituteDetailsRepository;
 import com.sivserver.example.utils.SivUtils;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.sivserver.example.utils.SivUtils.crossoriginurl;
 import static sun.misc.Version.println;
@@ -19,6 +24,8 @@ import static sun.misc.Version.println;
 public class UserApiController extends WebMvcConfigurerAdapter {
    @Autowired
     private UserRepository userRepository;
+   @Autowired
+    private InstituteDetailsRepository instituteDetailsRepository;
 //    /**
 //     * give a event id, will return the event details
 //     * @param name - primary key id
@@ -39,11 +46,36 @@ public class UserApiController extends WebMvcConfigurerAdapter {
           if(null != loginUser && loginUser.getPassword().contentEquals(password)) {
 
               LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+              Integer instituteidnum = loginUserDetail.getInstituteid();
+              InstituteDetails instituteDetails = instituteDetailsRepository.findByInstituteid(instituteidnum);
+              Map<String, Object> returnobj = new HashMap<>();
+              returnobj.put("firstName",loginUserDetail.getFirstName());
+              returnobj.put("instituteid",loginUserDetail.getInstituteid().toString());
+              returnobj.put("lastName",loginUserDetail.getLastName());
+              returnobj.put("userRole",loginUserDetail.getUserRole());
+              returnobj.put("username",loginUserDetail.getUsername());
+              returnobj.put("instituteAddress1",instituteDetails.getInstituteaddress1());
+              returnobj.put("instituteAddress2",instituteDetails.getInstituteaddress2());
+              returnobj.put("instituteArea",instituteDetails.getInstitutearea());
+              returnobj.put("instituteCode",instituteDetails.getInstitutecode());
+              returnobj.put("instituteContact1",instituteDetails.getInstitutecontactno1());
+              returnobj.put("instituteContact2",instituteDetails.getInstitutecontactno2());
+              returnobj.put("instituteEmail1",instituteDetails.getInstituteemail1());
+              returnobj.put("instituteEmail2",instituteDetails.getInstituteemail2());
+              returnobj.put("instituteName",instituteDetails.getInstitutename());
+              returnobj.put("institutePincode",instituteDetails.getInstitutepincode());
+              returnobj.put("instituteState",instituteDetails.getInstitutestate());
+              returnobj.put("instituteType",instituteDetails.getInstitutetype());
+              returnobj.put("instituteWeb",instituteDetails.getInstituteweb());
+              returnobj.put("instituteImage",instituteDetails.getInstituteimage());
+              returnobj.put("instituteLogo",instituteDetails.getInstitutelogo());
+//              returnobj.put("usernametest",loginUserDetail.getUsername());
+
 
               System.out.println("NAME:"+username+", PASSWORD:"+password);
 
                   ObjectMapper mapper = new ObjectMapper();
-                  result = mapper.writeValueAsString(loginUserDetail);
+                  result = mapper.writeValueAsString(returnobj);
 
               //return result;
              // return null;

@@ -14,7 +14,7 @@ public class ApplicationSalePlaySchool {
     @Id
     private String applno;
 
-    private String category;
+//    private String category;
 
     private Date saledate;
 
@@ -91,13 +91,13 @@ public class ApplicationSalePlaySchool {
         this.applno = applno;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
+//    public String getCategory() {
+//        return category;
+//    }
+//
+//    public void setCategory(String category) {
+//        this.category = category;
+//    }
 
     public Date getSaledate() {
         return saledate;

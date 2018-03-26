@@ -1,7 +1,15 @@
 package com.sivserver.example.institute;
 
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.*;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 import static com.sivserver.example.utils.SivUtils.crossoriginurl;
@@ -28,7 +36,7 @@ public class InstituteDetailsApiController {
     @RequestMapping(method = RequestMethod.POST)
     public void institutedetailsdet(
 
-            @RequestParam(value ="instituteid", required=false) Integer instituteid,
+//            @RequestParam(value ="instituteid", required=false) Integer instituteid,
             @RequestParam(value ="institutecode", required=false) String institutecode,
             @RequestParam(value ="institutename", required=false) String institutename,
             @RequestParam(value ="institutetype", required=false) String institutetype,
@@ -41,12 +49,13 @@ public class InstituteDetailsApiController {
             @RequestParam(value ="institutecontactno2", required=false) String institutecontactno2,
             @RequestParam(value ="instituteemail1", required=false) String instituteemail1,
             @RequestParam(value ="instituteemail2", required=false) String instituteemail2,
-            @RequestParam(value ="instituteweb", required=false) String instituteweb
+            @RequestParam(value ="instituteweb", required=false) String instituteweb,
+            @RequestParam("institutelogo") MultipartFile institutelogo
 
     ) {
         InstituteDetails insDetails = new InstituteDetails();
 
-        insDetails.setInstituteid(instituteid);
+//        insDetails.setInstituteid(instituteid);
         insDetails.setInstitutecode(institutecode);
         insDetails.setInstitutename(institutename);
         insDetails.setInstitutetype(institutetype);
@@ -61,8 +70,28 @@ public class InstituteDetailsApiController {
         insDetails.setInstituteemail2(instituteemail2);
         insDetails.setInstituteweb(instituteweb);
 
-        instituteDetailsRepository.save(insDetails);
+        InstituteDetails savedInstituteDetails = instituteDetailsRepository.saveAndFlush(insDetails);
+        Integer instituteid = savedInstituteDetails.getInstituteid();
+        System.out.println(savedInstituteDetails.getInstituteid());
 
+
+        String serverfilepath = "images/institute/"+instituteid+"."+ FilenameUtils.getExtension(institutelogo.getOriginalFilename());
+        String imagePath = "http://siv.gbcorp.in/"+serverfilepath;
+        System.out.println(new ProfileCredentialsProvider().getCredentials().getAWSAccessKeyId());
+        AmazonS3 s3client = new AmazonS3Client(new ProfileCredentialsProvider());
+        try{
+            InputStream is = institutelogo.getInputStream();
+            s3client.putObject(new PutObjectRequest("siv.gbcorp.in",serverfilepath,is,new ObjectMetadata()).withCannedAcl(CannedAccessControlList.PublicRead));
+            S3Object s3object = s3client.getObject(new GetObjectRequest("siv.gbcorp.in", serverfilepath));
+            System.out.println(s3object.getObjectContent().getHttpRequest().getURI().toString());
+            insDetails.setInstituteid(instituteid);
+            insDetails.setInstitutelogo(imagePath);
+            instituteDetailsRepository.save(insDetails);
+        }
+        catch (IOException e){
+
+            e.printStackTrace();
+        }
     }
 
 

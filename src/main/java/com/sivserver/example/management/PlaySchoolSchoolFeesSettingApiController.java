@@ -36,8 +36,12 @@ public class PlaySchoolSchoolFeesSettingApiController {
             @RequestParam(value = "totalfees", required = false) Double totalfees,
             @RequestParam(value = "installment1fees", required = false) Double installment1fees,
             @RequestParam(value = "installment2fees", required = false) Double installment2fees,
+            @RequestParam(value = "installment3fees", required = false) Double installment3fees,
+            @RequestParam(value = "otherfees", required = false) Double otherfees,
             @RequestParam(value = "installment1duedate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date installment1duedate,
             @RequestParam(value = "installment2duedate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date installment2duedate,
+            @RequestParam(value = "installment3duedate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date installment3duedate,
+            @RequestParam(value = "otherfeesduedate", required = false) @DateTimeFormat(pattern="dd/MM/yyyy") Date otherfeesduedate,
             @RequestParam(value = "loginuser", required = false) String loginuser
     )
     {
@@ -53,8 +57,12 @@ public class PlaySchoolSchoolFeesSettingApiController {
         ps_School_Fees_Set.setTotalfees(totalfees);
         ps_School_Fees_Set.setInstallment1fees(installment1fees);
         ps_School_Fees_Set.setInstallment2fees(installment2fees);
+        ps_School_Fees_Set.setInstallment3fees(installment3fees);
+        ps_School_Fees_Set.setOtherfees(otherfees);
         ps_School_Fees_Set.setInstallment1duedate(installment1duedate);
         ps_School_Fees_Set.setInstallment2duedate(installment2duedate);
+        ps_School_Fees_Set.setInstallment3duedate(installment3duedate);
+        ps_School_Fees_Set.setOtherfeesduedate(otherfeesduedate);
         ps_School_Fees_Set.setLoginuser(loginuser);
 
         playSchoolSchoolFeesSettingRepository.save(ps_School_Fees_Set);

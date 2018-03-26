@@ -8,7 +8,7 @@ import java.util.Date;
 public interface ApplicationSalePlaySchoolProjection {
 
     String getApplno();
-    String getCategory();
+//    String getCategory();
     Date getSaledate();
     String getAppfor();
     String getCandfirstname();

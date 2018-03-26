@@ -31,9 +31,17 @@ public class PlaySchoolSchoolFeesSetting {
 
     private Double installment2fees;
 
+    private Double installment3fees;
+
+    private Double otherfees;
+
     private Date installment1duedate;
 
     private Date installment2duedate;
+
+    private Date installment3duedate;
+
+    private Date otherfeesduedate;
 
     private String loginuser;
 
@@ -43,6 +51,7 @@ public class PlaySchoolSchoolFeesSetting {
     public Date getFeessettingdate() {
         return feessettingdate;
     }
+
 
     public void setFeessettingdate(Date feessettingdate) {
         this.feessettingdate = feessettingdate;
@@ -134,5 +143,37 @@ public class PlaySchoolSchoolFeesSetting {
 
     public void setLoginuser(String loginuser) {
         this.loginuser = loginuser;
+    }
+
+    public Double getInstallment3fees() {
+        return installment3fees;
+    }
+
+    public void setInstallment3fees(Double installment3fees) {
+        this.installment3fees = installment3fees;
+    }
+
+    public Double getOtherfees() {
+        return otherfees;
+    }
+
+    public void setOtherfees(Double otherfees) {
+        this.otherfees = otherfees;
+    }
+
+    public Date getInstallment3duedate() {
+        return installment3duedate;
+    }
+
+    public void setInstallment3duedate(Date installment3duedate) {
+        this.installment3duedate = installment3duedate;
+    }
+
+    public Date getOtherfeesduedate() {
+        return otherfeesduedate;
+    }
+
+    public void setOtherfeesduedate(Date otherfeesduedate) {
+        this.otherfeesduedate = otherfeesduedate;
     }
 }

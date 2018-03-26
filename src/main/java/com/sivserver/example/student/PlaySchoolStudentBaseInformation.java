@@ -32,6 +32,8 @@ public class PlaySchoolStudentBaseInformation {
 
     private String loginuser;
 
+    private String instituteregisternumber;
+
     private Integer instituteid;
 
     @OneToOne
@@ -196,5 +198,14 @@ public class PlaySchoolStudentBaseInformation {
 
     public void setStudentsMonthlyProgressPlaySchoolRegno(List<StudentsMonthlyProgressPlaySchool> studentsMonthlyProgressPlaySchoolRegno) {
         this.studentsMonthlyProgressPlaySchoolRegno = studentsMonthlyProgressPlaySchoolRegno;
+    }
+
+    public String getInstituteregisternumber() {
+        return instituteregisternumber;
+    }
+
+    public PlaySchoolStudentBaseInformation setInstituteregisternumber(String instituteregisternumber) {
+        this.instituteregisternumber = instituteregisternumber;
+        return this;
     }
 }

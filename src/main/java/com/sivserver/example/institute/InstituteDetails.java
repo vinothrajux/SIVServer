@@ -14,7 +14,8 @@ import java.util.List;
 public class InstituteDetails {
 
     @Id
-    @Column(name="instituteid",nullable=false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Integer instituteid;
 
     private String institutecode;
@@ -43,9 +44,9 @@ public class InstituteDetails {
 
     private String instituteweb;
 
-    private Byte institutelogo;
+    private String institutelogo;
 
-    private Byte instituteimage;
+    private String instituteimage;
 
     @OneToMany
     @JoinColumn(name="instituteid",referencedColumnName = "instituteid")
@@ -194,19 +195,19 @@ public class InstituteDetails {
         this.instituteweb = instituteweb;
     }
 
-    public Byte getInstitutelogo() {
+    public String getInstitutelogo() {
         return institutelogo;
     }
 
-    public void setInstitutelogo(Byte institutelogo) {
+    public void setInstitutelogo(String institutelogo) {
         this.institutelogo = institutelogo;
     }
 
-    public Byte getInstituteimage() {
+    public String getInstituteimage() {
         return instituteimage;
     }
 
-    public void setInstituteimage(Byte instituteimage) {
+    public void setInstituteimage(String instituteimage) {
         this.instituteimage = instituteimage;
     }
 

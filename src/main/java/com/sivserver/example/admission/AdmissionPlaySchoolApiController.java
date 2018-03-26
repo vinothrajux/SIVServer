@@ -5,10 +5,15 @@ import com.sivserver.example.student.PlaySchoolStudentBaseInformation;
 import com.sivserver.example.student.PlaySchoolStudentBaseInformationRepository;
 import com.sivserver.example.student.PlaySchoolStudentPersonalInformation;
 import com.sivserver.example.student.PlaySchoolStudentPersonalInformationRepository;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -59,12 +64,12 @@ public class AdmissionPlaySchoolApiController {
 
 
     @RequestMapping(method = RequestMethod.POST)
-    public void admissionPlaySchool(
+    public String admissionPlaySchool(
             @RequestParam(value ="applno", required=false) String applno,
             @RequestParam(value ="admissiondate", required=false) Date admissiondate,
             @RequestParam(value ="appfor", required=false) String appfor,
             @RequestParam (value="admissionstatus", required=false) String admissionstatus,
-            @RequestParam (value="registernumber", required=false) String registernumber,
+            @RequestParam (value="instituteregisternumber", required=false) String instituteregisternumber,
             @RequestParam (value="section", required=false) String section,
             @RequestParam (value="transport", required=false) String transport,
             @RequestParam (value="transportstage", required=false) String transportstage,
@@ -135,16 +140,30 @@ public class AdmissionPlaySchoolApiController {
             @RequestParam (value="installment1duedate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date installment1duedate,
             @RequestParam (value="installment2duedate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date installment2duedate,
             @RequestParam (value="transportfeesmethod", required=false) String transportfeesmethod,
-            @RequestParam (value="idno", required=false) Integer idno,
-            @RequestParam (value="todprgno", required=false) Long todprgno,
-            @RequestParam (value="prekgprgno", required=false) Long prekgprgno,
-            @RequestParam (value="kgoneprgno", required=false) Long kgoneprgno,
-            @RequestParam (value="kgtwoprgno", required=false) Long kgtwoprgno,
-            @RequestParam (value="waitlistno", required=false) Long waitlistno,
+//            @RequestParam (value="idno", required=false) Integer idno,
+//            @RequestParam (value="todprgno", required=false) Long todprgno,
+//            @RequestParam (value="prekgprgno", required=false) Long prekgprgno,
+//            @RequestParam (value="kgoneprgno", required=false) Long kgoneprgno,
+//            @RequestParam (value="kgtwoprgno", required=false) Long kgtwoprgno,
+//            @RequestParam (value="waitlistno", required=false) Long waitlistno,
             @RequestParam (value="instituteid", required=false) Integer instituteid
 
 
     ) {
+        String registernumber = "";
+        AdmissionPlaySchool admissionPlaySchoolObj2 = new AdmissionPlaySchool();
+        admissionPlaySchoolObj2 = admissionPlaySchoolRepository.findTopByInstituteidAndAcademicyearOrderByRegisternumberDesc(instituteid,academicyear);
+        if(admissionPlaySchoolObj2 == null){
+            DateFormat df = new SimpleDateFormat("yy"); // Just the year, with 2 digits
+            String yearyy = df.format(Calendar.getInstance().getTime());
+            registernumber = yearyy+instituteid.toString() + "0001";
+        }else{
+            registernumber = admissionPlaySchoolObj2.getRegisternumber();
+            Integer regsisternumberInt = Integer.parseInt(registernumber);
+            regsisternumberInt++;
+            registernumber =  regsisternumberInt.toString();
+        }
+
         AdmissionPlaySchool admissionplayschool = new AdmissionPlaySchool();
         ApplicationSalePlaySchool appsale = new ApplicationSalePlaySchool(applno);
         PlaySchoolStudentPersonalInformation ps_student_pers_info = new PlaySchoolStudentPersonalInformation(registernumber);
@@ -153,6 +172,7 @@ public class AdmissionPlaySchoolApiController {
         PlaySchoolBalanceFees ps_fees_bal_info = new PlaySchoolBalanceFees();
         PlaySchoolProgramAdmissionNoGenerate psadmissionno = new PlaySchoolProgramAdmissionNoGenerate();
         PlaySchoolTransportFeesEntry pstransportfees = new PlaySchoolTransportFeesEntry();
+
 
         admissionplayschool.setApplno(applno)
                 .setAdmissiondate(admissiondate)
@@ -228,6 +248,7 @@ public class AdmissionPlaySchoolApiController {
         ps_student_pers_info.setTransportstage(transportstage);
         ps_student_pers_info.setAcademicyear(academicyear);
         ps_student_pers_info.setLoginuser(loginuser);
+        ps_student_pers_info.setInstituteid(instituteid);
 
         playSchoolStudentPersonalInformationRepository.save(ps_student_pers_info);
 
@@ -238,6 +259,8 @@ public class AdmissionPlaySchoolApiController {
                             .setAcademicyear(academicyear)
                             .setStudentstatus(admissionstatus)
                             .setLoginuser(loginuser)
+                            .setInstituteregisternumber(instituteregisternumber)
+                            .setInstituteid(instituteid)
                             .setPlay_school_student_personal_regno(ps_student_pers_info);
 
         playSchoolStudentBaseInformationRepository.save(ps_student_base_info);
@@ -254,6 +277,7 @@ public class AdmissionPlaySchoolApiController {
                             .setInstallment2duedate(installment2duedate)
                             .setAcademicyear(academicyear)
                             .setLoginuser(loginuser)
+                            .setInstituteid(instituteid)
                             .setPlay_school_student_personal_regno(ps_student_pers_info);
 
         playSchoolFeesEntryBaseRepository.save(ps_fees_base_info);
@@ -270,18 +294,19 @@ public class AdmissionPlaySchoolApiController {
                         .setInstallment2duedate(installment2duedate)
                         .setAcademicyear(academicyear)
                         .setLoginuser(loginuser)
+                        .setInstituteid(instituteid)
                         .setPlay_school_student_personal_regno(ps_student_pers_info);
 
         playSchoolBalanceFeesRepository.save(ps_fees_bal_info);
 
-        psadmissionno.setIdno(idno);
-        psadmissionno.setTodprgno(todprgno);
-        psadmissionno.setPrekgprgno(prekgprgno);
-        psadmissionno.setKgoneprgno(kgoneprgno);
-        psadmissionno.setKgtwoprgno(kgtwoprgno);
-        psadmissionno.setWaitlistno(waitlistno);
+//        psadmissionno.setIdno(idno);
+//        psadmissionno.setTodprgno(todprgno);
+//        psadmissionno.setPrekgprgno(prekgprgno);
+//        psadmissionno.setKgoneprgno(kgoneprgno);
+//        psadmissionno.setKgtwoprgno(kgtwoprgno);
+//        psadmissionno.setWaitlistno(waitlistno);
 
-        playSchoolProgramAdmissionNoGenerateRepository.save(psadmissionno);
+//        playSchoolProgramAdmissionNoGenerateRepository.save(psadmissionno);
 
 
 
@@ -294,12 +319,20 @@ public class AdmissionPlaySchoolApiController {
                     .setTransportduedate(installment1duedate)
                     .setAcademicyear(academicyear)
                     .setLoginuser(loginuser)
+                    .setInstituteid(instituteid)
                     .setPlay_school_student_personal_regno(ps_student_pers_info);
 
             playSchoolTransportFeesEntryRepository.save(pstransportfees);
 
         }
-
+        JSONObject resultObject = new JSONObject();
+        try {
+            resultObject.put("registernumber", registernumber);
+            resultObject.put("applicationnumber", applno);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return resultObject.toString();
     }
 
         @RequestMapping(method = RequestMethod.POST, value="/getPlaySchoolAdmissionDetail")
