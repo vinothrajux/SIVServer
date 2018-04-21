@@ -134,6 +134,15 @@ public class PlaySchoolStudentBaseInformation {
         return this;
     }
 
+    public String getInstituteregisternumber() {
+        return instituteregisternumber;
+    }
+
+    public PlaySchoolStudentBaseInformation setInstituteregisternumber(String instituteregisternumber) {
+        this.instituteregisternumber = instituteregisternumber;
+        return this;
+    }
+
     public Integer getInstituteid() {
         return instituteid;
     }
@@ -151,6 +160,17 @@ public class PlaySchoolStudentBaseInformation {
         this.play_school_student_personal_regno = play_school_student_personal_regno;
         return this;
     }
+
+//    public SchoolStudentPersonalInformation getSchool_student_personal_regno() {
+//        return school_student_personal_regno;
+//    }
+//
+//    public PlaySchoolStudentBaseInformation setSchool_student_personal_regno(SchoolStudentPersonalInformation school_student_personal_regno) {
+//        this.school_student_personal_regno = school_student_personal_regno;
+//        return this;
+//
+//    }
+
 
     public List<StudentAttendanceDetailPlaySchool> getStudentAttendanceDetailPlaySchoolRegno() {
         return studentAttendanceDetailPlaySchoolRegno;
@@ -200,12 +220,5 @@ public class PlaySchoolStudentBaseInformation {
         this.studentsMonthlyProgressPlaySchoolRegno = studentsMonthlyProgressPlaySchoolRegno;
     }
 
-    public String getInstituteregisternumber() {
-        return instituteregisternumber;
-    }
 
-    public PlaySchoolStudentBaseInformation setInstituteregisternumber(String instituteregisternumber) {
-        this.instituteregisternumber = instituteregisternumber;
-        return this;
-    }
 }

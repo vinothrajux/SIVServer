@@ -76,6 +76,10 @@ public class InstituteDetails {
     @JoinColumn(name="instituteid",referencedColumnName = "instituteid")
     private List<User> userInstituteid;
 
+//    @OneToMany
+//    @JoinColumn(name="instituteid",referencedColumnName = "instituteid")
+//    private List<InstituteSchoolSubjectDetails> instituteSchoolSubjectDetails;
+
     public InstituteDetails() {
     }
 
@@ -266,4 +270,12 @@ public class InstituteDetails {
     public void setUserInstituteid(List<User> userInstituteid) {
         this.userInstituteid = userInstituteid;
     }
+
+//    public List<InstituteSchoolSubjectDetails> getInstituteSchoolSubjectDetails() {
+//        return instituteSchoolSubjectDetails;
+//    }
+//
+//    public void setInstituteSchoolSubjectDetails(List<InstituteSchoolSubjectDetails> instituteSchoolSubjectDetails) {
+//        this.instituteSchoolSubjectDetails = instituteSchoolSubjectDetails;
+//    }
 }

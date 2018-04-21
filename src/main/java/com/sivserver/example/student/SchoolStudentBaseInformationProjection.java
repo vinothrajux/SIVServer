@@ -1,9 +1,9 @@
 package com.sivserver.example.student;
 
 /**
- * Created by GBCorp on 27/11/2017.
+ * Created by Seetha on 02-Apr-18.
  */
-public interface PlaySchoolStudentBaseInformationProjection {
+public interface SchoolStudentBaseInformationProjection {
 
     String getRegisternumber();
     String getCandidatename();
@@ -11,6 +11,8 @@ public interface PlaySchoolStudentBaseInformationProjection {
     String getSection();
     String getAcademicyear();
     String getStudentstatus();
-    Integer getInstituteid();
     String getInstituteregisternumber();
+    String getEmisno();
+    Integer getInstituteid();
+
 }

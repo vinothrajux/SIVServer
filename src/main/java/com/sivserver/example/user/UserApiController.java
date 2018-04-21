@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sivserver.example.institute.InstituteDetails;
 import com.sivserver.example.institute.InstituteDetailsRepository;
 import com.sivserver.example.utils.SivUtils;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +27,8 @@ public class UserApiController extends WebMvcConfigurerAdapter {
     private UserRepository userRepository;
    @Autowired
     private InstituteDetailsRepository instituteDetailsRepository;
+    @Autowired
+    private MenuListRepository menuListRepository;
 //    /**
 //     * give a event id, will return the event details
 //     * @param name - primary key id
@@ -39,7 +42,10 @@ public class UserApiController extends WebMvcConfigurerAdapter {
 ////        //return this.userRepository.findOne(name);
 ////    }
     @RequestMapping(method = RequestMethod.POST)
-    public String getUser(@RequestParam (value ="username") String username, @RequestParam (value="password") String password) {
+    public String getUser(@RequestParam (value ="username") String username,
+                          @RequestParam (value="password") String password,
+                          @RequestParam (value="sourceDevice", required = false) String sourceDevice
+    ) {
        User loginUser = userRepository.findByUsername(username);
         String result=null;
         try {
@@ -69,6 +75,16 @@ public class UserApiController extends WebMvcConfigurerAdapter {
               returnobj.put("instituteWeb",instituteDetails.getInstituteweb());
               returnobj.put("instituteImage",instituteDetails.getInstituteimage());
               returnobj.put("instituteLogo",instituteDetails.getInstitutelogo());
+              MenuListCompoundKey menuListCompoundKey = new MenuListCompoundKey(instituteDetails.getInstitutetype(),loginUserDetail.getUserRole());
+              MenuList menuList = new MenuList();
+              menuList = menuListRepository.findOneByMenulistcompoundkey(menuListCompoundKey);
+              String menulistString = "";
+              if(sourceDevice.equals("web")){
+                  menulistString = menuList.getMenulistweb();
+              }else {
+                  menulistString = menuList.getMenulistapp();
+              }
+              returnobj.put("menulist",menulistString);
 //              returnobj.put("usernametest",loginUserDetail.getUsername());
 
 
