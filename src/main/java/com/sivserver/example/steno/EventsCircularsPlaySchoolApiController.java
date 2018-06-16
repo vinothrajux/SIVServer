@@ -125,6 +125,7 @@ public class EventsCircularsPlaySchoolApiController {
             date1=new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(curDate);
 
 
+
             java.sql.Timestamp ts = java.sql.Timestamp.valueOf( curDate ) ;
             long oneDay = 1 * 24 * 60 * 60 * 1000;
             ts.setTime(ts.getTime()-oneDay);

@@ -1,6 +1,7 @@
 package com.sivserver.example.institute;
 
 import com.sivserver.example.admission.FirstAidEntry;
+import com.sivserver.example.gbcorptraining.CustomerDetails;
 import com.sivserver.example.user.User;
 
 import javax.persistence.*;
@@ -47,6 +48,11 @@ public class InstituteDetails {
     private String institutelogo;
 
     private String instituteimage;
+
+
+//    @OneToOne
+//    @JoinColumn(name="instituteid",referencedColumnName = "instituteid")
+//    private List<CustomerDetails> customerDetailsinstituteid;
 
     @OneToMany
     @JoinColumn(name="instituteid",referencedColumnName = "instituteid")

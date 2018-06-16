@@ -45,6 +45,14 @@ public class StudentCollegeId {
     public StudentCollegeId() {
     }
 
+    public String getIdcardno() {
+        return idcardno;
+    }
+
+    public void setIdcardno(String idcardno) {
+        this.idcardno = idcardno;
+    }
+
     public String getRegno() {
         return regno;
     }
@@ -115,14 +123,6 @@ public class StudentCollegeId {
 
     public void setIdissueddate(Date idissueddate) {
         this.idissueddate = idissueddate;
-    }
-
-    public String getIdcardno() {
-        return idcardno;
-    }
-
-    public void setIdcardno(String idcardno) {
-        this.idcardno = idcardno;
     }
 
     public String getIdtype() {

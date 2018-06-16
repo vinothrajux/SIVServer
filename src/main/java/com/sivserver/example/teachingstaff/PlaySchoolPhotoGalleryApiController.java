@@ -142,7 +142,7 @@ public class PlaySchoolPhotoGalleryApiController {
         System.out.println(imagename);
         String serverfilepath = "images/uploaded/"+imagename;
         String imagePath = "http://siv.gbcorp.in/"+serverfilepath;
-        System.out.println(new ProfileCredentialsProvider().getCredentials().getAWSAccessKeyId());
+//        System.out.println(new ProfileCredentialsProvider().getCredentials().getAWSAccessKeyId());
         AmazonS3 s3client = new AmazonS3Client(new ProfileCredentialsProvider());
         try{
             InputStream is = multipartFiles.getInputStream();
