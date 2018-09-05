@@ -8,4 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface SchoolTestExamMarkDetailsRepository extends JpaRepository<SchoolTestExamMarkDetails, Integer> {
 //    SchoolTestExamMarkDetails findBySchoolTestExamTimeTableCompoundKey(SchoolTestExamTimeTableCompoundKey schoolTestExamTimeTableCompoundKey);
     Iterable<SchoolTestExamMarkDetails> findByInstituteidAndAcademicyearAndStandardAndSection(Integer instituteid, String academicyear, String standard, String section);
+    long countByInstituteidAndAcademicyearAndStandardAndSectionAndTesttype(Integer instituteid, String academicyear, String standard, String section, String testtype);
 }

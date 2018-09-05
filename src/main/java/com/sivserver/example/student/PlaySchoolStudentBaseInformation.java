@@ -40,6 +40,10 @@ public class PlaySchoolStudentBaseInformation {
     @JoinColumn(name="student_base_registernumber",nullable=false,referencedColumnName = "registernumber")
     private PlaySchoolStudentPersonalInformation play_school_student_personal_regno;
 
+//    @OneToOne
+//    @JoinColumn(name="student_base_registernumber",nullable=false,referencedColumnName = "registernumber")
+//    private SchoolStudentPersonalInformation school_student_personal_regno;
+
     @OneToMany
     @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
     private List<StudentAttendanceDetailPlaySchool> studentAttendanceDetailPlaySchoolRegno;
@@ -220,5 +224,11 @@ public class PlaySchoolStudentBaseInformation {
         this.studentsMonthlyProgressPlaySchoolRegno = studentsMonthlyProgressPlaySchoolRegno;
     }
 
-
+//    public SchoolStudentPersonalInformation getSchool_student_personal_regno() {
+//        return school_student_personal_regno;
+//    }
+//
+//    public void setSchool_student_personal_regno(SchoolStudentPersonalInformation school_student_personal_regno) {
+//        this.school_student_personal_regno = school_student_personal_regno;
+//    }
 }

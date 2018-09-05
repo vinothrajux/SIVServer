@@ -160,6 +160,14 @@ public class SchoolStudentPersonalInformation {
 
     private String transportstage;
 
+    private String pickuppersonname;
+
+    private String pickuppersoncontactno;
+
+    private String pickuppersonaltcontactno;
+
+    private String pickuppersonrelationship;
+
     private String academicyear;
 
     private String loginuser;
@@ -763,5 +771,37 @@ public class SchoolStudentPersonalInformation {
 
     public void setInstituteid(Integer instituteid) {
         this.instituteid = instituteid;
+    }
+
+    public String getPickuppersonname() {
+        return pickuppersonname;
+    }
+
+    public void setPickuppersonname(String pickuppersonname) {
+        this.pickuppersonname = pickuppersonname;
+    }
+
+    public String getPickuppersoncontactno() {
+        return pickuppersoncontactno;
+    }
+
+    public void setPickuppersoncontactno(String pickuppersoncontactno) {
+        this.pickuppersoncontactno = pickuppersoncontactno;
+    }
+
+    public String getPickuppersonaltcontactno() {
+        return pickuppersonaltcontactno;
+    }
+
+    public void setPickuppersonaltcontactno(String pickuppersonaltcontactno) {
+        this.pickuppersonaltcontactno = pickuppersonaltcontactno;
+    }
+
+    public String getPickuppersonrelationship() {
+        return pickuppersonrelationship;
+    }
+
+    public void setPickuppersonrelationship(String pickuppersonrelationship) {
+        this.pickuppersonrelationship = pickuppersonrelationship;
     }
 }

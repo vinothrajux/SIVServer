@@ -106,36 +106,54 @@ public class SchoolTestExamMarkDetailsApiController {
         System.out.println("branch:"+standardstudying);
         System.out.println("batch:"+section);
         System.out.println("academicyear:"+academicyear);
-        Iterable<PlaySchoolStudentBaseInformation> studentList = playSchoolStudentBaseInformationRepository.findAllByStandardstudyingAndSectionAndAcademicyearAndInstituteid(standardstudying, section, academicyear, instituteid);
+
+        SchoolTestExamMarkDetails schoolTestExamMarkDetails = new SchoolTestExamMarkDetails();
+        long schoolTestExamMarkDetailsCount = schoolTestExamMarkDetailsRepository.countByInstituteidAndAcademicyearAndStandardAndSectionAndTesttype(instituteid,academicyear,standardstudying,section,testtype);
 
 
-        returnobj.put("studentlist",studentList);
+            Iterable<PlaySchoolStudentBaseInformation> studentList = playSchoolStudentBaseInformationRepository.findAllByStandardstudyingAndSectionAndAcademicyearAndInstituteid(standardstudying, section, academicyear, instituteid);
 
 
-        SchoolTestExamTimeTableCompoundKey schoolTestExamTimeTableCompoundKey = new SchoolTestExamTimeTableCompoundKey(instituteid,testtype,standardstudying,academicyear);
-        SchoolTestExamTimeTable schoolTestExamTimeTable = schoolTestExamTimeTableRepository.findBySchoolTestExamTimeTableCompoundKey(schoolTestExamTimeTableCompoundKey);
-        if(schoolTestExamTimeTable == null){
+            returnobj.put("studentlist",studentList);
+
+
+            SchoolTestExamTimeTableCompoundKey schoolTestExamTimeTableCompoundKey = new SchoolTestExamTimeTableCompoundKey(instituteid,testtype,standardstudying,academicyear);
+            SchoolTestExamTimeTable schoolTestExamTimeTable = schoolTestExamTimeTableRepository.findBySchoolTestExamTimeTableCompoundKey(schoolTestExamTimeTableCompoundKey);
+            if(schoolTestExamTimeTable == null){
 //            System.out.println("No Time Table Scheduled");
 //            return result;
 
-            JSONObject errorMsgObj = new JSONObject();
-            try {
-                errorMsgObj.put("errorMessage", "No Time Table Scheduled");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            result = errorMsgObj.toString();
+                JSONObject errorMsgObj = new JSONObject();
+                try {
+                    errorMsgObj.put("errorMessage", "No Time Table Scheduled");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                result = errorMsgObj.toString();
 
-        }else{
-            returnobj.put("timetabledetails",schoolTestExamTimeTable);
-            System.out.println(schoolTestExamTimeTable.getSubjectdetails());
-            ObjectMapper mapper = new ObjectMapper();
-            try {
-                result = mapper.writeValueAsString(returnobj);
-            } catch (JsonProcessingException e) {
-                e.printStackTrace();
+            }else{
+                if(schoolTestExamMarkDetailsCount == 0) {
+                    returnobj.put("timetabledetails",schoolTestExamTimeTable);
+                    System.out.println(schoolTestExamTimeTable.getSubjectdetails());
+                    ObjectMapper mapper = new ObjectMapper();
+                    try {
+                        result = mapper.writeValueAsString(returnobj);
+                    } catch (JsonProcessingException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    JSONObject errorMsgObj = new JSONObject();
+                    try {
+                        errorMsgObj.put("errorMessage", "Data Already Entered!");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    result = errorMsgObj.toString();
+                }
             }
-        }
+
+        System.out.println("count:"+schoolTestExamMarkDetailsCount);
+
         return result;
     }
 

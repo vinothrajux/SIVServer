@@ -1,9 +1,7 @@
 package com.sivserver.example.teachingstaff;
 
 import com.sivserver.example.admission.ApplicationSalePlaySchoolProjection;
-import com.sivserver.example.student.PlaySchoolStudentBaseInformation;
-import com.sivserver.example.student.PlaySchoolStudentBaseInformationRepository;
-import com.sivserver.example.student.PlaySchoolStudentPersonalInformation;
+import com.sivserver.example.student.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,6 +32,9 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
 
     @Autowired
     private PlaySchoolStudentBaseInformationRepository playSchoolStudentBaseInformationRepository;
+
+    @Autowired
+    private SchoolStudentBaseInformationRepository schoolStudentBaseInformationRepository;
 
     @Autowired
     private StudentAttendanceHeaderPlaySchoolRepository studentAttendanceHeaderPlaySchoolRepository;
@@ -103,6 +104,43 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
         return studentList;
     }
 
+    // NEW CODE ADDED FOR SCHOOL ATTENDANCE FETCH FOR WEB APP SCREEN
+
+    @RequestMapping(method = RequestMethod.POST, value="/getSchoolStudentListAttendance")
+    public Iterable<SchoolStudentBaseInformation> getSchoolStudentLists(
+            @RequestParam(value ="standardstudying", required=false) String standardstudying,
+            @RequestParam (value="section", required=false) String section,
+            @RequestParam (value="academicyear", required=false) String academicyear,
+            @RequestParam (value="studentstatus", required=false) String studentstatus,
+            @RequestParam (value="instituteid", required=false) Integer instituteid,
+            @RequestParam (value="entrydate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate
+
+    ){
+        System.out.println("branch:"+standardstudying);
+        System.out.println("batch:"+section);
+        System.out.println("academicyear:"+academicyear);
+        System.out.println("branchcode:"+studentstatus);
+        //studentAttendanceHeaderPlaySchoolRepository.find
+        Student_Attendance_Play_School_Compound_Key studattpscompkey = new Student_Attendance_Play_School_Compound_Key(entrydate,standardstudying,section,academicyear,instituteid);
+        StudentAttendanceHeaderEntryCheckPlaySchoolProjection playschoolstudentattendanceentrycheckDetail = studentAttendanceHeaderPlaySchoolRepository.findOneByStudentattendanceplayschoolcompoundkey(studattpscompkey);
+        //        Iterable<StudentBaseInformation> studentList = studentbaseinformationRepository.findByAcademicyearAndBranchcode(academicyear, branchcode);
+        //Iterable<PlaySchoolStudentBaseInformation> studentList = playSchoolStudentBaseInformationRepository.findAllByStandardstudyingAndSectionAndAcademicyearAndStudentstatus(standardstudying, section, academicyear, studentstatus);
+        Iterable<SchoolStudentBaseInformation> studentList = null;
+        if(playschoolstudentattendanceentrycheckDetail==null){
+            System.out.println("is null");
+            studentList = schoolStudentBaseInformationRepository.findAllByStandardstudyingAndSectionAndAcademicyearAndStudentstatusAndInstituteid(standardstudying, section, academicyear, studentstatus, instituteid);
+        }else{
+            System.out.println("is not null");
+        }
+
+
+        System.out.println("Inside getApplicationDetail");
+        return studentList;
+    }
+
+
+
+    // NEW CODE ADDED FOR SCHOOL ATTENDANCE FETCH FOR WEB APP SCREEN
 
     @RequestMapping(method = RequestMethod.POST, value="/setStudentListAttendance")
     public void getStudentLists(

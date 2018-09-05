@@ -1,8 +1,6 @@
 package com.sivserver.example.teachingstaff;
 
-import com.sivserver.example.student.PlaySchoolStudentBaseInformation;
-import com.sivserver.example.student.PlaySchoolStudentBaseInformationProjection;
-import com.sivserver.example.student.PlaySchoolStudentBaseInformationRepository;
+import com.sivserver.example.student.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,6 +28,9 @@ public class ChildsPickupPlaySchoolApiController {
 
     @Autowired
     private PlaySchoolStudentBaseInformationRepository playSchoolStudentBaseInformationRepository;
+
+    @Autowired
+    private SchoolStudentBaseInformationRepository schoolStudentBaseInformationRepository;
 
     @Autowired
     private StudentAttendanceHeaderPlaySchoolRepository studentAttendanceHeaderPlaySchoolRepository;
@@ -130,6 +131,7 @@ public class ChildsPickupPlaySchoolApiController {
         System.out.println("Inside getApplicationDetail");
         return students;
     }
+
 
 
 

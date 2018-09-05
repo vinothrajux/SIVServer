@@ -31,7 +31,7 @@ public class AdmissionSchoolApiController {
     private SchoolStudentPersonalInformationRepository schoolStudentPersonalInformationRepository;
 
     @Autowired
-    private SchoolStudentBaseInformationRepository schoolStudentBaseInformationRepository;
+    private PlaySchoolStudentBaseInformationRepository playSchoolStudentBaseInformationRepository;
 
     @Autowired
     private SchoolFeesEntryBaseRepository schoolFeesEntryBaseRepository;
@@ -152,6 +152,10 @@ public class AdmissionSchoolApiController {
             @RequestParam (value="totalfees", required=false) Double totalfees,
             @RequestParam (value="transportfees", required=false) Double transportfees,
             @RequestParam (value="transportduedate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date transportduedate,
+            @RequestParam (value="pickuppersonname", required=false) String pickuppersonname,
+            @RequestParam (value="pickuppersoncontactno", required=false) String pickuppersoncontactno,
+            @RequestParam (value="pickuppersonaltcontactno", required=false) String pickuppersonaltcontactno,
+            @RequestParam (value="pickuppersonrelationship", required=false) String pickuppersonrelationship,
 //            @RequestParam (value="idno", required=false) Integer idno,
 //            @RequestParam (value="todprgno", required=false) Long todprgno,
 //            @RequestParam (value="prekgprgno", required=false) Long prekgprgno,
@@ -180,7 +184,7 @@ public class AdmissionSchoolApiController {
         AdmissionSchool admissionplayschool = new AdmissionSchool();
         ApplicationSaleSchool appsale = new ApplicationSaleSchool(applno);
         SchoolStudentPersonalInformation ps_student_pers_info = new SchoolStudentPersonalInformation(registernumber);
-        SchoolStudentBaseInformation school_student_base_info = new SchoolStudentBaseInformation();
+        PlaySchoolStudentBaseInformation school_student_base_info = new PlaySchoolStudentBaseInformation();
         SchoolFeesEntryBase schoolfeesentrybaseinfo = new SchoolFeesEntryBase();
         SchoolBalanceFees schoolbalancefees = new SchoolBalanceFees();
        // SchoolProgramAdmissionNoGenerate psadmissionno = new SchoolProgramAdmissionNoGenerate();
@@ -283,6 +287,10 @@ public class AdmissionSchoolApiController {
         ps_student_pers_info.setAcademicyear(academicyear);
         ps_student_pers_info.setLoginuser(loginuser);
         ps_student_pers_info.setInstituteid(instituteid);
+        ps_student_pers_info.setPickuppersonname(pickuppersonname);
+        ps_student_pers_info.setPickuppersoncontactno(pickuppersoncontactno);
+        ps_student_pers_info.setPickuppersonaltcontactno(pickuppersonaltcontactno);
+        ps_student_pers_info.setPickuppersonrelationship(pickuppersonrelationship);
 
         schoolStudentPersonalInformationRepository.save(ps_student_pers_info);
 
@@ -294,11 +302,10 @@ public class AdmissionSchoolApiController {
                 .setStudentstatus(admissionstatus)
                 .setLoginuser(loginuser)
                 .setInstituteregisternumber(instituteregisternumber)
-                .setEmisno(emisno)
-                .setInstituteid(instituteid)
-                .setSchool_student_personal_regno(ps_student_pers_info);
+                .setInstituteid(instituteid);
+                //.setSchool_student_personal_regno(ps_student_pers_info);
 
-        schoolStudentBaseInformationRepository.save(school_student_base_info);
+        playSchoolStudentBaseInformationRepository.save(school_student_base_info);
 
         schoolfeesentrybaseinfo.setRegisternumber(registernumber)
                 .setInstituteregisternumber(instituteregisternumber)

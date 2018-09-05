@@ -4,6 +4,8 @@ import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.*;
+import com.sivserver.example.student.SchoolStudentBaseInformation;
+import com.sivserver.example.student.SchoolStudentBaseInformationRepository;
 import org.apache.commons.io.FilenameUtils;
 
 import com.sivserver.example.student.PlaySchoolStudentBaseInformation;
@@ -50,7 +52,10 @@ public class PlaySchoolPhotoGalleryApiController {
     @Autowired
     private PlaySchoolStudentBaseInformationRepository playSchoolStudentBaseInformationRepository;
 
-//    @Autowired
+    @Autowired
+    private SchoolStudentBaseInformationRepository schoolStudentBaseInformationRepository;
+
+    //    @Autowired
 //    private  playSchoolPhotoGalleryRepository;
 
     @RequestMapping(value="/all", method = RequestMethod.POST)
@@ -274,4 +279,34 @@ public class PlaySchoolPhotoGalleryApiController {
 //        System.out.println("Inside getApplicationDetail");
         return studentList;
     }
+
+
+// NEW CODE ADDED FOR SCHOOL STUDENT PHOTO UPLOAD STUDENT FETCH
+
+    @RequestMapping(method = RequestMethod.POST, value="/getSchoolStudentList")
+    public Iterable<SchoolStudentBaseInformation> getSchoolStudentLists(
+            @RequestParam(value ="program", required=false) String program,
+            @RequestParam (value="section", required=false) String section,
+            @RequestParam (value="academicyear", required=false) String academicyear,
+            @RequestParam (value="instituteid", required=false) Integer instituteid
+
+    ){
+
+
+//        StudentAttendanceHeaderEntryCheckPlaySchoolProjection playschoolstudentattendanceentrycheckDetail = studentAttendanceHeaderPlaySchoolRepository.findOneByStudentattendanceplayschoolcompoundkey(studattpscompkey);
+
+        Iterable<SchoolStudentBaseInformation> studentList = schoolStudentBaseInformationRepository.findAllByStandardstudyingAndSectionAndAcademicyearAndInstituteid(program, section, academicyear, instituteid);
+//        if(playschoolstudentattendanceentrycheckDetail==null){
+//            System.out.println("is null");
+//            studentList = playSchoolStudentBaseInformationRepository.findAllByStandardstudyingAndSectionAndAcademicyearAndStudentstatusAndInstituteid(standardstudying, section, academicyear, studentstatus, instituteid);
+//        }else{
+//            System.out.println("is not null");
+//        }
+//
+//
+//        System.out.println("Inside getApplicationDetail");
+        return studentList;
+    }
 }
+
+// NEW CODE ADDED FOR SCHOOL STUDENT PHOTO UPLOAD STUDENT FETCH
