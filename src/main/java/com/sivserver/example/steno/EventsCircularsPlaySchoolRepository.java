@@ -16,6 +16,8 @@ public interface EventsCircularsPlaySchoolRepository extends JpaRepository<Event
     EventsCircularsPlaySchoolProjection findOneByEventid(String eventid);
 
 //    Iterable<EventsCircularsPlaySchoolProjection> findAllByAcademicyearAndProgramOrProgramAndSectionOrSectionAndEventdate(String academicyear, String program, String alternativeProgram,  String section, String alternativeSection, Date Entrydate);
+
+      Iterable<EventsCircularsPlaySchool> findAllByEntrydateAndProgramAndSectionAndInstituteid(Date entrydate,String program,String section,Integer instituteid);
       Iterable<EventsCircularsPlaySchoolProjection> findAllByAcademicyearAndProgramInAndSectionInAndEventdateAfterAndInstituteidOrderByEventdateAsc(String academicyear, List<String> programs, List<String> sections, @DateTimeFormat(pattern="dd/MM/yyyy") Date Entrydate, Integer Instituteid);
 
 }

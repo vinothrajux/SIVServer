@@ -104,7 +104,6 @@ public class ChildsPickupPlaySchoolApiController {
         ChildPickUpJoinHibernate childPickUpJoinHibernate = new ChildPickUpJoinHibernate();
         List<PlaySchoolStudentBaseInformation> students;
         students=childPickUpJoinHibernate.jointable(standardstudying, section, academicyear, entrydate, instituteid);
-
         for (PlaySchoolStudentBaseInformation student : students){
             for(int i=0; i<student.getStudentAttendanceDetailPlaySchoolRegno().size() ; i++){
                 if (!(student.getStudentAttendanceDetailPlaySchoolRegno().get(i).getEntrydate().getTime() == entrydate.getTime())) {

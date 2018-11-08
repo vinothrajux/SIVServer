@@ -39,17 +39,17 @@ public class SchoolStudentBaseInformation {
     private Integer instituteid;
 
 
-    @OneToOne
-    @JoinColumn(name="student_base_registernumber",nullable=false,referencedColumnName = "registernumber")
-    private SchoolStudentPersonalInformation school_student_personal_regno;
+//    @OneToOne
+//    @JoinColumn(name="student_base_registernumber",nullable=false,referencedColumnName = "registernumber")
+//    private SchoolStudentPersonalInformation school_student_personal_regno;
 
-    @OneToMany
-    @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
-    private List<StudentAttendanceDetailPlaySchool> studentAttendanceDetailPlaySchoolRegno;
-
-    @OneToMany
-    @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
-    private List<ChildsPickupPlaySchool> childsPickupPlaySchoolRegno;
+//    @OneToMany
+//    @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
+//    private List<StudentAttendanceDetailPlaySchool> studentAttendanceDetailPlaySchoolRegno;
+//
+//    @OneToMany
+//    @JoinColumn(name="registernumber",referencedColumnName = "registernumber")
+//    private List<ChildsPickupPlaySchool> childsPickupPlaySchoolRegno;
 
 
     public SchoolStudentBaseInformation() {
@@ -149,28 +149,28 @@ public class SchoolStudentBaseInformation {
         return this;
     }
 
-    public SchoolStudentPersonalInformation getSchool_student_personal_regno() {
-        return school_student_personal_regno;
-    }
+//    public SchoolStudentPersonalInformation getSchool_student_personal_regno() {
+//        return school_student_personal_regno;
+//    }
+//
+//    public SchoolStudentBaseInformation setSchool_student_personal_regno(SchoolStudentPersonalInformation school_student_personal_regno) {
+//        this.school_student_personal_regno = school_student_personal_regno;
+//        return this;
+//    }
 
-    public SchoolStudentBaseInformation setSchool_student_personal_regno(SchoolStudentPersonalInformation school_student_personal_regno) {
-        this.school_student_personal_regno = school_student_personal_regno;
-        return this;
-    }
-
-    public List<StudentAttendanceDetailPlaySchool> getStudentAttendanceDetailPlaySchoolRegno() {
-        return studentAttendanceDetailPlaySchoolRegno;
-    }
-
-    public void setStudentAttendanceDetailPlaySchoolRegno(List<StudentAttendanceDetailPlaySchool> studentAttendanceDetailPlaySchoolRegno) {
-        this.studentAttendanceDetailPlaySchoolRegno = studentAttendanceDetailPlaySchoolRegno;
-    }
-
-    public List<ChildsPickupPlaySchool> getChildsPickupPlaySchoolRegno() {
-        return childsPickupPlaySchoolRegno;
-    }
-
-    public void setChildsPickupPlaySchoolRegno(List<ChildsPickupPlaySchool> childsPickupPlaySchoolRegno) {
-        this.childsPickupPlaySchoolRegno = childsPickupPlaySchoolRegno;
-    }
+//    public List<StudentAttendanceDetailPlaySchool> getStudentAttendanceDetailPlaySchoolRegno() {
+//        return studentAttendanceDetailPlaySchoolRegno;
+//    }
+//
+//    public void setStudentAttendanceDetailPlaySchoolRegno(List<StudentAttendanceDetailPlaySchool> studentAttendanceDetailPlaySchoolRegno) {
+//        this.studentAttendanceDetailPlaySchoolRegno = studentAttendanceDetailPlaySchoolRegno;
+//    }
+//
+//    public List<ChildsPickupPlaySchool> getChildsPickupPlaySchoolRegno() {
+//        return childsPickupPlaySchoolRegno;
+//    }
+//
+//    public void setChildsPickupPlaySchoolRegno(List<ChildsPickupPlaySchool> childsPickupPlaySchoolRegno) {
+//        this.childsPickupPlaySchoolRegno = childsPickupPlaySchoolRegno;
+//    }
 }

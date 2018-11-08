@@ -28,7 +28,10 @@ public class AdmissionSchoolApiController {
     private AdmissionSchoolRepository admissionSchoolRepository;
 
     @Autowired
-    private SchoolStudentPersonalInformationRepository schoolStudentPersonalInformationRepository;
+    private AdmissionPlaySchoolRepository admissionPlaySchoolRepository;
+
+    @Autowired
+    private PlaySchoolStudentPersonalInformationRepository playSchoolStudentPersonalInformationRepository;
 
     @Autowired
     private PlaySchoolStudentBaseInformationRepository playSchoolStudentBaseInformationRepository;
@@ -45,7 +48,7 @@ public class AdmissionSchoolApiController {
 
     @GetMapping(value="/all")
 
-    public List<AdmissionSchool> getAdmissionSchoolDetails() {return admissionSchoolRepository.findAll();}
+    public List<AdmissionPlaySchool> getAdmissionSchoolDetails() {return admissionPlaySchoolRepository.findAll();}
 
     public AdmissionSchoolApiController(AdmissionSchoolRepository admissionSchoolRepository)
     {
@@ -168,8 +171,8 @@ public class AdmissionSchoolApiController {
     ) {
 
         String registernumber = "";
-        AdmissionSchool admissionSchoolObj2 = new AdmissionSchool();
-        admissionSchoolObj2 = admissionSchoolRepository.findTopByInstituteidAndAcademicyearOrderByRegisternumberDesc(instituteid,academicyear);
+        AdmissionPlaySchool admissionSchoolObj2 = new AdmissionPlaySchool();
+        admissionSchoolObj2 = admissionPlaySchoolRepository.findTopByInstituteidAndAcademicyearOrderByRegisternumberDesc(instituteid,academicyear);
         if(admissionSchoolObj2 == null){
             DateFormat df = new SimpleDateFormat("yy"); // Just the year, with 2 digits
             String yearyy = df.format(Calendar.getInstance().getTime());
@@ -181,9 +184,9 @@ public class AdmissionSchoolApiController {
             registernumber =  regsisternumberInt.toString();
         }
 
-        AdmissionSchool admissionplayschool = new AdmissionSchool();
-        ApplicationSaleSchool appsale = new ApplicationSaleSchool(applno);
-        SchoolStudentPersonalInformation ps_student_pers_info = new SchoolStudentPersonalInformation(registernumber);
+        AdmissionPlaySchool admissionplayschool = new AdmissionPlaySchool();
+        ApplicationSalePlaySchool appsale = new ApplicationSalePlaySchool(applno);
+        PlaySchoolStudentPersonalInformation ps_student_pers_info = new PlaySchoolStudentPersonalInformation(registernumber);
         PlaySchoolStudentBaseInformation school_student_base_info = new PlaySchoolStudentBaseInformation();
         SchoolFeesEntryBase schoolfeesentrybaseinfo = new SchoolFeesEntryBase();
         SchoolBalanceFees schoolbalancefees = new SchoolBalanceFees();
@@ -204,7 +207,7 @@ public class AdmissionSchoolApiController {
                 .setInstituteid(instituteid)
                 .setAppsale(appsale);
 
-        admissionSchoolRepository.save(admissionplayschool);
+        admissionPlaySchoolRepository.save(admissionplayschool);
 
         String candidatename="";
         candidatename = candfirstname + ' ' + candmiddlename + ' ' + candlastname;
@@ -292,7 +295,7 @@ public class AdmissionSchoolApiController {
         ps_student_pers_info.setPickuppersonaltcontactno(pickuppersonaltcontactno);
         ps_student_pers_info.setPickuppersonrelationship(pickuppersonrelationship);
 
-        schoolStudentPersonalInformationRepository.save(ps_student_pers_info);
+        playSchoolStudentPersonalInformationRepository.save(ps_student_pers_info);
 
         school_student_base_info.setRegisternumber(registernumber)
                 .setCandidatename(candidatename)
@@ -307,45 +310,45 @@ public class AdmissionSchoolApiController {
 
         playSchoolStudentBaseInformationRepository.save(school_student_base_info);
 
-        schoolfeesentrybaseinfo.setRegisternumber(registernumber)
-                .setInstituteregisternumber(instituteregisternumber)
-                .setFacilityfees(facilityfees)
-                .setFacilityfeesduedate(facilityfeesduedate)
-                .setBooksnotebookfees(booksnotebookfees)
-                .setBooksnotebookfeesduedate(booksnotebookfeesduedate)
-                .setOthersfees(othersfees)
-                .setOthersfeesduedate(othersfeesduedate)
-                .setTuitionfeesmonthly(tuitionfeesmonthly)
-                .setTuitionfeesmonthlyduedate(tuitionfeesmonthlyduedate)
-                .setTuitionfeestermlyduedate(tuitionfeestermlyduedate)
-                .setTotalfees(totalfees)
-                .setTuitionfeesmethod(tuitionfeesmethod)
-                .setAcademicyear(academicyear)
-                .setLoginuser(loginuser)
-                .setInstituteid(instituteid)
-                .setSchool_student_personal_regno(ps_student_pers_info);
-
-        schoolFeesEntryBaseRepository.save(schoolfeesentrybaseinfo);
-
-        schoolbalancefees.setRegisternumber(registernumber)
-                .setInstituteregisternumber(instituteregisternumber)
-                .setFacilityfees(facilityfees)
-                .setFacilityfeesduedate(facilityfeesduedate)
-                .setBooksnotebookfees(booksnotebookfees)
-                .setBooksnotebookfeesduedate(booksnotebookfeesduedate)
-                .setOthersfees(othersfees)
-                .setOthersfeesduedate(othersfeesduedate)
-                .setTuitionfeesmonthly(tuitionfeesmonthly)
-                .setTuitionfeesmonthlyduedate(tuitionfeesmonthlyduedate)
-                .setTuitionfeestermlyduedate(tuitionfeestermlyduedate)
-                .setTotalfees(totalfees)
-                .setTuitionfeesmethod(tuitionfeesmethod)
-                .setAcademicyear(academicyear)
-                .setLoginuser(loginuser)
-                .setInstituteid(instituteid)
-                .setSchool_student_personal_regno(ps_student_pers_info);
-
-        schoolBalanceFeesRepository.save(schoolbalancefees);
+//        schoolfeesentrybaseinfo.setRegisternumber(registernumber)
+//                .setInstituteregisternumber(instituteregisternumber)
+//                .setFacilityfees(facilityfees)
+//                .setFacilityfeesduedate(facilityfeesduedate)
+//                .setBooksnotebookfees(booksnotebookfees)
+//                .setBooksnotebookfeesduedate(booksnotebookfeesduedate)
+//                .setOthersfees(othersfees)
+//                .setOthersfeesduedate(othersfeesduedate)
+//                .setTuitionfeesmonthly(tuitionfeesmonthly)
+//                .setTuitionfeesmonthlyduedate(tuitionfeesmonthlyduedate)
+//                .setTuitionfeestermlyduedate(tuitionfeestermlyduedate)
+//                .setTotalfees(totalfees)
+//                .setTuitionfeesmethod(tuitionfeesmethod)
+//                .setAcademicyear(academicyear)
+//                .setLoginuser(loginuser)
+//                .setInstituteid(instituteid)
+//                .setSchool_student_personal_regno(ps_student_pers_info);
+//
+//        schoolFeesEntryBaseRepository.save(schoolfeesentrybaseinfo);
+//
+//        schoolbalancefees.setRegisternumber(registernumber)
+//                .setInstituteregisternumber(instituteregisternumber)
+//                .setFacilityfees(facilityfees)
+//                .setFacilityfeesduedate(facilityfeesduedate)
+//                .setBooksnotebookfees(booksnotebookfees)
+//                .setBooksnotebookfeesduedate(booksnotebookfeesduedate)
+//                .setOthersfees(othersfees)
+//                .setOthersfeesduedate(othersfeesduedate)
+//                .setTuitionfeesmonthly(tuitionfeesmonthly)
+//                .setTuitionfeesmonthlyduedate(tuitionfeesmonthlyduedate)
+//                .setTuitionfeestermlyduedate(tuitionfeestermlyduedate)
+//                .setTotalfees(totalfees)
+//                .setTuitionfeesmethod(tuitionfeesmethod)
+//                .setAcademicyear(academicyear)
+//                .setLoginuser(loginuser)
+//                .setInstituteid(instituteid)
+//                .setSchool_student_personal_regno(ps_student_pers_info);
+//
+//        schoolBalanceFeesRepository.save(schoolbalancefees);
 
 //        psadmissionno.setIdno(idno);
 //        psadmissionno.setTodprgno(todprgno);
@@ -358,21 +361,21 @@ public class AdmissionSchoolApiController {
 
 
 
-        if (transport.equals("SCHOOL VAN")) {
-            pstransportfees.setRegisternumber(registernumber)
-                    .setTransport(transport)
-                    .setStage(transportstage)
-                    .setTransportfeesmethod(transportfeesmethod)
-                    .setTransportfees(transportfees)
-                    .setTransportduedate(transportduedate)
-                    .setAcademicyear(academicyear)
-                    .setLoginuser(loginuser)
-                    .setInstituteid(instituteid)
-                    .setPlay_school_student_personal_regno(ps_student_pers_info);
-
-            schoolTransportFeesEntryRepository.save(pstransportfees);
-
-        }
+//        if (transport.equals("SCHOOL VAN")) {
+//            pstransportfees.setRegisternumber(registernumber)
+//                    .setTransport(transport)
+//                    .setStage(transportstage)
+//                    .setTransportfeesmethod(transportfeesmethod)
+//                    .setTransportfees(transportfees)
+//                    .setTransportduedate(transportduedate)
+//                    .setAcademicyear(academicyear)
+//                    .setLoginuser(loginuser)
+//                    .setInstituteid(instituteid)
+//                    .setPlay_school_student_personal_regno(ps_student_pers_info);
+//
+//            schoolTransportFeesEntryRepository.save(pstransportfees);
+//
+//        }
         JSONObject resultObject = new JSONObject();
         try {
             resultObject.put("registernumber", registernumber);
@@ -384,8 +387,8 @@ public class AdmissionSchoolApiController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/getSchoolAdmissionDetail")
-    public AdmissionSchoolProjection getSchoolAdmissionDetail(@RequestParam (value ="applno") String applicationNumber) {
-        AdmissionSchoolProjection schooladmissionDetail = admissionSchoolRepository.findOneByApplno(applicationNumber);
+    public AdmissionPlaySchoolProjection getSchoolAdmissionDetail(@RequestParam (value ="applno") String applicationNumber) {
+        AdmissionPlaySchoolProjection schooladmissionDetail = admissionPlaySchoolRepository.findOneByApplno(applicationNumber);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
         System.out.println("Inside getSchoolAdmissionDetail");
         return schooladmissionDetail;

@@ -52,8 +52,8 @@ public class SchoolStudentBaseInformationApiController {
                 .setLoginuser(loginuser)
                 .setInstituteregisternumber(instituteregisternumber)
                 .setEmisno(emisno)
-                .setInstituteid(instituteid)
-                .setSchool_student_personal_regno(schoolstudentpersonalinfo);
+                .setInstituteid(instituteid);
+//                .setSchool_student_personal_regno(schoolstudentpersonalinfo);
 
 
         schoolStudentBaseInformationRepository.save(schoolstudentbaseinfo);

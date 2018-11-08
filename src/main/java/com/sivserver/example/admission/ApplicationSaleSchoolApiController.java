@@ -22,6 +22,9 @@ public class ApplicationSaleSchoolApiController {
 
     private ApplicationSaleSchoolRepository applicationSaleSchoolRepository;
 
+    @Autowired
+    private ApplicationSalePlaySchoolRepository applicationSalePlaySchoolRepository;
+
 
 //    @Autowired
 //    private SchoolApplicationNoGenerateRepository schoolApplicationNoGenerateRepository;
@@ -29,9 +32,12 @@ public class ApplicationSaleSchoolApiController {
     @Autowired
     private SchoolFeesSettingRepository schoolFeesSettingRepository;
 
+    @Autowired
+    private PlaySchoolSchoolFeesSettingRepository playSchoolSchoolFeesSettingRepository;
+
     @RequestMapping(value="/all")
 
-    public List<ApplicationSaleSchool> getApplicationSaleSchoolDetails() {return applicationSaleSchoolRepository.findAll();}
+    public List<ApplicationSalePlaySchool> getApplicationSaleSchoolDetails() {return applicationSalePlaySchoolRepository.findAll();}
 
     public ApplicationSaleSchoolApiController(ApplicationSaleSchoolRepository applicationSaleSchoolRepository)
     {
@@ -78,7 +84,7 @@ public class ApplicationSaleSchoolApiController {
 
 
     ) {
-        ApplicationSaleSchool appsaleschool = new ApplicationSaleSchool();
+        ApplicationSalePlaySchool appsaleschool = new ApplicationSalePlaySchool();
 //        SchoolApplicationNoGenerate appnogenerate = new SchoolApplicationNoGenerate();
         appsaleschool.setApplno(applno);
 //        appsaleplayschool.setCategory(category);
@@ -114,7 +120,7 @@ public class ApplicationSaleSchoolApiController {
         appsaleschool.setInstituteid(instituteid);
 
 
-        applicationSaleSchoolRepository.save(appsaleschool);
+        applicationSalePlaySchoolRepository.save(appsaleschool);
 
 //        appnogenerate.setIdno(idno);
 ////        appnogenerate.setEnquiryno(enquiryno);
@@ -123,8 +129,8 @@ public class ApplicationSaleSchoolApiController {
     }
     // THIS API CAN BE USED TO FETCH THE APPLICATION DETAIL
     @RequestMapping(method = RequestMethod.POST, value="/getSchoolApplcationDetail")
-    public ApplicationSaleSchoolProjection getPlaySchoolApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
-        ApplicationSaleSchoolProjection schoolapplicationDetail = applicationSaleSchoolRepository.findOneByApplno(applicationNumber);
+    public ApplicationSalePlaySchoolProjection getPlaySchoolApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
+        ApplicationSalePlaySchoolProjection schoolapplicationDetail = applicationSalePlaySchoolRepository.findOneByApplno(applicationNumber);
 
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
         System.out.println("Inside getSchoolApplcationDetail");
@@ -136,18 +142,18 @@ public class ApplicationSaleSchoolApiController {
     @RequestMapping(method = RequestMethod.POST, value="/getApplicationFeesDetails")
     public List<Object> getStudentProfileInformationDetail(@RequestParam (value ="applno") String applicationNumber, @RequestParam (value ="instituteid") Integer userinstituteid) {
         /* fetching data from table1*/
-        ApplicationSaleSchoolProjection schoolapplicationDetail = applicationSaleSchoolRepository.findOneByApplno(applicationNumber);
-        String academicyear = schoolapplicationDetail.getAcademicyear();
-        Integer instituteid = schoolapplicationDetail.getInstituteid();
-        String program = schoolapplicationDetail.getAppfor();
+        ApplicationSalePlaySchoolProjection playschoolapplicationDetail = applicationSalePlaySchoolRepository.findOneByApplno(applicationNumber);
+        String academicyear = playschoolapplicationDetail.getAcademicyear();
+        Integer instituteid = playschoolapplicationDetail.getInstituteid();
+        String program = playschoolapplicationDetail.getAppfor();
         if (instituteid == userinstituteid){
 
         /* fetching data from table2*/
-            Management_School_Fees_Compound_Key mgmtsfeescompkey = new Management_School_Fees_Compound_Key(program,academicyear,instituteid);
-            SchoolFeesSettingProjection schoolfeesDetail = schoolFeesSettingRepository.findOneByManagementschoolfeescompoundkey(mgmtsfeescompkey);
+            Management_Playschool_Fees_Compound_Key mgmtpsfeescompkey = new Management_Playschool_Fees_Compound_Key(program,academicyear,instituteid);
+            PlaySchoolSchoolFeesSettingProjection playschoolfeesDetail = playSchoolSchoolFeesSettingRepository.findOneByManagementplayschoolfeescompoundkey(mgmtpsfeescompkey);
             List<Object> list = new ArrayList<Object>();
-            list.add(schoolapplicationDetail);
-            list.add(schoolfeesDetail);
+            list.add(playschoolapplicationDetail);
+            list.add(playschoolfeesDetail);
 
             return list;
         }else {

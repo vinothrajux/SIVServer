@@ -135,6 +135,47 @@ public class PlaySchoolStudentPersonalInformation {
 
     private Integer instituteid;
 
+    private String emisno;
+
+    private String bloodgroup;
+
+    private String community;
+
+    private String caste;
+
+    private Double fathermonthlyincome;
+
+    private Double mothersmonthlyincome;
+
+    private String lastschoolname;
+
+    private String lastschoolclass;
+
+    private String lastschoolclassqualified;
+
+    private String lastschooltcattached;
+
+    private String lastschoolmedium;
+
+    private String lastschoolyearofstudy;
+
+    private String classintoadmission;
+
+    private String mothertoungue;
+
+    private String aadharno;
+
+    private String extracurricular;
+
+    private String achievements;
+
+    private String identificationmarks;
+
+    private String siblingclass;
+
+    private String siblingsection;
+
+
     public PlaySchoolStudentPersonalInformation() {
     }
 
@@ -604,5 +645,165 @@ public class PlaySchoolStudentPersonalInformation {
 
     public void setInstituteid(Integer instituteid) {
         this.instituteid = instituteid;
+    }
+
+    public String getEmisno() {
+        return emisno;
+    }
+
+    public void setEmisno(String emisno) {
+        this.emisno = emisno;
+    }
+
+    public String getBloodgroup() {
+        return bloodgroup;
+    }
+
+    public void setBloodgroup(String bloodgroup) {
+        this.bloodgroup = bloodgroup;
+    }
+
+    public String getCommunity() {
+        return community;
+    }
+
+    public void setCommunity(String community) {
+        this.community = community;
+    }
+
+    public String getCaste() {
+        return caste;
+    }
+
+    public void setCaste(String caste) {
+        this.caste = caste;
+    }
+
+    public Double getFathermonthlyincome() {
+        return fathermonthlyincome;
+    }
+
+    public void setFathermonthlyincome(Double fathermonthlyincome) {
+        this.fathermonthlyincome = fathermonthlyincome;
+    }
+
+    public Double getMothersmonthlyincome() {
+        return mothersmonthlyincome;
+    }
+
+    public void setMothersmonthlyincome(Double mothersmonthlyincome) {
+        this.mothersmonthlyincome = mothersmonthlyincome;
+    }
+
+    public String getLastschoolname() {
+        return lastschoolname;
+    }
+
+    public void setLastschoolname(String lastschoolname) {
+        this.lastschoolname = lastschoolname;
+    }
+
+    public String getLastschoolclass() {
+        return lastschoolclass;
+    }
+
+    public void setLastschoolclass(String lastschoolclass) {
+        this.lastschoolclass = lastschoolclass;
+    }
+
+    public String getLastschoolclassqualified() {
+        return lastschoolclassqualified;
+    }
+
+    public void setLastschoolclassqualified(String lastschoolclassqualified) {
+        this.lastschoolclassqualified = lastschoolclassqualified;
+    }
+
+    public String getLastschooltcattached() {
+        return lastschooltcattached;
+    }
+
+    public void setLastschooltcattached(String lastschooltcattached) {
+        this.lastschooltcattached = lastschooltcattached;
+    }
+
+    public String getLastschoolmedium() {
+        return lastschoolmedium;
+    }
+
+    public void setLastschoolmedium(String lastschoolmedium) {
+        this.lastschoolmedium = lastschoolmedium;
+    }
+
+    public String getLastschoolyearofstudy() {
+        return lastschoolyearofstudy;
+    }
+
+    public void setLastschoolyearofstudy(String lastschoolyearofstudy) {
+        this.lastschoolyearofstudy = lastschoolyearofstudy;
+    }
+
+    public String getClassintoadmission() {
+        return classintoadmission;
+    }
+
+    public void setClassintoadmission(String classintoadmission) {
+        this.classintoadmission = classintoadmission;
+    }
+
+    public String getMothertoungue() {
+        return mothertoungue;
+    }
+
+    public void setMothertoungue(String mothertoungue) {
+        this.mothertoungue = mothertoungue;
+    }
+
+    public String getAadharno() {
+        return aadharno;
+    }
+
+    public void setAadharno(String aadharno) {
+        this.aadharno = aadharno;
+    }
+
+    public String getExtracurricular() {
+        return extracurricular;
+    }
+
+    public void setExtracurricular(String extracurricular) {
+        this.extracurricular = extracurricular;
+    }
+
+    public String getAchievements() {
+        return achievements;
+    }
+
+    public void setAchievements(String achievements) {
+        this.achievements = achievements;
+    }
+
+    public String getIdentificationmarks() {
+        return identificationmarks;
+    }
+
+    public void setIdentificationmarks(String identificationmarks) {
+        this.identificationmarks = identificationmarks;
+    }
+
+    public String getSiblingclass() {
+        return siblingclass;
+    }
+
+    public void setSiblingclass(String siblingclass) {
+        this.siblingclass = siblingclass;
+    }
+
+    public String getSiblingsection() {
+        return siblingsection;
+    }
+
+    public void setSiblingsection(String siblingsection) {
+        this.siblingsection = siblingsection;
     }
 }

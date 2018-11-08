@@ -104,43 +104,6 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
         return studentList;
     }
 
-    // NEW CODE ADDED FOR SCHOOL ATTENDANCE FETCH FOR WEB APP SCREEN
-
-    @RequestMapping(method = RequestMethod.POST, value="/getSchoolStudentListAttendance")
-    public Iterable<SchoolStudentBaseInformation> getSchoolStudentLists(
-            @RequestParam(value ="standardstudying", required=false) String standardstudying,
-            @RequestParam (value="section", required=false) String section,
-            @RequestParam (value="academicyear", required=false) String academicyear,
-            @RequestParam (value="studentstatus", required=false) String studentstatus,
-            @RequestParam (value="instituteid", required=false) Integer instituteid,
-            @RequestParam (value="entrydate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate
-
-    ){
-        System.out.println("branch:"+standardstudying);
-        System.out.println("batch:"+section);
-        System.out.println("academicyear:"+academicyear);
-        System.out.println("branchcode:"+studentstatus);
-        //studentAttendanceHeaderPlaySchoolRepository.find
-        Student_Attendance_Play_School_Compound_Key studattpscompkey = new Student_Attendance_Play_School_Compound_Key(entrydate,standardstudying,section,academicyear,instituteid);
-        StudentAttendanceHeaderEntryCheckPlaySchoolProjection playschoolstudentattendanceentrycheckDetail = studentAttendanceHeaderPlaySchoolRepository.findOneByStudentattendanceplayschoolcompoundkey(studattpscompkey);
-        //        Iterable<StudentBaseInformation> studentList = studentbaseinformationRepository.findByAcademicyearAndBranchcode(academicyear, branchcode);
-        //Iterable<PlaySchoolStudentBaseInformation> studentList = playSchoolStudentBaseInformationRepository.findAllByStandardstudyingAndSectionAndAcademicyearAndStudentstatus(standardstudying, section, academicyear, studentstatus);
-        Iterable<SchoolStudentBaseInformation> studentList = null;
-        if(playschoolstudentattendanceentrycheckDetail==null){
-            System.out.println("is null");
-            studentList = schoolStudentBaseInformationRepository.findAllByStandardstudyingAndSectionAndAcademicyearAndStudentstatusAndInstituteid(standardstudying, section, academicyear, studentstatus, instituteid);
-        }else{
-            System.out.println("is not null");
-        }
-
-
-        System.out.println("Inside getApplicationDetail");
-        return studentList;
-    }
-
-
-
-    // NEW CODE ADDED FOR SCHOOL ATTENDANCE FETCH FOR WEB APP SCREEN
 
     @RequestMapping(method = RequestMethod.POST, value="/setStudentListAttendance")
     public void getStudentLists(
@@ -267,4 +230,99 @@ public class StudentAttendanceDetaiPlaySchoolApiController {
         return playschoolindstudentattendanceDetail;
     }
 
+// NEWLY ADDED CODE FOR ATTENDANCE PRESENT REPORT CHECK AND PRINT
+
+    @RequestMapping(method = RequestMethod.POST, value="/getStudentPresentList")
+    public List<PlaySchoolStudentBaseInformation> getStudentPresentLists(
+            @RequestParam(value ="standardstudying", required=false) String standardstudying,
+            @RequestParam (value="section", required=false) String section,
+            @RequestParam (value="academicyear", required=false) String academicyear,
+            @RequestParam (value="studentstatus", required=false) String studentstatus,
+            @RequestParam (value="instituteid", required=false) Integer instituteid,
+            @RequestParam (value="entrydate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate
+
+    ){
+        StudentAttendanceJoinHibernate childPickUpJoinHibernate = new StudentAttendanceJoinHibernate();
+        List<PlaySchoolStudentBaseInformation> students;
+        students=childPickUpJoinHibernate.jointable(standardstudying, section, academicyear, entrydate, instituteid);
+
+        for (PlaySchoolStudentBaseInformation student : students){
+            for(int i=0; i<student.getStudentAttendanceDetailPlaySchoolRegno().size() ; i++){
+                if (!(student.getStudentAttendanceDetailPlaySchoolRegno().get(i).getEntrydate().getTime() == entrydate.getTime())) {
+                    student.getStudentAttendanceDetailPlaySchoolRegno().remove(i);
+                    i--;
+                }
+            }
+        }
+        List<Integer> removeindex=new ArrayList<>();
+        int in=0;
+        for (PlaySchoolStudentBaseInformation student : students){
+            if(student.getStudentAttendanceDetailPlaySchoolRegno().get(0).getStatus().equals("0")){
+                removeindex.add(in);
+            }
+            in++;
+        }
+        if(removeindex.size()!=0) {
+            for (int j = (removeindex.size() - 1); j >= 0; j--) {
+                int position = removeindex.get(j);
+                students.remove(position);
+            }
+        }
+
+        System.out.println("Inside getApplicationDetail");
+        return students;
+    }
+
+// NEWLY ADDED CODE FOR ATTENDANCE ABSENT REPORT CHECK AND PRINT
+
+    @RequestMapping(method = RequestMethod.POST, value="/getStudentDailyAttendanceStatusList")
+    public List<PlaySchoolStudentBaseInformation> getStudentAbsentLists(
+            @RequestParam(value ="standardstudying", required=false) String standardstudying,
+            @RequestParam (value="section", required=false) String section,
+            @RequestParam (value="academicyear", required=false) String academicyear,
+            @RequestParam (value="studentstatus", required=false) String studentstatus,
+            @RequestParam (value="attendanceid", required=false) String attendanceid,
+            @RequestParam (value="instituteid", required=false) Integer instituteid,
+            @RequestParam (value="entrydate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate
+
+    ){
+        StudentAttendanceJoinHibernate childPickUpJoinHibernate = new StudentAttendanceJoinHibernate();
+        List<PlaySchoolStudentBaseInformation> students;
+        students=childPickUpJoinHibernate.jointable(standardstudying, section, academicyear, entrydate, instituteid);
+        System.out.println("=====================================================");
+        System.out.println (students.size());
+        System.out.println (standardstudying);
+        System.out.println (section);
+        System.out.println (academicyear);
+        System.out.println (instituteid);
+        System.out.println (entrydate);
+
+        for (PlaySchoolStudentBaseInformation student : students){
+            for(int i=0; i<student.getStudentAttendanceDetailPlaySchoolRegno().size() ; i++){
+                if (!(student.getStudentAttendanceDetailPlaySchoolRegno().get(i).getEntrydate().getTime() == entrydate.getTime())) {
+                    student.getStudentAttendanceDetailPlaySchoolRegno().remove(i);
+                    i--;
+                }
+            }
+        }
+        List<Integer> removeindex=new ArrayList<>();
+        int in=0;
+        for (PlaySchoolStudentBaseInformation student : students){
+            if(student.getStudentAttendanceDetailPlaySchoolRegno().get(0).getStatus().equals(attendanceid)){
+                removeindex.add(in);
+            }
+            in++;
+        }
+        if(removeindex.size()!=0) {
+            for (int j = (removeindex.size() - 1); j >= 0; j--) {
+                int position = removeindex.get(j);
+                students.remove(position);
+            }
+        }
+
+        System.out.println("Inside getApplicationDetail");
+        return students;
+    }
+
 }
+

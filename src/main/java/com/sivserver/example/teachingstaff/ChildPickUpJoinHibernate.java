@@ -37,3 +37,4 @@ public class ChildPickUpJoinHibernate {
         return students;
     }
 }
+

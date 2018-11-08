@@ -127,7 +127,7 @@ public class PlaySchoolPhotoGalleryApiController {
     public @ResponseBody String playschooluploadPhotos(
 //            @RequestParam(value = "photouploadplayschooldata", required = false) String photouploadplayschooldata,
 //            @RequestParam(value = "students", required = false) String students,
-            @RequestParam("files") MultipartFile multipartFiles,
+            @RequestParam(value = "files", required = false) MultipartFile multipartFiles,
             @RequestParam("program") String program,
             @RequestParam("section") String section,
             @RequestParam("academicyear") String academicyear,
@@ -137,7 +137,7 @@ public class PlaySchoolPhotoGalleryApiController {
             @RequestParam("uploadid") String uploadid
 
 
-    ) throws IOException{
+    ) {
         SivUtils sivUtils = new SivUtils();
 
         java.sql.Timestamp timestamp = new java.sql.Timestamp(System.currentTimeMillis());
@@ -156,8 +156,11 @@ public class PlaySchoolPhotoGalleryApiController {
             System.out.println(s3object.getObjectContent().getHttpRequest().getURI().toString());
 
 
+
             try {
+                System.out.println("+++++++++++++");
                 JSONArray studentListArrayObj = new JSONArray(studentlist);
+                System.out.println("---------------");
 //            String entrydate=pickupdetailsattributesObj.getString("entrydate");
 //            Date pickupdate=null;
 //            try {
@@ -192,42 +195,6 @@ public class PlaySchoolPhotoGalleryApiController {
                         playSchoolPhotoGallery.setImagetitle(imagetitle);
                         playSchoolPhotoGallery.setUploaddate(todayWithZeroTime);
                         playSchoolPhotoGalleryRepository.save(playSchoolPhotoGallery);
-
-//                    System.out.println("Id:"+playSchoolPhotoGallery.getPhotoid());
-//                    playSchoolPhotoGallery.setPhotoid(playSchoolPhotoGallery.getPhotoid());
-//                    imagepath = sivUtils.getServerPhotoGalleryPath()+playSchoolPhotoGallery.getPhotoid()+"."+FilenameUtils.getExtension(multipartFiles.getOriginalFilename());
-
-
-//        try {
-//            System.out.println("size:"+multipartFiles.getBytes());
-//            System.out.println("size:"+multipartFiles.getOriginalFilename());
-//            if(!multipartFiles.isEmpty()){
-//                String filename = playSchoolPhotoGallery.getPhotoid()+"."+FilenameUtils.getExtension(multipartFiles.getOriginalFilename());
-//                String directory = sivUtils.getServerUploadPath();
-//
-//                System.out.println("size:"+Paths.get(directory, filename).toString());
-//                String filepath = Paths.get(directory, filename).toString();
-//
-//                // Save the file locally
-//                BufferedOutputStream stream =
-//                        new BufferedOutputStream(new FileOutputStream(new File(filepath)));
-//                stream.write(multipartFiles.getBytes());
-//                stream.close();
-//
-////                AmazonS3 s3Client = new AmazonS3Client();
-////                    s3Client.putObject(new PutObjectRequest("siv.gbcorp.in", "images/uploaded/", multipartFiles))
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
-
-
-
-
-
-
-
                     }
 
                 }

@@ -4,6 +4,7 @@ import com.sivserver.example.admission.ApplicationSaleProjection;
 import com.sivserver.example.student.PlaySchoolStudentBaseInformationProjection;
 import com.sivserver.example.student.PlaySchoolStudentBaseInformationRepository;
 import com.sivserver.example.teachingstaff.PlaySchoolHomeWorkIdGenerate;
+import com.sivserver.example.teachingstaff.StudentHomeWorkPlaySchool;
 import com.sivserver.example.teachingstaff.StudentHomeWorkPlaySchoolProjection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -148,5 +149,82 @@ public class EventsCircularsPlaySchoolApiController {
         return playschoolstudentEventCircularDetail;
     }
 
+
+
+//    @RequestMapping(method = RequestMethod.POST, value="/eventslist")
+//    public Iterable<EventsCircularsPlaySchool> studentEventsDetail(
+//
+//            @RequestParam (value="entrydate", required=false) Date entrydate,
+//            @RequestParam(value="program", required=false) String program,
+//            @RequestParam (value="section", required=false) String section,
+//            @RequestParam (value="instituteid", required=false) Integer instituteid
+//
+//    ) {
+//        System.out.println("entrydate" + entrydate);
+//        System.out.println("program" + program);
+//        System.out.println("section" + section);
+//        System.out.println("instiuteid" + instituteid);
+//
+//        LocalDateTime now = LocalDateTime.now();
+//        int year = now.getYear();
+//        int month = now.getMonthValue();
+//        int day = now.getDayOfMonth();
+//        String curDate= year + "-"+month+"-"+day+ " 00:00:00";
+//        Date date1;
+//        java.sql.Timestamp ts = java.sql.Timestamp.valueOf( curDate ) ;
+//
+//        Iterable<EventsCircularsPlaySchool> studentList = eventsCircularsPlaySchoolRepository.findAllByEntrydateAndProgramAndSectionAndInstituteid(ts,program,section,instituteid);
+//        return studentList;
+//    }
+
+
+    @RequestMapping(method = RequestMethod.POST, value="/eventslist")
+    public Iterable<EventsCircularsPlaySchool> studentEventsDetail(
+
+            @RequestParam (value="entrydate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate,
+            @RequestParam(value="program", required=false) String program,
+            @RequestParam (value="section", required=false) String section,
+            @RequestParam (value="instituteid", required=false) Integer instituteid,
+            @RequestParam (value="currentdatestatus", required=false) Boolean currentdatestatus
+
+    ) {
+        System.out.println("entrydate" + entrydate);
+        System.out.println("program" + program);
+        System.out.println("section" + section);
+        System.out.println("instiuteid" + instituteid);
+
+        LocalDateTime now = LocalDateTime.now();
+        int year = now.getYear();
+        int month = now.getMonthValue();
+        int day = now.getDayOfMonth();
+        String curDate= year + "-"+month+"-"+day+ " 00:00:00";
+        Date date1;
+
+        Iterable<EventsCircularsPlaySchool> playschoolstudentHomeWorkDetail = null;
+        try {
+            date1=new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(curDate);
+
+
+            java.sql.Timestamp ts = java.sql.Timestamp.valueOf( curDate ) ;
+            System.out.println("Inside getEVENT LIST Detail");
+            //System.out.println(academicyear);
+            System.out.println(program);
+            System.out.println(section);
+            System.out.println(ts);
+            if(currentdatestatus){
+                playschoolstudentHomeWorkDetail = eventsCircularsPlaySchoolRepository.findAllByEntrydateAndProgramAndSectionAndInstituteid(ts,program,section,instituteid);
+            }else{
+                playschoolstudentHomeWorkDetail = eventsCircularsPlaySchoolRepository.findAllByEntrydateAndProgramAndSectionAndInstituteid(entrydate,program,section,instituteid);
+            }
+//        playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByAcademicyearAndProgramAndSectionAndEntrydate(academicyear,program,section,ts);
+
+            System.out.println(playschoolstudentHomeWorkDetail);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+//        System.out.println("Inside getStudentHomeWorkPlaySchoolDetail");
+        return playschoolstudentHomeWorkDetail;
+    }
 
 }

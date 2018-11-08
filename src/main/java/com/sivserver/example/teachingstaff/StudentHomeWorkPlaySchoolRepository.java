@@ -10,5 +10,8 @@ import java.util.Date;
 public interface StudentHomeWorkPlaySchoolRepository extends JpaRepository<StudentHomeWorkPlaySchool, String> {
 StudentHomeWorkPlaySchool findByHomeworkid(String homeworkid);
 StudentHomeWorkPlaySchoolProjection findOneByHomeworkid(String homeworkid);
+
+Iterable<StudentHomeWorkPlaySchool> findAllByEntrydateAndProgramAndSectionAndInstituteid(Date entrydate, String program, String section, Integer instituteid);
+
 Iterable<StudentHomeWorkPlaySchoolProjection> findAllByAcademicyearAndProgramAndSectionAndEntrydateAndInstituteid(String academicyear, String program, String section, Date Entrydate, Integer instituteid);
 }

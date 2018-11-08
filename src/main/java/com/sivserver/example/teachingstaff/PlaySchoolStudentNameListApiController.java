@@ -16,11 +16,11 @@ import static com.sivserver.example.utils.SivUtils.crossoriginurl;
  */
 @RestController
 @CrossOrigin(origins = crossoriginurl)
-@RequestMapping("/api/v1/playschoolstudentnamelist")
-public class PlaySchoolStudentNameListApiController extends WebMvcConfigurerAdapter {
-    @Autowired
-    PlaySchoolStudentBaseInformationRepository playSchoolStudentBaseInformationRepository;
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping("/api/v1/playschoolstudentnamelist")
+    public class PlaySchoolStudentNameListApiController extends WebMvcConfigurerAdapter {
+        @Autowired
+        PlaySchoolStudentBaseInformationRepository playSchoolStudentBaseInformationRepository;
+        @RequestMapping(method = RequestMethod.POST)
     public Iterable<PlaySchoolStudentBaseInformation> studentAttendanceDetail(
             @RequestParam (value="program", required=false) String program,
             @RequestParam (value="section", required=false) String section,

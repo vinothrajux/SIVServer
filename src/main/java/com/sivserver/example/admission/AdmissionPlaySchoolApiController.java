@@ -146,7 +146,30 @@ public class AdmissionPlaySchoolApiController {
 //            @RequestParam (value="kgoneprgno", required=false) Long kgoneprgno,
 //            @RequestParam (value="kgtwoprgno", required=false) Long kgtwoprgno,
 //            @RequestParam (value="waitlistno", required=false) Long waitlistno,
-            @RequestParam (value="instituteid", required=false) Integer instituteid
+            @RequestParam (value="instituteid", required=false) Integer instituteid,
+            @RequestParam (value="emisno", required=false) String emisno,
+
+            @RequestParam (value="bloodgroup", required=false) String bloodgroup,
+            @RequestParam (value="community", required=false) String community,
+            @RequestParam (value="caste", required=false) String caste,
+            @RequestParam (value="fathermonthlyincome", required=false) Double fathermonthlyincome,
+            @RequestParam (value="mothersmonthlyincome", required=false) Double mothersmonthlyincome,
+            @RequestParam (value="lastschoolname", required=false) String lastschoolname,
+            @RequestParam (value="lastschoolclass", required=false) String lastschoolclass,
+            @RequestParam (value="lastschoolclassqualified", required=false) String lastschoolclassqualified,
+            @RequestParam (value="lastschooltcattached", required=false) String lastschooltcattached,
+            @RequestParam (value="lastschoolmedium", required=false) String lastschoolmedium,
+            @RequestParam (value="lastschoolyearofstudy", required=false) String lastschoolyearofstudy,
+            @RequestParam (value="classintoadmission", required=false) String classintoadmission,
+            @RequestParam (value="mothertoungue", required=false) String mothertoungue,
+            @RequestParam (value="aadharno", required=false) String aadharno,
+            @RequestParam (value="extracurricular", required=false) String extracurricular,
+            @RequestParam (value="achievements", required=false) String achievements,
+            @RequestParam (value="identificationmarks", required=false) String identificationmarks,
+            @RequestParam (value="siblingclass", required=false) String siblingclass,
+            @RequestParam (value="siblingsection", required=false) String siblingsection
+
+
 
 
     ) {
@@ -249,6 +272,27 @@ public class AdmissionPlaySchoolApiController {
         ps_student_pers_info.setAcademicyear(academicyear);
         ps_student_pers_info.setLoginuser(loginuser);
         ps_student_pers_info.setInstituteid(instituteid);
+
+        ps_student_pers_info.setEmisno(emisno);
+        ps_student_pers_info.setBloodgroup(bloodgroup);
+        ps_student_pers_info.setCommunity(community);
+        ps_student_pers_info.setCaste(caste);
+        ps_student_pers_info.setFathermonthlyincome(fathermonthlyincome);
+        ps_student_pers_info.setMothersmonthlyincome(mothersmonthlyincome);
+        ps_student_pers_info.setLastschoolname(lastschoolname);
+        ps_student_pers_info.setLastschoolclass(lastschoolclass);
+        ps_student_pers_info.setLastschoolclassqualified(lastschoolclassqualified);
+        ps_student_pers_info.setLastschooltcattached(lastschooltcattached);
+        ps_student_pers_info.setLastschoolmedium(lastschoolmedium);
+        ps_student_pers_info.setLastschoolyearofstudy(lastschoolyearofstudy);
+        ps_student_pers_info.setClassintoadmission(classintoadmission);
+        ps_student_pers_info.setMothertoungue(mothertoungue);
+        ps_student_pers_info.setAadharno(aadharno);
+        ps_student_pers_info.setExtracurricular(extracurricular);
+        ps_student_pers_info.setAchievements(achievements);
+        ps_student_pers_info.setIdentificationmarks(identificationmarks);
+        ps_student_pers_info.setSiblingclass(siblingclass);
+        ps_student_pers_info.setSiblingsection(siblingsection);
 
         playSchoolStudentPersonalInformationRepository.save(ps_student_pers_info);
 

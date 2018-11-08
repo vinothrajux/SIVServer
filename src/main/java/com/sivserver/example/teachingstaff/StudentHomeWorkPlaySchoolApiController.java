@@ -128,5 +128,63 @@ public class StudentHomeWorkPlaySchoolApiController {
 //        System.out.println("Inside getStudentHomeWorkPlaySchoolDetail");
         return playschoolstudentHomeWorkDetail;
     }
+
+    @RequestMapping(method = RequestMethod.POST, value="/homeworKlist")
+    public Iterable<StudentHomeWorkPlaySchool> studentHomeWorkDetail(
+
+            @RequestParam (value="entrydate", required=false) @DateTimeFormat(pattern="dd/MM/yyyy") Date entrydate,
+            @RequestParam(value="program", required=false) String program,
+            @RequestParam (value="section", required=false) String section,
+            @RequestParam (value="instituteid", required=false) Integer instituteid,
+            @RequestParam (value="currentdatestatus", required=false) Boolean currentdatestatus
+
+    ) {
+        System.out.println("entrydate" + entrydate);
+        System.out.println("program" + program);
+        System.out.println("section" + section);
+        System.out.println("instiuteid" + instituteid);
+
+        LocalDateTime now = LocalDateTime.now();
+        int year = now.getYear();
+        int month = now.getMonthValue();
+        int day = now.getDayOfMonth();
+        String curDate= year + "-"+month+"-"+day+ " 00:00:00";
+        Date date1;
+
+        Iterable<StudentHomeWorkPlaySchool> playschoolstudentHomeWorkDetail = null;
+        try {
+            date1=new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(curDate);
+
+
+            java.sql.Timestamp ts = java.sql.Timestamp.valueOf( curDate ) ;
+            System.out.println("Inside getStudentHomeWorkPlaySchoolDetail");
+            //System.out.println(academicyear);
+            System.out.println(program);
+            System.out.println(section);
+            System.out.println(ts);
+            if(currentdatestatus){
+                playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByEntrydateAndProgramAndSectionAndInstituteid(ts,program,section,instituteid);
+            }else{
+                playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByEntrydateAndProgramAndSectionAndInstituteid(entrydate,program,section,instituteid);
+            }
+//        playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByAcademicyearAndProgramAndSectionAndEntrydate(academicyear,program,section,ts);
+
+            System.out.println(playschoolstudentHomeWorkDetail);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+//        //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
+//        System.out.println("Inside getStudentHomeWorkPlaySchoolDetail");
+        return playschoolstudentHomeWorkDetail;
+    }
+
+
+
+//        java.sql.Timestamp ts = java.sql.Timestamp.valueOf( curDate ) ;
+//
+//        Iterable<StudentHomeWorkPlaySchool> studentList = studentHomeWorkPlaySchoolRepository.findAllByEntrydateAndProgramAndSectionAndInstituteid(ts,program,section,instituteid);
+//        return studentList;
+//    }
+
 }
 

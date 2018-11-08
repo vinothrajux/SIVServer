@@ -53,6 +53,8 @@ public class UserApiController extends WebMvcConfigurerAdapter {
 
               LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
               Integer instituteidnum = loginUserDetail.getInstituteid();
+              System.out.println("instituteid:");
+              System.out.println(instituteidnum);
               InstituteDetails instituteDetails = instituteDetailsRepository.findByInstituteid(instituteidnum);
               Map<String, Object> returnobj = new HashMap<>();
               returnobj.put("firstName",loginUserDetail.getFirstName());

@@ -65,4 +65,5 @@ public interface PlaySchoolStudentPersonalInformationProjection {
     String getAcademicyear();
     Integer getInstituteid();
 
+
 }
