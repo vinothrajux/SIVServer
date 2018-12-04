@@ -91,7 +91,6 @@ public class AdmissionCounsellingApiController {
     public ApplicationSaleProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
         ApplicationSaleProjection applicationDetail = applicationSaleRepository.findOneByApplno(applicationNumber);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getApplicationDetail");
         return applicationDetail;
 
     }

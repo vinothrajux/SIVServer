@@ -129,7 +129,7 @@ public class ApplicationSalePlaySchoolApiController {
         ApplicationSalePlaySchoolProjection playschoolapplicationDetail = applicationSalePlaySchoolRepository.findOneByApplno(applicationNumber);
 
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getPlaySchoolApplcationDetail");
+//        System.out.println("Inside getPlaySchoolApplcationDetail");
         return playschoolapplicationDetail;
     }
 

@@ -78,7 +78,7 @@ public class StudentHostelApiController   {
     public StudentHostel getStudentHostelDetail(@RequestParam(value = "regno") String registerNumber) {
         StudentHostel studentHostelDetail = studentHostelRepository.findOneByRegno(registerNumber);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getStudentCertificateSubmissionDetail");
+//        System.out.println("Inside getStudentCertificateSubmissionDetail");
         return studentHostelDetail;
 
 

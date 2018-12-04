@@ -78,7 +78,7 @@ public class BonafideApiController  {
     public BonafideProjection getBonafideDetail(@RequestParam (value ="bonafideid") String bonaId) {
         BonafideProjection bonafideDetail = bonafideRepository.findOneByBonafideid(bonaId);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getBonafideDetail");
+//        System.out.println("Inside getBonafideDetail");
         return bonafideDetail;
 
     }

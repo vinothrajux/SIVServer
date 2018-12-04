@@ -69,7 +69,7 @@ public class StudentFoodApiController  {
     public StudentFood getStudentFoodDetail(@RequestParam (value ="regno") String registerNumber) {
         StudentFood studentfoodDetail = studentFoodRepository.findOneByRegno(registerNumber);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getStudentFoodDetails");
+//        System.out.println("Inside getStudentFoodDetails");
         return studentfoodDetail;
     }
 

@@ -50,7 +50,7 @@ public class PlaySchoolHomeWorkIdGenerateApiController {
         PlaySchoolHomeWorkIdGenerateProjection playschoolhomeworkid = playSchoolHomeWorkIdGenerateRepository.findOneByIdno(idno);
 
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getPlaySchoolHomeWorkIdNo");
+//        System.out.println("Inside getPlaySchoolHomeWorkIdNo");
         return playschoolhomeworkid;
     }
 

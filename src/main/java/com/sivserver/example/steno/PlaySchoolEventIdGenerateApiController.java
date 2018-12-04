@@ -49,7 +49,7 @@ public class PlaySchoolEventIdGenerateApiController {
         PlaySchoolEventIdGenerateProjection playschooleventid = playSchoolEventIdGenerateRepository.findOneById(id);
 
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getPlaySchoolEventIdNo");
+//        System.out.println("Inside getPlaySchoolEventIdNo");
         return playschooleventid;
     }
 

@@ -140,7 +140,7 @@ public class ChildsPickupPlaySchoolApiController {
     public ChildsPickupPlaySchoolProjection getChildsPickupPlaySchoolDetail(@RequestParam (value ="pickupid") String pickupid) {
         ChildsPickupPlaySchoolProjection playschoolChildsPickupDetail = childsPickupPlaySchoolRepository.findOneByPickupid(pickupid);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getChildsPickupPlaySchoolDetail");
+//        System.out.println("Inside getChildsPickupPlaySchoolDetail");
         return playschoolChildsPickupDetail;
     }
 
@@ -192,7 +192,7 @@ public class ChildsPickupPlaySchoolApiController {
                 childsPickupPlaySchool.setSection(section);
                 childsPickupPlaySchool.setInstituteid(instituteid);
                 childsPickupPlaySchoolRepository.save(childsPickupPlaySchool);
-                System.out.println("date:"+entrydate);
+//                System.out.println("date:"+entrydate);
 
             }
         } catch (JSONException e) {
@@ -228,7 +228,7 @@ public class ChildsPickupPlaySchoolApiController {
 
 
             java.sql.Timestamp ts = java.sql.Timestamp.valueOf( curDate ) ;
-            System.out.println("Inside getStudentPickupPlaySchoolDetail");
+//            System.out.println("Inside getStudentPickupPlaySchoolDetail");
 //            System.out.println(academicyear);
 //            System.out.println(program);
 //            System.out.println(section);

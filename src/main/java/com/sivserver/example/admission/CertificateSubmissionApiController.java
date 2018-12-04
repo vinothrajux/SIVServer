@@ -121,7 +121,7 @@ public class CertificateSubmissionApiController  {
     public CertificateSubmission getStudentCertificateSubmissionDetail(@RequestParam (value ="regno") String registerNumber) {
         CertificateSubmission studentCertificateSubmissionDetail = certificateSubmissionRepository.findOneByRegno(registerNumber);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getStudentCertificateSubmissionDetail");
+//        System.out.println("Inside getStudentCertificateSubmissionDetail");
         return studentCertificateSubmissionDetail;
     }
 

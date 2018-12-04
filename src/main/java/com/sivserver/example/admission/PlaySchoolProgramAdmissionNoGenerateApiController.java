@@ -57,7 +57,7 @@ public class PlaySchoolProgramAdmissionNoGenerateApiController {
         PlaySchoolToddlerAdmissionNoProjection playschoolToddlerAdmissionNo = playSchoolApplicationNoGenerateRepository.findOneByIdno(idno);
 
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getPlaySchoolToddlerAdmissionNo");
+//        System.out.println("Inside getPlaySchoolToddlerAdmissionNo");
         return playschoolToddlerAdmissionNo;
     }
 

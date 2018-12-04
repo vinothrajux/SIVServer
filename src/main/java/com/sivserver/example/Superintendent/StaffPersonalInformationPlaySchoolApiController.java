@@ -105,7 +105,7 @@ public class StaffPersonalInformationPlaySchoolApiController {
     public StaffPersonalInformationPlaySchoolProjection getStaffPersonalInformationPlaySchoolDetail(@RequestParam (value ="staffid") String staffid) {
         StaffPersonalInformationPlaySchoolProjection staffPersonalInformationPlaySchoolDetail = staffPersonalInformationPlaySchoolRepository.findOneByStaffid(staffid);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getStaffPersonalInformationPlaySchoolDetail");
+//        System.out.println("Inside getStaffPersonalInformationPlaySchoolDetail");
         return staffPersonalInformationPlaySchoolDetail;
     }
 

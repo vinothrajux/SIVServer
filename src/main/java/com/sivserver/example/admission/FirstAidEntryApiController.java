@@ -81,7 +81,7 @@ public class FirstAidEntryApiController {
     public Iterable<FirstAidEntry> getFirstAidEntryDetail(@RequestParam (value ="regno") String RegisterNumber) {
         Iterable<FirstAidEntry> getfirstaidEntries = firstaidRepository.findAllByregno(RegisterNumber);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getApplicationDetail");
+//        System.out.println("Inside getApplicationDetail");
         return getfirstaidEntries;
     }
 

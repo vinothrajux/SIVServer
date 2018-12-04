@@ -1,6 +1,8 @@
 package com.sivserver.example.user;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sivserver.example.Login.LoginActivity;
+import com.sivserver.example.Login.LoginActivityRepository;
 import com.sivserver.example.institute.InstituteDetails;
 import com.sivserver.example.institute.InstituteDetailsRepository;
 import com.sivserver.example.utils.SivUtils;
@@ -10,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,8 +30,10 @@ public class UserApiController extends WebMvcConfigurerAdapter {
     private UserRepository userRepository;
    @Autowired
     private InstituteDetailsRepository instituteDetailsRepository;
-    @Autowired
+   @Autowired
     private MenuListRepository menuListRepository;
+    @Autowired
+    private LoginActivityRepository loginActivityRepository;
 //    /**
 //     * give a event id, will return the event details
 //     * @param name - primary key id
@@ -97,7 +102,15 @@ public class UserApiController extends WebMvcConfigurerAdapter {
 
               //return result;
              // return null;
-
+              LoginActivity loginActivity = new LoginActivity();
+              loginActivity.setInstituteid(loginUserDetail.getInstituteid());
+              loginActivity.setLogindate(Calendar.getInstance().getTime());
+              loginActivity.setDevice(sourceDevice);
+              loginActivity.setUserrole(loginUserDetail.getUserRole());
+              loginActivity.setUsername(loginUserDetail.getUsername());
+              loginActivity.setRegisternumber(loginUserDetail.getUsername());
+              loginActivity.setUserfullname(loginUserDetail.getFirstName()+" "+loginUserDetail.getLastName());
+              loginActivityRepository.save(loginActivity);
           }else{
              // JSONOb
               JSONObject errorMsgObj = new JSONObject();

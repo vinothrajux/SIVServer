@@ -76,7 +76,7 @@ public class PlaySchoolSchoolFeesSettingApiController {
         Management_Playschool_Fees_Compound_Key mgmtpsfeescompkey = new Management_Playschool_Fees_Compound_Key(program,academicyear,instituteid);
         PlaySchoolSchoolFeesSettingProjection playschoolfeesDetail = playSchoolSchoolFeesSettingRepository.findOneByManagementplayschoolfeescompoundkey(mgmtpsfeescompkey);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getPlaySchoolFeesDetail");
+//        System.out.println("Inside getPlaySchoolFeesDetail");
         return playschoolfeesDetail;
     }
 

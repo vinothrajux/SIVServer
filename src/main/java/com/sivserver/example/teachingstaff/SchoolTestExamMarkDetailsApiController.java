@@ -103,9 +103,9 @@ public class SchoolTestExamMarkDetailsApiController {
     ){
         String result = null;
         Map<String, Object> returnobj = new HashMap<>();
-        System.out.println("branch:"+standardstudying);
-        System.out.println("batch:"+section);
-        System.out.println("academicyear:"+academicyear);
+//        System.out.println("branch:"+standardstudying);
+//        System.out.println("batch:"+section);
+//        System.out.println("academicyear:"+academicyear);
 
         SchoolTestExamMarkDetails schoolTestExamMarkDetails = new SchoolTestExamMarkDetails();
         long schoolTestExamMarkDetailsCount = schoolTestExamMarkDetailsRepository.countByInstituteidAndAcademicyearAndStandardAndSectionAndTesttype(instituteid,academicyear,standardstudying,section,testtype);

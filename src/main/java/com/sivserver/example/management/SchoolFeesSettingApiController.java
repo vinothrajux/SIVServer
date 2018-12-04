@@ -71,7 +71,7 @@ public class SchoolFeesSettingApiController {
         Management_School_Fees_Compound_Key mgmtsfeescompkey = new Management_School_Fees_Compound_Key(program,academicyear,instituteid);
         SchoolFeesSettingProjection schoolfeesDetail = schoolFeesSettingRepository.findOneByManagementschoolfeescompoundkey(mgmtsfeescompkey);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getSchoolFeesDetail");
+//        System.out.println("Inside getSchoolFeesDetail");
         return schoolfeesDetail;
     }
 

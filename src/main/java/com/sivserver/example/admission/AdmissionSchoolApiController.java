@@ -390,7 +390,7 @@ public class AdmissionSchoolApiController {
     public AdmissionPlaySchoolProjection getSchoolAdmissionDetail(@RequestParam (value ="applno") String applicationNumber) {
         AdmissionPlaySchoolProjection schooladmissionDetail = admissionPlaySchoolRepository.findOneByApplno(applicationNumber);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getSchoolAdmissionDetail");
+//        System.out.println("Inside getSchoolAdmissionDetail");
         return schooladmissionDetail;
     }
 

@@ -76,7 +76,7 @@ public class StudentBaseInformationApiContrtoller {
     public StudentBaseInformationProjection getStudentBaseInformationDetail(@RequestParam (value ="regno") String registerNumber) {
         StudentBaseInformationProjection getStudentBaseInformationDetail = studentbaseinformationRepository.findOneByRegno(registerNumber);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getStudentBaseInformationDetail");
+//        System.out.println("Inside getStudentBaseInformationDetail");
         return getStudentBaseInformationDetail;
     }
 

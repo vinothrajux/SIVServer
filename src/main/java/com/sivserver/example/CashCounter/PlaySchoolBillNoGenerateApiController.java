@@ -47,7 +47,7 @@ public class PlaySchoolBillNoGenerateApiController {
         PlaySchoolBillNoGenerateProjection playschoolBillNo = playSchoolBillNoGenerateRepository.findOneByIdno(idno);
 
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getPlaySchoolBillNo");
+//        System.out.println("Inside getPlaySchoolBillNo");
         return playschoolBillNo;
     }
 

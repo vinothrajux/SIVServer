@@ -50,7 +50,7 @@ public class PlaySchoolApplicationNoGenerateApiController {
         PlaySchoolApplicationNoGenerateProjection playschoolapplicationNo = playSchoolApplicationNoGenerateRepository.findOneByIdnoAndInstituteid(idno,instituteid);
 
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getPlaySchoolApplcationNo");
+//        System.out.println("Inside getPlaySchoolApplcationNo");
         return playschoolapplicationNo;
     }
 

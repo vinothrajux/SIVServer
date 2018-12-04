@@ -65,7 +65,7 @@ public class StudentAcademicInfoApiController  {
     public StudentAcademicInfoProjection getStudentAcademicInformationDetail(@RequestParam (value ="regno") String registerNumber) {
         StudentAcademicInfoProjection studentAcademicInformationDetail = studentacademicinfoRepository.findOneByRegno(registerNumber);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getStudentAcademicInformationDetail");
+//        System.out.println("Inside getStudentAcademicInformationDetail");
         return studentAcademicInformationDetail;
     }
 

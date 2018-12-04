@@ -118,7 +118,7 @@ public class FeesPaymentPlaySchoolApiController {
 
         FeesPaymentPlaySchoolProjection feesPaymentPlaySchoolProjection = feesPaymentPlaySchoolRepository.findOneByBillno(billno);
         String regno = feesPaymentPlaySchoolProjection.getRegisternumber();
-        System.out.println("test:"+regno);
+//        System.out.println("test:"+regno);
         PlaySchoolStudentBaseInformationProjection playSchoolStudentBaseInformationProjection = playSchoolStudentBaseInformationRepository.findOneByRegisternumber(regno);
 
         List<Object> list = new ArrayList<Object>();

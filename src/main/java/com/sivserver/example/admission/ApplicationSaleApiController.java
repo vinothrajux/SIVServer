@@ -122,7 +122,7 @@ public class ApplicationSaleApiController extends WebMvcConfigurerAdapter {
     public ApplicationSaleProjection getApplcationDetail(@RequestParam (value ="applno") String applicationNumber) {
         ApplicationSaleProjection applicationDetail = applicationsaleRepository.findOneByApplno(applicationNumber);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getApplicationDetail");
+//        System.out.println("Inside getApplicationDetail");
         return applicationDetail;
     }
 

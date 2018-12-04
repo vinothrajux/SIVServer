@@ -90,7 +90,7 @@ public class EventsCircularsPlaySchoolApiController {
     public EventsCircularsPlaySchoolProjection getEventsCiruclarsPlaySchoolDetail(@RequestParam (value ="eventid") String eventid) {
         EventsCircularsPlaySchoolProjection eventscircularsPlaySchoolDetail = eventsCircularsPlaySchoolRepository.findOneByEventid(eventid);
         //LoginStatusProjection loginUserDetail = userRepository.findOneByUsername(username);
-        System.out.println("Inside getEventsCircularsPlaySchoolDetail");
+//        System.out.println("Inside getEventsCircularsPlaySchoolDetail");
         return eventscircularsPlaySchoolDetail;
     }
 
@@ -130,12 +130,12 @@ public class EventsCircularsPlaySchoolApiController {
             java.sql.Timestamp ts = java.sql.Timestamp.valueOf( curDate ) ;
             long oneDay = 1 * 24 * 60 * 60 * 1000;
             ts.setTime(ts.getTime()-oneDay);
-            System.out.println("Inside getStudentHomeWorkPlaySchoolDetail");
-            System.out.println(academicyear);
-            System.out.println(program);
-            System.out.println(section);
-            System.out.println(ts);
-            System.out.println(instituteid);
+//            System.out.println("Inside getStudentHomeWorkPlaySchoolDetail");
+//            System.out.println(academicyear);
+//            System.out.println(program);
+//            System.out.println(section);
+//            System.out.println(ts);
+//            System.out.println(instituteid);
 
             playschoolstudentEventCircularDetail = eventsCircularsPlaySchoolRepository.findAllByAcademicyearAndProgramInAndSectionInAndEventdateAfterAndInstituteidOrderByEventdateAsc(academicyear,programs,sections,ts,instituteid);
 //        playschoolstudentHomeWorkDetail = studentHomeWorkPlaySchoolRepository.findAllByAcademicyearAndProgramAndSectionAndEntrydate(academicyear,program,section,ts);
@@ -188,10 +188,10 @@ public class EventsCircularsPlaySchoolApiController {
             @RequestParam (value="currentdatestatus", required=false) Boolean currentdatestatus
 
     ) {
-        System.out.println("entrydate" + entrydate);
-        System.out.println("program" + program);
-        System.out.println("section" + section);
-        System.out.println("instiuteid" + instituteid);
+//        System.out.println("entrydate" + entrydate);
+//        System.out.println("program" + program);
+//        System.out.println("section" + section);
+//        System.out.println("instiuteid" + instituteid);
 
         LocalDateTime now = LocalDateTime.now();
         int year = now.getYear();
@@ -206,11 +206,11 @@ public class EventsCircularsPlaySchoolApiController {
 
 
             java.sql.Timestamp ts = java.sql.Timestamp.valueOf( curDate ) ;
-            System.out.println("Inside getEVENT LIST Detail");
-            //System.out.println(academicyear);
-            System.out.println(program);
-            System.out.println(section);
-            System.out.println(ts);
+//            System.out.println("Inside getEVENT LIST Detail");
+//            //System.out.println(academicyear);
+//            System.out.println(program);
+//            System.out.println(section);
+//            System.out.println(ts);
             if(currentdatestatus){
                 playschoolstudentHomeWorkDetail = eventsCircularsPlaySchoolRepository.findAllByEntrydateAndProgramAndSectionAndInstituteid(ts,program,section,instituteid);
             }else{

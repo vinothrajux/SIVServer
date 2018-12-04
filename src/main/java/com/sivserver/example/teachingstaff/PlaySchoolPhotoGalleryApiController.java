@@ -99,15 +99,15 @@ public class PlaySchoolPhotoGalleryApiController {
 
         PlaySchoolPhotoGallery playSchoolPhotoGallery = new PlaySchoolPhotoGallery();
 
-        System.out.println(encodedimage);
-        System.out.println(uploaddate);
-        System.out.println(academicyear);
-        System.out.println(program);
-        System.out.println(section);
-        System.out.println(uploadedby);
-        System.out.println(studentlist);
-        System.out.println(imagepath);
-        System.out.println(imagetitle);
+//        System.out.println(encodedimage);
+//        System.out.println(uploaddate);
+//        System.out.println(academicyear);
+//        System.out.println(program);
+//        System.out.println(section);
+//        System.out.println(uploadedby);
+//        System.out.println(studentlist);
+//        System.out.println(imagepath);
+//        System.out.println(imagetitle);
         imagepath = sivUtils.getServerPhotoGalleryPath()+imagepath;
         playSchoolPhotoGallery.setUploaddate(uploaddate);
         playSchoolPhotoGallery.setAcademicyear(academicyear);
@@ -143,8 +143,8 @@ public class PlaySchoolPhotoGalleryApiController {
         java.sql.Timestamp timestamp = new java.sql.Timestamp(System.currentTimeMillis());
         timestamp.getTime();
         String imagename = timestamp.getTime()+multipartFiles.getOriginalFilename();
-        System.out.println("imagename");
-        System.out.println(imagename);
+//        System.out.println("imagename");
+//        System.out.println(imagename);
         String serverfilepath = "images/uploaded/"+imagename;
         String imagePath = "http://siv.gbcorp.in/"+serverfilepath;
 //        System.out.println(new ProfileCredentialsProvider().getCredentials().getAWSAccessKeyId());
@@ -217,7 +217,7 @@ public class PlaySchoolPhotoGalleryApiController {
 
     ){
         Iterable<PlaySchoolPhotoGallery> mediaList = playSchoolPhotoGalleryRepository.findByRegisternumberAndInstituteid(registernumber, instituteid);
-        System.out.println("Inside getApplicationDetail");
+//        System.out.println("Inside getApplicationDetail");
         return mediaList;
     }
 
