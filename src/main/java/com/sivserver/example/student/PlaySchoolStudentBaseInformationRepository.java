@@ -11,6 +11,7 @@ PlaySchoolStudentBaseInformationProjection findOneByRegisternumber(String regist
 PlaySchoolStudentBaseInformationProjection findOneByRegisternumberAndInstituteid(String registernumber, Integer instituteid);
 Iterable<PlaySchoolStudentBaseInformation> findAllByStandardstudyingAndSectionAndAcademicyearAndStudentstatusAndInstituteid(String standardstudying,String section, String academicyear, String studentstatus, Integer instituteid);
 Iterable<PlaySchoolStudentBaseInformation> findAllByStandardstudyingAndSectionAndAcademicyearAndInstituteid(String standardstudying,String section, String academicyear, Integer instituteid);
+Iterable<PlaySchoolStudentBaseInformation> findAllByInstituteid(Integer instituteid);
 //Iterable<PlaySchoolStudentBaseInformationProjection> findAllByProgramAndSectionAndAcademicyearAndInstituteidOrderByRegisternumber(String program,String section,String academicyear,Integer instituteid );
 
 }

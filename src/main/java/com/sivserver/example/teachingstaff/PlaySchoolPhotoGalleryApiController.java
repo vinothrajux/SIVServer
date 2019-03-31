@@ -158,9 +158,10 @@ public class PlaySchoolPhotoGalleryApiController {
 
 
             try {
-                System.out.println("+++++++++++++");
-                JSONArray studentListArrayObj = new JSONArray(studentlist);
-                System.out.println("---------------");
+                JSONArray studentListArrayObj = new JSONArray();
+                if (!program.equals("allStudents")) {
+                    studentListArrayObj = new JSONArray(studentlist);
+                }
 //            String entrydate=pickupdetailsattributesObj.getString("entrydate");
 //            Date pickupdate=null;
 //            try {
@@ -177,26 +178,41 @@ public class PlaySchoolPhotoGalleryApiController {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-                for (int i=0; i<studentListArrayObj.length(); i++ ){
-                    System.out.println("student photoacces"+i+":");
-                    System.out.println(studentphotoaccess);
-                    JSONObject objectInArray = studentListArrayObj.getJSONObject(i);
-                    PlaySchoolPhotoGallery playSchoolPhotoGallery = new PlaySchoolPhotoGallery();
-                    studentphotoaccess = objectInArray.getString("studentphotoaccess");
-                    if(studentphotoaccess.equals("1")){
-                        System.out.println(objectInArray.getString("candidatename"));
-                        playSchoolPhotoGallery.setRegisternumber(objectInArray.getString("registernumber"));
-                        playSchoolPhotoGallery.setProgram(program);
-                        playSchoolPhotoGallery.setSection(section);
-                        playSchoolPhotoGallery.setAcademicyear(academicyear);
-                        playSchoolPhotoGallery.setInstituteid(instituteid);
-                        playSchoolPhotoGallery.setName(objectInArray.getString("candidatename"));
+                if (program.equals("allStudents")) {
+                    Iterable<PlaySchoolStudentBaseInformation> studentList = playSchoolStudentBaseInformationRepository.findAllByInstituteid(instituteid);
+                    for (PlaySchoolStudentBaseInformation student : studentList) {
+                        PlaySchoolPhotoGallery playSchoolPhotoGallery = new PlaySchoolPhotoGallery();
+                        playSchoolPhotoGallery.setRegisternumber(student.getRegisternumber());
+                        playSchoolPhotoGallery.setProgram(student.getStandardstudying());
+                        playSchoolPhotoGallery.setSection(student.getSection());
+                        playSchoolPhotoGallery.setAcademicyear(student.getAcademicyear());
+                        playSchoolPhotoGallery.setInstituteid(student.getInstituteid());
+                        playSchoolPhotoGallery.setName(student.getCandidatename());
                         playSchoolPhotoGallery.setImagepath(imagePath);
                         playSchoolPhotoGallery.setImagetitle(imagetitle);
                         playSchoolPhotoGallery.setUploaddate(todayWithZeroTime);
                         playSchoolPhotoGalleryRepository.save(playSchoolPhotoGallery);
                     }
+                }
+                else {
+                    for (int i = 0; i < studentListArrayObj.length(); i++) {
+                        JSONObject objectInArray = studentListArrayObj.getJSONObject(i);
+                        PlaySchoolPhotoGallery playSchoolPhotoGallery = new PlaySchoolPhotoGallery();
+                        studentphotoaccess = objectInArray.getString("studentphotoaccess");
+                        if (studentphotoaccess.equals("1")) {
+                            playSchoolPhotoGallery.setRegisternumber(objectInArray.getString("registernumber"));
+                            playSchoolPhotoGallery.setProgram(program);
+                            playSchoolPhotoGallery.setSection(section);
+                            playSchoolPhotoGallery.setAcademicyear(academicyear);
+                            playSchoolPhotoGallery.setInstituteid(instituteid);
+                            playSchoolPhotoGallery.setName(objectInArray.getString("candidatename"));
+                            playSchoolPhotoGallery.setImagepath(imagePath);
+                            playSchoolPhotoGallery.setImagetitle(imagetitle);
+                            playSchoolPhotoGallery.setUploaddate(todayWithZeroTime);
+                            playSchoolPhotoGalleryRepository.save(playSchoolPhotoGallery);
+                        }
 
+                    }
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
